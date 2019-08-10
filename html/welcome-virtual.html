@@ -15,10 +15,37 @@
                 a {color: #2A3052; font-family: Arial, sans-serif !important;}
             </style>
         <![endif]-->
-        <!--[if !mso]><!-->
-            <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,700&display=swap&subset=cyrillic,vietnamese" rel="stylesheet">
-        <!--<![endif]-->
         <style type="text/css">
+            /* FONTS */
+            @media screen {
+                /* latin */
+                @font-face {
+                font-family: 'IBM Plex Sans';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: local('IBM Plex Sans'), local('IBMPlexSans'), url(https://fonts.gstatic.com/s/ibmplexsans/v7/zYXgKVElMYYaJe8bpLHnCwDKhdHeFaxOedc.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+                }
+                /* latin */
+                @font-face {
+                font-family: 'IBM Plex Sans';
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: local('IBM Plex Sans Medium'), local('IBMPlexSans-Medium'), url(https://fonts.gstatic.com/s/ibmplexsans/v7/zYX9KVElMYYaJe8bpLHnCwDKjSL9AIFsdP3pBms.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+                }
+                /* latin */
+                @font-face {
+                font-family: 'IBM Plex Sans';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: local('IBM Plex Sans Bold'), local('IBMPlexSans-Bold'), url(https://fonts.gstatic.com/s/ibmplexsans/v7/zYX9KVElMYYaJe8bpLHnCwDKjWr7AIFsdP3pBms.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+                }
+            }
             /* CLIENT-SPECIFIC STYLES */
             body, table, td, a {
                 -webkit-text-size-adjust: 100%;
@@ -72,7 +99,7 @@
                 line-height: 24px;
                 padding: 15px 25px;
                 display: inline-block;
-                font-weight: bold;
+                font-weight: 500;
                 font-family: 'IBM Plex Sans', Arial, sans-serif; 
                 font-size: 16px;
                 border-radius: 6px;
@@ -90,7 +117,7 @@
                 line-height: 24px;
                 padding: 15px 25px;
                 display: inline-block;
-                font-weight: bold;
+                font-weight: 500;
                 font-family: 'IBM Plex Sans', Arial, sans-serif; 
                 font-size: 16px;
                 border-radius: 6px;
@@ -186,7 +213,7 @@
                         <!-- COPY -->
                         <tr>
                             <td bgcolor="#ffffff" align="left" style="padding: 8px 30px 8px 30px; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px;">
-                                <p style="margin: 0;">You’re now signed up for a demo account that has been pre-loaded with USD 10,000 in virtual money. Use it to play around with different contracts and to test your trading strategies ⁠— without risking real money.</p>
+                                <p style="margin: 0;">You’re now signed up for a demo account that has been pre-loaded with USD 10,000 in virtual money. Use it to play around with different contracts and to test your trading strategies - without risking real money.</p>
                             </td>
                         </tr>
                         <!-- COPY -->
@@ -199,15 +226,12 @@
                         <tr>
                             <td bgcolor="#ffffff" align="center" style="padding: 10px 30px 40px 30px; color: #333333; border-radius: 0px 0px 2px 2px; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
                                 <!--[if (gte mso 9)|(IE)]>
-                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.deriv.com" style="height:50px;v-text-anchor:middle;width:210px;" arcsize="8%" stroke="f" fillcolor="#ff444f">
+                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.deriv.com" style="height:50px;v-text-anchor:middle;width:170px;" arcsize="8%" stroke="f" fillcolor="#ff444f">
                                     <w:anchorlock/>
-                                    <center>
-                                    <![endif]-->
-                                <a class="button" href="https://www.deriv.com"><span>Start practising</span></a>
-                                <!--[if (gte mso 9)|(IE)]>
-                                </center>
-                                </v:roundrect>
+                                    <center style="color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:bold;">Start practising</center>
+                                    </v:roundrect>
                                 <![endif]-->
+                                <a class="button" href="https://www.deriv.com" style="mso-hide:all;"><span>Start practising</span></a>
                             </td>
                         </tr>
                     </table>
@@ -225,7 +249,7 @@
                     <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                         <!-- COPY -->
                         <tr>
-                            <td bgcolor="#ffffff" align="left" style="padding: 40px 30px 8px 30px; color: #333333; border-radius: 2px 2px 2px 2px; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; font-weight: 400; line-height: 40px;">
+                            <td bgcolor="#ffffff" align="left" style="padding: 40px 30px 8px 30px; color: #333333; border-radius: 2px 2px 0px 0px; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; font-weight: 400; line-height: 40px;">
                                 <h2>Ready to start trading for real?</h2>
                             </td>
                         </tr>
@@ -237,22 +261,19 @@
                         </tr>
                         <!-- button -->
                         <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding: 16px 30px 24px 30px; color: #333333; border-radius: 0px 0px 2px 2px; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
+                            <td bgcolor="#ffffff" align="center" style="padding: 16px 30px 24px 30px; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
                                 <!--[if (gte mso 9)|(IE)]>
-                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.deriv.com" style="height:50px;v-text-anchor:middle;width:210px;" arcsize="10%" strokecolor="#ff444f" fillcolor="#ffffff">
+                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.deriv.com" style="height:50px;v-text-anchor:middle;width:170px;" arcsize="10%" strokecolor="#ff444f" fillcolor="#ffffff">
                                     <w:anchorlock/>
-                                    <center>
-                                    <![endif]-->
-                                <a class="button-secondary" href="https://www.deriv.com"><span>Make a deposit</span></a>
-                                <!--[if (gte mso 9)|(IE)]>
-                                </center>
-                                </v:roundrect>
+                                    <center style="color:#ff444f;font-family:sans-serif;font-size:16px;font-weight:bold;">Make a deposit</center>
+                                    </v:roundrect>
                                 <![endif]-->
+                                <a class="button-secondary" href="https://www.deriv.com" style="mso-hide:all;"><span>Make a deposit</span></a>
                             </td>
                         </tr>
                         <!-- COPY -->
                         <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding: 8px 30px 40px 30px; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px;">
+                            <td bgcolor="#ffffff" align="center" style="padding: 8px 30px 40px 30px; border-radius: 0px 0px 2px 2px; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px;">
                                 <p style="margin: 0;">Happy trading!</p>
                                 <p style="margin: 0;"><strong>Team Deriv</strong></p>
                             </td>
@@ -272,7 +293,7 @@
                     <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                         <!-- HEADLINE -->
                         <tr>
-                            <td bgcolor="#f3f3f3" align="center" style="padding: 30px 30px 30px 30px; border-radius: 4px 4px 4px 4px; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 12px; font-weight: 500; line-height: 18px;">
+                            <td bgcolor="#f3f3f3" align="center" style="padding: 30px 30px 30px 30px; color: #646464; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 12px; font-weight: 500; line-height: 18px;">
                                 <p style="margin: 0;">Need help? Head to our <a href="https://www.deriv.com">Help Centre</a>.</p>
                                 <p style="margin: 0;">If you can’t find the answer to your question, let us know.</p>
                                 <p style="margin: 0;">Don’t want to receive this type of email? Unsubcribe.</p>
