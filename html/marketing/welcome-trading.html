@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
@@ -132,12 +133,27 @@
                 border-color: #d43e47;
                 color: #ffffff;
             }
+            /* MOBILE STYLES */
+            @media screen and (max-width: 620px) {
+                .img-max {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    height: auto !important;
+                }
+                .max-width {
+                    max-width: 100% !important;
+                }
+                .mobile-wrapper {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                }
+            }
         </style>
     </head>
     <body style="background-color: #f3f3f3; margin: 0 !important; padding: 0 !important;">
         <!-- HIDDEN PREHEADER TEXT -->
         <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: 'IBM Plex Sans', Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
-            Reset password
+            We received your request to change your password for your Binary.com affiliate account.
         </div>
         <table border="0" cellpadding="0" cellspacing="0" width="100%">
             <!-- LOGO -->
@@ -167,38 +183,9 @@
                     <![endif]-->
                     <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                         <tr>
-                            <td bgcolor="#ffffff" align="center" valign="top" style="padding: 40px 30px 40px 30px; border-top: 2px solid #ff444f;">
-                                    <a href="https://www.deriv.com">
-                                        <img src="https://binary-com.github.io/deriv-email-templates/html/images/reset-password.png" width="268" height="180" border="0" style="display: block; max-width: 100%;" alt="Deriv.com">
-                                    </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td bgcolor="#ffffff" align="center" valign="top" style="padding: 0px 30px 20px 30px;">
-                                <h2 style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 40px; color: #333333; margin: 0;">Forgot your password?</h2>
-                                <h2 style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 40px; color: #333333; margin: 0;"> Let’s get you a new one.</h2>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td bgcolor="#ffffff" align="left" valign="top" style="padding: 12px 30px 20px 30px;">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px 0px 0px 0px;">We got a request to change the password for the account with the email <strong><a href="mailto:something@something.com" style="color: #333333 !important;">something@something.com</a></strong>.</p>
-                            </td>
-                        </tr>
-                        <!-- button -->
-                        <tr>
-                            <td bgcolor="#ffffff" align="left" style="padding: 12px 30px 20px 30px; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                                <!--[if (gte mso 9)|(IE)]>
-                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.deriv.com" style="height:50px;v-text-anchor:middle;width:200px;" arcsize="8%" stroke="f" fillcolor="#ff444f">
-                                    <w:anchorlock/>
-                                    <center style="color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:bold;">Reset your password</center>
-                                    </v:roundrect>
-                                <![endif]-->
-                                <a class="button" href="https://www.deriv.com" style="mso-hide:all;"><span>Reset your password</span></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td bgcolor="#ffffff" align="left" valign="top" style="padding: 12px 30px 20px 30px; border-radius: 0px 0px 2px 2px;">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px 0px 0px 0px;">Having trouble to change the password for the account with the email <strong><a href="mailto:something@something.com" style="color: #333333 !important;">something@something.com</a></strong>.</p>
+                            <td bgcolor="#ffffff" align="center" valign="top" style="padding: 40px 30px 20px 30px; border-top: 2px solid #ff444f; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 48px; font-weight: bold; line-height: 48px;">
+                                <h1 style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 48px; line-height: 60px; font-weight: bold; margin: 0;">Welcome to Deriv,</h1>
+                                <h2 style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 40px; color: #333333; margin: 0;">John Doe!</h2>
                             </td>
                         </tr>
                     </table>
@@ -206,32 +193,123 @@
                     <![endif]-->
                 </td>
             </tr>
+            <!-- COPY BLOCK -->
             <tr>
-                <td bgcolor="#f3f3f3" align="center" style="padding: 2px 10px 0px 10px; border-radius: 2px 2px 0px 0px;">
+                <td bgcolor="#f3f3f3" align="center" style="padding: 0px 10px 0px 10px;">
+                    <!--[if (gte mso 9)|(IE)]>
+                    <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
+                    <![endif]-->
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                        <!-- COPY -->
+                        <tr>
+                            <td bgcolor="#ffffff" align="center" style="padding: 30px 30px 30px 30px; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; font-weight: 400; line-height: 40px;">
+                                <a href="https://www.deriv.com">
+                                    <img src="https://binary-com.github.io/deriv-email-templates/html/images/welcome-2.png" width="232" height="232" border="0" style="display: block; max-width: 100%;" alt="Deriv.com">
+                                </a>
+                            </td>
+                        </tr>
+                        <!-- COPY -->
+                        <tr>
+                            <td bgcolor="#ffffff" align="center" style="padding: 20px 30px 40px 30px;">
+                                <p style="color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px 0px 0px 0px;">We’re excited to have you with us and hope you’re enjoying your demo account.</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                        </td></tr></table>
+                    <![endif]-->
+                </td>
+            </tr>
+            <!-- COPY BLOCK -->
+            <tr>
+                <td bgcolor="#f3f3f3" align="center" style="padding: 8px 10px 8px 10px;">
                     <!--[if (gte mso 9)|(IE)]>
                         <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
                     <![endif]-->
                     <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                        <!-- COPY -->
                         <tr>
-                            <td bgcolor="#ffffff" align="left" valign="top" style="padding: 0px 30px 16px 30px;">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 16px 0px 0px 0px;">Having trouble with the button?</p>
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px 0px 0px 0px;">Copy and paste this link into your browser to reset your password</p>
+                            <td bgcolor="#ffffff" align="center" style="padding: 40px 30px 8px 30px;">
+                                <h2 style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 40px; color: #333333; margin: 0;">Why not start trading for real?</h2>
                             </td>
                         </tr>
+                        <!-- COPY -->
                         <tr>
-                            <td bgcolor="#ffffff" align="left" valign="top" style="padding: 0px 30px 0px 30px;">
-                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <td bgcolor="#ffffff" align="center" style="padding: 8px 30px 8px 30px; color: ">
+                                    <p style="color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px 0px 0px 0px;">With just USD 5 and in just 3 steps, you can start trading in the forex, indices, commodities and volatility indices markets. </p>
+                                
+                                <!--[if (gte mso 9)|(IE)]><table width="600" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
+                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:540px; margin: 10px 0px 0px 0px;">
                                     <tr>
-                                        <td bgcolor="#f3f3f3" align="center" valign="top" style="padding: 16px 24px 16px 24px;">
-                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px 0px 0px 0px;"><a href="https://www.deriv.com">https://....html#token=n3Gb2JIG</a></p>
+                                        <td align="center" valign="top" style="font-size:0;">
+                                            <!--[if (gte mso 9)|(IE)]>
+                                            <table align="center" border="0" cellspacing="0" cellpadding="0" width="540">
+                                            <tr>
+                                            <td align="left" valign="top" width="180">
+                                            <![endif]-->
+                                            <div style="display:inline-block; max-width:33.3333%; min-width:180px; vertical-align:top; width:100%;" class="mobile-wrapper">
+                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:180px;" class="max-width">
+                                                    <tr>
+                                                        <td align="center" valign="top" style="padding-top: 25px;">
+                                                            <img src="https://binary-com.github.io/deriv-email-templates/html/images/icon-add-real-money.png" width="56" height="56" border="0" style="display: block;" alt="Add a real money account">
+                                                            <p style="color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; margin: 8px 0px 0px 0px;">Add a real money account</p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <!--[if (gte mso 9)|(IE)]>
+                                            </td>
+                                            <td width="15" style="font-size: 1px;">&nbsp;</td>
+                                            <td align="center" valign="top" width="170">
+                                            <![endif]-->
+                                            <div style="display:inline-block; max-width:33.3333%; min-width:180px; vertical-align:top; width:100%;" class="mobile-wrapper">
+                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:180px;" class="max-width">
+                                                    <tr>
+                                                        <td align="center" valign="top" style="padding-top: 25px;">
+                                                            <img src="https://binary-com.github.io/deriv-email-templates/html/images/icon-make-deposit.png" width="56" height="56" border="0" style="display: block;" alt="Make a deposit">
+                                                            <p style="color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; margin: 8px 0px 0px 0px;">Make a deposit</p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <!--[if (gte mso 9)|(IE)]>
+                                            </td>
+                                            <td width="15" style="font-size: 1px;">&nbsp;</td>
+                                            <td align="center" valign="top" width="170">
+                                            <![endif]-->
+                                            <div style="display:inline-block; max-width:33.3333%; min-width:180px; vertical-align:top; width:100%;" class="mobile-wrapper">
+                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:180px;" class="max-width">
+                                                    <tr>
+                                                        <td align="center" valign="top" style="padding-top: 25px;">
+                                                            <img src="https://binary-com.github.io/deriv-email-templates/html/images/icon-start-trading.png" width="56" height="56" border="0" style="display: block;" alt="Start trading">
+                                                            <p style="color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; margin: 8px 0px 0px 0px;">Start trading</p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
                                         </td>
                                     </tr>
-                                </table>
+                                </table><!--[if mso]></td></tr></table><![endif]-->
+
                             </td>
                         </tr>
+                        <!-- button -->
                         <tr>
-                            <td bgcolor="#ffffff" align="left" valign="top" style="padding: 0px 30px 40px 30px; border-radius: 0px 0px 2px 2px;">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 16px 0px 0px 0px;">If you don’t want to reset your password, you can ignore this email.</p>
+                            <td bgcolor="#ffffff" align="center" style="padding: 16px 30px 24px 30px; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
+                                <!--[if (gte mso 9)|(IE)]>
+                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.deriv.com" style="height:50px;v-text-anchor:middle;width:200px;" arcsize="8%" stroke="f" fillcolor="#ff444f">
+                                    <w:anchorlock/>
+                                    <center style="color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:bold;">Add real money account</center>
+                                    </v:roundrect>
+                                <![endif]-->
+                                <a class="button" href="https://www.deriv.com" style="mso-hide:all;"><span>Add real money account</span></a>
+                            </td>
+                        </tr>
+                        <!-- COPY -->
+                        <tr>
+                            <td bgcolor="#ffffff" align="center" style="padding: 8px 30px 40px 30px; border-radius: 0px 0px 2px 2px; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px;">
+                                <p style="margin: 0;">Happy trading!</p>
+                                <p style="margin: 0;"><strong>Team Deriv</strong></p>
                             </td>
                         </tr>
                     </table>
