@@ -102,7 +102,7 @@
                 font-weight: bold;
                 font-family: 'IBM Plex Sans', Arial, sans-serif; 
                 font-size: 14px;
-                border-radius: 6px;
+                border-radius: 4px;
                 overflow: visible;
                 border: 0;
                 color: #ffffff;
@@ -111,12 +111,33 @@
             .button:hover {
                 background-color: #d43e47;
             }
+            a.button-secondary {
+                text-decoration: none;
+                text-align: center;
+                line-height: 24px;
+                padding: 15px 25px;
+                display: inline-block;
+                font-weight: 500;
+                font-family: 'IBM Plex Sans', Arial, sans-serif; 
+                font-size: 16px;
+                border-radius: 6px;
+                overflow: visible;
+                border: 0;
+                color: #ff444f;
+                border: 2px solid #ff444f;
+                background: #ffffff;
+            }
+            .button-secondary:hover {
+                background-color: #d43e47;
+                border-color: #d43e47;
+                color: #ffffff;
+            }
         </style>
     </head>
     <body style="background-color: #f3f3f3; margin: 0 !important; padding: 0 !important;">
         <!-- HIDDEN PREHEADER TEXT -->
         <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: 'IBM Plex Sans', Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
-            Hidden preheader text
+            Reset password
         </div>
         <table border="0" cellpadding="0" cellspacing="0" width="100%">
             <!-- LOGO -->
@@ -129,7 +150,7 @@
                         <tr>
                             <td align="center" valign="top" style="padding: 40px 10px 40px 10px;">
                                 <a href="https://www.deriv.com">
-                                    <img src="https://binary-com.github.io/deriv-email-templates/html/images/deriv-logo.png" width="119" height="20" border="0" style="display: block;" alt="Deriv.com">
+                                    <img src="https://binary-com.github.io/deriv-email-templates/html/images/deriv-logo.png" width="160" height="28" border="0" style="display: block;" alt="Deriv.com">
                                 </a>
                             </td>
                         </tr>
@@ -146,33 +167,37 @@
                     <![endif]-->
                     <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                         <tr>
-                            <td bgcolor="#ffffff" align="center" valign="top" style="padding: 50px 30px 40px 30px; border-top: 2px solid #ff444f;">
-                                <a href="https://www.deriv.com">
-                                    <img src="https://binary-com.github.io/deriv-email-templates/html/images/icon-verify-withdrawal.png" width="180" height="180" border="0" style="display: block; max-width: 100%;" alt="Deriv.com">
-                                </a>
+                            <td bgcolor="#ffffff" align="center" valign="top" style="padding: 40px 30px 40px 30px; border-top: 2px solid #ff444f;">
+                                    <a href="https://www.deriv.com">
+                                        <img src="https://binary-com.github.io/deriv-email-templates/html/images/withdrawal-request-received.png" width="162" height="162" border="0" style="display: block; max-width: 100%;" alt="Deriv.com">
+                                    </a>
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#ffffff" align="center" valign="top" style="padding: 0px 30px 20px 30px;">
-                                <h2 style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 40px; color: #333333; margin: 0;">Please verify your</h2>
+                            <td bgcolor="#ffffff" align="center" valign="top" style="padding: 0px 30px 0px 30px;">
+                                <h2 style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 40px; color: #333333; margin: 0;">We received a</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#ffffff" align="center" valign="top" style="padding: 0px 30px 0px 30px;">
                                 <h2 style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 40px; color: #333333; margin: 0;">withdrawal request</h2>
                             </td>
                         </tr>
                         <tr>
                             <td bgcolor="#ffffff" align="left" valign="top" style="padding: 12px 30px 20px 30px;">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px 0px 0px 0px;">Before we can proceed with the withdrawal process, we first need to check that it was you who made the request.</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px 0px 0px 0px;">To authorise the withdrawal from your [account], click on the button below.</p>
                             </td>
                         </tr>
                         <!-- button -->
                         <tr>
                             <td bgcolor="#ffffff" align="center" style="padding: 12px 30px 32px 30px; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
                                 <!--[if (gte mso 9)|(IE)]>
-                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.deriv.com" style="height:50px;v-text-anchor:middle;width:180px;" arcsize="10%" strokecolor="#ff444f" fillcolor="#ffffff">
+                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.deriv.com" style="height:50px;v-text-anchor:middle;width:200px;" arcsize="8%" stroke="f" fillcolor="#ff444f">
                                     <w:anchorlock/>
-                                    <center style="color:#ff444f;font-family:sans-serif;font-size:16px;font-weight:bold;">Yes, it's me!</center>
+                                    <center style="color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:bold;">Authorise & withdraw funds</center>
                                     </v:roundrect>
                                 <![endif]-->
-                                <a class="button" href="https://www.deriv.com" style="mso-hide:all;"><span>Yes, it's me!</span></a>
+                                <a class="button" href="https://www.deriv.com" style="mso-hide:all;"><span>Authorise & withdraw funds</span></a>
                             </td>
                         </tr>
                     </table>
@@ -187,19 +212,24 @@
                     <![endif]-->
                     <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                         <tr>
-                            <td bgcolor="#ffffff" align="left" valign="top" style="padding: 32px 30px 16px 30px; border-radius: 0px 0px 2px 2px;">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px 0px 0px 0px;">If the button doesn’t work, please copy and paste this code into the verification form.</p>
+                            <td bgcolor="#ffffff" align="left" valign="top" style="padding: 31px 30px 16px 30px;">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px 0px 0px 0px;">If you're having trouble with the button, copy and paste this link into your browser:</p>
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#ffffff" align="center" valign="top" style="padding: 0px 30px 40px 30px; border-radius: 0px 0px 2px 2px;">
-                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 100%;">
+                            <td bgcolor="#ffffff" align="left" valign="top" style="padding: 0px 30px 0px 30px;">
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                     <tr>
-                                        <td bgcolor="#f3f3f3" align="center" valign="top" style="padding: 16px 16px 16px 16px; border-radius: 0px 0px 2px 2px;">
-                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #ff444f; font-size: 16px; font-weight: bold; line-height: 24px; margin: 0px 0px 0px 0px;">n3Gb2JIG</p>
+                                        <td bgcolor="#f3f3f3" align="center" valign="top" style="padding: 16px 24px 16px 24px;">
+                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px 0px 0px 0px;"><a href="https://www.deriv.com">https://....html#token=n3Gb2JIG</a></p>
                                         </td>
                                     </tr>
                                 </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#ffffff" align="left" valign="top" style="padding: 0px 30px 40px 30px; border-radius: 0px 0px 2px 2px;">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 16px 0px 0px 0px;">If you don't want to withdraw funds from your account, you can ignore this email.</p>
                             </td>
                         </tr>
                     </table>
