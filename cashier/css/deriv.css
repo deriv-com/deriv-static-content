@@ -48,9 +48,12 @@ p {
     font-weight: bold;
 }
 .deposit-note {
+    margin-top: 4rem;
+}
+.deposit-note p {
     font-size: 1.4rem;
-    max-width: 40rem;
-    margin-top: 3.7rem;
+    line-height: 2rem;
+    margin: 0;
 }
 .transactions {
     margin-top: 6rem;
@@ -157,8 +160,8 @@ th {
 .no-margins {
     margin: 0;
 }
-.w-30 {
-    max-width: 30rem;
+.bottom-40 {
+    margin: 0 0 4rem;
 }
 
 .border {
