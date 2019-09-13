@@ -24,11 +24,13 @@ p {
     height: 100%;
     padding: 2.4rem;
     max-width: 70rem;
+    min-height: 50rem;
     margin: 0;
     margin-left: auto;
     margin-right: auto;
     display: grid;
     grid-gap: 0.4rem;
+    position: relative;
 }
 .grid {
     margin: 0;
@@ -60,9 +62,8 @@ p {
     overflow-x: auto;
 }
 .form {
-    display: inline-flex;
+    display: block;
     justify-content: center;
-    align-self: end;
     width: 100%;
     margin: 0;
 }
@@ -72,7 +73,7 @@ p {
     font-size: 1.4rem;
     padding: 1rem 1.2rem;
     margin: 1.5rem 0;
-    width: 100%;
+    width: 60%;
     display: block;
     border: solid 1px #d6dadb;
     border-radius: 4px;
@@ -93,8 +94,8 @@ fieldset {
     border-radius: 0.4rem;
     border: 0.1rem solid #d6dadb;
     padding: 0;
-    display: inline-block;
-    width: 100%;
+    display: block;
+    width: 60%;
     margin: 0 1.6rem 0 0;
 }
 fieldset legend {
@@ -162,6 +163,11 @@ th {
 }
 .bottom-40 {
     margin: 0 0 4rem;
+}
+.fixed-button {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
 }
 
 .border {
