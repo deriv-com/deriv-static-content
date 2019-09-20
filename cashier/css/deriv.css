@@ -20,17 +20,21 @@ p {
     font-size: 1.6rem;
     line-height: 2.4rem;
 }
+.preview-iframe-container {
+    height: 70rem;
+    width: 66.4rem;
+    margin: 0 auto;
+    border: 1px solid #cccccc;
+}
 .main {
     height: 100%;
-    padding: 2.4rem;
-    max-width: 70rem;
-    min-height: 60rem;
-    margin: 0;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    max-width: 100%;
     display: grid;
     grid-gap: 0.4rem;
-    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2.4rem;
 }
 .grid {
     margin: 0;
@@ -58,14 +62,15 @@ p {
     margin: 0;
 }
 .transactions {
-    margin-top: 3rem;
-    overflow-x: auto;
+    margin: 2rem 0;
+    padding: 1rem 0;
+    overflow: auto;
 }
 .form {
-    display: block;
-    justify-content: center;
-    width: 100%;
     margin: 0;
+    padding: 0;
+    display: grid;
+    grid-gap: 0.8rem;
 }
 .input {
     background: none;
@@ -135,7 +140,6 @@ table  {
     font-size: 1.4rem;
     line-height: 2rem;
     width: 100%;
-    margin: 0;
 }
 td, th {
     vertical-align: middle;
@@ -150,6 +154,9 @@ th {
     align-items: start;
 }
 .align-center {
+    align-items: center;
+}
+.align-bottom {
     align-items: center;
 }
 .justify-center {
@@ -179,4 +186,13 @@ th {
 
 .border {
     border: 1px solid #cccccc;
+}
+.align-self-top {
+    align-self: start;
+}
+.align-self-end {
+    align-self: end;
+}
+.justify-self-right {
+    justify-self: end;
 }
