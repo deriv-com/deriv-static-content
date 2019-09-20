@@ -5,23 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Withdraw cryptocurrency - step 1</title>
-    <link rel="stylesheet" type="text/css" href="https://static.deriv.app/cashier/css/deriv.css">
+    <link rel="stylesheet" type="text/css" href="./css/deriv.css">
 </head>
 <body>
-    <div class="main align-top">
-        <div class="grid align-center">
-            <p class="no-margins"><strong>Withdraw BTC to your personal wallet</strong></p>
+    <div class="preview-iframe-container">
+        <div class="main">
             <form class="form">
-                <input type="text" class="input" placeholder="BTC wallet address">
-                <fieldset>
-                    <legend>Amount</legend>
+                <div class="box align-self-top">
+                    <p class="no-margins"><strong>Withdraw BTC to your personal wallet</strong></p>
+                    <input type="text" class="input" placeholder="BTC wallet address">
+                    <fieldset>
+                        <legend>Amount</legend>
                         <input type="text" class="input">
-                </fieldset>
-                <input type="button" class="button fixed-button" value="Withdraw">
-                <p class="font-s red-color">This is error messsage</p>
+                    </fieldset>
+                    <p class="font-s red-color">This is error messsage</p>
+                    <p class="font-s"><strong>Important: Please use the address above only once.</strong></p>
+                    <p class="no-margins font-s"><strong>Note: Do not withdraw directly to a crowdfund or ICO address, as your account will not be credited with tokens from such sales.</strong></p>
+                </div>
+                <div class="box align-self-end justify-self-right">
+                    <input type="button" class="button" value="Withdraw">
+                </div>
             </form>
-            <p class="no-margins font-s"><strong>Important: Please use the address above only once.</strong></p>
-            <p class="no-margins font-s"><strong>Note: Do not withdraw directly to a crowdfund or ICO address, as your account will not be credited with tokens from such sales.</strong></p>
         </div>
     </div>
 </body>
