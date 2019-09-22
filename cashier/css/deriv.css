@@ -20,34 +20,34 @@ p {
     font-size: 1.6rem;
     line-height: 2.4rem;
 }
-.preview-iframe-container {
+.test-iframe-container {
     height: 70rem;
-    width: 66.4rem;
+    max-width: 66.4rem;
     margin: 0 auto;
     border: 1px solid #cccccc;
 }
-.main {
+.cr-container {
     height: 100%;
     width: 100%;
     max-width: 100%;
-    display: grid;
-    grid-gap: 0.4rem;
     margin-left: auto;
     margin-right: auto;
     padding: 2.4rem;
 }
-.grid {
+.cr-grid {
     margin: 0;
     padding: 0;
     display: grid;
     grid-gap: 0.8rem;
+    height: 100%;
 }
 #qrcode {
     margin: 0;
 }
 .account {
+    display: table;
     background-color: #f4f4f4;
-    margin: 0;
+    margin: 0 auto;
     padding: 0.5rem 1rem;
     font-size: 1.4rem;
     line-height: 2rem;
@@ -61,23 +61,24 @@ p {
     line-height: 2rem;
     margin: 0;
 }
-.transactions {
-    margin: 2rem 0;
-    padding: 1rem 0;
-    overflow: auto;
-}
-.form {
+.cr-cashier-form {
     margin: 0;
     padding: 0;
+    height: 100%;
     display: grid;
-    grid-gap: 0.8rem;
+    grid-row-gap: 0.8rem;
+}
+.input-group {
+    margin-top: 2.4rem;
+}
+.input-group .input {
+    margin-bottom: 3.1rem;
 }
 .input {
     background: none;
     color: black;
     font-size: 1.4rem;
     padding: 1rem 1.2rem;
-    margin: 1.5rem 0;
     width: 70%;
     display: block;
     border: solid 1px #d6dadb;
@@ -94,25 +95,6 @@ p {
 .input:focus::placeholder {
     opacity: 0;
     transition: opacity 0.25s;
-}
-fieldset {
-    border-radius: 0.4rem;
-    border: 0.1rem solid #d6dadb;
-    padding: 0;
-    display: block;
-    width: 70%;
-    margin: 0 1.6rem 0 0;
-}
-fieldset legend {
-    margin-left: 0.8rem;
-    padding: 0 0.5rem;
-    font-size: 1rem;
-    line-height: 1.4rem;
-}
-fieldset .input {
-    margin: -0.6rem 0 0;
-    width: 100%;
-    border: 0;
 }
 .button {
     text-decoration: none;
@@ -134,9 +116,11 @@ fieldset .input {
 .button:hover {
     background-color: #d43e47;
 }
+.transactions {
+    margin: 8rem 0 0;
+    overflow-x: auto;
+}
 table  {
-    border-collapse: collapse;
-    border-spacing: 0;
     font-size: 1.4rem;
     line-height: 2rem;
     width: 100%;
@@ -144,6 +128,7 @@ table  {
 td, th {
     vertical-align: middle;
     padding: 0.8rem;
+    margin: 0;
     text-align: left;
     border-bottom: 2px solid #F2F2F2;
 }
