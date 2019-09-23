@@ -5,47 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Withdraw cryptocurrency - step 2</title>
-    <link rel="stylesheet" type="text/css" href="./css/deriv.css">
+    <link rel="stylesheet" type="text/css" href="https://static.deriv.app/cashier/css/deriv.css">
 </head>
 <body>
-    <div class="main align-top">
-        <div class="grid">
-            <p class="no-margins"><strong>Withdraw BTC to your personal wallet</strong></p>
-            <form class="form">
-                <input type="text" class="input" placeholder="BTC wallet address">
-                <fieldset>
-                    <legend>Amount</legend>
-                    <input type="text" class="input">
-                </fieldset>
-                <input type="button" class="button fixed-button" value="Withdraw">
-                <p class="font-s red-color">This is error messsage</p>
+    <div class="test-iframe-container">
+        <div class="cr-container">
+            <form class="cr-cashier-form">
+                <div class="cr-grid">
+                    <div class="align-self-top">
+                        <p class="no-margins"><strong>Withdraw BTC to your personal wallet</strong></p>
+                        <div class="input-group">
+                            <input type="text" class="input" placeholder="BTC wallet address">
+                            <input type="text" class="input" placeholder="Amount (₿)">
+                        </div>
+                        <p class="font-s red-color">This is error messsage</p>
+                        <div class="transactions">
+                            <table>
+                                <tr>
+                                    <th>Pending transactions</th>
+                                    <th>Amount (BTC)</th>
+                                    <th>Date and time</th>
+                                </tr>
+                                <tr>
+                                    <td>2NEfsR6yeuF8tuF8tusetj5jhP3z7izY7frRfqu</td>
+                                    <td>0.020000000</td>
+                                    <td>2019-07-26 08:20:00 GMT</td>
+                                </tr>
+                            <tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="align-self-end justify-self-right">
+                        <input type="button" class="button" value="Withdraw">
+                    </div>
+                </div>
             </form>
-            <p class="no-margins font-s"><strong>Important: Please use the address above only once.</strong></p>
-            <p class="no-margins font-s"><strong>Note: Do not withdraw directly to a crowdfund or ICO address, as your account will not be credited with tokens from such sales.</strong></p>
-            <div class="transactions">
-                <table>
-                    <tr>
-                        <th>Pending transactions</th>
-                        <th>Amount (BTC)</th>
-                        <th>Date and time</th>
-                    </tr>
-                    <tr>
-                        <td>2NEfsR6yeuF8tuF8tusetj5jhP3z7izY7frRfqu</td>
-                        <td>0.020000000</td>
-                        <td>2019-07-26 08:20:00 GMT</td>
-                    </tr>
-                    <tr>
-                        <td>2NEfsR6yeuF8tuF8tusetj5jhP3z7izY7frRfqu</td>
-                        <td>0.020000000</td>
-                        <td>2019-07-26 08:20:00 GMT</td>
-                    </tr>
-                    <tr>
-                        <td>2NEfsR6yeuF8tuF8tusetj5jhP3z7izY7frRfqu</td>
-                        <td>0.020000000</td>
-                        <td>2019-07-26 08:20:00 GMT</td>
-                    </tr>
-                </table>
-            </div>
         </div>
     </div>
 </body>
