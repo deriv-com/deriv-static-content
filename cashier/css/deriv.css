@@ -20,30 +20,34 @@ p {
     font-size: 1.6rem;
     line-height: 2.4rem;
 }
-.main {
+.test-iframe-container {
+    height: 70rem;
+    max-width: 66.4rem;
+    margin: 0 auto;
+    border: 1px solid #cccccc;
+}
+.cr-container {
     height: 100%;
-    padding: 2.4rem;
-    max-width: 70rem;
-    min-height: 60rem;
-    margin: 0;
+    width: 100%;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-    display: grid;
-    grid-gap: 0.4rem;
-    position: relative;
+    padding: 2.4rem;
 }
-.grid {
+.cr-grid {
     margin: 0;
     padding: 0;
     display: grid;
     grid-gap: 0.8rem;
+    height: 100%;
 }
 #qrcode {
     margin: 0;
 }
 .account {
+    display: table;
     background-color: #f4f4f4;
-    margin: 0;
+    margin: 0 auto;
     padding: 0.5rem 1rem;
     font-size: 1.4rem;
     line-height: 2rem;
@@ -57,22 +61,24 @@ p {
     line-height: 2rem;
     margin: 0;
 }
-.transactions {
-    margin-top: 3rem;
-    overflow-x: auto;
-}
-.form {
-    display: block;
-    justify-content: center;
-    width: 100%;
+.cr-cashier-form {
     margin: 0;
+    padding: 0;
+    height: 100%;
+    display: grid;
+    grid-row-gap: 0.8rem;
+}
+.input-group {
+    margin-top: 2.4rem;
+}
+.input-group .input {
+    margin-bottom: 3.1rem;
 }
 .input {
     background: none;
     color: black;
     font-size: 1.4rem;
     padding: 1rem 1.2rem;
-    margin: 1.5rem 0;
     width: 70%;
     display: block;
     border: solid 1px #d6dadb;
@@ -89,25 +95,6 @@ p {
 .input:focus::placeholder {
     opacity: 0;
     transition: opacity 0.25s;
-}
-fieldset {
-    border-radius: 0.4rem;
-    border: 0.1rem solid #d6dadb;
-    padding: 0;
-    display: block;
-    width: 70%;
-    margin: 0 1.6rem 0 0;
-}
-fieldset legend {
-    margin-left: 0.8rem;
-    padding: 0 0.5rem;
-    font-size: 1rem;
-    line-height: 1.4rem;
-}
-fieldset .input {
-    margin: -0.6rem 0 0;
-    width: 100%;
-    border: 0;
 }
 .button {
     text-decoration: none;
@@ -129,17 +116,19 @@ fieldset .input {
 .button:hover {
     background-color: #d43e47;
 }
+.transactions {
+    margin: 8rem 0 0;
+    overflow-x: auto;
+}
 table  {
-    border-collapse: collapse;
-    border-spacing: 0;
     font-size: 1.4rem;
     line-height: 2rem;
     width: 100%;
-    margin: 0;
 }
 td, th {
     vertical-align: middle;
     padding: 0.8rem;
+    margin: 0;
     text-align: left;
     border-bottom: 2px solid #F2F2F2;
 }
@@ -150,6 +139,9 @@ th {
     align-items: start;
 }
 .align-center {
+    align-items: center;
+}
+.align-bottom {
     align-items: center;
 }
 .justify-center {
@@ -179,4 +171,13 @@ th {
 
 .border {
     border: 1px solid #cccccc;
+}
+.align-self-top {
+    align-self: start;
+}
+.align-self-end {
+    align-self: end;
+}
+.justify-self-right {
+    justify-self: end;
 }
