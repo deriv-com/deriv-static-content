@@ -63,7 +63,7 @@ p {
     margin: 0;
 }
 .error-message {
-    margin-top: 14.4rem;
+    padding-top: 14.4rem;
     text-align: center;
     color: #d43e47;
 }
