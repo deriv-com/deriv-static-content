@@ -20,6 +20,13 @@ p {
     font-size: 1.6rem;
     line-height: 2.4rem;
 }
+a, a:visited {
+    color: #ff444f;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
 .test-iframe-container {
     height: 70rem;
     max-width: 66.4rem;
