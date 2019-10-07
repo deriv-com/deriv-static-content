@@ -14,7 +14,8 @@ body {
     font-family: 'IBM Plex Sans', Arial, sans-serif; 
     font-size: 1.6rem;
     line-height: 2.4rem;
-    color: #0e0e0e;
+    background-color: #0e0e0e;
+    color: #c2c2c2;
 }
 p {
     font-size: 1.6rem;
@@ -54,12 +55,13 @@ a:hover {
 }
 .account {
     display: inline-block;
-    background-color: #f4f4f4;
+    background-color: #242828;
     margin: 0.8rem 0 0;
     padding: 0.5rem 1rem;
     font-size: 1.4rem;
     line-height: 2rem;
     font-weight: bold;
+    color: #ffffff;
 }
 .deposit-note {
     margin-top: 4rem;
@@ -89,17 +91,14 @@ a:hover {
 }
 .input {
     background: none;
-    color: #000000;
+    color: #c2c2c2;
     font-size: 1.4rem;
     padding: 1rem 1.2rem;
     width: 70%;
     display: block;
-    border: solid 1px #d6dadb;
+    border: solid 1px #323738;
     border-radius: 4px;
     transition: all 0.25s;
-    -webkit-transition: all 0.25s;
-    -moz-transition: all 0.25s;
-    -o-transition: all 0.25s;
 }
 .input::placeholder {
     opacity: 0.5;
@@ -107,7 +106,7 @@ a:hover {
     padding-left: 0.3rem;
 }
 .input:hover {
-    border: solid 1px #999999;
+    border: solid 1px #6e6e6e;
 }
 .input:focus {
     outline: none;
@@ -150,7 +149,7 @@ td, th {
     padding: 0.8rem;
     margin: 0;
     text-align: left;
-    border-bottom: 2px solid #F2F2F2;
+    border-bottom: 2px solid #242828;
 }
 th {
     font-weight: bold;
