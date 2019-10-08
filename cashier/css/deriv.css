@@ -303,3 +303,6 @@ input:not(:placeholder-shown) + label, input:focus + label {
     background-color: var(--color-white);
     color: var(--color-green);
 }
+.prominent {
+    font-weight: 700;
+}
