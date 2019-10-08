@@ -28,6 +28,7 @@
     --color-dark-theme-grey-5: #d6dadb;
     --color-dark-theme-black-8: #323738;
     --color-dark-theme-grey-7: #6e6e6e;
+    --color-dark-theme-red: #cc2e3d;
 
     /* sizes */
     --text-size-xxs: 1.2rem;
@@ -115,7 +116,7 @@ a:hover {
 .error-message {
     padding-top: 14.4rem;
     text-align: center;
-    color: var(--color-red);
+    color: var(--color-dark-theme-red);
 }
 .cr-cashier-form {
     margin: 0;
@@ -195,7 +196,7 @@ th {
     line-height: 2rem;
 }
 .red-color {
-    color: var(--color-red);
+    color: var(--color-dark-theme-red);
 }
 .align-self-top {
     align-self: start;
