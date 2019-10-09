@@ -93,7 +93,10 @@ a:hover {
     height: 100%;
 }
 #qrcode {
-    margin: 0;
+    width: fit-content;
+    border: 2px solid white;
+    margin-left: auto;
+    margin-right: auto;
 }
 .account {
     display: inline-block;
