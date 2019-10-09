@@ -85,6 +85,7 @@ a:hover {
     height: 100%;
 }
 #qrcode {
+    display: table;
     margin: 0;
 }
 .account {
