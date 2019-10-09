@@ -25,8 +25,8 @@
     /* Dark Theme */
     --color-dark-theme-grey: #c2c2c2;
     --color-dark-theme-black-8: #323738;
+    --color-dark-theme-black-9: #3e3e3e;
     --color-dark-theme-grey-5: #d6dadb;
-    --color-dark-theme-black-8: #323738;
     --color-dark-theme-grey-7: #6e6e6e;
     --color-dark-theme-red: #cc2e3d;
 
@@ -93,7 +93,9 @@ a:hover {
     height: 100%;
 }
 #qrcode {
+    display: table;
     margin: 0;
+    padding: 0;
 }
 .account {
     display: inline-block;
@@ -258,7 +260,7 @@ input::placeholder {
     -webkit-transition: opacity 0.25s;
     transition: opacity 0.25s;
     padding-left: 0;
-    color: var(--color-grey-5);
+    color: var(--color-dark-theme-black-9);
 }
 input:focus::-webkit-input-placeholder {
     opacity: 1;
