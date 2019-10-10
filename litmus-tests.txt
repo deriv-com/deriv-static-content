@@ -1,0 +1,58 @@
+Deposit successful
+
+https://sash-binary.github.io/deriv-email-templates/html/v2/deposit-successful.html
+https://litmus.com/pub/d119ab4
+
+----------
+
+Email already in use
+
+https://sash-binary.github.io/deriv-email-templates/html/v2/email-already-in-use.html
+https://litmus.com/pub/84317a3
+
+---------
+
+New device login
+
+https://sash-binary.github.io/deriv-email-templates/html/v2/new-device-login.html
+https://litmus.com/pub/60b6608
+
+---------
+
+Thanks for signing up
+
+https://sash-binary.github.io/deriv-email-templates/html/v2/thanks-for-signing-up.html
+https://litmus.com/pub/6ff1d94
+
+---------
+
+Verify withdrawal
+
+https://sash-binary.github.io/deriv-email-templates/html/v2/verify-withdrawal.html
+https://litmus.com/pub/d32a031
+
+--------
+
+Welcome virtual not trading
+
+https://sash-binary.github.io/deriv-email-templates/html/v2/welcome-vr-not-trading.html
+https://litmus.com/pub/3eafbca
+
+--------
+
+You have new password
+
+https://sash-binary.github.io/deriv-email-templates/html/v2/you-have-new-password.html
+https://litmus.com/pub/29c7abb
+
+--------
+
+Forgot password
+
+https://sash-binary.github.io/deriv-email-templates/html/v2/forgot-password.html
+https://litmus.com/pub/7cdbac3
+
+--------
+
+Forgot password - social
+
