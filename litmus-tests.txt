@@ -93,3 +93,20 @@ Need proof of identity
 
 https://sash-binary.github.io/deriv-email-templates/html/v2/need-proof-of-identity.html
 https://litmus.com/pub/9083de8
+
+--------
+
+We’re processing your withdrawal request
+
+https://sash-binary.github.io/deriv-email-templates/html/v2/processing-withdrawal-request.html
+https://litmus.com/pub/a64ddcb
+
+--------
+
+We’ve completed your withdrawal request
+
+https://sash-binary.github.io/deriv-email-templates/html/v2/withdrawal-completed.html
+https://litmus.com/pub/297d76c
+
+--------
+
