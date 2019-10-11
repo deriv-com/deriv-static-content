@@ -110,3 +110,7 @@ https://litmus.com/pub/297d76c
 
 --------
 
+Your proof of identity is verified
+
+https://sash-binary.github.io/deriv-email-templates/html/v2/proof-identity-verified.html
+https://litmus.com/pub/717634a
