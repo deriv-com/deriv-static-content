@@ -63,4 +63,33 @@ https://litmus.com/pub/88b1b1c
 
 Welcome VR trading
 
+https://sash-binary.github.io/deriv-email-templates/html/v2/welcome-vr-trading.html
 https://litmus.com/pub/fe7b4b5
+
+--------
+
+Welcome SVG no deposit
+
+https://sash-binary.github.io/deriv-email-templates/html/v2/welcome-svg-no-deposit.html
+https://litmus.com/pub/0ea60dd
+
+--------
+
+Welcome SVG get deposit
+
+https://sash-binary.github.io/deriv-email-templates/html/v2/welcome-svg-get-deposit.html
+https://litmus.com/pub/ea14edb
+
+--------
+
+Funds added
+
+https://sash-binary.github.io/deriv-email-templates/html/v2/funds-added.html
+https://litmus.com/pub/1dbc6e4
+
+--------
+
+Need proof of identity
+
+https://sash-binary.github.io/deriv-email-templates/html/v2/need-proof-of-identity.html
+https://litmus.com/pub/9083de8
