@@ -114,3 +114,10 @@ Your proof of identity is verified
 
 https://sash-binary.github.io/deriv-email-templates/html/v2/proof-identity-verified.html
 https://litmus.com/pub/717634a
+
+--------
+
+We received a withdrawal request
+
+file:///Users/sash/repos/deriv-email-templates/html/v2/withdrawal-request-received.html
+https://litmus.com/pub/40ae186
