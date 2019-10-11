@@ -57,4 +57,10 @@ https://litmus.com/pub/7cdbac3
 Forgot password - social
 
 https://sash-binary.github.io/deriv-email-templates/html/v2/forgot-password-social.html
-https://litmus.com/pub/null
+https://litmus.com/pub/88b1b1c
+
+--------
+
+Welcome VR trading
+
+https://litmus.com/pub/fe7b4b5
