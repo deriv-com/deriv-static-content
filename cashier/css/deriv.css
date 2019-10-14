@@ -139,8 +139,9 @@ a:hover {
     background-color: var(--color-red-3);
 }
 .transactions {
-    margin-top: 4rem;
+    margin: 0;
     overflow-x: auto;
+    padding: 3rem 0;
 }
 table  {
     font-size: var(--text-size-xs);
