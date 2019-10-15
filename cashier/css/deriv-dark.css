@@ -89,7 +89,7 @@ a:hover {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-gap: 00;
+    grid-gap: 0;
     height: 100%;
 }
 #qrcode {
@@ -124,13 +124,11 @@ a:hover {
     margin: 0;
     padding: 0;
     height: 100%;
-    display: grid;
-    grid-row-gap: 0.8rem;
 }
 .button {
     text-decoration: none;
     text-align: center;
-    margin-top: 0.7rem;
+    margin: 0;
     padding: 0.8rem 1.6rem;
     display: inline-block;
     font-weight: bold;
@@ -143,7 +141,6 @@ a:hover {
     color: var(--color-white);
     background: var(--color-red);
     cursor: pointer;
-    width: 100%;
 }
 .button:hover {
     background-color: var(--color-red-3);
@@ -223,7 +220,7 @@ label, input {
     transition: all 0.2s;
     touch-action: manipulation;
 }
-input {
+input[type="text"], input[type="number"]{
     display: block;
     font-size: 1.4rem;
     border: 0;
@@ -233,7 +230,8 @@ input {
     border-radius: 0.4rem;
     padding: 1rem 1.2rem;
     cursor: text;
-    width: 70%;
+    width: 40rem;
+    max-width: 95%;
     color: var(--color-white);
     background-color: var(--color-black);
 }
@@ -300,4 +298,10 @@ input:not(:placeholder-shown) + label, input:focus + label {
 .prominent {
     color: var(--color-white);
     font-weight: 700;
+}
+.cr-form-cta {
+    text-align: right;
+    width: 40rem;
+    max-width: 95%;
+    margin-bottom: 4.2rem;
 }
