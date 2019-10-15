@@ -8,46 +8,40 @@
     <link rel="stylesheet" type="text/css" href="https://static.deriv.app/cashier/css/deriv-dark.css">
 </head>
 <body>
-    <div class="cr-container">
-        <form class="cr-cashier-form">
-            <div class="cr-grid">
-                <div class="align-self-top">
-                    <p class="no-margins prominent">Withdraw BTC to your personal wallet</p>
-                    <div class="crypto-form">
-                        <div class="input-field">
-                            <input type="text" name="wallet" id="wallet" placeholder="Please enter your BTC wallet address">
-                            <label for="wallet">BTC wallet address</label>
-                        </div>
-                        <div class="input-field">
-                            <input type="number" name="amount" id="amount" placeholder="Please enter BTC amount">
-                            <label for="amount">Amount (₿)</label>
-                        </div>
-                    </div>
-
-                    <p class="font-s red-color">This is error messsage</p>
-                    <p class="font-s prominent">Important: Please use the address above only once.</p>
-                    <p class="no-margins font-s prominent">Note: Do not withdraw directly to a crowdfund or ICO address, as your account will not be credited with tokens from such sales.</p>
-                    <div class="transactions">
-                        <table width="100%" cellpadding="0" cellspacing="0">
-                            <tr>
-                                <th>Pending transactions</th>
-                                <th>Amount (BTC)</th>
-                                <th>Date and time</th>
-                            </tr>
-                            <tr>
-                                <td><a href="#">2NEfsR6yeuF8tuF8tusetj5jhP3z7izY7frRfqu</a></td>
-                                <td>0.020000000</td>
-                                <td>2019-07-26 08:20:00 GMT</td>
-                            </tr>
-                        <tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="align-self-end justify-self-right">
+    <form class="cr-cashier-form">
+        <p class="no-margins prominent">Withdraw BTC to your personal wallet</p>
+        <div class="crypto-form">
+            <div class="input-field">
+                <input type="text" name="wallet" id="wallet" placeholder="Please enter your BTC wallet address">
+                <label for="wallet">BTC wallet address</label>
+            </div>
+            <div class="input-field">
+                <input type="number" name="amount" id="amount" placeholder="Please enter BTC amount">
+                <label for="amount">Amount (₿)</label>
+            </div>
+            <div class="cr-form-cta">
                     <input type="button" class="button" value="Withdraw">
                 </div>
-            </div>
-        </form>
-    </div>
+        </div>
+        
+        <p class="font-s red-color">This is error messsage</p>
+        <p class="font-s prominent">Important: Please use the address above only once.</p>
+        <p class="no-margins font-s prominent">Note: Do not withdraw directly to a crowdfund or ICO address, as your account will not be credited with tokens from such sales.</p>
+        <div class="transactions">
+            <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                    <th>Pending transactions</th>
+                    <th>Amount (BTC)</th>
+                    <th>Date and time</th>
+                </tr>
+                <tr>
+                    <td><a href="#">2NEfsR6yeuF8tuF8tusetj5jhP3z7izY7frRfqu</a></td>
+                    <td>0.020000000</td>
+                    <td>2019-07-26 08:20:00 GMT</td>
+                </tr>
+            <tr>
+            </table>
+        </div>
+    </form>
 </body>
 </html>
