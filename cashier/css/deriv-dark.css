@@ -261,6 +261,9 @@ input::placeholder {
     padding-left: 0;
     color: var(--color-dark-theme-black-9);
 }
+input:-ms-input-placeholder {
+    opacity: 0;
+}
 input:focus::-webkit-input-placeholder {
     opacity: 1;
 }
