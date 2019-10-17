@@ -282,14 +282,6 @@ input:focus:-ms-input-placeholder {
 input:focus::placeholder {
     opacity: 1;
 }
-input:placeholder-shown + label {
-    cursor: text;
-    max-width: 66.66%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    transform: translate(0, 0) scale(1);
-}
 ::-webkit-input-placeholder {
     opacity: 0;
     transition: inherit;
@@ -297,8 +289,21 @@ input:placeholder-shown + label {
 input:focus::-webkit-input-placeholder {
     opacity: 1;
 }
-input:not(:placeholder-shown) + label, input:focus + label {
+
+input:placeholder-shown  ~ label {
+    cursor: text;
+    max-width: 66.66%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform: translate(0, 0) scale(1);
+    -webkit-transform: translate(0, 0) scale(1);
+    -ms-transform: translate(0, 0) scale(1);
+}
+input:focus ~ label {
     transform: translate(0, -2.5rem) scale(0.7);
+    -webkit-transform: translate(0, -2.5rem) scale(0.7);
+    -ms-transform: translate(0, -2.5rem) scale(0.7);
     cursor: pointer;
     background-color: var(--color-white);
     color: var(--color-green);
