@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,700&display=swap');
+:root {
+    /* colors */
+    --color-black: #0e0e0e;
+    --color-black-2: #2a2a2a;
+    --color-black-3: #333333;
+    --color-black-4: #182039;
+    --color-white: #ffffff;
+    --color-red: #ff444f;
+    --color-red-1: #dd573a;
+    --color-red-2: #ffc9cc;
+    --color-red-3: #d43e47;
+    --color-grey: #9b9b9b;
+    --color-grey-1: #f4f4f4;
+    --color-grey-2: #e8e8e8;
+    --color-grey-3: #646464;
+    --color-grey-4: #fafbfb;
+    --color-grey-5: #999999;
+    --color-grey-6: #e6e9e9;
+    --color-green: #85acb0;
+    --color-blue: #4c76be;
+    --color-blue-2: #365899;
+    --color-yellow: #fff2df;
+
+    /* Dark Theme */
+    --color-dark-theme-grey: #c2c2c2;
+    --color-dark-theme-black-8: #323738;
+    --color-dark-theme-black-9: #3e3e3e;
+    --color-dark-theme-grey-5: #d6dadb;
+    --color-dark-theme-grey-7: #6e6e6e;
+    --color-dark-theme-red: #cc2e3d;
+
+    /* sizes */
+    --text-size-xxs: 1.2rem;
+    --text-size-xs: 1.4rem;
+    --text-size-s: 1.6rem;
+    --text-size-sm: 2rem;
+    --text-size-m: 2.4rem;
+    --text-size-l: 3.2rem;
+    --text-size-xl: 4.8rem;
+    --text-size-xxl: 6.4rem;
+}
+* {
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'IBM Plex Sans', Arial, sans-serif; 
+    font-size: var(--text-size-s);
+    line-height: 2.4rem;
+    color: var(--color-dark-theme-grey);
+    background-color: var(--color-black);
+}
+p {
+    font-size: var(--text-size-s);
+    line-height: 2.4rem;
+}
+a, a:visited {
+    color: var( --color-red);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.test-iframe-container {
+    height: 70rem;
+    max-width: 66.4rem;
+    margin: 0 auto;
+    border: 1px solid var(--color-white);
+    padding: 1rem;
+}
+.cr-container {
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+}
+.cr-grid {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-gap: 0;
+    height: 100%;
+}
+#qrcode {
+    display: table;
+    margin: 0;
+    padding: 0;
+}
+.account {
+    display: inline-block;
+    background-color: var(--color-dark-theme-black-8);
+    margin: 0.8rem 0 0;
+    padding: 0.5rem 1rem;
+    font-size: var(--text-size-xs);
+    color: var(--color-dark-theme-grey);
+    line-height: 2rem;
+    font-weight: bold;
+}
+.deposit-note {
+    margin-top: 4rem;
+}
+.deposit-note p {
+    font-size: var(--text-size-xs);
+    line-height: 2rem;
+    margin: 0;
+}
+.error-message {
+    padding-top: 14.4rem;
+    text-align: center;
+    color: var(--color-dark-theme-red);
+}
+.cr-cashier-form {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.button {
+    text-decoration: none;
+    text-align: center;
+    margin: 0;
+    padding: 0.8rem 1.6rem;
+    display: inline-block;
+    font-weight: bold;
+    font-family: 'IBM Plex Sans', Arial, sans-serif; 
+    font-size: 1.4rem;
+    line-height: 2rem;
+    border-radius: 4px;
+    overflow: visible;
+    border: 0;
+    color: var(--color-white);
+    background: var(--color-red);
+    cursor: pointer;
+}
+.button:hover {
+    background-color: var(--color-red-3);
+}
+.transactions {
+    margin: 0;
+    overflow-x: auto;
+    padding: 3rem 0;
+}
+table  {
+    font-size: var(--text-size-xs);
+    line-height: 2rem;
+    width: 100%;
+}
+td, th {
+    vertical-align: middle;
+    padding: 0.8rem;
+    margin: 0;
+    text-align: left;
+    border-bottom: 2px solid var(--color-dark-theme-black-8);
+}
+th {
+    font-weight: bold;
+}
+.align-top {
+    align-items: start;
+}
+.align-center {
+    align-items: center;
+}
+.align-bottom {
+    align-items: center;
+}
+.justify-center {
+    justify-items: center;
+}
+.center-text {
+    text-align: center;
+}
+.no-margins {
+    margin: 0;
+}
+.bottom-40 {
+    margin: 0 0 4rem;
+}
+.fixed-button {
+    position: absolute;
+    bottom: 2.4rem;
+    right: 2.4rem;
+}
+.font-s {
+    font-size: var(--text-size-xs);
+    line-height: 2rem;
+}
+.red-color {
+    color: var(--color-dark-theme-red);
+}
+.align-self-top {
+    align-self: start;
+}
+.align-self-end {
+    align-self: end;
+}
+.justify-self-right {
+    justify-self: end;
+}
+/* Crypto Form */
+.crypto-form {
+    margin-top: 2.4rem;
+}  
+.input-field {
+    margin-bottom: 3.1rem;
+    padding: 0;
+    position: relative;
+}
+label, input {
+    transition: all 0.2s;
+    touch-action: manipulation;
+}
+input[type="text"], input[type="number"]{
+    display: block;
+    font-size: 1.4rem;
+    border: 0;
+    border: solid 1px var(--color-dark-theme-black-8);
+    font-family: inherit;
+    -webkit-appearance: none;
+    border-radius: 0.4rem;
+    padding: 1rem 1.2rem;
+    cursor: text;
+    width: 40rem;
+    max-width: 95%;
+    color: var(--color-white);
+    background-color: var(--color-black);
+}
+input:hover {
+    border-color: var(--color-dark-theme-grey-7);
+}
+input:focus {
+    outline: 0;
+    border: 1px solid var(--color-green);;
+}
+label {
+    position: absolute;
+    top: 0.7rem;
+    left: 1rem;
+    font-size: 1.4rem;
+    color: var(--color-grey-5);
+    padding: 0 0.4rem;
+    pointer-events: none;
+    transition: 0.25s ease transform;
+    transform-origin: left bottom;
+    background: transparent;
+}
+input::placeholder {
+    opacity: 0;
+    -webkit-transition: opacity 0.25s;
+    transition: opacity 0.25s;
+    padding-left: 0;
+    color: var(--color-dark-theme-black-9);
+}
+input:-ms-input-placeholder {
+    opacity: 0;
+}
+::-ms-input-placeholder {
+    opacity: 0;
+}
+input:focus::-webkit-input-placeholder {
+    opacity: 1;
+}
+input:focus::-moz-placeholder {
+    opacity: 1;
+}
+input:focus:-ms-input-placeholder {
+    opacity: 1;
+}
+input:focus::placeholder {
+    opacity: 1;
+}
+input:placeholder-shown + label {
+    cursor: text;
+    max-width: 66.66%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform: translate(0, 0) scale(1);
+}
+::-webkit-input-placeholder {
+    opacity: 0;
+    transition: inherit;
+}
+input:focus::-webkit-input-placeholder {
+    opacity: 1;
+}
+input:not(:placeholder-shown) + label, input:focus + label {
+    transform: translate(0, -2.5rem) scale(0.7);
+    cursor: pointer;
+    background-color: var(--color-black);
+    color: var(--color-green);
+    transition: all 0.25s;
+}
+.prominent {
+    color: var(--color-white);
+    font-weight: 700;
+}
+.cr-form-cta {
+    text-align: right;
+    width: 40rem;
+    max-width: 95%;
+    margin-bottom: 4.2rem;
+}
