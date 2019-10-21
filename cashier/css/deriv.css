@@ -210,7 +210,7 @@ label, input {
     transition: all 0.2s;
     touch-action: manipulation;
 }
-input[type="text"], input[type="number"]{
+input[type="text"] {
     display: block;
     font-size: 1.4rem;
     border: 0;
@@ -242,55 +242,55 @@ label {
     transition: 0.25s ease transform;
     transform-origin: left bottom;
 }
-input::-webkit-input-placeholder {
+input[type="text"]::-webkit-input-placeholder {
     opacity: 0;
     -webkit-transition: opacity 0.25s;
     transition: opacity 0.25s;
     padding-left: 0.3rem;
     color: var(--color-grey-5);
 }
-input::-moz-placeholder {
+input[type="text"]::-moz-placeholder {
     opacity: 0;
     -webkit-transition: opacity 0.25s;
     transition: opacity 0.25s;
     padding-left: 0.3rem;
     color: var(--color-grey-5);
 }
-input:-ms-input-placeholder {
+input[type="text"]:-ms-input-placeholder {
     opacity: 0;
     -webkit-transition: opacity 0.25s;
     transition: opacity 0.25s;
     padding-left: 0.3rem;
     color: var(--color-grey-5);
 }
-input::placeholder {
+input[type="text"]::placeholder {
     opacity: 0;
     -webkit-transition: opacity 0.25s;
     transition: opacity 0.25s;
     padding-left: 0;
     color: var(--color-grey-5);
 }
-input:focus::-webkit-input-placeholder {
+input[type="text"]:focus::-webkit-input-placeholder {
     opacity: 1;
 }
-input:focus::-moz-placeholder {
+input[type="text"]:focus::-moz-placeholder {
     opacity: 1;
 }
-input:focus:-ms-input-placeholder {
+input[type="text"]t:focus:-ms-input-placeholder {
     opacity: 1;
 }
-input:focus::placeholder {
+input[type="text"]:focus::placeholder {
     opacity: 1;
 }
-::-webkit-input-placeholder {
+input[type="text"]::-webkit-input-placeholder {
     opacity: 0;
     transition: inherit;
 }
-input:focus::-webkit-input-placeholder {
+input[type="text"]:focus::-webkit-input-placeholder {
     opacity: 1;
 }
 
-input:placeholder-shown  ~ label {
+input[type="text"]:placeholder-shown  ~ label {
     cursor: text;
     max-width: 66.66%;
     white-space: nowrap;
@@ -300,7 +300,7 @@ input:placeholder-shown  ~ label {
     -webkit-transform: translate(0, 0) scale(1);
     -ms-transform: translate(0, 0) scale(1);
 }
-input:focus ~ label {
+input[type="text"]:focus ~ label {
     transform: translate(0, -2.5rem) scale(0.7);
     -webkit-transform: translate(0, -2.5rem) scale(0.7);
     -ms-transform: translate(0, -2.5rem) scale(0.7);
@@ -308,6 +308,15 @@ input:focus ~ label {
     background-color: var(--color-white);
     color: var(--color-green);
 }
+
+input[type="text"]:not(:focus):not(:invalid) ~ label {
+    transform: translate(0, -2.5rem) scale(0.7);
+    -webkit-transform: translate(0, -2.5rem) scale(0.7);
+    -ms-transform: translate(0, -2.5rem) scale(0.7);
+    cursor: pointer;
+    background-color: var(--color-white);
+}
+
 .prominent {
     font-weight: 700;
 }
