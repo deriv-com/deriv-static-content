@@ -95,7 +95,6 @@ a:hover {
 #qrcode {
     display: table;
     margin: 0;
-    padding: 0;
 }
 .account {
     display: inline-block;
@@ -103,7 +102,6 @@ a:hover {
     margin: 0.8rem 0 0;
     padding: 0.5rem 1rem;
     font-size: var(--text-size-xs);
-    color: var(--color-dark-theme-grey);
     line-height: 2rem;
     font-weight: bold;
 }
@@ -118,7 +116,7 @@ a:hover {
 .error-message {
     padding-top: 14.4rem;
     text-align: center;
-    color: var(--color-dark-theme-red);
+    color: var(--color-red);
 }
 .cr-cashier-form {
     margin: 0;
@@ -196,7 +194,7 @@ th {
     line-height: 2rem;
 }
 .red-color {
-    color: var(--color-dark-theme-red);
+    color: var(--color-red);
 }
 .align-self-top {
     align-self: start;
@@ -220,7 +218,7 @@ label, input {
     transition: all 0.2s;
     touch-action: manipulation;
 }
-input[type="text"], input[type="number"]{
+input[type="text"] {
     display: block;
     font-size: 1.4rem;
     border: 0;
@@ -240,7 +238,7 @@ input:hover {
 }
 input:focus {
     outline: 0;
-    border: 1px solid var(--color-green);;
+    border: 1px solid var(--color-green);
 }
 label {
     position: absolute;
@@ -252,38 +250,56 @@ label {
     pointer-events: none;
     transition: 0.25s ease transform;
     transform-origin: left bottom;
-    background: transparent;
 }
-input::placeholder {
+input[type="text"]::-webkit-input-placeholder {
+    opacity: 0;
+    -webkit-transition: opacity 0.25s;
+    transition: opacity 0.25s;
+    padding-left: 0.3rem;
+    color: var(--color-dark-theme-black-9);
+}
+input[type="text"]::-moz-placeholder {
+    opacity: 0;
+    -webkit-transition: opacity 0.25s;
+    transition: opacity 0.25s;
+    padding-left: 0.3rem;
+    color: var(--color-dark-theme-black-9);
+}
+input[type="text"]:-ms-input-placeholder {
+    opacity: 0;
+    -webkit-transition: opacity 0.25s;
+    transition: opacity 0.25s;
+    padding-left: 0.3rem;
+    color: var(--color-dark-theme-black-9);
+}
+input[type="text"]::placeholder {
     opacity: 0;
     -webkit-transition: opacity 0.25s;
     transition: opacity 0.25s;
     padding-left: 0;
     color: var(--color-dark-theme-black-9);
 }
-input:-ms-input-placeholder {
-    opacity: 0;
-}
-input:focus::-webkit-input-placeholder {
+input[type="text"]:focus::-webkit-input-placeholder {
     opacity: 1;
 }
-input:focus::-moz-placeholder {
+input[type="text"]:focus::-moz-placeholder {
     opacity: 1;
 }
-input:focus:-ms-input-placeholder {
+input[type="text"]t:focus:-ms-input-placeholder {
     opacity: 1;
 }
-input:focus::placeholder {
+input[type="text"]:focus::placeholder {
     opacity: 1;
 }
-::-webkit-input-placeholder {
+input[type="text"]::-webkit-input-placeholder {
     opacity: 0;
     transition: inherit;
 }
-input:focus::-webkit-input-placeholder {
+input[type="text"]:focus::-webkit-input-placeholder {
     opacity: 1;
 }
-input:placeholder-shown  ~ label {
+
+input[type="text"]:placeholder-shown  ~ label {
     cursor: text;
     max-width: 66.66%;
     white-space: nowrap;
@@ -293,17 +309,24 @@ input:placeholder-shown  ~ label {
     -webkit-transform: translate(0, 0) scale(1);
     -ms-transform: translate(0, 0) scale(1);
 }
-input:focus ~ label {
+input[type="text"]:focus ~ label {
     transform: translate(0, -2.5rem) scale(0.7);
     -webkit-transform: translate(0, -2.5rem) scale(0.7);
     -ms-transform: translate(0, -2.5rem) scale(0.7);
     cursor: pointer;
     background-color: var(--color-black);
     color: var(--color-green);
-    transition: all 0.25s;
 }
+
+input[type="text"]:not(:focus):not(:invalid) ~ label {
+    transform: translate(0, -2.5rem) scale(0.7);
+    -webkit-transform: translate(0, -2.5rem) scale(0.7);
+    -ms-transform: translate(0, -2.5rem) scale(0.7);
+    cursor: pointer;
+    background-color: var(--color-black);
+}
+
 .prominent {
-    color: var(--color-white);
     font-weight: 700;
 }
 .cr-form-cta {
