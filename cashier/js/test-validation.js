@@ -1,5 +1,17 @@
 const FloatLabel = (() => {
 
+    const amountField = document.getElementById('amount');
+    
+    amountField.addEventListener('keyup', function (event) {
+    isValidAmount = amountField.checkValidity();
+    
+    if ( isValidAmount ) {
+        console.log('ok')
+    } else {
+        console.log('invalid')
+    }
+    });
+
 	// add active class
 	const handleFocus = (e) => {
 		const target = e.target;
