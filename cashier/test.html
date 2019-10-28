@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Withdraw cryptocurrency - step 2</title>
     <link rel="stylesheet" type="text/css" href="./css/deriv.css">
+    <link rel="stylesheet" type="text/css" href="./css/form-test.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/validate.js"></script>
 </head>
 <body>
     <form class="cr-cashier-form">
@@ -16,7 +19,7 @@
                 <label for="wallet">BTC wallet address</label>
             </div>
             <div class="input-field">
-                <input type="text" name="amount" id="amount" autocomplete="off" required placeholder="Please enter amount">
+                <input type="number" name="amount" id="amount" autocomplete="off" required placeholder="Please enter amount">
                 <label for="amount">Amount (₿)</label>
             </div>
             <div class="cr-form-cta">
@@ -24,6 +27,7 @@
                 </div>
         </div>
         
+        <div class="error-msg"><p></p></div>
         <p class="font-s red-color">This is error messsage</p>
         <p class="font-s prominent">Important: Please use the address above only once.</p>
         <p class="no-margins font-s prominent">Note: Do not withdraw directly to a crowdfund or ICO address, as your account will not be credited with tokens from such sales.</p>
