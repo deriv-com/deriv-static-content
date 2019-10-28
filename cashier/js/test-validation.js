@@ -22,7 +22,7 @@ const FloatLabel = (() => {
 	// remove active class
 	const handleBlur = (e) => {
 		const target = e.target;
-		if (!target.value) {
+		if (!target.value && isValidAmount) {
 			target.parentNode.classList.remove('active');
 		}
 		target.removeAttribute('placeholder');
