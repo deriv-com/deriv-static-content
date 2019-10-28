@@ -43,6 +43,7 @@ $(document).ready(function () {
          
             e.preventDefault();
             displayErrorMessage($amount, 'Please enter a valid number');
+            console.log('error');
             return false;
         }
         return true;
