@@ -1,0 +1,43 @@
+<form class="cr-cashier-form">
+        <input type='hidden' name='csrf_token' value="<%= $csrf_token %>" />
+        <input type='hidden' name='brand' value="deriv" />
+        <input type='hidden' name='theme' value="<%= $theme %>" />
+        <p class="no-margins prominent"><%= l('Withdraw [_1] ([_2]) to your personal wallet', $currency->{name}, $currency->{code}) %></p>
+        <div class="crypto-form">
+            <div class="input-field">
+                <input type="text" name="address" id="address" pattern="^[a-zA-Z0-9:?]+$" required="required" minlength="25" maxlength="64" autocomplete="off">
+                <label for="address"><%= l('[_1] wallet address', $currency->{code}) %></label>
+            </div>
+            <div class="input-field">
+                <input class="crypto-amount" type="text" name="amount" id="amount" min="<%= $min_withdrawal %>" step="any" data-precision="<%= $precision %>">
+                <label for="amount"><%= l('Amount ([_1])', $currency->{code}) %></label>
+            </div>
+            <div class="cr-form-cta">
+                <input type="submit" class="button" value="<%= l('Withdraw') %>">
+            </div>
+        </div>
+        <% if (stash('error')) { %>
+        <p class="font-s red-color"><%= stash('error') %></p>
+        <% } %> 
+        <p class="font-s prominent"><%= l('Important: Please use the address above only once.') %></p>
+        <p class="no-margins font-s prominent"><%= l('Note: Do not withdraw directly to a crowdfund or ICO address, as your account will not be credited with tokens from such sales.') %></p>
+        <% if (@$trxs) { %>
+        <div class="transactions">
+            <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                    <th><%= l('Pending transactions') %></th>
+                    <th><%= l('Amount ([_1])', $currency->{code}) %></th>
+                    <th><%= l('Date and time') %></th>
+                </tr>
+                <% foreach my $trx (@$trxs) { %>
+                <tr>
+                    <td><a href="<%= $blockchain_address %><%= $trx->{address} %>" target="_blank"><%= $trx->{address} %></a></td>
+                    <td><%= $trx->{amount} %></td>
+                    <td><%= $trx->{creation_date} %> GMT</td>
+                </tr>
+                <% } %>
+            <tr>
+            </table>
+        </div>
+        <% } %>
+    </form>
