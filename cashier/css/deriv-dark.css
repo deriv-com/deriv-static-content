@@ -285,7 +285,7 @@ input[type="text"]:focus::-webkit-input-placeholder {
 input[type="text"]:focus::-moz-placeholder {
     opacity: 1;
 }
-input[type="text"]t:focus:-ms-input-placeholder {
+input[type="text"]:focus:-ms-input-placeholder {
     opacity: 1;
 }
 input[type="text"]:focus::placeholder {

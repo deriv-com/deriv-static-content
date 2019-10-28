@@ -5,26 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Withdraw cryptocurrency - step 2</title>
-    <link rel="stylesheet" type="text/css" href="./css/deriv.css">
-    <link rel="stylesheet" type="text/css" href="./css/form-test.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="js/validate.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/deriv-test.css">
 </head>
 <body>
-    <form class="cr-cashier-form">
+    <div class="test-iframe-container">
+    <form action="#submit" method="post" class="cr-cashier-form">
         <p class="no-margins prominent">Withdraw BTC to your personal wallet</p>
+
         <div class="crypto-form">
-            <div class="input-field">
-                <input type="text" name="wallet" id="wallet"  autocomplete="off" required placeholder="Please enter your BTC wallet address">
-                <label for="wallet">BTC wallet address</label>
+            <div class="float-container">
+                <label for="address">BTC wallet address</label>
+                <input type="text" name="address" id="address" pattern="^[a-zA-Z0-9:?]+$" minlength="25" maxlength="64" autocomplete="off" data-placeholder="Please enter your BTC wallet address" required>
             </div>
-            <div class="input-field">
-                <input class="crypto-amount" type="text" name="amount" id="amount" autocomplete="off" required placeholder="Please enter amount">
+            <div class="float-container">
                 <label for="amount">Amount (₿)</label>
+                <input type="text" name="amount" id="amount" min="0.00265412" autocomplete="off" data-placeholder="Please enter amount" required>
             </div>
             <div class="cr-form-cta">
-                    <input type="button" class="button" value="Withdraw">
-                </div>
+                <input type="submit" class="button" value="Withdraw">
+            </div>
         </div>
         
         <div class="error-msg"><p></p></div>
@@ -47,5 +46,7 @@
             </table>
         </div>
     </form>
+    </div>
+    <script src="./js/test-validation.js"></script>
 </body>
 </html>
