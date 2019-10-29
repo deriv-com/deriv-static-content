@@ -23,6 +23,12 @@ const FloatLabel = (() => {
         if ( !isValidAmount && amountField.value ) {
            console.log('invalid' + ' ' + amountField.value)
            amountField.parentNode.classList.add('error');
+
+        } else if (isNaN(amountField.parnetNodeValue)) {
+          console.log("Must input numbers");
+          amountField.parentNode.classList.add('error');
+          return false;
+
         } else {
            console.log('ok')
            amountField.parentNode.classList.remove('error');
@@ -38,10 +44,12 @@ const FloatLabel = (() => {
 
 	// remove active class
 	const handleBlur = (e) => {
-		const target = e.target;
+        const target = e.target;
+
 		if (!target.value ) {
             target.parentNode.classList.remove('active', 'error');
-		}
+
+        } 
 		target.removeAttribute('placeholder');
 	};
 
