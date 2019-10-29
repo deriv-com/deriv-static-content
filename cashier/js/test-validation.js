@@ -1,17 +1,24 @@
 const FloatLabel = (() => {
 
     const amountField = document.getElementById('amount');
+
+    // validate amount input
+    function validInput(value) {
+        var precision = $('.crypto-amount').data('precision') || 8;
+        var re = new RegExp('^\\d{1,15}\.?\\d{0,' + precision + '}$');
+        return re.test(value);
+    }
     
     amountField.addEventListener('keyup', function (event) {
     isValidAmount = amountField.checkValidity();
     
-    if ( !isValidAmount ) {
-        console.log('invalid')
-        amountField.parentNode.classList.add('error');
-    } else {
-        console.log('ok')
-        amountField.parentNode.classList.remove('error');
-    }
+        if ( !isValidAmount ) {
+            console.log('invalid')
+            amountField.parentNode.classList.add('error');
+        } else {
+            console.log('ok')
+            amountField.parentNode.classList.remove('error');
+        }
     });
 
 	// add active class
