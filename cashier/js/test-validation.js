@@ -5,10 +5,12 @@ const FloatLabel = (() => {
     amountField.addEventListener('keyup', function (event) {
     isValidAmount = amountField.checkValidity();
     
-    if ( isValidAmount ) {
-        console.log('ok')
-    } else {
+    if ( !isValidAmount ) {
         console.log('invalid')
+        amountField.parentNode.classList.add('error');
+    } else {
+        console.log('ok')
+        amountField.parentNode.classList.remove('error');
     }
     });
 
