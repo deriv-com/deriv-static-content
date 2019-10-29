@@ -278,6 +278,10 @@ th {
 	color: var(--color-green);
 	border-color: var(--color-green);
 }
+.float-container.error {
+	color: var(--color-red);
+	border-color: var(--color-red);
+}
 
 .float-container input {
 	border: none;
@@ -306,4 +310,9 @@ th {
 	transform: translate(0, -1rem) scale(0.7);
 	background-color: var(--color-white);
 	color: var(--color-green);
+}
+.float-container.error label {
+	transform: translate(0, -1rem) scale(0.7);
+	background-color: var(--color-white);
+	color: var(--color-red);
 }
