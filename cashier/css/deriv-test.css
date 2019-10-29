@@ -322,3 +322,12 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none; 
   margin: 0; 
 }
+
+.error-note {
+    display: block;
+    margin-top: -3rem;
+    margin-bottom: 3.1rem;
+    font-size: var(--text-size-xs);
+    text-align: left;
+    color: var(--color-red);
+}

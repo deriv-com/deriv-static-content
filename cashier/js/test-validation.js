@@ -1,23 +1,31 @@
 const FloatLabel = (() => {
 
     const amountField = document.getElementById('amount');
+    const addressField = document.getElementById('address');
 
-    // validate amount input
-    function validInput(value) {
-        var precision = $('.crypto-amount').data('precision') || 8;
-        var re = new RegExp('^\\d{1,15}\.?\\d{0,' + precision + '}$');
-        return re.test(value);
-    }
+    //validate addrress
+    addressField.addEventListener('keyup', function (event) {
+        isValidAddress = addressField.checkValidity();
     
-    amountField.addEventListener('keyup', function (event) {
-    isValidAmount = amountField.checkValidity();
-    
-        if ( !isValidAmount ) {
-            console.log('invalid')
-            amountField.parentNode.classList.add('error');
+        if ( !isValidAddress ) {
+            console.log('invalid address')
+            addressField.parentNode.classList.add('error');
         } else {
             console.log('ok')
-            amountField.parentNode.classList.remove('error');
+            addressField.parentNode.classList.remove('error');
+        }
+    });
+
+    // validate amount
+    amountField.addEventListener('keyup', function (event) {
+        isValidAmount = amountField.checkValidity();
+
+        if ( !isValidAmount && amountField.value ) {
+           console.log('invalid' + ' ' + amountField.value)
+           amountField.parentNode.classList.add('error');
+        } else {
+           console.log('ok')
+           amountField.parentNode.classList.remove('error');
         }
     });
 
@@ -31,8 +39,8 @@ const FloatLabel = (() => {
 	// remove active class
 	const handleBlur = (e) => {
 		const target = e.target;
-		if (!target.value && isValidAmount) {
-			target.parentNode.classList.remove('active');
+		if (!target.value ) {
+            target.parentNode.classList.remove('active', 'error');
 		}
 		target.removeAttribute('placeholder');
 	};
