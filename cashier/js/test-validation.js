@@ -2,6 +2,8 @@ const FloatLabel = (() => {
 
     const amountField = document.getElementById('amount');
     const addressField = document.getElementById('address');
+    const addressError = document.getElementById('address-error');
+    const amountError = document.getElementById('amount-error');
 
     //validate addrress
     addressField.addEventListener('keyup', function (event) {
@@ -10,9 +12,11 @@ const FloatLabel = (() => {
         if ( !isValidAddress ) {
             console.log('invalid address')
             addressField.parentNode.classList.add('error');
+            addressError.classList.add('show-error');
         } else {
             console.log('ok')
             addressField.parentNode.classList.remove('error');
+            addressError.classList.remove('show-error');
         }
     });
 
@@ -23,15 +27,12 @@ const FloatLabel = (() => {
         if ( !isValidAmount && amountField.value ) {
            console.log('invalid' + ' ' + amountField.value)
            amountField.parentNode.classList.add('error');
-
-        } else if (isNaN(amountField.parnetNodeValue)) {
-          console.log("Must input numbers");
-          amountField.parentNode.classList.add('error');
-          return false;
+           amountError.classList.add('show-error');
 
         } else {
            console.log('ok')
            amountField.parentNode.classList.remove('error');
+           amountError.classList.remove('show-error');
         }
     });
 
@@ -48,6 +49,8 @@ const FloatLabel = (() => {
 
 		if (!target.value ) {
             target.parentNode.classList.remove('active', 'error');
+            addressError.classList.remove('show-error');
+            amountError.classList.remove('show-error');
 
         } 
 		target.removeAttribute('placeholder');
