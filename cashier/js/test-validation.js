@@ -1,6 +1,6 @@
 function validInput(value, p = 8) {
 	var re = new RegExp('^\\d{1,15}\.?\\d{0,' + p + '}$');
-	return re.test(value);
+    return re.test(value);
 }
 
 const errors = [];
@@ -20,7 +20,7 @@ const FloatLabel = (() => {
 			addressError.classList.add('show-error');
 			errors.indexOf('address') === -1 && errors.push('address');
 		} else {
-			console.log('ok')
+			console.log('address ok')
 			addressField.parentNode.classList.remove('error');
 			addressError.classList.remove('show-error');
 			const has_address_error = errors.indexOf('address');
@@ -30,17 +30,19 @@ const FloatLabel = (() => {
 		}
     });
 
-	// validate amount
+    // validate amount
 	amountField.addEventListener('keyup', function (event) {
-		isValidAmount = amountField.checkValidity() && validInput(amountField.value, precision);
-		console.log(isValidAmount);
+        amountField.value = amountField.value.replace(/[^0-9\.]+/g, '');
+        isValidAmount = amountField.checkValidity() && validInput(amountField.value, precision);
+        console.log(isValidAmount);
+        
 		if (!isValidAmount && amountField.value) {
 			console.log('invalid' + ' ' + amountField.value)
 			amountField.parentNode.classList.add('error');
 			amountError.classList.add('show-error');
 			errors.indexOf('amount') === -1 && errors.push('amount');
 		} else {
-			console.log('ok')
+			console.log('amount ok')
 			amountField.parentNode.classList.remove('error');
 			amountError.classList.remove('show-error');
 			const has_amount_error = errors.indexOf('amount');
