@@ -271,9 +271,12 @@ th {
 	cursor: text;
 	width: 40rem;
 	max-width: 95%;
-	color: var(--color-black);
+    color: var(--color-black);
+    transition: all 0.25s ease-in-out;
 }
-
+.float-container:hover {
+    border: solid 1px var(--color-grey-5);
+}
 .float-container.active {
 	color: var(--color-green);
 	border-color: var(--color-green);
