@@ -73,7 +73,7 @@ a:hover {
     height: 70rem;
     max-width: 66.4rem;
     margin: 0 auto;
-    border: 1px solid var(--color-white);
+    border: 1px solid var(--color-black);
     padding: 1rem;
 }
 .cr-container {
@@ -208,21 +208,30 @@ th {
 /* Crypto Form */
 .crypto-form {
     margin-top: 2.4rem;
-}  
+}
+
+/** float container */
 .input-field {
     margin-bottom: 3.1rem;
     padding: 0;
     position: relative;
 }
-label, input {
-    transition: all 0.2s;
-    touch-action: manipulation;
+
+.input-container {
+	border: solid 1px #ccc;
+	box-sizing: border-box;
+	margin-bottom: 3.1rem;
+	padding: 0 8px;
+	position: relative;
+	width: 300px;
+	/** active label */
 }
-input[type="text"] {
-    display: block;
+
+.input-container input {
+	display: block;
     font-size: 1.4rem;
     border: 0;
-    border: solid 1px var(--color-dark-theme-black-8);
+    border: solid 1px var(--color-grey-2);
     font-family: inherit;
     -webkit-appearance: none;
     border-radius: 0.4rem;
@@ -230,100 +239,20 @@ input[type="text"] {
     cursor: text;
     width: 40rem;
     max-width: 95%;
-    color: var(--color-white);
-    background-color: var(--color-black);
+    color: var(--color-black);
 }
-input:hover {
-    border-color: var(--color-dark-theme-grey-7);
-}
-input:focus {
-    outline: 0;
-    border: 1px solid var(--color-green);
-}
-label {
-    position: absolute;
-    top: 0.7rem;
-    left: 1rem;
-    font-size: 1.4rem;
+
+.input-container label {
+	font-size: 1.4rem;
     color: var(--color-grey-5);
-    padding: 0 0.4rem;
-    pointer-events: none;
-    transition: 0.25s ease transform;
-    transform-origin: left bottom;
-}
-input[type="text"]::-webkit-input-placeholder {
-    opacity: 0;
-    -webkit-transition: opacity 0.25s;
-    transition: opacity 0.25s;
-    padding-left: 0.3rem;
-    color: var(--color-dark-theme-black-9);
-}
-input[type="text"]::-moz-placeholder {
-    opacity: 0;
-    -webkit-transition: opacity 0.25s;
-    transition: opacity 0.25s;
-    padding-left: 0.3rem;
-    color: var(--color-dark-theme-black-9);
-}
-input[type="text"]:-ms-input-placeholder {
-    opacity: 0;
-    -webkit-transition: opacity 0.25s;
-    transition: opacity 0.25s;
-    padding-left: 0.3rem;
-    color: var(--color-dark-theme-black-9);
-}
-input[type="text"]::placeholder {
-    opacity: 0;
-    -webkit-transition: opacity 0.25s;
-    transition: opacity 0.25s;
-    padding-left: 0;
-    color: var(--color-dark-theme-black-9);
-}
-input[type="text"]:focus::-webkit-input-placeholder {
-    opacity: 1;
-}
-input[type="text"]:focus::-moz-placeholder {
-    opacity: 1;
-}
-input[type="text"]:focus:-ms-input-placeholder {
-    opacity: 1;
-}
-input[type="text"]:focus::placeholder {
-    opacity: 1;
-}
-input[type="text"]::-webkit-input-placeholder {
-    opacity: 0;
-    transition: inherit;
-}
-input[type="text"]:focus::-webkit-input-placeholder {
-    opacity: 1;
+	position: absolute;
+	transform-origin: top left;
+	transform: translate(0, 16px) scale(1);
+	transition: all 0.1s ease-in-out;
 }
 
-input[type="text"]:placeholder-shown  ~ label {
-    cursor: text;
-    max-width: 66.66%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    transform: translate(0, 0) scale(1);
-    -webkit-transform: translate(0, 0) scale(1);
-    -ms-transform: translate(0, 0) scale(1);
-}
-input[type="text"]:focus ~ label {
-    transform: translate(0, -2.5rem) scale(0.7);
-    -webkit-transform: translate(0, -2.5rem) scale(0.7);
-    -ms-transform: translate(0, -2.5rem) scale(0.7);
-    cursor: pointer;
-    background-color: var(--color-black);
-    color: var(--color-green);
-}
-
-input[type="text"]:not(:focus):not(:invalid) ~ label {
-    transform: translate(0, -2.5rem) scale(0.7);
-    -webkit-transform: translate(0, -2.5rem) scale(0.7);
-    -ms-transform: translate(0, -2.5rem) scale(0.7);
-    cursor: pointer;
-    background-color: var(--color-black);
+.input-container.active label {
+	transform: translate(0, 4px) scale(0.75);
 }
 
 .prominent {
@@ -334,4 +263,90 @@ input[type="text"]:not(:focus):not(:invalid) ~ label {
     width: 40rem;
     max-width: 95%;
     margin-bottom: 4.2rem;
+}
+
+  /** float container */
+
+.float-container {
+	position: relative;
+	font-size: 1.4rem;
+	border: solid 1px var(--color-dark-theme-black-8);
+	font-family: inherit;
+	-webkit-appearance: none;
+	border-radius: 0.4rem;
+	padding: 0.1rem;
+	margin-bottom: 3.1rem;
+	cursor: text;
+	width: 40rem;
+	max-width: 95%;
+    color: var(--color-black);
+    transition: all 0.25s ease-in-out;
+}
+.float-container:hover {
+    border: solid 1px var(--color-dark-theme-grey-7);
+}
+.float-container.active {
+	color: var(--color-green);
+	border-color: var(--color-green);
+}
+.float-container.error {
+	color: var(--color-red);
+	border-color: var(--color-red);
+}
+
+.float-container input {
+	border: none;
+	-webkit-appearance: none;
+	font-size: 1.4rem;
+	outline: 0;
+	padding: 1rem 1.2rem;
+	width: 100%;
+    margin: 0;
+    color: var(--color-white);
+    background-color: var(--color-black);
+}
+
+.float-container label {
+	font-size: 1.4rem;
+	color: var(--color-grey-5);
+	padding: 0 0.4rem;
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	left: 1rem;
+	transform-origin: top left;
+	transform: translate(0, 0.8rem) scale(1);
+	transition: all 0.25s ease-in-out;
+}
+
+.float-container.active label {
+	transform: translate(0, -1rem) scale(0.7);
+	background-color: var(--color-black);
+	color: var(--color-green);
+}
+.float-container.error label {
+	transform: translate(0, -1rem) scale(0.7);
+	background-color: var(--color-black);
+	color: var(--color-red);
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.input-error {
+    position: absolute;
+    top: 7rem;
+    display: none;
+    margin-top: -3rem;
+    margin-bottom: 6.1rem;
+    font-size: var(--text-size-xxs);
+    text-align: left;
+    color: var(--color-red);
+}
+
+.show-error {
+    display: block;
 }
