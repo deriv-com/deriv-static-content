@@ -36,7 +36,7 @@ const FloatLabel = (() => {
         isValidAmount = amountField.checkValidity() && validInput(amountField.value, precision);
         console.log(isValidAmount);
         
-		if (!isValidAmount && amountField.value) {
+		if (!isValidAmount) {
 			console.log('invalid' + ' ' + amountField.value)
 			amountField.parentNode.classList.add('error');
 			amountError.classList.add('show-error');
