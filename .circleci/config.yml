@@ -8,3 +8,5 @@ jobs:
       - checkout
       - docker/build:
           image: gokulakrishna/deriv-email-templates
+      - docker/push:
+          image: gokulakrishna/deriv-email-templates
