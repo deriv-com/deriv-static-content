@@ -381,3 +381,21 @@ input[type=number] {
     border-style: solid;
     border-color: var(--color-grey-7) transparent transparent transparent;
 }
+/* 
+.tooltip:hover > .tooltiptext {
+    opacity: 1;
+    top:-4rem;
+}
+
+a[data-tooltip]:hover:after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -4rem;
+    left: 0;
+    color: #ffffff;
+    padding: 0.8rem 1.2rem;
+    background-color: red;
+    border-style: solid;
+    border-color: var(--color-grey-7) transparent transparent transparent;
+}
+   */
