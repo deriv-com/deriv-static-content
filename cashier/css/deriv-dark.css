@@ -356,25 +356,29 @@ input[type=number]::-webkit-outer-spin-button {
 /* tooltip */
 .tooltip {
     position: relative;
-    display: block;
+    display: inline-block;
 }
-
-.tooltip .tooltiptext {
-    opacity: 0;
+.tooltiptext {
+    position: absolute;
+    visibility: hidden;
     width: auto;
+    opacity: 0;
+    top: -4rem;
+    left: 0;
     background-color: var(--color-black-5);
     font-size: var(--text-size-xxs);
     color: var(--color-white);
     text-align: center;
     padding: 0.8rem 1.2rem;
     border-radius: 0.6rem;
-    position: absolute;
-    top:-3.7rem;
-    left: 0;
-    z-index: 1;
-    transition: all 0.25s ease-in-out;
+    transition: opacity 0.25s ease-in-out;
 }
+ a:hover ~ .tooltiptext {
+    visibility: visible;
+    opacity: 1;
 
+}
+    
 .tooltip .tooltiptext::after {
     content: " ";
     position: absolute;
@@ -384,9 +388,4 @@ input[type=number]::-webkit-outer-spin-button {
     border-width: 0.5rem;
     border-style: solid;
     border-color: var(--color-black-5) transparent transparent transparent;
-}
-
-.tooltip:hover .tooltiptext {
-    opacity: 1;
-    top:-4rem;
 }
