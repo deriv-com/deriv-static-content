@@ -5,6 +5,7 @@
     --color-black-2: #2a2a2a;
     --color-black-3: #333333;
     --color-black-4: #182039;
+    --color-black-5: #323738;
     --color-white: #ffffff;
     --color-red: #ff444f;
     --color-red-1: #dd573a;
@@ -17,6 +18,7 @@
     --color-grey-4: #fafbfb;
     --color-grey-5: #999999;
     --color-grey-6: #e6e9e9;
+    --color-grey-7: #d6dadb;
     --color-green: #85acb0;
     --color-blue: #4c76be;
     --color-blue-2: #365899;
@@ -349,4 +351,41 @@ input[type=number]::-webkit-outer-spin-button {
 
 .show-error {
     display: block;
+}
+
+/* tooltip */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+.tooltiptext {
+    position: absolute;
+    visibility: hidden;
+    width: auto;
+    opacity: 0;
+    top: -4rem;
+    left: 0;
+    background-color: var(--color-black-5);
+    font-size: var(--text-size-xxs);
+    color: var(--color-white);
+    text-align: center;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.6rem;
+    transition: opacity 0.25s ease-in-out;
+}
+ a:hover ~ .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+
+}
+    
+.tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 5rem;
+    margin-left: -0.5rem;
+    border-width: 0.5rem;
+    border-style: solid;
+    border-color: var(--color-black-5) transparent transparent transparent;
 }
