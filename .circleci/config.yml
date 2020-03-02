@@ -97,8 +97,7 @@ workflows:
   release:
     jobs:
       - release:
-          #filters:
-          #  branches:
-          #    only: /^master$/
-          #context: binary-frontend-artifact-upload  # using context to retrieve shared secret from circle ci
-          context: binary-frontend-deploy
+          filters:
+            branches:
+              only: /^master$/
+          context: binary-frontend-artifact-upload  # using context to retrieve shared secret from circle ci
