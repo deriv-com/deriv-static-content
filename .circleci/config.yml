@@ -85,7 +85,7 @@ commands:
 jobs:
   release:
     docker:
-      - image: cimg/base:2020.01
+      - image: circleci/python:stretch
     steps:
       - git_checkout_from_cache
       - compress
