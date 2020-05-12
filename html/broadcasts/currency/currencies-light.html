@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="x-apple-disable-message-reformatting">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Currencies</title>
+        <!--[if mso]>
+            <style type="text/css">
+                * {font-family: Arial, sans-serif !important;}
+                table {border-collapse: collapse;}
+                a {color: #ff444f; font-family: Arial, sans-serif;}
+            </style>
+        <![endif]-->
+        <style type="text/css">
+            /* FONTS */
+            @media screen {
+                /* latin */
+                @font-face {
+                font-family: 'IBM Plex Sans';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: local('IBM Plex Sans'), local('IBMPlexSans'), url(https://fonts.gstatic.com/s/ibmplexsans/v7/zYXgKVElMYYaJe8bpLHnCwDKhdHeFaxOedc.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+                }
+                /* latin */
+                @font-face {
+                font-family: 'IBM Plex Sans';
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: local('IBM Plex Sans Medium'), local('IBMPlexSans-Medium'), url(https://fonts.gstatic.com/s/ibmplexsans/v7/zYX9KVElMYYaJe8bpLHnCwDKjSL9AIFsdP3pBms.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+                }
+                /* latin */
+                @font-face {
+                font-family: 'IBM Plex Sans';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: local('IBM Plex Sans Bold'), local('IBMPlexSans-Bold'), url(https://fonts.gstatic.com/s/ibmplexsans/v7/zYX9KVElMYYaJe8bpLHnCwDKjWr7AIFsdP3pBms.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+                }
+            }
+            /* CLIENT-SPECIFIC STYLES */
+            body, table, td, a {
+                -webkit-text-size-adjust: 100%;
+                -ms-text-size-adjust: 100%;
+            }
+            table, td {
+                mso-table-lspace: 0pt;
+                mso-table-rspace: 0pt;
+            }
+            img {
+                -ms-interpolation-mode: bicubic;
+            }
+            /* RESET STYLES */
+            img {
+                border: 0;
+                height: auto;
+                line-height: 100%;
+                outline: none;
+                text-decoration: none;
+            }
+            table {
+                border-collapse: collapse !important;
+            }
+            body {
+                height: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                width: 100% !important;
+                font-family: 'IBM Plex Sans', Arial, sans-serif;
+            }
+            /* iOS BLUE LINKS */
+            a[x-apple-data-detectors] {
+                color: inherit !important;
+                text-decoration: none !important;
+                font-size: inherit !important;
+                font-family: inherit !important;
+                font-weight: inherit !important;
+                line-height: inherit !important;
+            }
+            /* ANDROID CENTER FIX */
+            div[style*="margin: 16px 0;"] {
+                margin: 0 !important;
+            }
+            /* Deriv */
+            a, a:visited {
+                color: #ff444f;
+                text-decoration: none;
+            }
+            a:hover {text-decoration: underline;}
+            a.button {
+                text-decoration: none;
+                text-align: center;
+                line-height: 20px;
+                padding: 10px 16px;
+                display: inline-block;
+                font-weight: bold;
+                font-family: 'IBM Plex Sans', Arial, sans-serif; 
+                font-size: 14px;
+                border-radius: 4px;
+                overflow: visible;
+                border: 0;
+                color: #ffffff;
+                background: #ff444f;
+            }
+            .button:hover {
+                background-color: #d43e47;
+            }
+            a.button-secondary {
+                text-decoration: none;
+                text-align: center;
+                line-height: 20px;
+                padding: 8px 14px;
+                display: inline-block;
+                font-weight: bold;
+                font-family: 'IBM Plex Sans', Arial, sans-serif; 
+                font-size: 14px;
+                border-radius: 4px;
+                overflow: visible;
+                border: 0;
+                color: #ff444f;
+                border: 2px solid #ff444f;
+                background: #ffffff;
+            }
+            .button-secondary:hover {
+                background-color: #ff444f !important;
+                color: #ffffff !important;
+            }
+            h1 {
+                font-family: 'IBM Plex Sans', Arial, sans-serif;
+                font-size: 48px;
+                line-height: 60px;
+                font-weight: bold;
+                margin: 0;
+            }
+            h2 {
+                font-size: 32px;
+                line-height: 40px;
+                margin: 0;
+            }
+            @media screen and (max-width: 590px)  {
+                .button, .button-secondary {
+                    margin: 5px 0 !important;
+                }
+            }
+            /* MOBILE STYLES */
+            @media screen and (max-width: 620px) {
+                .img-max {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    height: auto !important;
+                }
+                .max-width {
+                    max-width: 100% !important;
+                }
+                .mobile-wrapper {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                }
+            }
+        </style>
+    </head>
+    <body style="background-color: #f2f3f4; margin: 0 !important; padding: 0 !important;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <!-- LOGO -->
+            <tr>
+                <td bgcolor="#f3f3f3" align="center">
+                    <!--[if (gte mso 9)|(IE)]>
+                    <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
+                    <![endif]-->
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                        <tr>
+                            <td align="center" valign="top" style="padding: 40px 10px 40px 10px;">
+                                <a href="https://www.deriv.com">
+                                    <img src="https://static.deriv.app/html/images/deriv-logo-md.png" width="160" height="28" border="0" style="display: block;" alt="Deriv.com">
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]></td></tr></table>
+                    <![endif]-->
+                </td>
+            </tr>
+            <!-- HERO CARD -->
+            <tr>
+                <td bgcolor="#f3f3f3" align="center" style="padding: 0px 10px 0px 10px;">
+                    <!--[if (gte mso 9)|(IE)]>
+                    <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
+                    <![endif]-->
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                        <tr>
+                            <td bgcolor="#ffffff" align="center" valign="top" style="padding: 40px 30px 20px 30px; border-top: 2px solid #ff444f;">
+                            <!-- content -->
+                            <!--[if (gte mso 9)|(IE)]>
+                            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
+                            <![endif]-->
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                                <!-- COPY -->
+                                <tr>
+                                    <td bgcolor="#ffffff" align="center" style="padding: 0 0 40px 0; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; font-weight: 400; line-height: 40px;">
+                                        <a href="https://www.deriv.com">
+                                            <img src="https://static.deriv.app/html/images/currency/currency-header.png"  border="0" style="display: block; max-width: 100%;" alt="Deriv.com">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <!-- COPY -->
+                                <tr>
+                                    <td bgcolor="#ffffff" align="center" valign="top" style="padding: 0;">
+                                        <h2 style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 27px; line-height: 40px; color: #333333; margin: 0;">Your currency account is now ready</h2>
+                                    </td>
+                                </tr>
+                                <!-- COPY -->
+                                <tr>
+                                    <td bgcolor="#ffffff" align="center" valign="top" style="padding: 10px 0 0 0;">
+                                        <p style="color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; margin: 0;">Your account number: CR123456</p>
+                                    </td>
+                                </tr>
+                                <!-- COPY -->
+                                <tr>
+                                    <td bgcolor="#ffffff" align="center" valign="top" style="padding: 10px 0 0 0;">
+                                        <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 20px; font-weight: bold; line-height: 30px; margin: 0">Fund your account and start trading today</p>
+                                    </td>
+                                </tr>
+                                <!-- COPY -->
+                                <tr>
+                                    <td bgcolor="#ffffff" align="center" valign="top" style="padding: 10px 0 0 0;">
+                                        <p style="color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; margin: 0;">Head to our cashier and copy the address to make your deposit.</p>
+                                    </td>
+                                </tr>
+                                <!-- COPY -->
+                                <tr>
+                                    <td bgcolor="#ffffff" align="center" valign="top" style="padding: 0;">
+                                        <p style="color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 24px; margin: 0;">You’ll receive your funds after 3 blockchain confirmations.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <!--[if (gte mso 9)|(IE)]></td></tr></table>
+                            <![endif]-->
+                            <!-- ./content -->  
+                            </td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]></td></tr></table>
+                    <![endif]-->
+                </td>
+            </tr>
+            <!-- END HERO -->
+            <!-- CARD -->
+            <tr>
+                <td bgcolor="#f3f3f3" align="center" style="padding: 0px 10px 0px 10px; margin: 0">
+                    <!--[if (gte mso 9)|(IE)]><table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600"><![endif]-->
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                        <tr>
+                            <td bgcolor="#ffffff" align="left" valign="top" style="padding: 0px 30px 40px 30px;">
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                                    <!-- button -->
+                                    <tr>
+                                        <td align="center" style="padding: 0px 0 0 0; color: #000000; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
+                                            <!--[if (gte mso 9)|(IE)]>
+                                                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.deriv.com/" style="height:40px;v-text-anchor:middle;width:260px;" arcsize="8%" strokecolor="#ff444f" fillcolor="#ffffff">
+                                                <w:anchorlock/>
+                                                <center style="color:#ff444f;font-family:sans-serif;font-size:14x;font-weight:bold;">Take me to the cashier</center>
+                                                </v:roundrect>
+                                            <![endif]-->
+                                            <a href="https://www.deriv.com/" style="mso-hide:all;" class="button-secondary">Take me to the cashier</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
+                </td>
+            </tr>
+            <!-- END CARD -->
+            <!-- CARD -->
+            <tr>
+                <td bgcolor="#f3f3f3" align="center" style="padding: 25px 10px 0px 10px;">
+                    <!--[if (gte mso 9)|(IE)]><table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600"><![endif]-->
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                        <!-- COPY 2 col -->
+                        <tr>
+                            <td bgcolor="#ffffff" align="center" style="padding: 0px 30px 0px 30px;">
+                                
+                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
+                                    <tr>
+                                        <td align="center" valign="top" style="font-size:0;" dir="rtl">
+                                            <!--[if (gte mso 9)|(IE)]>
+                                            <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%" style="margin: 0;"><tr><td align="left" valign="top"><![endif]-->
+                                            <div style="display:inline-block; max-width:33%; min-width:160px; vertical-align:bottom; width:100%;" class="mobile-wrapper">
+                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;" class="max-width">
+                                                    <tr>
+                                                        <td align="center" valign="bottom" style="padding: 15px 0 0 0;">
+                                                            <p style="margin: 0;"><img src="https://static.deriv.app/html/images/contacts-img.png" border="0" style="display: block; max-width: 100%;" alt="Deriv.com"></p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        
+                                            <div style="display:inline-block; max-width:8px; min-width:5px; vertical-align:middle; width:100%; padding-top: 35px; mso-hide:all;" class="mobile-hide"></div>
+                                            <!--[if (gte mso 9)|(IE)]></td><td width="10"></td><td align="center" valign="top"><![endif]-->
+                                            <div style="display:inline-block; max-width:60%; min-width:240px; vertical-align:top; width:100%;" class="mobile-wrapper">
+                                                <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;" class="max-width">
+                                                    <tr>
+                                                        <td align="left" valign="top" style="padding: 15px 0;" dir="ltr">
+                                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #ff444f; font-size: 24px; font-weight: bold; line-height: 32px; margin: 0">Got questions?</p>
+                                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #000000; font-size: 14px; font-weight: normal; line-height: 24px; margin: 16px 0 0 0">Get your answers from our <a href="https://www.deriv.com/help-centre" style="color: #000000 !important;">Help Centre</a>.</p>
+                                                            
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <!--[if mso]></td></tr></table><![endif]-->
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <!-- ./ COPY 2 col -->
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
+                </td>
+            </tr>
+            <!-- END CARD -->
+            <!-- FOOTER -->
+            <tr>
+                <td bgcolor="#f3f3f3" align="center" style="padding: 30px 10px 0px 10px;">
+                    <!--[if (gte mso 9)|(IE)]>
+                        <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
+                    <![endif]-->
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 800px;">
+                        <!-- SOCIAL -->
+                        <tr>
+                            <td align="center" style="padding: 0px 30px 0px 30px; color: #ffffff; font-family: 'IBM Plex Sans', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;">
+                                <p style="margin: 0;">
+                                    <a href="https://www.facebook.com/derivdotcom" style="text-decoration: none;">
+                                        <img src="https://static.deriv.app/html/images/facebook.png" height="40" width="40" alt="Deriv.com on Facebook" title="Deriv.com on Facebook" />
+                                    </a>&nbsp;
+                                    <a href="https://twitter.com/derivdotcom" style="text-decoration: none;">
+                                        <img src="https://static.deriv.app/html/images/twitter.png" height="40" width="40" alt="Deriv.com on Twitter" title="Deriv.com on Twitter" />
+                                    </a>&nbsp;
+                                    <a href="https://www.instagram.com/deriv_official/" style="text-decoration: none;">
+                                        <img src="https://static.deriv.app/html/images/instagram.png" height="40" width="40" alt="Deriv.com on Instagram" title="Deriv.com on Instagram" />
+                                    </a>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="top" style="padding: 0px 30px 40px 30px;">
+                                <!--[if (gte mso 9)|(IE)]>
+                                <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
+                                <![endif]-->
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                                    <tr>
+                                        <td bgcolor="#f3f3f3" align="center" style="padding: 18px 0 0 0;color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 500; line-height: 16px; margin: 0px 0px 5px 0px;">© 2019 Deriv, All rights reserved.</p>
+                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 500; line-height: 16px; margin: 5px 0px 5px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important">Help Centre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Terms and conditions</a></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
+                            </td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                        </td></tr></table>
+                    <![endif]-->
+                </td>
+            </tr>
+        </table>
+    </body>
+    <!-- end message template -->
+</html>
