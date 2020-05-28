@@ -150,7 +150,7 @@
                 }
             }
             /* MOBILE STYLES */
-            @media screen and (max-width: 620px) {
+            @media screen and (max-width: 470px) {
                 .img-max {
                     width: 100% !important;
                     max-width: 100% !important;
@@ -163,6 +163,39 @@
                     width: 100% !important;
                     max-width: 100% !important;
                 }
+            }
+
+
+            table.default_table  {
+                border-collapse: collapse;
+                font-size: 16px;
+                line-height: 22px;
+                width: 100%;
+                margin: 30px 0px !important;
+            }
+            table.default_table  .even {
+                background-color: #FFF
+            }
+            table.default_table thead,
+            table.default_table  th {
+                line-height: 1.1em;
+                font-weight: normal;
+                padding: 10px 20px;
+                text-align: left;
+                background: #F2F2F2;
+                border-bottom: 1px solid #F2F2F2;
+                vertical-align: middle
+            }
+            table.default_table  td {
+                vertical-align: top;
+                border-width: 0 1px;
+                padding: 10px 20px;
+                text-align: left;
+                border-bottom: 2px solid #F2F2F2
+            }
+            table.default_table.centered th:not(:first-child),
+            table.default_table.centered td:not(:first-child) {
+                text-align: center
             }
         </style>
     </head>
@@ -229,16 +262,72 @@
                                 </tr>
                                 <!-- COPY -->
                                 <tr>
-                                    <td bgcolor="#ffffff" align="center" valign="top" style="padding: 10px 10px 0 10px;">
+                                    <td bgcolor="#ffffff" align="center" valign="top" style="padding: 10px 10px 20px 10px;">
                                         <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 20px; font-weight: bold; line-height: 30px; margin: 0">Choose from a selection of payment methods to fund your account</p>
                                     </td>
                                 </tr>
-                                 <!-- COPY -->
-                                 <tr>
-                                    <td bgcolor="#ffffff" align="center" valign="top" style="padding: 10px 10px 0 10px;">
-                                        <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 20px; font-weight: bold; line-height: 30px; margin: 0">Choose from a selection of payment methods to fund your account</p>
+                                <!-- COPY 2 col -->
+                                <tr>
+                                    <td align="center" valign="middle" style="font-size:0; width: 100%; padding: 5px; background-color: #f2f2f2; border-radius: 4px;">
+                                        <!--[if (gte mso 9)|(IE)]>
+                                        <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%" style="margin: 0;">
+                                        <tr>
+                                        <td align="left" valign="middle">
+                                        <![endif]-->
+                                        <div style="display:inline-block; max-width:100px; min-width:100px; vertical-align:bottom; width:100%; border: 1px solid #cccccc;" class="mobile-wrapper">
+                                            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:100px;" class="max-width">
+                                                <tr>
+                                                    <td align="center" valign="bottom" style="padding: 0; border: 1px solid red;">
+                                                        <img src="https://static.deriv.app/html/images/currency/skrill.png"  border="0" style="display: block;" alt="Deriv.com">
+                                                        
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div style="display:inline-block; max-width:10px; min-width:10px; vertical-align:middle; width:100%; mso-hide:all;" class="mobile-hide"></div>
+                                        <!--[if (gte mso 9)|(IE)]>
+                                        </td>
+                                        <td width="10"></td>
+                                        <td align="center" valign="middle">
+                                        <![endif]-->
+                                        <div style="display:inline-block; max-width:410px; min-width:200px; vertical-align:top; height: 100%; width:100%; border: 1px solid #cccccc;" class="mobile-wrapper">
+                                            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:100%;" class="max-width">
+                                                <tr>
+                                                    <td align="left" valign="bottom" style="padding: 0; border: 1px solid red;">
+                                                        <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #2a2a2a; font-size: 14px; font-weight: bold; line-height: 20px; margin: 0">Skrill</p>
+                                                        <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #2a2a2a; font-size: 14px; font-weight: normal; line-height: 20px; margin: 0">Quick, convenient, and used by millions of clients worldwide.</p>
+                                                        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-top: 20px;">
+                                                            <tr>
+                                                                <td align="left" valign="bottom" style="padding: 0; border: 1px solid red; font-family: 'IBM Plex Sans', Arial, sans-serif; color: #6e6e6e; font-size: 12px; font-weight: normal; line-height: 20px;">
+                                                                    Min-max deposit: 10-10,000
+                                                                </td>
+                                                                <td align="left" valign="bottom" style="padding: 0; border: 1px solid red; font-family: 'IBM Plex Sans', Arial, sans-serif; color: #6e6e6e; font-size: 12px; font-weight: normal; line-height: 20px;">
+                                                                    Min-max deposit: 10-10,000
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <!--[if mso]></td></tr></table><![endif]-->
                                     </td>
                                 </tr>
+                                <!-- ./ COPY 2 col -->
+                                <!-- CURRENCY -->
+                                <tr>
+                                    <td bgcolor="#ffffff" align="center" valign="top" style="padding: 10px 10px 20px 10px; border: 1px solid red;">
+                                        <table class="default_table">
+                                            <tr>
+                                                <td width="100">
+                                                    <img src="https://static.deriv.app/html/images/currency/skrill.png"  border="0" style="display: block;" alt="Deriv.com">
+                                                </td>
+                                                <td>right</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <!-- END CURRENCY -->
                             </table>
                             <!--[if (gte mso 9)|(IE)]></td></tr></table>
                             <![endif]-->
