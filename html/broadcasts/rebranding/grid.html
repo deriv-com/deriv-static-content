@@ -1,0 +1,525 @@
+<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!--[if !mso]><!-->
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!--<![endif]-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Binary.com</title>
+        <!--[if mso]>
+        <style type="text/css">
+            table {border-collapse: collapse;}
+            body, table, td {font-family: Helvetica, Arial, sans-serif !important;}
+            * {font-family: Helvetica, Arial, sans-serif !important;}
+            a {color: #ff444f; font-family: Helvetica, Arial, sans-serif !important;}
+        </style>
+        <![endif]-->
+    <style type="text/css">
+    /* ------------------------------------- 
+        GLOBAL
+    ------------------------------------- */
+    @import url(https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,600&display=swap&subset=cyrillic,vietnamese);
+    /* FONTS */
+    @media screen {
+        /* latin */
+        @font-face {
+        font-family: 'IBM Plex Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: local('IBM Plex Sans'), local('IBMPlexSans'), url(https://fonts.gstatic.com/s/ibmplexsans/v7/zYXgKVElMYYaJe8bpLHnCwDKhdHeFaxOedc.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        /* latin */
+        @font-face {
+        font-family: 'IBM Plex Sans';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: local('IBM Plex Sans Medium'), local('IBMPlexSans-Medium'), url(https://fonts.gstatic.com/s/ibmplexsans/v7/zYX9KVElMYYaJe8bpLHnCwDKjSL9AIFsdP3pBms.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        /* latin */
+        @font-face {
+        font-family: 'IBM Plex Sans';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: local('IBM Plex Sans Bold'), local('IBMPlexSans-Bold'), url(https://fonts.gstatic.com/s/ibmplexsans/v7/zYX9KVElMYYaJe8bpLHnCwDKjWr7AIFsdP3pBms.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    }
+    body {
+        width: 100%!important;
+        height: 100%;
+        margin: 0 !important;
+        padding: 0;
+        background-color: #f2f3f4;
+        -webkit-font-smoothing:antialiased;
+        -webkit-text-size-adjust:none;
+        font-family: 'IBM Plex Sans', Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.2;
+        color: #333333;
+        font-weight: 400;
+    }
+
+    table {
+        border-spacing: 0;
+        font-family: 'IBM Plex Sans', Helvetica, Arial, sans-serif;
+        color: #333333;
+    }
+    td {
+        padding: 0;
+    }
+    img {
+        border: 0;
+        max-width: 100%;
+    }
+    /*
+    div[style*="margin: 16px 0"] { 
+        margin:0 !important;
+    }
+    */
+    .wrapper {
+        width: 100%;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+    }
+    .webkit {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .outer {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 600px;
+    }
+    .full-width-image img {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+    }
+
+    .inner {
+        padding: 10px;
+    }
+    .header-logo {
+        padding: 40px;
+        margin: 0 auto;
+        border: 1px solid red;
+    }
+    /* CLIENT-SPECIFIC STYLES */
+    body, table, td, a {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+    }
+    table, td {
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+    }
+    img {
+        -ms-interpolation-mode: bicubic;
+    }
+    /* RESET STYLES */
+    img {
+        border: 0;
+        height: auto;
+        line-height: 100%;
+        outline: none;
+        text-decoration: none;
+    }
+    table {
+        border-collapse: collapse !important;
+    }
+    body {
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        font-family: 'IBM Plex Sans', Arial, sans-serif;
+    }
+    /* iOS BLUE LINKS */
+    a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+    }
+    /* ANDROID CENTER FIX */
+    div[style*="margin: 16px 0;"] {
+        margin: 0 !important;
+    }
+    /* Deriv */
+    a, a:visited {
+        color: #ff444f;
+        text-decoration: none;
+    }
+    a:hover {text-decoration: underline;}
+    a.button {
+        text-decoration: none;
+        text-align: center;
+        line-height: 20px;
+        padding: 10px 16px;
+        display: inline-block;
+        font-weight: bold;
+        font-family: 'IBM Plex Sans', Arial, sans-serif; 
+        font-size: 14px;
+        border-radius: 4px;
+        overflow: visible;
+        border: 0;
+        color: #ffffff;
+        background: #ff444f;
+    }
+    .button:hover {
+        background-color: #d43e47;
+    }
+    a.button-secondary {
+        text-decoration: none;
+        text-align: center;
+        line-height: 20px;
+        padding: 8px 14px;
+        display: inline-block;
+        font-weight: bold;
+        font-family: 'IBM Plex Sans', Arial, sans-serif; 
+        font-size: 14px;
+        border-radius: 4px;
+        overflow: visible;
+        border: 0;
+        color: #ff444f;
+        border: 2px solid #ff444f;
+        background: #ffffff;
+    }
+    .button-secondary:hover {
+        background-color: #ff444f;
+        color: #ffffff;
+    }
+    h1 {
+        font-family: 'IBM Plex Sans', Arial, sans-serif;
+        font-size: 48px;
+        line-height: 60px;
+        font-weight: bold;
+        margin: 0;
+    }
+    h2 {
+        font-size: 32px;
+        line-height: 40px;
+        margin: 0;
+    }
+    @media screen and (max-width: 590px)  {
+        .button, .button-secondary {
+            margin: 5px 0 !important;
+        }
+    }
+    /* MOBILE STYLES */
+    @media screen and (max-width: 620px) {
+        .img-max {
+            width: 100% !important;
+            max-width: 100% !important;
+            height: auto !important;
+        }
+        .max-width {
+            max-width: 100% !important;
+        }
+        .mobile-wrapper {
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+    }
+
+    /* ------------------------------------- 
+        ONE COLUMN LAYOUT 
+    ------------------------------------- */
+    .one-column .contents {
+        text-align: left;
+    }
+    .one-column .text {
+        padding-top: 10px;
+    }
+    /* ------------------------------------- 
+        TWO COLUMNS LAYOUT 
+    ------------------------------------- */
+    .two-column {
+        text-align: center;
+        font-size: 0;
+    }
+    .two-column .column {
+        width: 50%;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .two-column .contents {
+        text-align: left;
+    }
+    .two-column img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* ------------------------------------- 
+        THREE COLUMNS LAYOUT
+    ------------------------------------- */
+    .three-column {
+        text-align: left;
+        font-size: 0;
+        width: 100%;
+    }
+    .three-column .column {
+        width: 33.33%;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .three-column .contents {
+        text-align: left;
+    }
+    .three-column img {
+        max-width: 100%;
+        height: auto;
+    }
+    .column-3 {
+        width: 33.33%;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    /* ------------------------------------- 
+        FOUR COLUMNS LAYOUT
+    ------------------------------------- */
+    .four-column {
+        text-align: left;
+        font-size: 0;
+    }
+    .four-column .column {
+        width: 25%;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .four-column .contents {
+        text-align: left;
+    }
+    .four-column img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* ------------------------------------- 
+        SIDEBAR LAYOUT 
+    ------------------------------------- */
+    .sidebar {
+        text-align: center;
+        font-size: 0;
+    }
+    .sidebar .column {
+        width: 100%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .sidebar .left {
+        width: 30%;
+    }
+    .sidebar .right {
+        width: 70%;
+    }
+    .sidebar img {
+        max-width: 100%;
+        height: auto;
+    }
+    .sidebar .contents {
+        text-align: center;
+    }
+
+    /* ------------------------------------- 
+        RESPONSIVE
+    ------------------------------------- */
+    @media screen and (max-width: 590px) {
+        .two-column .column,
+        .three-column .column,
+        .four-column .column,
+        .sidebar .left, .sidebar .right, .column-3 {
+            width: 100% !important;
+        }	
+        .two-column img {
+            max-width: 100% !important;
+        }
+        .three-column img {
+            max-width: 50% !important;
+        }
+        .mb-centered, .mb-centered p {
+            text-align: center !important;
+        }
+        .social-ch {
+            text-align: center !important;
+        }
+    }
+    @media screen and (min-width: 590px)  {
+        .three-column .column {
+            max-width: 33.333333% !important;
+        }
+        .two-column .column {
+            max-width: 50% !important;
+        }
+    }
+    /* ------------------------------------- 
+        MODIFIERS 
+    ------------------------------------- */
+    .s-box {
+        background-color: #dedede;
+        height: 100px;
+        width: auto;
+        border: 1px solid #cccccc;
+    }
+    /* ------------------------------------- 
+        TEST
+    ------------------------------------- */
+    .section-title {
+        text-align: left;
+        padding: 20px 0 0 10px;
+        margin-top: 20px;
+    }
+    .test {
+        background-color: #ccc;
+    }
+    .border {
+        border: solid 1px #ccc;
+    }
+    .border-2 {
+        border: solid 1px blue;
+    }
+    .border-3 {
+        border: solid 1px orange;
+    }
+    </style>
+    </head>
+    <body style="background-color: #f2f3f4; margin: 0 !important; padding: 0 !important;">
+        <div class="wrapper">
+            <div class="webkit">
+                <!--[if mso]><table width="600" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
+                <table class="outer" align="center" cellpadding="0" cellspacing="0" border="0">			
+                    <tr>
+                        <td>
+                            <table class="outer" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td class="logo">
+                                        <a href="https://www.deriv.com" >
+                                            <img src="https://static.deriv.app/html/images/deriv-logo-md.png" class="header-logo" width="160" height="28" border="0" style="display: block;" alt="Deriv.com">
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table><!--[if mso]></td></tr></table><![endif]-->
+                <!-- {{content}} -->
+                <!--[if (gte mso 9)|(IE)]><table width="600" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
+                <table class="outer" align="center" cellpadding="0" cellspacing="0" border="0">	
+                    <tr>
+                        <td class="full-width-image">
+                            <img src="https://offers.binary.com/binary/images/header/general-trading.jpg" width="600" alt="" />
+                        </td>
+                    </tr>
+                </table><!--[if mso]></td></tr></table><![endif]-->
+
+
+                <!-- card 1 col -->
+                <!--[if (gte mso 9)|(IE)]><table width="600" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
+                <table class="outer" align="center" cellpadding="0" cellspacing="0" border="0" style="border: 0px solid red; margin: 50px 0">	
+                    <tr>
+                        <td style="padding: 40px 20px; background-color: #ffffff; border: 0px solid black;">
+                            <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 100%; border: 0px solid black;">
+                                <tr>
+                                    <td class="one-column" style="border: 0px solid black;">
+                                        <table width="100%">
+                                            <tr>
+                                                <td class="inner">
+                                                    <table class="contents">
+                                                        <tr>
+                                                            <td>
+                                                                <div class="s-box"></div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text">
+                                                                <p>Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p> 
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table><!--[if mso]></td></tr></table><![endif]-->
+                <!-- end card 1 col -->
+
+
+
+                <!-- card 2 col -->
+                <!--[if (gte mso 9)|(IE)]><table width="600" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
+                <table class="outer" align="center" cellpadding="0" cellspacing="0" border="0" style="border: 0px solid red; margin: 50px 0">	
+                    <tr>
+                        <td style="padding: 40px 30px; background-color: #ffffff; border: 1px solid black;">
+                            <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 100%;">
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                            </table>
+                            <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 100%;">
+                                <tr>
+                                    <td class="two-column" style="border: 0px solid #eee; background-color: #f2f3f4;"><!--[if (gte mso 9)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td width="50%" valign="top"><![endif]-->
+                                        <div class="column">
+                                            <table width="100%">
+                                                <tr>
+                                                    <td class="inner">
+                                                        <table class="contents">
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="s-box"></div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text">
+                                                                    <p>Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p> 
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div><!--[if (gte mso 9)|(IE)]></td><td width="50%" valign="top"><![endif]--><div class="column">
+                                            <table width="100%">
+                                                <tr>
+                                                    <td class="inner">
+                                                        <table class="contents">
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="s-box"></div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text">
+                                                                    <p>Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p> 
+                                                                    <p>Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p> 
+                                                                    <p>Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p> 
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div><!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table><!--[if mso]></td></tr></table><![endif]-->
+                <!-- end card 2 col -->
+            </div>
+        </div>
+    </body>
+</html>
