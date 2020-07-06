@@ -204,6 +204,7 @@
         margin: 0;
     }
     h2 {
+        font-family: 'IBM Plex Sans', Arial, sans-serif;
         font-size: 32px;
         line-height: 40px;
         margin: 0;
@@ -366,34 +367,23 @@
     ------------------------------------- */
     .s-box {
         background-color: #dedede;
+        display: inline-block;
         height: 100px;
-        width: auto;
-        border: 1px solid #cccccc;
+        width: 100%;
     }
     /* ------------------------------------- 
         TEST
     ------------------------------------- */
-    .section-title {
-        text-align: left;
-        padding: 20px 0 0 10px;
-        margin-top: 20px;
-    }
-    .test {
-        background-color: #ccc;
-    }
-    .border {
-        border: solid 1px #ccc;
-    }
-    .border-2 {
-        border: solid 1px blue;
-    }
-    .border-3 {
-        border: solid 1px orange;
+    .column {
+        padding: 5px;
+        box-sizing: border-box;
     }
     </style>
     </head>
     <body style="background-color: #f2f3f4; margin: 0 !important; padding: 0 !important;">
-        <!--[if mso]><table width="600" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td width="100%" bgcolor="#cccccc"><![endif]-->
+    <!--[if mso]><table width="600" align="center" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+            <td width="100%" bgcolor="#cccccc"><![endif]-->
         <div class="wrapper">
             <div class="webkit">
                 <!--[if mso]><table width="600" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
@@ -427,22 +417,17 @@
                 <!--[if (gte mso 9)|(IE)]><table width="600" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
                 <table class="outer" align="center" cellpadding="0" cellspacing="0" border="0" style="border: 0px solid red; margin: 50px 0">	
                     <tr>
-                        <td style="padding: 40px 20px; background-color: #ffffff; border: 0px solid black;">
+                        <td style="padding: 40px 30px; background-color: #ffffff; border: 0px solid black;">
                             <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 100%; border: 0px solid black;">
                                 <tr>
                                     <td class="one-column" style="border: 0px solid black;">
                                         <table width="100%">
                                             <tr>
-                                                <td class="inner">
-                                                    <table class="contents">
+                                                <td class="">
+                                                    <table class="">
                                                         <tr>
                                                             <td>
                                                                 <div class="s-box"></div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="text">
-                                                                <p>Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p> 
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -459,53 +444,38 @@
 
 
 
-                <!-- card 2 col -->
+                <!-- card  -->
                 <!--[if (gte mso 9)|(IE)]><table width="600" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
                 <table class="outer" align="center" cellpadding="0" cellspacing="0" border="0" style="border: 0px solid red; margin: 50px 0">	
                     <tr>
                         <td style="padding: 40px 30px; background-color: #ffffff; border: 1px solid black;">
-                            <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 100%;">
-                                <td style="padding: 20px; text-align: center; background-color:azure">1</td>
-                                <td style="padding: 20px; text-align: center; background-color:azure">2</td>
-                                <td style="padding: 20px; text-align: center; background-color:azure">3</td>
-                            </table>
+                            <!-- 2 col -->
                             <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 100%;">
                                 <tr>
-                                    <td class="two-column" style="border: 0px solid #eee; background-color: #f2f3f4;"><!--[if (gte mso 9)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td width="50%" valign="top"><![endif]-->
+                                    <td class="two-column"><!--[if (gte mso 9)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td width="50%" valign="top"><![endif]-->
                                         <div class="column">
                                             <table width="100%">
                                                 <tr>
-                                                    <td class="inner">
-                                                        <table class="contents">
+                                                    <td class="">
+                                                        <table class="" width="100%">
                                                             <tr>
                                                                 <td>
                                                                     <div class="s-box"></div>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="text">
-                                                                    <p>Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p> 
                                                                 </td>
                                                             </tr>
                                                         </table>
                                                     </td>
                                                 </tr>
                                             </table>
-                                        </div><!--[if (gte mso 9)|(IE)]></td><td width="50%" valign="top"><![endif]--><div class="column">
+                                        </div><!--[if (gte mso 9)|(IE)]></td><td width="50%" valign="top"><![endif]-->
+                                        <div class="column">
                                             <table width="100%">
                                                 <tr>
-                                                    <td class="inner">
-                                                        <table class="contents">
+                                                    <td class="">
+                                                        <table class="" width="100%">
                                                             <tr>
                                                                 <td>
                                                                     <div class="s-box"></div>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="text">
-                                                                    <p>Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p> 
-                                                                    <p>Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p> 
-                                                                    <p>Maecenas sed ante pellentesque, posuere leo id, eleifend dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p> 
                                                                 </td>
                                                             </tr>
                                                         </table>
@@ -516,10 +486,131 @@
                                     </td>
                                 </tr>
                             </table>
+                            <!-- ./2 col -->
+                           
+                            <!-- 3 col -->
+                            <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 100%;">
+                                <tr>
+                                    <td class="three-column"><!--[if (gte mso 9)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td width="200" valign="top"><![endif]-->
+                                        <div class="column">
+                                            <table width="100%">
+                                                <tr>
+                                                    <td class="">
+                                                        <table class="" width="100%">
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="s-box"></div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div><!--[if (gte mso 9)|(IE)]></td><td width="200" valign="top"><![endif]--><div class="column">
+                                            <table width="100%">
+                                                <tr>
+                                                    <td class="">
+                                                        <table class="" width="100%">
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="s-box"></div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div><!--[if (gte mso 9)|(IE)]></td><td width="200" valign="top"><![endif]--><div class="column">
+                                            <table width="100%">
+                                                <tr>
+                                                    <td class="">
+                                                        <table class="" width="100%">
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="s-box"></div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div><!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
+                                    </td>
+                                </tr>
+                            </table>
+                            <!-- ./3 col -->
+                            <!-- 4 col -->
+                            <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 100%;">
+                                <tr>
+                                    <td class="four-column"><!--[if (gte mso 9)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td width="25%" valign="top"><![endif]-->
+                                        <div class="column">
+                                            <table width="100%">
+                                                <tr>
+                                                    <td class="">
+                                                        <table class="" width="100%">
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="s-box"></div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div><!--[if (gte mso 9)|(IE)]></td><td width="25%" valign="top"><![endif]-->
+                                        <div class="column">
+                                            <table width="100%">
+                                                <tr>
+                                                    <td class="">
+                                                        <table class="" width="100%">
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="s-box"></div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div><!--[if (gte mso 9)|(IE)]></td><td width="25%" valign="top"><![endif]-->
+                                        <div class="column">
+                                            <table width="100%">
+                                                <tr>
+                                                    <td class="">
+                                                        <table class="" width="100%">
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="s-box"></div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div><!--[if (gte mso 9)|(IE)]></td><td width="25%" valign="top"><![endif]-->
+                                        <div class="column">
+                                            <table width="100%">
+                                                <tr>
+                                                    <td class="">
+                                                        <table class="" width="100%">
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="s-box"></div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div><!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
+                                    </td>
+                                </tr>
+                            </table>
+                            <!-- ./4 col -->
                         </td>
                     </tr>
                 </table><!--[if mso]></td></tr></table><![endif]-->
-                <!-- end card 2 col -->
+                <!-- end card -->
             </div>
         </div>
         <!--[if mso]></td></tr></table><![endif]-->
