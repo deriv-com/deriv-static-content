@@ -54,3 +54,5 @@ secrets.json
 .jekyll-metadata
 .ruby-version
 .vscode/*
+
+.vercel
