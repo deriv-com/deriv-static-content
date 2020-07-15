@@ -104,14 +104,34 @@
                 font-size: 14px;
                 border-radius: 4px;
                 overflow: visible;
-                border: solid 2px #999999;
-                color: #333333;
-                background: #ffffff;
+                border: 0;
+                color: #ffffff;
+                background: #ff444f;
             }
             .button:hover {
                 background-color: #d43e47 !important;
             }
-
+            a.button-secondary {
+                text-decoration: none;
+                text-align: center;
+                line-height: 24px;
+                padding: 15px 25px;
+                display: inline-block;
+                font-weight: 500;
+                font-family: 'IBM Plex Sans', Arial, sans-serif; 
+                font-size: 16px;
+                border-radius: 6px;
+                overflow: visible;
+                border: 0;
+                color: #333333;
+                border: 2px solid #999999;
+                background: #ffffff;
+            }
+            .button-secondary:hover {
+                background-color: #d43e47;
+                border-color: #d43e47;
+                color: #ffffff;
+            }
             /* MOBILE STYLES */
             @media screen and (max-width: 620px) {
                 .img-max {
@@ -154,7 +174,7 @@
                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px 0px 0px 0px;">A new device was used to log in to your Deriv account. Please review the following details:</p>
                           </td>
                         </tr>
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <table border="0" cellpadding="0" cellspacing="0" width="40%">
                             <tr>
                                 <td bgcolor="#f2f3f4" align="left" valign="top" style="padding: 24px 24px 24px 24px; width: 100%;">
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -215,14 +235,14 @@
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#ffffff" align="left" style="padding: 0px 30px 40px 30px;">
+                            <td bgcolor="#ffffff" align="center" style="padding: 0px 30px 40px 30px;">
                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px 0px 0px 0px;">If this was you, great! You don't need to do anything.</p>
                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 8px 0px 0px 0px;">If this wasn’t you, please change your password now.</p>
                             </td>
                         </tr>
                         <tr>
                             <td bgcolor="#ffffff" align="center" style="padding: 40px 30px 40px 30px; background-color:#ffffff;">
-                                <img src="https://static.deriv.com/html/images/salute.png" width="240" height="24" border="0" style="display: block;" alt="Salute hand-logo">
+                                <img src="https://static.deriv.app/html/images/social/dark/salute.png" width="32px" height="32px" border="0" style="display: block;" alt="Salute hand-logo">
                             </td>
                         </tr>
                     </table>
@@ -270,7 +290,6 @@
                                     <img src="https://static.deriv.app/html/broadcasts/rebranding/images/telegram.png" height="32" width="32" alt="Deriv.com on Telegram" title="Deriv.com on Telegram" />
                                 </a>&nbsp;&nbsp;
                                 <a href="https://www.youtube.com/c/Derivdotcom" style="text-decoration: none;">
-                                    <img src="https://static.deriv.app/html/broadcasts/rebranding/images/youtube.png" height="32" width="32" alt="Deriv.com on Youtube" title="Deriv.com on Youtube" />
                                 </a>
                             </p>
                         </td>
