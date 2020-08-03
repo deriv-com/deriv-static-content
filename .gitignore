@@ -54,5 +54,8 @@ secrets.json
 .jekyll-metadata
 .ruby-version
 .vscode/*
+<<<<<<< HEAD
 
+=======
+>>>>>>> upsteam/master
 .vercel
