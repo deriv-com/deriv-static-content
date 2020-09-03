@@ -1,0 +1,131 @@
+Deposit successful
+
+https://sash-binary.github.io/deriv-email-templates/html/templates/deposit-successful.html
+https://litmus.com/pub/d119ab4
+
+----------
+
+Email already in use
+
+https://sash-binary.github.io/deriv-email-templates/html/templates/email-already-in-use.html
+https://litmus.com/pub/84317a3
+
+---------
+
+New device login
+
+https://sash-binary.github.io/deriv-email-templates/html/templates/new-device-login.html
+https://litmus.com/pub/60b6608
+
+---------
+
+Thanks for signing up
+
+https://sash-binary.github.io/deriv-email-templates/html/templates/thanks-for-signing-up.html
+https://litmus.com/pub/6ff1d94
+
+---------
+
+Verify withdrawal
+
+https://sash-binary.github.io/deriv-email-templates/html/templates/verify-withdrawal.html
+https://litmus.com/pub/d32a031
+
+--------
+
+Welcome virtual not trading
+
+https://sash-binary.github.io/deriv-email-templates/html/templates/welcome-vr-not-trading.html
+https://litmus.com/pub/3eafbca
+
+--------
+
+You have new password
+
+https://sash-binary.github.io/deriv-email-templates/html/templates/you-have-new-password.html
+https://litmus.com/pub/29c7abb
+
+--------
+
+Forgot password
+
+https://sash-binary.github.io/deriv-email-templates/html/templates/forgot-password.html
+https://litmus.com/pub/7cdbac3
+
+--------
+
+Forgot password - social
+
+https://sash-binary.github.io/deriv-email-templates/html/templates/forgot-password-social.html
+https://litmus.com/pub/88b1b1c
+
+--------
+
+Welcome VR trading
+
+https://sash-binary.github.io/deriv-email-templates/html/templates/welcome-vr-trading.html
+https://litmus.com/pub/fe7b4b5
+
+--------
+
+Welcome SVG no deposit
+
+https://sash-binary.github.io/deriv-email-templates/html/templates/welcome-svg-no-deposit.html
+https://litmus.com/pub/0ea60dd
+
+--------
+
+Welcome SVG get deposit
+
+https://sash-binary.github.io/deriv-email-templates/html/templates/welcome-svg-get-deposit.html
+https://litmus.com/pub/ea14edb
+
+--------
+
+Funds added
+
+https://sash-binary.github.io/deriv-email-templates/html/templates/funds-added.html
+https://litmus.com/pub/1dbc6e4
+
+--------
+
+We received a withdrawal request
+
+file:///Users/sash/repos/deriv-email-templates/html/templates/withdrawal-request-received.html
+https://litmus.com/pub/40ae186
+
+--------
+
+We’re processing your withdrawal request
+
+https://sash-binary.github.io/deriv-email-templates/html/templates/processing-withdrawal-request.html
+https://litmus.com/pub/a64ddcb
+
+--------
+
+We’ve completed your withdrawal request
+
+https://sash-binary.github.io/deriv-email-templates/html/templates/withdrawal-completed.html
+https://litmus.com/pub/297d76c
+
+--------
+
+Need proof of identity
+
+https://sash-binary.github.io/deriv-email-templates/html/templates/need-proof-of-identity.html
+https://litmus.com/pub/9083de8
+
+--------
+
+Your proof of identity is verified
+
+https://sash-binary.github.io/deriv-email-templates/html/templates/proof-identity-verified.html
+https://litmus.com/pub/717634a
+
+
+--------
+
+Your proof of address has been verified
+
+https://sash-binary.github.io/deriv-email-templates/html/templates/proof-address-verified.html
+https://litmus.com/pub/a903dea
