@@ -15,6 +15,49 @@
             </style>
         <![endif]-->
         <style type="text/css">
+            /* CSS Reset */
+            /* http://meyerweb.com/eric/tools/css/reset/ 
+            v2.0 | 20110126
+            License: none (public domain)
+            */
+
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed, 
+        figure, figcaption, footer, header, hgroup, 
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+	    margin: 0;
+	    padding: 0;
+	    border: 0;
+        }
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure, 
+        footer, header, hgroup, menu, nav, section {
+	    display: block;
+        }
+        ol, ul {
+	        list-style: none;
+        }
+        blockquote, q {
+	    quotes: none;
+        }
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+	        content: '';
+	        content: none;
+        }
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
             /* FONTS */
             @media screen {
                 /* latin */
@@ -158,38 +201,89 @@
                     <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                         <!-- COPY -->
                         <tr>
-                            <td bgcolor="#000000" align="center" style="padding: 35px 30px 30px; background-color: #000000 !important;">
+                            <td bgcolor="#000000" align="center" style="padding: 35px 30px 10px 30px; background-color: #000000 !important;" class="max-width">
                                 <a href="https://www.deriv.com">
                                     <img src="https://static.deriv.com/html/images/deriv-logo-white.png" width="140" height="25" border="0" style="display: block;" alt="Deriv.com">
                                 </a>
-                                <p style="padding-left: 3%; padding-right: 3%;padding-bottom: 30px; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 1.5 ; color: #ffffff; font-weight: 600;">Your search for the best online trading platform ends here</p>
-                                <img src="https://deriv-static-content.behnaz-fs.vercel.app/email/images/marketing/platforms.png" width="493" height="300" border="0" style="margin-bottom: -80px; display: block;" alt="Deriv.com">
+                            </td>
+                        </tr>
+                        <tr>
+                           <td bgcolor="#000000" align="center" style="padding:30px 3% 35px 3%; background-color: #000000 !important;">                                
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 1.25 ; color: #ffffff; font-weight: 600;">Your search for the best online trading platform ends here</p>
+                            </td>
+                         </tr>
+                         <tr>
+                            <td bgcolor="#000000" align="center" style="padding: 30px 0px 0px 0px; background-color: #000000 !important;">
+                                <img src="https://static.deriv.com/email/images/marketing/platforms.png" width="85%" class="img-max" border="0" style="margin-bottom: -40px;display: block;" alt="Deriv.com">
                             </td>
                         </tr>
                         <!-- COPY -->  
                         <div style="display:inline-block; width:100%;">                   
                         <tr>
-                            <td bgcolor="#ffffff" align="left" style="padding: 30px;" class="mobile-wrapper">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.25; margin: 10px 0px 0px 0px;">Hi [visitor name], </p><br>
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.25; margin: 10px 0px 0px 0px;">We hope you had a good time at the TradeON Summit 2020! </p><br>
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.25; margin: 10px 0px 0px 0px;">In case you missed our booth, we’d like to introduce you to Deriv,</p>
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.25; margin: 10px 0px 0px 0px;">an online trading service that’s simple, flexible, and reliable.</p><br>
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 10px 0px 0px 0px;">What’s your favourite? Forex, commodities, or stock indices?</p>
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.25; margin: 10px 0px 0px 0px;">We’ve got them, and more.</p><br>
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 10px 0px 0px 0px;">You should also try our synthetic indices.</p>
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 10px 0px 0px 0px;">While they move like real markets, they’re immune from real-market events that might disrupt your trading strategy.</p>
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.25; margin: 10px 0px 0px 0px;">You’ll love the diverse trade types we offer. </p><br>
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 10px 0px 0px 0px;">Some of them are only found on Deriv;</p>
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.25; margin: 10px 0px 0px 0px;">try them out and you might just discover a new favourite.</p><br>
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.25; margin: 10px 0px 0px 0px;">Give us a test-drive with a<strong> free demo account.</strong></p><br>
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.25; margin: 10px 0px 0px 0px;">It only takes a minute to set up. </p>
+                            <td bgcolor="#ffffff" align="left" style="padding: 60px 5% 10px 5%;" class="mobile-wrapper">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5;">Hi [visitor name],</p>
                             </td>
                         </tr>
+                        <tr>
+                            <td bgcolor="#ffffff" align="left" style="padding:10px 5% 10px 5%;" class="mobile-wrapper">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5;">We hope you had a good time at the TradeON Summit 2020! </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#ffffff" align="left" style="padding: 10px 5% 0px 5%;" class="mobile-wrapper">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5;">In case you missed our booth, we’d like to introduce you to Deriv, an online trading service that’s simple, flexible, and reliable.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#ffffff" align="left" style="padding: 10px 5% 0px 5%;" class="mobile-wrapper">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5;">What’s your favourite? Forex, commodities, or stock indices?</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#ffffff" align="left" style="padding: 0px 5% 10px 5%;" class="mobile-wrapper">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5;">We’ve got them, and more.We’ve got them, and more.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#ffffff" align="left" style="padding: 10px 5% 0px 5%;" class="mobile-wrapper">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5;">You should also try our synthetic indices.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#ffffff" align="left" style="padding: 0px 5% 10px 5%;" class="mobile-wrapper">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5;">While they move like real markets, they’re immune from real-market events that might disrupt your trading strategy.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#ffffff" align="left" style="padding: 10px 5% 10px 5%;" class="mobile-wrapper">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5;">You’ll love the diverse trade types we offer.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#ffffff" align="left" style="padding: 10px 5% 0px 5%;" class="mobile-wrapper">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5;">Some of them are only found on Deriv;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#ffffff" align="left" style="padding: 0px 5% 10px 5%;" class="mobile-wrapper">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5;">try them out and you might just discover a new favourite.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#ffffff" align="left" style="padding: 10px 5% 10px 5%;" class="mobile-wrapper">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5;">Give us a test-drive with a<strong> free demo account.</strong></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#ffffff" align="left" style="padding: 10px 5% 30px 5%;" class="mobile-wrapper">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5;">It only takes a minute to set up. </p>
+                            </td>
+                        </tr>                    
                         <!-- button -->
                         <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding: 0px 30px 30px; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px;">
+                            <td bgcolor="#ffffff" align="center" style="padding: 0px 30px 50px 30px; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px;">
                                 <!--[if (gte mso 9)|(IE)]>
-                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://deriv.com/" style="height:40px;v-text-anchor:middle;width: 125px;" arcsize="8%" stroke="f" fillcolor="#ff444f">
+                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://deriv.com/" style="height:40px;v-text-anchor:middle;width: 260px;" arcsize="8%" stroke="f" fillcolor="#ff444f">
                                     <w:anchorlock/>
                                     <center style="color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:bold;">Let’s go for a test-drive</center>
                                     </v:roundrect>
@@ -198,22 +292,59 @@
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#eeeeee" align="center" style="padding: 35px 30px 30px;">
-                                <p style="padding-left: 3%; padding-right: 3%; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 24px; line-height: 1.5 ; color: #000000; font-weight: 600;">Explore our platforms</p>
-                                <p style="padding-left: 3%; padding-right: 3%; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #000000; font-weight: 400;">Learn why<strong> DTrader, DMT5, DBot,</strong> and <strong>SmartTrader</strong> are the platforms of choice for over 1 million clients worldwide.</p>
-                                <img src="https://deriv-static-content.behnaz-fs.vercel.app/email/images/marketing/platforms-img.png" width="406" height="253" border="0" style="display: block;" alt="Deriv.com">
-                                <p style="padding-left: 3%; padding-right: 3%; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 24px; line-height: 1.5 ; color: #000000; font-weight: 600;">Discover over 100 tradable assets</p>
-                                <p style="padding-left: 3%; padding-right: 3%; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #000000; font-weight: 400;">From forex to commodities, stocks to synthetic indices, you’ll never run out of assets to trade.</p>
-                                <img src="https://deriv-static-content.behnaz-fs.vercel.app/email/images/marketing/asset-img.png" width="436" height="252" border="0" style="display: block;" alt="Deriv.com">
-                                <p style="padding-left: 3%; padding-right: 3%; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 24px; line-height: 1.5 ; color: #000000; font-weight: 600;">Sharpen your skills</p>
-                                <p style="padding-left: 3%; padding-right: 3%; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #000000; font-weight: 400;">New to online trading? Learn the ropes with a free demo account. If you’re an experienced trader, put your strategies to the test. When you’re ready, fund your account and get trading for real.</p>
-                                <img src="https://deriv-static-content.behnaz-fs.vercel.app/email/images/marketing/dtrader-acc-switcher-img.png" width="438" height="276" border="0" style="display: block;" alt="Deriv.com">
+                            <td bgcolor="#eeeeee" align="center" style="padding: 40px 30px 0px 30px;">
+                                <p style="margin-block-end:unset;margin-block-start:unset;padding-block-start: unset; padding-block-end: unset;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 24px; line-height: 1.5 ; color: #000000; font-weight: 600;">Explore our platforms</p>
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding: 35px 30px 30px;">
-                                <p style="padding-left: 3%; padding-right: 3%; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 24px; line-height: 1.5 ; color: #000000; font-weight: 600;">You’re just a click away</p>
-                                <p style="padding-left: 3%; padding-right: 3%; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #000000; font-weight: 400;">Join us for free today.</p>
+                            <td bgcolor="#eeeeee" align="center" style="padding: 10px 30px 20px 30px;">                        
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #000000; font-weight: 400;">Learn why<strong> DTrader, DMT5, DBot,</strong> and <strong>SmartTrader</strong> are the platforms of choice for over 1 million clients worldwide.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#eeeeee" align="center" style="padding: 10px 30px 0px 30px;"> 
+                                <img src="https://static.deriv.com/email/images/marketing/platforms-img.png" width="80%" class="img-max" border="0" style="display: block;" alt="Deriv.com">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#eeeeee" align="center" style="padding: 50px 30px 0px 30px;">  
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 24px; line-height: 1.5 ; color: #000000; font-weight: 600;">Discover over 100 tradable assets</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#eeeeee" align="center" style="padding: 20px 30px 20px 30px;">  
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #000000; font-weight: 400;">From forex to commodities, stocks to synthetic indices, you’ll never run out of assets to trade.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#eeeeee" align="center" style="padding: 20px 30px 20px 30px;" > 
+                                <img src="https://static.deriv.com/email/images/marketing/asset-img.png" width="85%" class="img-max" border="0" style="display: block;" alt="Deriv.com">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#eeeeee" align="center" style="padding: 30px 30px 10px 30px;">  
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 24px; line-height: 1.5 ; color: #000000; font-weight: 600;">Sharpen your skills</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#eeeeee" align="center" style="padding: 0px 30px 0px 30px;">  
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #000000; font-weight: 400;">New to online trading? Learn the ropes with a free demo account. If you’re an experienced trader, put your strategies to the test. When you’re ready, fund your account and get trading for real.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#eeeeee" align="center" style="padding: 30px 30px 40px 30px;" >
+                                <img src="https://static.deriv.com/email/images/marketing/dtrader-acc-switcher-img.png" width="85%" class="img-max" border="0" style="display: block;" alt="Deriv.com">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#ffffff" align="center" style="padding: 40px 30px 0px 30px;">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 24px; line-height: 1.5 ; color: #000000; font-weight: 600;">You’re just a click away</p>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td bgcolor="#ffffff" align="center" style="padding: 10px 30px 30px 30px;">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #000000; font-weight: 400;">Join us for free today.</p>
                             </td>
                         </tr>
                     </div> 
@@ -221,7 +352,7 @@
                         <tr>
                             <td bgcolor="#ffffff" align="center" style="padding: 0px 30px 30px; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px;">
                                 <!--[if (gte mso 9)|(IE)]>
-                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://deriv.com/" style="height:40px;v-text-anchor:middle;width: 125px;" arcsize="8%" stroke="f" fillcolor="#ff444f">
+                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://deriv.com/" style="height:40px;v-text-anchor:middle;width: 240px;" arcsize="8%" stroke="f" fillcolor="#ff444f">
                                     <w:anchorlock/>
                                     <center style="color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:bold;">Take me to Deriv</center>
                                     </v:roundrect>
@@ -230,8 +361,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding: 13px 30px 40px; background-color:#ffffff;">
-                                <img src="https://static.deriv.app/html/images/social/dark/salute.png" width="32px" height="32px" border="0" style="display: block;" alt="Salute hand-logo">
+                            <td bgcolor="#ffffff" align="center" style="padding: 13px 30px 40px 30px; background-color:#ffffff;">
+                                <img src="https://static.deriv.com/html/images/social/dark/salute.png" width="32px" height="32px" border="0" style="display: block;" alt="Salute hand-logo">
                             </td>
                         </tr>
                     </table>
@@ -241,7 +372,7 @@
                 </td>
             </tr>            <!-- Deriv dark-2 image -->
             <tr>
-                <td bgcolor="#eeeeee" align="center" style="padding: 0px 20px; color: #ffffff; font-family: 'IBM Plex Sans', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;">
+                <td bgcolor="#eeeeee" align="center" style="padding: 0px 20px 0px 20px; color: #ffffff; font-family: 'IBM Plex Sans', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;">
                     <p style="margin-bottom: 40px; margin-top: -1px;">
                         <a href="https://www.deriv.com">
                             <img src="https://static.deriv.com/html/images/deriv-logo-grey.png" height="24px" width="142px" alt="Deriv logo" title="Deriv.com" />
@@ -251,7 +382,7 @@
             </tr>
            <!-- FOOTER -->
            <tr>
-            <td bgcolor="#eeeeee" align="center" style="padding: 0px 10px;">
+            <td bgcolor="#eeeeee" align="center" style="padding: 0px 10px 0px 10px;">
                 <!--[if (gte mso 9)|(IE)]>
                     <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
                 <![endif]-->
@@ -292,7 +423,7 @@
                                 <tr>
                                     <td bgcolor="#eeeeee" align="center" style="padding: 18px 0 0;color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
                                         <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 500; line-height: 16px; margin: 0px 0px 5px;">© 2020 Deriv &#124 All rights reserved.</p>
-                                        <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 500; line-height: 16px; margin: 5px 0px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important">Help Centre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Terms and conditions</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/" style="color: #ff444f !important">Security and privacy</a></p>
+                                        <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 500; line-height: 16px; margin: 5px 0px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important">Help Centre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Terms and conditions</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Security and privacy</a></p>
                                     </td>
                                 </tr>
                             </table>
