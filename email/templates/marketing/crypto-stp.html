@@ -15,6 +15,48 @@
             </style>
         <![endif]-->
         <style type="text/css">
+        /* CSS Reset */
+        /* http://meyerweb.com/eric/tools/css/reset/ 
+        v2.0 | 20110126
+        License: none (public domain)
+        */
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed, 
+        figure, figcaption, footer, header, hgroup, 
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+	    margin: 0;
+	    padding: 0;
+	    border: 0;
+        }
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure, 
+        footer, header, hgroup, menu, nav, section {
+	    display: block;
+        }
+        ol, ul {
+	        list-style: none;
+        }
+        blockquote, q {
+	    quotes: none;
+        }
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+	        content: '';
+	        content: none;
+        }
+        table {
+	        border-collapse: collapse;
+	        border-spacing: 0;
+        }
             /* FONTS */
             @media screen {
                 /* latin */
@@ -125,13 +167,14 @@
                 border: 0;
                 color: #ffffff;
                 background: #ff444f;
+                height: 30px;
             }
             .button-secondary:hover {
                 background-color: #9e1d26;
                 color: #ffffff;
             }
             /* MOBILE STYLES */
-            @media screen and (max-width: 620px) {
+            @media screen and (max-width: 600px) {
                 .img-max {
                     width: 100% !important;
                     max-width: 100% !important;
@@ -141,12 +184,20 @@
                     max-width: 100% !important;
                 }
                 .mobile-wrapper {
-                    width: 100% !important;
                     max-width: 100% !important;
+                    padding-top: 0px !important ;
                 }
                 .mobile-img {
                     width: 100%;
-
+                }
+                .mobile-notshow {
+                    height: 0px !important;
+                    border-width: 0px !important;
+                    width: 0px !important;
+                }
+                .mobile-side-padding {
+                    padding-left: 15px !important;
+                    padding-right: 15px !important;
                 }
             }
         </style>
@@ -155,188 +206,144 @@
         <table border="0" cellpadding="0" cellspacing="0" width="100%">
             <!-- COPY BLOCK -->
             <tr>
-                <td bgcolor="#eeeeee" align="center" style="padding: 40px 15px;">
+                <td bgcolor="#eeeeee" align="center" style="padding: 40px 15px 40px 15px;">
                     <!--[if (gte mso 9)|(IE)]>
                     <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
                     <![endif]-->
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 530px;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="600"  class="mobile-img" style="max-width: 600px;">
                         <!-- COPY -->
                         <tr>
-                            <td bgcolor="#000000" align="center" >
-                                <img src="https://deriv-static-content.behnaz-fs.vercel.app/email/images/marketing/hero-logo.png" width="100%"  border="0" style=" display: block;" alt="Deriv.com">
+                            <td bgcolor="#eeeeee" align="center" >
+                                <img src="https://static.deriv.com/email/images/marketing/hero-logo.png" width="600" height="478" border="0" class="max-width" style=" display: block;" alt="Deriv.com">
                             </td>
                         </tr>
-                        <!-- COPY -->                      
-                        <tr>
-                            <td bgcolor="#f7fafc" align="center" style="padding: 30px 10% 0px;margin: 10px 0px 0px 0px;">
-                                <p style="text-align: center;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 32px; font-weight: 600; line-height: 1.25;">Trade the world’s favourite cryptocurrencies</p>
+                        <!-- COPY -->               
+                        <tr > 
+                            <td bgcolor="#f7fafc" align="center" style="padding: 35px 3% 0px 3% ;">
+                                <p style="text-align: center;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 32px; font-weight: 600; line-height: 1.25;border: 8px solid #f7fafc;box-sizing: border-box;">Trade the world’s favourite cryptocurrencies</p>
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#f7fafc" align="center" style="padding: 0px 16% 0px;">
+                            <td bgcolor="#f7fafc" align="center" style="padding: 10px 100px 10px 100px;" class="mobile-side-padding">
                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5; ;">We’ve added 7 of the world’s favourite cryptocurrencies to the list of instruments you can trade from your DMT5 Financial STP account.</p>
                             </td>
                         </tr>                                
                         <tr>
-                            <td bgcolor="#f7fafc" align="center"> 
+                            <td bgcolor="#f7fafc" align="center">                               
                                 <!--[if (gte mso 9)|(IE)]>
                                 <table width="570" align="center" cellpadding="0" cellspacing="0" border="0">
                                 <tr>
                                 <td>
                                 <![endif]-->
                                 <div style="padding-bottom: 30px;">
-                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:530px; margin: 0px 0px 0px 0px;">
+                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:570px; margin: 0px 0px 0px 0px;">
                                     <tr>
                                         <td align="center" valign="top" style="font-size:0;">
                                             <!--[if (gte mso 9)|(IE)]>
-                                            <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
+                                            <table align="center" border="0" cellspacing="0" cellpadding="0" width="570">
                                             <tr>
-                                            <td align="center" valign="top" width="124">
+                                            <td align="center" valign="top" width="570">
                                             <![endif]-->
-                                            <div style="display:inline-block; max-width:25%; min-width:114px; vertical-align:top; width:100%;" class="mobile-wrapper">
+                                            <div style="display:inline-block;max-width:600px; min-width:114px; vertical-align:top; width:100%;" class="mobile-wrapper">
                                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="max-width">
-                                                    <tr>
-                                                        <td align="center" valign="top" style="padding-top: 40px;">
-                                                            <img src="https://deriv-static-content.behnaz-fs.vercel.app/email/images/marketing/bitcoin.png" width="112" height="116" border="0" style="border: 1px solid rgb(235, 235, 235);border-radius: 5px;display: block;" alt="Hone your skill with the free demo account">
+                                                    <tr align="center" >
+                                                        <td align="center" style="border: 8px solid #f7fafc;display: inline-block;" class="mobile-wrapper">
+                                                            <img src="https://static.deriv.com/email/images/marketing/bitcoin.png" width="124" height="116" border="0" style="border: 1px solid rgb(235, 235, 235);border-radius: 5px;display: inline-block;" alt="Hone your skill with the free demo account">
+                                                        </td>
+                                                        <td align="center" style="border: 8px solid #f7fafc;display: inline-block;" class="mobile-wrapper">
+                                                            <img src="https://static.deriv.com/email/images/marketing/bitcoin-cash.png" width="124" height="116" border="0" style="border: 1px solid rgb(235, 235, 235);border-radius: 5px;display: inline-block;" alt="Hone your skill with the free demo account">
+                                                        </td>
+                                                        <td align="center"  style="border: 8px solid #f7fafc;display: inline-block;" class="mobile-wrapper">
+                                                            <img src="https://static.deriv.com/email/images/marketing/ethereum.png" width="124" height="116" border="0" style="border: 1px solid rgb(235, 235, 235);border-radius: 5px;display: inline-block;" alt="Hone your skill with the free demo account">
+                                                        </td>
+                                                        <td align="center" style="border: 8px solid #f7fafc;display: inline-block;" class="mobile-wrapper">
+                                                            <img src="https://static.deriv.com/email/images/marketing/litecoin.png" width="124" height="116" border="0" style="border: 1px solid rgb(235, 235, 235);border-radius: 5px;display: inline-block;" alt="Hone your skill with the free demo account">
                                                         </td>
                                                     </tr>
                                                 </table>
                                             </div>
-                                            <!--[if (gte mso 9)|(IE)]>
+                                             <!--[if mso]>
                                             </td>
-                                            <td width="15" style="font-size: 1px;">&nbsp;</td>
-                                            <td align="center" valign="top" width="124">
+                                            </tr>
+                                            </table>
                                             <![endif]-->
-                                            <div style=" display:inline-block; max-width:25%; min-width:114px; vertical-align:top; width:100%;" class="mobile-wrapper">
-                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:152px;" class="max-width">
-                                                    <tr>
-                                                        <td align="center" valign="top" style="padding-top: 40px;">
-                                                            <img src="https://deriv-static-content.behnaz-fs.vercel.app/email/images/marketing/bitcoin-cash.png" width="112" height="116" border="0" style="border: 1px solid rgb(235, 235, 235);border-radius: 5px;display: block;" alt="Only trade with money you can afford to lose">
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </div>
                                             <!--[if (gte mso 9)|(IE)]>
-                                            </td>
-                                            <td width="15" style="font-size: 1px;">&nbsp;</td>
-                                            <td align="center" valign="top" width="124">
-                                            <![endif]-->
-                                            <div style="display:inline-block; max-width:25%; min-width:114px; vertical-align:top; width:100%;" class="mobile-wrapper">
-                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:152px;" class="max-width">
-                                                    <tr>
-                                                        <td align="center" valign="top" style="padding-top: 40px;">
-                                                            <img src="https://deriv-static-content.behnaz-fs.vercel.app/email/images/marketing/ethereum.png" width="112" height="116" border="0" style="border: 1px solid rgb(235, 235, 235);border-radius: 5px;display: block;" alt="Only trade with money you can afford to lose">
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                            <!--[if (gte mso 9)|(IE)]>
-                                            </td>
-                                            <td width="15" style="font-size: 1px;">&nbsp;</td>
-                                            <td align="center" valign="top" width="124">
-                                            <![endif]-->
-                                            <div style="display:inline-block; max-width:25%; min-width:114px; vertical-align:top; width:100%;" class="mobile-wrapper">
-                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:152px;" class="max-width">
-                                                    <tr>
-                                                        <td align="center" valign="top" style="padding-top: 40px;">
-                                                            <img src="https://deriv-static-content.behnaz-fs.vercel.app/email/images/marketing/litecoin.png" width="112" height="116" border="0" style="border: 1px solid rgb(235, 235, 235);border-radius: 5px;display: block;" alt="Do not trade with borrowed money">
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                            <!--[if mso]>
-                                                </td>
-                                                </tr>
-                                                </table>
-                                            <![endif]-->
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td align="center" valign="top" style="font-size:0;">
-                                            <!--[if (gte mso 9)|(IE)]>
-                                            <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
+                                            <table align="center" border="0" cellspacing="0" cellpadding="0" width="570">
                                             <tr>
-                                            <td align="center" valign="top" width="124">
+                                            <td align="center" valign="top" width="570">
                                             <![endif]-->
-                                            <div style="display:inline-block;max-width:25%; vertical-align:top; width: 100%;" class="mobile-wrapper">
-                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:152px;" class="max-width">
-                                                    <tr>
-                                                        <td align="center" valign="top" style="padding-top: 40px;">
-                                                            <img src="https://deriv-static-content.behnaz-fs.vercel.app/email/images/marketing/dash.png" width="112" height="116" border="0" style="border: 1px solid rgb(235, 235, 235);border-radius: 5px;display: block;" alt="Set a limit">
+                                            <div style="display:inline-block;max-width:600px; min-width:114px; vertical-align:top; width:100%;" class="mobile-wrapper">
+                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="max-width">
+                                                    <tr align="center">
+                                                        <td align="center" align="center" style="width: 54px; padding: 10px 0px 0px 0px; border-style: solid; border-color: #f7fafc; border-width: 8px 8px 8px 8px ; display: inline-block;" class="mobile-wrapper mobile-notshow">                                                           
+                                                            <p style="mso font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5;"></p>
                                                         </td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                            <!--[if (gte mso 9)|(IE)]>
-                                            </td>
-                                            <td width="15" style="font-size: 1px;">&nbsp;</td>
-                                            <td align="center" valign="top" width="124">
-                                            <![endif]-->
-                                            <div style="display:inline-block;max-width:25%; vertical-align:top; width: 100%" class="mobile-wrapper">
-                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:152px;" class="max-width">
-                                                    <tr>
-                                                        <td align="center" valign="top" style="padding-top: 40px;">
-                                                            <img src="https://deriv-static-content.behnaz-fs.vercel.app/email/images/marketing/ripple.png" width="112" height="116" border="0" style="border: 1px solid rgb(235, 235, 235);border-radius: 5px;display: block;" alt="Avoid trading when you’re prone to bad judgement">
+                                                        <td align="center" align="center" style="padding: 10px 0px 0px 0px; border-style: solid; border-color: #f7fafc; border-width: 8px 8px 8px 8px ; display: inline-block;" class="mobile-wrapper">                                                           
+                                                            <img src="https://static.deriv.com/email/images/marketing/dash.png" width="124" height="116" border="0" style="border: 1px solid rgb(235, 235, 235);border-radius: 5px;display: inline-block;" alt="Hone your skill with the free demo account">
                                                         </td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                            <!--[if (gte mso 9)|(IE)]>
-                                            </td>
-                                            <td width="15" style=" font-size: 1px;">&nbsp;</td>
-                                            <td align="center" valign="top" width="124">
-                                            <![endif]-->
-                                            <div style="max-width:25%; display:inline-block; vertical-align:top; width: 100%" class="mobile-wrapper">
-                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:152px;" class="max-width">
-                                                    <tr>
-                                                        <td align="center" valign="top" style="padding-top: 40px;">
-                                                            <img src="https://deriv-static-content.behnaz-fs.vercel.app/email/images/marketing/eos.png" width="112" height="116" border="0" style="border: 1px solid rgb(235, 235, 235);border-radius: 5px;display: block;" alt="Put aside a portion of your winnings">
+                                                        <td align="center" align="center" style="padding: 10px 0px 0px 0px; border: 8px solid #f7fafc;display: inline-block;" class="mobile-wrapper">  
+                                                            <img src="https://static.deriv.com/email/images/marketing/ripple.png" width="124" height="116" border="0" style="border: 1px solid rgb(235, 235, 235);border-radius: 5px;display: inline-block;" alt="Hone your skill with the free demo account">
                                                         </td>
+                                                        <td align="center" align="center" style="padding: 10px 0px 0px 0px; border-style: solid; border-color: #f7fafc; border-width: 8px 8px 8px 8px ;display: inline-block;" class="mobile-wrapper">      
+                                                            <img src="https://static.deriv.com/email/images/marketing/eos.png" width="124" height="116" border="0" style="border: 1px solid rgb(235, 235, 235);border-radius: 5px;display: inline-block;" alt="Hone your skill with the free demo account">
+                                                        </td>
+                                                        <td align="center" align="center" style="width: 54px; padding: 10px 0px 0px 0px; border-style: solid; border-color: #f7fafc; border-width: 8px 8px 8px 8px ; display: inline-block;" class="mobile-wrapper mobile-notshow">                                                           
+                                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5; ;"></p>
+                                                        </td> 
                                                     </tr>
                                                 </table>
                                             </div>
                                             <!--[if mso]>
-                                                </td>
-                                                </tr>
-                                                </table>
+                                            </td>
+                                            </tr>
+                                            </table>
                                             <![endif]-->
                                         </td>
                                     </tr>
                                 </table>
+                                    <!--[if mso]>
+                                        </td>
+                                        </tr>
+                                        </table>
+                                    <![endif]-->
                                 </div>
                             </td>
                         </tr>
-                        <tr>                         
-                            <td bgcolor="#ffffff" align="left" style="padding: 10px 12% 0px;">
-                                <p style="text-align: center;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5;">Just like forex trading, simply predict if the cryptocurrency’s value will rise or fall relative to USD. Make a profit when the market moves in your favour.</p>
+                        <tr>                          
+                            <td bgcolor="#ffffff" align="center" style="padding: 35px 82px 10px 82px;" class="mobile-side-padding">
+                                <p style="text-align: center;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5;border: 8px solid #ffffff;box-sizing: border-box;">Just like forex trading, simply predict if the cryptocurrency’s value will rise or fall relative to USD. Make a profit when the market moves in your favour.</p>
                             </td>                          
                         </tr>
                         <tr>
-                            <td bgcolor="#ffffff" align="center" >
-                                    <img src="https://deriv-static-content.behnaz-fs.vercel.app/email/images/marketing/rectangle.png" width="70%"  border="0" style="display: block;" alt="Deriv.com">
+                            <td bgcolor="#ffffff" align="center">
+                                    <img src="https://static.deriv.com/email/images/marketing/rectangle.png" width="420" height="2" class="max-width" border="0" style="border: 8px solid #ffffff;box-sizing: border-box;display: block;" alt="Deriv.com">
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#ffffff" align="left" style="padding: 0px 10%;">
-                                <p style="padding: 20px; text-align: center;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 24px; font-weight: 600; line-height: 1.5;">Experience crypto trading on DMT5 Financial STP</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td bgcolor="#ffffff" align="center" >
-                                    <img class="mobile-img" src="https://deriv-static-content.behnaz-fs.vercel.app/email/images/marketing/financialSTP.png" width="70%"  border="0" style="margin-bottom: -10px; display: block;" alt="Deriv.com">
+                            <td bgcolor="#ffffff" align="left" style="padding: 5px 10% 30px 10%;">
+                                <p style="padding: 20px; text-align: center;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 24px; font-weight: 600; line-height: 1.5;" class="mobile-side-padding">Experience crypto trading on DMT5 Financial STP</p>
                             </td>
                         </tr>
                         <tr>
                             <td bgcolor="#ffffff" align="center" >
+                                    <img src="https://static.deriv.com/email/images/marketing/financialSTP.png" width="500" height="170" class="max-width" border="0" style="display: block;" alt="Deriv.com">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#ffffff" align="center" style="padding: 0px 5% 0px 5%;" >
                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 24px; font-weight: 600; line-height: 1.45; ">Ready to trade?</p>
-                                <p style="padding-left: 15%; padding-right: 15%; text-align: center;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.45;">Head over to your DMT5 Financial STP account and discover cryptocurrency trading.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#ffffff" align="center" style="padding: 10px 5% 20px 5%;">
+                                <p style="text-align: center;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.45;border: 8px solid #ffffff;box-sizing: border-box;" class="mobile-side-padding">Head over to your DMT5 Financial STP account and discover cryptocurrency trading.</p>
                             </td>
                         </tr>
                         <!-- button -->
                         <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding: 10px 30px 30px; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px;">
+                            <td bgcolor="#ffffff" align="center" style="padding: 5px 30px 30px 30px; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px;">
                                 <!--[if (gte mso 9)|(IE)]>
-                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://deriv.com/" style="height:40px;v-text-anchor:middle;width:260px;" arcsize="8%" stroke="f" fillcolor="#ff444f">
+                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://deriv.com/" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="8%" stroke="f" fillcolor="#ff444f">
                                     <w:anchorlock/>
                                     <center style="color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:bold;">Get started now</center>
                                     </v:roundrect>
@@ -346,7 +353,7 @@
                         </tr>
                         <tr>
                             <td bgcolor="#ffffff" align="center" style="padding: 13px 30px 40px; background-color:#ffffff;">
-                                <img src="https://static.deriv.app/html/images/social/dark/salute.png" width="32px" height="32px" border="0" style="display: block;" alt="Salute hand-logo">
+                                <img src="https://static.deriv.com/html/images/social/dark/salute.png" width="32px" height="32px" border="0" style="display: block;" alt="Salute hand-logo">
                             </td>
                         </tr>
                     </table>
@@ -355,18 +362,18 @@
                     <![endif]-->
                 </td>
             </tr>            <!-- Deriv dark-2 image -->
-            <tr>                
-                <td bgcolor="#eeeeee" align="center" style="padding: 0px 20px; color: #ffffff; font-family: 'IBM Plex Sans', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;">
+            <tr>
+                <td bgcolor="#eeeeee" align="center" style="padding: 0px 20px 0px 20px; color: #ffffff; font-family: 'IBM Plex Sans', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;">
                     <p style="margin-bottom: 40px; margin-top: -1px;">
                         <a href="https://www.deriv.com">
                             <img src="https://static.deriv.com/html/images/deriv-logo-grey.png" height="24px" width="142px" alt="Deriv logo" title="Deriv.com" />
                         </a>
                     </p>
-                </td>               
+                </td>
             </tr>
            <!-- FOOTER -->
            <tr>
-            <td bgcolor="#eeeeee" align="center" style="padding: 0px 10px;">
+            <td bgcolor="#eeeeee" align="center" style="padding: 0px 10px 0px 10px;">
                 <!--[if (gte mso 9)|(IE)]>
                     <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
                 <![endif]-->
@@ -407,7 +414,7 @@
                                 <tr>
                                     <td bgcolor="#eeeeee" align="center" style="padding: 18px 0 0;color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
                                         <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 500; line-height: 16px; margin: 0px 0px 5px;">© 2020 Deriv &#124 All rights reserved.</p>
-                                        <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 500; line-height: 16px; margin: 5px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important">Help Centre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Terms and conditions</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Security and privacy</a></p>
+                                        <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 500; line-height: 16px; margin: 5px 0px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important">Help Centre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Terms and conditions</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Security and privacy</a></p>
                                     </td>
                                 </tr>
                             </table>
@@ -419,7 +426,7 @@
                     </td></tr></table>
                 <![endif]-->
             </td>
-        </tr>
+            </tr>
         </table>
     </body>
 </html>
