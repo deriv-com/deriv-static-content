@@ -145,10 +145,8 @@
                 font-size: 14px;
                 border-radius: 4px;
                 overflow: visible;
-                border: 0;
                 color: #ffffff;
                 border: 2px solid #ffffff;
-                background: transparent;
             }
             h1 {
                 font-family: 'IBM Plex Sans', Arial, sans-serif;
@@ -161,6 +159,10 @@
                 font-size: 32px;
                 line-height: 40px;
                 margin: 0;
+            }
+            .justify-word {
+                text-align: justify;
+                text-justify: inter-word;
             }
             @media screen and (max-width: 590px)  {
                 .button, .button-secondary {
@@ -187,6 +189,20 @@
                 .mobile-hide {
                     display:none !important;
                 }
+                .mobile-nopadding {
+                    padding-top: 0 !important;
+                    padding-right: 10px !important;
+                    padding-left: 15px !important;
+                }
+                .mobile-negmargin {
+                    margin-top: -15px !important;
+                }
+                .mobile-center {
+                    text-align:center !important;
+                }
+                .mobile-unvisible {
+                    display: none!important;
+                } 
 
             }
         </style>
@@ -220,7 +236,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding: 30px 30px 10px 30px;">
+                            <td bgcolor="#ffffff" align="center" style="padding: 20px 30px 10px 30px;">
                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 24px; color: #333333; font-weight: bold; margin: 0px;">What’s next?</p>
                             </td>
                         </tr>
@@ -255,7 +271,7 @@
                                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;" class="max-width">
                                                     <tr>
                                                         <td align="left" valign="bottom" style="padding: 0 0 0 0;">
-                                                            <p style="margin: 0;"><div><img src="https://static.deriv.com/html/broadcasts/images/mobile-1.png" border="0" class="desktop-img" style="max-width: 100%;" alt="Deriv.com"></div></p>
+                                                            <p style="margin: 0;"><div><img src="https://static.deriv.com/html/broadcasts/images/mobile-1.png" border="0" class="mobile-negmargin" style="max-width: 100%;" alt="Deriv.com"></div></p>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -311,8 +327,8 @@
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
-                                                                                <td width="30" valign="top" style="padding: 15px 0 0 0;"></td>
-                                                                                <td style="padding: 15px 0 0 0;">
+                                                                                <td width="30" valign="top" class="mobile-unvisible" style="padding: 15px 0 0 0;"></td>
+                                                                                <td colspan="2" class="mobile-center" style="padding: 15px 0 0 0;">
                                                                                     <!--[if (gte mso 9)|(IE)]>
                                                                                     <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://deriv.com/dtrader/" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="10%" strokecolor="#ffffff" fillcolor="#ff444f">
                                                                                     <w:anchorlock/>
@@ -361,7 +377,7 @@
                                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px; mso-hide:all;" class="max-width">
                                                     <tr>
                                                         <td align="left" valign="bottom" style="padding: 15px 0 0 0;">
-                                                            <p style="margin: 0;"><img src="https://static.deriv.com/html/broadcasts/images/mobile-2.png" border="0" class="desktop-img" style="max-width: 100%; " alt="Deriv.com"></p>
+                                                            <p style="margin: 0;"><img src="https://static.deriv.com/html/broadcasts/images/mobile-2.png" border="0" class="mobile-negmargin" style="max-width: 100%; " alt="Deriv.com"></p>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -411,8 +427,8 @@
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
-                                                                                <td width="30" valign="top" style="padding: 15px 0 0 0;"></td>
-                                                                                <td style="padding: 15px 0 0 0;">
+                                                                                <td width="30" valign="top" class="mobile-unvisible" style="padding: 15px 0 0 0;"></td>
+                                                                                <td colspan="2" class="mobile-center" style="padding: 15px 0 0 0;">
                                                                                     <!--[if (gte mso 9)|(IE)]>
                                                                                     <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://deriv.com/dbot/" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="10%" strokecolor="#ffffff" fillcolor="#ff6444">
                                                                                     <w:anchorlock/>
@@ -563,7 +579,7 @@
                                         <td bgcolor="#eeeeee" align="center" style="padding: 0;color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
                                             <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0px 0px 5px 0px;">© 2020 Deriv, All rights reserved.</p>
                                             <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 400; line-height: 16px; margin: 5px 0px 5px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important">Help Centre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Terms and conditions</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="https://deriv.com/tnc/security-and-privacy.pdf" style="color: #ff444f !important">Security and privacy</a></p>
-                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #aaaaaa; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0px 0px 5px 0px;">Click <a href="" style="color: #999999; font-weight: bold !important;">here</a>  to unsubscribe through your account settings</p>
+                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #aaaaaa; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0px 0px 5px 0px;">Click <a href="https://app.deriv.com/account/personal-details" style="color: #999999; font-weight: bold !important;">here</a>  to unsubscribe through your account settings</p>
                                         </td>
                                     </tr>
                                 </table>

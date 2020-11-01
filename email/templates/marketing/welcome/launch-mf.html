@@ -162,6 +162,10 @@
                 line-height: 40px;
                 margin: 0;
             }
+            .justify-word {
+                text-align: justify;
+                text-justify: inter-word;
+            }
             @media screen and (max-width: 590px)  {
                 .button, .button-secondary {
                     margin: 5px 0 !important;
@@ -187,7 +191,20 @@
                 .mobile-hide {
                     display:none !important;
                 }
-
+                .mobile-nopadding {
+                    padding-top: 0 !important;
+                    padding-right: 10px !important;
+                    padding-left: 15px !important;
+                }
+                .mobile-negmargin {
+                    margin-top: -15px !important;
+                }
+                .mobile-center {
+                    text-align:center !important;
+                }
+                .mobile-unvisible {
+                    display: none!important;
+                } 
             }
         </style>
     </head>
@@ -220,7 +237,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding: 30px 30px 10px 30px;">
+                            <td bgcolor="#ffffff" align="center" style="padding: 20px 30px 10px 30px;">
                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 24px; color: #333333; font-weight: bold; margin: 0px;">What’s next?</p>
                             </td>
                         </tr>
@@ -255,7 +272,7 @@
                                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;" class="max-width">
                                                     <tr>
                                                         <td align="left" valign="bottom" style="padding: 0 0 0 0;">
-                                                            <p style="margin: 0;"><div><img src="https://static.deriv.com/html/broadcasts/images/mobile-1.png" border="0" class="desktop-img" style="max-width: 100%;" alt="Deriv.com"></div></p>
+                                                            <p style="margin: 0;"><div><img src="https://static.deriv.com/html/broadcasts/images/mobile-1.png" border="0" class="mobile-negmargin" style="max-width: 100%;" alt="Deriv.com"></div></p>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -311,8 +328,8 @@
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
-                                                                                <td width="30" valign="top" style="padding: 15px 0 0 0;"></td>
-                                                                                <td style="padding: 15px 0 0 0;">
+                                                                                <td width="30" valign="top" class="mobile-unvisible" style="padding: 15px 0 0 0;"></td>
+                                                                                <td colspan="2" class="mobile-center" style="padding: 15px 0 0 0;">
                                                                                     <!--[if (gte mso 9)|(IE)]>
                                                                                     <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://deriv.com/dtrader/" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="10%" strokecolor="#ffffff" fillcolor="#ff444f">
                                                                                     <w:anchorlock/>
@@ -361,7 +378,7 @@
                                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px; mso-hide:all;" class="max-width">
                                                     <tr>
                                                         <td align="left" valign="bottom" style="padding: 15px 0 0 0;">
-                                                            <p style="margin: 0;"><img src="https://static.deriv.com/html/broadcasts/images/mobile-3.png" border="0" class="desktop-img" style="max-width: 100%; " alt="Deriv.com"></p>
+                                                            <p style="margin: 0;"><img src="https://static.deriv.com/html/broadcasts/images/mobile-3.png" border="0" class="mobile-negmargin" style="max-width: 100%; " alt="Deriv.com"></p>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -370,18 +387,18 @@
                                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;" class="max-width">
                                                     <tr>
                                                         <td align="left" valign="top" style="padding: 15px 0 0 0;">
-                                                            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:280px;" class="max-width">
+                                                            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"  class="max-width">
                                                                 <tbody><tr>
-                                                                    <td align="left" style="padding: 0 20px 0 20px;">
+                                                                    <td align="left" style="padding: 0 5px 0 20px;">
     
                                                                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                                                             <tbody><tr>
                                                                                 <td width="40">
                                                                                     <img src="https://static.deriv.com/html/broadcasts/images/dmt-5-logo.png" width="34" border="0" style="display: block; margin-right: 12px; margin-top: -20px;" alt="Deriv.com">
                                                                                 </td>
-                                                                                <td>
+                                                                                <td >
                                                                                     <p style="color: #ffffff; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 24px; font-weight: bold; line-height: 1.5; margin: 0px;">Deriv MetaTrader 5 (DMT5)</p>
-                                                                                </td>
+                                                                                </td >
                                                                             </tr>
                                                                         </tbody></table>
     
@@ -403,14 +420,14 @@
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
-                                                                                <td width="30" valign="top" style="padding: 15px 0 0 0;"></td>
-                                                                                <td style="padding: 15px 0 0 0;">
+                                                                                <td width="30" valign="top" class="mobile-unvisible" style="padding: 15px 0 0 0;"></td>
+                                                                                <td colspan="2" class="mobile-center" style="padding: 15px 0 0 0;">
                                                                                     <!--[if (gte mso 9)|(IE)]>
                                                                                     <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://deriv.com/dmt5/" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="10%" strokecolor="#ffffff" fillcolor="#85acb0">
                                                                                     <w:anchorlock/>
                                                                                     <center style="color:#ffffff;font-family:sans-serif;font-size:14px;font-weight:bold;">Take me to DMT5</center>
                                                                                     </v:roundrect>
-                                                                                    <![endif]-->
+                                                                                    <![endif]-->                                              
                                                                                     <a class="button-secondary" href="https://deriv.com/dmt5/" style="mso-hide:all;"><span>Take me to DMT5</span></a>
                                                                                 </td>
                                                                             </tr>
@@ -432,8 +449,7 @@
                                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;" class="max-width">
                                                     <tr>
                                                         <td align="left" valign="bottom" style="padding: 15px 0 0 0;">
-                                                            <p style="margin: 0;"><div><img src="https://static.deriv.com/html/broadcasts/images/mobile-3.png" border="0" class="desktop-img" style="max-width: 100%;" alt="Deriv.com"></div></p>
-                                                            
+                                                            <p style="margin: 0;"><div><img src="https://static.deriv.com/html/broadcasts/images/mobile-3.png" border="0" class="mobile-negmargin" style="max-width: 100%;" alt="Deriv.com"></div></p>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -455,7 +471,7 @@
                             <!-- card 7 -->
 
                             <!--[if (gte mso 9)|(IE)]><table width="600" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
-                                <table class="outer" align="center" cellpadding="0" cellspacing="0" border="0" width="100%"   style="max-width: 600px;margin: 0px;">	
+                                <table  align="center" cellpadding="0" cellspacing="0" border="0" width="100%"   style="max-width: 600px;margin: 0px;">	
                                     <tr>
                                         <td bgcolor="#ffffff" align="center" style="padding: 40px 30px 30px 30px;">
                                             <p style="color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px; max-width: 400px;">Got more questions? Head over to our website to understand what this rebranding means for you.</p>
@@ -468,7 +484,7 @@
                                 <!-- card 9 -->
     
                                 <!--[if (gte mso 9)|(IE)]><table width="600" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
-                                <table class="outer" align="center" cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 600px; margin: 0px">	
+                                <table align="center" cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 600px; margin: 0px">	
                                     <tr>
                                         <td bgcolor="#ffffff" align="center" style="padding: 10px 30px 40px 30px;">
                                             <!--[if (gte mso 9)|(IE)]>
@@ -483,7 +499,7 @@
                                     <!-- Icon -->
                                     <tr>
                                             <td bgcolor="#ffffff"  align="center" style="padding: 0px 30px 40px 30px;">
-                                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px 0px 0px 0px;"><img src="https://static.deriv.com/html/images/social/dark/salute.png" width="32" border="0" style="display: block;" alt="Deriv.com"></p>
+                                                <img src="https://static.deriv.com/html/images/social/dark/salute.png" width="32" border="0" style="display: block;" alt="Deriv.com">
                                             </td>
                                     </tr>                           
                                 </table><!--[if mso]></td></tr></table><![endif]-->
@@ -510,7 +526,6 @@
                         <!-- SOCIAL -->
                         <tr>
                             <td align="center" style="padding: 0px 20px 20px 20px; color: #ffffff; font-family: 'IBM Plex Sans', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;">
-                                <p style="margin: 0;">
                                     <a href="https://twitter.com/derivdotcom" style="text-decoration: none;">
                                         <img src="https://static.deriv.com/html/images/social/dark/twitter-dark.png" height="32" width="32" alt="Deriv.com on Twitter" title="Deriv.com on Twitter" />
                                     </a>
@@ -531,32 +546,31 @@
                                     <a href="https://www.youtube.com/c/Derivdotcom" style="text-decoration: none;">
                                         <img src="https://static.deriv.com/html/images/social/dark/youtube-dark.png" height="32" width="32" alt="Deriv.com on Youtube" title="Deriv.com on Youtube" />
                                     </a>
-                                </p>
                             </td>
                         </tr>
                         <!-- COPY -->
                         <tr>
-                            <td  align="left" style="padding: 40px 30px 10px 30px;">
+                            <td  align="left" style="padding: 20px 20px 10px 20px;" class="mobile-nopadding">
                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 14px; line-height: 21px; color: #333333; font-weight: normal; margin: 0px;">We’ve updated our Terms and Conditions. Please accept the new T&C upon signing in to continue trading with us.</p>
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#dddddd" align="left" style="padding: 10px 30px 15px 30px;">
+                            <td bgcolor="#dddddd" align="left" style="padding: 20px 20px 10px 20px;">
                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 14px; line-height: 21px; color: #333333; font-weight: normal; margin: 0px;">This email is intended for Retail and Professional clients and has been issued by Deriv Investments (Europe) Limited, registered office: W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta.</p>
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#dddddd" align="left" style="padding: 10px 30px 15px 30px;">
+                            <td bgcolor="#dddddd" align="left" style="padding: 20px 20px 10px 20px">
                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 14px; line-height: 21px; color: #333333; font-weight: normal; margin: 0px;">Deriv Investments (Europe) Limited (“DIEL”), is licensed and regulated in Malta under the Investment Services Act (Cap.370) by the Malta Financial Services Authority. DIEL is authorized to deal on own account and is both the manufacturer and distributor of its products.</p>
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#dddddd" align="left" style="padding: 10px 30px 15px 30px;">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 14px; line-height: 21px; color: #333333; font-weight: normal; margin: 0px;">Financial products available on Deriv.com are classed as complex and may not be suitable for retail clients. CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. 71% of retail investor accounts lose money when trading CFDs with DIEL. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money.</p>
+                            <td bgcolor="#dddddd" align="left" style="padding: 20px 20px 10px 20px">
+                                <p class="justify-word" style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 14px; line-height: 21px; color: #333333; font-weight: normal; margin: 0px;">Financial products available on Deriv.com are classed as complex and may not be suitable for retail clients. CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. 71% of retail investor accounts lose money when trading CFDs with DIEL. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money.</p>
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#dddddd" align="left" style="padding: 10px 30px 15px 30px;">
+                            <td bgcolor="#dddddd" align="left" style="padding: 20px 20px 10px 20px">
                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 14px; line-height: 21px; color: #333333; font-weight: normal; margin: 0px;">The products mentioned here may be affected by changes in currency exchange rates. If you invest in these products, you may lose some or all of your investment, and the value of your investment may fluctuate.</p>
                             </td>
                         </tr>                       
@@ -570,7 +584,7 @@
                                         <td bgcolor="#eeeeee" align="center" style="padding: 0;color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
                                             <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0px 0px 5px 0px;">© 2020 Deriv, All rights reserved.</p>
                                             <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 400; line-height: 16px; margin: 5px 0px 5px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important">Help Centre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Terms and conditions</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="https://deriv.com/tnc/security-and-privacy.pdf" style="color: #ff444f !important">Security and privacy</a></p>
-                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #aaaaaa; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0px 0px 5px 0px;">Click <a href="" style="color: #999999; font-weight: bold !important;">here</a>  to unsubscribe through your account settings</p>
+                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #aaaaaa; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0px 0px 5px 0px;">Click <a href="https://app.deriv.com/account/personal-details" style="color: #999999; font-weight: bold !important;">here</a>  to unsubscribe through your account settings</p>
                                         </td>
                                     </tr>
                                 </table>
