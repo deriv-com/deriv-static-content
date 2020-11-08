@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="x-apple-disable-message-reformatting">
+        <meta name="color-scheme" content="light dark">
+        <meta name="supported-color-schemes" content="light dark">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Welcome</title>
         <!--[if mso]>
@@ -34,30 +36,30 @@
         figure, figcaption, footer, header, hgroup, 
         menu, nav, output, ruby, section, summary,
         time, mark, audio, video {
-	    margin: 0;
-	    padding: 0;
-	    border: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
         }
         /* HTML5 display-role reset for older browsers */
         article, aside, details, figcaption, figure, 
         footer, header, hgroup, menu, nav, section {
-	    display: block;
+        display: block;
         }
         ol, ul {
-	        list-style: none;
+            list-style: none;
         }
         blockquote, q {
-	    quotes: none;
+        quotes: none;
         }
         blockquote:before, blockquote:after,
         q:before, q:after {
-	        content: '';
-	        content: none;
+            content: '';
+            content: none;
         }
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
             /* FONTS */
             @media screen {
                 /* latin */
@@ -187,70 +189,122 @@ table {
                     width: 100% !important;
                     max-width: 100% !important;
                 }
+                .mobile-lowsidepadding {
+                    padding-left: 15px !important;
+                    padding-right: 15px !important;
+                }
             }
+            /* Dark mode STYLES */
+            @media (prefers-color-scheme: dark ) {
+                /* Shows Dark Mode-Only Content, Like Images */
+                .dark-img { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+   
+                /* Hides Light Mode-Only Content, Like Images */
+                .light-img { display:none; display:none !important; }
+   
+                /* Custom Dark Mode Background Color */
+                .darkmodeblack { background-color: #000000 !important; }
+                .darkmodelowblack { background-color: #333333 !important; }
+   
+                /* Custom Dark Mode Font Colors */
+                 h1, h2, p, span, a, b { color: #ffffff !important; }
+                 .darkmodegray { color: #aaaaaa !important; }
+   
+                /* Custom Dark Mode Text Link Color */
+                .link { color: #91ADD4 !important; }
+            } 
+            /* Shows Dark Mode-Only Content, Like Images */
+            [data-ogsc] .dark-img { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+ 
+            /* Hides Light Mode-Only Content, Like Images */
+            [data-ogsc] .light-img { display:none; display:none !important; }
+  
+            /* Custom Dark Mode Background Color */
+            [data-ogsc] .darkmodeblack { background-color: #000000 !important; }
+            [data-ogsc] .darkmodelowblack { background-color: #333333 !important; }
+  
+            /* Custom Dark Mode Font Colors */
+            [data-ogsc] h1, [data-ogsc] h2, [data-ogsc] p, [data-ogsc] span, [data-ogsc] a, [data-ogsc] b { color: #ffffff !important; }
+            [data-ogsc] .darkmodegray { color: #aaaaaa !important; }
+  
+            /* Custom Dark Mode Text Link Color */
+            [data-ogsc] .link { color: #91ADD4 !important; }           
+
         </style>
     </head>
     <body style="background-color: #eeeeee; margin: 0 !important; padding: 0 !important;">
         <table border="0" cellpadding="0" cellspacing="0" width="100%">
             <!-- COPY BLOCK -->
             <tr>
-                <td bgcolor="#eeeeee" align="center" style="padding: 40px 15px;">
+                <td bgcolor="#eeeeee" align="center" style="padding: 40px 15px;" >
                     <!--[if (gte mso 9)|(IE)]>
                     <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
                     <![endif]-->
                     <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
-                         <!-- COPY -->
-                         <tr>
-                            <td bgcolor="#000000" align="center" style="padding: 35px 30px 33px; background-color: #000000 !important;">
+                        <!-- COPY -->
+                        <tr>
+                            <td bgcolor="#000000" align="center" style="padding: 35px 30px 33px;" class="darkmodelowblack">
                                 <a href="https://www.deriv.com">
-                                    <img src="https://static.deriv.com/html/images/deriv-logo-white.png" width="140" height="25" border="0" style="display: block;" alt="Deriv.com">
+                                    <img class="light-img" src="https://static.deriv.com/html/images/deriv-logo-white.png" width="140" height="25"  style="display: block;" alt="Deriv.com">
+                                    <!-- The following Dark Mode logo image is hidden 
+                                     with MSO conditional code and inline CSS, but will be         
+                                     revealed once Dark Mode is triggered -->
+ 
+                                    <div class="dark-img" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
+                                     <img class="dark-img" src="https://static.deriv.com/html/images/deriv-logo-white.png" width="140" height="25" alt="Deriv.com" style="color: #ffffff; font-family:'proxima_nova', Helvetica, Arial, sans-serif; text-align:center; font-weight:bold; font-size:36px; line-height:40px; text-decoration: none; margin: 0 auto; padding: 0;" border="0" />
+                                    </div>                                   
                                 </a>
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#000000" align="center" style="padding: 30px 30px 0 30px; background-color: #000000 !important;">
+                            <td bgcolor="#000000" align="center" style="padding: 30px 30px 0 30px; background-color: #000000 !important;" class="darkmodelowblack">
                                 <p style="padding: 0px;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.25 ; color: #ffffff; font-weight: 400;">Hello [client’s name]</p>
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#000000" align="center" style="padding: 10px 30px 65px 30px; background-color: #000000 !important;">
+                            <td bgcolor="#000000" align="center" style="padding: 10px 40px 65px 40px; background-color: #000000 !important;" class="mobile-lowsidepadding darkmodelowblack">
                                 <p style="padding: 0px;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 1.25 ; color: #ffffff; font-weight: 600;">Your Deriv account was used to login on the following device.</p>
                             </td>
                         </tr>
-                        <!-- COPY --> 
+                        <!-- COPY
+                            use td padding to set elements margin. 
+                            Outlook ignores margins, so we use padding. 
+                            For each text block / element use table row.
+                            Do not use nested elements as would in the normal page.
+                        -->
                         <tr>
-                            <td bgcolor="#ffffff" align="left" style="padding: 40px 30px 5px 30px;">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px;line-height: 1.5; margin: 0px;">Please review the details to confirm it was you. </p>
+                            <td bgcolor="#ffffff" align="left" style="padding: 40px 30px 10px 30px;" class="mobile-lowsidepadding darkmodelowblack">
+                                <p  style=" font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: normal; line-height: 24px; margin: 0px;">Please review the details to confirm it was you.</p>
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#ffffff" align="left" valign="top" style="padding: 15px 24px 0px; width: 100%;">
+                            <td bgcolor="#ffffff" align="left" valign="top" style="padding: 15px 24px 0px; width: 100%;" class="darkmodelowblack">
                                     <!--[if (gte mso 9)|(IE)]>
                                     <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%"><tr><td align="center" valign="top" width="100%">
                                     <![endif]-->
                                     <table border="0" style="margin: 0px auto !important;" cellpadding="0" cellspacing="0" width="100%">
                                         <tr>
-                                            <td  bgcolor="#eeeeee" align="left" valign="top" style="padding: 10px 24px 8px; border-bottom: none 1px #e8e8e8;">
+                                            <td  bgcolor="#eeeeee" align="left" valign="top" style="padding: 10px 24px 8px; border-bottom: none 1px #e8e8e8;" class="darkmodeblack">
                                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0;">Date & time of login: <span style="font-weight: 600;">Friday, June 15, 2019, 4:34 PM GMT</span></p>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td  bgcolor="#eeeeee" align="left" valign="top" style="padding: 8px 24px; border-bottom: none 1px #e8e8e8;">
+                                            <td  bgcolor="#eeeeee" align="left" valign="top" style="padding: 8px 24px; border-bottom: none 1px #e8e8e8;" class="darkmodeblack">
                                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 0;">Login country: <span style="font-weight: 600;">Nigeria</span></p>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td  bgcolor="#eeeeee" align="left" valign="top" style="padding: 8px 24px; border-bottom: none 1px #e8e8e8;">
+                                            <td  bgcolor="#eeeeee" align="left" valign="top" style="padding: 8px 24px; border-bottom: none 1px #e8e8e8;" class="darkmodeblack">
                                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 0;">Login city: <span style="font-weight: 600;">Calabar</span></p>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td bgcolor="#eeeeee" align="left" valign="top" style="padding: 8px 24px 8px; border-bottom: none 1px #e8e8e8;">
+                                            <td bgcolor="#eeeeee" align="left" valign="top" style="padding: 8px 24px 8px; border-bottom: none 1px #e8e8e8;" class="darkmodeblack">
                                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 0;">IP address: <span style="font-weight: 600;">560.00.076.059</span></p>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td bgcolor="#eeeeee" align="left" valign="top" style="padding: 8px 24px 20px; border-bottom: none 1px #e8e8e8;">
+                                            <td bgcolor="#eeeeee" align="left" valign="top" style="padding: 8px 24px 20px; border-bottom: none 1px #e8e8e8;" class="darkmodeblack">
                                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 0;">Type of device: <span style="font-weight: 600;">iPhone</span></p>
                                             </td>
                                         </tr>
@@ -261,25 +315,25 @@ table {
                                 </td>
                             </tr>                        
                         <tr>
-                            <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px;border-bottom: solid 1px #f2f3f4;">
+                            <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px;border-bottom: solid 1px #f2f3f4;" class="darkmodelowblack">
                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px;line-height: 1.5; margin: 0px;">If this was you, great! You don't need to do anything.</p>
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding: 45px 30px 10px 30px;border-bottom: none 1px #f2f3f4;">
+                            <td bgcolor="#ffffff" align="center" style="padding: 45px 30px 10px 30px;border-bottom: none 1px #f2f3f4;" class="darkmodelowblack">
                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 24px; font-weight: 600; line-height: 1.5;">Don’t recognise this device?</p>
                             </td>
                         </tr>  
                         <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding: 15px 30px 20px 30px;border-bottom: none 1px #f2f3f4;">
+                            <td bgcolor="#ffffff" align="center" style="padding: 15px 30px 20px 30px;border-bottom: none 1px #f2f3f4;" class="darkmodelowblack">
                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px;">If this wasn’t you, please <a href="https://www.deriv.com" style="color: #ff444f !important">change your password now.</a></p>
                             </td>
-                        </tr>                      
+                        </tr>                                                                  
                         <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding: 20px 30px 40px 30px; background-color:#ffffff;">
+                            <td bgcolor="#ffffff" align="center" style="padding: 25px 30px 45px 30px; background-color:#ffffff;" class="darkmodelowblack">
                                 <img src="https://static.deriv.com/html/images/social/dark/salute.png" width="32px" height="32px" border="0" style="display: block;" alt="Salute hand-logo">
                             </td>
-                        </tr>
+                        </tr> 
                     </table>
                     <!--[if (gte mso 9)|(IE)]>
                         </td></tr></table>
@@ -287,7 +341,7 @@ table {
                 </td>
             </tr>            <!-- Deriv dark-2 image -->
             <tr>
-                <td bgcolor="#eeeeee" align="center" style="padding: 0px 20px 0px 20px; color: #ffffff; font-family: 'IBM Plex Sans', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;">
+                <td bgcolor="#eeeeee" align="center" style="padding: 0px 20px 0px 20px; color: #ffffff; font-family: 'IBM Plex Sans', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;" class="darkmodelowblack">
                     <p style="margin-bottom: 33px; margin-top: -1px;">
                         <a href="https://www.deriv.com">
                             <img src="https://static.deriv.com/html/images/deriv-logo-grey.png" height="24px" width="142px" alt="Deriv logo" title="Deriv.com" />
@@ -297,14 +351,14 @@ table {
             </tr>
            <!-- FOOTER -->
            <tr>
-            <td bgcolor="#eeeeee" align="center" style="padding: 0px 10px 0px 10px;">
+            <td bgcolor="#eeeeee" align="center" style="padding: 0px 10px 0px 10px;" class="darkmodelowblack">
                 <!--[if (gte mso 9)|(IE)]>
                     <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
                 <![endif]-->
                 <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                     <!-- SOCIAL -->
                     <tr>
-                        <td align="center" style="padding: 0px 20px 20px; color: #ffffff; font-family: 'IBM Plex Sans', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;">
+                        <td align="center" style="padding: 0px 20px 20px; color: #ffffff; font-family: 'IBM Plex Sans', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;" class="darkmodelowblack">
                             <p style="margin: 0;">
                                 <a href="https://twitter.com/derivdotcom" style="text-decoration: none;">
                                     <img src="https://static.deriv.com/html/images/social/dark/twitter-dark.png" height="32" width="32" alt="Deriv.com on Twitter" title="Deriv.com on Twitter" />
@@ -330,15 +384,15 @@ table {
                         </td>
                     </tr>
                     <tr>
-                        <td align="center" valign="top" style="padding: 0px 30px 40px;">
+                        <td align="center" valign="top" style="padding: 0px 30px 40px;" class="darkmodelowblack">
                             <!--[if (gte mso 9)|(IE)]>
                             <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
                             <![endif]-->
                             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                                 <tr>
-                                    <td bgcolor="#eeeeee" align="center" style="padding: 18px 0 0;color: #999999;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
-                                        <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #999999;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 12px; font-weight: 500; line-height: 16px; margin: 0px 0px 5px;">© 2020 Deriv &#124 All rights reserved.</p>
-                                        <p style="font-family: 'IBM Plex Sans', Arial, sans-serif;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 12px; font-weight: 400; line-height: 16px; margin: 5px 0 0 0;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important">Help Centre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Terms and conditions</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="https://deriv.com/tnc/security-and-privacy.pdf" style="color: #ff444f !important">Security and privacy</a></p>
+                                    <td bgcolor="#eeeeee" align="center" style="padding: 18px 0 0;color: #999999;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 400;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="darkmodelowblack">
+                                        <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #999999;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0px 0px 5px;" class="darkmodegray">© 2020 Deriv &#124 All rights reserved.</p>
+                                        <p style="font-family: 'IBM Plex Sans', Arial, sans-serif;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 12px; font-weight: 400; line-height: 16px; margin: 5px 0 0 0;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important" >Help Centre</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Terms and conditions</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://deriv.com/tnc/security-and-privacy.pdf" style="color: #ff444f !important">Security and privacy</a></p>
                                     </td>
                                 </tr>
                             </table>
