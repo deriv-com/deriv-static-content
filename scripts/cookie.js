@@ -6,17 +6,21 @@ function eraseCookie(name) {
 function getCookie(name) {
   const dc = document.cookie;
   const prefix = name + "=";
+
+  // check begin index
   let begin = dc.indexOf("; " + prefix);
-  let end = null
   if (begin == -1) {
     begin = dc.indexOf(prefix);
+    // cookie not available
     if (begin != 0) return null;
   } else {
     begin += 2;
-    end = document.cookie.indexOf(";", begin);
-    if (end == -1) {
-      end = dc.length;
-    }
+  }
+
+  // check end index
+  let end = document.cookie.indexOf(";", begin);
+  if (end == -1) {
+    end = dc.length;
   }
 
   return decodeURI(dc.substring(begin + prefix.length, end));
