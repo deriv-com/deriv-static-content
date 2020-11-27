@@ -6,6 +6,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="x-apple-disable-message-reformatting">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="color-scheme" content="light dark">
+        <meta name="supported-color-schemes" content="light dark">
         <title>Welcome</title>
 
         <style type="text/css">
@@ -163,32 +165,96 @@
                     width: 100% !important;
                     max-width: 100% !important;
                 }
-                .data-table td, .data-table-cont-td {
+                .data-table td, .data-table-cont-td, .mobile-h-p-16 {
                     padding-left: 16px !important;
                     padding-right: 16px !important;
                 }
+
+                .mobile-l-p-42 {
+                    padding-left: 42px !important;
+                }
+
+                .mobile-no-h-p {
+                    padding-right: 0px !important;
+                    padding-left: 0px !important;
+                }
             }
+
+            @media (prefers-color-scheme: dark) {
+                /* Shows Dark Mode-Only Content, Like Images */
+                .dark-img { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+   
+                /* Hides Light Mode-Only Content, Like Images */
+                .light-img { display:none; display:none !important; }
+   
+                /* Custom Dark Mode Background Color */
+                .darkmodeblack { background-color: #000000 !important; }
+                .darkmodelowblack { background-color: #333333 !important; }
+   
+                /* Custom Dark Mode Font Colors */
+                 h1, h2, p, span, a, b { color: #ffffff !important; }
+                 .darkmodegray { color: #aaaaaa !important; }
+
+                /* Custom Dark Mode border Color */
+                .darkblackborder {border: 18px solid  #000000 !important;}                 
+   
+                /* Custom Dark Mode Text Link Color */
+                .link { color: #91ADD4 !important; }
+
+                /* Custom CSS */
+                .data-table-cont-td p, .data-table-cont-td td, .darkmode-font-white {
+                    color: white !important;
+                }
+
+                .darkmode-background-dark {
+                    background-color: #000001 !important;
+                }
+
+                .darkmode-low-black { 
+                    background-color: #333333 !important; 
+                }
+            }
+
+            /* Shows Dark Mode-Only Content, Like Images */
+            [data-ogsc] .dark-img { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+ 
+            /* Hides Light Mode-Only Content, Like Images */
+            [data-ogsc] .light-img { display:none; display:none !important; }
+  
+            /* Custom Dark Mode Background Color */
+            [data-ogsc] .darkmodeblack { background-color: #000000 !important; }
+            [data-ogsc] .darkmodelowblack { background-color: #333333 !important; }
+  
+            /* Custom Dark Mode Font Colors */
+            [data-ogsc] h1, [data-ogsc] h2, [data-ogsc] p, [data-ogsc] span, [data-ogsc] a, [data-ogsc] b { color: #ffffff !important; }
+            [data-ogsc] .darkmodegray { color: #aaaaaa !important; }
+
+            /* Custom Dark Mode border Color */
+            [data-ogsc] .darkblackborder { border: 18px solid  #000000 !important; }
+  
+            /* Custom Dark Mode Text Link Color */
+            [data-ogsc] .link { color: #91ADD4 !important; }
         </style>
     </head>
-    <body style="background-color: #eeeeee; margin: 0 !important; padding: 0 !important;">
+    <body class="darkmodelowblack" style="background-color: #eeeeee; margin: 0 !important; padding: 0 !important;">
         <table border="0" cellpadding="0" cellspacing="0" width="100%">
             <!-- COPY BLOCK -->
             <tr>
-                <td bgcolor="#eeeeee" align="center" style="padding: 40px 15px;">
+                <td class="mobile-no-h-p" bgcolor="#eeeeee" align="center" style="padding: 40px 15px;">
                     <!--[if (gte mso 9)|(IE)]>
                     <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
                     <![endif]-->
                     <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                         <!-- COPY -->
                         <tr>
-                            <td bgcolor="#000000" align="center" style="padding: 35px 30px 33px; background-color: #000000 !important;">
+                            <td class="darkmode-background-dark" bgcolor="#000000" align="center" style="padding: 35px 30px 33px; background-color: #000000 !important;">
                                 <a href="https://www.deriv.com">
                                     <img src="https://static.deriv.com/html/images/deriv-logo-white.png" width="140" height="25" border="0" style="display: block;" alt="Deriv.com">
                                 </a>
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#000000" align="center" style="padding: 30px 30px 0 30px; background-color: #000000 !important;">
+                            <td class="darkmode-background-dark" bgcolor="#000000" align="center" style="padding: 30px 30px 0 30px; background-color: #000000 !important;">
                                 <p style="  padding: 0px;
                                             margin: 0px;
                                             font-family: 'IBM Plex Sans', Arial, sans-serif; 
@@ -201,7 +267,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#000000" align="center" style="padding: 10px 30px 65px 30px; background-color: #000000 !important;">
+                            <td class="darkmode-background-dark mobile-h-p-16" bgcolor="#000000" align="center" style="padding: 8px 30px 64px 30px; background-color: #000000 !important;">
                                 <p style="  padding: 0px;
                                             margin: 0px;
                                             font-family: 'IBM Plex Sans', Arial, sans-serif; 
@@ -217,19 +283,19 @@
 
 
                         <!--  -->                     
-                        <tr><td bgcolor="#ffffff" align="left" style="padding: 40px 28px 16px;">
+                        <tr><td class="darkmodelowblack mobile-h-p-16" bgcolor="#ffffff" align="left" style="padding: 40px 28px 16px;">
                             <p style="  font-family: 'IBM Plex Sans', Arial, sans-serif; 
                                         color: #333333; font-size: 16px; 
                                         font-weight: 400; 
                                         line-height: 1.5; 
                                         margin: 0px 0px 0px 0px;">
-                                We’ve resolved your complaint regarding this DP2P exchange:
+                                We’ve resolved the complaint in buyer's favour for this DP2P exchange:
                             </p>
                         </td></tr>
 
                         <!-- sell data table -->
                         <tr>
-                            <td class="data-table-cont-td" bgcolor="#ffffff" align="left" valign="top" style="padding: 0px 28px 24px; width: 100%;">
+                            <td class="data-table-cont-td darkmodelowblack" bgcolor="#ffffff" align="left" valign="top" style="padding: 0px 28px 24px; width: 100%;">
                                 <!--[if (gte mso 9)|(IE)]>
                                 <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%"><tr><td align="center" valign="top" width="100%">
                                 <![endif]-->
@@ -245,19 +311,19 @@
                                                         font-style: normal;
                                                         letter-spacing: normal;
                                                         color: #333333;">
-                                    <tr><td bgcolor="#eeeeee" align="left" style="padding: 16px 28px;">
+                                    <tr><td class="darkmodeblack" bgcolor="#f5f5f5" align="left" style="padding: 16px 28px;">
                                         Your role in the exchange: <span style="display: inline-block;"><b>Buyer</b></span>
                                     </td></tr>
                             
-                                    <tr><td bgcolor="#eeeeee" align="left" style="padding: 0px 28px 16px;">
+                                    <tr><td class="darkmodeblack" bgcolor="#f5f5f5" align="left" style="padding: 0px 28px 16px;">
                                         Your order ID: <span style="display: inline-block;"><b>&lt;Buy order ID&gt;</b></span>
                                     </td></tr>
                                     
-                                    <tr><td bgcolor="#eeeeee" align="left" style="padding: 0px 28px 16px;">
+                                    <tr><td class="darkmodeblack" bgcolor="#f5f5f5" align="left" style="padding: 0px 28px 16px;">
                                         Amount: <span style="display: inline-block;"><b>&lt;Currency code&gt; &lt;Amount&gt;</b></span>
                                     </td></tr>
                                     
-                                    <tr><td bgcolor="#eeeeee" align="left" style="padding: 0px 28px 16px;">
+                                    <tr><td class="darkmodeblack" bgcolor="#f5f5f5" align="left" style="padding: 0px 28px 16px;">
                                         Created on: <span style="display: inline-block;"><b>&lt;dd/mm/yy&gt;, &lt;hh:mm&gt;</b></span>
                                     </td></tr>
                                 </table>
@@ -265,37 +331,40 @@
                                 </tr></td></table>
                             <![endif]-->
                             </td>
-                        </tr>
+                        </tr> 
 
                         <tr>
-                            <td bgcolor="#ffffff" align="left" style="   color: #333333;
-                                                            padding: 0px 28px 40px;
-                                                            font-family: 'IBM Plex Sans', Arial, sans-serif; 
-                                                            font-size: 16px; 
-                                                            font-weight: 400; 
-                                                            line-height: 24px;">
+                            <td class="darkmodelowblack mobile-h-p-16" bgcolor="#ffffff" align="left" 
+                                style=" color: #333333;
+                                        padding: 0px 28px 40px;
+                                        font-family: 'IBM Plex Sans', Arial, sans-serif; 
+                                        font-size: 16px; 
+                                        font-weight: 400; 
+                                        line-height: 24px;">
                                 <p style="  margin: 0px;
                                             font-family: 'IBM Plex Sans', Arial, sans-serif;">
-                                    After investigating the case, we have resolved the dispute in your favour. 
-                                    <span style="display: inline-block;"><b>&lt;Currency code&gt; &lt;Amount&gt;</b></span> has been released to your account, and the case is closed.
+                                    After investigating the case and verifying your claims, we have resolved the dispute in your favour. 
+                                    <span style="display: inline-block;"><b>&lt;Currency code&gt; &lt;Amount&gt;</b></span> 
+                                    has been released to your account, and the case is closed.
                                 </p>
                             </td>
                         </tr>
                         <!-- Note -->
                         <tr>
-                            <td class="data-table-cont-td" bgcolor="#ffffff" align="left" valign="top" style="padding: 16px 24px 0px; width: 100%;">
+                            <td class="data-table-cont-td darkmodelowblack" bgcolor="#ffffff" align="left" valign="top" style="padding: 0px 24px 0px; width: 100%;">
                                 <!--[if (gte mso 9)|(IE)]>
                                 <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%"><tr><td align="center" valign="top" width="100%">
                                 <![endif]-->
                                 <table border="0" style="margin: 0px auto !important;" cellpadding="0" cellspacing="0" width="100%">
                                     <tr>
-                                        <td  bgcolor="#eeeeee" align="left" valign="top" style="padding: 16px 24px;
+                                        <td class="darkmodeblack" bgcolor="#f5f5f5" align="left" valign="top" style="padding: 16px 24px;
                                                                                                 text-align: start;
                                                                                                 border-bottom: none 1px #e8e8e8;">
                                             <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0;">
-                                                <b>Note:</b> According to DP2P terms of use, the buyer and the seller are solely responsible for making 
-                                                sure that the payment is accurate. Deriv is not liable in any way to make corrections or compensations 
-                                                for any incorrect payment made by the buyer, including but not limited to overpayment and underpayment.
+                                                <b>Note:</b> According to DP2P terms of use, the buyer and the seller are solely 
+                                                responsible for making sure that the payment is accurate. Deriv is not liable in 
+                                                any way to make corrections or compensations for any incorrect payment made by the 
+                                                buyer, including but not limited to overpayment and underpayment.
                                             </p>
                                         </td>
                                     </tr>
@@ -308,7 +377,7 @@
                         
                         <!-- button -->
                         <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding: 40px 0px;">
+                            <td class="darkmodelowblack" bgcolor="#ffffff" align="center" style="padding: 40px 0px;">
                                 <img src="https://static.deriv.com/html/images/social/dark/salute.png" width="32px" height="32px" border="0" style="display: block;" alt="Salute hand-logo">
                             </td>
                         </tr>
