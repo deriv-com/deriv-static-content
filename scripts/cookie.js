@@ -158,5 +158,12 @@ window.onload = function () {
     };
   }
   /* end handling date first contact */
+
+  /* start handling gclid */
+  if (searchParams.has("gclid")) {
+    eraseCookie("gclid");
+    document.cookie = `gclid=${searchParams.get("gclid")};domain=deriv.com; path=/;`;
+  }
+  /* end handling gclid */
 };
 /* end on load of page */
