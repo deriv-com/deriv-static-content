@@ -173,6 +173,11 @@
                 .mobile-l-p-42 {
                     padding-left: 42px !important;
                 }
+
+                .mobile-no-h-p {
+                    padding-right: 0px !important;
+                    padding-left: 0px !important;
+                }
             }
 
             @media (prefers-color-scheme: dark) {
@@ -235,7 +240,7 @@
         <table border="0" cellpadding="0" cellspacing="0" width="100%">
             <!-- COPY BLOCK -->
             <tr>
-                <td bgcolor="#eeeeee" align="center" style="padding: 40px 15px;">
+                <td class="mobile-no-h-p" bgcolor="#eeeeee" align="center" style="padding: 40px 15px;">
                     <!--[if (gte mso 9)|(IE)]>
                     <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
                     <![endif]-->
@@ -278,7 +283,8 @@
                         </tr>
                         
                         <!--  -->                     
-                        <tr><td class="darkmodelowblack mobile-h-p-16" bgcolor="#ffffff" align="left" style="padding: 40px 28px 16px;">
+                        <tr><td class="darkmodelowblack mobile-h-p-16" bgcolor="#ffffff" align="left" 
+                                style=" padding: 40px 28px 16px;">
                             <p class="darkmode-font-white" style="  font-family: 'IBM Plex Sans', Arial, sans-serif; 
                                         color: #333333; font-size: 16px; 
                                         font-weight: 400; 
