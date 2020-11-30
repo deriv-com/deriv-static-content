@@ -165,22 +165,39 @@
                     width: 100% !important;
                     max-width: 100% !important;
                 }
-                .data-table td, .data-table-cont-td {
+                .data-table td, .data-table-cont-td, .mobile-h-p-16 {
                     padding-left: 16px !important;
                     padding-right: 16px !important;
                 }
+
+                .mobile-l-p-42 {
+                    padding-left: 42px !important;
+                }
+
+                .mobile-no-h-p {
+                    padding-right: 0px !important;
+                    padding-left: 0px !important;
+                }
             }
 
-            @media (prefers-color-scheme: dark ) {
+            @media (prefers-color-scheme: dark) {
                 /* Shows Dark Mode-Only Content, Like Images */
                 .dark-img { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
-                
+   
                 /* Hides Light Mode-Only Content, Like Images */
                 .light-img { display:none; display:none !important; }
-                
+   
                 /* Custom Dark Mode Background Color */
-                .darkmode { background-color: #272623 !important; }
-                
+                .darkmodeblack { background-color: #000000 !important; }
+                .darkmodelowblack { background-color: #333333 !important; }
+   
+                /* Custom Dark Mode Font Colors */
+                 h1, h2, p, span, a, b { color: #ffffff !important; }
+                 .darkmodegray { color: #aaaaaa !important; }
+
+                /* Custom Dark Mode border Color */
+                .darkblackborder {border: 18px solid  #000000 !important;}                 
+   
                 /* Custom Dark Mode Text Link Color */
                 .link { color: #91ADD4 !important; }
 
@@ -192,14 +209,38 @@
                 .darkmode-background-dark {
                     background-color: #000001 !important;
                 }
+
+                .darkmode-low-black { 
+                    background-color: #333333 !important; 
+                }
             }
+
+            /* Shows Dark Mode-Only Content, Like Images */
+            [data-ogsc] .dark-img { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+ 
+            /* Hides Light Mode-Only Content, Like Images */
+            [data-ogsc] .light-img { display:none; display:none !important; }
+  
+            /* Custom Dark Mode Background Color */
+            [data-ogsc] .darkmodeblack { background-color: #000000 !important; }
+            [data-ogsc] .darkmodelowblack { background-color: #333333 !important; }
+  
+            /* Custom Dark Mode Font Colors */
+            [data-ogsc] h1, [data-ogsc] h2, [data-ogsc] p, [data-ogsc] span, [data-ogsc] a, [data-ogsc] b { color: #ffffff !important; }
+            [data-ogsc] .darkmodegray { color: #aaaaaa !important; }
+
+            /* Custom Dark Mode border Color */
+            [data-ogsc] .darkblackborder { border: 18px solid  #000000 !important; }
+  
+            /* Custom Dark Mode Text Link Color */
+            [data-ogsc] .link { color: #91ADD4 !important; }
         </style>
     </head>
-    <body style="background-color: #eeeeee; margin: 0 !important; padding: 0 !important;">
+    <body class="darkmodelowblack" style="background-color: #eeeeee; margin: 0 !important; padding: 0 !important;">
         <table border="0" cellpadding="0" cellspacing="0" width="100%">
             <!-- COPY BLOCK -->
             <tr>
-                <td bgcolor="#eeeeee" align="center" style="padding: 40px 15px;">
+                <td class="mobile-no-h-p" bgcolor="#eeeeee" align="center" style="padding: 40px 15px;">
                     <!--[if (gte mso 9)|(IE)]>
                     <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
                     <![endif]-->
@@ -221,12 +262,12 @@
                                             line-height: 1.25; 
                                             color: #ffffff; 
                                             font-weight: 400;">
-                                    Hi &lt;Seller’s nickname&gt;
+                                    Hi &lt;Seller's nickname&gt;
                                 </p>
                             </td>
                         </tr>
                         <tr>
-                            <td class="darkmode-background-dark" bgcolor="#000000" align="center" style="padding: 10px 30px 65px 30px; background-color: #000000 !important;">
+                            <td class="darkmode-background-dark mobile-h-p-16" bgcolor="#000000" align="center" style="padding: 8px 30px 64px 30px; background-color: #000000 !important;">
                                 <p style="  padding: 0px;
                                             margin: 0px;
                                             font-family: 'IBM Plex Sans', Arial, sans-serif; 
@@ -234,27 +275,28 @@
                                             line-height: 1.25 ; 
                                             color: #ffffff; 
                                             font-weight: 600;">
-                                    We’ve received your complaint for DP2P order <span style="display: inline-block;"><b>&lt;Sell order ID&gt;</b></span>
+                                    We’ve received your complaint for DP2P order 
+                                    <span style="display: inline-block;">&lt;Sell order ID&gt;</span><br>
                                 </p>
                             </td>
                         </tr>
                         
-
-
                         <!--  -->                     
-                        <tr><td bgcolor="#ffffff" align="left" style="padding: 40px 28px 16px;">
+                        <tr><td class="darkmodelowblack mobile-h-p-16" bgcolor="#ffffff" align="left" 
+                                style=" padding: 40px 28px 16px;">
                             <p class="darkmode-font-white" style="  font-family: 'IBM Plex Sans', Arial, sans-serif; 
                                         color: #333333; font-size: 16px; 
                                         font-weight: 400; 
                                         line-height: 1.5; 
                                         margin: 0px 0px 0px 0px;">
-                                We’ve received your complaint regarding an exchange in DP2P. You say that the buyer has confirmed payment, but you haven’t received any payment for this exchange:
+                                We’ve received your complaint regarding an exchange in DP2P. You say that the buyer has confirmed 
+                                payment, but you haven’t received any payment for this exchange: 
                             </p>
                         </td></tr>
 
                         <!-- sell data table -->
                         <tr>
-                            <td class="data-table-cont-td" bgcolor="#ffffff" align="left" valign="top" style="padding: 0px 28px 40px; width: 100%;">
+                            <td class="data-table-cont-td darkmodelowblack" bgcolor="#ffffff" align="left" valign="top" style="padding: 0px 28px 40px; width: 100%;">
                                 <!--[if (gte mso 9)|(IE)]>
                                 <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%"><tr><td align="center" valign="top" width="100%">
                                 <![endif]-->
@@ -270,19 +312,19 @@
                                                         font-style: normal;
                                                         letter-spacing: normal;
                                                         color: #333333;">
-                                    <tr><td class="darkmode" bgcolor="#eeeeee" align="left" style="padding: 16px 28px;">
+                                    <tr><td class="darkmodeblack" bgcolor="#f5f5f5" align="left" style="padding: 16px 28px;">
                                         Your role in the exchange: <span style="display: inline-block;"><b>Seller</b></span>
                                     </td></tr>
                             
-                                    <tr><td class="darkmode" bgcolor="#eeeeee" align="left" style="padding: 0px 28px 16px;">
+                                    <tr><td class="darkmodeblack" bgcolor="#f5f5f5" align="left" style="padding: 0px 28px 16px;">
                                         Your order ID: <span style="display: inline-block;"><b>&lt;Sell order ID&gt;</b></span>
                                     </td></tr>
                                     
-                                    <tr><td class="darkmode" bgcolor="#eeeeee" align="left" style="padding: 0px 28px 16px;">
+                                    <tr><td class="darkmodeblack" bgcolor="#f5f5f5" align="left" style="padding: 0px 28px 16px;">
                                         Amount: <span style="display: inline-block;"><b>&lt;Currency code&gt; &lt;Amount&gt;</b></span>
                                     </td></tr>
                                     
-                                    <tr><td class="darkmode" bgcolor="#eeeeee" align="left" style="padding: 0px 28px 16px;">
+                                    <tr><td class="darkmodeblack" bgcolor="#f5f5f5" align="left" style="padding: 0px 28px 16px;">
                                         Created on: <span style="display: inline-block;"><b>&lt;dd/mm/yy&gt;, &lt;hh:mm&gt;</b></span>
                                     </td></tr>
                                 </table>
@@ -290,10 +332,10 @@
                                 </tr></td></table>
                             <![endif]-->
                             </td>
-                        </tr>
+                        </tr>   
 
                         <tr>
-                            <td bgcolor="#eeeeee" style="padding: 40px 0px 24px;">
+                            <td class="darkmodelowblack" bgcolor="#f5f5f5" style="padding: 40px 0px 24px;">
                                 <p align="center"style="font-family: 'IBM Plex Sans', Arial, sans-serif; 
                                                         color: #333333; 
                                                         font-size: 24px; 
@@ -304,83 +346,114 @@
                                 </p>
                             </td>
                         </tr>
-                                             
-                        <tr><td bgcolor="#eeeeee" align="left" style="padding: 0px 28px 16px;">
-                            <p style="  font-family: 'IBM Plex Sans', Arial, sans-serif; 
-                                        color: #333333; 
-                                        font-size: 16px; 
-                                        font-weight: 400; 
-                                        line-height: 1.5; 
-                                        margin: 0px 0px 0px 0px;">
-                                Contact the buyer via DP2P chat, and ask them to either send proof of payment or transfer the full payment to you.                             
-                            </p>
-                        </td></tr>
-
+                
+                        <!-- Instruction Block Start 1-->
+                        <tr>
+                            <td class="darkmodelowblack mobile-h-p-16" valign="top" bgcolor="#f5f5f5" align="left" 
+                                style=" padding: 0px 28px 16px; 
+                                        display: table-cell;
+                                        height: 24px;
+                                        text-align: justify;">
+                                <p style="  font-family: 'IBM Plex Sans', Arial, sans-serif; 
+                                            color: #333333; 
+                                            font-size: 16px; 
+                                            font-weight: 400; 
+                                            line-height: 1.5; 
+                                            margin: 0px 0px 0px 0px;
+                                            display: inline;">
+                                    Contact the buyer via DP2P chat, and ask them to either send proof of payment or transfer the 
+                                    full payment to you.  
+                                </p>
+                            </td>
+                        </tr>
                         <!-- image -->
                         <tr>
-                            <td bgcolor="#eeeeee" align="center" style="padding: 0px 0px 24px;"> 
+                            <td class="darkmodelowblack" bgcolor="#f5f5f5" align="center" style="padding: 0px 0px 24px;"> 
                                 <img src="https://static.deriv.com/email/images/DP2P/image-dispute-email-proof-of-payment.png" 
                                     width="80%" class="img-max" border="0" style="display: block; width: auto;" alt="Deriv.com">
                             </td>
                         </tr>
-                                             
-                        <tr><td bgcolor="#eeeeee" align="left" style="padding: 0px 28px 16px;">
-                            <p style="  font-family: 'IBM Plex Sans', Arial, sans-serif; 
-                                        color: #333333; 
-                                        font-size: 16px; 
-                                        font-weight: 400; 
-                                        line-height: 1.5; 
-                                        margin: 0px 0px 0px 0px;">
-                                When you’ve made certain that you have received the full amount, please mark the exchange complete within 24 hours.                             
-                            </p>
-                        </td></tr>
-
+                        <!-- Instruction Block End-->  
+                
+                        <!-- Instruction Block Start 2-->
+                        <tr>
+                            <td class="darkmodelowblack mobile-h-p-16" valign="top" bgcolor="#f5f5f5" align="left" 
+                                style=" padding: 0px 28px 16px; 
+                                        display: table-cell;
+                                        height: 24px;">
+                                <p style="  font-family: 'IBM Plex Sans', Arial, sans-serif; 
+                                            color: #333333; 
+                                            font-size: 16px; 
+                                            font-weight: 400; 
+                                            line-height: 1.5; 
+                                            margin: 0px 0px 0px 0px;
+                                            display: inline;">
+                                    When you’ve made certain that you have received the full amount, please mark the exchange 
+                                    complete within 24 hours.   
+                                </p>
+                            </td>
+                        </tr>
                         <!-- image -->
                         <tr>
-                            <td bgcolor="#eeeeee" align="center" style="padding: 0px 0px 24px;"> 
+                            <td class="darkmodelowblack" bgcolor="#f5f5f5" align="center" style="padding: 0px 0px 24px;"> 
                                 <img src="https://static.deriv.com/email/images/DP2P/confirm-payment.png" 
                                     width="80%" class="img-max" border="0" style="display: block; width: auto;" alt="Deriv.com">
                             </td>
                         </tr>
-                                             
-                        <tr><td bgcolor="#eeeeee" align="left" style="padding: 0px 28px 8px;">
-                            <p style="  font-family: 'IBM Plex Sans', Arial, sans-serif; 
-                                        color: #333333; 
-                                        font-size: 16px; 
-                                        font-weight: 400; 
-                                        line-height: 1.5; 
-                                        margin: 0px;">
-                                If the exchange is successful, the dispute will be automatically resolved.                             
-                            </p>
-                        </td></tr>
-                                             
-                        <tr><td bgcolor="#eeeeee" align="left" style="padding: 0px 28px 40px;">
-                            <p style="  font-family: 'IBM Plex Sans', Arial, sans-serif; 
-                                        color: #333333; 
-                                        font-size: 16px; 
-                                        font-weight: 400; 
-                                        line-height: 1.5; 
-                                        margin: 0px;">
-                                Otherwise, we will investigate the case and inform you and the buyer of the result. 
-                                We may request additional information and documents during our investigation.                             
-                            </p>
-                        </td></tr>
+                        <!-- Instruction Block End-->  
+                        
+                        <tr>
+                            <td class="darkmodelowblack mobile-h-p-16" valign="top" bgcolor="#f5f5f5" align="left" 
+                                style=" padding: 0px 28px 8px; 
+                                        display: table-cell;
+                                        height: 24px;">
+                                <p style="  font-family: 'IBM Plex Sans', Arial, sans-serif; 
+                                            color: #333333; 
+                                            font-size: 16px; 
+                                            font-weight: 400; 
+                                            line-height: 1.5; 
+                                            margin: 0px 0px 0px 0px;
+                                            display: inline;">
+                                    If the exchange is successful, the dispute will be automatically resolved.    
+                                </p>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="darkmodelowblack mobile-h-p-16" valign="top" bgcolor="#f5f5f5" align="left" 
+                                style=" padding: 0px 28px 40px; 
+                                        display: table-cell;
+                                        height: 24px;">
+                                <p style="  font-family: 'IBM Plex Sans', Arial, sans-serif; 
+                                            color: #333333; 
+                                            font-size: 16px; 
+                                            font-weight: 400; 
+                                            line-height: 1.5; 
+                                            margin: 0px 0px 0px 0px;
+                                            display: inline;">
+                                    Otherwise, we will investigate the case and inform you and the buyer of the result. We may 
+                                    request additional information and documents during our investigation.    
+                                </p>
+                            </td>
+                        </tr>       
 
                         <!-- Note -->
                         <tr>
-                            <td class="data-table-cont-td" bgcolor="#ffffff" align="left" valign="top" style="padding: 40px 28px 0px; width: 100%;">
+                            <td class="data-table-cont-td darkmodelowblack" bgcolor="#ffffff" align="left" valign="top" style="padding: 40px 28px 0px; width: 100%;">
                                 <!--[if (gte mso 9)|(IE)]>
                                 <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%"><tr><td align="center" valign="top" width="100%">
                                 <![endif]-->
                                 <table border="0" style="margin: 0px auto !important;" cellpadding="0" cellspacing="0" width="100%">
                                     <tr>
-                                        <td class="darkmode" bgcolor="#eeeeee" align="left" valign="top" style="padding: 16px 24px;
-                                                                                                text-align: start;
-                                                                                                border-bottom: none 1px #e8e8e8;">
+                                        <td class="darkmodeblack" bgcolor="#f5f5f5" align="left" valign="top" 
+                                            style=" padding: 16px 24px 16px;
+                                                    text-align: start;
+                                                    border-bottom: none 1px #e8e8e8;">
                                             <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0;">
-                                                <b>Note:</b> According to DP2P terms of use, the buyer and the seller are solely responsible for making 
-                                                sure that the payment is accurate. Deriv is not liable in any way to make corrections or compensations 
-                                                for any incorrect payment made by the buyer, including but not limited to overpayment and underpayment.
+                                                <b>Note:</b> According to DP2P terms of use, the buyer and the seller are solely 
+                                                responsible for making sure that the payment is accurate. Deriv is not liable in 
+                                                any way to make corrections or compensations for any incorrect payment made by the 
+                                                buyer, including but not limited to overpayment and underpayment.
                                             </p>
                                         </td>
                                     </tr>
@@ -393,7 +466,7 @@
                         
                         <!-- button -->
                         <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding: 40px 0px;">
+                            <td class="darkmodelowblack" bgcolor="#ffffff" align="center" style="padding: 40px 0px;">
                                 <img src="https://static.deriv.com/html/images/social/dark/salute.png" width="32px" height="32px" border="0" style="display: block;" alt="Salute hand-logo">
                             </td>
                         </tr>
