@@ -10,7 +10,7 @@ function getDomain() {
 }
 
 function eraseCookie(name) {
-  document.cookie = name + `=; Max-Age=-99999999; domain=${getDomain()}; path=/;`;
+  document.cookie = `${name} + =; Max-Age=-99999999; domain=${getDomain()}; path=/;`;
 }
 
 function getCookie(name) {
