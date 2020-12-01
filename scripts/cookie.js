@@ -1,6 +1,16 @@
 /* utility functions */
+function getDomain() {
+  const domain = location.hostname;
+
+  if (domain.includes('deriv.com')) {
+    return 'deriv.com';
+  }
+
+  return domain.includes('binary.sx') ? 'binary.sx' : domain;
+}
+
 function eraseCookie(name) {
-  document.cookie = name + "=; Max-Age=-99999999; domain=deriv.com; path=/;";
+  document.cookie = name + `=; Max-Age=-99999999; domain=${getDomain()}; path=/;`;
 }
 
 function getCookie(name) {
@@ -89,7 +99,7 @@ window.onload = function () {
       .replace("%7B", "{")
       .replace("%7D", "}");
 
-    document.cookie = `utm_data=${utm_data_cookie}; domain=deriv.com; path=/;`;
+    document.cookie = `utm_data=${utm_data_cookie}; domain=${getDomain()}; path=/;`;
   }
   /* end handling UTMs */
 
@@ -98,7 +108,7 @@ window.onload = function () {
     eraseCookie("affiliate_tracking");
     document.cookie = `affiliate_tracking=${searchParams.get(
       "t"
-    )};domain=deriv.com; path=/;`;
+    )};domain=${getDomain()}; path=/;`;
   }
   /* end handling affiliate tracking */
 
@@ -116,7 +126,7 @@ window.onload = function () {
       .replace("%7B", "{")
       .replace("%7D", "}");
 
-    document.cookie = `signup_device=${signup_data_cookie};domain=deriv.com; path=/;`;
+    document.cookie = `signup_device=${signup_data_cookie};domain=${getDomain()}; path=/;`;
   }
   /* end handling signup device */
 
@@ -152,7 +162,7 @@ window.onload = function () {
         .replace("%7B", "{")
         .replace("%7D", "}");
 
-      document.cookie = `date_first_contact=${date_first_contact_data_cookie};domain=deriv.com; path=/;`;
+      document.cookie = `date_first_contact=${date_first_contact_data_cookie};domain=${getDomain()}; path=/;`;
 
       ws.close();
     };
@@ -162,7 +172,7 @@ window.onload = function () {
   /* start handling gclid */
   if (searchParams.has("gclid")) {
     eraseCookie("gclid");
-    document.cookie = `gclid=${searchParams.get("gclid")};domain=deriv.com; path=/;`;
+    document.cookie = `gclid=${searchParams.get("gclid")};domain=${getDomain()}; path=/;`;
   }
   /* end handling gclid */
 };
