@@ -265,7 +265,12 @@
             [data-ogsc] .darkcolor-white{ color: #ffffff !important; }
   
             /* Custom Dark Mode Text Link Color */
-            [data-ogsc] .link { color: #91ADD4 !important; }           
+            [data-ogsc] .link { color: #91ADD4 !important; } 
+
+            @media (prefers-color-scheme: dark ) and (max-width: 620px)  {
+                .mobile-dark-padding-top { padding-top: 20px !important; }
+                [data-ogsc] .mobile-dark-padding-top { padding-top: 20px !important; }
+            }          
           
         </style>
     </head>
@@ -305,21 +310,21 @@
                     <![endif]-->
                     <table  border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff; max-width: 600px;">
                         <tr>
-                            <td  bgcolor="ffffff" align="center" style="padding: 10px 30px 0px 30px; background-color: #ffffff;" class="mobile-side darkmodeblack">
+                            <td  bgcolor="ffffff" align="center" style="padding: 10px 30px 0px 30px; background-color: #ffffff;" class="mobile-side darkmodeblack mobile-dark-padding-top">
                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 1.25 ; color: #333333; font-weight: 600;" class="mobile-font-size-24">We hear you</p>
                             </td>
                         </tr> 
                         <tr>
-                            <td bgcolor="#ffffff" align="center" class="darkmodeblack" >
+                            <td bgcolor="#ffffff" align="center" class="darkmodeblack mobile-dark-padding-top" >
                                 <img  src="https://static.deriv.com/email/images/dp2p-small/image-dp-2-p-desktop.png" style="display: block;" class="mobile-img-width" alt="Deriv.com">
                             </td>
                         </tr> 
                         <tr>
-                            <td bgcolor="ffffff" align="center" style="padding: 10px 20px 0px 20px; background-color: #ffffff;" class="mobile-side darkmodeblack">
+                            <td bgcolor="ffffff" align="center" style="padding: 10px 20px 0px 20px; background-color: #ffffff;" class="mobile-side darkmodeblack mobile-dark-padding-top">
                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 24px; line-height: 0.9 ; color: #333333; font-weight: 600;" class="mobile-font-size-20 mobile-line-height">Kiss payment problems goodbye with DP2P<br><br><span style="font-size: 14px;font-weight: 400;" class="darkcolor-subtext">Say hello to DP2P. It’s our new peer-to-peer deposit and withdrawal service, where you can move funds in and out of your Deriv account via exchanges with fellow traders.</span></p>
                             </td>
                         </tr> 
-                        <td bgcolor="#ffffff" align="center" style="padding: 0px 30px 40px 30px;" class="darkmodeblack">
+                        <td bgcolor="#ffffff" align="center" style="padding: 0px 30px 40px 30px;" class="darkmodeblack mobile-dark-padding-top">
                             <!--[if (gte mso 9)|(IE)]>
                             <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://deriv.com/p2p/v1" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="10%" strokecolor="#ff444f" fillcolor="#ff444f">
                             <w:anchorlock/>
@@ -412,7 +417,7 @@
                                             <div style="display:inline-block; max-width:48%; min-width:260px; vertical-align:middle; width:100%;" class="mobile-wrapper">
                                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;" class="max-width">
                                                     <tr>
-                                                        <td align="left" valign="middle" style="padding: 10px 10px 0 20px;" class="darkmodelowblack  mobile-side">
+                                                        <td align="left" valign="middle" style="padding: 10px 10px 0 20px;" class="darkmodelowblack  mobile-side mobile-dark-padding-top">
                                                             <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1 ; color: #333333; font-weight: 600;" class="mobile-center">Works in your local currency<br><br><span style="font-size: 14px; font-weight: 400; line-height: 21px;" class="darkcolor-subtext">Exchange your local currency to make deposits and withdrawals</span></p>
                                                         </td>
                                                     </tr>
@@ -519,7 +524,7 @@
                                             <div style="display:inline-block; max-width:48%; min-width:260px; vertical-align:middle; width:100%;" class="mobile-wrapper">
                                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;" class="max-width">
                                                     <tr>
-                                                        <td align="left" valign="middle" style="padding: 0 10px 0 20px;" class="darkmodelowblack mobile-side">
+                                                        <td align="left" valign="middle" style="padding: 0 10px 0 20px;" class="darkmodelowblack mobile-side mobile-dark-padding-top">
                                                             <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.25 ; color: #333333; font-weight: 600;" class="mobile-center">Available on Deriv.com and Google Play<br><br><span style="font-size: 14px; font-weight: 400; line-height: 21px;" class="darkcolor-subtext">Easily make deposits and withdrawals on your desktop and mobile devices.</span></p>
                                                         </td>
                                                     </tr>
@@ -572,7 +577,7 @@
                             </td>
                         </tr> 
                         <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding:0px 30px 40px 30px;" class="mobile-visible-block darkmodeblack">
+                            <td bgcolor="#ffffff" align="center" style="padding:0px 30px 40px 30px;" class="mobile-visible-block darkmodeblack mobile-dark-padding-top">
                                 <a href="https://play.google.com/store/apps/details?id=com.deriv.dp2p">
                                     <img  src="https://static.deriv.com/html/broadcasts/rebranding/images/google-play.png" style="display: block;" alt="Google Play store">
                                 </a>
@@ -597,7 +602,7 @@
                             </td>
                         </tr> 
                         <tr>
-                            <td  align="center"  style="padding: 0px 30px 40px 30px;">
+                            <td  align="center"  style="padding: 0px 30px 40px 30px;" class="mobile-dark-padding-top">
                                 <!--[if (gte mso 9)|(IE)]>
                                 <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://deriv.com/p2p/v2" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="10%" strokecolor="#ff444f" fillcolor="#ff444f">
                                 <w:anchorlock/>
