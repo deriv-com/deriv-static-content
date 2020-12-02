@@ -189,9 +189,9 @@
                     width: 100% !important;
                     max-width: 100% !important;
                 }
-                .mobile-lowpadding {
-                    padding:1px 15px 20px 15px !important;
-                }
+                .mobile-title {
+                    padding:1px 30px 20px 30px !important;
+                }             
                 .mobile-lowsidepadding {
                     padding-left: 15px !important;
                     padding-right: 15px !important;
@@ -202,12 +202,17 @@
                 .mobile-font {
                     font-size: 24px !important;
                 }
+                .mobile-zerosidepadding {
+                    padding-left: 5px !important;
+                    padding-right: 5px !important;
+                }
             }
             /* Dark mode STYLES */
             @media (prefers-color-scheme: dark ) {
                 /* Shows Dark Mode-Only Content, Like Images */
                 .dark-img { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
-        
+                .dark-img2 { display:block !important; width: 100% !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+
                 /* Hides Light Mode-Only Content, Like Images */
                 .light-img { display:none; display:none !important; }
    
@@ -224,7 +229,8 @@
             } 
             /* Shows Dark Mode-Only Content, Like Images */
             [data-ogsc] .dark-img { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
-            
+            [data-ogsc] .dark-img2 { display:block !important; width: 100% !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+
             /* Hides Light Mode-Only Content, Like Images */
             [data-ogsc] .light-img { display:none; display:none !important; }
   
@@ -237,7 +243,8 @@
             [data-ogsc] .darkmodegray { color: #6e6e6e !important; }
   
             /* Custom Dark Mode Text Link Color */
-            [data-ogsc] .link { color: #91ADD4 !important; }           
+            [data-ogsc] .link { color: #91ADD4 !important; }  
+
 
         </style>
     </head>
@@ -245,7 +252,7 @@
         <table bgcolor="#000000"  border="0" cellpadding="0" cellspacing="0" width="100%">
             <!-- COPY BLOCK -->
             <tr>
-                <td bgcolor="#eeeeee" align="center" style="padding: 40px 15px 0 15px;" >
+                <td bgcolor="#eeeeee" align="center" style="padding: 40px 15px 0 15px;" class="mobile-zerosidepadding">
                     <!--[if (gte mso 9)|(IE)]>
                     <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
                     <![endif]-->
@@ -266,20 +273,20 @@
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#0e0e0e" align="center" style="padding: 35px 20px 42px 20px; background-color: #0e0e0e;" class="mobile-lowpadding darkmodelowblack">
+                            <td bgcolor="#0e0e0e" align="center" style="padding: 35px 30px 42px 30px; background-color: #0e0e0e;" class="mobile-title darkmodelowblack">
                                 <p style="padding: 0px;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 1.25 ; color: #ffffff; font-weight: 600;" class="mobile-font">New GIFs and videos to promote multipliers</p>
                             </td>
                         </tr>
                         <tr>
                             <td bgcolor="#ffffff" align="center" style="padding: 0px" class="darkmodeblack">
                                 <a href="https://www.deriv.com">
-                                    <img class="light-img" src="https://deriv-static-content-ig5xcive7.vercel.app/email/images/multipliers/multipliers-video.png" width="100%" style="display: block;" alt="Deriv.com">
+                                    <img class="light-img" src="https://static.deriv.com/email/images/multipliers/image1.png" width="100%" style="display: block;" alt="Deriv.com">
                                     <!-- The following Dark Mode logo image is hidden 
                                      with MSO conditional code and inline CSS, but will be         
                                      revealed once Dark Mode is triggered -->
  
-                                    <div class="dark-img" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
-                                     <img class="dark-img" src="https://deriv-static-content-bw2duzfsw.vercel.app/email/images/multipliers/dark-multipliers-video.png" width="100%" height="200" alt="Deriv.com" style="color: #ffffff; font-family:'proxima_nova', Helvetica, Arial, sans-serif; text-align:center; font-weight:bold; font-size:36px; line-height:40px; text-decoration: none; margin: 0 auto; padding: 0;" border="0" />
+                                    <div class="dark-img2" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
+                                     <img class="dark-img2" src="https://static.deriv.com/email/images/multipliers/image2.png" width="100%" height="200" alt="Deriv.com" style="color: #ffffff; font-family:'proxima_nova', Helvetica, Arial, sans-serif; text-align:center; font-weight:bold; font-size:36px; line-height:40px; text-decoration: none; margin: 0 auto; padding: 0;" border="0" />
                                     </div>                                   
                                 </a>
                             </td>
@@ -291,11 +298,11 @@
                 </td>
             </tr>
             <tr>
-                <td bgcolor="#eeeeee" align="center" style="padding: 0px 15px;" >
+                <td bgcolor="#eeeeee" align="center" style="padding: 0px 15px;" class="mobile-zerosidepadding">
                     <!--[if (gte mso 9)|(IE)]>
                     <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
                     <![endif]-->                
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;" class="darkmodeblack">
                         <!-- COPY
                             use td padding to set elements margin. 
                             Outlook ignores margins, so we use padding. 
@@ -343,7 +350,7 @@
             <!-- Deriv dark-2 image -->
            <!-- FOOTER -->
             <tr>
-                <td bgcolor="#eeeeee" align="center" style="padding: 0px 15px 0px 15px;">
+                <td bgcolor="#eeeeee" align="center" style="padding: 0px 15px 0px 15px;" class="mobile-zerosidepadding">
                 <!--[if (gte mso 9)|(IE)]>
                     <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
                 <![endif]-->
