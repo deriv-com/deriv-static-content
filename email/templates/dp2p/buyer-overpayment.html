@@ -150,6 +150,8 @@
             .sub-table td {
                 padding: 0px 28px 16px 28px;
             }
+            /* Hides Dark Mode-Only Content, Like Images */
+            .dark-img { display:none !important; }
 
             /* MOBILE STYLES */
             @media screen and (max-width: 620px) {
@@ -185,14 +187,14 @@
                 .dark-img { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
    
                 /* Hides Light Mode-Only Content, Like Images */
-                .light-img { display:none; display:none !important; }
+                .light-img { display:none !important; }
    
                 /* Custom Dark Mode Background Color */
                 .darkmode-black { background-color: #0e0e0e !important; }
                 .darkmode-low-black { background-color: #1a1a1a !important; }
    
                 /* Custom Dark Mode Font Colors */
-                body h1, body h2, body p, body span, body a, body b, body td { color: #c2c2c2 !important; }
+                h1, h2, p, span, b, td { color: #c2c2c2 !important; }
                 .darkmode-gray { color: #aaaaaa !important; }
 
                 /* Custom Dark Mode border Color */
@@ -202,10 +204,6 @@
                 .link { color: #ff444f !important; }
 
                 /* Custom CSS */
-                .data-table-cont-td p, .data-table-cont-td td, .darkmode-font-white {
-                    color: white !important;
-                }
-
                 .darkmode-white-text, .darkmode-white-text h1, .darkmode-white-text h2, .darkmode-white-text p, 
                 .darkmode-white-text span, .darkmode-white-text a, .darkmode-white-text b, .darkmode-white-text td {
                     color: #FFFFFF !important;
@@ -231,8 +229,8 @@
             [data-ogsc] .darkmode-low-black { background-color: #20202048 !important; }
   
             /* Custom Dark Mode Font Colors */
-            [data-ogsc] body h1, [data-ogsc] body h2, [data-ogsc] body p, [data-ogsc] body span, [data-ogsc] body a, 
-            [data-ogsc] body b, [data-ogsc] body td { 
+            [data-ogsc] h1, [data-ogsc] h2, [data-ogsc] p, [data-ogsc] span, 
+            [data-ogsc] b, [data-ogsc] td { 
                 color: #c2c2c2 !important; }
             [data-ogsc] .darkmode-gray { color: #aaaaaa !important; }
 
@@ -259,7 +257,7 @@
         <table border="0" cellpadding="0" cellspacing="0" width="100%">
             <!-- COPY BLOCK -->
             <tr>
-                <td class="mobile-no-h-p" bgcolor="#eeeeee" align="center" style="padding: 40px 15px;">
+                <td class="mobile-no-h-p" bgcolor="#eeeeee" align="center" style="padding: 40px 15px 0px;">
                     <!--[if (gte mso 9)|(IE)]>
                     <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
                     <![endif]-->
@@ -315,7 +313,7 @@
                         <!--  -->                     
                         <tr><td class="mobile-h-p-16 darkmode-black" bgcolor="#ffffff" align="left" 
                                 style=" padding: 40px 28px 16px;">
-                            <p class="darkmode-font-white" style="  font-family: 'IBM Plex Sans', Arial, sans-serif; 
+                            <p class="" style="  font-family: 'IBM Plex Sans', Arial, sans-serif; 
                                         color: #333333; font-size: 16px; 
                                         font-weight: 400; 
                                         line-height: 1.5; 
@@ -343,7 +341,7 @@
                                                         letter-spacing: normal;
                                                         color: #333333;">
                                     <tr><td class="darkmode-low-black" bgcolor="#f3f5f6" align="left" style="padding: 16px 28px;">
-                                        Your role in the exchange: <span style="display: inline-block;"><b>Buyer</b></span>
+                                        <span>Your role in the exchange:</span> <span style="display: inline-block;"><b>Buyer</b></span>
                                     </td></tr>
                             
                                     <tr><td class="darkmode-low-black" bgcolor="#f3f5f6" align="left" style="padding: 0px 28px 16px;">
@@ -400,10 +398,19 @@
                                 <tbody>
                                     <tr>
                                         <td valign="top" style="display: table-cell; padding: 0px 8px 0px 0px; width: 24px; height: 24px;">
-                                            <img width="24px" height="24px" src="https://static.deriv.com/email/images/dp2p-small/email-step-1.png" 
-                                                class="" border="0" alt="Deriv.com" style=" display: inline-block; 
-                                                                                            width: 24px;
-                                                                                            height: 24px;">
+                                            <img class="light-img" src="https://static.deriv.com/email/images/dp2p-small/email-step-1.png" 
+                                                width="24px" height="24px" border="0" alt="Deriv.com" 
+                                                style=" display: inline-block; 
+                                                        width: 24px;
+                                                        height: 24px;">
+
+                                            <div class="dark-img" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
+                                                <img class="dark-img" src="https://static.deriv.com/email/images/dp2p-small/email-step-dark-mode-1.svg" 
+                                                    width="24px" height="24px" border="0" alt="Deriv.com" 
+                                                    style=" display: inline-block; 
+                                                            width: 24px;
+                                                            height: 24px;">
+                                            </div> 
                                         </td>
                                         <td class="darkmode-low-black" bgcolor="#f3f5f6" valign="top" align="left" 
                                             style=" padding: 0px;
@@ -440,10 +447,19 @@
                                 <tbody>
                                     <tr>
                                         <td valign="top" style="display: table-cell; padding: 0px 8px 0px 0px; width: 24px; height: 24px;">
-                                            <img width="24px" height="24px" src="https://static.deriv.com/email/images/dp2p-small/email-step-2.png" 
-                                                class="" border="0" alt="Deriv.com" style=" display: inline-block; 
-                                                                                            width: 24px;
-                                                                                            height: 24px;">
+                                            <img class="light-img" src="https://static.deriv.com/email/images/dp2p-small/email-step-2.png" 
+                                                width="24px" height="24px" border="0" alt="Deriv.com" 
+                                                style=" display: inline-block; 
+                                                        width: 24px;
+                                                        height: 24px;">
+          
+                                                <div class="dark-img" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
+                                                    <img class="dark-img" src="https://static.deriv.com/email/images/dp2p-small/email-step-dark-mode-2.svg" 
+                                                        width="24px" height="24px" border="0" alt="Deriv.com" 
+                                                        style=" display: inline-block; 
+                                                                width: 24px;
+                                                                height: 24px;">
+                                                </div>   
                                         </td>
                                         <td class="darkmode-low-black" bgcolor="#f3f5f6" valign="top" align="left" 
                                             style=" padding: 0px;
@@ -480,10 +496,19 @@
                                 <tbody>
                                     <tr>
                                         <td valign="top" style="display: table-cell; padding: 0px 8px 0px 0px; width: 24px; height: 24px;">
-                                            <img width="24px" height="24px" src="https://static.deriv.com/email/images/dp2p-small/email-step-3.png" 
-                                                class="" border="0" alt="Deriv.com" style=" display: inline-block; 
-                                                                                            width: 24px;
-                                                                                            height: 24px;">
+                                            <img class="light-img" src="https://static.deriv.com/email/images/dp2p-small/email-step-3.png" 
+                                                width="24px" height="24px" border="0" alt="Deriv.com" 
+                                                style=" display: inline-block; 
+                                                        width: 24px;
+                                                        height: 24px;">
+                                            
+                                            <div class="dark-img" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
+                                                <img class="dark-img" src="https://static.deriv.com/email/images/dp2p-small/email-step-dark-mode-3.svg" 
+                                                    width="24px" height="24px" border="0" alt="Deriv.com" 
+                                                    style=" display: inline-block; 
+                                                            width: 24px;
+                                                            height: 24px;">
+                                            </div>   
                                         </td>
                                         <td class="darkmode-low-black" bgcolor="#f3f5f6" valign="top" align="left" 
                                             style=" padding: 0px;
@@ -563,10 +588,10 @@
                                                                                                 text-align: start;
                                                                                                 border-bottom: none 1px #e8e8e8;">
                                             <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0;">
-                                                <b>Note:</b> According to DP2P terms of use, the buyer and the seller are solely 
-                                                responsible for making sure that the payment is accurate. Deriv is not liable in 
-                                                any way to make corrections or compensations for any incorrect payment made by the 
-                                                buyer, including but not limited to overpayment and underpayment.
+                                                <b>Note:</b> <span>According to DP2P terms of use, the buyer and the seller are solely 
+                                                    responsible for making sure that the payment is accurate. Deriv is not liable in 
+                                                    any way to make corrections or compensations for any incorrect payment made by the 
+                                                    buyer, including but not limited to overpayment and underpayment.</span>
                                             </p>
                                         </td>
                                     </tr>
@@ -603,13 +628,13 @@
                             <td class="footer-td" align="center" bgcolor="#f3f5f6" 
                                 style=" padding: 40px 20px 33px;">
                                 <a href="https://www.deriv.com">
-                                    <img class="light-img" src="https://static.deriv.com/html/images/deriv-logo-grey.png" width="140" height="25"  style="display: block;margin-top: -1px;" alt="Deriv.com">
+                                    <img class="light-img" src="https://static.deriv.com/html/images/deriv-logo-grey.png" border="0" width="140" height="25"  style="display: block;margin-top: -1px;" alt="Deriv.com">
                                     <!-- The following Dark Mode logo image is hidden 
                                     with MSO conditional code and inline CSS, but will be         
                                     revealed once Dark Mode is triggered -->
 
                                     <div class="dark-img" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
-                                    <img class="dark-img" src="https://deriv-static-content-7ybueco6i.vercel.app/email/images/marketing/email-logo-1-white.png" width="140" height="25" alt="Deriv.com" style="color: #ffffff; font-family:'proxima_nova', Helvetica, Arial, sans-serif; text-align:center; font-weight:bold; font-size:36px; line-height:40px; text-decoration: none; margin: 0 auto; padding: 0;" border="0" />
+                                    <img class="dark-img" src="https://static.deriv.com/email/images/marketing/email-logo-1-white.png" width="140" height="25" alt="Deriv.com" style="color: #ffffff; font-family:'proxima_nova', Helvetica, Arial, sans-serif; text-align:center; font-weight:bold; font-size:36px; line-height:40px; text-decoration: none; margin: 0 auto; padding: 0;" border="0" />
                                     </div>                                   
                                 </a>
                             </td>
@@ -624,21 +649,21 @@
                                         line-height: 18px;">
                                 <p style="margin: 0;">
                                     <a href="https://twitter.com/derivdotcom" style="text-decoration: none;">
-                                        <img src="https://static.deriv.com/html/images/social/dark/twitter-dark.png" height="32" width="32" alt="Deriv.com on Twitter" title="Deriv.com on Twitter" />
+                                        <img src="https://static.deriv.com/html/images/social/dark/twitter-dark.png" border="0" height="32" width="32" alt="Deriv.com on Twitter" title="Deriv.com on Twitter" />
                                     </a>
                                     &nbsp;&nbsp;
                                     <a href="https://www.facebook.com/derivdotcom" style="text-decoration: none;">
-                                        <img src="https://static.deriv.com/html/images/social/dark/facebook-dark.png" height="32" width="32" alt="Deriv.com on Facebook" title="Deriv.com on Facebook" />
+                                        <img src="https://static.deriv.com/html/images/social/dark/facebook-dark.png" border="0" height="32" width="32" alt="Deriv.com on Facebook" title="Deriv.com on Facebook" />
                                     </a>
                                     &nbsp;&nbsp;
                                     <a href="https://www.instagram.com/deriv_official/" style="text-decoration: none;">
-                                        <img src="https://static.deriv.com/html/images/social/dark/instagram-dark.png" height="32" width="32" alt="Deriv.com on Instagram" title="Deriv.com on Instagram" />
+                                        <img src="https://static.deriv.com/html/images/social/dark/instagram-dark.png" border="0" height="32" width="32" alt="Deriv.com on Instagram" title="Deriv.com on Instagram" />
                                     </a>&nbsp;&nbsp;
                                     <a href="https://t.me/binarydotcom" style="text-decoration: none;">
-                                        <img src="https://static.deriv.com/html/images/social/dark/telegram-dark.png" height="32" width="32" alt="Deriv.com on Telegram" title="Deriv.com on Telegram" />
+                                        <img src="https://static.deriv.com/html/images/social/dark/telegram-dark.png" border="0" height="32" width="32" alt="Deriv.com on Telegram" title="Deriv.com on Telegram" />
                                     </a>&nbsp;&nbsp;
                                     <a href="https://www.youtube.com/c/Derivdotcom" style="text-decoration: none;">
-                                        <img src="https://static.deriv.com/html/images/social/dark/youtube-dark.png" height="32" width="32" alt="Deriv.com on Youtube" title="Deriv.com on Youtube" />
+                                        <img src="https://static.deriv.com/html/images/social/dark/youtube-dark.png" border="0" height="32" width="32" alt="Deriv.com on Youtube" title="Deriv.com on Youtube" />
                                     </a>
                                 </p>
                             </td>
