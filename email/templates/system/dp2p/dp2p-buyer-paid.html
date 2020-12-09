@@ -217,7 +217,7 @@
                  .darkmode-gray-text { color: #c2c2c2 !important; }
 
                 /* Custom Dark Mode Text Link Color */
-                .link { color: #91ADD4 !important; }
+                .dark-border  { border-color: #343434 !important; }
             } 
             /* Shows Dark Mode-Only Content, Like Images */
             [data-ogsc] .dark-img { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
@@ -236,8 +236,8 @@
             [data-ogsc] .darkmode-color-title { color: #ffffff !important; }
             [data-ogsc] .darkmode-gray-text { color: #c2c2c2 !important; }
 
-            /* Custom Dark Mode Text Link Color */
-            [data-ogsc] .link { color: #91ADD4 !important; }           
+            /* Custom Dark Mode border Color */
+            [data-ogsc] .dark-border { border-color: #343434 !important; }           
 
         </style>
     </head>
@@ -249,7 +249,7 @@
                     <!--[if (gte mso 9)|(IE)]>
                     <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
                     <![endif]-->
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                    <table bgcolor="#0e0e0e" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;" class="darkmodelowblack">
                         <!-- COPY -->
                         <tr>
                             <td bgcolor="#0e0e0e" align="center" style="padding: 35px 30px 33px;" class="darkmodelowblack">
@@ -276,16 +276,23 @@
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#0e0e0e" align="center" style="padding: 10px 15px 65px 15px;" class="mobile-lowsidepadding darkmodelowblack">
+                            <td bgcolor="#0e0e0e" align="center" style="padding: 10px 15px 60px 15px;" class="mobile-lowsidepadding darkmodelowblack">
                                 <p style="padding: 0px;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 1.25 ; color: #ffffff; font-weight: 600;">has paid you</p>
                             </td>
-                        </tr>                        
-                        <!-- COPY
-                            use td padding to set elements margin. 
-                            Outlook ignores margins, so we use padding. 
-                            For each text block / element use table row.
-                            Do not use nested elements as would in the normal page.
-                        -->
+                        </tr> 
+                        
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                        </td></tr></table>
+                    <![endif]-->
+                </td>
+            </tr>
+            <tr>
+                <td bgcolor="#eeeeee" align="center" style="padding: 0px 10px 0px 10px;" class="mobile-zerosidepadding">
+                    <!--[if (gte mso 9)|(IE)]>
+                    <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
+                    <![endif]-->
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;" class="darkmodeblack"> 
                         <tr>
                             <td bgcolor="#ffffff" align="left" valign="top" style="padding: 30px 24px 0px; width: 100%;" class="darkmodeblack mobile-lowsidepadding">
                                     <!--[if (gte mso 9)|(IE)]>
@@ -293,22 +300,22 @@
                                     <![endif]-->
                                     <table border="0" style="margin: 0px auto !important;" cellpadding="0" cellspacing="0" width="100%">
                                         <tr>
-                                            <td  bgcolor="#f5f5f5" align="left" valign="top" style="padding: 15px 24px 8px; border-bottom: none 1px #e8e8e8;" class="darkmodelowblack mobile-lowsidepadding">
+                                            <td  bgcolor="#f3f5f6" align="left" valign="top" style="padding: 15px 24px 8px; border-bottom: none 1px #e8e8e8;" class="darkmodelowblack mobile-lowsidepadding">
                                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0;" class="darkmode-gray-text">Order ID: <span style="font-weight: 600;" class="darkmode-gray-text" ></span></p>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td  bgcolor="#f5f5f5" align="left" valign="top" style="padding: 8px 24px; border-bottom: none 1px #e8e8e8;" class="darkmodelowblack mobile-lowsidepadding">
+                                            <td  bgcolor="#f3f5f6" align="left" valign="top" style="padding: 8px 24px; border-bottom: none 1px #e8e8e8;" class="darkmodelowblack mobile-lowsidepadding">
                                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 0;" class="darkmode-gray-text">Order created:<span style="font-weight: 600;" class="darkmode-gray-text">&#60;date and time&#62;</span></p>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td  bgcolor="#f5f5f5" align="left" valign="top" style="padding: 8px 24px; border-bottom: none 1px #e8e8e8;" class="darkmodelowblack mobile-lowsidepadding">
+                                            <td  bgcolor="#f3f5f6" align="left" valign="top" style="padding: 8px 24px; border-bottom: none 1px #e8e8e8;" class="darkmodelowblack mobile-lowsidepadding">
                                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 0;" class="darkmode-gray-text">Exchange amount: <span style="font-weight: 600;"></span></p>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td bgcolor="#f5f5f5" align="left" valign="top" style="padding: 8px 24px 20px; border-bottom: none 1px #e8e8e8;" class="darkmodelowblack mobile-lowsidepadding">
+                                            <td bgcolor="#f3f5f6" align="left" valign="top" style="padding: 8px 24px 20px; border-bottom: none 1px #e8e8e8;" class="darkmodelowblack mobile-lowsidepadding">
                                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 0;" class="darkmode-gray-text">Exchange rate:<span style="font-weight: 600;"></span></p>
                                             </td>
                                         </tr>
@@ -351,11 +358,11 @@
                         </tr>
                         <tr>
                             <td bgcolor="#ffffff" align="center" style="padding: 10px 30px 40px 30px;" class="mobile-lowsidepadding darkmodeblack">
-                                <p  style=" background-color:#f5f7fa; font-family: 'IBM Plex Sans', Arial, sans-serif; color: #ff444f !important; font-size: 16px; font-weight: normal; line-height: 42px; margin: 0px;" class="darkmodelowblack"><a href="http://www.samplelinkhere.com" style="color: #ff444f !important;">http://www.samplelinkhere.com</a></p>
+                                <p  style=" background-color:#f3f5f6; font-family: 'IBM Plex Sans', Arial, sans-serif; color: #ff444f !important; font-size: 16px; font-weight: normal; line-height: 42px; margin: 0px;" class="darkmodelowblack"><a href="http://www.samplelinkhere.com" style="color: #ff444f !important;">http://www.samplelinkhere.com</a></p>
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#ffffff" align="left" style="padding: 40px 30px 20px;border-top: solid 1px #e5e5e5;" class="darkmodeblack mobile-lowsidepadding">
+                            <td bgcolor="#ffffff" align="left" style="padding: 40px 30px 20px;border-top: solid 1px #f2f2f2;" class="darkmodeblack mobile-lowsidepadding dark-border ">
                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px;line-height: 1.5; margin: 0px;" class="darkmode-gray-text"><span style="font-weight: 600;" class="darkmode-gray-text">What if I haven’t received payment?</span> Please contact &#60;buyer nickname&#62;via the DP2P chat channel to settle the order. </p>
                             </td>
                         </tr>                     
