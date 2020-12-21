@@ -180,6 +180,10 @@
                     padding-right: 0px !important;
                     padding-left: 0px !important;
                 }
+
+                .mobile-no-p {
+                    padding: 0px !important;
+                }
             }
 
             @media (prefers-color-scheme: dark) {
@@ -257,21 +261,21 @@
         <table border="0" cellpadding="0" cellspacing="0" width="100%">
             <!-- COPY BLOCK -->
             <tr>
-                <td class="mobile-no-h-p" bgcolor="#eeeeee" align="center" style="padding: 40px 15px 0px;">
+                <td class="mobile-no-p" bgcolor="#eeeeee" align="center" style="padding: 40px 15px 0px;">
                     <!--[if (gte mso 9)|(IE)]>
                     <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
                     <![endif]-->
                     <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                         <!-- COPY -->
                         <tr>
-                            <td class="header-td" bgcolor="#0e0e0e" align="center" style="padding: 35px 30px 33px;">
+                            <td class="header-td" bgcolor="#0e0e0e" align="center" style="padding: 35px 30px 32px;">
                                 <a href="https://www.deriv.com">
                                     <img src="https://static.deriv.com/html/images/deriv-logo-white.png" width="140" height="25" border="0" style="display: block;" alt="Deriv.com">
                                 </a>
                             </td>
                         </tr>
                         <tr>
-                            <td class="header-td" bgcolor="#0e0e0e" align="center" style="padding: 30px 30px 0 30px;">
+                            <td class="header-td" bgcolor="#0e0e0e" align="center" style="padding: 32px 30px 0 30px;">
                                 <p style="  padding: 0px;
                                             margin: 0px;
                                             font-family: 'IBM Plex Sans', Arial, sans-serif; 
@@ -279,12 +283,12 @@
                                             line-height: 1.25; 
                                             color: #ffffff; 
                                             font-weight: 400;">
-                                    Hi &lt;Seller’s nickname&gt;
+                                    Hello [client’s name]
                                 </p>
                             </td>
                         </tr>
                         <tr>
-                            <td class="header-td mobile-h-p-16" bgcolor="#0e0e0e" align="center" style="padding: 8px 30px 64px 30px;">
+                            <td class="header-td mobile-h-p-16" bgcolor="#0e0e0e" align="center" style="padding: 8px 52px 64px;">
                                 <p class="darkmode-white-text"
                                     style=" padding: 0px;
                                             margin: 0px;
@@ -293,7 +297,7 @@
                                             line-height: 1.25 ; 
                                             color: #ffffff; 
                                             font-weight: 600;">
-                                    Resolution for DP2P order <br>&lt;Sell order ID&gt;
+                                    Your personal details have been updated
                                 </p>
                             </td>
                         </tr>
@@ -302,48 +306,59 @@
 
                         <!--  -->                     
                         <tr><td class="darkmode-black mobile-h-p-16" bgcolor="#ffffff" align="left" style="padding: 40px 28px 16px;">
-                            <p style="  font-family: 'IBM Plex Sans', Arial, sans-serif; 
+                            <p class="" 
+                                style=" font-family: 'IBM Plex Sans', Arial, sans-serif; 
                                         color: #333333; font-size: 16px; 
                                         font-weight: 400; 
                                         line-height: 1.5; 
                                         margin: 0px 0px 0px 0px;">
-                                We’ve resolved your complaint regarding this DP2P exchange:
+                                You’ve successfully changed the following information on your Deriv profile:
                             </p>
                         </td></tr>
 
-                        <!-- sell data table -->
+                        <!-- data table -->
                         <tr>
-                            <td class="data-table-cont-td darkmode-black" bgcolor="#ffffff" align="left" valign="top" style="padding: 0px 28px 24px; width: 100%;">
+                            <td class="data-table-cont-td darkmode-black" bgcolor="#ffffff" align="left" valign="top" style="padding: 0px 28px 16px; width: 100%;">
                                 <!--[if (gte mso 9)|(IE)]>
                                 <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%"><tr><td align="center" valign="top" width="100%">
                                 <![endif]-->
                                 <table class="data-table" border="0" cellpadding="0" cellspacing="0" width="100%" 
-                                                style=" margin: 0px auto !important;
-                                                        width: 100%;
-                                                        height: 24px;
-                                                        border-collapse: separate !important;
-                                                        font-family: 'IBM Plex Sans', Arial, sans-serif;
-                                                        font-size: 16px;
-                                                        font-weight: normal;
-                                                        font-stretch: normal;
-                                                        font-style: normal;
-                                                        letter-spacing: normal;
-                                                        color: #333333;">
-                                    <tr><td class="darkmode-low-black" bgcolor="#f3f5f6" align="left" style="padding: 16px 28px;">
-                                        Your role in the exchange: <span style="display: inline-block;"><b>Seller</b></span>
-                                    </td></tr>
-                            
-                                    <tr><td class="darkmode-low-black" bgcolor="#f3f5f6" align="left" style="padding: 0px 28px 16px;">
-                                        Your order ID: <span style="display: inline-block;"><b>&lt;Sell order ID&gt;</b></span>
-                                    </td></tr>
-                                    
-                                    <tr><td class="darkmode-low-black" bgcolor="#f3f5f6" align="left" style="padding: 0px 28px 16px;">
-                                        Amount: <span style="display: inline-block;"><b>&lt;Currency code&gt; &lt;Amount&gt;</b></span>
-                                    </td></tr>
-                                    
-                                    <tr><td class="darkmode-low-black" bgcolor="#f3f5f6" align="left" style="padding: 0px 28px 16px;">
-                                        Created on: <span style="display: inline-block;"><b>&lt;dd/mm/yy&gt;, &lt;hh:mm&gt;</b></span>
-                                    </td></tr>
+                                    style=" margin: 0px auto !important;
+                                            width: 100%;
+                                            height: 24px;
+                                            border-collapse: separate !important;
+                                            font-family: 'IBM Plex Sans', Arial, sans-serif;
+                                            font-size: 16px;
+                                            font-weight: 500;
+                                            font-stretch: normal;
+                                            font-style: normal;
+                                            letter-spacing: normal;
+                                            color: #333333;">
+                                    <!-- table row -->
+                                    <tr>
+                                        <td class="darkmode-low-black" bgcolor="#f3f5f6" align="top" width="16px" height="16px" 
+                                            style="padding: 16px 24px 16px 24px; width: 16px !important; display: table-cell;">
+                                            <img src="https://static.deriv.com/email/images/icons/check-deep-gray.png" 
+                                                width="16px" height="16px" border="0" style="padding: 0px 4px 0px 0px; display: inline;" alt="Check Icon">
+                                            <span style="display: inline;">Phone number</span>    
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="darkmode-low-black" bgcolor="#f3f5f6" align="top" width="16px" height="16px" 
+                                            style="padding: 0px 24px 16px 24px; width: 16px !important; display: table-cell;">
+                                            <img src="https://static.deriv.com/email/images/icons/check-deep-gray.png" 
+                                                width="16px" height="16px" border="0" style="padding: 0px 4px 0px 0px;" alt="Check Icon">
+                                            <span>Email address</span>    
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="darkmode-low-black" bgcolor="#f3f5f6" align="top" width="16px" height="16px" 
+                                            style="padding: 0px 24px 16px 24px; width: 16px !important; display: table-cell;">
+                                            <img src="https://static.deriv.com/email/images/icons/check-deep-gray.png" 
+                                                width="16px" height="16px" border="0" style="padding: 0px 4px 0px 0px;" alt="Check Icon">
+                                            <span>Address</span>    
+                                        </td>
+                                    </tr>
                                 </table>
                                 <!--[if (gte mso 9)|(IE)]>
                                 </tr></td></table>
@@ -354,45 +369,20 @@
                         <tr>
                             <td class="darkmode-black mobile-h-p-16" bgcolor="#ffffff" align="left" 
                                 style=" color: #333333;
-                                        padding: 0px 28px 40px;
+                                        padding: 0px 28px 0px;
                                         font-family: 'IBM Plex Sans', Arial, sans-serif; 
                                         font-size: 16px; 
                                         font-weight: 400; 
                                         line-height: 24px;">
                                 <p style="  margin: 0px;
                                             font-family: 'IBM Plex Sans', Arial, sans-serif;">
-                                    After investigating the case, we have resolved the dispute in your favour. 
-                                    <span style="display: inline-block;"><b>&lt;Currency code&gt; &lt;Amount&gt;</b></span> has been released back to your account and the case is closed.
+                                    Thanks for keeping ​your profile​ up to date.<br><br>
+                                    Need help? ​<a class="link" href="https://deriv.com/contact-us" style="color: #ff444f; text-decoration: none;">contact us</a> via live chat.
                                 </p>
                             </td>
                         </tr>
-                        <!-- Note -->
-                        <tr>
-                            <td class="data-table-cont-td darkmode-black" bgcolor="#ffffff" align="left" valign="top" style="padding: 0px 24px 0px; width: 100%;">
-                                <!--[if (gte mso 9)|(IE)]>
-                                <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%"><tr><td align="center" valign="top" width="100%">
-                                <![endif]-->
-                                <table border="0" style="margin: 0px auto !important;" cellpadding="0" cellspacing="0" width="100%">
-                                    <tr>
-                                        <td class="darkmode-low-black" bgcolor="#f3f5f6" align="left" valign="top" style="padding: 16px 24px;
-                                                                                                text-align: start;
-                                                                                                border-bottom: none 1px #e8e8e8;">
-                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0;">
-                                                <b>Note:</b> According to DP2P terms of use, the buyer and the seller are solely 
-                                                responsible for making sure that the payment is accurate. Deriv is not liable in 
-                                                any way to make corrections or compensations for any incorrect payment made by 
-                                                the buyer, including but not limited to overpayment and underpayment.
-                                            </p>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <!--[if (gte mso 9)|(IE)]>
-                                </tr></td></table>
-                            <![endif]-->
-                            </td>
-                        </tr>  
                         
-                        <!-- button -->
+                        <!-- salute button -->
                         <tr>
                             <td class="darkmode-black" bgcolor="#ffffff" align="center" style="padding: 40px 0px;">
                                 <img src="https://static.deriv.com/html/images/social/dark/salute.png" width="32px" height="32px" border="0" style="display: block;" alt="Salute hand-logo">
@@ -403,7 +393,7 @@
                         </td></tr></table>
                     <![endif]-->
                 </td>
-            </tr>            
+            </tr>
 
             <!-- FOOTER -->
             <tr>
