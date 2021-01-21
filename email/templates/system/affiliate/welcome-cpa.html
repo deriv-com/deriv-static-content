@@ -214,6 +214,14 @@
                 .mobile-bgcolor-gray {
                     background-color: #eeeeee !important;
                 }
+                .mobile-center-align {
+                    text-align:center !important;
+                    margin-left:auto !important;
+                    margin-right:auto !important;
+                }
+                .mobile-zero-margin-left {
+                    margin-left: 0 !important;
+                }
             }
             @media (prefers-color-scheme: dark ) {
                 /* Shows Dark Mode-Only Content, Like Images */
@@ -235,6 +243,7 @@
 
             /* Custom Dark Mode border color */
                 .dark-border { border-color: #343434 !important; }
+                .dark-element-border { border-color: #1a1a1a !important; } 
             } 
             /* Shows Dark Mode-Only Content, Like Images */
             [data-ogsc] .dark-img { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
@@ -255,6 +264,7 @@
   
             /* Custom Dark Mode border color */
             [data-ogsc] .dark-border { border-color: #343434 !important; } 
+            [data-ogsc] .dark-element-border { border-color: #1a1a1a !important; } 
         </style>
     </head>
     <body style="background-color: #eeeeee; margin: 0 !important; padding: 0 !important;">
@@ -268,18 +278,13 @@
                     <table  border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #333333; max-width: 600px;" class="darkmodelowblack">
                         <!-- COPY -->
                         <tr>
-                            <td bgcolor="#0e0e0e" align="center" style="padding: 33px 30px 35px;" class="darkmodelowblack">
+                            <td bgcolor="#0e0e0e" align="center" style="padding: 33px 28px 60px;" class="darkmodelowblack">
                                 <img src="https://static.deriv.com/html/images/deriv-logo-white.png" width="140" height="25"  style="display: block;" alt="Deriv.com">
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#0e0e0e" align="center" style="padding: 35px 30px 5px 30px; background-color: #0e0e0e;" class="mobile-lowsidepadding darkmodelowblack">
-                                <p style="margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.25 ; color: #ffffff; font-weight: 400;" class="darkcolor-subtext">Hello [client’s name]</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td bgcolor="#0e0e0e" align="center" style="padding: 5px 50px 70px 50px; background-color: #0e0e0e;" class="mobile-lowsidepadding darkmodelowblack">
-                                <p style="margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 1.25 ; color: #ffffff; font-weight: 600;">Your Deriv account was used to login on the following device.</p>
+                            <td bgcolor="#0e0e0e" align="center" style="padding: 5px 100px 60px 100px; background-color: #0e0e0e;" class="mobile-lowsidepadding darkmodelowblack">
+                                <p style="margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 1.5 ; color: #ffffff; font-weight: 600;">Welcome onboard, &#60;affiliate name&#62;!</p>
                             </td>
                         </tr>                      
                     </table>
@@ -296,63 +301,154 @@
                     <![endif]-->
                     <table  border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff; max-width: 600px;" class="darkmodeblack">
                         <tr>
-                            <td align="left" style="padding: 40px 30px 10px 30px; background-color: #ffffff;" class="mobile-lowsidepadding darkmodeblack">
-                                <p style="margin:0;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #333333; font-weight: 400;" class="darkcolor-subtext">Please review the details to confirm it was you.</p>
+                            <td align="left" style="padding: 40px 28px 10px 28px; background-color: #ffffff;" class="mobile-lowsidepadding darkmodeblack">
+                                <p style="margin:0;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #333333; font-weight: 400;" class="darkcolor-subtext">You’re now part of a global network of over 40,000 partners from 150 countries. We’re thrilled to have you with us.</p>
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#ffffff" align="left" valign="top" style="padding: 15px 24px 0px; width: 100%;" class="darkmodeblack mobile-lowsidepadding">
-                                    <!--[if (gte mso 9)|(IE)]>
-                                    <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%"><tr><td align="center" valign="top" width="100%">
-                                    <![endif]-->
-                                    <table border="0" style="margin: 0px auto !important;" cellpadding="0" cellspacing="0" width="100%" class="darkmode-lowbodyblack">
+                            <td align="left" style="padding: 18px 28px 10px 28px; background-color: #ffffff;" class="mobile-lowsidepadding darkmodeblack">
+                                <p style="margin:0;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #333333; font-weight: 600;" class="darkcolor-subtext">Your Deriv affiliate account details</p>
+                            </td>
+                        </tr>
+                        <!-- data in table 1-->
+                        <tr>
+                            <td align="left" valign="top" style="padding: 10px 28px 10px 28px;" class="mobile-lowsidepadding darkmodeblack">
+                                <table style="table-layout: fixed; background-color: #f9fafc;"" align="left" border="0" cellpadding="0" cellspacing="0" width="100%" class="darkmode-lowbodyblack max-width">
+                                    <tr>
+                                        <td align="left" valign="top" style="padding: 20px 10px 5px 20px;" class="mobile-zero-bottom" >
+                                           <p style="color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 21px; margin: 0px; text-align: left;" class="darkcolor-subtext">Account username:</p>
+                                        </td>
+                                        <td align="left" valign="top" style="padding: 20px 5px 5px 5px;" class="mobile-zero-bottom" >
+                                            <p style="word-break: break-all;color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; font-weight: 600; line-height: 21px; margin: 0px; text-align: left;" class="darkcolor-subtext">John DoeJohn</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left" valign="top" style="padding: 10px 10px 20px 20px;" class="mobile-zero-bottom" >
+                                           <p style="color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 21px; margin: 0px; text-align: left;" class="darkcolor-subtext">Your tracking link<span style="color: #ff444f !important;">*</span>:</p>
+                                        </td>
+                                        <td align="left" valign="top" style="padding: 10px 5px 20px 5px;" class="mobile-zero-bottom" >
+                                            <p style="word-break: break-all;color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; font-weight: 600; line-height: 21px; margin: 0px; text-align: left;" class="darkcolor-subtext">123456abcde32aaa123456</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <!-- End data in table 1-->                        
+                        <tr>
+                            <td align="left" style="padding: 0px 28px 20px 50px; background-color: #ffffff;" class="mobile-lowsidepadding darkmodeblack">
+                                <p style="margin:0;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 14px; line-height: 1.5 ; color: #333333; font-weight: 400;" class="darkcolor-subtext"><span style="color: #ff444f !important;">*</span>You must use this when promoting Deriv</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#ffffff" align="center" style="padding: 0px 28px 45px 28px;border-bottom: 1px solid #f2f3f4;" class="darkmodeblack dark-border">
+                                <!--[if (gte mso 9)|(IE)]>
+                                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://deriv.com" style="height:40px;v-text-anchor:middle;width:260px;" arcsize="10%" strokecolor="#ff444f" fillcolor="#ff444f">
+                                <w:anchorlock/>
+                                <center style="color:#ffffff;font-family:sans-serif;font-size:14px;font-weight:bold;">Log in to your account now</center>
+                                </v:roundrect>
+                                <![endif]-->
+                                <a class="button" href="https://deriv.com" style="mso-hide:all;"><span>Log in to your account now</span></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" style="padding: 40px 28px 5px 28px; background-color: #ffffff;" class="mobile-lowsidepadding darkmodeblack">
+                                <p style="margin:0;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 1.5 ; color: #333333; font-weight: 600;">Earn USD 100 per client</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" style="padding: 0px 28px 10px 28px; background-color: #ffffff;" class="mobile-lowsidepadding darkmodeblack">
+                                <p style="margin:0;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #333333; font-weight: 400;" class="darkcolor-subtext">As a Deriv affiliate, you’ll be able to earn USD 100 for each successful referral. This means that your client must open a real money account through your affiliate link and deposit a total of USD 100 or more (one-time or cumulative).</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" style="padding: 0px 28px 35px 28px; background-color: #ffffff;" class="mobile-lowsidepadding darkmodeblack">
+                                <p style="margin:0;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #333333; font-weight: 400;" class="darkcolor-subtext">We'll pay out your commissions as soon as practicable after the 15th day of each month through your Deriv account or preferred payment method.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" style="padding: 40px 28px 10px 28px; background-color: #ffffff;border-top: 1px solid #f2f3f4;" class="mobile-lowsidepadding darkmodeblack dark-border">
+                                <p style="margin:0;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 1.5 ; color: #333333; font-weight: 600;">Track and grow</p>
+                            </td>
+                        </tr>                        
+                        <!-- 3 columns icon text-text-->
+                        <tr>
+                            <td align="center" valign="top" style="font-size: 0em;" class="darkmodeblack">
+                                <!--[if (gte mso 9)|(IE)]>
+                                <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
+                                <tr>
+                                <td align="left" valign="top" width="140">
+                                <![endif]-->
+                                <div style="display:inline-block; max-width:33.3333%; min-width:150px; vertical-align:top; width:100%;" class="mobile-wrapper">
+                                    <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-left:40px; max-width:180px;" class="max-width darkmodeblack mobile-zero-margin-left">
                                         <tr>
-                                            <td  bgcolor="#f3f5f6" align="left" valign="top" style="padding: 10px 24px 8px; border-bottom: none 1px #e8e8e8;" class="darkmode-lowbodyblack mobile-lowsidepadding">
-                                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0;" class="darkcolor-subtext">Date & time of login: <span style="font-weight: 600;" class="darkcolor-subtext">Friday, June 15, 2019, 4:34 PM GMT</span></p>
+                                            <td align="left" valign="top" style="padding: 20px 20px 10px 20px;" class="darkmodeblack mobile-center-align">
+                                                <img src="https://static.deriv.com/email/images/icons/advanced-charting-widgets.png"  style="display: block;" class="mobile-zero-bottom mobile-center-align">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td  bgcolor="#f3f5f6" align="left" valign="top" style="padding: 8px 24px; border-bottom: none 1px #e8e8e8;" class="darkmode-lowbodyblack mobile-lowsidepadding">
-                                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 0;" class="darkcolor-subtext">Login country: <span style="font-weight: 600;" class="darkcolor-subtext">Nigeria</span></p>
+                                            <td align="left" valign="top" style="padding-left: 20px; padding-right: 20px;" class="darkmodeblack mobile-center-align">
+                                                <p style="color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 14px; font-weight: 600; line-height: 21px; margin: 0px;" class="darkcolor-subtext">Track your progress at any time</p>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td  bgcolor="#f3f5f6" align="left" valign="top" style="padding: 8px 24px; border-bottom: none 1px #e8e8e8;" class="darkmode-lowbodyblack mobile-lowsidepadding">
-                                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 0;" class="darkcolor-subtext">Login city: <span style="font-weight: 600;" class="darkcolor-subtext">Calabar</span></p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td bgcolor="#f3f5f6" align="left" valign="top" style="padding: 8px 24px 8px; border-bottom: none 1px #e8e8e8;" class="darkmode-lowbodyblack mobile-lowsidepadding">
-                                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 0;" class="darkcolor-subtext">IP address: <span style="font-weight: 600;" class="darkcolor-subtext">560.00.076.059</span></p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td bgcolor="#f3f5f6" align="left" valign="top" style="padding: 8px 24px 20px; border-bottom: none 1px #e8e8e8;" class="darkmode-lowbodyblack mobile-lowsidepadding">
-                                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 0;" class="darkcolor-subtext">Type of device: <span style="font-weight: 600;" class="darkcolor-subtext">iPhone</span></p>
+                                            <td align="left" valign="top" style="padding: 8px 20px 20px 20px;" class="darkmodeblack">
+                                                <p style="color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 21px; margin: 0px; text-align: left;" class="darkcolor-subtext">Use your <span style="color: #ff444f !important;">affiliate dashboard</span> to monitor your client signups, earnings, and more — all in one place.</p>
                                             </td>
                                         </tr>
                                     </table>
-                                    <!--[if (gte mso 9)|(IE)]>
-                                    </tr></td></table>
-                                <![endif]-->
+                                </div>
+                                <!--[if (gte mso 9)|(IE)]>
                                 </td>
-                            </tr>                        
-                        <tr>
-                        <tr>
-                            <td align="left" style="padding: 20px 30px 30px 30px; background-color: #ffffff;border-bottom: solid 1px #f3f5f6;" class="dark-border mobile-lowsidepadding darkmodeblack">
-                                <p style="margin:0;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #333333; font-weight: 400;" class="darkcolor-subtext">If this was you, great! You don't need to do anything.</p>
+                                <td width="15" style="font-size: 1px;">&nbsp;</td>
+                                <td align="left" valign="top" width="140">
+                                <![endif]-->
+                                <div style="display:inline-block; max-width:33.3333%; min-width:150px; vertical-align:top; width:100%;" class="mobile-wrapper darkmodeblack">
+                                    <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-left:20px;max-width:180px;" class="max-width darkmodeblack mobile-zero-margin-left">
+                                        <tr>
+                                            <td align="left" valign="top" style="padding: 20px 20px 10px 20px;" class="darkmodeblack mobile-center-align">
+                                                <img src="https://static.deriv.com/email/images/icons/grow-your-network.png"  style="display: block;" class="mobile-zero-bottom mobile-center-align">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left" valign="top" style="padding-left: 20px; padding-right: 20px;" class="darkmodeblack mobile-center-align">
+                                                <p style="color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 14px; font-weight: 600; line-height: 21px; margin: 0px;" class="darkcolor-subtext">Grow your network at no cost</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left" valign="top" style="padding: 8px 20px 20px 20px;" class="darkmodeblack">
+                                                <p style="color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 21px; margin: 0px; text-align: left;" class="darkcolor-subtext">Maximise client conversion through a variety of tried and tested <span style="color: #ff444f !important;"> marketing solutions </span>for free.</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <!--[if (gte mso 9)|(IE)]>
+                                </td>
+                                <td width="15" style="font-size: 1px;">&nbsp;</td>
+                                <td align="left" valign="top" width="140">
+                                <![endif]-->
+                                <div style="display:inline-block; max-width:33.3333%; min-width:150px; vertical-align:top; width:100%;" class="mobile-wrapper darkmodeblack">
+                                    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:180px;" class="max-width darkmodeblack">
+                                        <tr>
+                                            <td align="left" valign="top" style="padding: 20px 20px 10px 20px;" class="darkmodeblack mobile-center-align">
+                                                <img src="https://static.deriv.com/email/images/icons/need-more-information.png"  style="display: block;" class="mobile-zero-bottom mobile-center-align">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left" valign="top" style="padding-left: 20px; padding-right: 20px;" class="darkmodeblack mobile-center-align">
+                                                <p style="color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 14px; font-weight: 600; line-height: 21px; margin: 0px;" class="darkcolor-subtext">Need more information?</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left" valign="top" style="padding: 8px 20px 45px 20px;" class="darkmodeblack">
+                                                <p style="color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 21px; margin: 0px; text-align: left;" class="darkcolor-subtext">Learn more about the <span style="color: #ff444f !important;">Deriv Affiliate Programme</span> or get in touch with us through <span style="color: #ff444f !important;">partners@deriv.com</span>.</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <!--[if mso]></td></tr></table><![endif]-->
                             </td>
                         </tr>
-                        <tr>
-                            <td align="center" style="padding: 40px 30px 10px 30px; background-color: #ffffff;" class="mobile-lowsidepadding darkmodeblack">
-                                <p style="margin:0;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 24px; line-height: 1.5 ; color: #333333; font-weight: 600;" class="darkcolor-white">Don’t recognise this device?</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="center" style="padding: 10px 30px 10px 30px; background-color: #ffffff;" class="mobile-lowsidepadding darkmodeblack">
-                                <p style="margin:0;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #333333; font-weight: 400;" class="darkcolor-subtext">If this wasn’t you, please <a href="https://app.deriv.com/account/deriv-password" style="color: #ff444f !important">change your password now.</a></p>
-                            </td>
-                        </tr>                                        
+                        <!-- End 3 columns icon text-text-->                                        
                     </table>
                     <!--[if (gte mso 9)|(IE)]></td></tr></table>
                     <![endif]-->
@@ -368,7 +464,7 @@
                     <table bgcolor="#f3f5f6" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;" class="darkmodelowblack">
                         <!-- Icon -->
                         <tr>
-                            <td bgcolor="#ffffff"  align="center" style="padding: 20px 30px 40px 30px;" class="darkmodeblack">
+                            <td bgcolor="#ffffff"  align="center" style="padding: 0px 28px 40px 28px;" class="darkmodeblack">
                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px 0px 0px 0px;"><img src="https://static.deriv.com/html/images/social/dark/salute.png" width="32" border="0" style="display: block;" alt="Deriv.com"></p>
                             </td>
                         </tr>                        
@@ -417,8 +513,8 @@
                                 <table bgcolor="#f3f5f6" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;" class="darkmodelowblack">
                                     <tr>
                                         <td bgcolor="#f3f5f6" align="center" style="color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="darkmodelowblack">
-                                            <p style="padding: 0px 30px 0px 30px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #999999; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0px 0px 5px 0px;" class="darkmodegray ">© 2021 Deriv, All rights reserved.</p>
-                                            <p style="padding: 0px 10px 30px 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #999999; font-size: 12px; font-weight: 400; line-height: 16px; margin: 5px 0px 5px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important">Help Centre</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Terms and conditions</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://deriv.com/tnc/security-and-privacy.pdf" style="color: #ff444f !important">Security and privacy</a></p>
+                                            <p style="padding: 0px 28px 0px 28px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #999999; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0px 0px 5px 0px;" class="darkmodegray ">© 2021 Deriv, All rights reserved.</p>
+                                            <p style="padding: 0px 10px 28px 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #999999; font-size: 12px; font-weight: 400; line-height: 16px; margin: 5px 0px 5px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important">Help Centre</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Terms and conditions</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://deriv.com/tnc/security-and-privacy.pdf" style="color: #ff444f !important">Security and privacy</a></p>
                                         </td>
                                     </tr>
                                 </table>
