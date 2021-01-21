@@ -4,7 +4,6 @@
         <meta name="color-scheme" content="light dark">
         <meta name="supported-color-schemes" content="light dark">
         <meta charset="utf-8">
-        <title>Deriv</title>
         <meta name="viewport" content="width=device-width">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="x-apple-disable-message-reformatting">
@@ -37,6 +36,7 @@
                 a {color: #ff444f; font-family: Arial, sans-serif;}
             </style>
         <![endif]-->
+        <title>DP2P introductory</title>
         <style type="text/css">
             /* FONTS */
             @media screen {
@@ -118,13 +118,12 @@
             }
             a:hover {text-decoration: underline;}
             a.button {
-                height: 20px !important;
                 text-decoration: none;
                 text-align: center;
                 line-height: 20px;
                 padding: 10px 16px;
                 display: inline-block;
-                font-weight: 600;
+                font-weight: bold;
                 font-family: 'IBM Plex Sans', Arial, sans-serif; 
                 font-size: 14px;
                 border-radius: 4px;
@@ -134,24 +133,23 @@
                 background: #ff444f;
             }
             .button:hover {
-                background-color: #b12d36;
-                color: #ffffff;
+                background-color: #d43e47;
             }
             a.button-secondary {
-                height: 18px !important;
                 text-decoration: none;
                 text-align: center;
                 line-height: 20px;
-                padding: 10px 16px;
+                padding: 8px 14px;
                 display: inline-block;
-                font-weight: 600;
+                font-weight: bold;
                 font-family: 'IBM Plex Sans', Arial, sans-serif; 
                 font-size: 14px;
                 border-radius: 4px;
                 overflow: visible;
-                border: 2px solid #999999;
-                color: #333333;
-                background: #ffffff;
+                border: 0;
+                color: #ffffff;
+                border: 2px solid #ffffff;
+                background: transparent;
             }
             h1 {
                 font-family: 'IBM Plex Sans', Arial, sans-serif;
@@ -165,10 +163,6 @@
                 line-height: 40px;
                 margin: 0;
             }
-            .justify-word {
-                text-align: justify;
-                text-justify: inter-word;
-            }
                         
             @media screen and (max-width: 590px)  {
                 .button, .button-secondary {
@@ -177,11 +171,6 @@
             }
             /* MOBILE STYLES */
             @media screen and (max-width: 620px) {
-                .img-max {
-                    width: 100% !important;
-                    max-width: 100% !important;
-                    height: auto !important;
-                }
                 .max-width {
                     max-width: 100% !important;
                 }
@@ -192,32 +181,25 @@
                 .mobile-visible {
                     display:inline-block !important;
                 }
+                .mobile-visible-block {
+                    display: block !important;
+                }
                 .mobile-hide {
                     display:none !important;
                 }
-                .mobile-lowpadding-top {
-                    padding-top: 2px !important;
-                }
-                .mobile-lowsidepadding {
+                .mobile-side {
                     padding-right: 15px !important;
                     padding-left: 15px !important;
                 }
-                .mobile-negmargin {
-                    margin-top: -15px !important;
+                .mobile-low-top-padding {
+                    padding-top: 1px !important;
                 }
-                .mobile-center {
-                    text-align:center !important;
-                }
-                .mobile-unvisible {
-                    display: none!important;
-                } 
-                .mobile-bgcolor-gray {
-                    background-color: #eeeeee !important;
-                }
+
             }
             @media (prefers-color-scheme: dark ) {
                 /* Shows Dark Mode-Only Content, Like Images */
                 .dark-img { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+                .dark-img2 { display:block !important; width: 100% !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
         
                 /* Hides Light Mode-Only Content, Like Images */
                 .light-img { display:none; display:none !important; }
@@ -225,27 +207,25 @@
                 /* Custom Dark Mode Background Color */
                 .darkmodeblack { background-color:#0e0e0e !important; }
                 .darkmodelowblack { background-color: #202020 !important; }
-                .darkmode-lowbodyblack { background-color: #1a1a1a !important; }
    
                 /* Custom Dark Mode Font Colors */
                  h1, h2, p, span, a, b { color: #ffffff !important; }
                  .darkmodegray { color: #6e6e6e !important; }
                  .darkcolor-subtext{ color: #c2c2c2 !important; }
                  .darkcolor-white{ color: #ffffff !important; }
-
-            /* Custom Dark Mode border color */
-                .dark-border { border-color: #343434 !important; }
+   
+                /* Custom Dark Mode Text Link Color */
+                .link { color: #91ADD4 !important; }
             } 
             /* Shows Dark Mode-Only Content, Like Images */
             [data-ogsc] .dark-img { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
-            
+            [data-ogsc] .dark-img2 { display:block !important; width: 100% !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
             /* Hides Light Mode-Only Content, Like Images */
             [data-ogsc] .light-img { display:none; display:none !important; }
   
             /* Custom Dark Mode Background Color */
-            [data-ogsc] .darkmodeblack { background-color: #0e0e0e !important;}
+            [data-ogsc] .darkmodeblack { color:#c2c2c2 !important; background-color: #0e0e0e !important;}
             [data-ogsc] .darkmodelowblack { background-color: #202020 !important; }
-            [data-ogsc] .darkmode-lowbodyblack { background-color: #1a1a1a !important; }
   
             /* Custom Dark Mode Font Colors */
             [data-ogsc] h1, [data-ogsc] h2, [data-ogsc] p, [data-ogsc] span, [data-ogsc] a, [data-ogsc] b { color: #ffffff !important; }
@@ -253,112 +233,79 @@
             [data-ogsc] .darkcolor-subtext{ color: #c2c2c2 !important; }
             [data-ogsc] .darkcolor-white{ color: #ffffff !important; }
   
-            /* Custom Dark Mode border color */
-            [data-ogsc] .dark-border { border-color: #343434 !important; } 
+            /* Custom Dark Mode Text Link Color */
+            [data-ogsc] .link { color: #91ADD4 !important; }           
+          
         </style>
     </head>
     <body style="background-color: #eeeeee; margin: 0 !important; padding: 0 !important;">
-        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="darkmodelowblack">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
             <!-- HERO CARD -->
             <tr>
-                <td bgcolor="#eeeeee" align="center" style="padding: 40px 0px 0px 0px;" class="mobile-lowpadding-top">
+                <td align="center" style="padding: 10px 0px 0px 0px;" class="mobile-low-top-padding" >
                     <!--[if (gte mso 9)|(IE)]>
                     <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
                     <![endif]-->
-                    <table  border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #333333; max-width: 600px;" class="darkmodelowblack">
+                    <table  border="0" cellpadding="0" cellspacing="0" style="background-color: #f5f7fa; max-width: 600px;">
                         <!-- COPY -->
-                        <tr>
-                            <td bgcolor="#0e0e0e" align="center" style="padding: 33px 30px 35px;" class="darkmodelowblack">
-                                <img src="https://static.deriv.com/html/images/deriv-logo-white.png" width="140" height="25"  style="display: block;" alt="Deriv.com">
+                        <tr class="mobile-hide">
+                            <td bgcolor="#333333" align="center" >
+                                <img  class="light-img" src="https://static.deriv.com/email/images/dp2p-small/webinar-light.png"  width= "600" style="display: block;">
+                                <div class="dark-img2" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
+                                    <img class="dark-img2" src="https://static.deriv.com/email/images/dp2p-small/webinar-dark.png" width= "600" style="color: #ffffff; font-family:'proxima_nova', Helvetica, Arial, sans-serif; text-align:center; font-weight:bold; font-size:36px; line-height:40px; text-decoration: none; margin: 0 auto; padding: 0;" border="0" />
+                                </div> 
                             </td>
-                        </tr>
-                        <tr>
-                            <td bgcolor="#0e0e0e" align="center" style="padding: 35px 30px 5px 30px; background-color: #0e0e0e;" class="mobile-lowsidepadding darkmodelowblack">
-                                <p style="margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.25 ; color: #ffffff; font-weight: 400;" class="darkcolor-subtext">Hello [client’s name]</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td bgcolor="#0e0e0e" align="center" style="padding: 5px 50px 70px 50px; background-color: #0e0e0e;" class="mobile-lowsidepadding darkmodelowblack">
-                                <p style="margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 1.25 ; color: #ffffff; font-weight: 600;">Your Deriv account was used to login on the following device.</p>
-                            </td>
-                        </tr>                      
+                        </tr>   
+                        <div >
+                            <tr style="display: none; mso-hide:all;" class="mobile-visible-block">
+                                <td bgcolor="#f5f7fa" align="center" >
+                                    <img class="light-img" src="https://static.deriv.com/email/images/dp2p-small/m-light-top.png" width="100%" style="display: block;" alt="Deriv.com">
+                                    <div class="dark-img2" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
+                                        <img class="dark-img2" src="https://static.deriv.com/email/images/dp2p-small/m-dark-top.png" style="width:100% ;display: block;color: #ffffff; font-family:'proxima_nova', Helvetica, Arial, sans-serif; text-align:center; font-weight:bold; font-size:36px; line-height:40px; text-decoration: none; margin: 0 auto; padding: 0;" border="0" />
+                                    </div>
+                                </td>
+                            </tr>  
+                        </div>             
                     </table>
                     <!--[if (gte mso 9)|(IE)]></td></tr></table>
                     <![endif]-->
                 </td>
             </tr>
-            <!-- END HERO -->     
-             <!-- Email Text  -->
+            <!-- END HERO -->               
+             <!-- before cards  -->
             <tr>
                 <td bgcolor="#eeeeee" align="center" style="padding: 0px;">
                     <!--[if (gte mso 9)|(IE)]>
                     <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" ><tr><td align="center" valign="top" width="600">
                     <![endif]-->
-                    <table  border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff; max-width: 600px;" class="darkmodeblack">
+                    <table  border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff; max-width: 600px;">
                         <tr>
-                            <td align="left" style="padding: 40px 30px 10px 30px; background-color: #ffffff;" class="mobile-lowsidepadding darkmodeblack">
-                                <p style="margin:0;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #333333; font-weight: 400;" class="darkcolor-subtext">Please review the details to confirm it was you.</p>
+                            <td bgcolor="ffffff" align="left" style="padding: 40px 20px 0px 20px; background-color: #ffffff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px 0px 0px 0px;"" class="darkcolor-subtext">Hello [client’s name],</p>
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#ffffff" align="left" valign="top" style="padding: 15px 24px 0px; width: 100%;" class="darkmodeblack mobile-lowsidepadding">
-                                    <!--[if (gte mso 9)|(IE)]>
-                                    <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%"><tr><td align="center" valign="top" width="100%">
-                                    <![endif]-->
-                                    <table border="0" style="margin: 0px auto !important;" cellpadding="0" cellspacing="0" width="100%" class="darkmode-lowbodyblack">
-                                        <tr>
-                                            <td  bgcolor="#f3f5f6" align="left" valign="top" style="padding: 10px 24px 8px; border-bottom: none 1px #e8e8e8;" class="darkmode-lowbodyblack mobile-lowsidepadding">
-                                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0;" class="darkcolor-subtext">Date & time of login: <span style="font-weight: 600;" class="darkcolor-subtext">Friday, June 15, 2019, 4:34 PM GMT</span></p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td  bgcolor="#f3f5f6" align="left" valign="top" style="padding: 8px 24px; border-bottom: none 1px #e8e8e8;" class="darkmode-lowbodyblack mobile-lowsidepadding">
-                                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 0;" class="darkcolor-subtext">Login country: <span style="font-weight: 600;" class="darkcolor-subtext">Nigeria</span></p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td  bgcolor="#f3f5f6" align="left" valign="top" style="padding: 8px 24px; border-bottom: none 1px #e8e8e8;" class="darkmode-lowbodyblack mobile-lowsidepadding">
-                                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 0;" class="darkcolor-subtext">Login city: <span style="font-weight: 600;" class="darkcolor-subtext">Calabar</span></p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td bgcolor="#f3f5f6" align="left" valign="top" style="padding: 8px 24px 8px; border-bottom: none 1px #e8e8e8;" class="darkmode-lowbodyblack mobile-lowsidepadding">
-                                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 0;" class="darkcolor-subtext">IP address: <span style="font-weight: 600;" class="darkcolor-subtext">560.00.076.059</span></p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td bgcolor="#f3f5f6" align="left" valign="top" style="padding: 8px 24px 20px; border-bottom: none 1px #e8e8e8;" class="darkmode-lowbodyblack mobile-lowsidepadding">
-                                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 0;" class="darkcolor-subtext">Type of device: <span style="font-weight: 600;" class="darkcolor-subtext">iPhone</span></p>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <!--[if (gte mso 9)|(IE)]>
-                                    </tr></td></table>
+                            <td bgcolor="ffffff" align="left" style="padding: 17px 20px 0px 20px; background-color: #ffffff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px 0px 0px 0px;"" class="darkcolor-subtext">Join our Product Manager, Anton, as he hosts a <span style="font-weight: bold;" class="darkcolor-subtext">live webinar </span> to demo Deriv Peer-to-Peer (DP2P): a mobile and desktop app that lets you deposit or withdraw in minutes, and in your local currency. All via exchange with fellow traders on Deriv. </p>
+                            </td>
+                        </tr> 
+                        <tr>
+                            <td bgcolor="#ffffff" align="center" style="padding: 30px 30px 20px 30px;" class="darkmodeblack">
+                                <!--[if (gte mso 9)|(IE)]>
+                                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://deriv.com" style="height:40px;v-text-anchor:middle;width:260px;" arcsize="10%" strokecolor="#ff444f" fillcolor="#ff444f">
+                                <w:anchorlock/>
+                                <center style="color:#ffffff;font-family:sans-serif;font-size:14px;font-weight:bold;">Get on the guest list</center>
+                                </v:roundrect>
                                 <![endif]-->
-                                </td>
-                            </tr>                        
-                        <tr>
-                        <tr>
-                            <td align="left" style="padding: 20px 30px 30px 30px; background-color: #ffffff;border-bottom: solid 1px #f3f5f6;" class="dark-border mobile-lowsidepadding darkmodeblack">
-                                <p style="margin:0;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #333333; font-weight: 400;" class="darkcolor-subtext">If this was you, great! You don't need to do anything.</p>
+                                <a class="button" href="https://deriv.com/" style="mso-hide:all;"><span>Get on the guest list</span></a>
                             </td>
-                        </tr>
-                        <tr>
-                            <td align="center" style="padding: 40px 30px 10px 30px; background-color: #ffffff;" class="mobile-lowsidepadding darkmodeblack">
-                                <p style="margin:0;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 24px; line-height: 1.5 ; color: #333333; font-weight: 600;" class="darkcolor-white">Don’t recognise this device?</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="center" style="padding: 10px 30px 10px 30px; background-color: #ffffff;" class="mobile-lowsidepadding darkmodeblack">
-                                <p style="margin:0;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #333333; font-weight: 400;" class="darkcolor-subtext">If this wasn’t you, please <a href="https://app.deriv.com/account/deriv-password" style="color: #ff444f !important">change your password now.</a></p>
-                            </td>
-                        </tr>                                        
+                        </tr>                                                                                    
                     </table>
                     <!--[if (gte mso 9)|(IE)]></td></tr></table>
                     <![endif]-->
                 </td>
             </tr>   
-            <!-- End Email Text-->
+            <!-- End before cards-->                                        
             <!-- FOOTER -->
             <tr>
                 <td bgcolor="#eeeeee" align="center" style="padding: 0px;">
@@ -368,7 +315,7 @@
                     <table bgcolor="#f3f5f6" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;" class="darkmodelowblack">
                         <!-- Icon -->
                         <tr>
-                            <td bgcolor="#ffffff"  align="center" style="padding: 20px 30px 40px 30px;" class="darkmodeblack">
+                            <td bgcolor="#ffffff"  align="center" style="padding: 25px 30px 45px 30px;" class="darkmodeblack">
                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px 0px 0px 0px;"><img src="https://static.deriv.com/html/images/social/dark/salute.png" width="32" border="0" style="display: block;" alt="Deriv.com"></p>
                             </td>
                         </tr>                        
@@ -434,4 +381,5 @@
             <!--End FOOTER -->
         </table>
     </body>
+    <!-- end message template -->
 </html>

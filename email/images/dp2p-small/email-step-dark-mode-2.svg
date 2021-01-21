@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g transform="translate(-28 -1397) translate(0 888) translate(28 509)">
+                    <circle cx="12" cy="12" r="12" fill="#FFF"/>
+                    <text fill="#333" font-family="IBMPlexSans, IBM Plex Sans" font-size="16">
+                        <tspan x="7.2" y="18">2</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
