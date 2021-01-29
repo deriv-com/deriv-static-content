@@ -4,7 +4,6 @@
         <meta name="color-scheme" content="light dark">
         <meta name="supported-color-schemes" content="light dark">
         <meta charset="utf-8">
-        <title>Free e-book</title>
         <meta name="viewport" content="width=device-width">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="x-apple-disable-message-reformatting">
@@ -37,6 +36,7 @@
                 a {color: #ff444f; font-family: Arial, sans-serif;}
             </style>
         <![endif]-->
+        <title>Deriv GO for Android</title>
         <style type="text/css">
             /* FONTS */
             @media screen {
@@ -121,7 +121,7 @@
                 text-decoration: none;
                 text-align: center;
                 line-height: 20px;
-                padding: 10px 64px;
+                padding: 10px 16px;
                 display: inline-block;
                 font-weight: bold;
                 font-family: 'IBM Plex Sans', Arial, sans-serif; 
@@ -167,7 +167,12 @@
                 text-align: justify;
                 text-justify: inter-word;
             }
-
+                        
+            @media screen and (max-width: 590px)  {
+                .button, .button-secondary {
+                    margin: 5px 0 !important;
+                }
+            }
             /* MOBILE STYLES */
             @media screen and (max-width: 620px) {
                 .max-width {
@@ -177,24 +182,34 @@
                     width: 100% !important;
                     max-width: 100% !important;
                 }
-                .mobile-padding {
-                    padding-right: 16px !important;
-                    padding-left: 16px !important;
-                }
-                .mobile-center {
-                    text-align:center !important;
-                }
                 .mobile-visible-block {
                     display: block !important;
                 }
                 .mobile-hide {
-                    display: none !important;
-                } 
+                    display:none !important;
+                }
+                .mobile-side {
+                    padding-right: 20px !important;
+                    padding-left: 20px !important;
+                }
+                .mobile-center {
+                    text-align:center !important;
+                }
+                .mobile-padding-bottom {
+                    padding-bottom: 40px !important;
+                }
+                .mobile-font-size-20 {
+                    font-size: 20px !important;
+                }
+                .mobile-line-height {
+                    line-height: 1.25 !important;
+                }
             }
             @media (prefers-color-scheme: dark ) {
                 /* Shows Dark Mode-Only Content, Like Images */
                 .dark-img { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
-        
+                .dark-img2 { display:block !important; width: 100% !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+
                 /* Hides Light Mode-Only Content, Like Images */
                 .light-img { display:none; display:none !important; }
    
@@ -213,12 +228,13 @@
             } 
             /* Shows Dark Mode-Only Content, Like Images */
             [data-ogsc] .dark-img { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+            [data-ogsc] .dark-img2 { display:block !important; width: 100% !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
             
             /* Hides Light Mode-Only Content, Like Images */
             [data-ogsc] .light-img { display:none; display:none !important; }
   
             /* Custom Dark Mode Background Color */
-            [data-ogsc] .darkmodeblack { background-color: #0e0e0e !important;}
+            [data-ogsc] .darkmodeblack { color:#c2c2c2 !important; background-color: #0e0e0e !important;}
             [data-ogsc] .darkmodelowblack { background-color: #1a1a1a !important; }
   
             /* Custom Dark Mode Font Colors */
@@ -228,11 +244,12 @@
             [data-ogsc] .darkcolor-white{ color: #ffffff !important; }
   
             /* Custom Dark Mode Text Link Color */
-            [data-ogsc] .link { color: #91ADD4 !important; } 
+            [data-ogsc] .link { color: #91ADD4 !important; }           
+          
         </style>
     </head>
     <body style="background-color: #eeeeee; margin: 0 !important; padding: 0 !important;">
-        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="darkmodeblack">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
             <!-- HERO CARD -->
             <tr>
                 <td bgcolor="#eeeeee" align="center" style="padding: 40px 0px 0px 0px;">
@@ -242,13 +259,13 @@
                     <table  border="0" cellpadding="0" cellspacing="0" style="background-color: #333333; max-width: 600px;">
                         <tr class="mobile-hide">
                             <td align="center" >
-                                <img src="https://deriv-static-content-zeta.vercel.app/email/images/ebook/hero-bg.png" width="600 !important" height="380" style="display: block;" alt="Deriv.com">
+                                <img src="https://deriv-static-content-zeta.vercel.app/email/images/deriv-go-android/hero-bg.png" width="600 !important" height="324" style="display: block;" alt="Deriv.com">
                             </td>
                         </tr>   
                         <div >
                             <tr style="display: none; mso-hide:all;" class="mobile-visible-block">
                                 <td bgcolor="#333333" align="center" >
-                                    <img  src="https://deriv-static-content-zeta.vercel.app/email/images/ebook/mobile-hero-bg.png" width="100%" style="display: block;" alt="Deriv.com">
+                                    <img  src="https://deriv-static-content-zeta.vercel.app/email/images/deriv-go-android/mobile-hero-bg.png" width="100%" style="display: block;" alt="Deriv.com">
                                 </td>
                             </tr> 
                         </div>
@@ -258,17 +275,35 @@
                 </td>
             </tr>
             <!-- END HERO -->
-            <!-- MAIN PART -->
+            <!-- before cards  -->
+            <tr>
+                <td bgcolor="#eeeeee" align="center" style="padding: 0px;">
+                    <!--[if (gte mso 9)|(IE)]>
+                    <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" ><tr><td align="center" valign="top" width="600">
+                    <![endif]-->
+                    <table  border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff; max-width: 600px;">
+                        <tr>
+                            <td  bgcolor="ffffff" align="left" style="padding: 40px 28px; background-color: #ffffff;" class="mobile-center mobile-side darkmodeblack">
+                                <p style="margin:0;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #333333;">The beta version of our mobile app is now available. Trade multipliers on forex and synthetic indices, and get the best Deriv experience optimise for mobile:</p>
+                            </td>
+                        </tr>                                                                                   
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]></td></tr></table>
+                    <![endif]-->
+                </td>
+            </tr>   
+            <!-- End before cards-->                          
+            <!-- CARD1 -->
             <tr>
                 <td bgcolor="#eeeeee" align="center" style="padding: 0px; margin: 0">
                     <!--[if (gte mso 9)|(IE)]><table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600"><![endif]-->
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="  max-width: 600px;" class="darkmodelowblack">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="  max-width: 600px;">
                         <!-- COPY 2 col -->
                         <tr>
-                            <td align="center" style="padding: 0;" class="darkmodeblack">
+                            <td align="center" style="padding: 0;">
                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
                                     <tr>
-                                        <td align="center" valign="middle" style="background-color:#f3f5f6; font-size:0; padding: 0px;" class="darkmodelowblack">
+                                        <td align="center" valign="middle" style=" background-color: #f9fafc; font-size:0; padding: 0px;" class="mobile-padding-bottom darkmodelowblack">
                                             <!--[if (gte mso 9)|(IE)]>
                                             <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%" style="margin: 0;">
                                             <tr>
@@ -277,8 +312,8 @@
                                             <div style="vertical-align: middle; display:inline-block; max-width:50%; min-width:260px; width:100%;" class="mobile-wrapper">
                                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;" class="max-width">
                                                     <tr>
-                                                        <td align="left" valign="bottom" style="padding: 40px 28px 0px;" class="mobile-center darkmodelowblack">
-                                                            <p style="margin: 0;"><div><img src="https://deriv-static-content-zeta.vercel.app/email/images/ebook/app-screenshot.png" border="0" class="mobile-center" style="max-width: 100%;" alt="Deriv.com"></div></p>
+                                                        <td align="left" valign="bottom" style="padding: 40px 28px 0px;" class="darkmodelowblack mobile-center">
+                                                            <p style="margin: 0;"><div><img src="https://deriv-static-content-zeta.vercel.app/email/images/deriv-go-android/card1-screenshot.png" border="0" class="mobile-center" style="max-width: 100%;" alt="Deriv.com"></div></p>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -287,12 +322,11 @@
                                             </td>
                                             <td align="center" valign="middle">
                                             <![endif]-->
-                                            <div style="display:inline-block; max-width:50%; min-width:260px; vertical-align:middle; width:100%;" class="mobile-wrapper darkmodelowblack">
+                                            <div style="display:inline-block; max-width:50%; min-width:260px; vertical-align:middle; width:100%;" class="mobile-wrapper">
                                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;" class="max-width">
                                                     <tr>
-                                                        <td align="left" valign="top" style="padding: 16px 28px 40px 0px; vertical-align: middle;" class="mobile-padding mobile-center darkmodelowblack">
-                                                            <p style="margin: 0px 0px 8px 0px; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333333; font-weight: bold;">Had a chance to explore the beta version of our   mobile app?</p>
-                                                            <p style="margin: 0px; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333333; font-weight: 400;" class="darkcolor-subtext">Trade multipliers on forex and synthetic indices on DerivGO and tell us what you think about it.</p>
+                                                        <td align="left" valign="top" style="padding: 0px 28px 0px 0px; vertical-align: middle;" class="darkmodelowblack mobile-side">
+                                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 24px; line-height: 1.5 ; color: #333333; font-weight: 600;" class="mobile-center mobile-font-size-20 mobile-line-height">Trade on the GO anywhere, anytime</p>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -307,8 +341,115 @@
                     <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
                 </td>
             </tr>
-            <!-- END MAIN PART -->
-            <!-- before footer -->
+            <!-- END CARD1 -->
+            <!-- CARD2 -->
+            <tr>
+                <td bgcolor="#eeeeee" align="center" style="padding: 0px; margin: 0">
+                    <!--[if (gte mso 9)|(IE)]><table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600"><![endif]-->
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                        <!-- COPY 2 col -->
+                        <tr>
+                            <td bgcolor="#ffffff" align="center" style="padding: 0px;" class="darkmodeblack">
+                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
+                                    <tr>
+                                        <td align="center" valign="middle" style="font-size:0; padding: 0px 28px;" class="mobile-padding-bottom">
+                                            <!--[if (gte mso 9)|(IE)]>
+                                            <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%" style="margin: 0;">
+                                            <tr>
+                                            <td align="left" valign="middle">
+                                            <![endif]-->
+                                            <div style="display:none; max-width:50%; min-width:260px; width:100%;" class="mobile-wrapper mobile-visible-block">
+                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px; mso-hide:all;" class="max-width">
+                                                    <tr>
+                                                        <td align="center" valign="bottom" style="padding: 40px 0 0 0;">
+                                                            <img src="https://deriv-static-content-zeta.vercel.app/email/images/deriv-go-android/card2-screenshot.png" border="0" style="max-width: 100%; " alt="Deriv.com">
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>                                           
+                                            <div style="display:inline-block; max-width:48%; min-width:260px; vertical-align:middle; width:100%;" class="mobile-wrapper">
+                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;" class="max-width">
+                                                    <tr>
+                                                        <td align="left" valign="top" style="vertical-align: middle;" class="darkmodeblack mobile-side">
+                                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 24px; line-height: 1.5 ; color: #333333; font-weight: 600;" class="mobile-center mobile-font-size-20 mobile-line-height">Real-time alerts & notifications(even when you’re not trading)</p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>                                           
+                                            <!--[if (gte mso 9)|(IE)]>
+                                            </td>
+                                            <td align="center" valign="middle">
+                                            <![endif]-->
+                                            <div style="vertical-align: middle; display:inline-block; max-width:50%; min-width:260px; width:100%;" class="mobile-hide">
+                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;" class="max-width">
+                                                    <tr>
+                                                        <td align="right" valign="bottom" style="padding: 40px 0 0 0;">
+                                                            <p style="margin: 0;"><div><img src="https://deriv-static-content-zeta.vercel.app/email/images/deriv-go-android/card2-screenshot.png" border="0" style="max-width: 100%;" alt="Deriv.com"></div></p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <!--[if mso]></td></tr></table><![endif]-->
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
+                </td>
+            </tr>
+            <!-- END CARD2 -->
+            <!-- CARD3 -->
+            <tr>
+                <td bgcolor="#eeeeee" align="center" style="padding: 0px; margin: 0">
+                    <!--[if (gte mso 9)|(IE)]><table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600"><![endif]-->
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="  max-width: 600px;">
+                        <!-- COPY 2 col -->
+                        <tr>
+                            <td align="center" style="padding: 0;">
+                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
+                                    <tr>
+                                        <td align="center" valign="middle" style=" background-color: #f9fafc; font-size:0; padding: 0px;" class="mobile-padding-bottom darkmodelowblack">
+                                            <!--[if (gte mso 9)|(IE)]>
+                                            <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%" style="margin: 0;">
+                                            <tr>
+                                            <td align="left" valign="middle">
+                                            <![endif]-->
+                                            <div style="vertical-align: middle; display:inline-block; max-width:50%; min-width:260px; width:100%;" class="mobile-wrapper">
+                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;" class="max-width">
+                                                    <tr>
+                                                        <td align="left" valign="bottom" style="padding: 40px 28px 0px;" class="darkmodelowblack mobile-center">
+                                                            <p style="margin: 0;"><div><img src="https://deriv-static-content-zeta.vercel.app/email/images/deriv-go-android/card3-screenshot.png" border="0" class="mobile-center" style="max-width: 100%;" alt="Deriv.com"></div></p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <!--[if (gte mso 9)|(IE)]>
+                                            </td>
+                                            <td align="center" valign="middle">
+                                            <![endif]-->
+                                            <div style="display:inline-block; max-width:50%; min-width:260px; vertical-align:middle; width:100%;" class="mobile-wrapper">
+                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;" class="max-width">
+                                                    <tr>
+                                                        <td align="left" valign="top" style="padding: 0px 28px 0px 0px; vertical-align: middle;" class="darkmodelowblack mobile-side">
+                                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 24px; line-height: 1.5 ; color: #333333; font-weight: 600;" class="mobile-center mobile-font-size-20 mobile-line-height">A faster, seamless mobile experience</p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <!--[if mso]></td></tr></table><![endif]-->
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
+                </td>
+            </tr>
+            <!-- END CARD3 -->
+            <!-- before footer-->
             <tr>
                 <td bgcolor="#eeeeee" align="center" style="padding: 0px;">
                     <!--[if (gte mso 9)|(IE)]>
@@ -316,47 +457,28 @@
                     <![endif]-->
                     <table  border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff; max-width: 600px;">
                         <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding: 0px;">
-                                <table class="outer darkmodeblack" align="center" cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 600px; margin: 0px">
-                                    <tbody>
-                                        <tr>
-                                            <td align="left" style="padding: 40px 28px 24px" class="mobile-padding">
-                                                <p style="margin: 0px; color: #333333">Take this 3-minute  survey and get a free e-book: <b>&lt;title of the e-book&gt;</b>.</p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td align="center" style="padding: 0px 28px 40px;" class="darkmodeblack">
-                                                <!--[if (gte mso 9)|(IE)]>
-                                                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="" style="height:40px;v-text-anchor:middle;width:270px;" arcsize="10%" strokecolor="#ff444f" fillcolor="#ff444f">
-                                                <w:anchorlock/>
-                                                <center style="color:#ffffff;font-family:sans-serif;font-size:14px;font-weight:bold;">Take the survey</center>
-                                                </v:roundrect>
-                                                <![endif]-->
-                                                <a class="button mobile-padding" href="" style="mso-hide:all;"><span>Take the survey</span></a>
-                                            </td>
-                                      </tr>
-                                    </tbody>
-                                </table>
+                            <td  bgcolor="ffffff" align="center" style="padding: 40px 28px 24px; background-color: #ffffff;" class="mobile-center mobile-side darkmodeblack">
+                                <p style="margin:0;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #333333;">Get the new Deriv GO mobile app now from the Google Play Store.</p>
                             </td>
-                        </tr>                         
+                        </tr>
                         <tr>
-                            <td align="left" style="padding: 0px 28px 24px" class="mobile-padding darkmodeblack">
-                                <p style="margin: 0px;">If you haven’t downloaded the app yet, <a href="https://play.google.com/" style="color: #ff444f">get it now</a> on the Google Play Store.</p>
-                            </td>
-                        </tr> 
-                        <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding: 0px 28px 40px;" class="mobile-visible-block darkmodeblack">
+                            <td bgcolor="#ffffff" align="center" class="mobile-visible-block darkmodeblack">
                                 <a href="https://play.google.com/">
                                     <img  src="https://static.deriv.com/html/broadcasts/rebranding/images/google-play.png" style="display: block;" alt="Google Play store">
                                 </a>
                             </td>
-                        </tr>                                                                                      
+                        </tr>
+                        <tr>
+                            <td  bgcolor="ffffff" align="center" style="padding: 40px 28px; background-color: #ffffff;" class="mobile-center mobile-side darkmodeblack">
+                                <p style="margin:0;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #333333;">(iOS users: We haven’t forgotten you. A version for you is in the works.)</p>
+                            </td>
+                        </tr>
                     </table>
                     <!--[if (gte mso 9)|(IE)]></td></tr></table>
                     <![endif]-->
                 </td>
             </tr>   
-            <!--end before footer-->                 
+            <!--end before footer-->                             
             <!-- FOOTER -->
             <tr>
                 <td bgcolor="#eeeeee" align="center" style="padding: 0px;">
@@ -366,22 +488,21 @@
                     <table bgcolor="#f3f5f6" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;" class="darkmodelowblack">
                         <!-- Footer logo -->
                         <tr>
-                            <td  align="center" style="padding: 40px 30px 30px 30px;" class="darkmodelowblack">
+                            <td  align="center" style="padding: 43px 0px 20px 0px;" class="darkmodelowblack">
                                 <a href="https://www.deriv.com">
                                     <img class="light-img" src="https://static.deriv.com/html/images/deriv-logo-grey.png" width="140" height="25"  style="display: block;margin-top: -1px;" alt="Deriv.com">
                                     <!-- The following Dark Mode logo image is hidden 
                                      with MSO conditional code and inline CSS, but will be         
                                      revealed once Dark Mode is triggered -->
- 
                                     <div class="dark-img" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
-                                     <img class="dark-img" src="https://static.deriv.com/email/images/marketing/email-logo-1-white.png" width="140" height="25" alt="Deriv.com" style="color: #ffffff; font-family:'proxima_nova', Helvetica, Arial, sans-serif; text-align:center; font-weight:bold; font-size:36px; line-height:40px; text-decoration: none; margin: 0 auto; padding: 0;" border="0" />
+                                     <img class="dark-img" src="https://static.deriv.com/email/images/marketing/email-logo-1-white.png" width="140" height="25" alt="Deriv.com" style="color: #ffffff; font-family:'proxima_nova', Helvetica, Arial, sans-serif; text-align:center; font-weight:normal; font-size:14px; line-height:40px; text-decoration: none; margin: 0 auto; padding: 0;" border="0" />
                                     </div>                                   
                                 </a>
                             </td>
                         </tr>
                         <!-- SOCIAL -->
                         <tr>
-                            <td align="center" style="padding: 0px 20px 20px 20px; color: #ffffff; font-family: 'IBM Plex Sans', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;" class="darkmodelowblack">
+                            <td align="center" style="padding: 20px 0px 20px 0px; color: #ffffff; font-family: 'IBM Plex Sans', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;" class="darkmodelowblack">
                                 <p style="margin: 0;">
                                     <a href="https://twitter.com/derivdotcom" style="text-decoration: none;">
                                         <img src="https://static.deriv.com/html/images/social/dark/twitter-dark.png" height="32" width="32" alt="Deriv.com on Twitter" title="Deriv.com on Twitter" />
@@ -401,17 +522,16 @@
                                 </p>
                             </td>
                         </tr>
-                        <!-- COPY -->
                         <tr>
-                            <td align="center" valign="top" class="darkmodelowblack">
+                            <td align="center" valign="top" style="padding: 20px 0px 10px 0px;" class="darkmodelowblack">
                                 <!--[if (gte mso 9)|(IE)]>
                                 <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
                                 <![endif]-->
                                 <table bgcolor="#f3f5f6" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;" class="darkmodelowblack">
                                     <tr>
                                         <td bgcolor="#f3f5f6" align="center" style="color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="darkmodelowblack">
-                                            <p style="padding: 0px 30px 0px 30px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0px 0px 5px 0px;" class="darkmodegray ">© 2020 Deriv, All rights reserved.</p>
-                                            <p style="padding: 0px 10px 30px 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 400; line-height: 16px; margin: 5px 0px 5px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important">Help Centre</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Terms and conditions</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://deriv.com/tnc/security-and-privacy.pdf" style="color: #ff444f !important">Security and privacy</a></p>
+                                            <p style="padding: 0px 30px 0px 30px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #999999; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0px 0px 5px 0px;" class="darkmodegray ">© 2020 Deriv, All rights reserved.</p>
+                                            <p style="padding: 0px 10px 30px 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #999999; font-size: 12px; font-weight: 400; line-height: 16px; margin: 5px 0px 5px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important">Help Centre</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Terms and conditions</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://deriv.com/tnc/security-and-privacy.pdf" style="color: #ff444f !important">Security and privacy</a></p>
                                         </td>
                                     </tr>
                                 </table>
