@@ -181,6 +181,9 @@
                     padding-right: 16px !important;
                     padding-left: 16px !important;
                 }
+                .mobile-main-padding {
+                    padding: 16px 16px 40px !important;
+                }
                 .mobile-center {
                     text-align:center !important;
                 }
@@ -189,7 +192,10 @@
                 }
                 .mobile-hide {
                     display: none !important;
-                } 
+                }
+                .mobile-no-padding {
+                    padding: 0px !important;
+                }
             }
             @media (prefers-color-scheme: dark ) {
                 /* Shows Dark Mode-Only Content, Like Images */
@@ -235,7 +241,7 @@
         <table border="0" cellpadding="0" cellspacing="0" width="100%" class="darkmodeblack">
             <!-- HERO CARD -->
             <tr>
-                <td bgcolor="#eeeeee" align="center" style="padding: 40px 0px 0px 0px;">
+                <td bgcolor="#eeeeee" align="center" style="padding: 40px 0px 0px 0px;" class="mobile-no-padding">
                     <!--[if (gte mso 9)|(IE)]>
                     <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
                     <![endif]-->
@@ -278,7 +284,7 @@
                                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;" class="max-width">
                                                     <tr>
                                                         <td align="left" valign="bottom" style="padding: 40px 28px 0px;" class="mobile-center darkmodelowblack">
-                                                            <p style="margin: 0;"><div><img src="https://deriv-static-content-zeta.vercel.app/email/images/ebook/app-screenshot.png" border="0" class="mobile-center" style="max-width: 100%;" alt="Deriv.com"></div></p>
+                                                            <p style="margin: 0;"><div><img src="https://deriv-static-content-zeta.vercel.app/email/images/ebook/app-screenshot.png" border="0" class="mobile-center" style="max-width: 100%;" alt="Deriv GO app"></div></p>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -290,9 +296,9 @@
                                             <div style="display:inline-block; max-width:50%; min-width:260px; vertical-align:middle; width:100%;" class="mobile-wrapper darkmodelowblack">
                                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;" class="max-width">
                                                     <tr>
-                                                        <td align="left" valign="top" style="padding: 16px 28px 40px 0px; vertical-align: middle;" class="mobile-padding mobile-center darkmodelowblack">
-                                                            <p style="margin: 0px 0px 8px 0px; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333333; font-weight: bold;">Had a chance to explore the beta version of our   mobile app?</p>
-                                                            <p style="margin: 0px; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333333; font-weight: 400;" class="darkcolor-subtext">Trade multipliers on forex and synthetic indices on DerivGO and tell us what you think about it.</p>
+                                                        <td align="left" valign="top" style="padding: 0px 28px 0px 0px; vertical-align: middle;" class="mobile-main-padding mobile-center darkmodelowblack">
+                                                            <p style="margin: 0px 0px 8px 0px; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333333; font-weight: bold;" class="darkmodegray">Had a chance to explore the beta version of our   mobile app?</p>
+                                                            <p style="margin: 0px; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333333; font-weight: 400;" class="darkmodegray">Trade multipliers on forex and synthetic indices on DerivGO and tell us what you think about it.</p>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -321,7 +327,7 @@
                                     <tbody>
                                         <tr>
                                             <td align="left" style="padding: 40px 28px 24px" class="mobile-padding">
-                                                <p style="margin: 0px; color: #333333">Take this 3-minute  survey and get a free e-book: <b>&lt;title of the e-book&gt;</b>.</p>
+                                                <p style="margin: 0px; color: #333333" class="darkmodegray">Take this 3-minute  survey and get a free e-book: <b class="darkmodegray">&lt;title of the e-book&gt;</b>.</p>
                                             </td>
                                         </tr>
                                         <tr>
@@ -332,7 +338,7 @@
                                                 <center style="color:#ffffff;font-family:sans-serif;font-size:14px;font-weight:bold;">Take the survey</center>
                                                 </v:roundrect>
                                                 <![endif]-->
-                                                <a class="button mobile-padding" href="" style="mso-hide:all;"><span>Take the survey</span></a>
+                                                <a class="button mobile-padding" href="https://survey.survicate.com/0039d2ed636cc289/" style="mso-hide:all;" class="darkmodegray"><span>Take the survey</span></a>
                                             </td>
                                       </tr>
                                     </tbody>
@@ -341,7 +347,7 @@
                         </tr>                         
                         <tr>
                             <td align="left" style="padding: 0px 28px 24px" class="mobile-padding darkmodeblack">
-                                <p style="margin: 0px;">If you haven’t downloaded the app yet, <a href="https://play.google.com/" style="color: #ff444f">get it now</a> on the Google Play Store.</p>
+                                <p style="margin: 0px;" class="darkmodegray">If you haven’t downloaded the app yet, <a href="https://play.google.com/" style="color: #ff444f !important">get it now</a> on the Google Play Store.</p>
                             </td>
                         </tr> 
                         <tr>
@@ -410,7 +416,7 @@
                                 <table bgcolor="#f3f5f6" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;" class="darkmodelowblack">
                                     <tr>
                                         <td bgcolor="#f3f5f6" align="center" style="color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="darkmodelowblack">
-                                            <p style="padding: 0px 30px 0px 30px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0px 0px 5px 0px;" class="darkmodegray ">© 2020 Deriv, All rights reserved.</p>
+                                            <p style="padding: 0px 30px 0px 30px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0px 0px 5px 0px;" class="darkmodegray ">© 2021 Deriv, All rights reserved.</p>
                                             <p style="padding: 0px 10px 30px 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 400; line-height: 16px; margin: 5px 0px 5px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important">Help Centre</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Terms and conditions</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://deriv.com/tnc/security-and-privacy.pdf" style="color: #ff444f !important">Security and privacy</a></p>
                                         </td>
                                     </tr>
