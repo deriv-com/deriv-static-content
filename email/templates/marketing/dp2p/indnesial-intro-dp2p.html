@@ -36,7 +36,7 @@
                 a {color: #ff444f; font-family: Arial, sans-serif;}
             </style>
         <![endif]-->
-        <title>Deriv GO for Android</title>
+        <title>DP2P introductory</title>
         <style type="text/css">
             /* FONTS */
             @media screen {
@@ -182,6 +182,9 @@
                     width: 100% !important;
                     max-width: 100% !important;
                 }
+                .mobile-visible {
+                    display:inline-block !important;
+                }
                 .mobile-visible-block {
                     display: block !important;
                 }
@@ -189,27 +192,31 @@
                     display:none !important;
                 }
                 .mobile-side {
-                    padding-right: 20px !important;
-                    padding-left: 20px !important;
+                    padding-right: 15px !important;
+                    padding-left: 15px !important;
+                }
+                .mobile-negmargin {
+                    margin-top: -15px !important;
                 }
                 .mobile-center {
                     text-align:center !important;
+                } 
+                .mobile-img-width {
+                    width: 80%;
                 }
-                .mobile-padding-bottom {
-                    padding-bottom: 40px !important;
-                }
-                .mobile-no-padding {
-                    padding: 0px !important;
-                }
-                .mobile-font-size-14 {
-                    font-size: 14px !important;
+                .mobile-font-size-24 {
+                    font-size: 24px !important;
                 }
                 .mobile-font-size-20 {
                     font-size: 20px !important;
                 }
                 .mobile-line-height {
-                    line-height: 1.25 !important;
+                    line-height: 1.2 !important;
                 }
+                .mobile-lowpadding-top {
+                    padding-top: 1px !important;
+                }
+
             }
             @media (prefers-color-scheme: dark ) {
                 /* Shows Dark Mode-Only Content, Like Images */
@@ -221,7 +228,7 @@
    
                 /* Custom Dark Mode Background Color */
                 .darkmodeblack { background-color:#0e0e0e !important; }
-                .darkmodelowblack { background-color: #1a1a1a !important; }
+                .darkmodelowblack { background-color: #202020 !important; }
    
                 /* Custom Dark Mode Font Colors */
                  h1, h2, p, span, a, b { color: #ffffff !important; }
@@ -241,7 +248,7 @@
   
             /* Custom Dark Mode Background Color */
             [data-ogsc] .darkmodeblack { color:#c2c2c2 !important; background-color: #0e0e0e !important;}
-            [data-ogsc] .darkmodelowblack { background-color: #1a1a1a !important; }
+            [data-ogsc] .darkmodelowblack { background-color: #202020 !important; }
   
             /* Custom Dark Mode Font Colors */
             [data-ogsc] h1, [data-ogsc] h2, [data-ogsc] p, [data-ogsc] span, [data-ogsc] a, [data-ogsc] b { color: #ffffff !important; }
@@ -258,30 +265,34 @@
         <table border="0" cellpadding="0" cellspacing="0" width="100%">
             <!-- HERO CARD -->
             <tr>
-                <td bgcolor="#eeeeee" align="center" style="padding: 40px 0px 0px 0px;" class="mobile-no-padding">
+                <td bgcolor="#eeeeee" align="center" style="padding: 40px 0px 0px 0px;" class="mobile-lowpadding-top" >
                     <!--[if (gte mso 9)|(IE)]>
                     <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
                     <![endif]-->
                     <table  border="0" cellpadding="0" cellspacing="0" style="background-color: #333333; max-width: 600px;">
+                        <!-- COPY -->
                         <tr class="mobile-hide">
-                            <td align="center" >
-                                <img src="https://static.deriv.com/email/images/deriv-go-android/hero-bg.png" width="600 !important" height="324" style="display: block;" alt="Deriv.com">
+                            <td bgcolor="#333333" align="center" >
+                                <img  class="light-img" src="https://static.deriv.com/email/images/dp2p-small/ind.png" width="600 !important" height="296" style="display: block;" alt="Deriv.com">
+                                <div class="dark-img2" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
+                                    <img class="dark-img2" src="https://static.deriv.com/email/images/dp2p-small/ind.png" width="600 !important" height="296" alt="Deriv.com" style="color: #ffffff; font-family:'proxima_nova', Helvetica, Arial, sans-serif; text-align:center; font-weight:bold; font-size:36px; line-height:40px; text-decoration: none; margin: 0 auto; padding: 0;" border="0" />
+                                   </div>
                             </td>
                         </tr>   
                         <div >
                             <tr style="display: none; mso-hide:all;" class="mobile-visible-block">
                                 <td bgcolor="#333333" align="center" >
-                                    <img  src="https://static.deriv.com/email/images/deriv-go-android/mobile-hero-bg.png" width="100%" style="display: block;" alt="Deriv.com">
+                                    <img  src="https://static.deriv.com/email/images/dp2p-small/ind-moobile.png" width="100%" style="display: block;" alt="Deriv.com">
                                 </td>
                             </tr> 
-                        </div>
+                        </div>               
                     </table>
                     <!--[if (gte mso 9)|(IE)]></td></tr></table>
                     <![endif]-->
                 </td>
             </tr>
-            <!-- END HERO -->
-            <!-- before cards  -->
+            <!-- END HERO -->               
+             <!-- before cards  -->
             <tr>
                 <td bgcolor="#eeeeee" align="center" style="padding: 0px;">
                     <!--[if (gte mso 9)|(IE)]>
@@ -289,16 +300,38 @@
                     <![endif]-->
                     <table  border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff; max-width: 600px;">
                         <tr>
-                            <td  bgcolor="ffffff" align="left" style="padding: 40px 28px; background-color: #ffffff;" class="mobile-center mobile-side darkmodeblack">
-                                <p style="margin:0;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #333333;" class="mobile-font-size-14 darkmodegray">The beta version of our mobile app is now available. Trade multipliers on forex and synthetic indices, and get the best Deriv experience optimise for mobile:</p>
+                            <td  bgcolor="ffffff" align="center" style="padding: 38px 30px 27px 30px; background-color: #ffffff;" class="mobile-side darkmodeblack">
+                                <p style="margin:0;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 1.25 ; color: #333333; font-weight: 600;" class="mobile-font-size-24">Kami mendengar Anda</p>
                             </td>
-                        </tr>                                                                                   
+                        </tr> 
+                        <tr>
+                            <td bgcolor="#ffffff" align="center" class="darkmodeblack">
+                                <img  src="https://static.deriv.com/email/images/dp2p-small/image-dp-2-p-desktop.png" style="display: block;" class="mobile-img-width" alt="Deriv.com">
+                            </td>
+                        </tr> 
+                        <tr>
+                            <td bgcolor="ffffff" align="center" style="padding: 30px 20px 15px 20px; background-color: #ffffff;" class="mobile-side darkmodeblack">
+                                <p style=" margin: 0;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 24px; line-height: 1.1 ; color: #333333; font-weight: 600;" class="mobile-font-size-20 mobile-line-height">Ucapkan selamat tinggal pada masalah pembayaran dengan aplikasi DP2P<br><br><span style="font-size: 14px;font-weight: 400;" class="darkcolor-subtext">Selamat datang pada aplikasi DP2P. Layanan deposit dan penarikan baru
+                                    berdasarkan peer-to-peer, dimana Anda dapat mentransfer dana dari dan ke dalam akun Deriv Anda dengan melakukan penukaran antar sesama trader.</span></p>
+                            </td>
+                        </tr> 
+                        <tr>
+                            <td bgcolor="#ffffff" align="center" style="padding: 10px 30px 40px 30px;" class="darkmodeblack">
+                            <!--[if (gte mso 9)|(IE)]>
+                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://deriv.com/p2p/v1" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="10%" strokecolor="#ff444f" fillcolor="#ff444f">
+                            <w:anchorlock/>
+                            <center style="color:#ffffff;font-family:sans-serif;font-size:14px;font-weight:bold;">Pelajari lebih lanjut</center>
+                            </v:roundrect>
+                            <![endif]-->
+                            <a class="button" href="https://deriv.com/p2p/v1" style="mso-hide:all;"><span>Pelajari lebih lanjut</span></a>
+                            </td>
+                        </tr>                                                                                    
                     </table>
                     <!--[if (gte mso 9)|(IE)]></td></tr></table>
                     <![endif]-->
                 </td>
             </tr>   
-            <!-- End before cards-->                          
+            <!-- End before cards-->           
             <!-- CARD1 -->
             <tr>
                 <td bgcolor="#eeeeee" align="center" style="padding: 0px; margin: 0">
@@ -309,7 +342,7 @@
                             <td align="center" style="padding: 0;">
                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
                                     <tr>
-                                        <td align="center" valign="middle" style=" background-color: #f9fafc; font-size:0; padding: 0px;" class="mobile-padding-bottom darkmodelowblack">
+                                        <td align="center" valign="middle" style=" background-color: #f9fafc; font-size:0; padding: 45px 0 0 0;" class="darkmodelowblack">
                                             <!--[if (gte mso 9)|(IE)]>
                                             <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%" style="margin: 0;">
                                             <tr>
@@ -318,8 +351,8 @@
                                             <div style="vertical-align: middle; display:inline-block; max-width:50%; min-width:260px; width:100%;" class="mobile-wrapper">
                                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;" class="max-width">
                                                     <tr>
-                                                        <td align="left" valign="bottom" style="padding: 40px 28px 0px;" class="darkmodelowblack mobile-center">
-                                                            <p style="margin: 0;"><div><img src="https://static.deriv.com/email/images/deriv-go-android/card1-screenshot.png" border="0" class="mobile-center" style="max-width: 100%;" alt="Deriv GO app"></div></p>
+                                                        <td align="right" valign="bottom" style="padding: 0;" class="darkmodelowblack mobile-center">
+                                                            <p style="margin: 0;"><div><img src="https://static.deriv.com/email/images/dp2p-small/image-dp-2-p-1-faster-deposit.png" border="0" class="mobile-center" style="max-width: 100%;" alt="Deriv.com"></div></p>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -331,8 +364,8 @@
                                             <div style="display:inline-block; max-width:50%; min-width:260px; vertical-align:middle; width:100%;" class="mobile-wrapper">
                                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;" class="max-width">
                                                     <tr>
-                                                        <td align="left" valign="top" style="padding: 0px 28px 0px 0px; vertical-align: middle;" class="darkmodelowblack mobile-side">
-                                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 24px; line-height: 1.5 ; color: #333333; font-weight: 600;" class="mobile-center mobile-font-size-20 mobile-line-height darkmodegray">Trade on the GO anywhere, anytime</p>
+                                                        <td align="left" valign="top" style="padding-left: 30px;vertical-align: middle;" class="darkmodelowblack mobile-side">
+                                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1 ; color: #333333; font-weight: 600;" class="mobile-center">Deposit dan penarikan yang lebih cepat<br><br><span style="font-size: 14px; font-weight: 400;" class="darkcolor-subtext">Setiap transaksi diselesaikan dalam hitungan menit.</span></p>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -355,20 +388,20 @@
                     <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                         <!-- COPY 2 col -->
                         <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding: 0px;" class="darkmodeblack">
+                            <td bgcolor="#f9fafc" align="center" style="padding: 10px 0 0 0;" class="darkmodelowblack">
                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
                                     <tr>
-                                        <td align="center" valign="middle" style="font-size:0; padding: 0px 28px;" class="mobile-padding-bottom">
+                                        <td align="center" valign="middle" style="font-size:0; padding: 0px;">
                                             <!--[if (gte mso 9)|(IE)]>
                                             <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%" style="margin: 0;">
                                             <tr>
                                             <td align="left" valign="middle">
                                             <![endif]-->
-                                            <div style="display:none; max-width:50%; min-width:260px; width:100%;" class="mobile-wrapper mobile-visible-block">
+                                            <div style="display:none; max-width:50%; min-width:260px; width:100%;" class="mobile-wrapper mobile-visible">
                                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px; mso-hide:all;" class="max-width">
                                                     <tr>
-                                                        <td align="center" valign="bottom" style="padding: 40px 0 0 0;">
-                                                            <img src="https://static.deriv.com/email/images/deriv-go-android/card2-screenshot.png" border="0" style="max-width: 100%; " alt="Deriv GO app">
+                                                        <td align="center" valign="bottom" style="padding: 15px 0 0 0;">
+                                                            <img src="https://static.deriv.com/email/images/dp2p-small/image-dp-2-p-2-works-in-your-local-currency.png" border="0" class="mobile-negmargin" style="max-width: 100%; " alt="Deriv.com">
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -376,8 +409,8 @@
                                             <div style="display:inline-block; max-width:48%; min-width:260px; vertical-align:middle; width:100%;" class="mobile-wrapper">
                                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;" class="max-width">
                                                     <tr>
-                                                        <td align="left" valign="top" style="vertical-align: middle;" class="darkmodeblack mobile-side">
-                                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 24px; line-height: 1.5 ; color: #333333; font-weight: 600;" class="mobile-center mobile-font-size-20 mobile-line-height darkmodegray">Real-time alerts & notifications (even when you’re not trading)</p>
+                                                        <td align="left" valign="middle" style="padding: 10px 10px 0 20px;" class="darkmodelowblack  mobile-side">
+                                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1 ; color: #333333; font-weight: 600;" class="mobile-center">Tersedia dalam mata uang rupiah<br><br><span style="font-size: 14px; font-weight: 400; line-height: 21px;" class="darkcolor-subtext">Tukarkan mata uang rupiah Anda untuk melakukan deposit dan penarikan.</span></p>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -386,11 +419,11 @@
                                             </td>
                                             <td align="center" valign="middle">
                                             <![endif]-->
-                                            <div style="vertical-align: middle; display:inline-block; max-width:50%; min-width:260px; width:100%;" class="mobile-hide">
+                                            <div style="vertical-align: middle; display:inline-block; max-width:50%; min-width:260px; width:100%;" class="mobile-wrapper mobile-hide">
                                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;" class="max-width">
                                                     <tr>
-                                                        <td align="right" valign="bottom" style="padding: 40px 0 0 0;">
-                                                            <p style="margin: 0;"><div><img src="https://static.deriv.com/email/images/deriv-go-android/card2-screenshot.png" border="0" style="max-width: 100%;" alt="Deriv GO app"></div></p>
+                                                        <td align="left" valign="bottom" style="padding: 15px 0 0 0;">
+                                                            <p style="margin: 0;"><div><img src="https://static.deriv.com/email/images/dp2p-small/image-dp-2-p-2-works-in-your-local-currency.png" border="0" class="mobile-negmargin" style="max-width: 100%;" alt="Deriv.com"></div></p>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -413,10 +446,10 @@
                     <table border="0" cellpadding="0" cellspacing="0" width="100%" style="  max-width: 600px;">
                         <!-- COPY 2 col -->
                         <tr>
-                            <td align="center" style="padding: 0;">
+                            <td align="center" style="padding: 0;" class="darkmodelowblack">
                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
                                     <tr>
-                                        <td align="center" valign="middle" style=" background-color: #f9fafc; font-size:0; padding: 0px;" class="mobile-padding-bottom darkmodelowblack">
+                                        <td align="center" valign="middle" style=" background-color: #f9fafc; font-size:0; padding: 30px 0 0 0;" class="darkmodelowblack">
                                             <!--[if (gte mso 9)|(IE)]>
                                             <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%" style="margin: 0;">
                                             <tr>
@@ -425,8 +458,8 @@
                                             <div style="vertical-align: middle; display:inline-block; max-width:50%; min-width:260px; width:100%;" class="mobile-wrapper">
                                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;" class="max-width">
                                                     <tr>
-                                                        <td align="left" valign="bottom" style="padding: 40px 28px 0px;" class="darkmodelowblack mobile-center">
-                                                            <p style="margin: 0;"><div><img src="https://static.deriv.com/email/images/deriv-go-android/card3-screenshot.png" border="0" class="mobile-center" style="max-width: 100%;" alt="Deriv GO app"></div></p>
+                                                        <td align="right" valign="bottom" style="padding: 0;" class="mobile-center darkmodelowblack">
+                                                            <p style="margin: 0;"><div><img src="https://static.deriv.com/email/images/dp2p-small/image-dp-2-p-3-get-the-best-rates.png" border="0" class="mobile-center" style="max-width: 100%;" alt="Deriv.com"></div></p>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -438,8 +471,8 @@
                                             <div style="display:inline-block; max-width:50%; min-width:260px; vertical-align:middle; width:100%;" class="mobile-wrapper">
                                                 <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;" class="max-width">
                                                     <tr>
-                                                        <td align="left" valign="top" style="padding: 0px 28px 0px 0px; vertical-align: middle;" class="darkmodelowblack mobile-side">
-                                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 24px; line-height: 1.5 ; color: #333333; font-weight: 600;" class="mobile-center mobile-font-size-20 mobile-line-height darkmodegray">A faster, seamless mobile experience</p>
+                                                        <td align="left" valign="top" style="padding-left: 30px;vertical-align: middle;" class="mobile-side darkmodelowblack">
+                                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1 ; color: #333333; font-weight: 600;" class="mobile-center">Dapatkan nilai tukar terbaik<br><br><span style="font-size: 14px; font-weight: 400; line-height: 21px;" class="darkcolor-subtext">Temukan nilai tukar yang Anda inginkan, atau tentukan nilai tukar Anda sendiri.</span></p>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -455,7 +488,65 @@
                 </td>
             </tr>
             <!-- END CARD3 -->
-            <!-- before footer-->
+            <!-- CARD4 -->
+            <tr>
+                <td bgcolor="#eeeeee" align="center" style="padding: 0px; margin: 0">
+                    <!--[if (gte mso 9)|(IE)]><table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600"><![endif]-->
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                        <!-- COPY 2 col -->
+                        <tr>
+                            <td bgcolor="#f9fafc" align="center" style="padding: 0;" class="darkmodelowblack">
+                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
+                                    <tr>
+                                        <td align="center" valign="middle" style="font-size:0; padding: 10px 0 0 0;" class="darkmodelowblack">
+                                            <!--[if (gte mso 9)|(IE)]>
+                                            <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%" style="margin: 0;">
+                                            <tr>
+                                            <td align="left" valign="middle">
+                                            <![endif]-->
+                                            <div style="display:none; max-width:50%; min-width:260px; width:100%;" class="mobile-wrapper mobile-visible">
+                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px; mso-hide:all;" class="max-width">
+                                                    <tr>
+                                                        <td align="center" valign="bottom" style="padding: 15px 0 0 0;" class="darkmodelowblack">
+                                                            <img src="https://static.deriv.com/email/images/dp2p-small/image-dp-2-p-4-available-on-deriv-com.png" border="0" class="mobile-negmargin" style="max-width: 100%; " alt="Deriv.com">
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>                                           
+                                            <div style="display:inline-block; max-width:48%; min-width:260px; vertical-align:middle; width:100%;" class="mobile-wrapper">
+                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;" class="max-width">
+                                                    <tr>
+                                                        <td align="left" valign="middle" style="padding: 0 10px 0 20px;" class="darkmodelowblack mobile-side">
+                                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.25 ; color: #333333; font-weight: 600;" class="mobile-center">Tersedia di Deriv.com dan Google Play<br><br><span style="font-size: 14px; font-weight: 400; line-height: 21px;" class="darkcolor-subtext">Deposit dan penarikan mudah melalui desktop dan ponsel Anda.</span></p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>                                           
+                                            <!--[if (gte mso 9)|(IE)]>
+                                            </td>
+                                            <td align="center" valign="middle">
+                                            <![endif]-->
+                                            <div style="vertical-align: middle; display:inline-block; max-width:50%; min-width:260px; width:100%;" class="mobile-wrapper mobile-hide">
+                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;" class="max-width">
+                                                    <tr>
+                                                        <td align="left" valign="bottom" style="padding: 15px 0 0 0;" class="darkmodelowblack">
+                                                            <p style="margin: 0;"><div><img src="https://static.deriv.com/email/images/dp2p-small/image-dp-2-p-4-available-on-deriv-com.png" border="0" class="mobile-negmargin" style="max-width: 100%;" alt="Deriv.com"></div></p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <!--[if mso]></td></tr></table><![endif]-->
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
+                </td>
+            </tr>
+            <!-- END CARD4 -->
+            <!-- before footer 1 -->
             <tr>
                 <td bgcolor="#eeeeee" align="center" style="padding: 0px;">
                     <!--[if (gte mso 9)|(IE)]>
@@ -463,45 +554,62 @@
                     <![endif]-->
                     <table  border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff; max-width: 600px;">
                         <tr>
-                            <td align="center" style="padding: 40px 28px 16px; line-height: 1.5;" class="mobile-side darkmodeblack">
-                                <p style="margin: 0px;" class="mobile-font-size-14 darkmodegray">Get the new Deriv GO mobile app for Android now.</p>
-                            </td>
-                        </tr>                         
-                        <tr>
-                            <td align="center" style="padding: 0px 28px 24px; line-height: 1.5;" class="mobile-side darkmodeblack">
-                                <p style="margin: 0px;" class="mobile-font-size-14 darkmodegray">If you haven't downloaded the app yet, get it now on the Google Play Store and Huawei AppGallery.</p>
+                            <td align="center" bgcolor="ffffff" style="padding: 40px 30px 20px 30px; background-color: #ffffff;" class="mobile-side darkmodeblack">
+                                <p style="margin:0;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 24px; line-height: 1 ; color: #333333; font-weight: 600;" class="mobile-font-size-20 mobile-center">Dapatkan aplikasi DP2P pada Android</p>
                             </td>
                         </tr> 
-                         
-                        <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding: 0px 28px 40px;" class="darkmodeblack">
-                                <table class="darkmodeblack" align="center" cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 600px; margin: 0px">
-                                    <tr>
-                                        <td align="right" width="50%" style="padding-right: 8px;">
-                                            <a href="https://play.google.com/store/apps/details?id=com.deriv.app">
-                                                <img  src="https://static.deriv.com/html/broadcasts/rebranding/images/google-play.png" alt="Google Play store">
-                                            </a>
-                                        </td>
-                                        <td align="left" width="50%" style="padding-left: 8px;">
-                                            <a href="https://appgallery.huawei.com/#/app/C103801913?channelId=derivgo&id=6a08408de253456ca782d58de774c929&s=43337109BFFB85DDF9B018518FE33C85BA93B02019489CB22A304008429B5557&detailType=0&v=">
-                                                <img  src="https://static.deriv.com/email/images/marketing/huawei-appgallery-light.png" alt="Huawei App Gallery">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </table>
+                        <tr class="mobile-hide">
+                            <td align="center" bgcolor="ffffff" style="padding: 0px 30px 20px 30px; background-color: #ffffff;" class="mobile-side darkmodeblack darkcolor-subtext">
+                                <p style="margin-top: -1px;margin-bottom: 0; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 0.9 ; color: #333333; font-weight: 400;" class="mobile-font-size-20 mobile-center">Pindai kode QR ini untuk mengunduh aplikasi seluler dari Google Play Store.</p>
                             </td>
-                        </tr>
-                        <tr>
-                            <td  bgcolor="ffffff" align="center" style="padding: 0px 28px 40px; background-color: #ffffff;" class="mobile-center mobile-side darkmodeblack">
-                                <p style="margin:0;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #333333;" class="darkmodegray">(iOS users: We haven’t forgotten you. A version for you is in the works.)</p>
+                        </tr>                         
+                        <tr class="mobile-hide">
+                            <td bgcolor="#ffffff" align="center" style="padding:10px 30px 5px 30px;" class="darkmodeblack">
+                                <img src="https://static.deriv.com/email/images/dp2p-small/qr.png" alt="QR code to download DP2P" style="margin: 0px !important; padding: 0 !important; display: inline-block !important;">
                             </td>
-                        </tr>
+                        </tr> 
+                        <tr>
+                            <td bgcolor="#ffffff" align="center" style="padding:5px 30px 30px 30px;" class="mobile-visible-block darkmodeblack">
+                                <a href="https://play.google.com/store/apps/details?id=com.deriv.dp2p">
+                                    <img  src="https://static.deriv.com/html/broadcasts/rebranding/images/google-play.png" style="display: block;" alt="Google Play store">
+                                </a>
+                            </td>
+                        </tr>                                                                                      
                     </table>
                     <!--[if (gte mso 9)|(IE)]></td></tr></table>
                     <![endif]-->
                 </td>
             </tr>   
-            <!--end before footer-->                             
+            <!--end before footer1-->  
+            <!-- before footer2  -->
+            <tr>
+                <td bgcolor="#eeeeee" align="center" style="padding: 0px;">
+                    <!--[if (gte mso 9)|(IE)]>
+                    <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" ><tr><td align="center" valign="top" width="600">
+                    <![endif]-->
+                    <table  border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #0e0e0e;max-width: 600px;">
+                        <tr>
+                            <td align="center"  style="padding: 40px 30px 30px 30px;" class="mobile-side">
+                                <p style="margin:0;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 1.25 ; color: #ffffff; font-weight: 600;" class="mobile-font-size-24">Nikmati layanan pembayaran yang lebih baik menggunakan aplikasi DP2P</p>
+                            </td>
+                        </tr> 
+                        <tr>
+                            <td  align="center"  style="padding: 0px 30px 50px 30px;">
+                                <!--[if (gte mso 9)|(IE)]>
+                                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://deriv.com/p2p/v2" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="10%" strokecolor="#ff444f" fillcolor="#ff444f">
+                                <w:anchorlock/>
+                                <center style="color:#ffffff;font-family:sans-serif;font-size:14px;font-weight:bold;">Pelajari lebih lanjut</center>
+                                </v:roundrect>
+                                <![endif]-->
+                                <a class="button" href="https://deriv.com/p2p/v2" style="mso-hide:all;"><span>Pelajari lebih lanjut</span></a>
+                            </td>
+                        </tr>                                                                                                        
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]></td></tr></table>
+                    <![endif]--> 
+                </td>
+            </tr>   
+            <!--end before footer2-->                             
             <!-- FOOTER -->
             <tr>
                 <td bgcolor="#eeeeee" align="center" style="padding: 0px;">
