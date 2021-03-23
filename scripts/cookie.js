@@ -56,7 +56,7 @@ function toISOFormat(date) {
 }
 /* end utility functions */
 
-function initMarketingCookies() {
+(function initMarketingCookies() {
   const searchParams = new URLSearchParams(window.location.search);
   const brand_name = "deriv";
   const app_id = 11780;
@@ -176,7 +176,4 @@ function initMarketingCookies() {
     )};domain=${getDomain()}; path=/;`;
   }
   /* end handling gclid */
-}
-
-/* starts when the initial HTML document has loaded */
-document.addEventListener("DOMContentLoaded", () => initMarketingCookies());
+})();
