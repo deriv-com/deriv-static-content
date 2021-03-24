@@ -2,11 +2,11 @@
 function getDomain() {
   const domain = location.hostname;
 
-  if (domain.includes('deriv.com')) {
-    return 'deriv.com';
+  if (domain.includes("deriv.com")) {
+    return "deriv.com";
   }
 
-  return domain.includes('binary.sx') ? 'binary.sx' : domain;
+  return domain.includes("binary.sx") ? "binary.sx" : domain;
 }
 
 function eraseCookie(name) {
@@ -56,8 +56,7 @@ function toISOFormat(date) {
 }
 /* end utility functions */
 
-/* start on load of page */
-window.onload = function () {
+(function initMarketingCookies() {
   const searchParams = new URLSearchParams(window.location.search);
   const brand_name = "deriv";
   const app_id = 11780;
@@ -172,8 +171,9 @@ window.onload = function () {
   /* start handling gclid */
   if (searchParams.has("gclid")) {
     eraseCookie("gclid");
-    document.cookie = `gclid=${searchParams.get("gclid")};domain=${getDomain()}; path=/;`;
+    document.cookie = `gclid=${searchParams.get(
+      "gclid"
+    )};domain=${getDomain()}; path=/;`;
   }
   /* end handling gclid */
-};
-/* end on load of page */
+})();
