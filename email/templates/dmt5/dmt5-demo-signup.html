@@ -265,194 +265,45 @@
         <table border="0" cellpadding="0" cellspacing="0" width="100%">
             <!-- COPY BLOCK -->
             <tr>
-                <td bgcolor="#eeeeee" align="center" style="padding: 40px 0 0 0;" class="mobile-lowpadding-top">
+                <td bgcolor="#eeeeee" align="center" style="padding: 40px 0 0;" class="mobile-lowpadding-top">
                     <!--[if (gte mso 9)|(IE)]>
                     <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
                     <![endif]-->
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;" class="darkmodelowblack">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                         <!-- COPY -->
                         <tr>
-                            <td bgcolor="#0e0e0e" align="center" style="padding: 40px 30px 40px 30px;" class="darkmodelowblack">
+                            <td bgcolor="#000000" align="center" style="padding: 35px 30px 30px; background-color: #000000;" class="darkmodelowblack">
                                 <a href="https://www.deriv.com">
-                                    <img src="https://static.deriv.com/html/broadcasts/welcome/images/deriv-logo.png" border="0" style="display: block;" alt="Deriv.com">
+                                    <img src="https://static.deriv.com/html/images/deriv-logo-white.png" width="140" height="25" border="0" style="display: block;" alt="Deriv.com">
                                 </a>
-
-                            </td>
-                        </tr>
-                        <!-- COPY -->
-                        <tr>
-                            <td bgcolor="#0e0e0e" align="center" style="padding: 24px 30px 0px 30px;" class="darkmodelowblack">
-                                <p style="color: #ffffff; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 24px; margin: 0px;">{% if event.first_name != blank %}
-Hello {{event.first_name | titlecase }}!
-{% else %}
- Hello!
+                                <p style="padding: 60px 30px 0px;margin: 10px 20px -20px!important;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; color: #ffffff;" class="darkcolor-subtext">{% if {{event.client_first_name}} != blank % %} Hello  {{event.client_first_name | titlecase}}!
+	{% else %} Hello!
 {% endif %}</p>
+                                <p style="padding: 0px;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 28px; line-height: 1.25 ; color: #ffffff; font-weight: 600;" class="darkcolor-subtext">Your Deriv MetaTrader 5 (DMT5) {{event.type_label | }} {% if {{event.account_type}} contains 'demo' %} demo
+	{% else %} real
+{% endif %} account is ready.</p>
                             </td>
                         </tr>
                         <!-- COPY -->
                         <tr>
-                            <td bgcolor="#0e0e0e" align="center" style="padding: 10px 30px 40px 30px;" class="darkmodelowblack">
-                                <h2 style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 40px; color: #ffffff; font-weight: bold; margin: 0px;">Your Deriv {{event.currency}} account is ready.</h2>
-                            </td>
-                        </tr>
-                        <!-- COPY -->
-                        <tr>
-                            <td bgcolor="#0e0e0e" align="center" style="padding: 0px 30px 20px 30px;" class="darkmodelowblack">
-                                <p style="color: #ffffff; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 24px; margin: 0px;">Your account number is {{event.loginid}}.</p>
-                            </td>
-                        </tr>
-                        <!-- COPY -->
-                        <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding: 0; " class="darkmodeblack">
-                                <a href="https://www.deriv.com">
-                                    <img class="light-img" src="https://static.deriv.com/email/images/marketing/platforms2.png" border="0" style="display: block; max-width: 100%;" alt="Deriv.com">
-                                    <div class="dark-img2" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
-                                        <img class="dark-img2" src="https://static.deriv.com/email/images/marketing/platforms-dark.png" width="100%" style=" font-family:'proxima_nova', Helvetica, Arial, sans-serif; text-align:center; font-weight:bold; font-size:36px; line-height:40px; text-decoration: none; margin: 0 auto; padding: 0;" border="0" />
-                                    </div>
-                                </a>
-                            </td>
-                        </tr>
-
-                        <!-- COPY -->
-                        <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding: 20px 60px;" class="mobile-lowsidepadding2 darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 24px; font-weight: bold; line-height: 36px; margin: 0px;">Fund your account via the Deriv cashier and start trading for real</p>
+                            <td bgcolor="#ffffff" align="left" style="padding: 30px;" class="darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 10px 0px 0px 0px;" class="darkcolor-subtext">Your login ID for the MetaTrader 5 platform is {{event.mt5_integer_id}}.</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 1.5; margin: 18px 0px 0px 0px;" class="darkcolor-subtext">Learn more about your new account and other DMT5 accounts as well as the assets that you can trade</p>
                             </td>
                         </tr>
                         <!-- button -->
                         <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding: 5px 30px 20px 30px; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 24px;" class="darkmodeblack">
+                            <td bgcolor="#ffffff" align="center" style="padding: 0px 30px 50px; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px;" class="darkmodeblack">
                                 <!--[if (gte mso 9)|(IE)]>
-                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://app.deriv.com/cashier/deposit" style="height:40px;v-text-anchor:middle;width:300px;" arcsize="8%" stroke="f" fillcolor="#ff444f">
+                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://deriv.com/dmt5/" style="height:40px;v-text-anchor:middle;width:260px;" arcsize="8%" stroke="f" fillcolor="#ff444f">
                                     <w:anchorlock/>
-                                    <center style="color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:bold;">Take me to the cashier</center>
+                                    <center style="color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:bold;">Go to DMT5 dashboard</center>
                                     </v:roundrect>
                                 <![endif]-->
-                                <a class="button" href="https://app.deriv.com/cashier/deposit" style="mso-hide:all;">Take me to the cashier</a>
-                            </td>
-                        </tr>
-                        <!-- COPY -->
-                        <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding: 20px 30px 0;" class="darkmodeblack">
-                                <h2 style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 24px; line-height: 36px; color: #333333; font-weight: bold; margin: 0px;">Fund your account in 3 easy steps</h2>
-                            </td>
-                        </tr>
-                        <!-- COPY -->
-                        <tr>
-                            <td bgcolor="#ffffff" align="left" style="padding: 0 30px 20px 30px;" class="darkmodeblack">
-
-                                <!--[if (gte mso 9)|(IE)]><table width="540" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
-                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:540px; margin: 0px 0px 0px 0px;">
-                                    <tr>
-                                        <td align="center" valign="top" style="font-size:0;" class="darkmodeblack">
-                                            <!--[if (gte mso 9)|(IE)]>
-                                            <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
-                                            <tr>
-                                            <td align="left" valign="top" width="152">
-                                            <![endif]-->
-                                            <div style="display:inline-block; max-width:33.3333%; min-width:180px; vertical-align:top; width:100%;" class="mobile-wrapper">
-                                                <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:180px;" class="max-width">
-                                                    <tr>
-                                                        <td align="left" valign="top" style="padding-top: 25px;" class="darkmodeblack">
-                                                            <img src="https://static.deriv.com/email/images/marketing/real-acc/1-cashier.png" border="0" style="display: block; margin: 0px; height: 82px;" alt="Add a real money account">
-                                                            <table align="left" border="0" cellpadding="2" cellspacing="2" width="100%" style="margin: 30px 0px 0px 0px;">
-                                                                <tr>
-                                                                    <td width="35" valign="top" class="darkmodeblack">
-                                                                        <img class="light-img" src="https://static.deriv.com/email/images/marketing/real-acc/1.png" border="0" style="display: block; margin: 0px" alt="1">
-                                                                        <div class="dark-img" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
-                                                                            <img class="dark-img" src="https://static.deriv.com/email/images/icons/1-gray.png" width="140" height="25" alt="Deriv.com" style="color: #ffffff; font-family:'proxima_nova', Helvetica, Arial, sans-serif; text-align:center; font-weight:bold; font-size:36px; line-height:40px; text-decoration: none; margin: 0 auto; padding: 0;" border="0" />
-                                                                        </div>
-                                                                    </td>
-                                                                    <td valign="top" class="darkmodeblack">
-                                                                        <p style="color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 21px; margin: 0px; text-align: left;" class="darkcolor-subtext">Open the Cashier or click on the Deposit button on the top right.</p>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                            <!--[if (gte mso 9)|(IE)]>
-                                            </td>
-                                            <td width="15" style="font-size: 1px;">&nbsp;</td>
-                                            <td align="left" valign="top" width="152">
-                                            <![endif]-->
-                                            <div style="display:inline-block; max-width:33.3333%; min-width:180px; vertical-align:top; width:100%;" class="mobile-wrapper">
-                                                <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:180px;" class="max-width">
-                                                    <tr>
-                                                        <td align="left" valign="top" style="padding-top: 25px;" class="darkmodeblack">
-                                                            <img src="https://static.deriv.com/email/images/marketing/real-acc/step-2.png" border="0" style="display: block;height: 82px;" alt="Make a deposit">
-                                                            <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 30px 0px 0px 0px;">
-                                                                <tr>
-                                                                    <td width="35" valign="top" class="darkmodeblack">
-                                                                        <img class="light-img" src="https://static.deriv.com/email/images/marketing/real-acc/2.png" border="0" style="display: block; margin: 0px 0px 0px 0px" alt="2">
-                                                                        <div class="dark-img" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
-                                                                            <img class="dark-img" src="https://static.deriv.com/email/images/icons/2-gray.png" width="140" height="25" alt="Deriv.com" style="color: #ffffff; font-family:'proxima_nova', Helvetica, Arial, sans-serif; text-align:center; font-weight:bold; font-size:36px; line-height:40px; text-decoration: none; margin: 0 auto; padding: 0;" border="0" />
-                                                                        </div>
-                                                                    </td>
-                                                                    <td valign="top" class="darkmodeblack">
-                                                                        <p style="color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 21px; margin: 0px 0px 0px 0px; text-align: left;" class="darkcolor-subtext">Copy or scan the address to make your deposit.</p>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                            <!--[if (gte mso 9)|(IE)]>
-                                            </td>
-                                            <td width="15" style="font-size: 1px;">&nbsp;</td>
-                                            <td align="left" valign="top" width="152">
-                                            <![endif]-->
-                                            <div style="display:inline-block; max-width:33.3333%; min-width:180px; vertical-align:top; width:100%;" class="mobile-wrapper">
-                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:180px;" class="max-width">
-                                                    <tr>
-                                                        <td align="left" valign="top" style="padding-top: 25px;" class="darkmodeblack">
-                                                            <img src="https://static.deriv.com/email/images/marketing/real-acc/step-3.png" border="0" style="display: block;height: 82px;" alt="Start trading">
-                                                            <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 30px 0 0 0;" class="darkmodeblack">
-                                                                <tr>
-                                                                    <td width="35" valign="top" class="darkmodeblack">
-                                                                        <img class="light-img" src="https://static.deriv.com/email/images/marketing/real-acc/3.png" border="0" style="display: block; margin: 0px 0px 0px 0px" alt="3">
-                                                                        <div class="dark-img" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
-                                                                            <img class="dark-img" src="https://static.deriv.com/email/images/icons/3-gray.png" width="140" height="25" alt="Deriv.com" style="color: #ffffff; font-family:'proxima_nova', Helvetica, Arial, sans-serif; text-align:center; font-weight:bold; font-size:36px; line-height:40px; text-decoration: none; margin: 0 auto; padding: 0;" border="0" />
-                                                                        </div>
-                                                                    </td>
-                                                                    <td valign="top" class="darkmodeblack">
-                                                                        <p style="color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 21px; margin: 0px 0px 0px 0px; text-align: left;" class="darkcolor-subtext">Specify the amount you want to deposit, fill out the details, and follow the prompts to confirm payment. </p>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                            <!--[if mso]></td></tr></table><![endif]-->
-                                        </td>
-                                    </tr>
-                                </table><!--[if mso]></td></tr></table><![endif]-->
-
+                                <a class="button" href="https://app.deriv.com/mt5/" style="mso-hide:all;"><span>Go to DMT5 dashboard</span></a>
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding: 10px 30px 10px 30px; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 24px;" class="darkmodeblack mobile-lowsidepadding">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 10px 0 0 0;" class="darkcolor-subtext">Once your transaction has received 3 blockchain confirmations, the deposit amount will appear in your Deriv {{event.currency}} balance and you can begin trading. </p>
-                            </td>
-                        </tr>
-                        <!-- button -->
-                        <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding: 15px 30px 40px 30px; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 24px;" class="darkmodeblack">
-                                <!--[if (gte mso 9)|(IE)]>
-                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://app.deriv.com/cashier/deposit" style="height:40px;v-text-anchor:middle;width:240px;" arcsize="8%" stroke="f" fillcolor="#ff444f">
-                                    <w:anchorlock/>
-                                    <center style="color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:bold;">Fund your account now</center>
-                                    </v:roundrect>
-                                <![endif]-->
-                                <a class="button" href="https://app.deriv.com/cashier/deposit" style="mso-hide:all;">Fund your account now</a>
-                            </td>
-                        </tr>
-                        <!-- Icon -->
-                        <tr>
-
                         </tr>
                     </table>
                     <!--[if (gte mso 9)|(IE)]>
@@ -512,7 +363,8 @@ Hello {{event.first_name | titlecase }}!
                                     <tr>
                                         <td bgcolor="#f3f5f6" align="center" style="color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="darkmodelowblack">
                                             <p style="padding: 0px 30px 0px 30px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #999999; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0px 0px 5px 0px;" class="darkmodegray ">© 2021 Deriv&nbsp;<span class="darkmodegray">|</span>&nbsp;All rights reserved.</p>
-                                            <p style="padding: 0px 10px 45px 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #999999; font-size: 12px; font-weight: 400; line-height: 16px; margin: 5px 0px 0px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important">Help Centre</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Terms and conditions</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://deriv.com/tnc/security-and-privacy.pdf" style="color: #ff444f !important">Security and privacy</a></p>
+                                            <p style="padding: 0px 10px 10px 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #999999; font-size: 12px; font-weight: 400; line-height: 16px; margin: 5px 0px 0px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important">Help Centre</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Terms and conditions</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://deriv.com/tnc/security-and-privacy.pdf" style="color: #ff444f !important">Security and privacy</a></p>
+                                            <p style="padding: 10px 10px 20px 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 500; line-height: 16px; margin: 0px 0px 5px 0px;" class="darkcolor-subtext">Click <a href="https://app.deriv.com/account/personal-details" style="mso-hide:all; color: #333333;font-weight: bold;" class="darkcolor-subtext">here</a> to unsubscribe through your account settings.</p>                                        
                                         </td>
                                     </tr>
                                 </table>
@@ -525,7 +377,7 @@ Hello {{event.first_name | titlecase }}!
                     <![endif]-->
                 </td>
             </tr>
-            <!--End FOOTER -->            
+            <!--End FOOTER -->
         </table>
     </body>
 </html>
