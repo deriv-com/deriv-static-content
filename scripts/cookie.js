@@ -67,38 +67,52 @@ function toISOFormat(date) {
   let utm_data = {};
 
   // if url missing one of required fields, do nothing
-  for (let ctr = 0; ctr < required_fields.length; ctr++) {
-    if (!searchParams.has(required_fields[ctr])) {
-      is_need_change = false;
+  if (searchParams) {
+    for (let ctr = 0; ctr < required_fields.length; ctr++) {
+      if (!searchParams.has(required_fields[ctr])) {
+        is_need_change = false;
+      }
     }
-  }
 
-  if (is_need_change) {
-    eraseCookie("utm_data");
-    const utm_source = searchParams.get("utm_source");
-    const utm_medium = searchParams.get("utm_medium");
-    const utm_campaign = searchParams.get("utm_campaign");
-    const utm_term = searchParams.has("utm_term")
-      ? searchParams.get("utm_term")
-      : null;
-    const utm_content = searchParams.has("utm_content")
-      ? searchParams.get("utm_content")
-      : null;
+    if (is_need_change) {
+      eraseCookie("utm_data");
+      const utm_source = searchParams.get("utm_source");
+      const utm_medium = searchParams.get("utm_medium");
+      const utm_campaign = searchParams.get("utm_campaign");
+      const utm_term = searchParams.has("utm_term")
+        ? searchParams.get("utm_term")
+        : null;
+      const utm_content = searchParams.has("utm_content")
+        ? searchParams.get("utm_content")
+        : null;
 
-    utm_data = {
-      ...(utm_source && { utm_source }),
-      ...(utm_medium && { utm_medium }),
-      ...(utm_campaign && { utm_campaign }),
-      ...(utm_term && { utm_term }),
-      ...(utm_content && { utm_content }),
-    };
+      utm_data = {
+        ...(utm_source && { utm_source }),
+        ...(utm_medium && { utm_medium }),
+        ...(utm_campaign && { utm_campaign }),
+        ...(utm_term && { utm_term }),
+        ...(utm_content && { utm_content }),
+      };
 
-    const utm_data_cookie = encodeURI(JSON.stringify(utm_data))
-      .replace(",", "%2C")
-      .replace("%7B", "{")
-      .replace("%7D", "}");
+      const utm_data_cookie = encodeURI(JSON.stringify(utm_data))
+        .replace(",", "%2C")
+        .replace("%7B", "{")
+        .replace("%7D", "}");
 
-    document.cookie = `utm_data=${utm_data_cookie}; domain=${getDomain()}; path=/;`;
+      document.cookie = `utm_data=${utm_data_cookie}; domain=${getDomain()}; path=/; sameSite=None`;
+    }
+  } else {
+    if (getCookie("utm_data") == undefined) {
+      const utm_source = "deriv_direct";
+
+      utm_data = {
+        ...(utm_source && { utm_source }),
+      };
+
+      const utm_data_cookie = encodeURI(JSON.stringify(utm_data));
+
+      document.cookie = `utm_data=${utm_data_cookie}; domain=${getDomain()}; path=/; sameSite=None`;
+    }
   }
   /* end handling UTMs */
 
@@ -107,7 +121,7 @@ function toISOFormat(date) {
     eraseCookie("affiliate_tracking");
     document.cookie = `affiliate_tracking=${searchParams.get(
       "t"
-    )};domain=${getDomain()}; path=/;`;
+    )};domain=${getDomain()}; path=/; sameSite=None`;
   }
   /* end handling affiliate tracking */
 
@@ -125,7 +139,7 @@ function toISOFormat(date) {
       .replace("%7B", "{")
       .replace("%7D", "}");
 
-    document.cookie = `signup_device=${signup_data_cookie};domain=${getDomain()}; path=/;`;
+    document.cookie = `signup_device=${signup_data_cookie};domain=${getDomain()}; path=/; sameSite=None`;
   }
   /* end handling signup device */
 
@@ -161,7 +175,7 @@ function toISOFormat(date) {
         .replace("%7B", "{")
         .replace("%7D", "}");
 
-      document.cookie = `date_first_contact=${date_first_contact_data_cookie};domain=${getDomain()}; path=/;`;
+      document.cookie = `date_first_contact=${date_first_contact_data_cookie};domain=${getDomain()}; path=/; sameSite=None`;
 
       ws.close();
     };
@@ -173,7 +187,7 @@ function toISOFormat(date) {
     eraseCookie("gclid");
     document.cookie = `gclid=${searchParams.get(
       "gclid"
-    )};domain=${getDomain()}; path=/;`;
+    )};domain=${getDomain()}; path=/; sameSite=None`;
   }
   /* end handling gclid */
 })();
