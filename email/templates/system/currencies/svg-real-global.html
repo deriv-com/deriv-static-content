@@ -212,6 +212,7 @@
                 /* Shows Dark Mode-Only Content, Like Images */
                 .dark-img { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
                 .dark-img2 { display:block !important; width: 100% !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+                .dark-img3 { display:block !important; width: 80% !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
 
                 /* Hides Light Mode-Only Content, Like Images */
                 .light-img { display:none; display:none !important; }
@@ -238,6 +239,7 @@
             /* Shows Dark Mode-Only Content, Like Images */
             [data-ogsc] .dark-img { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
             [data-ogsc] .dark-img2 { display:block !important; width: 100% !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+            [data-ogsc] .dark-img3 { display:block !important; width: 80% !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
             /* Hides Light Mode-Only Content, Like Images */
             [data-ogsc] .light-img { display:none; display:none !important; }
 
@@ -332,8 +334,8 @@ Hello {{event.first_name | titlecase }}!
                         </tr>
                         <!-- COPY -->
                         <tr>
-                            <td bgcolor="#f7f7f7" align="center" style="padding: 40px 30px;" class="mobile-lowsidepadding2 darkmodelowblack">
-                                <h2 style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 24px; line-height: 36px; color: #333333; font-weight: bold; margin: 0px;">Popular methods to deposit (and withdraw) funds in {{event.country}}</h2>
+                            <td bgcolor="#f7f7f7" align="center" style="padding: 40px 60px;" class="mobile-lowsidepadding2 darkmodelowblack">
+                                <h2 style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 24px; line-height: 36px; color: #333333; font-weight: bold; margin: 0px;">Payment methods to fund your account</h2>
                             </td>
                         </tr>
                         <!-- Pyament method 2 col -->
@@ -402,7 +404,13 @@ Hello {{event.first_name | titlecase }}!
                                                 <table align="left" border="0" cellpadding="0" cellspacing="0">
                                                     <tr>
                                                         <td align="center" valign="middle" style="padding: 15px 0 0;" class="darkmodelowblack">
-                                                            <img src="https://static.deriv.app/email/images/icons/perfectmoney.png" border="0" style="display: block; max-width: 100%;" alt="Deriv.com">
+                                                            <img class="light-img" src="https://static.deriv.com/email/images/marketing/real-acc/perfectmoney.png" style="display: block; max-width: 100%;" >
+                                                            <!-- The following Dark Mode logo image is hidden 
+                                                             with MSO conditional code and inline CSS, but will be         
+                                                             revealed once Dark Mode is triggered -->
+                                                            <div class="dark-img2" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
+                                                             <img class="dark-img2" src="https://static.deriv.com/email/images/icons/perfectmoney-dark.png"  style="color: #ffffff; font-family:'proxima_nova', Helvetica, Arial, sans-serif; text-align:center; font-weight:bold; font-size:36px; line-height:40px; text-decoration: none; margin: 0 auto; padding: 0;" border="0" />
+                                                            </div>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -555,7 +563,13 @@ Hello {{event.first_name | titlecase }}!
                                                 <table align="left" border="0" cellpadding="0" cellspacing="0">
                                                     <tr>
                                                         <td align="center" valign="middle" style="padding: 15px 0 0;" class="darkmodelowblack">
-                                                            <img src="https://static.deriv.com/email/images/marketing/real-acc/master-icon.png" border="0" style="display: block; max-width: 100%;" alt="Deriv.com">
+                                                            <img class="light-img" src="https://static.deriv.com/email/images/marketing/real-acc/master-icon.png" style="display: block; max-width: 100%;" >
+                                                            <!-- The following Dark Mode logo image is hidden 
+                                                             with MSO conditional code and inline CSS, but will be         
+                                                             revealed once Dark Mode is triggered -->
+                                                            <div class="dark-img3" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
+                                                             <img class="dark-img3" src="https://static.deriv.com/email/images/icons/master-dark.png" width="100px"  style="color: #ffffff; font-family:'proxima_nova', Helvetica, Arial, sans-serif; text-align:center; font-weight:bold; font-size:36px; line-height:40px; text-decoration: none; margin: 0 auto; padding: 0;" border="0" />
+                                                            </div>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -715,10 +729,10 @@ Hello {{event.first_name | titlecase }}!
                                 <!--[if (gte mso 9)|(IE)]>
                                     <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://app.deriv.com/cashier/deposit" style="height:40px;v-text-anchor:middle;width:240px;" arcsize="8%" stroke="f" fillcolor="#ff444f">
                                     <w:anchorlock/>
-                                    <center style="color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:bold;">Fund your account now</center>
+                                    <center style="color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:bold;">Make a deposit now</center>
                                     </v:roundrect>
                                 <![endif]-->
-                                <a class="button" href="https://app.deriv.com/cashier/deposit" style="mso-hide:all;">Fund your account now</a>
+                                <a class="button" href="https://app.deriv.com/cashier/deposit" style="mso-hide:all;">Make a deposit now</a>
                             </td>
                         </tr>
                         <!-- Icon -->
