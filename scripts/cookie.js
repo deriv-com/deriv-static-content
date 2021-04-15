@@ -100,7 +100,7 @@ function toISOFormat(date) {
         .replace("%7B", "{")
         .replace("%7D", "}");
 
-      document.cookie = `utm_data=${utm_data_cookie}; domain=${getDomain()}; path=/; sameSite=None`;
+      document.cookie = `utm_data=${utm_data_cookie}; domain=${getDomain()}; path=/;`;
     }
   } else {
     // If the user comes to the site for the first time without any URL params
@@ -114,7 +114,7 @@ function toISOFormat(date) {
 
       const utm_data_cookie = encodeURI(JSON.stringify(utm_data));
 
-      document.cookie = `utm_data=${utm_data_cookie}; domain=${getDomain()}; path=/; sameSite=None`;
+      document.cookie = `utm_data=${utm_data_cookie}; domain=${getDomain()}; path=/;`;
     }
   }
   /* end handling UTMs */
@@ -124,7 +124,7 @@ function toISOFormat(date) {
     eraseCookie("affiliate_tracking");
     document.cookie = `affiliate_tracking=${searchParams.get(
       "t"
-    )};domain=${getDomain()}; path=/; sameSite=None`;
+    )};domain=${getDomain()}; path=/;`;
   }
   /* end handling affiliate tracking */
 
@@ -142,7 +142,7 @@ function toISOFormat(date) {
       .replace("%7B", "{")
       .replace("%7D", "}");
 
-    document.cookie = `signup_device=${signup_data_cookie};domain=${getDomain()}; path=/; sameSite=None`;
+    document.cookie = `signup_device=${signup_data_cookie};domain=${getDomain()}; path=/;`;
   }
   /* end handling signup device */
 
@@ -178,7 +178,7 @@ function toISOFormat(date) {
         .replace("%7B", "{")
         .replace("%7D", "}");
 
-      document.cookie = `date_first_contact=${date_first_contact_data_cookie};domain=${getDomain()}; path=/; sameSite=None`;
+      document.cookie = `date_first_contact=${date_first_contact_data_cookie};domain=${getDomain()}; path=/;`;
 
       ws.close();
     };
@@ -190,7 +190,7 @@ function toISOFormat(date) {
     eraseCookie("gclid");
     document.cookie = `gclid=${searchParams.get(
       "gclid"
-    )};domain=${getDomain()}; path=/; sameSite=None`;
+    )};domain=${getDomain()}; path=/;`;
   }
   /* end handling gclid */
 })();
