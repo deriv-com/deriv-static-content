@@ -66,8 +66,9 @@ function toISOFormat(date) {
   let is_need_change = true;
   let utm_data = {};
 
-  // if url missing one of required fields, do nothing
+  // When the user comes to the site with URL params
   if (searchParams) {
+    // if url is missing one of required fields, do nothing
     for (let ctr = 0; ctr < required_fields.length; ctr++) {
       if (!searchParams.has(required_fields[ctr])) {
         is_need_change = false;
@@ -102,6 +103,8 @@ function toISOFormat(date) {
       document.cookie = `utm_data=${utm_data_cookie}; domain=${getDomain()}; path=/; sameSite=None`;
     }
   } else {
+    // If the user comes to the site for the first time without any URL params
+    // Only set the utm_data to deriv_direct if the user does not have utm_data cookies stored
     if (getCookie("utm_data") == undefined) {
       const utm_source = "deriv_direct";
 
