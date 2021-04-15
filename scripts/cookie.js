@@ -67,7 +67,11 @@ function toISOFormat(date) {
   let utm_data = {};
 
   // When the user comes to the site with URL params
-  if (searchParams) {
+  if (
+    searchParams.has("utm_source") ||
+    searchParams.has("utm_medium") ||
+    searchParams.has("utm_campaign")
+  ) {
     // if url is missing one of required fields, do nothing
     for (let ctr = 0; ctr < required_fields.length; ctr++) {
       if (!searchParams.has(required_fields[ctr])) {
