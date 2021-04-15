@@ -105,7 +105,7 @@ function toISOFormat(date) {
   } else {
     // If the user comes to the site for the first time without any URL params
     // Only set the utm_data to deriv_direct if the user does not have utm_data cookies stored
-    if (getCookie("utm_data") == undefined) {
+    if (!getCookie("utm_data")) {
       const utm_source = "deriv_direct";
 
       utm_data = {
