@@ -116,7 +116,10 @@ function toISOFormat(date) {
         ...(utm_source && { utm_source }),
       };
 
-      const utm_data_cookie = encodeURI(JSON.stringify(utm_data));
+      const utm_data_cookie = encodeURI(JSON.stringify(utm_data))
+        .replace(",", "%2C")
+        .replace("%7B", "{")
+        .replace("%7D", "}");
 
       document.cookie = `utm_data=${utm_data_cookie}; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
     }
