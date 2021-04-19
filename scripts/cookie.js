@@ -104,7 +104,7 @@ function toISOFormat(date) {
         .replace("%7B", "{")
         .replace("%7D", "}");
 
-      document.cookie = `utm_data=${utm_data_cookie}; domain=${getDomain()}; path=/;`;
+      document.cookie = `utm_data=${utm_data_cookie}; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
     }
   } else {
     // If the user comes to the site for the first time without any URL params
@@ -116,9 +116,12 @@ function toISOFormat(date) {
         ...(utm_source && { utm_source }),
       };
 
-      const utm_data_cookie = encodeURI(JSON.stringify(utm_data));
+      const utm_data_cookie = encodeURI(JSON.stringify(utm_data))
+        .replace(",", "%2C")
+        .replace("%7B", "{")
+        .replace("%7D", "}");
 
-      document.cookie = `utm_data=${utm_data_cookie}; domain=${getDomain()}; path=/;`;
+      document.cookie = `utm_data=${utm_data_cookie}; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
     }
   }
   /* end handling UTMs */
@@ -128,7 +131,7 @@ function toISOFormat(date) {
     eraseCookie("affiliate_tracking");
     document.cookie = `affiliate_tracking=${searchParams.get(
       "t"
-    )};domain=${getDomain()}; path=/;`;
+    )};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
   }
   /* end handling affiliate tracking */
 
@@ -146,7 +149,7 @@ function toISOFormat(date) {
       .replace("%7B", "{")
       .replace("%7D", "}");
 
-    document.cookie = `signup_device=${signup_data_cookie};domain=${getDomain()}; path=/;`;
+    document.cookie = `signup_device=${signup_data_cookie};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
   }
   /* end handling signup device */
 
@@ -182,7 +185,7 @@ function toISOFormat(date) {
         .replace("%7B", "{")
         .replace("%7D", "}");
 
-      document.cookie = `date_first_contact=${date_first_contact_data_cookie};domain=${getDomain()}; path=/;`;
+      document.cookie = `date_first_contact=${date_first_contact_data_cookie};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
 
       ws.close();
     };
@@ -194,7 +197,7 @@ function toISOFormat(date) {
     eraseCookie("gclid");
     document.cookie = `gclid=${searchParams.get(
       "gclid"
-    )};domain=${getDomain()}; path=/;`;
+    )};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
   }
   /* end handling gclid */
 })();
