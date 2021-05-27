@@ -201,6 +201,15 @@
                 .mobile-center{
                     text-align: center;
                 }
+                .mb-width {
+                    width:60px !important;
+                }
+                .mb-no-bgimg {
+                    background-image: none !important;
+                }
+                .mb-margin-top {
+                    margin-top: 20px !important;
+                }
             }
             @media screen and (min-width: 360px) and (max-width: 600px) {
                 .mb-midle-lowleftpad-r1{
@@ -234,6 +243,7 @@
                 .darkmodeblack { background-color:#0e0e0e !important; }
                 .darkmodelowblack { background-color: #202020 !important; }
                 .darkmode-lowbodyblack { background-color: #1a1a1a !important; }
+                .dark-bg-color-gray { background-color: #303030 !important; }
 
                 /* Custom Dark Mode Font Colors */
                  h1, h2, p, span, a, b { color: #ffffff !important; }
@@ -248,6 +258,9 @@
                 .dark-border { border-color: #343434 !important; }
                 .dark-shadow { box-shadow: 0 4px 8px 0 rgba(241, 239, 239, 0.4) !important; }
                 .dark-element-border { border-color: #1a1a1a !important; }
+                .dark-noshadow { box-shadow: none !important;}
+                .dark-bg-img-desktop { background-image: url('https://deriv-static-content-behnaz-fs.vercel.app/email/images/header/bg-weekly-dark2.png') !important;
+                                       background-repeat: no-repeat !important;}
             }
             /* Shows Dark Mode-Only Content, Like Images */
             [data-ogsc] .dark-img { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
@@ -273,8 +286,13 @@
             [data-ogsc] .dark-border { border-color: #343434 !important; }
             [data-ogsc] .dark-shadow { box-shadow: 0 4px 8px 0 rgba(241, 239, 239, 0.1) !important; }
             [data-ogsc] .dark-element-border { border-color: #1a1a1a !important; }
+            [data-ogsc] .dark-noshadow { box-shadow: none !important;}
+            [data-ogsc] .dark-bg-img-desktop { background-image: url('https://deriv-static-content-behnaz-fs.vercel.app/email/images/header/bg-weekly-dark.png') !important;
+                        background-repeat: no-repeat !important;}
 
             @media (prefers-color-scheme: dark ) and (max-width: 620px)  {
+                .mb-dark-no-bg-img { background-image: none !important;}
+                [data-ogsc] .mb-dark-no-bg-img { background-image: none !important;}
                 .mobile-dark-displaynone{ display:none !important;}
                 [data-ogsc] .mobile-dark-displaynone{ display:none !important;}
                 .mobile-dark-display{ display:block !important;width: 100% !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important;}
@@ -295,11 +313,11 @@
                         <tr class="mb-hide" >
                             <td bgcolor="#fff" class="darkmodeblack" align="center" >
                                 <div class="light-img" style="margin-top: 40px; height: 370px; background-color: #fff; background-image: url('https://deriv-static-content-behnaz-fs.vercel.app/email/images/header/bg-newsletter.png'); background-repeat: no-repeat;">
-                                    <p style="padding: 240px 430px 0 0; font-family: 'IBM Plex Sans', Arial, sans-serif; color: red !important; font-size: 12px; font-weight: 400; line-height: 24px;margin: 0;font-style: italic; ">15 April - 22 April</p>
+                                    <p style="padding: 240px 430px 0 0; font-family: 'IBM Plex Sans', Arial, sans-serif; color: red !important; font-size: 12px; font-weight: 400; line-height: 24px;margin: 0;font-style: italic; ">23 My - 30 May</p>
                                 </div>
                                 <div  class="dark-img2 darkmodeblack" style="background-color: #0e0e0e; display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
                                     <div  style="margin-top: 40px; position: relative; height: 370px;background-image: url('https://deriv-static-content-behnaz-fs.vercel.app/email/images/header/bg-newsletter-dark.png'); background-repeat: no-repeat;">
-                                        <p style="position: absolute;top:245px;left: 38px; font-family: 'IBM Plex Sans', Arial, sans-serif; color: red !important; font-size: 12px; font-weight: 400; line-height: 24px;margin: 0;font-style: italic; ">15 April - 22 April</p>
+                                        <p style="position: absolute;top:245px;left: 38px; font-family: 'IBM Plex Sans', Arial, sans-serif; color: red !important; font-size: 12px; font-weight: 400; line-height: 24px;margin: 0;font-style: italic; ">23 May - 30 May</p>
                                     </div>
                                 </div> 
                             </td>
@@ -334,41 +352,101 @@
                         </tr>
                         
                         <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding: 50px 130px 10px;" class="mobile-lowsidepadding darkmodeblack">
+                            <td bgcolor="#ffffff" align="center" style="padding: 50px 130px;" class="mobile-lowsidepadding darkmodeblack">
                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #212121; font-size: 13px;font-style: italic;font-weight: 300; line-height: 24px;margin: 0;" class="darkcolor-subtext">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a</p>
                             </td>
                         </tr>
-                        <tr class="mb-hide">
-                            <td bgcolor="#f5f7fa" class="darkmodelowblack" align="center" >
-                                <img class="g-img" src="https://deriv-static-content-behnaz-fs.vercel.app/email/images/marketing/screenshots/news-letter-icons-m.png" width= "600" style="display: block;"><div></div>
+                        <tr>
+                            <td bgcolor="#fff" align="center" style="padding:0 0 15px;background-image: url('https://deriv-static-content-behnaz-fs.vercel.app/email/images/header/bg-weekly.png'); background-repeat: no-repeat;" class="dark-bg-img-desktop darkmodeblack mb-no-bgimg mb-dark-no-bg-img mobile-lowsidepadding">
+                                <!--[if (gte mso 9)|(IE)]>
+                                    <table width="540" align="center" cellpadding="0" cellspacing="0" border="0">
+                                    <tr>
+                                    <td>
+                                <![endif]-->
+                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:560px; margin:0px;">
+                                    <tr>
+                                        <td align="center" valign="top" style="padding:0px;font-size:0;">
+                                            <!--[if (gte mso 9)|(IE)]>
+                                            <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
+                                            <tr>
+                                            <td align="center" valign="top" width="152">
+                                            <![endif]-->
+                                            <div style="background-color: #fff;border-radius: 11.1px;box-shadow:0 0 11px #ddd;display:inline-block; max-width:31%; min-width:152px; vertical-align:top; width:100%; margin-top: 0px;margin-right: 15px; " class="dark-bg-img-desktop dark-bg-color-gray dark-noshadow mobile-wrapper">
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:170px;border-radius: 11.1px !important;" class="dark-bg-color-gray max-width">
+                                                    <tr align="center">
+                                                        <td valign="center" style="border-radius: 11.1px; padding: 17px 0px;" class="mobile-lowsidepadding">
+                                                            <img src="https://deriv-static-content-behnaz-fs.vercel.app/email/images/icons/followers.png" border="0" style="margin:0;display: block;" class="mb-width">
+                                                            <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 13px; font-weight: 300; line-height: 21px; margin: 0px;padding: 25px 0 10px;" class="mb-hide">New followers</p>
+                                                            <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 33px; font-weight: 600; line-height: 21px; margin: 0px;padding: 15px 0 10px;" class="mb-hide">+50k</p>
+                                                        </td>
+                                                        <td align="center" valign="center" style="display: none; padding: 45px 0;" class="mb-visible mobile-lowsidepadding">
+                                                            <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 13px; font-weight: 300; line-height: 21px; margin: 0px;padding: 0;">New followers</p>
+                                                        </td>
+                                                        <td align="center" valign="center" style="display: none; padding: 45px 0;" class="mb-visible mobile-lowsidepadding">
+                                                            <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 26px; font-weight: 600; line-height: 21px; margin: 0px;padding: 15px 0 10px;">+50k</p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <!--[if (gte mso 9)|(IE)]>
+                                            </td>
+                                            <td width="15" style="font-size: 1px;">&nbsp;</td>
+                                            <td align="center" valign="top" width="152">
+                                            <![endif]-->
+                                            <div style="background-color: #fff;border-radius: 11.1px;box-shadow:0 0 11px #ddd; display:inline-block; max-width:31%; min-width:152px; vertical-align:top; width:100%; margin-top: 0px;margin-right: 15px; " class="dark-bg-img-desktop dark-bg-color-gray dark-noshadow mobile-wrapper mb-margin-top">
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:170px;border-radius: 11.1px !important;" class="dark-bg-color-gray max-width">
+                                                    <tr align="center">
+                                                        <td valign="center" style="border-radius: 11.1px;padding: 17px 20px;" class="mobile-lowsidepadding dark-bg-color-gray">
+                                                            <img src="https://deriv-static-content-behnaz-fs.vercel.app/email/images/icons/likes.png" border="0" style="margin:0;display: block;" class="mb-width">
+                                                            <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 13px; font-weight: 300; line-height: 21px; margin: 0px;padding: 25px 0 10px;" class="mb-hide">Total likes</p>
+                                                            <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 33px; font-weight: 600; line-height: 21px; margin: 0px;padding: 15px 0 10px;" class="mb-hide">+250k</p>
+                                                        </td>
+                                                        <td align="left" valign="center" style="display: none; padding: 45px 0;" class="mb-visible mobile-lowsidepadding dark-bg-color-gray">
+                                                            <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 13px; font-weight: 300; line-height: 21px; margin: 0px;padding: 0;">Total likes</p>
+                                                        </td>
+                                                        <td align="left" valign="left" style="display: none; padding: 45px 0;" class="mb-visible mobile-lowsidepadding dark-bg-color-gray">
+                                                            <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 26px; font-weight: 600; line-height: 21px; margin: 0px;padding: 15px 0 10px;">+250k</p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <!--[if (gte mso 9)|(IE)]>
+                                            </td>
+                                            <td width="15" style="font-size: 1px;">&nbsp;</td>
+                                            <td align="center" valign="top" width="152">
+                                            <![endif]-->
+                                            <div style="background-color: #fff;border-radius: 11.1px;box-shadow:0 0 11px #ddd; display:inline-block; max-width:31%; min-width:152px; vertical-align:top; width:100%; margin-top: 0px;margin-right: 0px; " class="dark-bg-img-desktop dark-bg-color-gray dark-noshadow mobile-wrapper mb-margin-top">
+                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:170px;border-radius: 11.1px !important;" class="dark-bg-color-gray max-width">
+                                                        <tr align="center" >
+                                                            <td valign="center" style="padding: 17px 20px;" class="mobile-lowsidepadding">
+                                                                <img src="https://deriv-static-content-behnaz-fs.vercel.app/email/images/icons/comments.png" border="0" style="margin:0;display: block;" class="mb-width">
+                                                                <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 13px; font-weight: 300; line-height: 21px; margin: 0px;padding: 25px 0 10px;" class="mb-hide">Comments on posts</p>
+                                                                <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 33px; font-weight: 600; line-height: 21px; margin: 0px;padding: 15px 0 10px;" class="mb-hide">+37k</p>
+                                                            </td>
+                                                            <td align="left" valign="center" style="display: none; padding: 45px 0;" class="mb-visible mobile-lowsidepadding">
+                                                                <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 13px; font-weight: 300; line-height: 21px; margin: 0px;padding: 0;">Comments on posts</p>
+                                                            </td>
+                                                            <td align="left" valign="center" style="display: none; padding: 45px 0;" class="mb-visible mobile-lowsidepadding">
+                                                                <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 26px; font-weight: 600; line-height: 21px; margin: 0px;padding: 15px 0 10px;">+37k</p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            <!--[if mso]>
+                                                </td>
+                                                </tr>
+                                                </table>
+                                            <![endif]-->
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!--[if mso]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                <![endif]-->
                             </td>
-                        </tr>   
-                        <div >
-                            <tr style="display: none; mso-hide:all;" class="mb-visible">
-                                <td bgcolor="#f5f7fa" align="center" >
-                                    <img class="g-img" src="https://deriv-static-content-behnaz-fs.vercel.app/email/images/marketing/screenshots/news-letter-icons.png" width="100%" style="display: block;"><div></div>
-                                </td>
-                            </tr>  
-                        </div>
-                        <!--images -->
-                        <tr class="mb-hide">
-                            <td bgcolor="#ffffff" align="center" style="padding-left: 32px;padding-right: 32px;" class="darkmodeblack" >
-                                <img class="light-img" src="https://static.deriv.com/email/images/icons/3crypto-540.png"  width= "100%" style="display: block;">
-                                <div class="dark-img2 darkmodeblack" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
-                                    <img class="dark-img2" src="https://static.deriv.com/email/images/icons/3crypto-540-dark.png" style="margin: 0 auto;" />
-                                </div> 
-                            </td>
-                        </tr>
-                        <div >
-                            <tr style="display: none; mso-hide:all;" class="mb-visible">
-                                <td bgcolor="#ffffff" align="center" class="mobile-lowsidepadding darkmodeblack">
-                                    <img class="mobile-dark-displaynone" src="https://static.deriv.com/email/images/icons/3crypto.png" width="100%" style="margin: 0 auto; padding: 0;display: block;">
-                                    <div class="mobile-dark-display" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
-                                        <img class="mobile-dark-display" src="https://static.deriv.com/email/images/icons/3crypto-dark.png" style="margin: 0 auto; padding: 0;" />
-                                    </div> 
-                                </td>
-                            </tr>  
-                        </div>
+                        </tr> 
                         <tr>
                             <td bgcolor="#e7eeef" align="left" style="padding: 50px 28px 30px 28px;" class="mobile-lowsidepadding darkmode-lowbodyblack">
                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #000; font-size: 24px;font-weight: 600;font-style: italic;line-height: 24px; margin:0px;" class="darkcolor-subtext">In focus this week</p>
@@ -399,7 +477,7 @@
                         </tr>
                         <tr>
                             <td bgcolor="#e7eeef" align="left" style="padding: 10px 28px 10px 28px;" class="mobile-lowsidepadding darkmode-lowbodyblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #000; font-size: 16px;font-weight: 400; line-height: 24px; margin:0px;" class="darkcolor-subtext">Curious to know what we're talking about? Check out our partnerships playlists on YouTube for <span style="color: #ff444f !important;">Phase 1</span>  and <span style="color: #ff444f !important;">Phase 2</span> .</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #000; font-size: 16px;font-weight: 400; line-height: 24px; margin:0px;" class="darkcolor-subtext">Curious to know what we're talking about? Check out our partnerships playlists on YouTube for <a href="https://deriv.com" style="mso-hide:all;color: #ff444f !important;">Phase 1</a> and <a href="https://deriv.com" style="mso-hide:all;color: #ff444f !important;">Phase 2</a>.</p>
                             </td>
                         </tr>
                         <tr>
@@ -414,7 +492,7 @@
                         </tr>
                         <tr>
                             <td bgcolor="#e7eeef" align="left" style="padding: 10px 28px 10px 28px;" class="mobile-lowsidepadding darkmode-lowbodyblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #000; font-size: 16px;font-weight: 400; line-height: 24px; margin: 10px 0px 0px 0px;" class="darkcolor-subtext">Keep an eye on our progress on Redmine <span style="color: #ff444f !important;">here</span>.</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #000; font-size: 16px;font-weight: 400; line-height: 24px; margin: 10px 0px 0px 0px;" class="darkcolor-subtext">Keep an eye on our progress on Redmine <a href="https://deriv.com" style="color: #ff444f !important; mso-hide:all;">here</a>.</p>
                             </td>
                         </tr>
                         <tr>
@@ -429,7 +507,7 @@
                         </tr>
                         <tr>
                             <td bgcolor="#e7eeef" align="left" style="padding: 10px 28px 30px 28px;" class="mobile-lowsidepadding darkmode-lowbodyblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #000; font-size: 16px;font-weight: 400; line-height: 24px; margin: 10px 0px 0px 0px;" class="darkcolor-subtext">Want to check out the life pages? Take a look on LinkedIn <span style="color: #ff444f !important;">here</span>.</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #000; font-size: 16px;font-weight: 400; line-height: 24px; margin: 10px 0px 0px 0px;" class="darkcolor-subtext">Want to check out the life pages? Take a look on LinkedIn <a href="https://deriv.com" style="color: #ff444f !important; mso-hide:all;">here</a>.</p>
                             </td>
                         </tr>
                         <tr>
@@ -527,7 +605,7 @@
                         </tr>
                         <tr>
                             <td bgcolor="#ffffff" align="left" style="padding:0 28px 40px;" class="mobile-lowsidepadding darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: normal; line-height: 36px; margin: 0px; max-width: 400px;" class="mb-font-size">Digital Marketing Team</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: normal; line-height: 36px; margin: 0px; max-width: 400px;" class="darkcolor-subtext mb-font-size">Digital Marketing Team</p>
                             </td>
                         </tr>                        
                     </table>
