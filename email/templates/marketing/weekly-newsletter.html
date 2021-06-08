@@ -178,6 +178,10 @@
                 .mb-visible {
                     display:inline-block !important;
                 }
+                .mb-visible-block {
+                    display:block !important;
+                }
+
                 .mobile-lowpadding-top {
                     padding-top: 1px !important;
                 }
@@ -202,13 +206,19 @@
                     text-align: center;
                 }
                 .mb-width {
-                    width:60px !important;
+                    width:63px !important;
                 }
                 .mb-no-bgimg {
                     background-image: none !important;
                 }
                 .mb-margin-top {
                     margin-top: 20px !important;
+                }
+
+            }
+            @media screen and (min-width: 500px) and (max-width: 620px) {
+                .mb-width-great{
+                    width: 259px !important;
                 }
             }
             @media screen and (min-width: 360px) and (max-width: 600px) {
@@ -230,6 +240,9 @@
                     padding-left:5px !important ;
                     padding-right:0px !important ;
                 }
+                .mb-width-low{
+                    width:90px !important;
+                }
             }
             @media (prefers-color-scheme: dark ) {
                 /* Shows Dark Mode-Only Content, Like Images */
@@ -237,7 +250,7 @@
                 .dark-img2 { display:block !important; width: 100% !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
 
                 /* Hides Light Mode-Only Content, Like Images */
-                .light-img { display:none; display:none !important; }
+                .light-img { display:none !important; }
 
                 /* Custom Dark Mode Background Color */
                 .darkmodeblack { background-color:#0e0e0e !important; }
@@ -308,7 +321,7 @@
                     <!--[if (gte mso 9)|(IE)]>
                     <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
                     <![endif]-->
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;" class="darkmodelowblack">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; table-layout: fixed;" class="darkmodelowblack">
                         <!-- header image--> 
                         <tr class="mb-hide" >
                             <td bgcolor="#fff" class="darkmodeblack" align="center" >
@@ -321,38 +334,41 @@
                                     </div>
                                 </div> 
                             </td>
-                        </tr>   
+                        </tr>
                         <div >
                             <tr style="display: none; mso-hide:all;" class="mb-visible">
-                                <td bgcolor="#f5f7fa" align="center" >
-                                    <img class="g-img" src="https://deriv-static-content-behnaz-fs.vercel.app/email/images/header/bg-newsletter-m.png" width="100%" style="display: block;"><div></div>
+                                <td bgcolor="#fff" align="center" style="padding-top: 30px;" class="mobile-side darkmodeblack">
+                                    <img class="mobile-dark-displaynone" src="https://deriv-static-content-behnaz-fs.vercel.app/email/images/header/bg-newsletter-m.png" width="100%" style="margin: 0 auto; padding: 0;display: block;">
+                                    <div class="mobile-dark-display" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
+                                        <img class="mobile-dark-display" src="https://deriv-static-content-behnaz-fs.vercel.app/email/images/header/bg-newsletter-dark-m.png" style="margin: 0 auto; padding: 0;" />
+                                    </div> 
                                 </td>
                             </tr>  
                         </div>
                         <!-- End header image--> 
                         <tr>
-                            <td bgcolor="#ffffff" align="left" style="padding: 40px 28px 0px; " class="mobile-lowsidepadding darkmodeblack">
+                            <td bgcolor="#ffffff" align="left" style="padding: 20px 28px 4px; " class="mobile-lowsidepadding darkmodeblack">
                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #000000; font-size: 24px; font-weight: 600; line-height: 24px;margin: 0;font-style: italic; " class="darkcolor-subtext">Good evening!</p>
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#ffffff" align="left" style="padding: 10px 28px;" class="mobile-lowsidepadding darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0;" class="darkcolor-subtext">We hear you! Long Redmine lists are boring, hard to understand and no one reads them anyway. Hence why, we will be shaking things up a bit from this week onwards.<p>
+                            <td bgcolor="#ffffff" align="left" style="padding: 20px 28px 0;" class="mobile-lowsidepadding darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0;" class="darkcolor-subtext">We hear you! Long Redmine lists are boring, hard to understand and no one reads them anyway. Hence why, we will be shaking things up a bit from this week onwards.</p>
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#ffffff" align="left" style="padding: 10px 28px;" class="mobile-lowsidepadding darkmodeblack">
+                            <td bgcolor="#ffffff" align="left" style="padding: 20px 28px 0;" class="mobile-lowsidepadding darkmodeblack">
                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0;" class="darkcolor-subtext">We work on a bunch of things each week, most of which are long-term projects, so covering everything in one go can get confusing and overwhelming - not to mention, annoyingly repetitive. However, from this week onwards, we'll feature a few projects in detail every week.</p>
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#ffffff" align="left" style="padding: 10px 28px;" class="mobile-lowsidepadding darkmodeblack">
+                            <td bgcolor="#ffffff" align="left" style="padding: 20px 28px 0;" class="mobile-lowsidepadding darkmodeblack">
                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0;" class="darkcolor-subtext">Still want to know what else we're working on? You can find links to our Redmine boards in the bottom of this email.</p>
                             </td>
                         </tr>
                         
                         <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding: 50px 130px;" class="mobile-lowsidepadding darkmodeblack">
+                            <td bgcolor="#ffffff" align="center" style="padding: 35px 130px 10px;" class="mobile-lowsidepadding darkmodeblack">
                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #212121; font-size: 13px;font-style: italic;font-weight: 300; line-height: 24px;margin: 0;" class="darkcolor-subtext">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a</p>
                             </td>
                         </tr>
@@ -371,18 +387,18 @@
                                             <tr>
                                             <td align="center" valign="top" width="152">
                                             <![endif]-->
-                                            <div style="background-color: #fff;border-radius: 11.1px;box-shadow:0 0 11px #ddd;display:inline-block; max-width:31%; min-width:152px; vertical-align:top; width:100%; margin-top: 0px;margin-right: 15px; " class="dark-bg-img-desktop dark-bg-color-gray dark-noshadow mobile-wrapper">
-                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:170px;border-radius: 11.1px !important;" class="dark-bg-color-gray max-width">
-                                                    <tr align="center">
-                                                        <td valign="center" style="border-radius: 11.1px; padding: 17px 0px;" class="mobile-lowsidepadding">
-                                                            <img src="https://deriv-static-content-behnaz-fs.vercel.app/email/images/icons/followers.png" border="0" style="margin:0;display: block;" class="mb-width">
+                                            <div style="background-color: #fff;border-radius: 11.1px;box-shadow:0 0 11px #ddd;display:inline-block; width:170px; min-width:152px; vertical-align:top;margin-top: 0px;margin-right: 15px; " class="dark-bg-img-desktop dark-bg-color-gray dark-noshadow mb-margin-top mobile-wrapper">
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-radius: 11.1px !important;" class="dark-bg-color-gray max-width">
+                                                    <tr align="center" valign="center">
+                                                        <td valign="center" style="border-radius: 11.1px; padding: 17px 0px;width: 60px;" class="mobile-lowsidepadding">
+                                                            <img src="https://deriv-static-content-behnaz-fs.vercel.app/email/images/icons/followers.png" border="0" style="margin:auto 0;display: block;" class="mb-width">
                                                             <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 13px; font-weight: 300; line-height: 21px; margin: 0px;padding: 25px 0 10px;" class="mb-hide">New followers</p>
                                                             <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 33px; font-weight: 600; line-height: 21px; margin: 0px;padding: 15px 0 10px;" class="mb-hide">+50k</p>
                                                         </td>
-                                                        <td align="center" valign="center" style="display: none; padding: 45px 0;" class="mb-visible mobile-lowsidepadding">
-                                                            <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 13px; font-weight: 300; line-height: 21px; margin: 0px;padding: 0;">New followers</p>
+                                                        <td align="left" valign="center" style="display: none; padding:0;width: 150px;" class="mb-visible mb-width-low mb-width-great">
+                                                            <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 15px; font-weight: 300; line-height: 21px;margin-right:auto !important;overflow-wrap: break-word;">New followers sdfg sdfgrtg</p>
                                                         </td>
-                                                        <td align="center" valign="center" style="display: none; padding: 45px 0;" class="mb-visible mobile-lowsidepadding">
+                                                        <td align="left" valign="center" style="display: none; padding: 30px 0;margin: 0;width:80px;" class="mb-visible">
                                                             <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 26px; font-weight: 600; line-height: 21px; margin: 0px;padding: 15px 0 10px;">+50k</p>
                                                         </td>
                                                     </tr>
@@ -393,18 +409,18 @@
                                             <td width="15" style="font-size: 1px;">&nbsp;</td>
                                             <td align="center" valign="top" width="152">
                                             <![endif]-->
-                                            <div style="background-color: #fff;border-radius: 11.1px;box-shadow:0 0 11px #ddd; display:inline-block; max-width:31%; min-width:152px; vertical-align:top; width:100%; margin-top: 0px;margin-right: 15px; " class="dark-bg-img-desktop dark-bg-color-gray dark-noshadow mobile-wrapper mb-margin-top">
-                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:170px;border-radius: 11.1px !important;" class="dark-bg-color-gray max-width">
-                                                    <tr align="center">
-                                                        <td valign="center" style="border-radius: 11.1px;padding: 17px 20px;" class="mobile-lowsidepadding dark-bg-color-gray">
-                                                            <img src="https://deriv-static-content-behnaz-fs.vercel.app/email/images/icons/likes.png" border="0" style="margin:0;display: block;" class="mb-width">
+                                            <div style="background-color: #fff;border-radius: 11.1px;box-shadow:0 0 11px #ddd;display:inline-block;  width:170px;  min-width:152px; vertical-align:top; margin-top: 0px;margin-right: 15px; " class="dark-bg-img-desktop dark-bg-color-gray dark-noshadow mb-margin-top mobile-wrapper">
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-radius: 11.1px !important;" class="dark-bg-color-gray max-width">
+                                                    <tr align="center" valign="center">
+                                                        <td valign="center" style="border-radius: 11.1px; padding: 17px 0px;width: 60px;" class="mobile-lowsidepadding">
+                                                            <img src="https://deriv-static-content-behnaz-fs.vercel.app/email/images/icons/likes.png" border="0" style="margin:auto 0;display: block;" class="mb-width">
                                                             <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 13px; font-weight: 300; line-height: 21px; margin: 0px;padding: 25px 0 10px;" class="mb-hide">Total likes</p>
                                                             <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 33px; font-weight: 600; line-height: 21px; margin: 0px;padding: 15px 0 10px;" class="mb-hide">+250k</p>
                                                         </td>
-                                                        <td align="left" valign="center" style="display: none; padding: 45px 0;" class="mb-visible mobile-lowsidepadding dark-bg-color-gray">
-                                                            <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 13px; font-weight: 300; line-height: 21px; margin: 0px;padding: 0;">Total likes</p>
+                                                        <td align="left" valign="center" style="display: none; padding:0;width: 150px;" class="mb-visible mb-width-low mb-width-great">
+                                                            <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 15px; font-weight: 300; line-height: 21px;margin-right:auto !important;overflow-wrap: break-word;">Total likes</p>
                                                         </td>
-                                                        <td align="left" valign="left" style="display: none; padding: 45px 0;" class="mb-visible mobile-lowsidepadding dark-bg-color-gray">
+                                                        <td align="left" valign="center" style="display: none; padding: 30px 0;margin: 0;width:80px;" class="mb-visible">
                                                             <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 26px; font-weight: 600; line-height: 21px; margin: 0px;padding: 15px 0 10px;">+250k</p>
                                                         </td>
                                                     </tr>
@@ -415,18 +431,18 @@
                                             <td width="15" style="font-size: 1px;">&nbsp;</td>
                                             <td align="center" valign="top" width="152">
                                             <![endif]-->
-                                            <div style="background-color: #fff;border-radius: 11.1px;box-shadow:0 0 11px #ddd; display:inline-block; max-width:31%; min-width:152px; vertical-align:top; width:100%; margin-top: 0px;margin-right: 0px; " class="dark-bg-img-desktop dark-bg-color-gray dark-noshadow mobile-wrapper mb-margin-top">
-                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:170px;border-radius: 11.1px !important;" class="dark-bg-color-gray max-width">
-                                                        <tr align="center" >
-                                                            <td valign="center" style="padding: 17px 20px;" class="mobile-lowsidepadding">
-                                                                <img src="https://deriv-static-content-behnaz-fs.vercel.app/email/images/icons/comments.png" border="0" style="margin:0;display: block;" class="mb-width">
+                                                <div style="background-color: #fff;border-radius: 11.1px;box-shadow:0 0 11px #ddd;display:inline-block;  width:170px;  min-width:152px; vertical-align:top; margin-top: 0px;margin-right: 15px; " class="dark-bg-img-desktop dark-bg-color-gray dark-noshadow mb-margin-top mobile-wrapper">
+                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-radius: 11.1px !important;" class="dark-bg-color-gray max-width">
+                                                        <tr align="center" valign="center">
+                                                            <td valign="center" style="border-radius: 11.1px; padding: 17px 0px;width: 60px;" class="mobile-lowsidepadding">
+                                                                <img src="https://deriv-static-content-behnaz-fs.vercel.app/email/images/icons/comments.png" border="0" style="margin:auto 0;display: block;" class="mb-width">
                                                                 <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 13px; font-weight: 300; line-height: 21px; margin: 0px;padding: 25px 0 10px;" class="mb-hide">Comments on posts</p>
                                                                 <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 33px; font-weight: 600; line-height: 21px; margin: 0px;padding: 15px 0 10px;" class="mb-hide">+37k</p>
                                                             </td>
-                                                            <td align="left" valign="center" style="display: none; padding: 45px 0;" class="mb-visible mobile-lowsidepadding">
-                                                                <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 13px; font-weight: 300; line-height: 21px; margin: 0px;padding: 0;">Comments on posts</p>
+                                                            <td align="left" valign="center" style="display: none; padding:0;width: 150px;" class="mb-visible mb-width-low mb-width-great">
+                                                                <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 15px; font-weight: 300; line-height: 21px;margin-right:auto !important;overflow-wrap: break-word;">Comments on posts</p>
                                                             </td>
-                                                            <td align="left" valign="center" style="display: none; padding: 45px 0;" class="mb-visible mobile-lowsidepadding">
+                                                            <td align="left" valign="center" style="display: none; padding: 30px 0;margin: 0;width:80px;" class="mb-visible">
                                                                 <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 26px; font-weight: 600; line-height: 21px; margin: 0px;padding: 15px 0 10px;">+37k</p>
                                                             </td>
                                                         </tr>
@@ -511,7 +527,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding: 40px 130px 10px;" class="mobile-lowsidepadding darkmodeblack">
+                            <td bgcolor="#ffffff" align="center" style="padding: 30px 130px 10px;" class="mobile-lowsidepadding darkmodeblack">
                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #212121; font-size: 13px;font-style: italic;font-weight: 300; line-height: 24px;margin: 0;" class="darkcolor-subtext">If you'd like to learn more about the other interesting and not-so-interesting things we work on at this time, please find our Redmine boards below.</p>
                             </td>
                         </tr>
@@ -538,10 +554,11 @@
                                             <div style="display:inline-block; max-width:33.3333%; min-width:152px; vertical-align:top; width:100%; margin-top: 20px; " class="mobile-wrapper">
                                                 <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:170px; " class="max-width">
                                                     <tr align="center">
-                                                        <td valign="top" style="padding: 0px;" class="mobile-lowsidepadding darkmodeblack">
+                                                        <td valign="top" style="padding:0;" class="mobile-lowsidepadding darkmodeblack">
                                                             <img src="https://deriv-static-content-behnaz-fs.vercel.app/email/images/icons/brand.png" border="0" style="margin:0;display: block;">
                                                             <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 13px; font-weight: 300; line-height: 21px; margin: 0px;padding: 15px 0 10px;">Brand marketing</p>
                                                             <a class="button-secondary" href="https://deriv.com" style="mso-hide:all;">click here</a>
+                                                            <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 13px; font-weight: 600; line-height: 21px; margin: 0px;padding: 15px 50px 10px;border-bottom: 1px solid #ff444f;width:25px; display: none;" class="mb-visible-block"></p>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -558,6 +575,7 @@
                                                             <img src="https://deriv-static-content-behnaz-fs.vercel.app/email/images/icons/design.png" border="0" style="display: block;margin:0;">
                                                             <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 13px; font-weight: 300; line-height: 21px; margin: 0px;padding: 15px 0 10px;">Marketing Design</p>
                                                             <a class="button-secondary" href="https://deriv.com" style="mso-hide:all;">click here</a>
+                                                            <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 13px; font-weight: 600; line-height: 21px; margin: 0px;padding: 15px 50px 10px;border-bottom: 1px solid #ff444f;width:30px; display: none;width: 25px;" class="mb-visible-block"></p>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -599,13 +617,13 @@
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#ffffff" align="left" style="padding: 0px 28px; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 24px;" class="mobile-lowsidepadding darkmodeblack">
+                            <td bgcolor="#ffffff" align="left" style="padding: 10px 28px 0; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 24px;" class="mobile-lowsidepadding darkmodeblack">
                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 10px 0px 0px 0px;" class="darkcolor-subtext">Best regards,</p>
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#ffffff" align="left" style="padding:0 28px 40px;" class="mobile-lowsidepadding darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: normal; line-height: 36px; margin: 0px; max-width: 400px;" class="darkcolor-subtext mb-font-size">Digital Marketing Team</p>
+                            <td bgcolor="#ffffff" align="left" style="padding: 0px 28px 40px; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 24px;" class="mobile-lowsidepadding darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px;" class="darkcolor-subtext">Digital Marketing Team</p>
                             </td>
                         </tr>                        
                     </table>
