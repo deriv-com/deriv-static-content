@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+    <head>
+        <meta name="color-scheme" content="light dark">
+        <meta name="supported-color-schemes" content="light dark">
+        <meta charset="utf-8">
+        <title>Deriv</title>
+        <meta name="viewport" content="width=device-width">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="x-apple-disable-message-reformatting">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+         <!-- Character encoding -->
+         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+         <!-- Set 100% scale, allow zoom -->
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+         <!-- Remove default blue colour from links so you can style your own -->
+         <meta name="format-detection" content="address=no">
+         <meta name="format-detection" content="date=no">
+         <meta name="format-detection" content="email=no">
+         <meta name="format-detection" content="telephone=no">
+         <meta name="x-apple-disable-message-reformatting">
+
+         <!-- Prevent iOS 11 from automatically scaling your email -->
+         <meta name="x-apple-disable-message-reformatting">
+
+         <!-- Enable CSS3 and media queries in Windows Phone 7.5 and higher -->
+         <!--[if !mso]><!-->
+         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+         <!--<![endif]-->
+
+        <!--[if mso]>
+            <style type="text/css">
+                *, a, p, h1, h2, h3, td {font-family: Arial, sans-serif !important;}
+                table {border-collapse: collapse;}
+                a {color: #ff444f; font-family: Arial, sans-serif;}
+            </style>
+        <![endif]-->
+        <style type="text/css">
+            /* FONTS */
+            @media screen {
+                /* latin */
+                @font-face {
+                font-family: 'IBM Plex Sans';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: local('IBM Plex Sans'), local('IBMPlexSans'), url(https://fonts.gstatic.com/s/ibmplexsans/v7/zYXgKVElMYYaJe8bpLHnCwDKhdHeFaxOedc.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+                }
+                /* latin */
+                @font-face {
+                font-family: 'IBM Plex Sans';
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: local('IBM Plex Sans Medium'), local('IBMPlexSans-Medium'), url(https://fonts.gstatic.com/s/ibmplexsans/v7/zYX9KVElMYYaJe8bpLHnCwDKjSL9AIFsdP3pBms.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+                }
+                /* latin */
+                @font-face {
+                font-family: 'IBM Plex Sans';
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: local('IBM Plex Sans Bold'), local('IBMPlexSans-Bold'), url(https://fonts.gstatic.com/s/ibmplexsans/v7/zYX9KVElMYYaJe8bpLHnCwDKjWr7AIFsdP3pBms.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+                }
+            }
+            /* CLIENT-SPECIFIC STYLES */
+            body, table, td, a {
+                -webkit-text-size-adjust: 100%;
+                -ms-text-size-adjust: 100%;
+            }
+            table, td {
+                mso-table-lspace: 0pt;
+                mso-table-rspace: 0pt;
+            }
+            img {
+                -ms-interpolation-mode: bicubic;
+            }
+            /* RESET STYLES */
+            img {
+                border: 0;
+                height: auto;
+                line-height: 100%;
+                outline: none;
+                text-decoration: none;
+            }
+            table {
+                border-collapse: collapse !important;
+            }
+            body {
+                height: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                width: 100% !important;
+            }
+            /* iOS BLUE LINKS */
+            a[x-apple-data-detectors] {
+                color: inherit !important;
+                text-decoration: none !important;
+                font-size: inherit !important;
+                font-family: inherit !important;
+                font-weight: inherit !important;
+                line-height: inherit !important;
+            }
+            /* ANDROID CENTER FIX */
+            div[style*="margin: 16px 0;"] {
+                margin: 0 !important;
+            }
+            /* Deriv */
+            a, a:visited {
+                color: #ff444f;
+                text-decoration: none;
+            }
+            a:hover {text-decoration: underline;}
+            a.button {
+                text-decoration: none;
+                text-align: center;
+                line-height: 20px;
+                padding: 10px 16px;
+                display: inline-block;
+                font-weight: 500;
+                font-family: 'IBM Plex Sans', Arial, sans-serif;
+                font-size: 14px;
+                border-radius: 4px;
+                overflow: visible;
+                border: 0;
+                color: #ffffff;
+                background: #ff444f;
+            }
+            .button:hover {
+                background-color: #d43e47 !important;
+            }
+            a.button-secondary {
+                text-decoration: none;
+                text-align: center;
+                line-height: 20px;
+                padding: 1px 4px;
+                display: inline-block;
+                font-weight: 300;
+                font-family: 'IBM Plex Sans', Arial, sans-serif;
+                font-size: 10px;
+                border-radius: 20px;
+                overflow: visible;
+                border: 0;
+                color: #fff;
+                background: none;
+                background: #85acb0;
+                width: 64px;
+                height: 19px;
+            }
+            .button-secondary:hover {
+                background-color: #d43e47;
+                border-color: #d43e47 !important;
+                color: #ffffff !important;
+            }
+            img.g-img + div {display:none;}
+            /* MOBILE STYLES */
+            @media screen and (max-width: 620px) {
+                .img-max {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    height: auto !important;
+                }
+                .max-width {
+                    max-width: 100% !important;
+                }
+                .mobile-wrapper {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                }
+                .mb-hide {
+                    display: none !important;
+                }
+                .mb-visible {
+                    display:inline-block !important;
+                }
+                .mb-visible-block {
+                    display:block !important;
+                }
+
+                .mobile-lowpadding-top {
+                    padding-top: 1px !important;
+                }
+                .mobile-lowsidepadding {
+                    padding-right: 16px !important;
+                    padding-left: 16px !important;
+                }
+                .mobile-lowsidepadding2 {
+                    padding-right: 30px !important;
+                    padding-left: 30px !important;
+                }
+                .mobile-low-width{
+                    width: 20px;
+                }
+                .mobile-img-center{
+                    margin: 0 auto 8px auto;
+                }
+                .mb-font-size{
+                    font-size : 24px !important;
+                }
+                .mobile-center{
+                    text-align: center;
+                }
+                .mb-width {
+                    width:63px !important;
+                }
+                .mb-no-bgimg {
+                    background-image: none !important;
+                }
+                .mb-margin-top {
+                    margin-top: 20px !important;
+                }
+
+            }
+            @media screen and (min-width: 500px) and (max-width: 620px) {
+                .mb-width-great{
+                    width: 259px !important;
+                }
+            }
+            @media screen and (min-width: 360px) and (max-width: 600px) {
+                .mb-midle-lowleftpad-r1{
+                padding-left: 10px !important;
+                }
+                .mb-midle-lowleftpad-r2{
+                padding-left: 28px !important;
+                padding-right: 0px !important;
+                }
+
+            }
+            @media screen and (max-width: 359px) {
+                .mobile-padding-row1{
+                    padding-left:0px !important ;
+                    padding-right:10px !important ;
+                }
+                .mobile-padding-row2{
+                    padding-left:5px !important ;
+                    padding-right:0px !important ;
+                }
+                .mb-width-low{
+                    width:90px !important;
+                }
+            }
+            @media (prefers-color-scheme: dark ) {
+                /* Shows Dark Mode-Only Content, Like Images */
+                .dark-img { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+                .dark-img2 { display:block !important; width: 100% !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+
+                /* Hides Light Mode-Only Content, Like Images */
+                .light-img { display:none !important; }
+
+                /* Custom Dark Mode Background Color */
+                .darkmodeblack { background-color:#0e0e0e !important; }
+                .darkmodelowblack { background-color: #202020 !important; }
+                .darkmode-lowbodyblack { background-color: #1a1a1a !important; }
+                .dark-bg-color-gray { background-color: #303030 !important; }
+
+                /* Custom Dark Mode Font Colors */
+                 h1, h2, p, span, a, b { color: #ffffff !important; }
+                 .darkmodegray { color: #6e6e6e !important; }
+                 .darkcolor-subtext{ color: #c2c2c2 !important; }
+                 .darkcolor-white{ color: #ffffff !important; }
+
+                /* Custom Dark Mode Text Link Color */
+                .link { color: #91ADD4 !important; }
+
+                /* Custom Dark Mode border color */
+                .dark-border { border-color: #343434 !important; }
+                .dark-shadow { box-shadow: 0 4px 8px 0 rgba(241, 239, 239, 0.4) !important; }
+                .dark-element-border { border-color: #1a1a1a !important; }
+                .dark-noshadow { box-shadow: none !important;}
+                .dark-bg-img-desktop { background-image: url('https://deriv-static-content-behnaz-fs.vercel.app/email/images/header/bg-weekly-dark2.png') !important;
+                                       background-repeat: no-repeat !important;}
+            }
+            /* Shows Dark Mode-Only Content, Like Images */
+            [data-ogsc] .dark-img { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+            [data-ogsc] .dark-img2 { display:block !important; width: 100% !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+            /* Hides Light Mode-Only Content, Like Images */
+            [data-ogsc] .light-img { display:none; display:none !important; }
+
+            /* Custom Dark Mode Background Color */
+            [data-ogsc] .darkmodeblack { background-color: #0e0e0e !important;}
+            [data-ogsc] .darkmodelowblack { background-color: #151515 !important; }
+            [data-ogsc] .darkmode-lowbodyblack { background-color: #1b1b1b !important; }
+
+            /* Custom Dark Mode Font Colors */
+            [data-ogsc] h1, [data-ogsc] h2, [data-ogsc] p, [data-ogsc] span, [data-ogsc] a, [data-ogsc] b { color: #ffffff !important; }
+            [data-ogsc] .darkmodegray { color: #6e6e6e !important; }
+            [data-ogsc] .darkcolor-subtext{ color: #c2c2c2 !important; }
+            [data-ogsc] .darkcolor-white{ color: #ffffff !important; }
+
+            /* Custom Dark Mode Text Link Color */
+            [data-ogsc] .link { color: #91ADD4 !important; }
+
+            /* Custom Dark Mode border color */
+            [data-ogsc] .dark-border { border-color: #343434 !important; }
+            [data-ogsc] .dark-shadow { box-shadow: 0 4px 8px 0 rgba(241, 239, 239, 0.1) !important; }
+            [data-ogsc] .dark-element-border { border-color: #1a1a1a !important; }
+            [data-ogsc] .dark-noshadow { box-shadow: none !important;}
+            [data-ogsc] .dark-bg-img-desktop { background-image: url('https://deriv-static-content-behnaz-fs.vercel.app/email/images/header/bg-weekly-dark.png') !important;
+                        background-repeat: no-repeat !important;}
+
+            @media (prefers-color-scheme: dark ) and (max-width: 620px)  {
+                .mb-dark-no-bg-img { background-image: none !important;}
+                [data-ogsc] .mb-dark-no-bg-img { background-image: none !important;}
+                .mobile-dark-displaynone{ display:none !important;}
+                [data-ogsc] .mobile-dark-displaynone{ display:none !important;}
+                .mobile-dark-display{ display:block !important;width: 100% !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important;}
+                [data-ogsc].mobile-dark-display{ display:block !important;width: 100% !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+            }
+        </style>
+    </head>
+    <body style="background-color: #eeeeee; margin: 0 !important; padding: 0 !important;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <!-- COPY BLOCK -->
+            <tr>
+                <td bgcolor="#eeeeee" align="center" style="padding: 40px 0px 0px 0px;" class="mobile-lowpadding-top">
+                    <!--[if (gte mso 9)|(IE)]>
+                    <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
+                    <![endif]-->
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; table-layout: fixed;" class="darkmodelowblack">
+                        <!-- header image--> 
+                        <tr class="mb-hide" >
+                            <td bgcolor="#fff" class="darkmodeblack" align="center" >
+                                <div class="light-img" style="margin-top: 40px; height: 370px; background-color: #fff; background-image: url('https://deriv-static-content-behnaz-fs.vercel.app/email/images/header/bg-newsletter.png'); background-repeat: no-repeat;">
+                                    <p style="padding: 240px 430px 0 0; font-family: 'IBM Plex Sans', Arial, sans-serif; color: red !important; font-size: 12px; font-weight: 400; line-height: 24px;margin: 0;font-style: italic; ">23 My - 30 May</p>
+                                </div>
+                                <div  class="dark-img2 darkmodeblack" style="background-color: #0e0e0e; display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
+                                    <div  style="margin-top: 40px; position: relative; height: 370px;background-image: url('https://deriv-static-content-behnaz-fs.vercel.app/email/images/header/bg-newsletter-dark.png'); background-repeat: no-repeat;">
+                                        <p style="position: absolute;top:245px;left: 38px; font-family: 'IBM Plex Sans', Arial, sans-serif; color: red !important; font-size: 12px; font-weight: 400; line-height: 24px;margin: 0;font-style: italic; ">23 May - 30 May</p>
+                                    </div>
+                                </div> 
+                            </td>
+                        </tr>
+                        <div >
+                            <tr style="display: none; mso-hide:all;" class="mb-visible">
+                                <td bgcolor="#fff" align="center" style="padding-top: 30px;" class="mobile-side darkmodeblack">
+                                    <img class="mobile-dark-displaynone" src="https://deriv-static-content-behnaz-fs.vercel.app/email/images/header/bg-newsletter-m.png" width="100%" style="margin: 0 auto; padding: 0;display: block;">
+                                    <div class="mobile-dark-display" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
+                                        <img class="mobile-dark-display" src="https://deriv-static-content-behnaz-fs.vercel.app/email/images/header/bg-newsletter-dark-m.png" style="margin: 0 auto; padding: 0;" />
+                                    </div> 
+                                </td>
+                            </tr>  
+                        </div>
+                        <!-- End header image--> 
+                        <tr>
+                            <td bgcolor="#ffffff" align="left" style="padding: 20px 28px 4px; " class="mobile-lowsidepadding darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #000000; font-size: 24px; font-weight: 600; line-height: 24px;margin: 0;font-style: italic; " class="darkcolor-subtext">Good evening!</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#ffffff" align="left" style="padding: 20px 28px 0;" class="mobile-lowsidepadding darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0;" class="darkcolor-subtext">We hear you! Long Redmine lists are boring, hard to understand and no one reads them anyway. Hence why, we will be shaking things up a bit from this week onwards.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#ffffff" align="left" style="padding: 20px 28px 0;" class="mobile-lowsidepadding darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0;" class="darkcolor-subtext">We work on a bunch of things each week, most of which are long-term projects, so covering everything in one go can get confusing and overwhelming - not to mention, annoyingly repetitive. However, from this week onwards, we'll feature a few projects in detail every week.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#ffffff" align="left" style="padding: 20px 28px 0;" class="mobile-lowsidepadding darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0;" class="darkcolor-subtext">Still want to know what else we're working on? You can find links to our Redmine boards in the bottom of this email.</p>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td bgcolor="#ffffff" align="center" style="padding: 35px 130px 10px;" class="mobile-lowsidepadding darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #212121; font-size: 13px;font-style: italic;font-weight: 300; line-height: 24px;margin: 0;" class="darkcolor-subtext">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#fff" align="center" style="padding:0 0 15px;background-image: url('https://deriv-static-content-behnaz-fs.vercel.app/email/images/header/bg-weekly.png'); background-repeat: no-repeat;" class="dark-bg-img-desktop darkmodeblack mb-no-bgimg mb-dark-no-bg-img mobile-lowsidepadding">
+                                <!--[if (gte mso 9)|(IE)]>
+                                    <table width="540" align="center" cellpadding="0" cellspacing="0" border="0">
+                                    <tr>
+                                    <td>
+                                <![endif]-->
+                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:560px; margin:0px;">
+                                    <tr>
+                                        <td align="center" valign="top" style="padding:0px;font-size:0;">
+                                            <!--[if (gte mso 9)|(IE)]>
+                                            <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
+                                            <tr>
+                                            <td align="center" valign="top" width="152">
+                                            <![endif]-->
+                                            <div style="background-color: #fff;border-radius: 11.1px;box-shadow:0 0 11px #ddd;display:inline-block; width:170px; min-width:152px; vertical-align:top;margin-top: 0px;margin-right: 15px; " class="dark-bg-img-desktop dark-bg-color-gray dark-noshadow mb-margin-top mobile-wrapper">
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-radius: 11.1px !important;" class="dark-bg-color-gray max-width">
+                                                    <tr align="center" valign="center">
+                                                        <td valign="center" style="border-radius: 11.1px; padding: 17px 0px;width: 60px;" class="mobile-lowsidepadding">
+                                                            <img src="https://deriv-static-content-behnaz-fs.vercel.app/email/images/icons/followers.png" border="0" style="margin:auto 0;display: block;" class="mb-width">
+                                                            <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 13px; font-weight: 300; line-height: 21px; margin: 0px;padding: 25px 0 10px;" class="mb-hide">New followers</p>
+                                                            <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 33px; font-weight: 600; line-height: 21px; margin: 0px;padding: 15px 0 10px;" class="mb-hide">+50k</p>
+                                                        </td>
+                                                        <td align="left" valign="center" style="display: none; padding:0;width: 150px;" class="mb-visible mb-width-low mb-width-great">
+                                                            <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 15px; font-weight: 300; line-height: 21px;margin-right:auto !important;overflow-wrap: break-word;">New followers sdfg sdfgrtg</p>
+                                                        </td>
+                                                        <td align="left" valign="center" style="display: none; padding: 30px 0;margin: 0;width:80px;" class="mb-visible">
+                                                            <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 26px; font-weight: 600; line-height: 21px; margin: 0px;padding: 15px 0 10px;">+50k</p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <!--[if (gte mso 9)|(IE)]>
+                                            </td>
+                                            <td width="15" style="font-size: 1px;">&nbsp;</td>
+                                            <td align="center" valign="top" width="152">
+                                            <![endif]-->
+                                            <div style="background-color: #fff;border-radius: 11.1px;box-shadow:0 0 11px #ddd;display:inline-block;  width:170px;  min-width:152px; vertical-align:top; margin-top: 0px;margin-right: 15px; " class="dark-bg-img-desktop dark-bg-color-gray dark-noshadow mb-margin-top mobile-wrapper">
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-radius: 11.1px !important;" class="dark-bg-color-gray max-width">
+                                                    <tr align="center" valign="center">
+                                                        <td valign="center" style="border-radius: 11.1px; padding: 17px 0px;width: 60px;" class="mobile-lowsidepadding">
+                                                            <img src="https://deriv-static-content-behnaz-fs.vercel.app/email/images/icons/likes.png" border="0" style="margin:auto 0;display: block;" class="mb-width">
+                                                            <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 13px; font-weight: 300; line-height: 21px; margin: 0px;padding: 25px 0 10px;" class="mb-hide">Total likes</p>
+                                                            <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 33px; font-weight: 600; line-height: 21px; margin: 0px;padding: 15px 0 10px;" class="mb-hide">+250k</p>
+                                                        </td>
+                                                        <td align="left" valign="center" style="display: none; padding:0;width: 150px;" class="mb-visible mb-width-low mb-width-great">
+                                                            <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 15px; font-weight: 300; line-height: 21px;margin-right:auto !important;overflow-wrap: break-word;">Total likes</p>
+                                                        </td>
+                                                        <td align="left" valign="center" style="display: none; padding: 30px 0;margin: 0;width:80px;" class="mb-visible">
+                                                            <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 26px; font-weight: 600; line-height: 21px; margin: 0px;padding: 15px 0 10px;">+250k</p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <!--[if (gte mso 9)|(IE)]>
+                                            </td>
+                                            <td width="15" style="font-size: 1px;">&nbsp;</td>
+                                            <td align="center" valign="top" width="152">
+                                            <![endif]-->
+                                                <div style="background-color: #fff;border-radius: 11.1px;box-shadow:0 0 11px #ddd;display:inline-block;  width:170px;  min-width:152px; vertical-align:top; margin-top: 0px;margin-right: 15px; " class="dark-bg-img-desktop dark-bg-color-gray dark-noshadow mb-margin-top mobile-wrapper">
+                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-radius: 11.1px !important;" class="dark-bg-color-gray max-width">
+                                                        <tr align="center" valign="center">
+                                                            <td valign="center" style="border-radius: 11.1px; padding: 17px 0px;width: 60px;" class="mobile-lowsidepadding">
+                                                                <img src="https://deriv-static-content-behnaz-fs.vercel.app/email/images/icons/comments.png" border="0" style="margin:auto 0;display: block;" class="mb-width">
+                                                                <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 13px; font-weight: 300; line-height: 21px; margin: 0px;padding: 25px 0 10px;" class="mb-hide">Comments on posts</p>
+                                                                <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 33px; font-weight: 600; line-height: 21px; margin: 0px;padding: 15px 0 10px;" class="mb-hide">+37k</p>
+                                                            </td>
+                                                            <td align="left" valign="center" style="display: none; padding:0;width: 150px;" class="mb-visible mb-width-low mb-width-great">
+                                                                <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 15px; font-weight: 300; line-height: 21px;margin-right:auto !important;overflow-wrap: break-word;">Comments on posts</p>
+                                                            </td>
+                                                            <td align="left" valign="center" style="display: none; padding: 30px 0;margin: 0;width:80px;" class="mb-visible">
+                                                                <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 26px; font-weight: 600; line-height: 21px; margin: 0px;padding: 15px 0 10px;">+37k</p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            <!--[if mso]>
+                                                </td>
+                                                </tr>
+                                                </table>
+                                            <![endif]-->
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!--[if mso]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                <![endif]-->
+                            </td>
+                        </tr> 
+                        <tr>
+                            <td bgcolor="#e7eeef" align="left" style="padding: 50px 28px 30px 28px;" class="mobile-lowsidepadding darkmode-lowbodyblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #000; font-size: 24px;font-weight: 600;font-style: italic;line-height: 24px; margin:0px;" class="darkcolor-subtext">In focus this week</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#e7eeef" align="left" style="padding: 10px 28px 10px 28px;" class="mobile-lowsidepadding darkmode-lowbodyblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #000; font-size: 18px;font-weight: 600;line-height: 24px; margin:0px;" class="darkcolor-subtext">Training videos for partners</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#e7eeef" align="left" style="padding: 10px 28px 0 28px;" class="mobile-lowsidepadding darkmode-lowbodyblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #000; font-size: 16px;font-weight: 400; line-height: 24px; margin:0px;" class="darkcolor-subtext">The objective of this project is to offer training for our partners on the best practices to promote Deriv. We have concluded 2 phases up until now.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#e7eeef" align="left" style="padding: 5px 28px;margin: 0;" class="mobile-lowsidepadding darkmode-lowbodyblack">
+                                <ul style="margin: 0;">
+                                    <li style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #000; font-size: 16px;font-weight: 400; line-height: 24px; margin: 0px;padding: 0;" class="darkcolor-subtext">Phase 1 featured a number of videos teaching partners on how to promote Deriv using different digital marketing tools and social platforms.</li>
+                                    <li style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #000; font-size: 16px;font-weight: 400; line-height: 24px; margin: 0px;padding: 0;" class="darkcolor-subtext">Phase 2, concluded last week, taught our partners the best practices in promoting Deriv in different regions.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#e7eeef" align="left" style="padding: 0px 28px 10px 28px;" class="mobile-lowsidepadding darkmode-lowbodyblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #000; font-size: 16px;font-weight: 400; line-height: 24px; margin: 0px;" class="darkcolor-subtext">We're now taking a break for 2 weeks as we gear up for Phase 3, where we will teach our partners all they need to know about our products and platforms to successfully promote them. In this gap-time, we'll prepare the scripts for Phase 3 as well as run a survey for partners, to see what else they'd like to learn more about. We aim to conclude phase 3 and consider this project done and dusted by early Q3.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#e7eeef" align="left" style="padding: 10px 28px 10px 28px;" class="mobile-lowsidepadding darkmode-lowbodyblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #000; font-size: 16px;font-weight: 400; line-height: 24px; margin:0px;" class="darkcolor-subtext">Curious to know what we're talking about? Check out our partnerships playlists on YouTube for <a href="https://deriv.com" style="mso-hide:all;color: #ff444f !important;">Phase 1</a> and <a href="https://deriv.com" style="mso-hide:all;color: #ff444f !important;">Phase 2</a>.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#e7eeef" align="left" style="padding: 10px 28px 0px 28px;" class="mobile-lowsidepadding darkmode-lowbodyblack">
+                                <p style="border-top: 1px solid #fff;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #000; font-size: 18px;font-weight: 600; line-height: 24px; margin:0px;padding-top: 20px;" class="darkcolor-subtext">Deriv X launch</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#e7eeef" align="left" style="padding: 0px 28px 10px 28px;" class="mobile-lowsidepadding darkmode-lowbodyblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #000; font-size: 16px;font-weight: 400; line-height: 24px; margin: 10px 0px 0px 0px;" class="darkcolor-subtext">We are getting ready to launch Deriv X in the markets. We're working on a number of marketing materials - the emails have been designed and have moved on to front-end and we're just giving a finishing touch to some nice social media posts and banners for the blog.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#e7eeef" align="left" style="padding: 10px 28px 10px 28px;" class="mobile-lowsidepadding darkmode-lowbodyblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #000; font-size: 16px;font-weight: 400; line-height: 24px; margin: 10px 0px 0px 0px;" class="darkcolor-subtext">Keep an eye on our progress on Redmine <a href="https://deriv.com" style="color: #ff444f !important; mso-hide:all;">here</a>.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#e7eeef" align="left" style="padding: 10px 28px 0px 28px;" class="mobile-lowsidepadding darkmode-lowbodyblack">
+                                <p style="border-top: 1px solid #fff;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #000; font-size: 18px;font-weight: 600; line-height: 24px; margin: 10px 0px 0px 0px;padding-top: 20px;" class="darkcolor-subtext">LinkedIn Revamp</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#e7eeef" align="left" style="padding: 0px 28px 10px 28px;" class="mobile-lowsidepadding darkmode-lowbodyblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #000; font-size: 16px;font-weight: 400; line-height: 24px; margin: 10px 0px 0px 0px;" class="darkcolor-subtext">We have partnered with LinkedIn to support our recruitment team in finding the best candidates to join us here in Deriv. In line with this, we're working towards revamping the content on our LinkedIn page and adding the exclusive Life pages. We've finished up the first draft and will be adding on to the local pages as well. So if we reach out to you to share a few words about your experience on Deriv for employee testimonials - please meet us halfway. Want to be featured? Send us a few lines about your experience on Slack or via email.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#e7eeef" align="left" style="padding: 10px 28px 30px 28px;" class="mobile-lowsidepadding darkmode-lowbodyblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #000; font-size: 16px;font-weight: 400; line-height: 24px; margin: 10px 0px 0px 0px;" class="darkcolor-subtext">Want to check out the life pages? Take a look on LinkedIn <a href="https://deriv.com" style="color: #ff444f !important; mso-hide:all;">here</a>.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#ffffff" align="center" style="padding: 30px 130px 10px;" class="mobile-lowsidepadding darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #212121; font-size: 13px;font-style: italic;font-weight: 300; line-height: 24px;margin: 0;" class="darkcolor-subtext">If you'd like to learn more about the other interesting and not-so-interesting things we work on at this time, please find our Redmine boards below.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#ffffff" align="center" style="padding: 20px 130px 10px;" class="mobile-lowsidepadding darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #000; font-size: 20px;font-style: italic;font-weight: 600; line-height: 24px;margin: 0;" class="darkcolor-subtext">Take me to Redmine</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#ffffff" align="center" style="padding: 0px 28px 20px 28px;" class="darkmodeblack mobile-lowsidepadding">
+                                <!--[if (gte mso 9)|(IE)]>
+                                    <table width="540" align="center" cellpadding="0" cellspacing="0" border="0">
+                                    <tr>
+                                    <td>
+                                <![endif]-->
+                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:540px; margin:0px;">
+                                    <tr>
+                                        <td align="center" valign="top" style="padding:0;font-size:0;" class="darkmodeblack">
+                                            <!--[if (gte mso 9)|(IE)]>
+                                            <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
+                                            <tr>
+                                            <td align="center" valign="top" width="152">
+                                            <![endif]-->
+                                            <div style="display:inline-block; max-width:33.3333%; min-width:152px; vertical-align:top; width:100%; margin-top: 20px; " class="mobile-wrapper">
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:170px; " class="max-width">
+                                                    <tr align="center">
+                                                        <td valign="top" style="padding:0;" class="mobile-lowsidepadding darkmodeblack">
+                                                            <img src="https://deriv-static-content-behnaz-fs.vercel.app/email/images/icons/brand.png" border="0" style="margin:0;display: block;">
+                                                            <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 13px; font-weight: 300; line-height: 21px; margin: 0px;padding: 15px 0 10px;">Brand marketing</p>
+                                                            <a class="button-secondary" href="https://deriv.com" style="mso-hide:all;">click here</a>
+                                                            <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 13px; font-weight: 600; line-height: 21px; margin: 0px;padding: 15px 50px 10px;border-bottom: 1px solid red;width:30px; display: none;" class="mb-visible-block"></p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <!--[if (gte mso 9)|(IE)]>
+                                            </td>
+                                            <td width="15" style="font-size: 1px;">&nbsp;</td>
+                                            <td align="center" valign="top" width="152">
+                                            <![endif]-->
+                                            <div style="display:inline-block; max-width:33.3333%; min-width:152px; vertical-align:top; width:100%; margin-top: 20px;" class="mobile-wrapper">
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:170px;" class="max-width">
+                                                    <tr align="center">
+                                                        <td valign="top" style="padding: 0px; background-color: #ffffff;" class="mobile-lowsidepadding darkmodeblack">
+                                                            <img src="https://deriv-static-content-behnaz-fs.vercel.app/email/images/icons/design.png" border="0" style="display: block;margin:0;">
+                                                            <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 13px; font-weight: 300; line-height: 21px; margin: 0px;padding: 15px 0 10px;">Marketing Design</p>
+                                                            <a class="button-secondary" href="https://deriv.com" style="mso-hide:all;">click here</a>
+                                                            <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 13px; font-weight: 600; line-height: 21px; margin: 0px;padding: 15px 50px 10px;border-bottom: 1px solid red;width:30px; display: none;width: 30px;" class="mb-visible-block"></p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <!--[if (gte mso 9)|(IE)]>
+                                            </td>
+                                            <td width="15" style="font-size: 1px;">&nbsp;</td>
+                                            <td align="center" valign="top" width="152">
+                                            <![endif]-->
+                                            <div style="display:inline-block; max-width:33.3333%; min-width:152px; vertical-align:top; width:100%; margin-top: 20px;" class="mobile-wrapper">
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:170px;" class="max-width">
+                                                    <tr align="center">
+                                                        <td valign="top" style="padding: 0; background-color: #ffffff;" class="mobile-lowsidepadding darkmodeblack">
+                                                            <img src="https://deriv-static-content-behnaz-fs.vercel.app/email/images/icons/fe.png" border="0" style="display: block;margin:0;">
+                                                            <p style="color: #212121; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 13px; font-weight: 300; line-height: 21px; margin: 0px;padding: 15px 0 10px;">Marketing front-end</p>
+                                                            <a class="button-secondary" href="https://deriv.com" style="mso-hide:all;">click here</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <!--[if mso]>
+                                                </td>
+                                                </tr>
+                                                </table>
+                                            <![endif]-->
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!--[if mso]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                <![endif]-->
+                            </td>
+                        </tr>                        
+                        <tr>
+                            <td bgcolor="#ffffff" align="left" style="padding: 20px 28px 5px; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 24px;" class="mobile-lowsidepadding darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin:0px;" class="darkcolor-subtext">Is this email still an absolute bore and you snoozed off twice before you got to the end? Let us know and we'll re-work it next week!</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#ffffff" align="left" style="padding: 10px 28px 0; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 24px;" class="mobile-lowsidepadding darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 10px 0px 0px 0px;" class="darkcolor-subtext">Best regards,</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#ffffff" align="left" style="padding: 0px 28px 40px; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 24px;" class="mobile-lowsidepadding darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px;" class="darkcolor-subtext">Digital Marketing Team</p>
+                            </td>
+                        </tr>                        
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                        </td></tr></table>
+                    <![endif]-->
+                </td>
+            </tr>
+            <!-- FOOTER -->
+            <tr style="margin: 0; padding: 0px;">
+                <td bgcolor="#eeeeee" align="center" style="margin: 0; padding: 0px;">
+                    <!--[if (gte mso 9)|(IE)]>
+                        <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
+                    <![endif]-->
+                    <table bgcolor="#f3f5f6" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;" class="darkmodelowblack">                        
+                        <!-- Footer logo -->
+                        <tr>
+                            <td  align="center" style="padding: 36px 0px 20px 0px;" class="darkmodelowblack">
+                                <a href="https://www.deriv.com">
+                                    <img class="light-img" src="https://static.deriv.com/html/images/deriv-logo-grey.png" width="140" height="25"  style="display: block;margin-top: -1px;" alt="Deriv.com">
+                                    <!-- The following Dark Mode logo image is hidden 
+                                     with MSO conditional code and inline CSS, but will be         
+                                     revealed once Dark Mode is triggered -->
+                                    <div class="dark-img" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
+                                     <img class="dark-img" src="https://static.deriv.com/email/images/marketing/email-logo-1-white.png" width="140" height="25" alt="Deriv.com" style="color: #ffffff; font-family:'proxima_nova', Helvetica, Arial, sans-serif; text-align:center; font-weight:bold; font-size:36px; line-height:40px; text-decoration: none; margin: 0 auto; padding: 0;" border="0" />
+                                    </div>                                   
+                                </a>
+                            </td>
+                        </tr>
+                        <!-- SOCIAL -->
+                        <tr>
+                            <td align="center" style="padding: 20px 0px 20px 0px; color: #ffffff; font-family: 'IBM Plex Sans', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;" class="darkmodelowblack">
+                                <p style="margin: 0;">
+                                    <a href="https://twitter.com/derivdotcom" style="text-decoration: none;">
+                                        <img src="https://static.deriv.com/html/images/social/dark/twitter-dark.png" height="32" width="32" alt="Deriv.com on Twitter" title="Deriv.com on Twitter" />
+                                    </a>&nbsp;&nbsp;
+                                    <a href="https://www.facebook.com/derivdotcom" style="text-decoration: none;">
+                                        <img src="https://static.deriv.com/html/images/social/dark/facebook-dark.png" height="32" width="32" alt="Deriv.com on Facebook" title="Deriv.com on Facebook" />
+                                    </a>&nbsp;&nbsp;
+                                    <a href="https://www.instagram.com/deriv_official/" style="text-decoration: none;">
+                                        <img src="https://static.deriv.com/html/images/social/dark/instagram-dark.png" height="32" width="32" alt="Deriv.com on Instagram" title="Deriv.com on Instagram" />
+                                    </a>&nbsp;&nbsp;
+                                    <a href="https://t.me/binarydotcom" style="text-decoration: none;">
+                                        <img src="https://static.deriv.com/html/images/social/dark/telegram-dark.png" height="32" width="32" alt="Deriv.com on Telegram" title="Deriv.com on Telegram" />
+                                    </a>&nbsp;&nbsp;
+                                    <a href="https://www.youtube.com/c/Derivdotcom" style="text-decoration: none;">
+                                        <img src="https://static.deriv.com/html/images/social/dark/youtube-dark.png" height="32" width="32" alt="Deriv.com on Youtube" title="Deriv.com on Youtube" />
+                                    </a>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="top" style="padding: 18px 0px 0px 0px;" class="darkmodelowblack">
+                                <!--[if (gte mso 9)|(IE)]>
+                                <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
+                                <![endif]-->
+                                <table bgcolor="#f3f5f6" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;" class="darkmodelowblack">
+                                    <tr>
+                                        <td bgcolor="#f3f5f6" align="center" style="color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="darkmodelowblack">
+                                            <p style="padding: 0px 30px 0px 30px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #999999; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0px 0px 5px 0px;" class="darkmodegray ">© 2021 Deriv&nbsp;<span class="darkmodegray">|</span>&nbsp;All rights reserved.</p>
+                                            <p style="padding: 0px 10px 40px 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #999999; font-size: 12px; font-weight: 400; line-height: 16px; margin: 5px 0px 0px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important">Help Centre</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Terms and conditions</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://deriv.com/tnc/security-and-privacy.pdf" style="color: #ff444f !important">Security and privacy</a></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
+                            </td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                        </td></tr></table>
+                    <![endif]-->
+                </td>
+            </tr>
+            <!--End FOOTER -->            
+        </table>
+    </body>
+</html>
