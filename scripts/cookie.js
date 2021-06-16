@@ -88,7 +88,6 @@ function toISOFormat(date) {
         utm_data[field] = searchParams.get(field).replace(/[^a-zA-Z0-9\s\-\.\_]/gi, '').substring(0, 100);
       }
     })
-    console.log(utm_data)
 
     const utm_data_cookie = encodeURI(JSON.stringify(utm_data))
       .replace(",", "%2C")
