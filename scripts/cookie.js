@@ -2,11 +2,11 @@
 function getDomain() {
   const domain = location.hostname;
 
-  if (domain.includes("deriv.com")) {
-    return "deriv.com";
+  if (domain.includes('deriv.com')) {
+    return 'deriv.com';
   }
 
-  return domain.includes("binary.sx") ? "binary.sx" : domain;
+  return domain.includes('binary.sx') ? 'binary.sx' : domain;
 }
 
 function eraseCookie(name) {
@@ -56,62 +56,50 @@ function toISOFormat(date) {
 }
 /* end utility functions */
 
-(function initMarketingCookies() {
+/* start on load of page */
+window.onload = function () {
   const searchParams = new URLSearchParams(window.location.search);
   const brand_name = "deriv";
   const app_id = 11780;
 
   /* start handling UTMs */
-  const utm_fields = [
-    "utm_source",
-    "utm_medium",
-    "utm_campaign",
-    "utm_term",
-    "utm_content",
-    "utm_ad_id",
-    "utm_adgroup_id",
-    "utm_campaign_id"
-  ];
   const required_fields = ["utm_source", "utm_medium", "utm_campaign"];
+  let is_need_change = true;
   let utm_data = {};
 
-  // When the user comes to the site with URL params
-  // if url is missing one of required fields, do nothing
-  const has_all_params = required_fields.every((field) => searchParams.has(field))
+  // if url missing one of required fields, do nothing
+  for (let ctr = 0; ctr < required_fields.length; ctr++) {
+    if (!searchParams.has(required_fields[ctr])) {
+      is_need_change = false;
+    }
+  }
 
-  if (has_all_params) {
-    
+  if (is_need_change) {
     eraseCookie("utm_data");
+    const utm_source = searchParams.get("utm_source");
+    const utm_medium = searchParams.get("utm_medium");
+    const utm_campaign = searchParams.get("utm_campaign");
+    const utm_term = searchParams.has("utm_term")
+      ? searchParams.get("utm_term")
+      : null;
+    const utm_content = searchParams.has("utm_content")
+      ? searchParams.get("utm_content")
+      : null;
 
-    utm_fields.forEach((field) => {
-      if (searchParams.has(field)) {
-        utm_data[field] = searchParams.get(field).replace(/[^a-zA-Z0-9\s\-\.\_]/gi, '').substring(0, 100);
-      }
-    })
+    utm_data = {
+      ...(utm_source && { utm_source }),
+      ...(utm_medium && { utm_medium }),
+      ...(utm_campaign && { utm_campaign }),
+      ...(utm_term && { utm_term }),
+      ...(utm_content && { utm_content }),
+    };
 
     const utm_data_cookie = encodeURI(JSON.stringify(utm_data))
       .replace(",", "%2C")
       .replace("%7B", "{")
       .replace("%7D", "}");
 
-    document.cookie = `utm_data=${utm_data_cookie}; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
-  } else {
-    // If the user comes to the site for the first time without any URL params
-    // Only set the utm_data to deriv_direct if the user does not have utm_data cookies stored
-    if (!getCookie("utm_data")) {
-      const utm_source = "deriv_direct";
-
-      utm_data = {
-        ...(utm_source && { utm_source }),
-      };
-
-      const utm_data_cookie = encodeURI(JSON.stringify(utm_data))
-        .replace(",", "%2C")
-        .replace("%7B", "{")
-        .replace("%7D", "}");
-
-      document.cookie = `utm_data=${utm_data_cookie}; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
-    }
+    document.cookie = `utm_data=${utm_data_cookie}; domain=${getDomain()}; path=/;`;
   }
   /* end handling UTMs */
 
@@ -120,7 +108,7 @@ function toISOFormat(date) {
     eraseCookie("affiliate_tracking");
     document.cookie = `affiliate_tracking=${searchParams.get(
       "t"
-    )};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+    )};domain=${getDomain()}; path=/;`;
   }
   /* end handling affiliate tracking */
 
@@ -138,7 +126,7 @@ function toISOFormat(date) {
       .replace("%7B", "{")
       .replace("%7D", "}");
 
-    document.cookie = `signup_device=${signup_data_cookie};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+    document.cookie = `signup_device=${signup_data_cookie};domain=${getDomain()}; path=/;`;
   }
   /* end handling signup device */
 
@@ -174,7 +162,7 @@ function toISOFormat(date) {
         .replace("%7B", "{")
         .replace("%7D", "}");
 
-      document.cookie = `date_first_contact=${date_first_contact_data_cookie};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+      document.cookie = `date_first_contact=${date_first_contact_data_cookie};domain=${getDomain()}; path=/;`;
 
       ws.close();
     };
@@ -184,9 +172,8 @@ function toISOFormat(date) {
   /* start handling gclid */
   if (searchParams.has("gclid")) {
     eraseCookie("gclid");
-    document.cookie = `gclid=${searchParams.get(
-      "gclid"
-    )};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+    document.cookie = `gclid=${searchParams.get("gclid")};domain=${getDomain()}; path=/;`;
   }
   /* end handling gclid */
-})();
+};
+/* end on load of page */
