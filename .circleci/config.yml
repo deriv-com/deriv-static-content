@@ -38,7 +38,7 @@ commands:
       - run:
           name: Building docker image
           command: |
-            docker build -t ${DOCKHUB_ORGANISATION}/static-deriv-app:${CIRCLE_SHA1} -t ${DOCKHUB_ORGANISATION}/static-deriv-app:latest .
+            docker build -t ${DOCKHUB_ORGANISATION}/static-deriv-app:${CIRCLE_TAG} -t ${DOCKHUB_ORGANISATION}/static-deriv-app:latest .
       - run:
           name: Pushing Image to docker hub
           command: |
@@ -75,7 +75,7 @@ commands:
     parameters:
       k8s_version:
         type: string
-        default: ${CIRCLE_SHA1}
+        default: ${CIRCLE_TAG}
       k8s_namespace:
         type: string
         default: "static-deriv-app-production"
