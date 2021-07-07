@@ -72,47 +72,34 @@ function toISOFormat(date) {
     "utm_adgroup_id",
     "utm_campaign_id"
   ];
-  const required_fields = ["utm_source", "utm_medium", "utm_campaign"];
+
   let utm_data = {};
 
-  // When the user comes to the site with URL params
-  // if url is missing one of required fields, do nothing
-  const has_all_params = required_fields.every((field) => searchParams.has(field))
+  // If the user comes to the site for the first time without any URL params
+  // Only set the utm_source to referrer if the user does not have utm_data cookies stored
+  if (!getCookie("utm_data")) {
 
-  if (has_all_params) {
-    
-    eraseCookie("utm_data");
-
-    utm_fields.forEach((field) => {
-      if (searchParams.has(field)) {
-        utm_data[field] = searchParams.get(field).replace(/[^a-zA-Z0-9\s\-\.\_]/gi, '').substring(0, 100);
-      }
-    })
-
-    const utm_data_cookie = encodeURI(JSON.stringify(utm_data))
-      .replace(",", "%2C")
-      .replace("%7B", "{")
-      .replace("%7D", "}");
-
-    document.cookie = `utm_data=${utm_data_cookie}; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
-  } else {
-    // If the user comes to the site for the first time without any URL params
-    // Only set the utm_data to deriv_direct if the user does not have utm_data cookies stored
-    if (!getCookie("utm_data")) {
-      const utm_source = "deriv_direct";
-
-      utm_data = {
-        ...(utm_source && { utm_source }),
-      };
-
-      const utm_data_cookie = encodeURI(JSON.stringify(utm_data))
-        .replace(",", "%2C")
-        .replace("%7B", "{")
-        .replace("%7D", "}");
-
-      document.cookie = `utm_data=${utm_data_cookie}; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
-    }
+    utm_data = {
+      utm_source: document.referrer,
+    };
   }
+
+  // If the user has any new utm params, store them
+  utm_fields.forEach((field) => {
+    if (searchParams.has(field)) {
+      utm_data[field] = searchParams.get(field).replace(/[^a-zA-Z0-9\s\-\.\_]/gi, '').substring(0, 100);
+    }
+  })
+
+  eraseCookie("utm_data");
+
+  const utm_data_cookie = encodeURI(JSON.stringify(utm_data))
+    .replace(",", "%2C")
+    .replace("%7B", "{")
+    .replace("%7D", "}");
+
+  document.cookie = `utm_data=${utm_data_cookie}; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+
   /* end handling UTMs */
 
   /* start handling affiliate tracking */
