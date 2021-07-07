@@ -80,25 +80,27 @@ function toISOFormat(date) {
   if (!getCookie("utm_data")) {
 
     utm_data = {
-      utm_source: document.referrer,
+      utm_source: document.referrer ? document.referrer : null,
     };
   }
 
-  // If the user has any new utm params, store them
+  // If the user has any new UTM params, store them
   utm_fields.forEach((field) => {
     if (searchParams.has(field)) {
       utm_data[field] = searchParams.get(field).replace(/[^a-zA-Z0-9\s\-\.\_]/gi, '').substring(0, 100);
     }
   })
 
-  eraseCookie("utm_data");
-
-  const utm_data_cookie = encodeURI(JSON.stringify(utm_data))
-    .replace(",", "%2C")
-    .replace("%7B", "{")
-    .replace("%7D", "}");
-
-  document.cookie = `utm_data=${utm_data_cookie}; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+  if (Object.keys(utm_data).length > 0) {
+    eraseCookie("utm_data");
+  
+    const utm_data_cookie = encodeURI(JSON.stringify(utm_data))
+      .replace(",", "%2C")
+      .replace("%7B", "{")
+      .replace("%7D", "}");
+  
+    document.cookie = `utm_data=${utm_data_cookie}; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+  }
 
   /* end handling UTMs */
 
