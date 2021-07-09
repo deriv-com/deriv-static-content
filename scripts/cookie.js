@@ -54,6 +54,24 @@ function toISOFormat(date) {
 
   return "";
 }
+
+function shouldOverwrite(new_utm_data, current_utm_data) {
+  if (!current_utm_data || !new_utm_data) {
+    return true;
+  }
+  if(Object.keys(new_utm_data).length > 2) {
+    if (new_utm_data.utm_source.includes("affiliate")) {
+      return true;
+    }
+    if (new_utm_data.utm_medium.includes("ppc") && !current_utm_data.utm_source.includes("affiliate")) {
+      return true;
+    }
+    if (!current_utm_data.utm_medium.includes("ppc") && !current_utm_data.utm_source.includes("affiliate")) {
+      return true
+    }
+  }
+  return false;
+}
 /* end utility functions */
 
 (function initMarketingCookies() {
@@ -91,11 +109,10 @@ function toISOFormat(date) {
     }
   })
 
-  if (Object.keys(utm_data).length > 0) {
+  if (shouldOverwrite(utm_data, JSON.parse(getCookie("utm_data")))) {
     eraseCookie("utm_data");
   
     const utm_data_cookie = encodeURI(JSON.stringify(utm_data))
-      .replace(",", "%2C")
       .replace("%7B", "{")
       .replace("%7D", "}");
   
