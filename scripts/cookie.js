@@ -55,20 +55,18 @@ function toISOFormat(date) {
   return "";
 }
 
-function shouldOverwrite(new_utm_data, current_utm_data) {
-  if (!current_utm_data || !new_utm_data) {
+function shouldOverwrite(new_utm_data, current_utm_data, has_all_params) {
+  if (!current_utm_data) {
     return true;
   }
-  if(Object.keys(new_utm_data).length > 2) {
-    if (new_utm_data.utm_source.includes("affiliate")) {
-      return true;
-    }
-    if (new_utm_data.utm_medium.includes("ppc") && !current_utm_data.utm_source.includes("affiliate")) {
-      return true;
-    }
-    if (!current_utm_data.utm_medium.includes("ppc") && !current_utm_data.utm_source.includes("affiliate")) {
-      return true
-    }
+  else if (!new_utm_data) {
+    return false;
+  }
+  // Overwrite based on the order of priority
+  if(has_all_params) {
+    if (new_utm_data.utm_source.includes("affiliate")) return true; // 1. Affiliate tags
+    if (new_utm_data.utm_medium.includes("ppc") && !current_utm_data.utm_source.includes("affiliate")) return true; // 2. PPC tags
+    if (!current_utm_data.utm_medium.includes("ppc") && !current_utm_data.utm_source.includes("affiliate")) return true; // 3. Complete set of required tags
   }
   return false;
 }
@@ -90,8 +88,10 @@ function shouldOverwrite(new_utm_data, current_utm_data) {
     "utm_adgroup_id",
     "utm_campaign_id"
   ];
-
+  const required_fields = ["utm_source", "utm_medium", "utm_campaign"];
+  const has_all_params = required_fields.every((field) => searchParams.has(field))
   let utm_data = {};
+  const current_utm_data = JSON.parse(getCookie("utm_data"))
 
   // If the user comes to the site for the first time without any URL params
   // Only set the utm_source to referrer if the user does not have utm_data cookies stored
@@ -109,10 +109,11 @@ function shouldOverwrite(new_utm_data, current_utm_data) {
     }
   })
 
-  if (shouldOverwrite(utm_data, JSON.parse(getCookie("utm_data")))) {
+  if (shouldOverwrite(utm_data, current_utm_data, has_all_params)) {
     eraseCookie("utm_data");
   
     const utm_data_cookie = encodeURI(JSON.stringify(utm_data))
+      .replaceAll("%2C", ",")
       .replace("%7B", "{")
       .replace("%7D", "}");
   
