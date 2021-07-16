@@ -68,6 +68,7 @@ function shouldOverwrite(new_utm_data, current_utm_data, has_all_params) {
     if (new_utm_data.utm_medium.includes("ppc") && !current_utm_data.utm_source.includes("affiliate")) return true; // 2. PPC tags
     if (!current_utm_data.utm_medium.includes("ppc") && !current_utm_data.utm_source.includes("affiliate")) return true; // 3. Complete set of required tags
   }
+  else if (Object.values(new_utm_data).length > Object.values(current_utm_data).length)return true; // 4. Everything else
   return false;
 }
 /* end utility functions */
