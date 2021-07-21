@@ -94,6 +94,8 @@ function shouldOverwrite(new_utm_data, current_utm_data, searchParams) {
     "utm_adgroup_id",
     "utm_campaign_id"
   ];
+
+
   let utm_data = {};
   const current_utm_data = JSON.parse(getCookie("utm_data"))
 
@@ -113,7 +115,9 @@ function shouldOverwrite(new_utm_data, current_utm_data, searchParams) {
     }
   })
 
+
   if (shouldOverwrite(utm_data, current_utm_data, searchParams)) {
+
     eraseCookie("utm_data");
   
     const utm_data_cookie = encodeURI(JSON.stringify(utm_data))
