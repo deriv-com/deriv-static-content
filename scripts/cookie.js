@@ -54,6 +54,28 @@ function toISOFormat(date) {
 
   return "";
 }
+
+function shouldOverwrite(new_utm_data, current_utm_data, searchParams) {
+  if (!current_utm_data) {
+    return true;
+  }
+  else if (!new_utm_data) {
+    return false;
+  }
+
+  // Check if both new and old utm_data has all required filds
+  const required_fields = ["utm_source", "utm_medium", "utm_campaign"];
+  const has_all_params = required_fields.every((field) => searchParams.has(field) && Object.keys(current_utm_data).includes(field))
+  
+  // Overwrite based on the order of priority
+  if(has_all_params) {
+    if (new_utm_data.utm_medium.includes("aff")) return true; // 1. Affiliate tags
+    if (new_utm_data.utm_medium.includes("ppc") && !current_utm_data.utm_medium.includes("aff")) return true; // 2. PPC tags
+    if (!current_utm_data.utm_medium.includes("ppc") && !current_utm_data.utm_medium.includes("aff")) return true; // 3. Complete set of required tags
+  }
+  else if (Object.values(new_utm_data).length > Object.values(current_utm_data).length)return true; // 4. Everything else
+  return false;
+}
 /* end utility functions */
 
 (function initMarketingCookies() {
@@ -73,7 +95,9 @@ function toISOFormat(date) {
     "utm_campaign_id"
   ];
 
+
   let utm_data = {};
+  const current_utm_data = JSON.parse(getCookie("utm_data"))
 
   // If the user comes to the site for the first time without any URL params
   // Only set the utm_source to referrer if the user does not have utm_data cookies stored
@@ -91,11 +115,13 @@ function toISOFormat(date) {
     }
   })
 
-  if (Object.keys(utm_data).length > 0) {
+
+  if (shouldOverwrite(utm_data, current_utm_data, searchParams)) {
+
     eraseCookie("utm_data");
   
     const utm_data_cookie = encodeURI(JSON.stringify(utm_data))
-      .replace(",", "%2C")
+      .replaceAll("%2C", ",")
       .replace("%7B", "{")
       .replace("%7D", "}");
   
