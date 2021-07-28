@@ -68,12 +68,12 @@ function shouldOverwrite(new_utm_data, current_utm_data, searchParams) {
   const has_all_params = required_fields.every((field) => searchParams.has(field) && Object.keys(current_utm_data).includes(field))
   
   // Overwrite based on the order of priority
-  if(has_all_params) {
+  if (has_all_params) {
     if (new_utm_data.utm_medium.includes("aff")) return true; // 1. Affiliate tags
     if (new_utm_data.utm_medium.includes("ppc") && !current_utm_data.utm_medium.includes("aff")) return true; // 2. PPC tags
     if (!current_utm_data.utm_medium.includes("ppc") && !current_utm_data.utm_medium.includes("aff")) return true; // 3. Complete set of required tags
   }
-  else if (Object.values(new_utm_data).length > Object.values(current_utm_data).length)return true; // 4. Everything else
+  else if (Object.values(new_utm_data).length > Object.values(current_utm_data).length) return true; // 4. Everything else
   return false;
 }
 /* end utility functions */
@@ -118,8 +118,8 @@ function shouldOverwrite(new_utm_data, current_utm_data, searchParams) {
   
     const utm_data_cookie = encodeURI(JSON.stringify(utm_data))
       .replaceAll("%2C", ",")
-      .replace("%7B", "{")
-      .replace("%7D", "}");
+      .replaceAll("%7B", "{")
+      .replaceAll("%7D", "}");
   
     document.cookie = `utm_data=${utm_data_cookie}; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
   }
