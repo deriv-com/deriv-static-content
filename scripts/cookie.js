@@ -55,7 +55,7 @@ function toISOFormat(date) {
   return "";
 }
 
-function shouldOverwrite(new_utm_data, current_utm_data, searchParams) {
+function shouldOverwrite(new_utm_data, current_utm_data) {
   if (!current_utm_data) {
     return true;
   }
@@ -65,13 +65,13 @@ function shouldOverwrite(new_utm_data, current_utm_data, searchParams) {
 
   // Check if both new and old utm_data has all required filds
   const required_fields = ["utm_source", "utm_medium", "utm_campaign"];
-  const has_all_params = required_fields.every((field) => searchParams.has(field) && Object.keys(current_utm_data).includes(field))
+  const has_all_params = required_fields.every((field) => new_utm_data[field] && current_utm_data[field])
   
   // Overwrite based on the order of priority
   if (has_all_params) {
     if (new_utm_data.utm_medium.includes("aff")) return true; // 1. Affiliate tags
-    if (new_utm_data.utm_medium.includes("ppc") && !current_utm_data.utm_medium.includes("aff")) return true; // 2. PPC tags
-    if (!current_utm_data.utm_medium.includes("ppc") && !current_utm_data.utm_medium.includes("aff")) return true; // 3. Complete set of required tags
+    else if (new_utm_data.utm_medium.includes("ppc") && !current_utm_data.utm_medium.includes("aff")) return true; // 2. PPC tags
+    else if (!current_utm_data.utm_medium.includes("ppc") && !current_utm_data.utm_medium.includes("aff")) return true; // 3. Complete set of required tags
   }
   else if (Object.values(new_utm_data).length > Object.values(current_utm_data).length) return true; // 4. Everything else
   return false;
@@ -111,12 +111,12 @@ function shouldOverwrite(new_utm_data, current_utm_data, searchParams) {
   // If the user has any new UTM params, store them
   utm_fields.forEach((field) => {
     if (searchParams.has(field)) {
-      utm_data[field] = searchParams.get(field).replace(/[^a-zA-Z0-9\s\-\.\_]/gi, '').substring(0, 100);
+      utm_data[field] = searchParams.get(field).replace(/[^a-zA-Z0-9\s\-\.\_]/gi, '').substring(0, 100); // Limit to 100 supported characters
     }
   })
 
 
-  if (shouldOverwrite(utm_data, current_utm_data, searchParams)) {
+  if (shouldOverwrite(utm_data, current_utm_data)) {
 
     eraseCookie("utm_data");
   
