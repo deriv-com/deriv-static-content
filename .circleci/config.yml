@@ -101,7 +101,7 @@ commands:
 jobs:
   release_production:
     docker:
-      - image: circleci/python:stretch
+      - image: circleci/python:buster
     steps:
       - git_checkout_from_cache
       - deploy:
