@@ -1,2 +1,14 @@
-.git
+.git*
+# Node build and metadata
+package-lock.json
 node_modules
+# Nginx configs
+static.deriv.com.conf
+# Project metadata
+LICENSE
+# CI
+CNAME
+.vercel
+.circleci
+Dockerfile
+.dockerignore
