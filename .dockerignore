@@ -1,2 +1,12 @@
-.git
+.git*
+# Node build and metadata
+package-lock.json
 node_modules
+# Project metadata
+LICENSE
+# CI
+CNAME
+.vercel
+.circleci
+Dockerfile
+.dockerignore
