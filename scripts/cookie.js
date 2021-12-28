@@ -1,5 +1,5 @@
 /* utility functions */
-function getDomain() {
+const getDomain = () => {
   const domain = location.hostname;
 
   if (domain.includes("deriv.com")) {
@@ -7,13 +7,13 @@ function getDomain() {
   }
 
   return domain.includes("binary.sx") ? "binary.sx" : domain;
-}
+};
 
-function eraseCookie(name) {
+const eraseCookie = (name) => {
   document.cookie = `${name}=; Max-Age=-99999999; domain=${getDomain()}; path=/;`;
-}
+};
 
-function getCookie(name) {
+const getCookie = (name) => {
   const dc = document.cookie;
   const prefix = name + "=";
 
@@ -34,15 +34,15 @@ function getCookie(name) {
   }
 
   return decodeURI(dc.substring(begin + prefix.length, end));
-}
+};
 
-function isMobile() {
+const isMobile = () => {
   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
     navigator.userAgent
   );
-}
+};
 
-function toISOFormat(date) {
+const toISOFormat = (date) => {
   if (date instanceof Date) {
     const utc_year = date.getUTCFullYear();
     const utc_month =
@@ -53,29 +53,33 @@ function toISOFormat(date) {
   }
 
   return "";
-}
+};
 
-function shouldOverwrite(new_utm_data, current_utm_data) {
+const shouldOverwrite = (new_utm_data, current_utm_data) => {
   if (!current_utm_data) {
-    return true;
+      return true;
+  } else if (!new_utm_data) {
+      return false;
   }
-  else if (!new_utm_data) {
-    return false;
-  }
-
-  // Check if both new and old utm_data has all required filds
-  const required_fields = ["utm_source", "utm_medium", "utm_campaign"];
-  const has_all_params = required_fields.every((field) => new_utm_data[field] && current_utm_data[field])
   
+  // Check if both new and old utm_data has all required fields
+  const required_fields = ['utm_source', 'utm_medium', 'utm_campaign'];
+  const has_new_required_fields = required_fields.every((field) => new_utm_data[field]);
+  const has_curr_required_fields = required_fields.every((field) =>current_utm_data[field]);
+
   // Overwrite based on the order of priority
-  if (has_all_params) {
-    if (new_utm_data.utm_medium.includes("aff")) return true; // 1. Affiliate tags
-    else if (new_utm_data.utm_medium.includes("ppc") && !current_utm_data.utm_medium.includes("aff")) return true; // 2. PPC tags
-    else if (!current_utm_data.utm_medium.includes("ppc") && !current_utm_data.utm_medium.includes("aff")) return true; // 3. Complete set of required tags
-  }
-  else if (Object.values(new_utm_data).length > Object.values(current_utm_data).length) return true; // 4. Everything else
+  if (has_new_required_fields && has_curr_required_fields) {
+      if (new_utm_data.utm_medium.includes('aff')) return true; // 1. Affiliate tags
+      else if (new_utm_data.utm_medium.includes('ppc') && !current_utm_data.utm_medium.includes('aff')) return true; // 2. PPC tags
+      else if (!current_utm_data.utm_medium.includes('ppc') && !current_utm_data.utm_medium.includes('aff')) return true; // 3. Complete set of required tags
+  } else if (has_new_required_fields) {
+      return true;
+  } else if (has_curr_required_fields) {
+      return false;
+  } else if (new_utm_data.utm_source !== undefined
+      && Object.values(new_utm_data).length >= Object.values(current_utm_data).length) return true; // 4. Everything else
   return false;
-}
+};
 /* end utility functions */
 
 (function initMarketingCookies() {
@@ -92,17 +96,15 @@ function shouldOverwrite(new_utm_data, current_utm_data) {
     "utm_content",
     "utm_ad_id",
     "utm_adgroup_id",
-    "utm_campaign_id"
+    "utm_campaign_id",
   ];
 
-
   let utm_data = {};
-  const current_utm_data = JSON.parse(getCookie("utm_data"))
+  const current_utm_data = JSON.parse(getCookie("utm_data"));
 
   // If the user comes to the site for the first time without any URL params
   // Only set the utm_source to referrer if the user does not have utm_data cookies stored
   if (!getCookie("utm_data")) {
-
     utm_data = {
       utm_source: document.referrer ? document.referrer : null,
     };
@@ -111,20 +113,21 @@ function shouldOverwrite(new_utm_data, current_utm_data) {
   // If the user has any new UTM params, store them
   utm_fields.forEach((field) => {
     if (searchParams.has(field)) {
-      utm_data[field] = searchParams.get(field).replace(/[^a-zA-Z0-9\s\-\.\_]/gi, '').substring(0, 100); // Limit to 100 supported characters
+      utm_data[field] = searchParams
+        .get(field)
+        .replace(/[^a-zA-Z0-9\s\-\.\_]/gi, "")
+        .substring(0, 100); // Limit to 100 supported characters
     }
-  })
-
+  });
 
   if (shouldOverwrite(utm_data, current_utm_data)) {
-
     eraseCookie("utm_data");
-  
+
     const utm_data_cookie = encodeURI(JSON.stringify(utm_data))
       .replaceAll("%2C", ",")
       .replaceAll("%7B", "{")
       .replaceAll("%7D", "}");
-  
+
     document.cookie = `utm_data=${utm_data_cookie}; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
   }
 
@@ -133,9 +136,7 @@ function shouldOverwrite(new_utm_data, current_utm_data) {
   /* start handling affiliate tracking */
   if (searchParams.has("t")) {
     eraseCookie("affiliate_tracking");
-    document.cookie = `affiliate_tracking=${searchParams.get(
-      "t"
-    )};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+    document.cookie = `affiliate_tracking=${searchParams.get("t")};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
   }
   /* end handling affiliate tracking */
 
