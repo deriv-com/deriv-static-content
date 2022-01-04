@@ -13,24 +13,17 @@
 
       if (app === "deriv-go") {
         if (/iP(hone|od|ad)/.test(navigator.userAgent)) {
-          window.location.href =
-            "https://apps.apple.com/rw/app/deriv-go/id1550561298";
-        } else if (/Android/.test(navigator.userAgent)) {
-          window.location.href =
-            "market://details?id=com.deriv.app&hl=en&gl=US";
+          window.location.href = "https://apps.apple.com/rw/app/deriv-go/id1550561298";
         } else if (/Huawei/.test(navigator.userAgent)) {
           window.location.href = "https://appgallery.huawei.com/app/C103801913";
         } else {
-          alert("Cannot recognize device");
+          window.location.href = "market://details?id=com.deriv.app&hl=en&gl=US";
         }
       } else if (app === "derivx") {
         if (/iP(hone|od|ad)/.test(navigator.userAgent)) {
-          window.location.href =
-            "https://apps.apple.com/rw/app/deriv-x/id1563337503";
-        } else if (/Android|Huawei/.test(navigator.userAgent)) {
-          window.location.href = "market://details?id=com.deriv.dx&hl=en&gl=US";
+          window.location.href = "https://apps.apple.com/rw/app/deriv-x/id1563337503";
         } else {
-          alert("Cannot recognize device");
+          window.location.href = "market://details?id=com.deriv.dx&hl=en&gl=US";
         }
       }
     </script>
