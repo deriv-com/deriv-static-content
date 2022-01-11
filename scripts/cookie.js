@@ -65,7 +65,7 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
   // Check if both new and old utm_data has all required fields
   const required_fields = ['utm_source', 'utm_medium', 'utm_campaign'];
   const has_new_required_fields = required_fields.every((field) => new_utm_data[field]);
-  const has_curr_required_fields = required_fields.every((field) =>current_utm_data[field]);
+  const has_curr_required_fields = required_fields.every((field) => current_utm_data[field]);
 
   // Overwrite based on the order of priority
   if (has_new_required_fields && has_curr_required_fields) {
