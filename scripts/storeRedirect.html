@@ -17,13 +17,19 @@
         } else if (/Huawei/.test(navigator.userAgent)) {
           window.location.href = "https://appgallery.huawei.com/app/C103801913";
         } else {
-          window.location.href = "market://details?id=com.deriv.app&hl=en&gl=US";
+          window.location.href = "market://details?id=com.deriv.app";
         }
       } else if (app === "derivx") {
         if (/iP(hone|od|ad)/.test(navigator.userAgent)) {
           window.location.href = "https://apps.apple.com/rw/app/deriv-x/id1563337503";
         } else {
-          window.location.href = "market://details?id=com.deriv.dx&hl=en&gl=US";
+          window.location.href = "market://details?id=com.deriv.dx";
+        }
+      } else if (app === "dp2p") {
+        if (/iP(hone|od|ad)/.test(navigator.userAgent)) {
+          window.location.href = "https://apps.apple.com/mn/app/deriv-dp2p/id1506901451";
+        } else {
+          window.location.href = "market://details?id=com.deriv.dp2p";
         }
       }
     </script>
