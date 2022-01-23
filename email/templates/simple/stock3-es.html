@@ -4,7 +4,6 @@
         <meta name="color-scheme" content="light dark">
         <meta name="supported-color-schemes" content="light dark">
         <meta charset="utf-8">
-        <title></title>
         <meta name="viewport" content="width=device-width">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="x-apple-disable-message-reformatting">
@@ -37,6 +36,7 @@
                 a {color: #ff444f; font-family: Arial, sans-serif;}
             </style>
         <![endif]-->
+        <title>DP2P introductory</title>
         <style type="text/css">
             /* FONTS */
             @media screen {
@@ -163,11 +163,7 @@
                 line-height: 40px;
                 margin: 0;
             }
-            .justify-word {
-                text-align: justify;
-                text-justify: inter-word;
-            }
-                        
+            img.g-img + div {display:none;}            
             @media screen and (max-width: 590px)  {
                 .button, .button-secondary {
                     margin: 5px 0 !important;
@@ -175,11 +171,6 @@
             }
             /* MOBILE STYLES */
             @media screen and (max-width: 620px) {
-                .img-max {
-                    width: 100% !important;
-                    max-width: 100% !important;
-                    height: auto !important;
-                }
                 .max-width {
                     max-width: 100% !important;
                 }
@@ -190,53 +181,39 @@
                 .mobile-visible {
                     display:inline-block !important;
                 }
+                .mobile-visible-block {
+                    display: block !important;
+                }
                 .mobile-hide {
                     display:none !important;
                 }
-                .mobile-nopadding {
-                    padding-top: 0 !important;
-                    padding-right: 10px !important;
-                    padding-left: 15px !important;
-                }
                 .mobile-side {
-                    padding-right: 15px !important;
-                    padding-left: 15px !important;
-                }
-                .mobile-negmargin {
-                    margin-top: -15px !important;
-                }
-                .mobile-center {
-                    text-align:center !important;
-                }
-                .mobile-unvisible {
-                    display: none!important;
-                } 
-                .mobile-bgcolor-gray {
-                    background-color: #eeeeee !important;
-                }
-                .mb-bg-lightgray{
-                    background-color: #f3f5f6 !important; 
-                }
-                .mb-padding-top{
-                    padding-top: 30px !important;
-                }
-                .mobile-visible-block {
-                    display: block !important;
+                    padding-right: 16px !important;
+                    padding-left: 16px !important;
                 }
                 .mobile-low-top-padding {
                     padding-top: 1px !important;
                 }
+                .mobile-align-center {
+                    text-align: center !important;
+                }
+                .mobile-side-high {
+                    padding-right: 40px !important;
+                    padding-left: 40px !important;
+                }
+
             }
             @media (prefers-color-scheme: dark ) {
                 /* Shows Dark Mode-Only Content, Like Images */
                 .dark-img { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+                .dark-img2 { display:block !important; width: 100% !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
         
                 /* Hides Light Mode-Only Content, Like Images */
                 .light-img { display:none; display:none !important; }
    
                 /* Custom Dark Mode Background Color */
                 .darkmodeblack { background-color:#0e0e0e !important; }
-                .darkmodelowblack { background-color: #202020 !important; }
+                .darkmodelowblack { background-color: #151515 !important; }
    
                 /* Custom Dark Mode Font Colors */
                  h1, h2, p, span, a, b { color: #ffffff !important; }
@@ -249,13 +226,13 @@
             } 
             /* Shows Dark Mode-Only Content, Like Images */
             [data-ogsc] .dark-img { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
-            
+            [data-ogsc] .dark-img2 { display:block !important; width: 100% !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
             /* Hides Light Mode-Only Content, Like Images */
             [data-ogsc] .light-img { display:none; display:none !important; }
   
             /* Custom Dark Mode Background Color */
-            [data-ogsc] .darkmodeblack { background-color: #0e0e0e !important;}
-            [data-ogsc] .darkmodelowblack { background-color: #202020 !important; }
+            [data-ogsc] .darkmodeblack { color:#c2c2c2 !important; background-color: #0e0e0e !important;}
+            [data-ogsc] .darkmodelowblack { background-color: #151515 !important; }
   
             /* Custom Dark Mode Font Colors */
             [data-ogsc] h1, [data-ogsc] h2, [data-ogsc] p, [data-ogsc] span, [data-ogsc] a, [data-ogsc] b { color: #ffffff !important; }
@@ -264,7 +241,8 @@
             [data-ogsc] .darkcolor-white{ color: #ffffff !important; }
   
             /* Custom Dark Mode Text Link Color */
-            [data-ogsc] .link { color: #91ADD4 !important; } 
+            [data-ogsc] .link { color: #91ADD4 !important; }           
+          
         </style>
     </head>
     <body style="background-color: #eeeeee; margin: 0 !important; padding: 0 !important;">
@@ -279,13 +257,13 @@
                         <!-- COPY -->
                         <tr class="mobile-hide">
                             <td bgcolor="#333333" align="center" >
-                                <input type="image" class="g-img" src="https://static.deriv.com/email/images/weekly-header/stock2-pt.png"  width= "600" style="display: block;outline:none"/><div></div>
+                                <input type="image" class="g-img" src="https://static.deriv.com/email/images/header/stock3-es.png"  width= "600" style="display: block;outline:none"/><div></div>
                             </td>
                         </tr>   
                         <div >
                             <tr style="display: none; mso-hide:all;" class="mobile-visible-block">
                                 <td bgcolor="#f5f7fa" align="center" >
-                                    <input type="image" class="g-img" src="https://static.deriv.com/email/images/weekly-header/stock2-pt-m.png" width="100%" style="display: block;outline:none"/><div></div>
+                                    <input type="image" class="g-img" src="https://static.deriv.com/email/images/header/stock3-es-m.png" width="100%" style="display: block;outline:none"/><div></div>
                                 </td>
                             </tr>  
                         </div>             
@@ -294,154 +272,55 @@
                     <![endif]-->
                 </td>
             </tr>
-            <!-- END HERO -->    
-             <!-- Email Text  -->
+            <!-- END HERO -->
             <tr>
                 <td bgcolor="#eeeeee" align="center" style="padding: 0px;">
                     <!--[if (gte mso 9)|(IE)]>
                     <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" ><tr><td align="center" valign="top" width="600">
                     <![endif]-->
-                    <table  border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff; max-width: 600px;" class="darkmodeblack">
+                    <table  border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff; max-width: 600px;">
                         <tr>
-                            <td align="left" style="padding: 30px 30px 0px 30px; background-color: #ffffff;" class="mobile-lowsidepadding darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #333333; font-weight: 400;" class="darkcolor-subtext">Esperamos que você tenha encontrado algumas informações úteis em nosso e-book e tenha tido a chance de colocar suas estratégias à prova com sua conta de demonstração na Deriv MT5! A prática contínua é a chave para se tornar bem-sucedido e dominar a negociação de CFDs em ações.</p>
+                            <td bgcolor="ffffff" align="left" style="padding: 30px 28px 0; background-color: #ffffff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px 0px 0px 0px;" class="darkcolor-subtext">Hola [name],</p>
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding: 10px 30px 10px 30px;" class="darkmodeblack">
+                            <td bgcolor="ffffff" align="left" style="padding: 15px 28px 0; background-color: #ffffff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px 0px 0px 0px;" class="darkcolor-subtext">Esperamos que estés disfrutando tu experiencia en el trading de acciones con CFD y dándole un uso completo a tu cuenta demo para practicar tus estrategias.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="ffffff" align="left" style="padding: 20px 28px 0; background-color: #ffffff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px 0px 0px 0px;" class="darkcolor-subtext">¿Qué te parece ahora subir de nivel y operar con dinero real? Tu cuenta demo siempre estará disponible para que puedas probar un nuevo producto o una nueva estrategia. Para obtener ganancias reales, necesitas una cuenta real.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="ffffff" align="left" style="padding: 10px 28px 10px; background-color: #ffffff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px 0px 0px 0px;" class="darkcolor-subtext">¡Puedes abrir una cuenta real gratis con Deriv y comenzar a operar CFD de acciones con sólo 5 USD!</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="ffffff" align="left" style="padding: 10px 28px 0; background-color: #ffffff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px 0px 0px 0px;" class="darkcolor-subtext">¿Qué estás esperando? Abre tu cuenta real Financiera de Deriv MT5 ahora.</p>
+                            </td>
+                        </tr>
+                        <!-- button -->
+                        <tr>
+                            <td bgcolor="#ffffff" align="center" style="padding: 30px 30px 32px 30px; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 24px;" class="darkmodeblack">
                                 <!--[if (gte mso 9)|(IE)]>
-                                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://app.deriv.com/?lang=PT" style="height:40px;v-text-anchor:middle;width:160px;" arcsize="10%" strokecolor="#ff444f" fillcolor="#ff444f">
-                                <w:anchorlock/>
-                                <center style="color:#ffffff;font-family:sans-serif;font-size:14px;font-weight:bold;">Comece a negociar</center>
-                                </v:roundrect>
+                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://app.deriv.com/?lang=ES" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="8%" stroke="f" fillcolor="#ff444f">
+                                    <w:anchorlock/>
+                                    <center style="color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:bold;">Crear una cuenta real</center>
+                                    </v:roundrect>
                                 <![endif]-->
-                                <a class="button" href="https://app.deriv.com/?lang=PT" style="mso-hide:all;"><span>Comece a negociar</span></a>
+                                <a class="button" href="https://app.deriv.com/?lang=ES" style="mso-hide:all;">Crear una cuenta real</a>
                             </td>
-                        </tr>
-                        <tr>                            
-                            <td align="center" style="padding: 20px 30px 5px 30px; background-color: #ffffff;margin: 0;" class="mobile-lowsidepadding darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 24px; line-height: 1.5 ; color: #333333; font-weight: 600;margin:0" class="darkcolor-subtext">Porquê negociar CFDs em ações na Deriv?</p>
-                            </td>
-                        </tr>                                     
+                        </tr>                                                                                 
                     </table>
                     <!--[if (gte mso 9)|(IE)]></td></tr></table>
                     <![endif]-->
                 </td>
-            </tr>   
-            <!-- End Email Text-->             
-            <!-- CARD2 -->
-            <tr>
-                <td bgcolor="#eeeeee" align="center" style="padding: 0px; margin: 0">
-                    <!--[if (gte mso 9)|(IE)]><table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600"><![endif]-->
-                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;" class="darkmodeblack">
-                        <!-- COPY 2 col -->
-                        <tr>
-                            <td bgcolor="#ffffff" align="center" style="padding: 20px 0px 20px 0px;" class="darkmodeblack">
-                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;" class="darkmodeblack">
-                                    <tr>
-                                        <td align="center" valign="middle" style="font-size:0; padding: 0px;">
-                                            <!--[if (gte mso 9)|(IE)]>
-                                            <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%" style="margin: 0;">
-                                            <tr>
-                                            <td align="left" valign="middle">
-                                            <![endif]-->
-                                            <div style="display:none; max-width:50%; min-width:260px; width:100%;" class="mobile-wrapper mobile-visible">
-                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px; mso-hide:all;" class="max-width" class="darkmodeblack">
-                                                    <tr>
-                                                        <td align="center" valign="bottom" style="padding: 15px 20px 20px;">
-                                                            <img src="https://static.deriv.com/email/images/weekly-header/stock2-2-m.png" border="0" class="mobile-negmargin" style="max-width: 100%; " alt="Deriv.com">
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </div>                                           
-                                            <div style="display:inline-block; max-width:48%; min-width:260px; vertical-align:middle; width:100%;" class="mobile-wrapper">
-                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;" class="max-width darkmodeblack">
-                                                    <tr>
-                                                        <td align="left" valign="middle" style="padding: 0 10px 0 20px;" class="mobile-side">
-                                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #333333; font-weight: 600;margin: 0;" class="mobile-center darkcolor-subtext">Mais de 40 marcas importantes para negociar</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td align="left" valign="middle" style="padding: 0 10px 0 20px;" class="mobile-side">
-                                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 14px; line-height: 1.5 ; color: #333333; font-weight: 400;margin: 0;" class="mobile-center darkcolor-subtext">Amazon, Pfizer, Tesla, e mais. Negocie CFDs em suas marcas favoritas em tecnologia, finanças e varejo sem possuir os ativos subjacentes.</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td align="center" valign="bottom" style="padding: 15px;">
-                                                            <img src="https://static.deriv.com/email/images/icons/separator.png" border="0"  style="max-width: 100%; ">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td align="left" valign="middle" style="padding: 0 10px 0 20px;" class="mobile-side">
-                                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #333333; font-weight: 600;margin: 0;" class="mobile-center darkcolor-subtext">Os principais índices do mundo também</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td align="left" valign="middle" style="padding: 0 10px 0 20px;" class="mobile-side">
-                                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 14px; line-height: 1.5 ; color: #333333; font-weight: 400;margin: 0;" class="mobile-center darkcolor-subtext">Negocie CFDs em índices de renome mundial, como o Índice de Wall Street, o Índice US Tech e o Índice UK, e muitos mais.</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td align="center" valign="bottom" style="padding: 15px;">
-                                                            <img src="https://static.deriv.com/email/images/icons/separator.png" border="0"  style="max-width: 100%; ">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td align="left" valign="middle" style="padding: 0 10px 0 20px;" class="mobile-side">
-                                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #333333; font-weight: 600;margin: 0;" class="mobile-center darkcolor-subtext">Potencialize seu portfólio</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td align="left" valign="middle" style="padding: 0 10px 0 20px;" class="mobile-side">
-                                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 14px; line-height: 1.5 ; color: #333333; font-weight: 400;margin: 0;" class="mobile-center darkcolor-subtext">Diversifique seu portfólio negociando CFDs dos maiores nomes internacionais. Comece a negociar com apenas 5 USD. Comissão zero.</p>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </div>                                           
-                                            <!--[if (gte mso 9)|(IE)]>
-                                            </td>
-                                            <td align="center" valign="middle">
-                                            <![endif]-->
-                                            <div style="vertical-align: middle; display:inline-block; max-width:50%; min-width:260px; width:100%;" class="mobile-wrapper mobile-hide">
-                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:300px;" class="max-width darkmodeblack">
-                                                    <tr>
-                                                        <td align="left" valign="bottom" style="padding: 15px 0 0 0;">
-                                                            <p style="margin: 0;"><div><img src="https://static.deriv.com/email/images/weekly-header/stock2-2.png" border="0" class="mobile-negmargin" style="max-width: 100%;" alt="Deriv.com"></div></p>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                            <!--[if mso]></td></tr></table><![endif]-->
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
-                    <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
-                </td>
-            </tr>
-            <!-- END CARD2 -->            
-            <!--before footer--> 
-            <tr>
-                <td bgcolor="#eeeeee" align="center" style="padding: 0px;">
-                            <!--[if (gte mso 9)|(IE)]><table width="600" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
-                            <table class="outer darkmodelowblack" align="center" cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 600px; margin: 0px">	
-                                <tr>
-                                    <td bgcolor="#ffffff" align="center" style="padding: 10px 30px 40px 30px;" class="darkmodeblack">
-                                        <!--[if (gte mso 9)|(IE)]>
-                                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://app.deriv.com/mt5?lang=PT" style="height:40px;v-text-anchor:middle;width:160px;" arcsize="10%" strokecolor="#ff444f" fillcolor="#ff444f">
-                                        <w:anchorlock/>
-                                        <center style="color:#ffffff;font-family:sans-serif;font-size:14px;font-weight:bold;">Entre na Deriv MT5</center>
-                                        </v:roundrect>
-                                        <![endif]-->
-                                        <a class="button" href="https://app.deriv.com/mt5?lang=PT" style="mso-hide:all;"><span>Entre na Deriv MT5</span></a>
-                                    </td>
-                                </tr>
-                            </table><!--[if mso]></td></tr></table><![endif]-->                    
-                 </td>
-             </tr> 
-            <!--end before footer-->                  
+            </tr>                                          
             <!-- FOOTER -->
             <tr>
                 <td bgcolor="#eeeeee" align="center" style="padding: 0px;">
@@ -495,10 +374,8 @@
                                 <table bgcolor="#f3f5f6" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;" class="darkmodelowblack">
                                     <tr>
                                         <td bgcolor="#f3f5f6" align="center" style="color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="darkmodelowblack">
-                                            <td bgcolor="#f3f5f6" align="center" style="color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="darkmodelowblack">
-                                                <p style="padding: 0 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 400; line-height: 16px; margin: 5px 0px 5px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important">Help Centre</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Terms and conditions</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://deriv.com/tnc/security-and-privacy.pdf" style="color: #ff444f !important">Security and privacy</a></p>
-                                                <p style="padding: 0 10px 30px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #999999; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0px 0px 5px 0px;" class="darkmodegray">No longer want to recieve these emails? <a href="https://app.deriv.com/account/personal-details" style="mso-hide:all; color: #ff444f !important;" class="darkcolor-subtext">Unsubscribe</a></p>
-                                            </td>
+                                            <p style="padding: 0px 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 400; line-height: 16px; margin: 5px 0px 5px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important">Help Centre</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Terms and conditions</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://deriv.com/tnc/security-and-privacy.pdf" style="color: #ff444f !important">Security and privacy</a></p>
+                                            <p style="padding: 0 10px 30px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #999999; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0px 0px 5px 0px;" class="darkmodegray">No longer want to recieve these emails? <a href="https://app.deriv.com/account/personal-details" style="mso-hide:all; color: #ff444f !important;" class="darkcolor-subtext">Unsubscribe</a></p>
                                         </td>
                                     </tr>
                                 </table>
@@ -511,6 +388,7 @@
                     <![endif]-->
                 </td>
             </tr>
+            <!--End FOOTER -->
         </table>
     </body>
     <!-- end message template -->
