@@ -20,7 +20,7 @@
 
 ## Email Templates:
 
-- **Standard emails**: All emails that their design matchs with standard layout in 2022 year, collected here. [/email/templates/simple-2022](https://github.com/binary-com/deriv-static-content/tree/master/email/templates/simple-2022) in next year they will add to a new folder.
+- **Standard emails**: All emails that their design matchs with standard layout in 2022, collected here. [/email/templates/simple-2022](https://github.com/binary-com/deriv-static-content/tree/master/email/templates/simple-2022) in next year they will add to a new folder.
 
 - **NonStandard emails**: [/email/templates/marketing](https://github.com/binary-com/deriv-static-content/tree/master/email/templates/marketing)
 
