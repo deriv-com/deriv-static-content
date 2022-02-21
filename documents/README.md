@@ -1,8 +1,8 @@
 <h1 align="center">
   Paths
 </h1>
-<p style=" font-size: 13px; color:green;" align="center">
-  version:1.0 &nbsp; &nbsp; date: 2022-Feb-17
+<p align="center">
+  version:1.1 &nbsp; &nbsp; 2022-Feb-17
 </p>
 
 
@@ -16,16 +16,18 @@
 
 - **Design**: images for email body (not header) that designers make them, located here, like monthly academy report images. [/email/images/design](https://github.com/binary-com/deriv-static-content/tree/master/email/images/design)
 
-- **Deriv**: Screenshot of Deriv that as an step used in emails, collected here. [/email/images/deriv](https://github.com/binary-com/deriv-static-content/tree/master/email/images/deriv)
+- **Deriv**: Screenshots of Deriv used in emails, collected here. [/email/images/deriv](https://github.com/binary-com/deriv-static-content/tree/master/email/images/deriv)
 
 ## Email Templates:
 
-- **Standard emails**: All emails that design matchs with standard layout in 2022 year collected here. [/email/templates/simple-2022](https://github.com/binary-com/deriv-static-content/tree/master/email/templates/simple-2022) in next year they will add to a new folder.
+- **Standard emails**: All emails that their design matchs with standard layout in 2022, collected here. [/email/templates/simple-2022](https://github.com/binary-com/deriv-static-content/tree/master/email/templates/simple-2022) in next year they will add to a new folder.
+
+- **NonStandard emails**: [/email/templates/marketing](https://github.com/binary-com/deriv-static-content/tree/master/email/templates/marketing)
 
 - **Layout**:
 
-  - [Icon layout](https://github.com/binary-com/deriv-static-content/tree/master/email/templates/category/layout-icon.html): In header there is a big icon.
-  - [Image layout](https://github.com/binary-com/deriv-static-content/tree/master/email/templates/category/layout-icon.html): In this templates, an image shows as above the fold image.
+  - [Icon layout](https://github.com/binary-com/deriv-static-content/tree/master/email/templates/category/layout-icon.html): There is an icon in the header of this template.
+  - [Image layout](https://github.com/binary-com/deriv-static-content/tree/master/email/templates/category/layout-image.html): In this template, an image shows as above the fold.
 
 - **Reports**:
 
@@ -34,7 +36,7 @@
 
 ## Other documents:
 
-- [**Banners**](https://github.com/binary-com/deriv-static-content/tree/master/banners): ppc and other marketing banners are here. For a new banner groups need to make a new folder then add all files there.
+- [**Banners**](https://github.com/binary-com/deriv-static-content/tree/master/banners): ppc and other marketing banners are here. For a new banner group, need to make a new folder then add all banner files there.
 - [**Ebooks**](https://github.com/binary-com/deriv-static-content/tree/master/marketing): All Forex, stock, crypto... ebooks in 6 languages 
 
 - [**Derivlogo**](https://github.com/binary-com/deriv-static-content/tree/master/logos)
@@ -44,8 +46,6 @@
  
 
 
-<p style=" font-size: 20px; color:#ff444f;">⚠️<span style="color:gray; font-size:16px;"> before uploading email images make sure width is less than 600px, also size reduced by <a href="https://tinypng.com">tinypng</a> or other tools.</span>
-</p>
+<p>⚠️ before uploading email images, make sure width is less than 600px, also size reduced by <a href="https://tinypng.com">tinypng</a> or other tools.</p>
 
-<p style=" font-size: 20px; color:#ff444f;">⚠️<span style="color:gray; font-size:16px;"> There are other folders not listed here, if the new file not match with mentioned path, pls explore other folders.</span>
-</p>
+<p >⚠️ There are other folders not listed here, if the new file not match with mentioned path, pls explore other folders.</p>
