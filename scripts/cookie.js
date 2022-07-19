@@ -95,6 +95,7 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
     "utm_term",
     "utm_content",
     "utm_ad_id",
+    "utm_click_id",
     "utm_adgroup_id",
     "utm_campaign_id",
   ];
