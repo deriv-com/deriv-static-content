@@ -98,19 +98,62 @@ commands:
           include_project_field: false
           failure_message: "Release failed for deriv static with version *$(cat version)*"
           success_message: "Release succeeded for deriv static with version *$(cat version)*"
-          webhook: ${SLACK_WEBHOOK}   
+          webhook: ${SLACK_WEBHOOK}
+
+  publish_to_pages_staging:
+    description: "Publish to cloudflare pages"
+    steps:
+      - run:
+          name: "Publish to cloudflare pages (staging)"
+          command: |
+            mkdir dist 
+            cp -r */ dist/ || true
+            cp landing.html dist/
+            cp index.html dist/
+            cd dist
+            npx wrangler pages publish . --project-name=deriv-static-content-pages --branch=staging
+            echo "New staging website - http://staging.cf-pages-deriv-static-content.deriv.com"
+            
+  publish_to_pages_production:
+    description: "Publish to cloudflare pages"
+    steps:
+      - run:
+          name: "Publish to cloudflare pages (production)"
+          command: |
+            mkdir dist 
+            cp -r */ dist/ || true
+            cp landing.html dist/
+            cp index.html dist/
+            cd dist
+            npx wrangler pages publish . --project-name=deriv-static-content-pages --branch=main
+            echo "New website - http://cf-pages-deriv-static-content.deriv.com"
+            
 jobs:
-  release_production:
+  release_staging:
     docker:
-      - image: circleci/python:buster
+      - image: cimg/node:18.4.0
     steps:
       - git_checkout_from_cache
+      - publish_to_pages_staging
+  release_production:
+    docker:
+      - image: cimg/node:18.4.0
+    steps:
+      - git_checkout_from_cache
+      - publish_to_pages_production
       - deploy:
           target_branch: "production"
       - docker_build_push
       - k8s_deploy
       - notify_slack
 workflows:
+  release_staging:
+    jobs:
+      - release_staging:
+          context: binary-frontend-artifact-upload
+          filters:
+            branches:
+              only: /^master$/
   release_production:
     jobs:
       - release_production:
