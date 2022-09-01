@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+    <head>
+        <meta name="color-scheme" content="light dark">
+        <meta name="supported-color-schemes" content="light dark">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="x-apple-disable-message-reformatting">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+         <!-- Character encoding -->
+         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+         <!-- Set 100% scale, allow zoom -->
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+         <!-- Remove default blue colour from links so you can style your own -->
+         <meta name="format-detection" content="address=no">
+         <meta name="format-detection" content="date=no">
+         <meta name="format-detection" content="email=no">
+         <meta name="format-detection" content="telephone=no">
+         <meta name="x-apple-disable-message-reformatting">
+ 
+         <!-- Prevent iOS 11 from automatically scaling your email -->
+         <meta name="x-apple-disable-message-reformatting">
+ 
+         <!-- Enable CSS3 and media queries in Windows Phone 7.5 and higher -->
+         <!--[if !mso]><!-->
+         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+         <!--<![endif]-->
+        
+        <!--[if mso]>
+            <style type="text/css">
+                *, a, p, h1, h2, h3, td {font-family: Arial, sans-serif !important;}
+                table {border-collapse: collapse;}
+                a {color: #ff444f; font-family: Arial, sans-serif;}
+            </style>
+        <![endif]-->
+        <title></title>
+        <style type="text/css">
+            /* FONTS */
+            @media screen {
+                /* latin */
+                @font-face {
+                font-family: 'IBM Plex Sans';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: local('IBM Plex Sans'), local('IBMPlexSans'), url(https://fonts.gstatic.com/s/ibmplexsans/v7/zYXgKVElMYYaJe8bpLHnCwDKhdHeFaxOedc.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+                }
+                /* latin */
+                @font-face {
+                font-family: 'IBM Plex Sans';
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: local('IBM Plex Sans Medium'), local('IBMPlexSans-Medium'), url(https://fonts.gstatic.com/s/ibmplexsans/v7/zYX9KVElMYYaJe8bpLHnCwDKjSL9AIFsdP3pBms.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+                }
+                /* latin */
+                @font-face {
+                font-family: 'IBM Plex Sans';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: local('IBM Plex Sans Bold'), local('IBMPlexSans-Bold'), url(https://fonts.gstatic.com/s/ibmplexsans/v7/zYX9KVElMYYaJe8bpLHnCwDKjWr7AIFsdP3pBms.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+                }
+            }
+            /* CLIENT-SPECIFIC STYLES */
+            body, table, td, a {
+                -webkit-text-size-adjust: 100%;
+                -ms-text-size-adjust: 100%;
+            }
+            table, td {
+                mso-table-lspace: 0pt;
+                mso-table-rspace: 0pt;
+            }
+            img {
+                -ms-interpolation-mode: bicubic;
+            }
+            /* RESET STYLES */
+            img {
+                border: 0;
+                height: auto;
+                line-height: 100%;
+                outline: none;
+                text-decoration: none;
+            }
+            table {
+                border-collapse: collapse !important;
+            }
+            body {
+                height: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                width: 100% !important;
+                font-family: 'IBM Plex Sans', Arial, sans-serif;
+            }
+            /* iOS BLUE LINKS */
+            a[x-apple-data-detectors] {
+                color: inherit !important;
+                text-decoration: none !important;
+                font-size: inherit !important;
+                font-family: inherit !important;
+                font-weight: inherit !important;
+                line-height: inherit !important;
+            }
+            /* ANDROID CENTER FIX */
+            div[style*="margin: 16px 0;"] {
+                margin: 0 !important;
+            }
+            /* Deriv */
+            a, a:visited {
+                color: #ff444f;
+                text-decoration: none;
+            }
+            a:hover {text-decoration: underline;}
+            a.button {
+                text-decoration: none;
+                text-align: center;
+                line-height: 20px;
+                padding: 10px 16px;
+                display: inline-block;
+                font-weight: bold;
+                font-family: 'IBM Plex Sans', Arial, sans-serif; 
+                font-size: 14px;
+                border-radius: 4px;
+                overflow: visible;
+                border: 0;
+                color: #ffffff;
+                background: #ff444f;
+            }
+            .button:hover {
+                background-color: #d43e47;
+            }
+            a.button-secondary {
+                text-decoration: none;
+                text-align: center;
+                line-height: 20px;
+                padding: 8px 14px;
+                display: inline-block;
+                font-weight: bold;
+                font-family: 'IBM Plex Sans', Arial, sans-serif; 
+                font-size: 14px;
+                border-radius: 4px;
+                overflow: visible;
+                border: 0;
+                color: #ffffff;
+                border: 2px solid #ffffff;
+                background: transparent;
+            }
+            h1 {
+                font-family: 'IBM Plex Sans', Arial, sans-serif;
+                font-size: 48px;
+                line-height: 60px;
+                font-weight: bold;
+                margin: 0;
+            }
+            h2 {
+                font-size: 32px;
+                line-height: 40px;
+                margin: 0;
+            }
+            img.g-img + div {display:none;}            
+            @media screen and (max-width: 590px)  {
+                .button, .button-secondary {
+                    margin: 5px 0 !important;
+                }
+            }
+            /* MOBILE STYLES */
+            @media screen and (max-width: 620px) {
+                .max-width {
+                    max-width: 100% !important;
+                }
+                .mobile-wrapper {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                }
+                .mobile-visible {
+                    display:inline-block !important;
+                }
+                .mobile-visible-block {
+                    display: block !important;
+                }
+                .mobile-hide {
+                    display:none !important;
+                }
+                .mobile-side {
+                    padding-right: 16px !important;
+                    padding-left: 16px !important;
+                }
+                .mobile-sideL {
+                    padding-right: 25px !important;
+                    padding-left: 25px !important;
+                }
+                .mobile-low-top-padding {
+                    padding-top: 1px !important;
+                }
+                .mobile-align-center {
+                    text-align: center !important;
+                }
+                .mobile-side-high {
+                    padding-right: 40px !important;
+                    padding-left: 40px !important;
+                }
+                .mb-0padding-topdown {
+                    padding-top: 0 !important;
+                    padding-bottom: 0 !important;
+                }
+                .mb-lowwidth{
+                    width: 140px !important; 
+                }
+                .mb-title-font{
+                    font-size: 26px !important; 
+                }
+                .mb-font-size{
+                    font-size: 24px !important;
+                }
+
+            }
+            @media (prefers-color-scheme: dark ) {
+                /* Shows Dark Mode-Only Content, Like Images */
+                .dark-img { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+                .dark-img2 { display:block !important; width: 100% !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+                .dark-imglow { display:block !important; width: 147px !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+        
+                /* Hides Light Mode-Only Content, Like Images */
+                .light-img { display:none; display:none !important; }
+   
+                /* Custom Dark Mode Background Color */
+                .darkmodeblack { background-color:#0e0e0e !important; }
+                .darkmodelowblack { background-color: #151515 !important; }
+                .darkmodetoolowblack { background-color: #242828 !important; }
+                .darkmodegraybg { background-color: #333333 !important; }
+   
+                /* Custom Dark Mode Font Colors */
+                 h1, h2, p, span, a, b { color: #ffffff !important; }
+                 .darkmodegray { color: #6e6e6e !important; }
+                 .darkcolor-subtext{ color: #c2c2c2 !important; }
+                 .darkcolor-white{ color: #ffffff !important; }
+                 .darkcolor-offwhite{ color: #F2F3F4 !important; }
+                 .darkcolor-gray{ color: #999999 !important; }
+   
+                /* Custom Dark Mode Text Link Color */
+                .link { color: #91ADD4 !important; }
+            } 
+            /* Shows Dark Mode-Only Content, Like Images */
+            [data-ogsc] .dark-img { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+            [data-ogsc] .dark-img2 { display:block !important; width: 100% !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+            [data-ogsc] .dark-imglow { display:block !important; width: 147px !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+            /* Hides Light Mode-Only Content, Like Images */
+            [data-ogsc] .light-img { display:none; display:none !important; }
+  
+            /* Custom Dark Mode Background Color */
+            [data-ogsc] .darkmodeblack { color:#c2c2c2 !important; background-color: #0e0e0e !important;}
+            [data-ogsc] .darkmodelowblack { background-color: #151515 !important; }
+            [data-ogsc] .darkmodetoolowblack { background-color: #242828 !important; }
+            [data-ogsc] .darkmodegraybg { background-color: #333333 !important; }
+  
+            /* Custom Dark Mode Font Colors */
+            [data-ogsc] h1, [data-ogsc] h2, [data-ogsc] p, [data-ogsc] span, [data-ogsc] a, [data-ogsc] b { color: #ffffff !important; }
+            [data-ogsc] .darkmodegray { color: #6e6e6e !important; }
+            [data-ogsc] .darkcolor-subtext{ color: #c2c2c2 !important; }
+            [data-ogsc] .darkcolor-white{ color: #ffffff !important; }
+            [data-ogsc] .darkcolor-offwhite{ color: #F2F3F4 !important; }
+            [data-ogsc] .darkcolor-gray{ color: #999999 !important; }
+  
+            /* Custom Dark Mode Text Link Color */
+            [data-ogsc] .link { color: #91ADD4 !important; }
+
+            @media (prefers-color-scheme: dark ) and (max-width: 620px)  {
+                .mobile-dark-displaynone{ display:none !important;}
+                [data-ogsc] .mobile-dark-displaynone{ display:none !important;}
+
+                .mobile-dark-display{ display:block !important;width: 100% !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important;}
+                [data-ogsc].mobile-dark-display{ display:block !important;width: 100% !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+
+                .mobile-dark-bg{ background-color:#202020 !important;}
+                [data-ogsc] .mobile-dark-bg{ background-color:#202020!important;}
+
+                .dark-lowwidth-m{ display:block !important;width: 140px !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important;}
+                [data-ogsc].dark-lowwidth-m{ display:block !important;width: 140px !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+            }        
+          
+        </style>
+    </head>
+    <body style="background-color: #eeeeee; margin: 0 !important; padding: 0 !important;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <!-- HERO CARD -->
+            <tr>
+                <td align="center" style="padding: 10px 0px 0px 0px;background-color: #eeeeee;" class="mobile-low-top-padding" >
+                    <!--[if (gte mso 9)|(IE)]>
+                    <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600">
+                    <![endif]-->
+                    <table  border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #fff; max-width: 600px;">
+                        <tr>
+                            <td  align="center" style="padding: 30px 30px 20px;background-color: #fff;" class="darkmodeblack">
+                                <a href="https://eu.deriv.com/academy/" target="_blank">
+                                    <img class="light-img mb-lowwidth" src="https://static.deriv.com/logos/academy.png" width="147" style="display: block;" alt="Deriv.com">
+                                    <div class="dark-imglow" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center">
+                                        <img src="https://static.deriv.com/logos/academy-white.png" width="147" height="18" class="dark-lowwidth-m" alt="Deriv.com" style="color: #ffffff; font-family:'proxima_nova', Helvetica, Arial, sans-serif; text-align:center; font-weight:bold; font-size:36px; line-height:40px; text-decoration: none; margin: 0 auto; padding: 0;" border="0" /> 
+                                    </div>                                   
+                                </a>
+                            </td>
+                        </tr>   
+                        <tr>
+                            <td align="center" style="padding: 15px 50px 60px; background-color: #fff;" class="mobile-sideL darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 38px; line-height: 1.3 ; color: #333333; font-weight: 700;margin:0;" class="darkcolor-white mb-title-font">Go beyond average trading</p>
+                            </td>
+                        </tr>             
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]></td></tr></table>
+                    <![endif]-->
+                </td>
+            </tr>
+            <!-- END HERO -->
+            <tr>
+                <td bgcolor="#eeeeee" align="center" style="padding: 0px;">
+                    <!--[if (gte mso 9)|(IE)]>
+                    <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" ><tr><td align="center" valign="top" width="600">
+                    <![endif]-->
+                    <table  border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff; max-width: 600px;">
+                        <tr>
+                            <td  align="center" style="padding: 0 28px 20px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px;" class="darkcolor-offwhite">We know your trading journey can sometimes be a roller coaster ride, but don’t let that demotivate you.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td  align="center" style="padding: 0 28px 10px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px;" class="darkcolor-offwhite">You can master your trading strategy, and here’s our exclusive collection of resources to help you become the best trader you can be.</p>
+                            </td>
+                        </tr>
+                        <!-- button -->
+                        <tr>
+                            <td colspan="2" bgcolor="#ffffff" align="center" style="padding: 15px 30px 40px; color: #333333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 24px;" class="darkmodeblack">
+                                <!--[if (gte mso 9)|(IE)]>
+                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://eu.deriv.com/academy/" target="_blank" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="8%" stroke="f" fillcolor="#ff444f">
+                                    <w:anchorlock/>
+                                    <center style="color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:bold;">Go to Academy</center>
+                                    </v:roundrect>
+                                <![endif]-->
+                                <a class="button" href="https://eu.deriv.com/academy/" target="_blank" style="mso-hide:all;">Go to Academy</a>
+                            </td>
+                        </tr>
+                        <tr class="mobile-hide">
+                            <td bgcolor="#fff" align="center"  class="darkmodeblack">
+                                <a href="https://eu.deriv.com/academy/blog/posts/how-to-avoid-trading-scams/" target="_blank">
+                                <input type="image" class="g-img" src="https://static.deriv.com/email/images/design/exclamation.png" width=“300px" style="display: block;outline:none"/></a><div></div>
+                            </td>
+                        </tr>
+                        <div >
+                            <tr style="display: none; mso-hide:all;" class="mobile-visible-block">
+                                <td bgcolor="#fff" align="center" class="darkmodeblack" >
+                                    <a href="https://eu.deriv.com/academy/blog/posts/how-to-avoid-trading-scams/" target="_blank">
+                                    <input type="image" class="g-img" src="https://static.deriv.com/email/images/design/exclamation-m.png" width="100%" style="display: block;outline:none"/></a><div></div>
+                                </td>
+                            </tr>  
+                        </div>  
+                        <tr>
+                            <td  align="center" style="padding: 30px 100px 20px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 30px; font-weight: 700; line-height: 39px; margin: 0px;" class="darkcolor-offwhite mb-font-size"><a href="https://eu.deriv.com/academy/blog/posts/how-to-avoid-trading-scams/" target="_blank" style="color: #333333" class="darkcolor-offwhite">How to avoid trading scams</a></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td  align="center" style="padding: 0 130px 20px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px;" class="darkcolor-offwhite">Find out how to recognise the most common types of online trading scams, and how to identify legitimate trading platforms and brokers.</p>
+                            </td>
+                        </tr> 
+                        <tr>
+                            <td  align="center" style="padding: 0 130px 40px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px;" class="darkcolor-subtext"><a href="https://eu.deriv.com/academy/blog/posts/how-to-avoid-trading-scams/" target="_blank" style="color: #ff444f !important">Go to the article ></a></p>
+                            </td>
+                        </tr>
+                        <tr class="mobile-hide">
+                            <td bgcolor="#fff" align="center"  class="darkmodeblack">
+                                <a href="https://eu.deriv.com/academy/blog/posts/what-is-cryptocurrency/" target="_blank">
+                                <input type="image" class="g-img" src="https://static.deriv.com/email/images/design/coin.png" width=“300px" style="display: block;outline:none"/></a><div></div>
+                            </td>
+                        </tr>
+                        <div >
+                            <tr style="display: none; mso-hide:all;" class="mobile-visible-block">
+                                <td bgcolor="#fff" align="center" class="darkmodeblack" >
+                                    <a href="https://eu.deriv.com/academy/blog/posts/what-is-cryptocurrency/" target="_blank">
+                                    <input type="image" class="g-img" src="https://static.deriv.com/email/images/design/coin-m.png" width="100%" style="display: block;outline:none"/></a><div></div>
+                                </td>
+                            </tr>  
+                        </div>  
+                        <tr>
+                            <td  align="center" style="padding: 30px 100px 20px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 30px; font-weight: 700; line-height: 39px; margin: 0px;" class="darkcolor-offwhite mb-font-size"><a href="https://eu.deriv.com/academy/blog/posts/what-is-cryptocurrency/" target="_blank" style="color: #333333" class="darkcolor-offwhite">What is cryptocurrency?</a></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td  align="center" style="padding: 0 130px 20px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px;" class="darkcolor-offwhite">Wondering what the crypto buzz is? Discover all the basics about cryptocurrency trading — what it is, why it’s secure, and how to choose one to trade.</p>
+                            </td>
+                        </tr> 
+                        <tr>
+                            <td  align="center" style="padding: 0 130px 40px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px;" class="darkcolor-subtext"><a href="https://eu.deriv.com/academy/blog/posts/what-is-cryptocurrency/" target="_blank" style="color: #ff444f !important">Go to the article ></a></p>
+                            </td>
+                        </tr> 
+                        <tr class="mobile-hide">
+                            <td bgcolor="#fff" align="center"  class="darkmodeblack">
+                                <a href="https://eu.deriv.com/academy/blog/posts/fundamental-analysis-for-beginners/" target="_blank">
+                                <input type="image" class="g-img" src="https://static.deriv.com/email/images/design/chart.png" width=“300px" style="display: block;outline:none"/></a><div></div>
+                            </td>
+                        </tr>
+                        <div >
+                            <tr style="display: none; mso-hide:all;" class="mobile-visible-block">
+                                <td bgcolor="#fff" align="center" class="darkmodeblack" >
+                                    <a href="https://eu.deriv.com/academy/blog/posts/fundamental-analysis-for-beginners/" target="_blank">
+                                    <input type="image" class="g-img" src="https://static.deriv.com/email/images/design/chart-m.png" width="100%" style="display: block;outline:none"/></a><div></div>
+                                </td>
+                            </tr>  
+                        </div>  
+                        <tr>
+                            <td  align="center" style="padding: 30px 130px 20px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 30px; font-weight: 700; line-height: 39px; margin: 0px;" class="darkcolor-offwhite mb-font-size"><a href="https://eu.deriv.com/academy/blog/posts/fundamental-analysis-for-beginners/" target="_blank" style="color: #333333" class="darkcolor-offwhite">Fundamental analysis for beginners</a></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td  align="center" style="padding: 0 140px 20px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px;" class="darkcolor-offwhite">Fundamental analysis helps in predicting future price movements by evaluating economic and political factors. Read all about it to improve your trading strategy.</p>
+                            </td>
+                        </tr> 
+                        <tr>
+                            <td  align="center" style="padding: 0 130px 40px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px;" class="darkcolor-subtext"><a href="https://eu.deriv.com/academy/blog/posts/fundamental-analysis-for-beginners/" target="_blank" style="color: #ff444f !important">Go to the article ></a></p>
+                            </td>
+                        </tr>  
+                        <tr class="mobile-hide">
+                            <td bgcolor="#fff" align="center"  class="darkmodeblack">
+                                <a href="https://eu.deriv.com/academy/blog/posts/beginners-guide-the-dos-and-don-ts-of-cfd-trading/" target="_blank">
+                                <input type="image" class="g-img" src="https://static.deriv.com/email/images/design/cfd.png" width=“300px" style="display: block;outline:none"/></a><div></div>
+                            </td>
+                        </tr>
+                        <div >
+                            <tr style="display: none; mso-hide:all;" class="mobile-visible-block">
+                                <td bgcolor="#fff" align="center" class="darkmodeblack" >
+                                    <a href="https://eu.deriv.com/academy/blog/posts/beginners-guide-the-dos-and-don-ts-of-cfd-trading/" target="_blank">
+                                    <input type="image" class="g-img" src="https://static.deriv.com/email/images/design/cfd.png" width="100%" style="display: block;outline:none"/></a><div></div>
+                                </td>
+                            </tr>  
+                        </div>  
+                        <tr>
+                            <td  align="center" style="padding: 30px 150px 20px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 30px; font-weight: 700; line-height: 39px; margin: 0px;" class="darkcolor-offwhite mb-font-size"><a href="https://eu.deriv.com/academy/blog/posts/beginners-guide-the-dos-and-don-ts-of-cfd-trading/" target="_blank" style="color: #333333" class="darkcolor-offwhite">Dos and don’ts of CFD trading</a></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td  align="center" style="padding: 0 130px 20px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px;" class="darkcolor-offwhite">Wondering where to begin with CFD trading? Here’s a list of the main dos and don’ts to get you started.</p>
+                            </td>
+                        </tr> 
+                        <tr>
+                            <td  align="center" style="padding: 0 130px 50px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 16px; font-weight: 400; line-height: 24px; margin: 0px;" class="darkcolor-subtext"><a href="https://eu.deriv.com/academy/blog/posts/beginners-guide-the-dos-and-don-ts-of-cfd-trading/" target="_blank" style="color: #ff444f !important">Go to the article ></a></p>
+                            </td>
+                        </tr>
+                        <tr class="mobile-hide">
+                            <td style="padding: 40px 0 5px; background-color: #F2F3F4;" align="center"  class="darkmodegraybg">
+                                <a href="https://eu.deriv.com/academy/videos/how-to-place-a-deriv-multipliers-trade/" target="_blank">
+                                <input type="image" class="g-img" src="https://static.deriv.com/email/images/design/multiplier.png" width=“300px" style="display: block;outline:none"/></a><div></div>
+                            </td>
+                        </tr>
+                        <div >
+                            <tr style="display: none; mso-hide:all;" class="mobile-visible-block" bgcolor="#F2F3F4">
+                                <td style="padding: 30px 0 5px; background-color: #F2F3F4;" align="center" class="darkmodegraybg" >
+                                    <a href="https://eu.deriv.com/academy/videos/how-to-place-a-deriv-multipliers-trade/" target="_blank">
+                                    <input type="image" class="g-img" src="https://static.deriv.com/email/images/design/multiplier-m.png" width="80%" style="display: block;outline:none"/></a><div></div>
+                                </td>
+                            </tr>  
+                        </div>  
+                        <tr>
+                            <td  align="center" style="padding: 20px 130px 5px; background-color: #F2F3F4;" class="mobile-side darkmodegraybg">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 30px; font-weight: 700; line-height: 39px; margin: 0px;" class="darkcolor-offwhite mb-font-size"><a href="https://eu.deriv.com/academy/videos/how-to-place-a-deriv-multipliers-trade/" target="_blank" style="color: #333333" class="darkcolor-offwhite">This month’s video</a></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td  align="center" style="padding: 0 130px 20px; background-color: #F2F3F4;" class="mobile-side darkmodegraybg">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 15px; font-weight: 400; line-height: 24px; margin: 0px;" class="darkcolor-offwhite">How to place a Deriv multipliers trade</p>
+                            </td>
+                        </tr>
+                        <tr class="mobile-hide">
+                            <td bgcolor="#fff" align="center"  class= "darkmodeblack">
+                                <a href="https://eu.deriv.com/academy/blog/posts/market-news-29-08-2022-04-09-2022/" target="_blank">
+                                <input type="image" class="g-img" src="https://static.deriv.com/email/images/design/Jun-report.png" width=“125px;" style="display: block;outline:none; padding: 40px 0 10px;"/></a><div></div>
+                            </td>
+                        </tr>
+                        <div >
+                            <tr style="display: none; mso-hide:all;" class="mobile-visible-block">
+                                <td bgcolor="#fff" align="center" width="600" class="darkmodeblack" >
+                                    <a href="https://eu.deriv.com/academy/blog/posts/market-news-29-08-2022-04-09-2022/" target="_blank">
+                                    <input type="image" class="g-img" src="https://static.deriv.com/email/images/design/Jun-report.png" width="100" style="display: block;outline:none; padding: 40px 0 10px"/></a><div></div>
+                                </td>
+                            </tr>  
+                        </div>  
+                        <tr>
+                            <td  align="center" style="padding: 15px 130px 5px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 30px; font-weight: 700; line-height: 39px; margin: 0px;" class="darkcolor-offwhite mb-font-size">Market reports</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td  align="center" style="padding: 0 130px 15px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 15px; font-weight: 400; line-height: 24px; margin: 0px;" class="darkcolor-offwhite">Stay up-to-date with our weekly market reports. Read the latest report <a href="https://eu.deriv.com/academy/blog/posts/market-news-29-08-2022-04-09-2022/" target="_blank" style="color: #ff444f !important">here</a>.</p>
+                            </td>
+                        </tr>
+                        <!-- light -->
+                        <tr>
+                            <td align="center" style="padding: 40px 30px 30px; background-color: #ddd;" class="mobile-side light-img">
+                                <p style="text-align: center;margin: 0;"><a href="https://www.trustpilot.com/review/deriv.com?utm_medium=Trustbox&amp;utm_source=EmailNewsletter1" style="text-decoration: none;"><img src="https://emailsignature.trustpilot.com/newsletter/en-US/1/5ed4c8a9f74f310001f51bf7/text1@2x.png" border="0" height="18" alt="Human score" style="max-height: 18px;"></a> &nbsp;&nbsp; <a href="https://www.trustpilot.com/review/deriv.com?utm_medium=Trustbox&amp;utm_source=EmailNewsletter1" style="text-decoration: none;"><img src="https://emailsignature.trustpilot.com/newsletter/en-US/1/5ed4c8a9f74f310001f51bf7/stars@2x.png" border="0" height="20" alt="Trustpilot Stars" style="max-height: 20px;"></a> &nbsp;&nbsp; <span style="display: inline-block;"><a href="https://www.trustpilot.com/review/deriv.com?utm_medium=Trustbox&amp;utm_source=EmailNewsletter1" style="text-decoration: none;"><img src="https://emailsignature.trustpilot.com/newsletter/en-US/1/5ed4c8a9f74f310001f51bf7/text2@2x.png" border="0" height="18" alt="number of reviews" style="max-height: 18px;"></a> &nbsp;&nbsp; <a href="https://www.trustpilot.com/review/deriv.com?utm_medium=Trustbox&amp;utm_source=EmailNewsletter1" style="text-decoration: none;"><img src="https://emailsignature.trustpilot.com/brand/n/1/logo.png" border="0" height="20" alt="Trustpilot Logo" style="max-height: 20px; display: inline-block;"></a></span></p>
+                            </td>
+                        </tr>
+                        <!-- dark except gmail --> 
+                        <tr>
+                            <td align="center" style="padding: 40px 30px 30px;  background-color: #fff; display: none;" class="mobile-side dark-img darkmodeblack">
+                                <p style="text-align: center;margin: 0;"><a href="https://www.trustpilot.com/review/deriv.com?utm_medium=Trustbox&amp;utm_source=EmailNewsletter1" style="text-decoration: none;"><img src="https://emailsignature.trustpilot.com/newsletter/en-US/1/5ed4c8a9f74f310001f51bf7/text1_dark@2x.png" border="0" height="18" alt="Human score" style="max-height: 18px;"></a> &nbsp;&nbsp; <a href="https://www.trustpilot.com/review/deriv.com?utm_medium=Trustbox&amp;utm_source=EmailNewsletter1" style="text-decoration: none;"><img src="https://emailsignature.trustpilot.com/newsletter/en-US/1/5ed4c8a9f74f310001f51bf7/stars@2x.png" border="0" height="20" alt="Trustpilot Stars" style="max-height: 20px;"></a> &nbsp;&nbsp; <span style="display: inline-block;"><a href="https://www.trustpilot.com/review/deriv.com?utm_medium=Trustbox&amp;utm_source=EmailNewsletter1" style="text-decoration: none;"><img src="https://emailsignature.trustpilot.com/newsletter/en-US/1/5ed4c8a9f74f310001f51bf7/text2_dark@2x.png" border="0" height="18" alt="number of reviews" style="max-height: 18px;"></a> &nbsp;&nbsp; <a href="https://www.trustpilot.com/review/deriv.com?utm_medium=Trustbox&amp;utm_source=EmailNewsletter1" style="text-decoration: none;"><img src="https://emailsignature.trustpilot.com/brand/n/1/logo_dark.png" border="0" height="20" alt="Trustpilot Logo" style="max-height: 20px; display: inline-block;"></a></span></p>
+                            </td>
+                        </tr>
+                        </table>
+                    <!--[if (gte mso 9)|(IE)]></td></tr></table>
+                    <![endif]-->
+                </td>
+            </tr>
+            <!-- END CARD2 -->                                                      
+            <!-- FOOTER -->
+            <tr>
+                <td bgcolor="#eeeeee" align="center" style="padding: 0 0 10px;" class="mobile-nopadding">
+                    <!--[if (gte mso 9)|(IE)]>
+                        <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600" bgcolor="#ffffff">
+                    <![endif]-->
+                    <table bgcolor="#fff" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;" class="darkmodeblack">
+                         <!-- SOCIAL -->
+                    <tr>
+                        <td align="center" style="padding: 30px 20px 0; color: #ffffff; font-family: 'IBM Plex Sans', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;" class="darkmodeblack">
+                            <p style="margin: 0;">
+                                <a href="https://twitter.com/deriv_eu?s=21&t=EDTXc_hxcqUMqvECwPXQzw" target="_blank" style="text-decoration: none;">
+                                    <img src="https://static.deriv.com/email/images/icons/twitter.png" height="32" width="32" alt="Deriv.com on Twitter" title="Deriv.com on Twitter" />
+                                </a>&nbsp;&nbsp;
+                                <a href="https://www.facebook.com/DerivEU/" target="_blank" style="text-decoration: none;">
+                                    <img src="https://static.deriv.com/email/images/icons/facebook.png" height="32" width="32" alt="Deriv.com on Facebook" title="Deriv.com on Facebook" />
+                                </a>&nbsp;&nbsp;
+                                <a href="https://instagram.com/deriv_eu?igshid=YmMyMTA2M2Y=" target="_blank" style="text-decoration: none;">
+                                    <img src="https://static.deriv.com/email/images/icons/instagram.png" height="32" width="32" alt="Deriv.com on Instagram" title="Deriv.com on Instagram" />
+                                </a>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="left" style="padding: 10px 44px 10px; background-color: #fff;" class="mobile-side darkmodeblack">
+                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 12px; font-weight: 400; line-height: 24px;" class="darkcolor-gray">This email is a marketing email intended for Retail and Professional Clients and has been issued by Deriv Investments (Europe) Limited with the registered address: W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta.</p> 
+                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 12px; font-weight: 400; line-height: 24px;" class="darkcolor-gray">Deriv Investments (Europe) Limited is licensed in Malta and regulated by the Malta Financial Services Authority under the Investment Services Act, to provide investment services in the European Union.</p>
+                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 12px; font-weight: 400; line-height: 24px;" class="darkcolor-gray">Deriv Investments (Europe) Limited is authorised to deal on its own account and is both the manufacturer and distributor of its products.</p>
+                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 12px; font-weight: 400; line-height: 24px;" class="darkcolor-gray">The products offered by Deriv Investments (Europe) Limited, including CFDs are classed as ‘complex products’ and may not be suitable for retail clients. CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. 69% of retail investor accounts lose money when trading CFDs with this provider. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money.</p>
+                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 12px; font-weight: 400; line-height: 24px;" class="darkcolor-gray">The products may be affected by changes in currency exchange rates; If you invest in this product, you may lose some or all of the money you invest; The value of your investment may go down as well as up.</p>
+                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 12px; font-weight: 400; line-height: 24px;" class="darkcolor-gray">Deriv Investments (Europe) Limited does not offer investment advice.</p>
+                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #333333; font-size: 12px; font-weight: 400; line-height: 24px;" class="darkcolor-gray">We will never share our email lists and other data with a third party. To learn more about how we protect your personal and financial information, please read our security and privacy policy.</p>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td bgcolor="#fff" align="center" style="color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="darkmodeblack">
+                                <p style="padding: 0px 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 400; line-height: 16px; margin: 5px 0px 5px 0px;"><a href="https://eu.deriv.com/help-centre/" target="_blank" style="color: #ff444f !important">Help Centre</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://eu.deriv.com/terms-and-conditions/#clients" target="_blank" style="color: #ff444f !important">Terms and conditions</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://eu.deriv.com/tnc/security-and-privacy.pdf" target="_blank" style="color: #ff444f !important">Security and privacy</a></p>
+                                <p style="padding: 0 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #999999; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0px 0px 5px 0px;" class="darkmodegray">No longer want to receive these emails? <a href="https://app.deriv.com/account/personal-details" target="_blank" style="mso-hide:all; color: #ff444f !important;" class="darkcolor-gray">Unsubscribe</a></p>
+                            </td>
+                        </tr>                        
+                        <tr>
+                            <td  align="center" style="padding: 30px;" class="darkmodeblack">
+                                <a href="https://eu.deriv.com/" target="_blank">
+                                    <img src="https://static.deriv.com/logos/deriv-gray.png" width="66" height="12"  style="display: block;" alt="Deriv.com">                                   
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                        </td></tr></table>
+                    <![endif]-->
+                </td>
+            </tr>
+            <!--End FOOTER -->
+        </table>
+    </body>
+    <!-- end message template -->
+</html>
