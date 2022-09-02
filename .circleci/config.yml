@@ -34,18 +34,24 @@ commands:
             - ".git"
   docker_build_push:
     description: "Build and Push image to docker hub"
+    parameters:
+      docker_image_latest_tag:
+        type: string
+        default: "latest-staging"
     steps:
       - setup_remote_docker
       - run:
           name: Building docker image
           command: |
-            docker build -t ${DOCKHUB_ORGANISATION}/static-deriv-app:${CIRCLE_SHA1} -t ${DOCKHUB_ORGANISATION}/static-deriv-app:latest .
+            TAG=${CIRCLE_TAG:-$CIRCLE_SHA1}
+            docker build -t ${DOCKHUB_ORGANISATION}/static-deriv-app:${TAG} -t ${DOCKHUB_ORGANISATION}/static-deriv-app:<< parameters.docker_image_latest_tag >> .
       - run:
           name: Pushing Image to docker hub
           command: |
+            TAG=${CIRCLE_TAG:-$CIRCLE_SHA1}
             echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
-            docker push ${DOCKHUB_ORGANISATION}/static-deriv-app:${CIRCLE_SHA1}
-            docker push ${DOCKHUB_ORGANISATION}/static-deriv-app
+            docker push ${DOCKHUB_ORGANISATION}/static-deriv-app:${TAG}
+            docker push ${DOCKHUB_ORGANISATION}/static-deriv-app:<< parameters.docker_image_latest_tag >>
   deploy:
     description: "Deploy to static branches"
     parameters:
@@ -86,11 +92,12 @@ commands:
       - run:
           name: Deploying to k8s cluster for service static-deriv-app
           command: |
+            TAG=${CIRCLE_TAG:-$CIRCLE_SHA1}
             export NAMESPACE=<< parameters.k8s_namespace >>
             git clone https://github.com/binary-com/devops-ci-scripts
             cd devops-ci-scripts/k8s-build_tools
             echo $CA_CRT | base64 --decode > ca.crt
-            ./release.sh static-deriv-app << parameters.k8s_version >>
+            ./release.sh static-deriv-app ${TAG}
 
   notify_slack:
     description: "Notify slack"
@@ -107,28 +114,28 @@ commands:
       - run:
           name: "Publish to cloudflare pages (staging)"
           command: |
-            mkdir dist 
+            mkdir dist
             cp -r */ dist/ || true
             cp landing.html dist/
             cp index.html dist/
             cd dist
             npx wrangler pages publish . --project-name=deriv-static-content-pages --branch=staging
             echo "New staging website - http://staging.cf-pages-deriv-static-content.deriv.com"
-            
+
   publish_to_pages_production:
     description: "Publish to cloudflare pages"
     steps:
       - run:
           name: "Publish to cloudflare pages (production)"
           command: |
-            mkdir dist 
+            mkdir dist
             cp -r */ dist/ || true
             cp landing.html dist/
             cp index.html dist/
             cd dist
             npx wrangler pages publish . --project-name=deriv-static-content-pages --branch=main
             echo "New website - http://cf-pages-deriv-static-content.deriv.com"
-            
+
 jobs:
   release_staging:
     docker:
@@ -144,7 +151,8 @@ jobs:
       - publish_to_pages_production
       - deploy:
           target_branch: "production"
-      - docker_build_push
+      - docker_build_push:
+          docker_image_latest_tag: latest
       - k8s_deploy
       - notify_slack
 workflows:
