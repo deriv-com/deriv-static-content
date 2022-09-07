@@ -95,6 +95,7 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
     "utm_term",
     "utm_content",
     "utm_ad_id",
+    "utm_click_id",
     "utm_adgroup_id",
     "utm_campaign_id",
   ];
@@ -104,11 +105,7 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
 
   // If the user comes to the site for the first time without any URL params
   // Only set the utm_source to referrer if the user does not have utm_data cookies stored
-  if (!getCookie("utm_data")) {
-    utm_data = {
-      utm_source: document.referrer ? document.referrer : "null",
-    };
-  }
+  utm_data["utm_source"] = document.referrer? document.referrer: "null";
 
   // If the user has any new UTM params, store them
   utm_fields.forEach((field) => {
