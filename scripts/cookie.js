@@ -125,7 +125,9 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
       .replaceAll("%7B", "{")
       .replaceAll("%7D", "}");
 
-    document.cookie = `utm_data=${utm_data_cookie}; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+    // Non-expiring cookie for utm_data
+    // Max 400 days
+    document.cookie = `utm_data=${utm_data_cookie}; expires=Tue, 19 Jan 9999 03:14:07 UTC; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
   }
 
   /* end handling UTMs */
