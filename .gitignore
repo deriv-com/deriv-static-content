@@ -5,7 +5,6 @@ dist
 upload
 deploy.log
 package-lock.json
-*.js
 # Compiled source #
 ###################
 *.com
@@ -53,8 +52,4 @@ secrets.json
 .jekyll-metadata
 .ruby-version
 .vscode/*
-<<<<<<< HEAD
-
-=======
->>>>>>> upsteam/master
 .vercel
