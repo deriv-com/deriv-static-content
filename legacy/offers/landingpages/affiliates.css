@@ -1,0 +1,143 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color:#f6f5fa;
+}
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #1E3C6E;
+	font-size: 30px;
+}
+
+h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	color:#1E3C6E;
+	margin-top: 0;
+	font-size: 20px;
+}
+.quote {
+	margin-top: 21px;
+}
+h3 {
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+	color: black;	
+	font-size: 21px;
+	margin-left: 23px;
+	margin-bottom: -18px;
+}
+p {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #404041;
+}
+li {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #404041;
+}
+
+#container {
+	width: 840px;
+	margin: 0px auto;
+	padding:0;
+	background-color:#FFFFFF;
+
+}
+
+h2#tagline {
+	padding:0;
+	position: absolute;
+	top:104px;
+	margin-left: 40px;
+	left: 274px;
+}
+
+.mainwrapper {
+margin:0 35px;
+width:770px;
+}
+
+.heading {
+	 background-image: url('top_banner.gif?aaa');
+	 margin-top:0;
+	 width:770px;
+	 height:71px;
+}
+
+.biglikeme {
+	background-image: url('background_big.png?aaa');
+	margin-top:15px;
+	 width:770px;
+	 height:250px;
+}
+
+.headertext {
+	margin-left: 30px;
+	height:50%;
+	background:none;
+	width: 300px;
+	height: 200px;
+	float:left;
+}
+
+.bigicon {
+	background-image: url('icon_prize.png?aaa');
+	width: 400px;
+	height: 200px;
+	float: left;
+	background-repeat: no-repeat;
+	margin-top: 20px;		
+}
+
+.textcontent {
+	padding :20px 20px 0 20px;
+}
+
+.button {
+	background-color:#ffffff;
+	background-image:url('button.png?aaa');
+	background-position:center;
+	background-repeat:no-repeat;
+	margin: 50px auto 50px;
+	width: 427px;
+	height: 40px;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 20px;
+	}
+	
+.footer {
+	margin-left: -15px;
+	margin-right: 0;
+	background-image:url('bottom_bluebox.png?aaa');
+	background-repeat: no-repeat;
+	width: 770px;
+	height: 30px;
+	padding-left: 30px;
+	padding-top: 15px;
+}	
+
+.footer_text {
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: left;
+}
+
+.shadowbottom{
+	background-image:url('shadowbottom.png?aaa');
+	background-repeat: no-repeat;
+	width: 840px;
+	height: 20px;
+}
+
+.wrap-1 {
+background-image:url('shadowleft.png');
+background-repeat:repeat-y;
+}
+.wrap-2 {
+background-image:url('shadowright.png');
+background-position:100% 0;
+background-repeat:repeat-y;
+}
