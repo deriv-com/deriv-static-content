@@ -1,0 +1,308 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color:#f6f5fa;
+}
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #072365;
+    font-size: 28px;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    color:#072365;
+    margin-top: 0;
+    font-size: 20px;
+}
+.quote {
+    margin-top: 21px;
+}
+h3 {
+    font-family:Arial, Helvetica, sans-serif; 
+    font-size:17px; 
+    font-weight:bold; 
+    color:#072365;
+    margin: 0px auto;
+    
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #404041;
+}
+li {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #404041;
+    line-height: 1.7em;
+}
+
+#container {
+    width: 840px;
+    margin: 0px auto;
+    padding: 0;
+    background-color: #FFFFFF;
+
+}
+
+h2#tagline {
+    padding:0;
+    position: absolute;
+    top:104px;
+    margin-left: 40px;
+    left: 274px;
+}
+
+
+.greenbutton {
+    background-image:url('http://offers-binary.appspot.com/landingpages/button-green_active_vg.png');
+    background-position:center;
+    background-repeat:no-repeat;
+    width: 251px;
+    height: 55px;
+}
+
+
+.redbutton {
+    background-image:url('http://offers-binary.appspot.com/landingpages/button-red_active_vg.png');
+    background-position:center;
+    background-repeat:no-repeat;
+    width: 156px;
+    height: 55px;
+}
+
+
+a.greenbuttontext {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: white;
+    text-shadow: black 0px -1px 0px;
+    font-weight:bold;
+    display:block;
+    line-height: 1.2em;
+    padding:8px 40px 5px 20px;
+    text-decoration:none;
+}
+a.greenbuttontext:hover {
+    text-decoration: underline;
+}
+
+
+a.redbuttontext {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: white;
+    text-shadow: black 0px -1px 0px;
+    font-weight:bold;
+    display:block;
+    line-height: 1.2em;
+    padding:8px 10px 5px 10px;
+    text-decoration:none;
+}
+a.redbuttontext:hover {
+    text-decoration: underline;
+}
+
+a.bluebuttontext {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: white;
+    text-shadow: black 0px -1px 0px;
+    font-weight:bold;
+    display:block;
+    line-height: 1.2em;
+    padding:8px 40px 5px 20px;
+    text-decoration:none;
+}
+a.bluebuttontext:hover {
+    text-decoration: underline;
+}
+
+.bluebutton {
+    background-image:url('http://offers-binary.appspot.com/images/thunderbell_button_short.png');
+    background-position:center;
+    background-repeat:no-repeat;
+    width: 146px;
+    height: 40px;
+    float: left;
+    display:block;
+    margin: 20px 10px 0px;
+    
+}
+
+a.bluebuttontext {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: white;
+    text-shadow: black 0px -1px 0px;
+    font-weight:bold;
+    display:block;
+    line-height: 1.2em;
+    padding:10px 25px 5px 23px;
+    text-decoration:none;
+}
+a.bluebuttontext:hover {
+    text-decoration: underline;
+}
+
+.mainwrapper {
+margin:0 35px;
+width:770px;
+background-color: white;
+}
+
+.heading {
+     background-image: url('http://offers-binary.appspot.com/images/thunderbell_top_banner.gif');
+     margin-top:0;
+     width:770px;
+     height:71px;
+}
+
+.gradientabove {
+    background-image: url('http://offers-binary.appspot.com/landingpages/background_big.png');
+    margin-top:15px;
+     width:770px;
+     height:250px;
+     background-position:bottom;
+     background-repeat:no-repeat;
+}
+
+.headertext {
+    margin: 20px 0px 0 0;
+    height:50%;
+    background:none;
+    width: auto;
+    height: 300px;
+    float:left;
+}
+
+.deposit-bonus_image_vg {
+    background-image: url('http://offers-binary.appspot.com/landingpages/deposit-bonus_image_vg.png');
+    width: 300px;
+    height: 270px;
+    float: left;
+    background-repeat: no-repeat;
+    margin: 20px 12px 0 15px;       
+}
+
+
+.table_button {
+    background-image: url('http://offers-binary.appspot.com/landingpages/deposit-bonus_image_vg.png');
+    width: 420px;
+    height: 100%;
+    float: top;
+    background-repeat: no-repeat;
+    margin: 20px 20px 0 15px;       
+}
+
+.textcontent {
+    padding :30px 30px 0 30px;
+    margin-top: 15px;
+    background-image:url('http://offers-binary.appspot.com/landingpages/background_below.png');
+    background-position:top;
+    background-repeat: no-repeat;
+}
+
+    
+.footer {
+    margin-left: 20px;
+    background-image:url('http://offers-binary.appspot.com/images/thunderbell_footer_bg.png');
+    background-repeat: no-repeat;
+    width: 770px;
+    height: 30px;
+    padding-left: 30px;
+    padding-top: 15px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: left;
+    display: block;
+}   
+
+.footer_text {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.shadowbottom{
+    background-image:url('http://offers-binary.appspot.com/landingpages/shadowbottom.png');
+    background-repeat: no-repeat;
+    width: 840px;
+    height: 20px;
+}
+
+.wrap-1 {
+background-image:url(http://offers-binary.appspot.com/landingpages/shadowleft.png);
+background-repeat:repeat-y;
+}
+.wrap-2 {
+background-image:url(http://offers-binary.appspot.com/landingpages/shadowright.png);
+background-position:100% 0;
+background-repeat:repeat-y;
+}
+
+.bluebuttonleft {
+    background-image: url('http://offers-binary.appspot.com/images/thunderbell_button_long.png');
+    background-position:left;
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 40px;
+    float: left;    
+}
+
+.bluebuttonmiddle {
+    background-image: url('http://offers-binary.appspot.com/images/thunderbell_button_long.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: auto;
+    height: 40px;
+    float: left;    
+}
+
+.bluebuttonright {
+    background-image: url('http://offers-binary.appspot.com/images/thunderbell_button_long.png');
+    background-position: right;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 40px;
+    float: left;    
+}   
+
+a.bluebuttonmiddletext {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: white;
+    text-shadow: black 0px -1px 0px;
+    font-weight:bold;
+    display:block;
+    line-height: 1.2em;
+    padding:10px 0 5px 0;
+    text-decoration:none;
+}
+a.bluebuttonmiddletext:hover {
+    text-decoration: underline;
+}
+
+
+.moneyparcell_blueribbon {
+    background-image: url('http://offers-binary.appspot.com/landingpages/moneyparcell_blueribbon.png');
+    width: 290px;
+    height: 250px;
+    float: left;
+    background-repeat: no-repeat;
+    margin: auto 20px auto 30px;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.headertextstd {
+    margin: 20px 30px 0 0;
+    background:none;
+    width: 400px;
+    height: 200px;
+    float:left;
+}

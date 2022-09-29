@@ -1,0 +1,32 @@
+/* style guide for success page */
+
+body {
+font-family: arial, Helvetiva, "sans-serif";
+font-size: 12px;
+color: #000;
+margin: 0;
+padding: 0;
+}
+
+a:link, a:hover, a:visited {
+font-family: arial, Helvetiva, "sans-serif";
+font-size: 12px;
+color: #072365;
+text-decoration: underline;
+}
+
+#sign_off p {
+font-family: arial, Helvetiva, "sans-serif";
+font-size: 12px;
+color: #000;
+line-height: 10%;
+}
+
+
+#sign_off a:link, a:hover, a:visited {
+font-family: arial, Helvetiva, "sans-serif";
+font-size: 12px;
+color: #072365;
+line-height: 10%;
+}
+
