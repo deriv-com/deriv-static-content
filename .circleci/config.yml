@@ -114,29 +114,8 @@ commands:
       - run:
           name: "Publish to cloudflare pages (staging)"
           command: |
-            mkdir dist
-            cp -r */ dist/ || true
-            cp landing.html dist/
-            cp index.html dist/
-            cp 404.html dist/
-            cd dist
-            npx wrangler pages publish . --project-name=deriv-static-content-pages --branch=staging
-            echo "New staging website - http://staging.cf-pages-deriv-static-content.deriv.com"
-
-  publish_to_pages_production:
-    description: "Publish to cloudflare pages"
-    steps:
-      - run:
-          name: "Publish to cloudflare pages (production)"
-          command: |
-            mkdir dist
-            cp -r */ dist/ || true
-            cp landing.html dist/
-            cp index.html dist/
-            cp 404.html dist/
-            cd dist
-            npx wrangler pages publish . --project-name=deriv-static-content-pages --branch=main
-            echo "New website - http://cf-pages-deriv-static-content.deriv.com"
+            cd public
+            npx wrangler pages publish . --project-name=isolate --branch=isolate
 
 jobs:
   release_staging:
@@ -145,32 +124,11 @@ jobs:
     steps:
       - git_checkout_from_cache
       - publish_to_pages_staging
-  release_production:
-    docker:
-      - image: cimg/node:18.4.0
-    steps:
-      - git_checkout_from_cache
-      - publish_to_pages_production
-      - deploy:
-          target_branch: "production"
-      - docker_build_push:
-          docker_image_latest_tag: latest
-      - k8s_deploy
-      - notify_slack
 workflows:
   release_staging:
     jobs:
       - release_staging:
-          context: binary-frontend-artifact-upload
+          #context: binary-frontend-artifact-upload
           filters:
             branches:
-              only: /^master$/
-  release_production:
-    jobs:
-      - release_production:
-          context: binary-frontend-artifact-upload
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /^production.*/
+              only: /^isolate_public$/
