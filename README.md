@@ -80,7 +80,33 @@ Example of release steps
     ```
 
 ## Test link Preview
-By Vercel CLI can have a preview then add to cards to check by Requesters, stakeholders or PMs.
+-  What is Vercel?
+
+    Vercel (https://vercel.com/) is a platform for frontend frameworks and static sites, built to integrate with your headless content, commerce, or database.
+    It will get your GitHub HTML files and publish them to generate a test link
+
+
+-  How to create a new project in Vercel?
+    (At this point, we understand that you already have a GitHub account)
+    
+    ```sh
+    1. You will need to create a Vercel account here: https://vercel.com/signup)
+    2. Connect your GitHub account
+    3. Click in “Add new... -> Project”
+    4. Click on “Continue with GitHub
+    5. Make sure your account is connected checking the field
+    6. Choose the repository you want to connect with your account and click “Import”
+    7. Wait Vercel load the files, and your project will be ready to be used!
+    ```
+
+-  For what will you use Vercel?
+    To have test links of the static pages.
+
+
+-  How to find links in Vercel?
+    You just need to add the path to your file in the repository after the domain address provided in the dashboard of your project (finishing with .vercel.app). Eg. <your_repository>.vercel.app/<your_file.html>
+
+
 
 ## Other documents:
 -   [File paths for images, pdf, email templates,...](https://github.com/binary-com/deriv-static-content/blob/master/documents/file-structure.md)
