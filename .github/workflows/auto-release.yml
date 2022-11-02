@@ -6,7 +6,7 @@ on:
         - 'master*'
         
 jobs:
-    sync-translation:
+    automate-deployment:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout 🛎️
@@ -18,7 +18,7 @@ jobs:
             - name: Check out to master ✔️
               run: git checkout master
             - name: Fetch tags 🌀
-              run: git fetch master
+              run: git fetch origin
             - name: Create new production tag 🚀
               run:  
                   npm run release
