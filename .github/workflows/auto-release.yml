@@ -1,0 +1,26 @@
+name: Auto Release
+
+on:
+  push:
+    branches:
+        - 'master*'
+        
+jobs:
+    sync-translation:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout 🛎️
+              uses: actions/checkout@v2.3.1
+            - name: Setup Node
+              uses: actions/setup-node@v2.1.2
+              with:
+                  node-version: '16.x'
+            - name: Check out to master ✔️
+            - run: git checkout master
+            - name: Fetch tags 🌀
+            - run: git fetch master
+            - name: Create new production tag 🚀
+              run:  
+                  npm run release
+                
+
