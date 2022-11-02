@@ -16,13 +16,13 @@ jobs:
               uses: actions/setup-node@v2.1.2
               with:
                   node-version: '16.x'
-            - name: Check out to master ✔️
-              run: git checkout master
             - name: Fetch tags 🌀
               run: git fetch origin
+            - name: Echo merged branch name 
+              run:  
+                  echo ${{ github.event.workflow_run.head_branch }}
             - name: Create new production tag 🚀
               run:  
-                  echo github.event.workflow_run.head_branch
                   npm run release
                 
 
