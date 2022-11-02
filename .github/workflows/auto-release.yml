@@ -20,7 +20,7 @@ jobs:
                     git config --global user.name "DerivFE"
                     git config --global user.email "80095553+DerivFE@users.noreply.github.com"
             - name: Fetch tags 🌀
-              run: git fetch origin
+              run: git fetch --unshallow --tags
             - name: Create new production tag 🚀
               run:  
                   npm run release
