@@ -29,6 +29,7 @@ jobs:
                 echo "GITHUB_HEAD_REF:$GITHUB_HEAD_REF"
             - name: Create new production tag 🚀
               run:  
+                  echo github.event.workflow_run.head_branch
                   npm run release
                 
 
