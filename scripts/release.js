@@ -41,12 +41,15 @@ exec("git fetch", (err, stdout) => {
       }
 
       if (isValidTag(stdout)) {
+        log(`Latest Production tag: ${stdout}`);
         const new_tag = generateNextTag(stdout);
 
-        console.log(new_tag);
-
         exec(`git tag ${new_tag}`, (err, stdout) => {
-          exec(`git push upstream ${new_tag}`);
+          exec(`git push origin ${new_tag}`, (err, stdout) => {
+            log(err);
+            log(stdout);
+            log(`${new_tag} has been pushed`);
+          });
         });
       } else {
         log("Latest tag is not a production tag!");
