@@ -46,8 +46,6 @@ exec("git fetch", (err, stdout) => {
 
         exec(`git tag ${new_tag}`, (err, stdout) => {
           exec(`git push origin ${new_tag}`, (err, stdout) => {
-            log(err);
-            log(stdout);
             log(`${new_tag} has been pushed`);
           });
         });
