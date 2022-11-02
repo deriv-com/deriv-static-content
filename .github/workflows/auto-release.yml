@@ -16,9 +16,9 @@ jobs:
               with:
                   node-version: '16.x'
             - name: Check out to master ✔️
-            - run: git checkout master
+              run: git checkout master
             - name: Fetch tags 🌀
-            - run: git fetch master
+              run: git fetch master
             - name: Create new production tag 🚀
               run:  
                   npm run release
