@@ -49,7 +49,7 @@ exec("git fetch", (err, stdout) => {
           exec(`git push upstream ${new_tag}`);
         });
       } else {
-        log("Not a production tag!");
+        log("Latest tag is not a production tag!");
       }
     }
   );
