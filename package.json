@@ -1,0 +1,19 @@
+{
+  "name": "static-content",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\"> static.deriv.com </h1>",
+  "main": "index.js",
+  "scripts": {
+    "release": "node scripts/release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prince-deriv/deriv-static-content.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prince-deriv/deriv-static-content/issues"
+  },
+  "homepage": "https://github.com/prince-deriv/deriv-static-content#readme"
+}
