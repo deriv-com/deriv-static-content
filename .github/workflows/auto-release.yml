@@ -18,7 +18,7 @@ jobs:
                   node-version: '16.x'
             - name: Fetch tags 🌀
               run: git fetch origin
-             - name: Print Github Variables
+            - name: Print Github Variables
               run: |
                 echo "GITHUB_WORKFLOW:$GITHUB_WORKFLOW"
                 echo "GITHUB_EVENT_NAME:$GITHUB_EVENT_NAME"
