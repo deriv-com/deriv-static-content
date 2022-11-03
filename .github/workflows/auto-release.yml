@@ -16,9 +16,11 @@ jobs:
               with:
                   node-version: '16.x'
             - name: Setting up Github Identity 👤
-              run: |
-                    git config --global user.name "DerivFE"
-                    git config --global user.email "80095553+DerivFE@users.noreply.github.com"
+              uses: fregante/setup-git-token@v1
+              with:
+                token: ${{ secrets.GITHUB_TOKEN }}
+                name: Bot Releaser
+                email: prince@deriv.com
             - name: Fetch tags 🌀
               run: git fetch --unshallow --tags
             - name: Create new production tag 🚀
