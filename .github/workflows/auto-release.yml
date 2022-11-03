@@ -15,12 +15,6 @@ jobs:
               uses: actions/setup-node@v2.1.2
               with:
                   node-version: '16.x'
-            - name: Setting up Github Identity 👤
-              uses: fregante/setup-git-token@v1
-              with:
-                token: ${{ secrets.GITHUB_TOKEN }}
-                name: Bot Releaser
-                email: prince@deriv.com
             - name: Fetch tags 🌀
               run: git fetch --unshallow --tags
             - name: Create new production tag 🚀
