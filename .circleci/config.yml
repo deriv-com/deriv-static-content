@@ -54,16 +54,6 @@ commands:
           success_message: "Release succeeded for deriv static with version *$(cat version)*"
           webhook: ${SLACK_WEBHOOK}
 
-  publish_to_pages_staging:
-    description: "Publish to cloudflare pages"
-    steps:
-      - run:
-          name: "Publish to cloudflare pages (staging)"
-          command: |
-            cd public
-            npx wrangler pages publish . --project-name=deriv-static-content-pages --branch=staging
-            echo "New staging website - http://staging.cf-pages-deriv-static-content.deriv.com"
-
   publish_to_pages_production:
     description: "Publish to cloudflare pages"
     steps:
@@ -75,12 +65,6 @@ commands:
             echo "New website - http://cf-pages-deriv-static-content.deriv.com"
 
 jobs:
-  release_staging:
-    docker:
-      - image: cimg/node:18.4.0
-    steps:
-      - checkout
-      - publish_to_pages_staging
   release_production:
     docker:
       - image: cimg/node:18.4.0
@@ -91,20 +75,12 @@ jobs:
           docker_image_latest_tag: latest
       - k8s_deploy
       - notify_slack
+
 workflows:
-  release_staging:
-    jobs:
-      - release_staging:
-          context: binary-frontend-artifact-upload
-          filters:
-            branches:
-              only: /^master$/
   release_production:
     jobs:
       - release_production:
           context: binary-frontend-artifact-upload
           filters:
             branches:
-              ignore: /.*/
-            tags:
-              only: /^production.*/
+              only: /^master$/
