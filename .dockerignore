@@ -8,5 +8,6 @@ LICENSE
 CNAME
 .vercel
 .circleci
+.github
 Dockerfile
 .dockerignore
