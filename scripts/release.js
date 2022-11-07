@@ -31,27 +31,49 @@ const generateNextTag = (tag) => {
   return `production_${final_date}_${new_version}`;
 };
 
-exec("git fetch", (err, stdout) => {
-  exec(
-    "git describe --tags `git rev-list --tags --max-count=1`",
-    (err, stdout) => {
-      if (err) {
-        log(err);
-        return;
-      }
+const getLatestTag = (tags) => {
+  const today = `V${getToday()}`;
+  let latest_version = 0;
+  let latest_tag = null;
 
-      if (isValidTag(stdout)) {
-        log(`Latest Production tag: ${stdout}`);
-        const new_tag = generateNextTag(stdout);
+  tags.forEach((tag) => {
+    const tag_chunks = tag.split("_");
+    const date = tag_chunks[1];
+    const version = parseInt(tag_chunks[2]);
 
-        exec(`git tag ${new_tag}`, (err, stdout) => {
-          exec(`git push origin ${new_tag}`, (err, stdout) => {
-            log(`${new_tag} has been pushed`);
-          });
-        });
-      } else {
-        log("Latest tag is not a production tag!");
+    if (date === today) {
+      if (latest_version < version || latest_version === 0) {
+        latest_version = version;
+        latest_tag = tag;
       }
     }
-  );
+  });
+
+  return latest_tag;
+};
+
+exec("git fetch", (err, stdout) => {
+  exec("git tag -l", (err, stdout) => {
+    if (err) {
+      log(err);
+      return;
+    }
+
+    const tags = stdout.split("\n");
+
+    const latest_tag = getLatestTag(tags);
+
+    if (isValidTag(stdout)) {
+      log(`Latest Production tag: ${latest_tag}`);
+      const new_tag = generateNextTag(latest_tag);
+
+      exec(`git tag ${new_tag}`, (err, stdout) => {
+        exec(`git push origin ${new_tag}`, (err, stdout) => {
+          log(`${new_tag} has been pushed`);
+        });
+      });
+    } else {
+      log("Latest tag is not a production tag!");
+    }
+  });
 });
