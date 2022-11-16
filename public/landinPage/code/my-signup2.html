@@ -104,22 +104,18 @@
           {
               document.getElementById("pAgree_n2").style.visibility = "visible";
               document.getElementById("pEmail_n2").style.visibility = "visible";
-              console.log("0");
               if(is_emailValid(email))
                   {
                       document.getElementById("pEmail_n2").style.visibility = "hidden";
-                      console.log("1");
                   }
           }
           else if(email=='')
               {
-                  console.log("2");
                   document.getElementById("pEmail_n2").innerHTML="Please enter your email address."
                   document.getElementById("pEmail_n2").style.visibility = "visible";
               }
               else 
               {
-                  console.log("3");
                   document.getElementById("pEmail_n2").innerHTML="Please enter a valid address."
                   document.getElementById("pEmail_n2").style.visibility = "visible";
               }
