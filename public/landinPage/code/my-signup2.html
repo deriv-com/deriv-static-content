@@ -64,7 +64,7 @@
 
 <body>
   <div id="s_n2" style="width: 340px !important;"> 
-      <input id="submit_btn_n2" style="width: 335px !important;" type="text" name="fname"><br><br>
+      <input id="email_input_n2" style="width: 335px !important;" type="text" name="fname"><br><br>
       <p id="pEmail_n2" style="color: #ff444f !important; font-size:14px;visibility: hidden;margin-top: -20px;">Please enter a valid email</p>
       <p style="color: #D4D4D4 !important;padding-bottom: 30px;">By pressing “Sign up”, you confirm that you are 18 or older. You understand that we may use your email address to send you information about Deriv products and services as well as market news. You can always unsubscribe from these emails in your account settings. For more information, please take a look at Deriv’s <a style="color: #ff444f !important;" href="https://deriv.com/tnc/security-and-privacy.pdf">Security and privacy</a>.</p>
       <input type="checkbox" id="ckbx_n2" name="vehicle1">
@@ -76,10 +76,21 @@
   <script>
       const submit_btn_n2 = document.getElementById("myBtn_n2");
       const ckbx_n2=document.getElementById("ckbx_n2");
-      const email_field_n2 =document.getElementById("submit_btn_n2");
+      const email_field_n2 =document.getElementById("email_input_n2");
       ckbx_n2.addEventListener("click", fckbx_n2);
       submit_btn_n2.addEventListener("click", f_submit_btn_n2);
+      email_field_n2.addEventListener("keyup", f_email_input_errmsg_n2);
+      
 
+      function f_email_input_errmsg_n2()
+      {
+        const email = email_field_n2.value;
+        if(is_emailValid(email))
+          document.getElementById("pEmail_n2").style.visibility = "hidden";
+        else
+          document.getElementById("pEmail_n2").style.visibility = "visible";
+      }
+      
   function fckbx_n2()
   {
       if(ckbx_n2.checked==true){
