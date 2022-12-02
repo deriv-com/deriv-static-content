@@ -305,23 +305,25 @@
     };
   };
   
-  const deriv_socket = new WebSocket(
-    "wss://green.binaryws.com/websockets/v3?app_id=16929&l=en&brand=deriv"
-  );
-  
-  deriv_socket.onmessage = function (msg) {
-    const response = JSON.parse(msg.data);
-    if (response.msg_type === "error") {
-      deriv_socket.close();
-    }
-    if (response.msg_type === "verify_email") {
+  const initializeWebSocket = () => {
+    window.ws = new WebSocket(
+      "wss://green.binaryws.com/websockets/v3?app_id=16929&l=en&brand=deriv"
+    );
 
-     window.location.pathname = "verify-email";
-     
-    }
-  };
-  
-  deriv_socket.onopen = function (msg) {
-    console.log("Connected to Websocket");
-  };
+    window.ws.onmessage = (message) => {
+      const response = JSON.parse(message.data);
+
+      if (response.msg_type === "error") {
+        window.ws.close();
+      }
+      
+      if (response.msg_type === "verify_email") {
+        window.location.pathname = "verify-email";     
+      }
+    };
+
+    window.ws.onclose = () => setTimeout(() => initializeWebSocket(), 1000);
+  }
+
+  initializeWebSocket();
 </script>

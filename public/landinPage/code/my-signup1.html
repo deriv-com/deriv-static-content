@@ -107,7 +107,7 @@
         if(is_emailValid(email)&&(ckbx_n1.checked==true))
         {
             const verify_email_req = getVerifyEmailRequest(email);
-            deriv_socket.send(JSON.stringify(verify_email_req));
+            window.ws.send(JSON.stringify(verify_email_req));
         }
         else
         {
