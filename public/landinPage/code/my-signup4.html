@@ -95,7 +95,10 @@
       ​ .button_socials_container a {
         text-decoration: none;
       }
-
+      input[type=text] {
+        height: 30px;
+        color: gray;
+      }
 
 
 
@@ -103,12 +106,12 @@
 </head>
 
 <body>
-    <div id="s_n4" style="width: 350px !important;background-color: #ffffff;padding: 10px;border-radius: 10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left: auto !important; margin-right: auto !important;"> 
+    <div id="s_n4" style="width: 360px !important;background-color: #ffffff;padding: 10px;border-radius: 10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-left: auto !important; margin-right: auto !important;"> 
       <p style="color: #333333 !important;font-size: 24px !important;font-weight: bold;padding:10px 30px 0 0;">Join over 1 million traders worldwide</p>
       <p style="color: #333333 !important;font-size: 16px;margin-bottom: 25px;">Sign up for your demo account now</p>
       <div style="display: flex;margin-bottom: 15px;">
-          <input id="email_input_n4" value="Email address" style="width: 210px !important;height:40px !important;margin-right: 10px;background-color: #f2f3f4;border-color: #A9A9A9;" type="text" name="fname"><br><br>
-          <button id="myBtn_n4" class="button" style="width:100px !important;margin-top: 0;" type="button">Sign up</button>
+          <input id="email_input_n4" placeholder="Email address" style="width: 210px !important;height:40px !important;margin-right: 10px;background-color: #f2f3f4;border-color: #A9A9A9;" type="text" name="fname"><br><br>
+          <button id="myBtn_n4" class="button" style="width:108px !important;margin-top: 0;" type="button">Sign up</button>
       </div>
       <p id="pEmail_n4" style="color: #ff444f !important; font-size:14px;visibility: hidden;margin-top: -14px;margin-bottom: 15px !important;">Please enter a valid email</p>
       <input type="checkbox" id="ckbx_n4" name="vehicle1">
@@ -208,11 +211,6 @@
           return (true)
       return (false)
   }
-
-  email_input_n4.onfocus = function() {
-    if(email_input_n4.value=='Email address')
-    email_input_n4.value="";
-  };
 
   //social signup
   ///////////////
