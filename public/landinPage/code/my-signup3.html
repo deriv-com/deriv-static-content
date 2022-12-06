@@ -95,7 +95,10 @@
       ​ .button_socials_container a {
         text-decoration: none;
       }
-
+      input[type=text] {
+        height: 30px;
+        color: gray;
+      }
 
 
 
@@ -107,7 +110,7 @@
       <p style="color: #333333 !important;font-size: 32px !important;font-weight: bold;padding:10px 50px 0 0;">Join over 1 million traders worldwide</p>
       <p style="color: #333333 !important;font-size: 16px;margin-bottom: 25px;">Sign up for your demo account now</p>
       <div style="display: flex;margin-bottom: 15px;">
-          <input id="email_input_n3" value="Email address" style="width: 250px !important;height:40px !important;margin-right: 20px;background-color: #f2f3f4;border-color: #A9A9A9;" type="text" name="fname"><br><br>
+          <input id="email_input_n3" placeholder="Email address" style="width: 250px !important;height:40px !important;margin-right: 20px;background-color: #f2f3f4;border-color: #A9A9A9;" type="text" name="fname"><br><br>
           <button id="myBtn_n3" class="button" style="width:110px !important;margin-top: 0;" type="button">Sign up</button>
       </div>
       <p id="pEmail_n3" style="color: #ff444f !important; font-size:14px;visibility: hidden;margin-top: -14px;margin-bottom: 15px !important;">Please enter a valid email</p>
@@ -209,10 +212,6 @@
       return (false)
   }
 
-  email_input_n3.onfocus = function() {
-    if(email_input_n3.value=='Email address')
-    email_input_n3.value="";
-  };
 
   //social signup
   ///////////////
