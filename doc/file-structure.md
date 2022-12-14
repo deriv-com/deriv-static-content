@@ -39,6 +39,6 @@
 - [**legacy/offers**](https://github.com/binary-com/deriv-static-content/tree/master/public/legacy/offers): Contains some old files from [offers.binary.com](https://offers.binary.com)
 
 ## Notes
-⚠️  before uploading email images, make sure width is less than 600px, also size reduced by [tinypng](https://tinypng.com) or other tools.
+⚠️  Before uploading email images, make sure width is less than 600px, also size reduced by [tinypng](https://tinypng.com) or other tools.
 
-⚠️  There are other folders not listed here, if the new file not match with mentioned path, pls explore other folders.
+⚠️  There are other folders not listed here, if the new file not match with mentioned path, please explore other folders.
