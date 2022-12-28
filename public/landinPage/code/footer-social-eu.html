@@ -1,0 +1,60 @@
+<head>
+    <style>
+        .flex-container-main {
+          display: flex;
+          background-color: #F8FAFB;
+          justify-content: space-between;
+        }
+        .flex-container-socials {
+          display: flex;
+          flex-direction: row-reverse !important;
+          -webkit-flex-direction: row-reverse;
+          align-items: center;
+        }
+        .flex-container-derivlogo {
+          display: flex;
+          align-items: center;
+        }
+        
+        .flex-container-socials > div {
+          margin: 5px;
+        }
+        
+        @media (max-width: 600px) {
+          .flex-container-main {
+            flex-direction: column;
+          }
+          .flex-container-socials {
+            justify-content: center;
+            align-items: flex-end;
+            height: 80px;
+          }
+          .img-logo{
+            height: 24px !important;
+            width: auto !important;
+          }
+        }
+        
+        </style>
+        
+        </head>
+        <body>
+        
+        <div class="flex-container-main">
+        <div id="test" class="flex-container-derivlogo">
+          <div><a href="https://www.deriv.com"><img class="img-logo" style="width: 160px" src="https://static.deriv.com/logos/deriv-horizontal-web-dark.png" alt="Deriv.com" title="Deriv.com" /></a></div>
+        </div>
+        
+        <div id="test" class="flex-container-socials">
+          <div><a href="https://www.instagram.com/deriv_official/" target=”_blank”><img src="https://deriv-static-content-behnaz-fs.vercel.app/logos/instagram.png" height="40" width="40" alt="Deriv.com on Instagram" title="Deriv.com on Instagram" /></a></div>
+          <div><a href="https://twitter.com/derivdotcom" target=”_blank”><img src="https://deriv-static-content-behnaz-fs.vercel.app/logos/twitter.png" height="40" width="40" alt="Deriv.com on Twitter" title="Deriv.com on Twitter" /></a></div>
+          <div><a href="https://www.facebook.com/derivdotcom" target=”_blank”><img src="https://deriv-static-content-behnaz-fs.vercel.app/logos/facebook.png" height="40" width="40" alt="Deriv.com on Facebook" title="Deriv.com on Facebook" /></a></div>
+        </div>
+        </div>
+        
+        <script>
+            const myElement = document.getElementById("footer");
+            myElement.style.padding = "0";
+        </script>
+
+</body>
