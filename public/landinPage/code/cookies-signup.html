@@ -276,9 +276,6 @@
   };
   
   const getDataObjFromCookies = (cookies, fields) => {
-    console.log({
-      cookies,
-    });
     const data = {};
     fields.forEach((elem) => {
       if (cookies[elem].get(elem)) {
