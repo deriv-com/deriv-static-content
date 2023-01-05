@@ -1,6 +1,6 @@
 <h1 align="center"> static.deriv.com </h1>
 
-A repository for Digital marketing codes, email templates, images, company PDFs,...
+A repository for digital marketing codes, email templates, images, company PDFs,...
 
 ## In this document:
 -   [Quick start](#quick-start)
