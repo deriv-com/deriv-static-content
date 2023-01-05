@@ -61,4 +61,3 @@ By Vercel CLI can have a preview then add to cards to check by Requesters, stake
 
 ## Other documents:
 -   [File paths for images, pdf, email templates,...](https://github.com/binary-com/deriv-static-content/blob/master/doc/file-structure.md)
-
