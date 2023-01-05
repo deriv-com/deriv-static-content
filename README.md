@@ -32,7 +32,6 @@ A repository for Digital marketing codes, email templates, images, company PDFs,
     npm install nodemailer
     ```
 
-
 ## How to contribute
 We contribute by PR (Pull request):
 
