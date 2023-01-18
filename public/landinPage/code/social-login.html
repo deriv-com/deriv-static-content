@@ -62,7 +62,9 @@
     </style>
     <script>
 
-      const getDataLink = (data) => {
+  /// social login
+
+  const getDataLink = (data) => {
         let data_link = "";
 
         Object.keys(data).forEach((elem) => {
@@ -72,7 +74,7 @@
         return data_link;
       };
 
-      const loginUrl = (platform) => {
+  const loginUrl = (platform) => {
         const cookies = getCookiesFields();
         const cookies_objects = getCookiesObject(cookies);
         const cookies_value = getDataObjFromCookies(cookies_objects, cookies);
@@ -83,8 +85,6 @@
         const affiliate_token_link = affiliate_tracking
           ? `&affiliate_token=${affiliate_tracking}`
           : "";
-
-        const lang = "hi";
 
         return `https://oauth.deriv.com/oauth2/authorize?app_id=16929&l=${lang}&brand=deriv&${affiliate_token_link}${cookies_link}&platform=&social_signup=${platform}`;
       };
@@ -98,6 +98,8 @@
           });
         });
       };
+
+  /// End social login
     </script>
   </head>
   <body>
