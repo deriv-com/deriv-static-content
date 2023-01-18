@@ -119,7 +119,7 @@
       <label style="color: #D4D4D4 !important;"  for="ckbx_n2"> I agree to the <a href="https://deriv.com/terms-and-conditions/#clients" style="color: #ff444f !important;">terms and conditions</a> </label><br>
       <p id="pAgree_n2" style="color: #ff444f !important; font-size:12px;display: none;margin-top: 4px;">Please tick the check for signup</p>
       <button id="myBtn_n2" class="button_m" type="button">Sign up</button>
-      <p style="color: #D4D4D4 !important;padding:18px 0;font-size: 12px;">By pressing “Sign up”, you confirm that you are 18 or older. You understand that we may use your email address to send you information about Deriv products and services as well as market news. You can always unsubscribe from these emails in your account settings. For more information, please take a look at Deriv’s <a style="color: #ff444f !important;" href="https://deriv.com/tnc/security-and-privacy.pdf">Security and privacy</a>.</p>
+      <p style="color: #D4D4D4 !important;padding:18px 0;font-size: 12px;">By pressing "Sign up", you confirm that you are 18 or older. You understand that we may use your email address to send you information about Deriv products and services as well as market news. You can always unsubscribe from these emails in your account settings. For more information, please take a look at Deriv's <a style="color: #ff444f !important;" href="https://deriv.com/tnc/security-and-privacy.pdf">Security and privacy</a>.</p>
       
       <div class="text-header">
         <div class="line-container">
@@ -229,6 +229,21 @@
           return (true)
       return (false)
   }
+
+
+    /// social login
+
+      window.onload = () => {
+        document.querySelectorAll(".social-media-login").forEach((e) => {
+          e.addEventListener("click", () => {
+            const platform = e.getAttribute("data-platform");
+
+            window.location.href = loginUrl(platform);
+          });
+        });
+      };
+
+  /// End social login
       
   </script>
 
