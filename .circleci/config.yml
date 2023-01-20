@@ -20,7 +20,7 @@ commands:
           name: Pushing Image to docker hub
           command: |
             TAG=${CIRCLE_TAG:-$CIRCLE_SHA1}
-            echo $DOCKERHUB_TOKEN | docker login -u $DOCKERHUB_USERNAME --password-stdin
+            echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
             docker push ${DOCKHUB_ORGANISATION}/static-deriv-app:${TAG}
             docker push ${DOCKHUB_ORGANISATION}/static-deriv-app:<< parameters.docker_image_latest_tag >>
 
