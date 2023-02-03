@@ -73,14 +73,7 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
 
   // Overwrite based on the order of priority
   if (has_new_required_fields && has_curr_required_fields) {
-    if (new_utm_data.utm_medium.includes("aff"))
-      return true; // 1. Affiliate tags
-    else if (
-      new_utm_data.utm_medium.includes("ppc") &&
-      !current_utm_data.utm_medium.includes("aff")
-    )
-      return true; // 2. PPC tags
-    else if (
+    if (
       !current_utm_data.utm_medium.includes("ppc") &&
       !current_utm_data.utm_medium.includes("aff")
     )
