@@ -36,6 +36,10 @@ This template was created to become a stable version of the email standards used
 >   - `.columns-2-b-title`: Contains the text of the upper tr of the internal table. Frequently used for subtitles.
 >   - `.columns-2-b-text`: Contains the text of the lower tr of the internal table. Frequently used for descriptions.
 >   - `.no-padding-td p`: Description paragraph.
+> - `0-trustpilot-widget.html` styles:
+>   - `.trustpilot-td`: Defines td of the widget.
+>   - `.trustpilot-widget a`: Links of the widget.
+>   - `.trustpilot-widget img`: Images of the widget.
 > - `footer` styles:
 >   - `#footer-table`: Second line of the `#ext-table`. Defines styles for the footer.
 >   - `#footer-social-td`: Area where we include the social media image links.
@@ -53,6 +57,8 @@ This template was created to become a stable version of the email standards used
 > - `.dark-black`: Applies black background for dark mode.
 > - `.dark-gray`: Applies gray background for dark mode.
 > - `.dark-subtext`: Converts the text to dark mode formatting.
+> - `.hide-light`: Hide light mode content when dark mode is active.
+> - `.show-dark`: Show dark mode content when dark mode is active.
 ### Mobile & dark mode specific styles
 > - `.white-h-logo-low-width`: Decreases the size of the header white logo on dark mode.
 > - `.dark-h-logo-low-width`: Decreases the size of the header black logo on dark mode.
