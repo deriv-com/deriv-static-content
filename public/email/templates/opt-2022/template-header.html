@@ -32,10 +32,10 @@
                         .button:hover{ background-color: #d43e47; }
                         #ol-int-table, #ol-footer-table { width: 600px; background-color: #fff; padding: 0; border: 0; }
                         #ol-int-td { width: 600px; background-color: #fff; margin: 0; vertical-align: top; }
-                        .h-img-td input{ width: 90%; max-width: 520px; border-radius: 15px; }
+                        .h-img-td input{ width: 85%; max-width: 520px; border-radius: 15px; }
                         #title-td p{ margin: 0; color: #333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; font-weight: 700; line-height: 1.5; }
-                        #greeting-td p, .paragraph-td p{ margin: 0; color: #333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 1.5; }
-                        .body-img{ width: 90%; max-width: 520px; display: block; outline: none; border-radius: 10px; }
+                        #greeting-td p, .paragraph-td p, #subtitle-td p{ margin: 0; color: #333; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 1.5; }
+                        .body-img{ width: 85%; max-width: 520px; display: block; outline: none; border-radius: 10px; }
                     </style>
                 <![endif]-->
             <!-- End of styles for Outlook: -->
@@ -112,6 +112,8 @@
                     text-align: left;
                     line-height: 24px;
                 }
+                #title-td{ padding: 15px 30px 0px 30px; }
+                #subtitle-td{ padding: 5px 30px 20px; }
                 /* iOS BLUE LINKS */
                 a[x-apple-data-detectors]{
                     color: inherit !important;
@@ -163,7 +165,7 @@
                     }
                     .h-img-td{ background-color: #fff; }
                     .h-img-td input{
-                        width: 90%;
+                        width: 85%;
                         border-radius: 15px;
                     }
                     #title-td p{
@@ -173,14 +175,15 @@
                         font-weight: 700;
                         line-height: 1.5;
                     }
-                    .list-ul{ padding: 0px 30px 0px 60px; }
-                    #greeting-td p, .paragraph-td p{
+                    .list-ul{ padding: 0px 30px 0px 40px; }
+                    #greeting-td p, .paragraph-td p, #subtitle-td p{
                         margin: 0;
-                        color: #333;
                         font-size: 16px;
                         font-weight: 400;
                         line-height: 1.5;
                     }
+                    #greeting-td p, .paragraph-td p{ color: #333; }
+                    #subtitle-td p{ color: #999; font-style: italic; }
                     .paragraph-td-discl p{
                         margin: 0;
                         color: #999;
@@ -189,7 +192,7 @@
                         line-height: 1.5;
                     }
                     .body-img{
-                        width: 90%;
+                        width: 85%;
                         display: block;
                         outline: none;
                         border-radius: 10px;
@@ -246,6 +249,9 @@
                         height: 12px;
                         display: block;
                     }
+                    .trustpilot-td{ padding: 40px 30px 30px; background-color: #ddd; }
+                    .trustpilot-widget a{ text-decoration: none; }
+                    .trustpilot-widget img{ border: 0; height: 18px; max-height: 18px; }
                 /* End of classes */
                 /* Mobile styles */
                     @media screen and (max-width: 620px){
@@ -278,7 +284,7 @@
                         }
                         .mb-title{
                             /* Applied on email title */
-                            font-size: 24px !important;
+                            font-size: 20px !important;
                         }
                         #greeting-td, .paragraph-td{
                             /* Decrease padding on mobile */
@@ -310,7 +316,8 @@
                             float: none !important;
                         }
                         /* Hides light mode-only content */
-                        .hide-dark-h-logo{ display: none !important; }
+                        .hide-dark-h-logo, .hide-light{ display: none !important; }
+                        .show-dark{ display: block !important; }
                         /* Applies dark background if dark mode is selected */
                         .dark-black{ background-color: #0e0e0e !important; }
                         /* Custom dark mode font colors */
@@ -408,6 +415,7 @@
                         <table id="ol-footer-table" align="center">
                     <![endif]-->
                     <table id="footer-table" class="dark-black">
+                        <!-- Insert Trustpilot widget here -->
                         <!-- SOCIAL -->
                         <tr>
                             <td id="footer-social-td" align="center" class="dark-black">
@@ -432,11 +440,6 @@
                             <td id="footer-links-td" align="center" class="dark-black">
                                 <p><a href="https://www.deriv.com/help-centre">Help Centre</a>&nbsp;&nbsp;&nbsp;<span class="dark-gray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/">Terms and conditions</a>&nbsp;&nbsp;&nbsp;<span class="dark-gray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://deriv.com/tnc/security-and-privacy.pdf">Security and privacy</a></p>
                                 <p id="unsubscribe-p" class="dark-gray dark-subtext">No longer want to receive these emails? <a href="https://app.deriv.com/account/personal-details">Unsubscribe</a></p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="paragraph-td-discl" align="left" style="padding: 30px 30px 10px;" class="dark-black">
-                                <p class="dark-subtext">Disclaimer here</p>
                             </td>
                         </tr>
                         <tr>
