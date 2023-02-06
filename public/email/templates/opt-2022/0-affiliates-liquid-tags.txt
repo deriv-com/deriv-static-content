@@ -1,0 +1,41 @@
+-- EN --
+{% if customer.name != blank %}
+Hi {{customer.name | titlecase }},
+{% else %}
+Hello partner,
+{% endif %}
+
+-- ES --
+{% if customer.name != blank %}
+Hola, {{customer.name | titlecase }},
+{% else %}
+Hola, socio,
+{% endif %}
+
+-- FR --
+{% if customer.name != blank %}
+Bonjour {{customer.name | titlecase }},
+{% else %}
+Salut Partenaire,
+{% endif %}
+
+-- ID --
+{% if customer.name != blank %}
+Hai {{customer.name | titlecase }},
+{% else %}
+Hai Mitra,
+{% endif %}
+
+-- PT-EU --
+{% if customer.name != blank %}
+Olá {{customer.name | titlecase }},
+{% else %}
+Olá Parceiro,
+{% endif %}
+
+-- VN --
+{% if customer.name != blank %}
+Xin chào {{customer.name | titlecase }},
+{% else %}
+Chào đối tác,
+{% endif %}
