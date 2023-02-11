@@ -111,11 +111,7 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
   });
 
   if (shouldOverwrite(utm_data, current_utm_data)) {
-    // If the new utm_data is not affiliate, the affiliate_tracking cookie should be removed
-    if (!utm_data.utm_medium.includes("aff")) {
-      eraseCookie("affiliate_tracking");
-    }
-
+    eraseCookie("affiliate_tracking");
     eraseCookie("utm_data");
 
     const utm_data_cookie = encodeURI(JSON.stringify(utm_data))
