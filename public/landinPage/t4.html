@@ -1,6 +1,6 @@
 <head>
   <style>
-  .button {
+  .button-d {
     display: flex;
     gap: 5px;
     padding: 10px 25px;
@@ -13,111 +13,40 @@
     font-size: 14px;
     cursor: pointer;
     height: 40px !important;
-    width: 420px !important;
+    max-width: 450px !important;
     margin-top: 2rem;
     font-weight: bold;
   }
  /* .button:hover {
     background-color: #fafafa;
   } */
- .button:active {
+ .button-d:active {
     transition: width 0.1s, height 0.1s;
     height: 37px;
     width: 113px;
   }
-  .button span {
-    font-weight: bold;
-  }
-  .text-header_f {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 32px 10px 10px;
-  }
- .text-header_f span {
-    color: #333e;
-    font-family: "Arial";
-  }
- .line-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .line {
-    width: 100px;
-    border-top: 1px solid rgb(153,153,153);
-  }
- .buttons_container {
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-  .buttons_container a {
-    text-decoration: none;
-  }
-  input[type=text] {
-    height: 30px;
-    color: gray;
-  }
-
-  .button_social {
-    display: flex;
-    gap: 5px;
-    padding: 10px 25px;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    border: 1px solid #ebebeb;
-    border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
-    height: 40px;
-    width: 100px;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-  }
-  .button_social:hover {
-    background-color: #fafafa;
-  }
-  .button_social:active {
-    transition: width 0.1s, height 0.1s;
-    height: 37px;
-    width: 113px;
-  }
-  .button_social span {
+  .button-d span {
     font-weight: bold;
   }
 
-  .button_socials_container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 10px;
-  }
-  .button_socials_container a {
-    text-decoration: none;
-  }
   </style>
 </head>
 
 <body>
-    <div id="s_n3" style="width: 410px !important;background-color: #ffffff;padding: 15px;border-radius: 10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"> 
-      <p style="color: #333333 !important;font-size: 32px !important;font-weight: bold;padding:20px 50px 10px 0;margin: 1px 0 10px;">Join over 1 million traders worldwide</p>
+    <div id="s_n4" style="background-color: #ffffff;padding: 15px;border-radius: 10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"> 
+      <p style="color: #333333 !important;font-size: 32px !important;font-weight: bold;padding:20px 0;margin: 1px 0 10px;">Join over 1 million traders worldwide</p>
       <p style="color: #333333 !important;font-size: 16px;margin-bottom: 25px;">Sign up for your demo account now</p>
-      <div style="display: flex;margin-bottom: 15px;">
-          <input id="email_input_n3" placeholder="email" style="width: 250px !important;height:40px !important;margin-right: 20px;background-color: #f2f3f4;border-color: #A9A9A9;border: none;outline: none;" type="text" name="fname"><br><br>
-          <button id="myBtn_n3" class="button" style="width:110px !important;margin-top: 0;" type="button">Sign up</button>
-      </div>
-      <p id="pEmail_n3" style="color: #ff444f !important; font-size:12px;display: none;margin-top: -14px;margin-bottom: 15px !important;">Please enter a valid email</p>
-      <input type="checkbox" id="ckbx_n3" >
-      <label style="color: #333333 !important;" for="ckbx_n3"> I agree to the <a href="https://deriv.com/terms-and-conditions/#clients" style="color: #ff444f !important;">terms and conditions</a>.</label><br>
-      <p id="pAgree_n3" style="color: #ff444f !important;font-size:12px;display: none;margin: 4px 0 0;">Please tick the check for signup</p>
+      <input id="email_input_n4" placeholder="email" style="width: 90%;height:40px !important;background-color: #f2f3f4;border-color: #A9A9A9;border: none;outline: none;" type="text" name="fname"><br><br>
+      <p id="pEmail_n4" style="color: #ff444f !important; font-size:12px;display: none;margin-top: -14px;margin-bottom: 15px !important;">Please enter a valid email</p>
+      <input type="checkbox" id="ckbx_n4" >
+      <label style="color: #333333 !important;" for="ckbx_n4"> I agree to the <a href="https://deriv.com/terms-and-conditions/#clients" style="color: #ff444f !important;">terms and conditions</a> </label><br>
+      <p id="pAgree_n4" style="color: #ff444f !important;font-size:12px;display: none;margin: 4px 0 0;">Please tick the check for signup</p>
+      <button id="myBtn_n4" class="button-d" style="width:90%;margin-top: 30px;" type="button">Sign up</button>
       <div class="text-header_f">
         <div class="line-container">
           <div class="line"></div>
         </div>
-        <span style="color: rgb(153,153,153);padding: 0 10px;">Or sign up with</span>
+        <span style="color: rgb(153,153,153);">Or sign up with</span>
         <div class="line-container">
           <div class="line"></div>
         </div>
@@ -154,62 +83,62 @@
     </div> 
 
   <script>
-      const submit_btn_n3 = document.getElementById("myBtn_n3");
-      const ckbx_n3=document.getElementById("ckbx_n3");
-      const email_field_n3 =document.getElementById("email_input_n3");
-      ckbx_n3.addEventListener("click", fckbx_n3);
-      submit_btn_n3.addEventListener("click", f_submit_btn_n3);
-      email_field_n3.addEventListener("keyup", f_email_input_errmsg_n3);
+      const submit_btn_n4 = document.getElementById("myBtn_n4");
+      const ckbx_n4=document.getElementById("ckbx_n4");
+      const email_field_n4 =document.getElementById("email_input_n4");
+      ckbx_n4.addEventListener("click", fckbx_n4);
+      submit_btn_n4.addEventListener("click", f_submit_btn_n4);
+      document.getElementById("email_input_n4").addEventListener("keyup", f_email_input_errmsg_n4);
 
 
-function f_email_input_errmsg_n3()
+function f_email_input_errmsg_n4()
   {
-    const email = email_field_n3.value;
+    const email = email_field_n4.value;
     if(is_emailValid(email))
-      document.getElementById("pEmail_n3").style.display = "none";
+      document.getElementById("pEmail_n4").style.display = "none";
     else
-      document.getElementById("pEmail_n3").style.display = "block";
+      document.getElementById("pEmail_n4").style.display = "block";
   }
 
 
-  function fckbx_n3()
+  function fckbx_n4()
   {
-      if(ckbx_n3.checked==true){
-      document.getElementById("pAgree_n3").style.display = "none";
+      if(ckbx_n4.checked==true){
+      document.getElementById("pAgree_n4").style.display = "none";
       }
       else{
-      document.getElementById("pAgree_n3").style.display = "block";
+      document.getElementById("pAgree_n4").style.display = "block";
       }
   }
   
-  function f_submit_btn_n3() 
+  function f_submit_btn_n4() 
   {
-      const email = email_field_n3.value;
-      if(is_emailValid(email)&&(ckbx_n3.checked==true))
+      const email = email_field_n4.value;
+      if(is_emailValid(email)&&(ckbx_n4.checked==true))
       {
           const verify_email_req = getVerifyEmailRequest(email);
           window.ws.send(JSON.stringify(verify_email_req));
       }
       else
       {
-          if(ckbx_n3.checked==false)
+          if(ckbx_n4.checked==false)
           {
-              document.getElementById("pAgree_n3").style.display = "block";
-              document.getElementById("pEmail_n3").style.display = "block";
+              document.getElementById("pAgree_n4").style.display = "block";
+              document.getElementById("pEmail_n4").style.display = "block";
               if(is_emailValid(email))
                   {
-                      document.getElementById("pEmail_n3").style.display = "none";
+                      document.getElementById("pEmail_n4").style.display = "none";
                   }
           }
           else if(email=='')
               {
-                  document.getElementById("pEmail_n3").innerHTML="Please enter your email address."
-                  document.getElementById("pEmail_n3").style.display = "block";
+                  document.getElementById("pEmail_n4").innerHTML="Please enter your email address."
+                  document.getElementById("pEmail_n4").style.display = "block";
               }
               else 
               {
-                  document.getElementById("pEmail_n3").innerHTML="Please enter a valid address."
-                  document.getElementById("pEmail_n3").style.display = "block";
+                  document.getElementById("pEmail_n4").innerHTML="Please enter a valid address."
+                  document.getElementById("pEmail_n4").style.display = "block";
               }
           
       }
@@ -222,23 +151,19 @@ function f_email_input_errmsg_n3()
       return (false)
   }
 
+//   /// social login
 
-  /// social login
+//       window.onload = () => {
+//         document.querySelectorAll(".social-media-login").forEach((e) => {
+//           e.addEventListener("click", () => {
+//             const platform = e.getAttribute("data-platform");
 
-  document.addEventListener("DOMContentLoaded", function(event) { 
-        document.querySelectorAll(".social-media-login").forEach((e) => {
-            e.addEventListener("click", (event) => {
-              event.preventDefault();
-            if (window.confirm("You are being redirected to an external website."))
-               {
-                const strUrl = e.getAttribute("data-platform");
-                window.location.href = loginUrl(strUrl);
-              }
-          });
-        });
-  });
+//             window.location.href = loginUrl(platform);
+//           });
+//         });
+//       };
 
-  /// End social login
+//   /// End social login
       
   </script>
 
