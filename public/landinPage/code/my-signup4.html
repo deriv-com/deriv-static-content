@@ -39,7 +39,7 @@
       <input id="email_input_n4" placeholder="email" style="width: 90%;height:40px !important;background-color: #f2f3f4;border-color: #A9A9A9;border: none;outline: none;" type="text" name="fname"><br><br>
       <p id="pEmail_n4" style="color: #ff444f !important; font-size:12px;display: none;margin-top: -14px;margin-bottom: 15px !important;">Please enter a valid email</p>
       <input type="checkbox" id="ckbx_n4" >
-      <label style="color: #333333 !important;" for="ckbx_n4"> I agree to the <a href="https://deriv.com/terms-and-conditions/#clients" style="color: #ff444f !important;">terms and conditions</a> </label><br>
+      <label style="color: #333333 !important;" for="ckbx_n4"> I agree to the <a href="https://deriv.com/terms-and-conditions/#clients" style="color: #ff444f !important;">terms and conditions</a>.</label><br>
       <p id="pAgree_n4" style="color: #ff444f !important;font-size:12px;display: none;margin: 4px 0 0;">Please tick the check for signup</p>
       <button id="myBtn_n4" class="button-d" style="width:90%;margin-top: 30px;" type="button">Sign up</button>
       <div class="text-header_f">
@@ -153,15 +153,15 @@ function f_email_input_errmsg_n4()
 
 /// social login
 
-    window.onload = () => {
-      document.querySelectorAll(".social-media-login").forEach((e) => {
-        e.addEventListener("click", () => {
-          const platform = e.getAttribute("data-platform");
+    // window.onload = () => {
+    //   document.querySelectorAll(".social-media-login").forEach((e) => {
+    //     e.addEventListener("click", () => {
+    //       const platform = e.getAttribute("data-platform");
 
-          window.location.href = loginUrl(platform);
-        });
-      });
-    };
+    //       window.location.href = loginUrl(platform);
+    //     });
+    //   });
+    // };
 
 /// End social login
       
