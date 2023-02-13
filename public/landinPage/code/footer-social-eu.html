@@ -1,5 +1,5 @@
 <head>
-    <style>
+  <style>
         .flex-container-main {
           display: flex;
           background-color: #F8FAFB;
@@ -19,6 +19,8 @@
         .flex-container-socials > div {
           margin: 5px;
         }
+
+        .mylink {cursor: pointer}
         
         @media (max-width: 600px) {
           .flex-container-main {
@@ -35,26 +37,32 @@
           }
         }
         
-        </style>
+  </style>
         
-        </head>
-        <body>
+</head>
+<body>
         
         <div class="flex-container-main">
         <div id="test" class="flex-container-derivlogo">
-          <div><a href="https://www.deriv.com"><img class="img-logo" style="width: 160px" src="https://static.deriv.com/logos/deriv-horizontal-web-dark.png" alt="Deriv.com" title="Deriv.com" /></a></div>
+          <div><a href="https://eu.deriv.com"><img class="img-logo" style="width: 160px" src="https://static.deriv.com/logos/deriv-horizontal-web-dark.png" alt="Deriv.com" title="Deriv.com" /></a></div>
         </div>
         
         <div id="test" class="flex-container-socials">
-          <div><a href="https://www.instagram.com/deriv_official/" target=”_blank”><img src="https://deriv-static-content-behnaz-fs.vercel.app/logos/instagram.png" height="40" width="40" alt="Deriv.com on Instagram" title="Deriv.com on Instagram" /></a></div>
-          <div><a href="https://twitter.com/derivdotcom" target=”_blank”><img src="https://deriv-static-content-behnaz-fs.vercel.app/logos/twitter.png" height="40" width="40" alt="Deriv.com on Twitter" title="Deriv.com on Twitter" /></a></div>
-          <div><a href="https://www.facebook.com/derivdotcom" target=”_blank”><img src="https://deriv-static-content-behnaz-fs.vercel.app/logos/facebook.png" height="40" width="40" alt="Deriv.com on Facebook" title="Deriv.com on Facebook" /></a></div>
+          <div onclick="externalLinkAlert('https://www.instagram.com/deriv_eu/')" class="mylink"><img src="https://static.deriv.com/logos/instagram.png" height="40" width="40" alt="Deriv.com on Instagram" title="Deriv.com on Instagram" /></div>
+          <div onclick="externalLinkAlert('https://twitter.com/deriv_eu/')" class="mylink"><img src="https://static.deriv.com/logos/twitter.png" height="40" width="40" alt="Deriv.com on Twitter" title="Deriv.com on Twitter" /></div>
+          <div onclick="externalLinkAlert('https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2FDerivEU')" class="mylink"><img src="https://static.deriv.com/logos/facebook.png" height="40" width="40" alt="Deriv.com on Facebook" title="Deriv.com on Facebook" /></div>
         </div>
         </div>
         
-        <script>
-            const myElement = document.getElementById("footer");
-            myElement.style.padding = "0";
-        </script>
+      <script>
+          const myElement = document.getElementById("footer");
+          myElement.style.padding = "0";
+          function externalLinkAlert(strUrl) {
+              if (window.confirm("You are being redirected to an external website."))
+               {
+                window.open(strUrl, "Thanks!");
+              }
+            }
+      </script>
 
 </body>
