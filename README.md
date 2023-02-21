@@ -10,7 +10,7 @@ A repository for digital marketing codes, email templates, images, company PDFs,
 -   [Other documents](#other-docs)
 
 ## Quick start
-1.  **Fork the project**
+1. **Fork the project**
 
     In order to work on your own version of the Deriv application, please fork the project to your own repo.
 
@@ -46,7 +46,7 @@ git checkout -b [_your_branch_name]
 
 3. Make pull request
 
--   Push your changes to *your* origin (your fork), add `-u` flag for the first time push
+- Push your changes to *your* origin (your fork), add `-u` flag for the first time push
 
 ```sh
 git add . 
@@ -60,4 +60,4 @@ git push -u origin [_your_branch_name]
 By Vercel CLI can have a preview then add to cards to check by Requesters, stakeholders or PMs.
 
 ## Other documents:
--   [File paths for images, pdf, email templates,...](https://github.com/binary-com/deriv-static-content/blob/master/doc/file-structure.md)
+- [File paths for images, pdf, email templates,...](https://github.com/binary-com/deriv-static-content/blob/master/doc/file-structure.md)
