@@ -56,44 +56,21 @@ const toISOFormat = (date) => {
 };
 
 const shouldOverwrite = (new_utm_data, current_utm_data) => {
-  if (!current_utm_data) {
+  // If we don't have old utm data, the utm_source field is enough for new utm data
+  if (!current_utm_data && new_utm_data.utm_source !== "null") {
     return true;
-  } else if (!new_utm_data) {
-    return false;
   }
 
-  // Check if both new and old utm_data has all required fields
+  // If we have old utm data, 3 fields are required for new utm data to rewrite the old one
   const required_fields = ["utm_source", "utm_medium", "utm_campaign"];
   const has_new_required_fields = required_fields.every(
-    (field) => new_utm_data[field]
+    (field) => new_utm_data[field] !== "null"
   );
-  const has_curr_required_fields = required_fields.every(
-    (field) => current_utm_data[field]
-  );
-
-  // Overwrite based on the order of priority
-  if (has_new_required_fields && has_curr_required_fields) {
-    if (new_utm_data.utm_medium.includes("aff"))
-      return true; // 1. Affiliate tags
-    else if (
-      new_utm_data.utm_medium.includes("ppc") &&
-      !current_utm_data.utm_medium.includes("aff")
-    )
-      return true; // 2. PPC tags
-    else if (
-      !current_utm_data.utm_medium.includes("ppc") &&
-      !current_utm_data.utm_medium.includes("aff")
-    )
-      return true; // 3. Complete set of required tags
-  } else if (has_new_required_fields) {
+  if (has_new_required_fields) {
     return true;
-  } else if (has_curr_required_fields) {
-    return false;
-  } else if (
-    new_utm_data.utm_source !== undefined &&
-    Object.values(new_utm_data).length >= Object.values(current_utm_data).length
-  )
-    return true; // 4. Everything else
+  }
+
+  // Otherwise we don't rewrite the old utm_data
   return false;
 };
 /* end utility functions */
@@ -134,6 +111,7 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
   });
 
   if (shouldOverwrite(utm_data, current_utm_data)) {
+    eraseCookie("affiliate_tracking");
     eraseCookie("utm_data");
 
     const utm_data_cookie = encodeURI(JSON.stringify(utm_data))
