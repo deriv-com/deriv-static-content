@@ -50,8 +50,8 @@ commands:
     steps:
       - slack/status:
           include_project_field: false
-          failure_message: "Release failed for deriv static with version *$(date -u +'%Y-%m-%dT%H:%M:%SZ')*"
-          success_message: "Release succeeded for deriv static with version *$(date -u +'%Y-%m-%dT%H:%M:%SZ')*"
+          failure_message: "Release failed for deriv static with version *production $(date -u +'%Y-%m-%dT%H:%M:%SZ')*"
+          success_message: "Release succeeded for deriv static with version *production $(date -u +'%Y-%m-%dT%H:%M:%SZ')*"
           webhook: ${SLACK_WEBHOOK}
 
   publish_to_pages_production:
