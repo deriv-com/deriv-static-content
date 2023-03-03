@@ -110,7 +110,7 @@ body {
   }
 }
 .provider a.button span {
-  display: block !important;
+  display: none !important;
   line-height: 20px;  
   font-size: 14px !important;
   height: 20px !important;
@@ -139,19 +139,24 @@ body {
 .provider .name {
   position: absolute;
   top: 25%;
-  font-size: 12px;
+  line-height: 20px;
+  font-size: 14px;
   cursor: pointer;
   user-select: none;
-  display: none;
+  font-family: 'Ubuntu';
+  font-style: normal;
+  display: block !important;
+  font-weight: 700;
 }
 .provider .name#name_google {
-  left: 46%;
+  left: 42%;
+  color: #414652;
 }
 .provider .name#name_facebook {
-  left: 45%;
+  left: 42%;
 }
 .provider .name#name_apple {
-  left: 45%;
+  left: 42%;
 }
 
 @media screen and (max-width: 400px){
@@ -160,11 +165,11 @@ body {
   }
 
   .provider a.button#button_facebook {
-    background-position-x: 34%;
+    background-position-x: 36%;
   }
 
   .provider a.button#button_apple {
-    background-position-x: 39%;
+    background-position-x: 36%;
   }
 
   .provider .name#name_facebook {
