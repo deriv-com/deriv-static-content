@@ -35,7 +35,7 @@ A repository for digital marketing codes, email templates, images, company PDFs,
 ## How to contribute
 We contribute by PR (Pull Request):
 
-1. Create branch from the latest master branch
+1. Create branch from the latest `master` branch
 ```sh
 git checkout master
 git pull origin master
