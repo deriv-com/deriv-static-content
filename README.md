@@ -3,11 +3,11 @@
 A repository for digital marketing codes, email templates, images, company PDFs,...
 
 ## In this document:
--   [Quick start](#quick-start)
--   [How to contribute](#how-to-contribute)
--   [Manage releases](#manage-releases)
--   [Test link deployment](#test-link-deployment)
--   [Other documents](#other-docs)
+- [Quick start](#quick-start)
+- [How to contribute](#how-to-contribute)
+- [Manage releases](#manage-releases)
+- [Test link deployment](#test-link-deployment)
+- [Other documents](#other-docs)
 
 ## Quick start
 1. **Fork the project**
