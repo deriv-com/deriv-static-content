@@ -1,0 +1,83 @@
+-- BG --
+{% if customer.name != blank %}
+Здравейте {{customer.name | titlecase }},
+{% else %}
+Здравейте trader,
+{% endif %}
+
+-- CZ --
+{% if customer.name != blank %}
+Dobrý den, {{customer.name | titlecase }},
+{% else %}
+Dobrý den, trader,
+{% endif %}
+
+-- DU --
+{% if customer.name != blank %}
+Hallo {{customer.name | titlecase }},
+{% else %}
+Hallo trader,
+{% endif %}
+
+-- EN --
+{% if customer.name != blank %}
+Hi {{customer.name | titlecase }},
+{% else %}
+Hello trader,
+{% endif %}
+
+-- ES --
+{% if customer.name != blank %}
+Hola, {{customer.name | titlecase }},
+{% else %}
+Hola, trader,
+{% endif %}
+
+-- FR --
+{% if customer.name != blank %}
+Bonjour {{customer.name | titlecase }},
+{% else %}
+Bonjour trader,
+{% endif %}
+
+-- GE --
+{% if customer.name != blank %}
+Hallo {{customer.name | titlecase }},
+{% else %}
+Hallo trader,
+{% endif %}
+
+-- GR --
+{% if customer.name != blank %}
+Γειά σας {{customer.name | titlecase }},
+{% else %}
+Γειά σας trader,
+{% endif %}
+
+-- IT --
+{% if customer.name != blank %}
+Salve {{customer.name | titlecase }},
+{% else %}
+Salve trader,
+{% endif %}
+
+-- PT --
+{% if customer.name != blank %}
+Olá {{customer.name | titlecase }},
+{% else %}
+Olá trader,
+{% endif %}
+
+-- TH --
+{% if customer.name != blank %}
+สวัสดี {{customer.name | titlecase }},
+{% else %}
+สวัสดี trader,
+{% endif %}
+
+-- VN --
+{% if customer.name != blank %}
+Chào {{customer.name | titlecase }},
+{% else %}
+Chào trader,
+{% endif %}
