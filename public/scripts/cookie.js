@@ -57,14 +57,15 @@ const toISOFormat = (date) => {
 
 const shouldOverwrite = (new_utm_data, current_utm_data) => {
   // If we don't have old utm data, the utm_source field is enough for new utm data
-  if (!current_utm_data && new_utm_data.utm_source !== "null") {
+  const valid_new_utm_source = new_utm_data.utm_source && new_utm_data.utm_source !== "null"
+  if (!current_utm_data && valid_new_utm_source) {
     return true;
   }
 
   // If we have old utm data, 3 fields are required for new utm data to rewrite the old one
   const required_fields = ["utm_source", "utm_medium", "utm_campaign"];
   const has_new_required_fields = required_fields.every(
-    (field) => new_utm_data[field] !== "null"
+    (field) => new_utm_data[field]
   );
   if (has_new_required_fields) {
     return true;
@@ -98,7 +99,11 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
 
   // If the user comes to the site for the first time without any URL params
   // Only set the utm_source to referrer if the user does not have utm_data cookies stored
-  utm_data["utm_source"] = document.referrer ? document.referrer : "null";
+  if (!current_utm_data?.utm_source) {
+    utm_data = {
+      utm_source: document.referrer ? document.referrer : "null",
+    };
+  }
 
   // If the user has any new UTM params, store them
   utm_fields.forEach((field) => {
