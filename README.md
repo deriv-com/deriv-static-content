@@ -14,19 +14,19 @@ A repository for digital marketing codes, email templates, images, company PDFs,
 
     In order to work on your own version of the Deriv application, please fork the project to your own repo.
 
-2.  **Clone using SSH**
+2. **Clone using SSH**
 
     ```sh
     git clone git@github.com:your-github-username/deriv-static-content.git
     ```
 
-3.  **Enter project directory**
+3. **Enter project directory**
 
     ```sh
     cd deriv-static-content
     ```
 
-4.  **Install your dependencies: not necessary, just to test and debugging purpuse**
+4. **Install your dependencies: not necessary, just to test and debugging purpuse**
 
     ```sh
     npm install nodemailer
