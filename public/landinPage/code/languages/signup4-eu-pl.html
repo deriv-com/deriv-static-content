@@ -1,0 +1,142 @@
+    <head>
+        <style>
+            .button-d {
+                display: flex;
+                gap: 5px;
+                padding: 10px 25px;
+                justify-content: center;
+                align-items: center;
+                background-color: #ff444f;
+                color: #fff;
+                border: 1px solid #ff444f;
+                border-radius: 5px;
+                font-size: 14px;
+                cursor: pointer;
+                height: 40px !important;
+                max-width: 450px !important;
+                margin-top: 2rem;
+                font-weight: bold;
+            }
+            .button-d:active {
+                transition: width 0.1s, height 0.1s;
+                height: 37px;
+                width: 113px;
+            }
+            .button-d span {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="s_n4" style="background-color: #fff; padding: 15px; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"> 
+            <p style="color: #333 !important; font-size: 32px !important; font-weight: bold; padding: 20px 0; margin: 1px 0 10px;">Dołącz do ponad 1 miliona inwestorów na całym świecie</p>
+            <p style="color: #333 !important;font-size: 16px; margin-bottom: 25px;">Zarejestruj się już teraz, aby uzyskać konto demo</p>
+            <input id="email_input_n4" placeholder="e-mail" style="width: 90%; height: 40px !important;background-color: #f2f3f4; border-color: #a9a9a9; border: none; outline: none;" type="text" name="fname"/><br/><br/>
+            <p id="pEmail_n4" style="color: #ff444f !important; font-size: 12px; display: none; margin-top: -14px;margin-bottom: 15px !important;">Wprowadź prawidłowy adres e-mail.</p>
+            <input type="checkbox" id="ckbx_n4"/>
+            <label style="color: #333 !important;" for="ckbx_n4">
+                Zgadzam się z <a href="https://deriv.com/terms-and-conditions/#clients" style="color: #ff444f !important;">postanwieniami regulaminu</a>.
+            </label><br/>
+            <p id="pAgree_n4" style="color: #ff444f !important; font-size: 12px; display: none; margin: 4px 0 0;">Zaznacz pole, aby się zarejestrować</p>
+            <button id="myBtn_n4" class="button-d" style="width: 90%; margin-top: 30px;" type="button">Zarejestruj się</button>
+            <div class="text-header_f">
+                <div class="line-container">
+                    <div class="line"></div>
+                </div>
+                <span style="color: rgb(153,153,153);text-align: center;">Lub zarejestruj się przez</span>
+                <div class="line-container">
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="button_socials_container">
+                <a style="display: inline-block" class="social-media-login" data-platform="google">
+                    <button class="button_social">
+                        <img width="24px"
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZmlsbD0iIzNlODJmMSIgZD0iTTIxLjU0NiAxMi4yMDJhMTEuNzIgMTEuNzIgMCAwIDAtLjE4LTIuMDRoLTkuMzkzdjMuODU1aDUuMzY3YTQuNTc1IDQuNTc1IDAgMCAxLTEuOTg5IDMuMDA4bDMuMjIxIDIuNTA0YzEuODg4LTEuNzM2IDIuOTc1LTQuMjkgMi45NzUtNy4zMjd6Ii8+PHBhdGggZmlsbD0iIzMyYTc1MyIgZD0iTTE1LjM1IDE3LjAyNWMtLjg5LjYtMi4wMzMuOTUzLTMuMzc4Ljk1My0yLjYgMC00Ljc5Ni0xLjc1NC01LjU4LTQuMTEyTDMuMDYgMTYuNDQ4YTkuOTYzIDkuOTYzIDAgMCAwIDguOTEzIDUuNDljMi42OTUgMCA0Ljk1Mi0uODkgNi42LTIuNDE0bC0zLjIyMi0yLjQ5OXoiLz48cGF0aCBmaWxsPSIjZjliYjAwIiBkPSJNNi4zOTIgMTAuMDc4IDMuMDYgNy40OTZhMTAgMTAgMCAwIDAgMCA4Ljk1OGwzLjMzMy0yLjU4M2E1Ljk0NyA1Ljk0NyAwIDAgMSAwLTMuNzkzeiIvPjxwYXRoIGZpbGw9IiNlNzQxMzMiIGQ9Ik0xMS45NzIgMmE5Ljk4IDkuOTggMCAwIDAtOC45MTMgNS40OTZsMy4zMzMgMi41ODJjLjc4NC0yLjM1OCAyLjk4LTQuMTEyIDUuNTgtNC4xMTIgMS40NjIgMCAyLjc3OS41MDUgMy44MSAxLjQ5bDIuODYyLTIuODYyQzE2LjkyIDIuOTg2IDE0LjY2MSAyIDExLjk3MiAyeiIvPjwvc3ZnPg=="
+                        />
+                    <span>Google</span>
+                    </button>
+                </a>
+                <a style="display: inline-block" class="social-media-login" data-platform="facebook">
+                    <button class="button_social">
+                        <img width="24px"
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiPjxkZWZzPjxwYXRoIGlkPSJhIiBkPSJNLjAwMS4wMDFIMjJ2MjEuODY1SC4wMDF6Ii8+PC9kZWZzPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEgMSkiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PG1hc2sgaWQ9ImIiIGZpbGw9IiNmZmYiPjx1c2UgeGxpbms6aHJlZj0iI2EiLz48L21hc2s+PHBhdGggZmlsbD0iIzE4NzdmMiIgZD0iTTIxIDExLjA2MUMyMSA1LjUwNSAxNi41MjMgMSAxMSAxUzEgNS41MDUgMSAxMS4wNjFDMSAxNi4wODMgNC42NTcgMjAuMjQ1IDkuNDM4IDIxdi03LjAzaC0yLjU0di0yLjkxaDIuNTRWOC44NDVjMC0yLjUyMiAxLjQ5Mi0zLjkxNSAzLjc3Ny0zLjkxNSAxLjA5NCAwIDIuMjM4LjE5NyAyLjIzOC4xOTd2Mi40NzZoLTEuMjZjLTEuMjQzIDAtMS42My43NzUtMS42MyAxLjU3djEuODg4aDIuNzczbC0uNDQzIDIuOTA4aC0yLjMzVjIxYzQuNzgtLjc1NSA4LjQzNy00LjkxNyA4LjQzNy05LjkzOSIgbWFzaz0idXJsKCNiKSIvPjwvZz48L3N2Zz4="
+                        />
+                        <span>Facebook</span>
+                    </button>
+                </a>
+                <a style="display: inline-block" class="social-media-login" data-platform="apple">
+                    <button class="button_social">
+                        <img width="24px"
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZD0iTTE3LjI5NCAxMi40NzNjMC0yLjQ2IDIuMDYzLTMuNjUgMi4xNDItMy43My0xLjE5LTEuNjY1LTIuOTM1LTEuOTAzLTMuNTctMS45ODMtMS41MDgtLjE1OC0zLjAxNS44NzMtMy43My44NzMtLjc5MyAwLTEuOTgzLS44NzMtMy4yNTItLjg3My0xLjY2NiAwLTMuMTc0Ljk1Mi00LjA0NiAyLjQ2LTEuNzQ2IDMuMDE1LS40NzYgNy40NTggMS4xOSA5LjkxNy44NzMgMS4xOSAxLjgyNSAyLjUzOSAzLjA5NCAyLjQ2czEuNzQ1LS43OTQgMy4yNTMtLjc5NCAxLjkwNC43OTQgMy4yNTMuNzk0IDIuMjIxLTEuMTkgMy4wMTUtMi4zOGMuOTUyLTEuMzUgMS4zNDgtMi42OTggMS4zNDgtMi43NzctLjA3OS0uMDgtMi42OTctMS4wMzItMi42OTctMy45Njd6bS0yLjQ2LTcuMjk5QzE1LjQ3IDQuMyAxNS45NDUgMy4xOSAxNS44NjYgMmMtLjk1Mi4wOC0yLjIyMi42MzUtMi44NTYgMS41MDctLjYzNS43MTQtMS4xOSAxLjkwNS0xLjAzMiAzLjAxNSAxLjAzMi4wOCAyLjE0Mi0uNTU1IDIuODU2LTEuMzQ4eiIvPjwvc3ZnPg=="
+                        />
+                        <span>Apple</span>
+                    </button>
+                </a>
+            </div>
+        </div> 
+        <script>
+            const submit_btn_n4 = document.getElementById("myBtn_n4");
+            const ckbx_n4=document.getElementById("ckbx_n4");
+            const email_field_n4 =document.getElementById("email_input_n4");
+            ckbx_n4.addEventListener("click", fckbx_n4);
+            submit_btn_n4.addEventListener("click", f_submit_btn_n4);
+            document.getElementById("email_input_n4").addEventListener("keyup", f_email_input_errmsg_n4);    
+    
+            function f_email_input_errmsg_n4() {
+                const email = email_field_n4.value;
+                if(is_emailValid(email))
+                    document.getElementById("pEmail_n4").style.display = "none";
+                else
+                    document.getElementById("pEmail_n4").style.display = "block";
+            }
+
+            function fckbx_n4() {
+                if(ckbx_n4.checked==true){
+                    document.getElementById("pAgree_n4").style.display = "none";
+                }
+                else{
+                    document.getElementById("pAgree_n4").style.display = "block";
+                }
+            }
+
+            function f_submit_btn_n4() {
+                const email = email_field_n4.value;
+                if(is_emailValid(email)&&(ckbx_n4.checked==true)) {
+                    const verify_email_req = getVerifyEmailRequest(email);
+                    window.ws.send(JSON.stringify(verify_email_req));
+                } else {
+                    if(ckbx_n4.checked==false) {
+                        document.getElementById("pAgree_n4").style.display = "block";
+                        document.getElementById("pEmail_n4").style.display = "block";
+                        if(is_emailValid(email)) {
+                            document.getElementById("pEmail_n4").style.display = "none";
+                        }
+                    } else if(email=='') {
+                        document.getElementById("pEmail_n4").innerHTML="Wprowadź swój adres e-mail."
+                        document.getElementById("pEmail_n4").style.display = "block";
+                    } else  {
+                        document.getElementById("pEmail_n4").innerHTML="Wprowadź prawidłowy adres e-mail."
+                        document.getElementById("pEmail_n4").style.display = "block";
+                    }
+                }
+            }
+  
+            function is_emailValid(email) { 
+                if (/^\w+([!#$%&'*+-/=?^_`{|}~\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+                    return (true)
+                return (false)
+            }
+    
+            /// social login
+            window.onload = () => {
+                document.querySelectorAll(".social-media-login").forEach((e) => {
+                    e.addEventListener("click", () => {
+                        const platform = e.getAttribute("data-platform");
+                        window.location.href = loginUrl(platform);
+                    });
+                });
+            };
+            /// End social login
+        </script>
+    </body>

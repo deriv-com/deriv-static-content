@@ -1,0 +1,228 @@
+    <head>
+        <style>
+            .button {
+                display: flex;
+                gap: 5px;
+                padding: 10px 25px;
+                justify-content: center;
+                align-items: center;
+                background-color: #ff444f;
+                color: #fff;
+                border: 1px solid #ff444f;
+                border-radius: 5px;
+                font-size: 14px;
+                cursor: pointer;
+                height: 40px !important;
+                width: 420px !important;
+                margin-top: 2rem;
+                font-weight: bold;
+            }
+            .button:hover {
+                background-color: #d43e47;
+            }
+            .button:active {
+                transition: width 0.1s, height 0.1s;
+                height: 37px;
+                width: 113px;
+            }
+            .button span {
+                font-weight: bold;
+            }
+            .text-header {
+                display: flex;
+                justify-content: space-around;
+            }
+            .text-header span {
+                padding: 0 10px;
+                color: white;
+                font-family: "Arial";
+            }
+            .line-container {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+            .line {
+                width: 100px;
+                border-bottom: 1px solid #fff;
+            }
+            input[type=text] {
+                height: 40px !important;
+                border-radius: 3px;
+            }
+            a{
+                text-decoration: none;
+            }
+            .button_socialH {
+                display: flex;
+                gap: 5px;
+                padding: 10px 25px;
+                justify-content: center;
+                align-items: center;
+                background-color: white;
+                border: 1px solid #ebebeb;
+                border-radius: 5px;
+                font-size: 14px;
+                cursor: pointer;
+                height: 40px;
+                width: 120px;
+                margin-top: 1rem;
+                font-weight: bold;
+            }
+            .button_socialH:hover {
+                background-color: #fafafa;
+            }
+            .button_socialH:active {
+                transition: width 0.1s, height 0.1s;
+                height: 37px;
+                width: 113px;
+            }
+            .button_socialH span {
+                font-weight: bold;
+            }
+            .button_socialHs_container {
+                display: flex;
+                justify-content: space-around;
+                gap: 10px;
+            }
+            .button_socialHs_container a {
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="s_n1" style="width: 430px !important;"> 
+            <input id="email_input_n1" style="width: 420px !important; border: none; outline: none;" type="text" placeholder="E-mail"/><br/><br/>
+            <p id="pEmail_n1" style="color: #ff444f !important; font-size: 12px; display: none; margin: -19px 0 15px;">Insira um correo eletrónico válido</p>
+            <input type="checkbox" id="ckbx_n1"/>
+            <label style="color: #d4d4d4 !important;"  for="ckbx_n1">
+                Concordo com os <a href="https://eu.deriv.com/terms-and-conditions/#clients" target="_blank" style="color: #ff444f !important;">termos e condições</a>.
+            </label><br/>
+            <p id="pAgree_n1" style="color: #ff444f !important; font-size: 12px; display: none; margin: 0;">Assinale a caixa de seleção para inscrever-se</p>
+            <button id="myBtn_n1" class="button" type="button">Abrir uma conta</button>
+            <p style="color: #d4d4d4 !important; padding: 20px 0; font-size: 12px;">
+                Ao pressionar "Abrir uma conta", confirma que tem 18 anos ou mais. Compreenda que podemos utilizar o seu e-mail para  enviar informações sobre produtos e serviços Deriv, bem como notícias do mercado. Pode sempre anular a subscrição destes e-mails nas definições da sua conta. Para mais informações, consulte a secção <a href="https://eu.deriv.com/tnc/eu/security-and-privacy.pdf" target="_blank" style="color: #ff444f !important;">Segurança e Privacidade</a> da Deriv.
+            </p>
+            <div class="text-header">
+                <div class="line-container">
+                    <div class="line"></div>
+                </div>
+                <span>Ou inscreva-se com</span>
+                <div class="line-container">
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="button_socialHs_container">
+                <a class="social-media-login" data-platform="google">
+                    <button class="button_socialH">
+                        <img width="24px" 
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZmlsbD0iIzNlODJmMSIgZD0iTTIxLjU0NiAxMi4yMDJhMTEuNzIgMTEuNzIgMCAwIDAtLjE4LTIuMDRoLTkuMzkzdjMuODU1aDUuMzY3YTQuNTc1IDQuNTc1IDAgMCAxLTEuOTg5IDMuMDA4bDMuMjIxIDIuNTA0YzEuODg4LTEuNzM2IDIuOTc1LTQuMjkgMi45NzUtNy4zMjd6Ii8+PHBhdGggZmlsbD0iIzMyYTc1MyIgZD0iTTE1LjM1IDE3LjAyNWMtLjg5LjYtMi4wMzMuOTUzLTMuMzc4Ljk1My0yLjYgMC00Ljc5Ni0xLjc1NC01LjU4LTQuMTEyTDMuMDYgMTYuNDQ4YTkuOTYzIDkuOTYzIDAgMCAwIDguOTEzIDUuNDljMi42OTUgMCA0Ljk1Mi0uODkgNi42LTIuNDE0bC0zLjIyMi0yLjQ5OXoiLz48cGF0aCBmaWxsPSIjZjliYjAwIiBkPSJNNi4zOTIgMTAuMDc4IDMuMDYgNy40OTZhMTAgMTAgMCAwIDAgMCA4Ljk1OGwzLjMzMy0yLjU4M2E1Ljk0NyA1Ljk0NyAwIDAgMSAwLTMuNzkzeiIvPjxwYXRoIGZpbGw9IiNlNzQxMzMiIGQ9Ik0xMS45NzIgMmE5Ljk4IDkuOTggMCAwIDAtOC45MTMgNS40OTZsMy4zMzMgMi41ODJjLjc4NC0yLjM1OCAyLjk4LTQuMTEyIDUuNTgtNC4xMTIgMS40NjIgMCAyLjc3OS41MDUgMy44MSAxLjQ5bDIuODYyLTIuODYyQzE2LjkyIDIuOTg2IDE0LjY2MSAyIDExLjk3MiAyeiIvPjwvc3ZnPg=="
+                        />
+                        <span>Google</span>
+                    </button>
+                </a>
+                <a class="social-media-login" data-platform="facebook">
+                    <button class="button_socialH">
+                        <img width="24px"
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiPjxkZWZzPjxwYXRoIGlkPSJhIiBkPSJNLjAwMS4wMDFIMjJ2MjEuODY1SC4wMDF6Ii8+PC9kZWZzPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEgMSkiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PG1hc2sgaWQ9ImIiIGZpbGw9IiNmZmYiPjx1c2UgeGxpbms6aHJlZj0iI2EiLz48L21hc2s+PHBhdGggZmlsbD0iIzE4NzdmMiIgZD0iTTIxIDExLjA2MUMyMSA1LjUwNSAxNi41MjMgMSAxMSAxUzEgNS41MDUgMSAxMS4wNjFDMSAxNi4wODMgNC42NTcgMjAuMjQ1IDkuNDM4IDIxdi03LjAzaC0yLjU0di0yLjkxaDIuNTRWOC44NDVjMC0yLjUyMiAxLjQ5Mi0zLjkxNSAzLjc3Ny0zLjkxNSAxLjA5NCAwIDIuMjM4LjE5NyAyLjIzOC4xOTd2Mi40NzZoLTEuMjZjLTEuMjQzIDAtMS42My43NzUtMS42MyAxLjU3djEuODg4aDIuNzczbC0uNDQzIDIuOTA4aC0yLjMzVjIxYzQuNzgtLjc1NSA4LjQzNy00LjkxNyA4LjQzNy05LjkzOSIgbWFzaz0idXJsKCNiKSIvPjwvZz48L3N2Zz4="
+                        />
+                        <span>Facebook</span>
+                    </button>
+                </a>
+                <a class="social-media-login" data-platform="apple">
+                    <button class="button_socialH">
+                        <img
+                            width="24px"
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZD0iTTE3LjI5NCAxMi40NzNjMC0yLjQ2IDIuMDYzLTMuNjUgMi4xNDItMy43My0xLjE5LTEuNjY1LTIuOTM1LTEuOTAzLTMuNTctMS45ODMtMS41MDgtLjE1OC0zLjAxNS44NzMtMy43My44NzMtLjc5MyAwLTEuOTgzLS44NzMtMy4yNTItLjg3My0xLjY2NiAwLTMuMTc0Ljk1Mi00LjA0NiAyLjQ2LTEuNzQ2IDMuMDE1LS40NzYgNy40NTggMS4xOSA5LjkxNy44NzMgMS4xOSAxLjgyNSAyLjUzOSAzLjA5NCAyLjQ2czEuNzQ1LS43OTQgMy4yNTMtLjc5NCAxLjkwNC43OTQgMy4yNTMuNzk0IDIuMjIxLTEuMTkgMy4wMTUtMi4zOGMuOTUyLTEuMzUgMS4zNDgtMi42OTggMS4zNDgtMi43NzctLjA3OS0uMDgtMi42OTctMS4wMzItMi42OTctMy45Njd6bS0yLjQ2LTcuMjk5QzE1LjQ3IDQuMyAxNS45NDUgMy4xOSAxNS44NjYgMmMtLjk1Mi4wOC0yLjIyMi42MzUtMi44NTYgMS41MDctLjYzNS43MTQtMS4xOSAxLjkwNS0xLjAzMiAzLjAxNSAxLjAzMi4wOCAyLjE0Mi0uNTU1IDIuODU2LTEuMzQ4eiIvPjwvc3ZnPg=="
+                        />
+                        <span>Apple</span>
+                    </button>
+                </a>
+            </div>
+        </div> 
+        <script>
+            const submit_btn_n1 = document.getElementById("myBtn_n1");
+            const ckbx_n1=document.getElementById("ckbx_n1");
+            const email_field_n1 =document.getElementById("email_input_n1");
+            ckbx_n1.addEventListener("click", fckbx_n1);
+            submit_btn_n1.addEventListener("click", f_submit_btn_n1);
+            email_field_n1.addEventListener("keyup", f_email_input_errmsg_n1);
+
+            function f_email_input_errmsg_n1() {
+                const email = email_field_n1.value;
+                if(is_emailValid(email))
+                    document.getElementById("pEmail_n1").style.display = "none";
+                else
+                    document.getElementById("pEmail_n1").style.display = "block";
+            }
+    
+            function fckbx_n1() {
+                if(ckbx_n1.checked==true){
+                    document.getElementById("pAgree_n1").style.display = "none";
+                }
+                else{
+                    document.getElementById("pAgree_n1").style.display = "block";
+                }
+            }
+
+        function f_submit_btn_n1() {
+            const email = email_field_n1.value;
+            if(is_emailValid(email)&&(ckbx_n1.checked==true)) {
+                const verify_email_req = getVerifyEmailRequest(email);
+                window.ws.send(JSON.stringify(verify_email_req));
+            }
+            else {
+                if(ckbx_n1.checked==false) {
+                    document.getElementById("pAgree_n1").style.display = "block";
+                    document.getElementById("pEmail_n1").style.display = "block";
+                    if(is_emailValid(email)) {
+                        document.getElementById("pEmail_n1").style.visibility = "hidden";
+                    }
+                }
+                else if(email=='') {
+                    document.getElementById("pEmail_n1").innerHTML="Insira o seu correo eletrónico."
+                    document.getElementById("pEmail_n1").style.visibility = "visible";
+                }
+                else  {
+                    document.getElementById("pEmail_n1").innerHTML="Insira um correo eletrónico válido."
+                    document.getElementById("pEmail_n1").style.visibility = "visible";
+                }
+            }
+        }
+    
+        function is_emailValid(email) { 
+            if (/^\w+([!#$%&'*+-/=?^_`{|}~\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+                return (true)
+            return (false)
+        }
+
+        /// social login
+        const getDataLink = (data) => {
+            let data_link = "";
+            Object.keys(data).forEach((elem) => {
+                data_link += `&${elem}=${data[elem]}`;
+            });
+            return data_link;
+        };
+    
+        const loginUrl = (platform) => {
+            const cookies = getCookiesFields();
+            const cookies_objects = getCookiesObject(cookies);
+            const cookies_value = getDataObjFromCookies(cookies_objects, cookies);
+            const cookies_link = getDataLink(cookies_value);
+            const affiliate_tracking = Cookies.getJSON("affiliate_tracking");
+            const affiliate_token_link = affiliate_tracking ? `&affiliate_token=${affiliate_tracking}` : "";
+            const lang = "hi";
+            return `https://oauth.deriv.com/oauth2/authorize?app_id=16929&l=${lang}&brand=deriv&${affiliate_token_link}${cookies_link}&platform=&social_signup=${platform}`;
+        };
+    
+        window.onload = () => {
+            document.querySelectorAll(".social-media-login").forEach((e) => {
+                e.addEventListener("click", () => {
+                const platform = e.getAttribute("data-platform");
+                    window.location.href = loginUrl(platform);
+                });
+            });
+        };
+       </script>
+    </body>

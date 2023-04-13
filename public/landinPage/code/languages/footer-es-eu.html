@@ -1,0 +1,63 @@
+    <head>
+        <style>
+            .flex-container-main {
+                display: flex;
+                background-color: #F8FAFB;
+                justify-content: space-between;
+            }
+            .flex-container-socials {
+                display: flex;
+                flex-direction: row-reverse !important;
+                -webkit-flex-direction: row-reverse;
+                align-items: center;
+            }
+            .flex-container-derivlogo {
+                display: flex;
+                align-items: center;
+            }
+            .flex-container-socials > div {
+                margin: 5px;
+            }
+            .mylink {cursor: pointer}
+            @media (max-width: 600px) {
+                flex-container-main {
+                    flex-direction: column;
+                }
+                .flex-container-socials {
+                    justify-content: center;
+                    align-items: flex-end;
+                    height: 80px;
+                }
+                .img-logo{
+                    height: 24px !important;
+                    width: auto !important;
+                }
+              }
+        </style>
+    </head>
+    <body>
+        <div class="flex-container-main">
+            <div id="test" class="flex-container-derivlogo">
+                <div><a href="https://eu.deriv.com" target="_blank">
+                    <img class="img-logo" style="width: 160px" src="https://static.deriv.com/logos/deriv-horizontal-web-dark.png" alt="Deriv.com" title="Deriv.com" /></a>
+                </div>
+            </div>
+            <div id="test" class="flex-container-socials">
+                <div>
+                    <a href="https://www.instagram.com/deriv_eu/" target="_blank">
+                        <img src="https://static.deriv.com/logos/instagram.png" height="40" width="40" alt="Deriv.com en Instagram" title="Deriv.com en Instagram" />
+                    </a>
+                </div>
+                <div>
+                    <a href="https://twitter.com/deriv_eu/" target="_blank">
+                        <img src="https://static.deriv.com/logos/twitter.png" height="40" width="40" alt="Deriv.com en Twitter" title="Deriv.com en Twitter" />
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.facebook.com/DerivEU/" target="_blank">
+                        <img src="https://static.deriv.com/logos/facebook.png" height="40" width="40" alt="Deriv.com en Facebook" title="Deriv.com en Facebook" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
