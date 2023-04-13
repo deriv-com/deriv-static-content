@@ -1,0 +1,222 @@
+    <head>
+        <style>
+            .button_m {
+                display: flex;
+                gap: 5px;
+                padding: 10px 25px;
+                justify-content: center;
+                align-items: center;
+                background-color: #ff444f;
+                color: #fff;
+                border: 1px solid #ff444f;
+                border-radius: 5px;
+                font-size: 14px;
+                cursor: pointer;
+                height: 40px !important;
+                width: 335px !important;
+                margin-top: 2rem;
+                font-weight: bold;
+            }
+            .button_m:hover {
+                background-color: #d43e47;
+            }
+            .button_m:active {
+                transition: width 0.1s, height 0.1s;
+                height: 37px;
+                width: 113px;
+            }
+            .button_m span {
+                font-weight: bold;
+            }
+            .text-header {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .text-header span {
+                padding: 0 10px;
+                color: white;
+                font-family: "Arial";
+            }
+            .line-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .line {
+                width: 100px;
+                border-top: 1px solid white;
+            }
+            .buttons_container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+            }
+            .buttons_container a {
+                text-decoration: none;
+            }
+            input[type=text] {
+                height: 38px;
+                color: gray;
+                border-radius: 5px;
+            }
+            a{
+                text-decoration: none;
+            }
+            .button_socialH {
+                display: flex;
+                gap: 5px;
+                padding: 10px 25px;
+                justify-content: center;
+                align-items: center;
+                background-color: white;
+                border: 1px solid #ebebeb;
+                border-radius: 5px;
+                font-size: 14px;
+                cursor: pointer;
+                height: 40px;
+                width: 100px;
+                margin-top: 1rem;
+                font-weight: bold;
+            }
+            .button_socialH:hover {
+                background-color: #fafafa;
+            }
+            .button_socialH:active {
+                transition: width 0.1s, height 0.1s;
+                height: 37px;
+                width: 113px;
+            }
+            .button_socialH span {
+                font-weight: bold;
+            }
+            .button_socialHs_container_m {
+                padding-bottom: 20px;
+                display: flex;
+                justify-content: space-around;
+                gap: 10px;
+            }
+            .button_socialHs_container_m a {
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="s_n2" > 
+            <input id="email_input_n2" style="width: 335px !important; border: none; outline: none; margin-bottom: 10px;" type="text" placeholder="E-mail" name="fname"/><br/><br/>
+            <p id="pEmail_n2" style="color: #ff444f !important; font-size: 12px; display: none; margin-top: -19px; padding-bottom: 10px;">Per favore inserisci un indirizzo di email valido</p>
+            <input type="checkbox" id="ckbx_n2"/>
+            <label style="color: #d4d4d4 !important;"  for="ckbx_n2">
+                Accetto i <a href="https://deriv.com/terms-and-conditions/#clients" target="_blank" style="color: #ff444f !important;">termini e le condizioni</a>.
+            </label><br/>
+            <p id="pAgree_n2" style="color: #ff444f !important; font-size: 12px; display: none; margin-top: 4px;">
+                Per favore clicca la casella per registrarti.
+            </p>
+            <button id="myBtn_n2" class="button_m" type="button">Iscriviti</button>
+            <p style="color: #d4d4d4 !important; padding: 18px 0; font-size: 12px;">
+                Premendo "Iscriviti", confermate di avere almeno 18 anni. Siete consapevoli che potremmo utilizzare il vostro indirizzo e-mail per inviarvi informazioni sui prodotti e servizi Deriv e sulle novità del mercato. È sempre possibile annullare l'iscrizione a queste e-mail nelle impostazioni del proprio account. Per ulteriori informazioni, consultare la sezione <a style="color: #ff444f !important;" href="https://eu.deriv.com/tnc/security-and-privacy.pdf" target="_blank">Sicurezza e privacy</a> di Deriv.
+            </p>
+            <div class="text-header">
+                <div class="line-container">
+                    <div class="line"></div>
+                </div>
+                <span style="font-size:12px;">Oppure iscriviti con</span>
+                <div class="line-container">
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="button_socialHs_container_m">
+                <a class="social-media-login" data-platform="google">
+                    <button class="button_socialH">
+                        <img width="24px"
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZmlsbD0iIzNlODJmMSIgZD0iTTIxLjU0NiAxMi4yMDJhMTEuNzIgMTEuNzIgMCAwIDAtLjE4LTIuMDRoLTkuMzkzdjMuODU1aDUuMzY3YTQuNTc1IDQuNTc1IDAgMCAxLTEuOTg5IDMuMDA4bDMuMjIxIDIuNTA0YzEuODg4LTEuNzM2IDIuOTc1LTQuMjkgMi45NzUtNy4zMjd6Ii8+PHBhdGggZmlsbD0iIzMyYTc1MyIgZD0iTTE1LjM1IDE3LjAyNWMtLjg5LjYtMi4wMzMuOTUzLTMuMzc4Ljk1My0yLjYgMC00Ljc5Ni0xLjc1NC01LjU4LTQuMTEyTDMuMDYgMTYuNDQ4YTkuOTYzIDkuOTYzIDAgMCAwIDguOTEzIDUuNDljMi42OTUgMCA0Ljk1Mi0uODkgNi42LTIuNDE0bC0zLjIyMi0yLjQ5OXoiLz48cGF0aCBmaWxsPSIjZjliYjAwIiBkPSJNNi4zOTIgMTAuMDc4IDMuMDYgNy40OTZhMTAgMTAgMCAwIDAgMCA4Ljk1OGwzLjMzMy0yLjU4M2E1Ljk0NyA1Ljk0NyAwIDAgMSAwLTMuNzkzeiIvPjxwYXRoIGZpbGw9IiNlNzQxMzMiIGQ9Ik0xMS45NzIgMmE5Ljk4IDkuOTggMCAwIDAtOC45MTMgNS40OTZsMy4zMzMgMi41ODJjLjc4NC0yLjM1OCAyLjk4LTQuMTEyIDUuNTgtNC4xMTIgMS40NjIgMCAyLjc3OS41MDUgMy44MSAxLjQ5bDIuODYyLTIuODYyQzE2LjkyIDIuOTg2IDE0LjY2MSAyIDExLjk3MiAyeiIvPjwvc3ZnPg=="
+                        />
+                        <span>Google</span>
+                    </button>
+                </a>
+                <a class="social-media-login" data-platform="facebook">
+                    <button class="button_socialH">
+                        <img width="24px"
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiPjxkZWZzPjxwYXRoIGlkPSJhIiBkPSJNLjAwMS4wMDFIMjJ2MjEuODY1SC4wMDF6Ii8+PC9kZWZzPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEgMSkiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PG1hc2sgaWQ9ImIiIGZpbGw9IiNmZmYiPjx1c2UgeGxpbms6aHJlZj0iI2EiLz48L21hc2s+PHBhdGggZmlsbD0iIzE4NzdmMiIgZD0iTTIxIDExLjA2MUMyMSA1LjUwNSAxNi41MjMgMSAxMSAxUzEgNS41MDUgMSAxMS4wNjFDMSAxNi4wODMgNC42NTcgMjAuMjQ1IDkuNDM4IDIxdi03LjAzaC0yLjU0di0yLjkxaDIuNTRWOC44NDVjMC0yLjUyMiAxLjQ5Mi0zLjkxNSAzLjc3Ny0zLjkxNSAxLjA5NCAwIDIuMjM4LjE5NyAyLjIzOC4xOTd2Mi40NzZoLTEuMjZjLTEuMjQzIDAtMS42My43NzUtMS42MyAxLjU3djEuODg4aDIuNzczbC0uNDQzIDIuOTA4aC0yLjMzVjIxYzQuNzgtLjc1NSA4LjQzNy00LjkxNyA4LjQzNy05LjkzOSIgbWFzaz0idXJsKCNiKSIvPjwvZz48L3N2Zz4="
+                        />
+                        <span>Facebook</span>
+                    </button>
+                </a>
+                <a class="social-media-login" data-platform="apple">
+                    <button class="button_socialH">
+                        <img width="24px"
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZD0iTTE3LjI5NCAxMi40NzNjMC0yLjQ2IDIuMDYzLTMuNjUgMi4xNDItMy43My0xLjE5LTEuNjY1LTIuOTM1LTEuOTAzLTMuNTctMS45ODMtMS41MDgtLjE1OC0zLjAxNS44NzMtMy43My44NzMtLjc5MyAwLTEuOTgzLS44NzMtMy4yNTItLjg3My0xLjY2NiAwLTMuMTc0Ljk1Mi00LjA0NiAyLjQ2LTEuNzQ2IDMuMDE1LS40NzYgNy40NTggMS4xOSA5LjkxNy44NzMgMS4xOSAxLjgyNSAyLjUzOSAzLjA5NCAyLjQ2czEuNzQ1LS43OTQgMy4yNTMtLjc5NCAxLjkwNC43OTQgMy4yNTMuNzk0IDIuMjIxLTEuMTkgMy4wMTUtMi4zOGMuOTUyLTEuMzUgMS4zNDgtMi42OTggMS4zNDgtMi43NzctLjA3OS0uMDgtMi42OTctMS4wMzItMi42OTctMy45Njd6bS0yLjQ2LTcuMjk5QzE1LjQ3IDQuMyAxNS45NDUgMy4xOSAxNS44NjYgMmMtLjk1Mi4wOC0yLjIyMi42MzUtMi44NTYgMS41MDctLjYzNS43MTQtMS4xOSAxLjkwNS0xLjAzMiAzLjAxNSAxLjAzMi4wOCAyLjE0Mi0uNTU1IDIuODU2LTEuMzQ4eiIvPjwvc3ZnPg=="
+                        />
+                        <span>Apple</span>
+                    </button>
+                </a>
+            </div>
+        </div> 
+        <script>
+            const submit_btn_n2 = document.getElementById("myBtn_n2");
+            const ckbx_n2=document.getElementById("ckbx_n2");
+            const email_field_n2 =document.getElementById("email_input_n2");
+            ckbx_n2.addEventListener("click", fckbx_n2);
+            submit_btn_n2.addEventListener("click", f_submit_btn_n2);
+            email_field_n2.addEventListener("keyup", f_email_input_errmsg_n2);
+
+            function f_email_input_errmsg_n2() {
+                const email = email_field_n2.value;
+                if(is_emailValid(email))
+                    document.getElementById("pEmail_n2").style.display = "none";
+                else
+                    document.getElementById("pEmail_n2").style.display = "block";
+            }
+
+            function fckbx_n2() {
+                if(ckbx_n2.checked==true){
+                    document.getElementById("pAgree_n2").style.display = "none";
+                }
+                else{
+                    document.getElementById("pAgree_n2").style.display = "block";
+                }
+            }
+
+            function f_submit_btn_n2()  {
+                const email = email_field_n2.value;
+                if(is_emailValid(email)&&(ckbx_n2.checked==true)) {
+                    const verify_email_req = getVerifyEmailRequest(email);
+                    window.ws.send(JSON.stringify(verify_email_req));
+                }
+                else {
+                    if(ckbx_n2.checked==false) {
+                        document.getElementById("pAgree_n2").style.display = "block";
+                        document.getElementById("pEmail_n2").style.display = "block";
+                        if(is_emailValid(email)) {
+                            document.getElementById("pEmail_n2").style.display = "none";
+                        }
+                    } else if(email=='') {
+                        document.getElementById("pEmail_n2").innerHTML="Per favore inserisci il tuo indirizzo email."
+                        document.getElementById("pEmail_n2").style.display = "block";
+                    } else {
+                        document.getElementById("pEmail_n2").innerHTML="Per favore inserisci un indirizzo di email valido."
+                        document.getElementById("pEmail_n2").style.display = "block";
+                    }
+                }
+            }
+
+            function is_emailValid(email) { 
+                if (/^\w+([!#$%&'*+-/=?^_`{|}~\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+                    return (true)
+                return (false)
+            }
+
+            /// social login
+            window.onload = () => {
+                document.querySelectorAll(".social-media-login").forEach((e) => {
+                    e.addEventListener("click", () => {
+                        const platform = e.getAttribute("data-platform");
+                        window.location.href = loginUrl(platform);
+                    });
+                });
+            };
+            /// End social login
+
+        </script>
+    </body>
