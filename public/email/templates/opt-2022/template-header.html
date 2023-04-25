@@ -316,7 +316,7 @@
                             float: none !important;
                         }
                         /* Hides light mode-only content */
-                        .hide-black-h-logo, .hide-light{ display: none !important; }
+                        .hide-dark-h-logo, .hide-light{ display: none !important; }
                         .show-dark{ display: block !important; }
                         /* Applies dark background if dark mode is selected */
                         .dark-black{ background-color: #0e0e0e !important; }
@@ -330,7 +330,7 @@
                     [data-ogsc] li { color: #c2c2c2 !important; }
                     [data-ogsc] .h-logo-white-div{ width: 100px !important; max-width: inherit !important; max-height: inherit !important; margin-top: 0px !important; line-height: auto !important; display: block !important; visibility: inherit !important; overflow: visible !important; float: none !important; }
                     /* Hides light mode-only content */
-                    [data-ogsc] .hide-black-h-logo{ display: none !important; }
+                    [data-ogsc] .hide-dark-h-logo{ display: none !important; }
                     /* Applies dark background if dark mode is selected */
                     [data-ogsc] .dark-black{ background-color: #0e0e0e !important; }
                     /* Custom dark mode font colors */
@@ -364,7 +364,7 @@
                         <tr>
                             <td id="h-logo-td" align="center" class="dark-black">
                                 <a href="https://www.deriv.com">
-                                    <img id="h-logo-black" class="hide-black-h-logo dark-h-logo-low-width" src="https://static.deriv.com/logos/deriv-black.png" title="Deriv.com">
+                                    <img id="h-logo-black" class="hide-dark-h-logo dark-h-logo-low-width" src="https://static.deriv.com/logos/deriv-black.png" title="Deriv.com">
                                     <div class="h-logo-white-div" style="display: none;" align="center">
                                         <img src="https://static.deriv.com/logos/deriv-white.png" id="h-logo-white" class="white-h-logo-low-width" title="Deriv.com"/>
                                     </div>
@@ -439,7 +439,7 @@
                         <tr>
                             <td id="footer-links-td" align="center" class="dark-black">
                                 <p><a href="https://www.deriv.com/help-centre">Help Centre</a>&nbsp;&nbsp;&nbsp;<span class="dark-gray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/">Terms and conditions</a>&nbsp;&nbsp;&nbsp;<span class="dark-gray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://deriv.com/tnc/security-and-privacy.pdf">Security and privacy</a></p>
-                                <p id="unsubscribe-p" class="dark-gray dark-subtext">No longer want to receive these emails? <a href="https://app.deriv.com/account/personal-details">Unsubscribe</a></p>
+                                <p id="unsubscribe-p" class="dark-gray dark-subtext">No longer want to receive these emails? {{snippets.custom_unsubscribe_link}}</p>
                             </td>
                         </tr>
                         <tr>
