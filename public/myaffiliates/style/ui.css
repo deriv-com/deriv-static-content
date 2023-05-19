@@ -3439,3 +3439,11 @@ em {
 .signup-form-links a {
   color: #ff444f !important;
 }
+
+
+/* Rebranding */
+.deriv-logo img {
+  max-width: none;
+  height: 36px;
+  margin-left: 30px;
+}
