@@ -2869,7 +2869,7 @@ input[type="number"] {
   margin: 0 auto;
   padding: 0 15px;
   height: 104px;
-  background-color: #0e0e0e;
+  background-color: #ffffff;
   display: grid;
   grid-template-columns: 400px 1fr;
   align-items: center;
