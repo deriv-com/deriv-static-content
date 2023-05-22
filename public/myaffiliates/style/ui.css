@@ -2432,8 +2432,8 @@ a.button-secondary,
   transition: all 0.25s;
   font-weight: bold;
   height: fit-content;
-  color: #ffffff !important;
-  border: 2px solid #999999;
+  color: #ff444f !important;
+  border: 2px solid #ff444f;
   border-radius: 4px;
   background-color: transparent !important;
   text-decoration: none;
