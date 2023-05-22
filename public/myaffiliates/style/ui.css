@@ -2905,6 +2905,9 @@ input[type="number"] {
   font-size: 14px;
   text-align: right;
 }
+.header-user p span {
+  color: #6e6e6e !important;
+}
 .brand-language {
   width: 150px;
   float: right;
@@ -2942,6 +2945,9 @@ input[type="number"] {
   color: #6e6e6e;
   font-size: 14px;
   text-align: center;
+}
+.mobile-header-user p span {
+  color: #6e6e6e !important;
 }
 @media screen and (max-width: 992px) {
   #MainNav,
