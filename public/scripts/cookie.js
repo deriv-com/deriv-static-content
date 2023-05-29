@@ -95,7 +95,7 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
   ];
 
   let utm_data = {};
-  const current_utm_data = JSON.parse(getCookie("utm_data"));
+  const current_utm_data = JSON.parse(decodeURIComponent(getCookie("utm_data")));
 
   // If the user comes to the site for the first time without any URL params
   // Only set the utm_source to referrer if the user does not have utm_data cookies stored
@@ -110,7 +110,6 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
     if (searchParams.has(field)) {
       utm_data[field] = searchParams
         .get(field)
-        .replace(/[^a-zA-Z0-9\s\-\.\_]/gi, "")
         .substring(0, 100); // Limit to 100 supported characters
     }
   });
@@ -119,7 +118,7 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
     eraseCookie("affiliate_tracking");
     eraseCookie("utm_data");
 
-    const utm_data_cookie = encodeURI(JSON.stringify(utm_data))
+    const utm_data_cookie = encodeURIComponent(JSON.stringify(utm_data))
       .replaceAll("%2C", ",")
       .replaceAll("%7B", "{")
       .replaceAll("%7D", "}");
