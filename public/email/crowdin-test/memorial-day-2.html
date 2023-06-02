@@ -35,25 +35,25 @@
                 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
 
         <!-- ==== END OF META TAGS ==== -->
-        <title>Receba prêmios em cashback com a Jeton 💰🎁</title>
+        <title></title>
         <!-- ==== STYLES ==== -->
             <!-- Styles for Outlook: -->
                 <!--[if mso]>
                     <style type="text/css">
-                        *, h1, h2, h3, td, { font-family: 'Ubuntu', Arial, sans-serif; }
+                        *, h1, h2, h3, td, { font-family: 'Ubuntu', 'IBM Plex Sans', Arial, sans-serif; }
                         body{ background-color: #eee;}
                         p, a, .greeting-td p, .paragraph-td p{ font-family: 'IBM Plex Sans', Arial, sans-serif; }
-                        h1{ font-size: 20px; font-weight: 700; padding: 0 0 20px 20px; }
+                        h1{ font-size: 25px; font-weight: 700; padding: 0 0 20px 20px; }
                         table { border-collapse: collapse; }
                         a, a:visited { color: #ff444f !important; text-decoration: none; }
-                        a.button{ padding: 10px 16px; color: #fff !important; border: 0; border-radius: 4px; font-size: 16px; text-decoration: none; text-align: center; }
+                        a.button{ padding: 10px 16px; color: #fff !important; border: 0; border-radius: 4px; font-size: 13px; text-decoration: none; text-align: center; }
                         .button:hover{ background-color: #d43e47; }
                         #ol-int-table, #ol-footer-table { width: 600px; background-color: #fff; padding: 0; border: 0; }
                         #ol-int-td { width: 600px; background-color: #fff; margin: 0; vertical-align: top; }
                         #ol-title-img-tb{ width: 600px; }
                         #ol-logo-img-td{ background-color:#ff444f; width: 300px; height: 55px; }
                         .email-data-tb{ background-color: #efefef; padding-left: 30px; border-radius: 16px; }
-                        .greeting-td p, .paragraph-td p{ margin: 0; color: #414652; font-size: 16px; font-weight: 400; line-height: 1.5; }
+                        .greeting-td p, .paragraph-td p{ margin: 0; color: #414652; font-size: 13px; font-weight: 400; line-height: 1.5; }
                         .body-img{ width: 85%; max-width: 520px; display: block; outline: none; border-radius: 10px; }
                     </style>
                 <![endif]-->
@@ -91,9 +91,8 @@
                     }
                 /* END OF FONTS */
                 /* Applied to all tags */
-                *{ font-family: 'Ubuntu', 'IBM Plex Sans', Arial, sans-serif; color: #414652; }
-                p, a{ font-family: 'IBM Plex Sans', 'Ubuntu', Arial, sans-serif; color: #414652; }
-                h1{ color: #fff !important; }
+                *{ font-family: 'Ubuntu', Arial, sans-serif; color: #414652; }
+                p, a{ font-family: 'IBM Plex Sans', Arial, sans-serif; color: #414652; }
                 body{
                     width: 100%;
                     height: 100%;
@@ -139,11 +138,14 @@
                         text-decoration: none;
                     }
                     a:hover{ text-decoration: underline; }
-                    a.button, a.button-white{
-                        padding: 6px 20px;
+                    a.button{
+                        background-image: linear-gradient(#ff444f,#ff444f);
+                        background-color: #ff444f;
+                        padding: 8px 20px;
                         border: 0;
                         border-radius: 16px;
-                        font-size: 16px;
+                        font-size: 13px;
+                        color: #fff !important;
                         font-weight: 500 !important;
                         text-decoration: none;
                         text-align: center;
@@ -151,27 +153,14 @@
                         display: inline-block;
                         overflow: visible;
                     }
-                    a.button{
-                        background-image: linear-gradient(#ff444f,#ff444f);
-                        background-color: #ff444f;
-                        color: #fff !important;
-                    }
-                    a.button-white{
-                        background-color: #fff !important;
-                        border: #666 solid 1px;
-                        color: #333 !important;
-                    }
-                    .title-cta{ padding: 10px 30px; }
                     .button:hover{ background-color: #d43e47; }
-                    h2{ padding: 0px 60px; font-family: 'Ubuntu', 'IBM Plex Sans', Arial, sans-serif; color: #414652; font-size: 18px; line-height: 1.5;}
                 /* End of Deriv styles */
                 /* Classes */
-                    #ext-table{ margin: auto; }
+                #ext-table{ margin: auto; }
                     #ext-td{ background-color: #eee; }
                     #int-table{
                         width: 100%;
                         max-width: 600px !important;
-                        min-width: 340px !important;
                         padding: 0;
                         background-color: #fff;
                         border:0;
@@ -179,44 +168,31 @@
                         overflow-wrap: anywhere;
                     }
                     #header-td{ width: 600px; margin: 0; padding: 0; }
-                    #header-table{ width: 100%; border: 0 !important; border-collapse: collapse !important; }
-                    #title-img-td{ max-height: 180px; }
-                    #title-img-td img{ width: 100%; max-height: 180px; vertical-align: top; background-image: linear-gradient(#ff444f,#ff444f); }
+                    .top-right-td{ height: 180px; max-height: 180px; background-image: linear-gradient(#ff444f,#ff444f); background-color: #ff444f; }
                     #title-img-tb, #logo-title-tb{ width: 100%; height: 100%; margin: 0; }
-                    #title-text-td{ height: 100%; max-height: 180px; background-image: linear-gradient(#ff444f,#ff444f); vertical-align: top;}
-                    #title-text-td h1{ margin-top: 30px; padding: 10px 15px; color: #fff; font-size: 22px; font-weight: 700; text-align: center;}
+                    #image-title-td{ width: 55%; height: 180px; margin:0; padding:0; vertical-align: top;}
+                    #image-title-td img{ width: 100%; max-width: 360px; height: 180px; object-fit: cover; object-position: 0 100%;}
+                    .logo-img-td{ width: 45%; vertical-align: top;}
+                    .logo-img-td img{ width: 58px; padding: 15px 0 0 15px; }
+                    #title-text-td{ height: 100%; vertical-align: top; }
+                    #title-text-td h1{ padding: 10px 15px; margin-top: 15px; color: #fff; font-size: 25px; font-weight: 700; text-align: center;}
                     .greeting-td p, .paragraph-td p, .subtitle-td p{
                         margin: 0;
-                        font-size: 16px;
-                        font-weight: 400;
-                        line-height: 1.5;
-                    }
-                    .help-td p{
-                        margin: 0;
-                        font-size: 16px;
+                        font-size: 13px;
                         font-weight: 400;
                         line-height: 1.5;
                     }
                     .greeting-td p, .paragraph-td p{ color: #333; }
                     .subtitle-td p{ color: #999; font-style: italic; }
-                    .payops-step-td p{
-                        max-width: 600px;
-                        margin: 0;
-                        font-family: 'Ubuntu', 'IBM Plex Sans', Arial, sans-serif;
-                        font-size: 16px;
-                        font-weight: 400;
-                        line-height: 1.5;
-                    }
-                    .paragraph-td-discl{ max-width: 600px; }
                     .paragraph-td-discl p{
                         margin: 0;
                         color: #999;
-                        font-size: 12px;
+                        font-size: 11px;
                         font-weight: 400;
                         line-height: 1.5;
                     }
                     .body-img{
-                        width: 75%;
+                        width: 85%;
                         display: block;
                         outline: none;
                         border-radius: 10px;
@@ -228,49 +204,26 @@
                         li{
                             padding: 2px 0 0 5px;
                             font-family: inherit;
-                            font-size: 16px;
+                            font-size: 13px;
                             font-weight: 400;
                             text-align: left;
                             line-height: 24px;
                         }
                         .list-ul{ padding: 0px 30px 0px 40px; }
                     /* End of list styles */
-                    /* Template specific */
-                        .step-img-td{ height: 100px; vertical-align: middle;}
-                        .step-img{ height: 80px; display: block; margin: 0px;}
-                        .step-number{ width: 35px; height: 100px; vertical-align: top; padding-top: 20px; margin-top: 0px;}
-                        .step-number-mb{ max-width: 50px; vertical-align: top; padding: 20px 10px; margin-top: 10px;}
-                        .step-number img{ border: 0px; display: block; margin-top: 0px; }
-                        .step-text{ height: 150px; padding: 0px 5px; vertical-align: top; }
-                        .step-text p{ margin-right: 5px; font-size: 16px; font-weight: 350; line-height: 20px; text-align: left; }
-                        .step-text-mb{ padding: 0px 10px; vertical-align: top; }
-                        .step-text-mb p{ font-size: 16px; font-weight: 400; line-height: 21px; text-align: left; }
-                        .payments-td, .payments-session-td, .payments-td-nb{ width: 100%; max-width: 600px; margin: auto; background-color: #f7f7f7; }
-                        .payments-td{ border-top: 1px solid #eee;}
-                        .payment-tb{ width: 100%; max-width: 540px; margin: auto; }
-                        .item-tb-mb{ max-width: 90%; margin: auto;}
-                        .payment-td-icon{ width: 20%; max-width: 80px; vertical-align: top; text-align: right; }
-                        .payment-td-icon img{ width: 45px; text-align: center; margin: auto;}
-                        .payment-td-desc{ padding: 5px 0px 0px 5px; }
-                        .payment-td-link{ width: 20%; max-width: 80px; font-size: 16px; padding-left: 15px; vertical-align: middle;}
-                        .payment-name-td p{ font-family: 'IBM Plex Sans', 'Ubuntu', Arial, sans-serif; font-size: 16px; font-weight: 600; line-height: 1.2; padding-bottom: 5px; }
-                        .payment-desc-td p{ font-family: 'IBM Plex Sans', 'Ubuntu', Arial, sans-serif; font-size: 16px; line-height: 1.5; padding-bottom: 5px; text-align: left; }
-                        .payment-limits-td p{ font-family: 'IBM Plex Sans', 'Ubuntu', Arial, sans-serif; color: #999; font-size: 13px; line-height: 18px; padding-bottom: 8px; }
-                        .dark-logo-padding{ margin: auto; }
-                    /* End of template specific */
-
                     /* Table inside table */
                         .columns-2-ext-td{ width: 100%; padding: 0 50px 5px; }
                         .columns-2-a{ width: 71px; }
                         .columns-2-a img{ margin: auto !important; border: 0; display: block; }
                         .columns-2-b{ padding: 0px 20px 0px; vertical-align: middle; }
-                        .columns-2-b-title{ font-size: 16px; font-weight: 550; line-height: 1; }
-                        .columns-2-b-text{ font-size: 16px; line-height: 1.8; font-weight: 400; }
+                        .columns-2-b-title{ font-size: 13px; font-weight: 550; line-height: 1; }
+                        .columns-2-b-text{ font-size: 12px; line-height: 1.8; font-weight: 400; }
                         .no-padding-td p{ margin: 7px; }
                     /* End of table inside table */
                     /* Footer styles */
                     #footer-table{
-                        width: 600px;
+                        width: 100%;
+                        max-width: 600px;
                         background-color: #fff;
                         padding: 0;
                         border: 0;
@@ -286,7 +239,7 @@
                     #footer-social-td a{ text-decoration: none; }
                     #footer-links-td{
                         color: #646464;
-                        font-size: 12px;
+                        font-size: 11px;
                         font-weight: 500;
                         line-height: 16px;
                         -webkit-text-size-adjust: 100%;
@@ -312,18 +265,14 @@
                 /* End of classes */
                 /* Mobile styles */
                     @media screen and (max-width: 620px){
-                        body{ width: 100% !important;}
-                        #title-img-td, #title-text-td{ height: 100% !important; }
-                        #title-img-td{ width: 55% !important; }
-                        #title-text-td{ width: 45% !important; }
-                        #title-img-td img{ width: 100% !important; height: 100% !important; max-height: 180px !important;}
-                        #title-text-td{ padding: 10px !important; }
-                        #title-text-td h1{ margin-top: 40px !important; font-size: 20px !important; font-weight: 600 !important;} 
-                        h2{ padding: 0px 40px; font-size: 16px;}
-                        #header-td{ width: 100%; }
+                        #header-td{ max-width: 600px; }
                         #header-td, #title-img-tb, #title-img-tb td, #logo-title-tb, .logo-img-td{ margin: 0; padding: 0;}
+                        #image-title-td{ width: 50% !important; }
+                        #image-title-td, .top-right-td{ height: 180px; max-height: 180px; }
+                        #image-title-td img{ object-fit: cover;}
+                        .logo-img-td img{ width: 50px !important; padding: 20px 0 0 20px; }
+                        #title-text-td h1{ margin-top: 20px !important; font-size: 20px; font-weight: 600; }
                        .greeting-td p, .paragraph-td p, .data-property-td, .data-value-td, .link-div{ font-size: 12px; }
-                       .payops-step-td p{ font-size: 14px; }
                         .greeting-td, .paragraph-td{
                             /* Decrease padding on mobile */
                             padding-left: 15px !important;
@@ -334,9 +283,8 @@
                         .columns-2-a{ width: 50px; }
                         .columns-2-a img{ width: 60px; margin: auto !important; }
                         .columns-2-b{ padding: 0px 10px 0px; vertical-align: middle; }
-                        .columns-2-b-title{ font-size: 14px; font-weight: 550; }
-                        .columns-2-b-text{ font-size: 13px; line-height: 1.5; }
-                        .col-3-td-1, .item-tb-mb{ height: 100% !important; }
+                        .columns-2-b-title{ font-size: 13px; font-weight: 550; }
+                        .columns-2-b-text{ font-size: 12px; line-height: 1.5; }
                         .mobile-hide{
                             /* Hide desktop content on mobile */
                             display: none !important;
@@ -349,18 +297,15 @@
                             /* Shows mobile content */
                             display: block !important;
                         }
-                        .payment-desc-td, .payment-limits-td, .payment-link-td{ width: 100%;}
-                        .payment-link-td{ text-align: center;}
-                    }
-                    @media screen and (max-width: 520px){
-                        #title-img-td img{ max-height: 150px !important;}
-                        #title-text-td h1{ margin-top: 30px !important; }
                     }
                     @media screen and (max-width: 460px){
-                        #title-text-td h1{ padding: 10px !important; font-size: 18px !important; }
+                        .logo-img-td img{ width: 40px !important; padding: 15px 0 0 15px; }
+                        #title-text-td h1{ padding: 10px 10px 10px 15px; margin-top: 5px; font-size: 18px; font-weight: 600; }
+                        #image-title-td{ width: 40%; height: 160px; vertical-align: top;}
+                        #image-title-td img{ height: 180px; }
                     }
-                    @media screen and (max-width: 400px){ 
-                        #title-text-td h1{ font-size: 16px !important; }
+                    @media screen and (max-width: 380px){ 
+                        #title-text-td h1{ font-size: 16px; }
                     }
                 /* End of mobile styles */
                 /* Dark mode styles */
@@ -372,25 +317,15 @@
                         }
                         a.button{ color: #fff !important; }
                         li { color: #c2c2c2 !important; }
-                        .logos-white-div{
-                            display: block !important;
-                            visibility: inherit !important;
-                            overflow: visible !important;
-                            float: none !important;
-                        }
                         /* Hides light mode-only content */
-                        .hide-dark-h-logo, .hide-light{ display: none !important; }
+                        .hide-light{ display: none !important; }
                         .show-dark{ display: block !important; }
                         /* Applies dark background if dark mode is selected */
                         .dark-black{ background-color: #0e0e0e !important; }
-                        .dark-gray{ background-color: #1a1a1a !important; color: #6e6e6e !important; }
-                        .darkmode { background-color: #1e1e1e !important; }
-                        .darkmode p, .darkmode h1 { color: #ffffff !important; }
                         /* Custom dark mode font colors */
                         h1, h2, p, span, b, strong { color: #fff !important; }
+                        .dark-gray{ color: #6e6e6e !important; }
                         .dark-subtext{ color: #c2c2c2 !important; }
-                        .payments-td { border-top: 1px solid #3c3c3c;}
-                        .session-title-td{ border: 0 !important;}
                     }
                     [data-ogsc] a, a:visited{ color: #ff444f; text-decoration: none; }
                     [data-ogsc] li { color: #c2c2c2 !important; }
@@ -424,22 +359,16 @@
                                 <!--[if (gte mso 9)|(IE)]>
                                     <table id="ol-title-img-tb" align="center"><tr><td align="center">
                                 <![endif]-->
-                                <table id="header-table">
+                                <table id="title-img-tb">
                                     <tr>
                                         <!--[if (gte mso 9)|(IE)]>
-                                            <td height="180" width="330" style="background-color: #ff444f; border: 0;" border="0">
-                                                <img src="https://static.deriv.com/email/images/header-2023/jeton-55.png" width="330" height="180" valign="top"/>
-                                            </td>
-                                            <td height="180" id="title-text-td" style="background-color: #ff444f; border: 0;"border="0">
-                                                <h1 style="margin: 40px 15px 10px 15px; font-family: Ubuntu, 'IBM Plex Sans', Arial, sans-serif; color: #fff !important;">Turbine seus depósitos com a Jeton</h1>
+                                            <td width="600" height="290">
+                                                <img src="https://static.deriv.com/email/images/header-2023/memorial-day-23-full.png" width="600" height="290"/>
                                             </td>
                                         <![endif]-->
                                         <!--[if !gte mso 9]><!-- -->
-                                        <td id="title-img-td" style="width: 330px; border: 0 !important;">
-                                            <img src="https://static.deriv.com/email/images/header-2023/jeton-55.png" alt="" style="background-color: #ff444f; width: 330px; height: 180px;"/>
-                                        </td>
-                                        <td id="title-text-td" align="center" style="width: 270px; height: 180px; background-color: #ff444f; border: 0 !important;">
-                                            <h1 style="color: #fff !important;">Turbine seus depósitos com a Jeton</h1>
+                                        <td style="width: 100%; max-width: 600px; max-height: 290px;">
+                                            <img src="https://static.deriv.com/email/images/header-2023//memorial-day-23-full.png" alt="" style="width: 100%; max-width: 600px; max-height: 290px;"/>
                                         </td>
                                         <!--<![endif]-->
                                     </tr>
@@ -449,51 +378,35 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="greeting-td dark-black" align="left" style="padding: 30px 30px 10px 30px;">
-                                <p class="dark-subtext">Olá [client's name],</p>
+                            <td class="greeting-td" align="left" style="padding: 30px 30px 20px 30px;" class="dark-black">
+                                <p class="dark-subtext">Hi [client's name],</p>
                             </td>
                         </tr>
                         <tr>
-                            <td class="paragraph-td dark-black" align="left" style="padding: 0px 30px 10px 30px;">
-                                <p class="dark-subtext">Temos notícias incríveis para você! Os nossos amigos da Jeton prepararam uma oferta exclusiva de cashback especialmente para você.</p>
+                            <td class="paragraph-td" align="left" style="padding: 0px 30px 20px 30px;" class="dark-black">
+                                <p class="dark-subtext">You can expect the following changes during the Memorial Day holiday on 29 May 2023:</p>
                             </td>
                         </tr>
                         <tr>
-                            <td class="paragraph-td dark-black" align="left" style="padding: 0px 30px 10px 30px;">
-                                <p class="dark-subtext">Deposite 30 dólares (USD) ou mais em sua conta Deriv utilizando a Jeton de <strong>02 de junho de 2023 a 02 de julho de 2023</strong>, e receba como bônus um cashback exclusivo de 5 dólares (USD).</p>
+                            <td align="left" class="list-ul dark-black">
+                                <ul>
+                                    <li class="dark-subtext" style="font-weight: 700;">Restrictions on minimum contract duration and trading hours</li>
+                                    <li class="dark-subtext" style="font-weight: 700;">Increase in commissions</li>
+                                    <li class="dark-subtext" style="font-weight: 700;">Application of trading volume limits</li>
+                                    <li class="dark-subtext" style="font-weight: 700;">Trading suspension for selected instruments</li>
+                                    <li class="dark-subtext" style="font-weight: 700;">Closure/early closure of the US market</li>
+                                </ul>
                             </td>
                         </tr>
                         <tr>
-                            <td class="paragraph-td dark-black" align="left" style="padding: 0px 30px 10px 30px;">
-                                <p class="dark-subtext">Experimente a conveniência desta carteira eletrônica segura que te possibilita converter mais de 40 moedas, e efetuar depósitos e saques na Deriv com facilidade.</p>
+                            <td class="paragraph-td" align="left" style="padding: 10px 30px 20px 30px;" class="dark-black">
+                                <p class="dark-subtext">Thank you for your understanding. Our service will return to normal after the Memorial Day holiday.</p>
                             </td>
                         </tr>
                         <tr>
-                            <td class="paragraph-td dark-black" align="left" style="padding: 0px 30px 10px 30px;">
-                                <p class="dark-subtext">Não deixe escapar essa oferta válida por tempo limitado. Faça um depósito agora com a Jeton e comece a negociar forex, - o maior e mais líquido mercado financeiro do mundo - e entre outros mercados na Deriv.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="paragraph-td dark-black" align="left" style="padding: 0px 30px 20px;">
-                                <p class="dark-subtext" style="font-weight: 500 !important; font-style: italic;">Sujeito ao cumprimento dos <a href="https://blog.jeton.com/es/termos-e-condicoes-da-campanha" target="_blank">Termos e Condições</a>.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="center" class="dark-black" style="padding: 20px 30px 30px;">
-                                <!--[if (gte mso 9)|(IE)]>
-                                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://app.deriv.com/cashier/deposit/?utm_source=jeton&utm_medium=cross-marketing&utm_campaign=latam-br-email-0623-pt&utm_content=cashback" style="height:40px;v-text-anchor:middle;width:230px;" arcsize="40%" strokecolor="#ff444f" fillcolor="#ff444f">
-                                <w:anchorlock/>
-                                <center style="color:#fff;font-family:sans-serif;font-size:16px;font-weight:bold;">Faça um depósito</center>
-                                </v:roundrect>
-                                <![endif]-->
-                                <!--[if !gte mso 9]><!-- -->
-                                <a class="button" href="https://app.deriv.com/cashier/deposit/?utm_source=jeton&utm_medium=cross-marketing&utm_campaign=latam-br-email-0623-pt&utm_content=cashback" target="_blank">Faça um depósito</a>
-                                <!--<![endif]-->
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="help-td dark-black" align="center" style="padding: 0px 30px 40px 30px;">
-                                <p class="dark-subtext">Precisa de uma conta Jeton Wallet? Inscreva-se <a href="https://www.jeton.com/v2/register?mrc-ref=MDUzNjQzNTY%3D" target="_blank">aqui</a>.</p>
+                            <td class="paragraph-td" align="center" style="padding: 0px 30px 20px 30px;" class="dark-black">
+                                <p class="dark-subtext">If you have any questions, contact us:<br/>
+                                    <a href="https://deriv.com/?is_livechat_open=true" target="_blank">Live chat</a> | <a href="https://api.whatsapp.com/send/?phone=35699578341&text&type=phone_number&app_absent=0" target="_blank">WhatsApp</a></p>
                             </td>
                         </tr>
                     </table>
@@ -508,23 +421,23 @@
                     <!--[if (gte mso 9)|(IE)]>
                         <table id="ol-footer-table" align="center"><tr><td>
                             <center>
-                                <a href="https://twitter.com/DerivPortugues" target="_blank">
-                                    <img src="https://static.deriv.com/email/images/icons/twitter-gray.png" height="20" width="20" alt="Deriv.com on Twitter" title="Deriv.com no Twitter"/>
+                                <a href="https://twitter.com/derivdotcom" target="_blank">
+                                    <img src="https://static.deriv.com/email/images/icons/twitter-gray.png" height="20" width="20" alt="Deriv.com on Twitter" title="Deriv.com on Twitter"/>
                                 </a>&nbsp;&nbsp;
-                                <a href="https://www.facebook.com/derivportugues" target="_blank">
-                                    <img src="https://static.deriv.com/email/images/icons/facebook-gray.png" height="20" width="20" alt="Deriv.com on Facebook" title="Deriv.com no Facebook"/>
+                                <a href="https://www.facebook.com/derivdotcom" target="_blank">
+                                    <img src="https://static.deriv.com/email/images/icons/facebook-gray.png" height="20" width="20" alt="Deriv.com on Facebook" title="Deriv.com on Facebook"/>
                                 </a>&nbsp;&nbsp;
-                                <a href="https://www.instagram.com/deriv_portugues/" target="_blank">
-                                    <img src="https://static.deriv.com/email/images/icons/instagram-gray.png" height="20" width="20" alt="Deriv.com on Instagram" title="Deriv.com no Instagram"/>
+                                <a href="https://www.instagram.com/deriv_official/" target="_blank">
+                                    <img src="https://static.deriv.com/email/images/icons/instagram-gray.png" height="20" width="20" alt="Deriv.com on Instagram" title="Deriv.com on Instagram"/>
                                 </a>&nbsp;&nbsp;
                                 <a href="https://t.me/derivdotcomofficial" target="_blank">
-                                    <img src="https://static.deriv.com/email/images/icons/telegram-gray.png" height="20" width="20" alt="Deriv.com on Telegram" title="Deriv.com no Telegram"/>
+                                    <img src="https://static.deriv.com/email/images/icons/telegram-gray.png" height="20" width="20" alt="Deriv.com on Telegram" title="Deriv.com on Telegram"/>
                                 </a>&nbsp;&nbsp;
                                 <a href="https://www.linkedin.com/company/derivdotcom/" target="_blank">
-                                    <img src="https://static.deriv.com/email/images/icons/linkedin-gray.png" height="20" width="20" alt="Deriv.com on LinkedIn" title="Deriv.com no LinkedIn"/>&nbsp;&nbsp;
+                                    <img src="https://static.deriv.com/email/images/icons/linkedin-gray.png" height="20" width="20" alt="Deriv.com on LinkedIn" title="Deriv.com on LinkedIn"/>&nbsp;&nbsp;
                                 </a>
                                 <a href="https://www.youtube.com/c/Derivdotcom" target="_blank">
-                                    <img src="https://static.deriv.com/email/images/icons/youtube-gray.png" height="20" width="20" alt="Deriv.com on Youtube" title="Deriv.com no Youtube"/>
+                                    <img src="https://static.deriv.com/email/images/icons/youtube-gray.png" height="20" width="20" alt="Deriv.com on Youtube" title="Deriv.com on Youtube"/>
                                 </a>
                             </center>
                     <![endif]-->
@@ -534,35 +447,34 @@
                         <!-- SOCIAL -->
                         <tr>
                             <td id="footer-social-td" align="center" class="dark-black">
-                                <a href="https://twitter.com/DerivPortugues" target="_blank">
-                                    <img src="https://static.deriv.com/email/images/icons/twitter-gray.png" style="height: 20px;" alt="Deriv.com on Twitter" title="Deriv.com no Twitter"/>
+                                <a href="https://twitter.com/derivdotcom" target="_blank">
+                                    <img src="https://static.deriv.com/email/images/icons/twitter-gray.png" style="height: 20px;" alt="Deriv.com on Twitter" title="Deriv.com on Twitter"/>
                                 </a>&nbsp;&nbsp;
-                                <a href="https://www.facebook.com/derivportugues" target="_blank">
-                                    <img src="https://static.deriv.com/email/images/icons/facebook-gray.png" style="height: 20px;" alt="Deriv.com on Facebook" title="Deriv.com no Facebook"/>
+                                <a href="https://www.facebook.com/derivdotcom" target="_blank">
+                                    <img src="https://static.deriv.com/email/images/icons/facebook-gray.png" style="height: 20px;" alt="Deriv.com on Facebook" title="Deriv.com on Facebook"/>
                                 </a>&nbsp;&nbsp;
-                                <a href="https://www.instagram.com/deriv_portugues/" target="_blank">
-                                    <img src="https://static.deriv.com/email/images/icons/instagram-gray.png" style="height: 20px;" alt="Deriv.com on Instagram" title="Deriv.com no Instagram"/>
+                                <a href="https://www.instagram.com/deriv_official/" target="_blank">
+                                    <img src="https://static.deriv.com/email/images/icons/instagram-gray.png" style="height: 20px;" alt="Deriv.com on Instagram" title="Deriv.com on Instagram"/>
                                 </a>&nbsp;&nbsp;
                                 <a href="https://t.me/derivdotcomofficial" target="_blank">
-                                    <img src="https://static.deriv.com/email/images/icons/telegram-gray.png" style="height: 20px;" alt="Deriv.com on Telegram" title="Deriv.com no Telegram"/>
+                                    <img src="https://static.deriv.com/email/images/icons/telegram-gray.png" style="height: 20px;" alt="Deriv.com on Telegram" title="Deriv.com on Telegram"/>
                                 </a>&nbsp;&nbsp;
                                 <a href="https://www.linkedin.com/company/derivdotcom/" target="_blank">
-                                    <img src="https://static.deriv.com/email/images/icons/linkedin-gray.png" style="height: 20px;" alt="Deriv.com on LinkedIn" title="Deriv.com no LinkedIn"/>&nbsp;&nbsp;
+                                    <img src="https://static.deriv.com/email/images/icons/linkedin-gray.png" style="height: 20px;" alt="Deriv.com on LinkedIn" title="Deriv.com on LinkedIn"/>&nbsp;&nbsp;
                                 </a>
                                 <a href="https://www.youtube.com/c/Derivdotcom" target="_blank">
-                                    <img src="https://static.deriv.com/email/images/icons/youtube-gray.png" style="height: 20px;" alt="Deriv.com on Youtube" title="Deriv.com no Youtube"/>
+                                    <img src="https://static.deriv.com/email/images/icons/youtube-gray.png" style="height: 20px;" alt="Deriv.com on Youtube" title="Deriv.com on Youtube"/>
                                 </a>
                             </td>
                         </tr>
                         <tr>
                             <td id="footer-links-td" align="center" class="dark-black">
-                                <p><a href="https://deriv.com/pt/help-centre/">Centro de ajuda</a>&nbsp;&nbsp;&nbsp;<span class="dark-gray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://deriv.com/pt/terms-and-conditions">Termos e Condições</a>&nbsp;&nbsp;&nbsp;<span class="dark-gray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://deriv.com/tnc/security-and-privacy.pdf">Segurança & privacidade</a></p>
-                                <p id="unsubscribe-p" class="dark-gray dark-subtext">Não quer mais receber esses emails? <a href="https://app.deriv.com/account/personal-details">Cancelar inscrição</a>.</p>
+                                <p><a href="https://www.deriv.com/help-centre">Help Centre</a>&nbsp;&nbsp;&nbsp;<span class="dark-gray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/">Terms and conditions</a>&nbsp;&nbsp;&nbsp;<span class="dark-gray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://deriv.com/tnc/security-and-privacy.pdf">Security and privacy</a></p>
                             </td>
                         </tr>
                         <tr>
                             <td id="f-logo" align="center" class="dark-black">
-                                <a href="https://www.deriv.com/pt">
+                                <a href="https://www.deriv.com">
                                     <!--[if (gte mso 9)|(IE)]>
                                         <img src="https://static.deriv.com/logos/deriv-gray-2023.png" alt="Deriv.com" height="20" title="Deriv.com">
                                     <![endif]-->
