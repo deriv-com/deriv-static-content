@@ -1,0 +1,3 @@
+files:
+  - source: /public/email/crowdin-test
+    translation: /public/email/crowdin-test/translations/%two_letters_code%/%original_file_name%
