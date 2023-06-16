@@ -1,0 +1,74 @@
+                        <tr>
+                            <td id="title-text-td">
+                                <h1 class="dark-subtext">Resolution for DP2P order <br>{{event.order_id}}</h1>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="paragraph-td" align="left" style="padding: 0px 30px 20px 30px;" class="dark-black">
+                                <p class="dark-subtext">We've resolved the complaint against you for this DP2P exchange:</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" style="padding: 0px 30px 40px 30px;" class="dark-black">
+                                <table class="email-data-tb">
+                                    <tr>
+                                        <td class="data-property-td dark-subtext">
+                                            Your role in the exchange:
+                                        </td>
+                                        <td class="data-value-td dark-subtext">
+                                            Buyer
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="data-property-td dark-subtext">
+                                            Your order ID:
+                                        </td>
+                                        <td class="data-value-td dark-subtext">
+                                            {{event.order_id}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="data-property-td dark-subtext" style="padding-bottom: 20px;">
+                                            Amount:
+                                        </td>
+                                        <td class="data-value-td dark-subtext" style="padding-bottom: 20px;">
+                                            {{event.currency}} {{event.amount}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="data-property-td dark-subtext" style="padding-bottom: 20px;">
+                                            Created on:
+                                        </td>
+                                        <td class="data-value-td dark-subtext" style="padding-bottom: 20px;">
+                                            {{event.order_created_at | date: '%H:%M, %a, %b %d, %Y'}}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="paragraph-td" align="left" style="padding: 0px 30px 20px 30px;" class="dark-black">
+                                <p class="dark-subtext">After investigating the case, we have resolved the dispute in the seller's favour. <b>{{event.currency}} {{event.amount}}</b> has been released to the seller's account and the case is closed.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="paragraph-td" align="left" style="padding: 0px 30px 20px 30px;" class="dark-black">
+                                <p class="dark-subtext">If you believe there has been a mistake, please contact the seller to recreate and complete the exchange.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" style="padding: 0px 30px 30px 30px;" class="dark-black">
+                                <table class="email-data-tb">
+                                    <tr>
+                                        <td class="data-value-td-1 dark-subtext">
+                                            Note: According to DP2P terms of use, the buyer and the seller are solely responsible for making sure that the payment is accurate. Deriv is not liable in any way to make corrections or compensations for any incorrect payment made by the buyer, including but not limited to overpayment and underpayment.
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="paragraph-td" align="left" style="padding: 0px 30px 40px 30px;" class="dark-black">
+                                <p class="dark-subtext">Need help?<a href="https://deriv.com/contact_us/?is_livechat_open=true" target="_blank"> Contact us</a> via live chat.</p>
+                            </td>
+                        </tr>

@@ -1,0 +1,63 @@
+                        <tr>
+                            <td class="greeting-td" align="left" style="padding: 20px 30px 20px 30px;" class="dark-black">
+                                <p class="dark-subtext">Dear {{event.full_name}},</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="paragraph-td" align="left" style="padding: 0px 30px 20px 30px;" class="dark-black">
+                                <p class="dark-subtext">We're really glad that you've decided to take up trading with {{event.brand | capitalize }}.com and we hope that your experience on our platform has been a positive one so far.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="paragraph-td" align="left" style="padding: 0px 30px 20px 30px;" class="dark-black">
+                                <p class="dark-subtext">We thought we'd drop you a note to let you know that we have received your request for a bonus. Unfortunately, we were unable to process your request for one of the following reasons:</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" class="list-ul dark-black">
+                                <ul>
+                                    <li class="dark-subtext">You have signed up for more than one account.</li>
+                                    <li class="dark-subtext">You have already claimed a bonus in the past.</li>
+                                    <li class="dark-subtext">You have opened an account using invalid details.</li>
+                                    <li class="dark-subtext">You have not yet reached the turnover required to be credited with the bonus.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="paragraph-td" align="left" style="padding: 0px 30px 20px 30px;" class="dark-black">
+                                <p class="dark-subtext">For more information on the terms and conditions that apply to your bonus, go to:
+                                    <a href="{{ event.tac_url}}" style="overflow-wrap: break-word; word-break: break-all;">{{event.tac_url}}</a></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="paragraph-td" align="left" style="padding: 0px 30px 20px 30px;" class="dark-black">
+                                <p class="dark-subtext">If you feel that none of these reasons apply to your case and you'd like to request that the bonus is credited to your account, please provide us with:</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" class="list-ul dark-black">
+                                <ol>
+                                    <li class="dark-subtext">A scanned copy of your passport or driver's licence.</li>
+                                    <li class="dark-subtext">A scanned copy of a utility bill showing your current residential address (utility bill must not be more than 3 months old).</li>
+                                </ol>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="paragraph-td" align="left" style="padding: 0px 30px 20px 30px;" class="dark-black">
+                                <p class="dark-subtext">Our customer support team will submit another request for a bonus on your behalf as soon as we receive the documents. It may take up to 3 working days for a bonus to be credited on your account.</p>
+                            </td>
+                        <tr>
+                            <td class="paragraph-td" align="left" style="padding: 0px 30px 20px 30px;" class="dark-black">
+                                <p class="dark-subtext">We wish you the best of luck with your trading.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="paragraph-td" align="left" style="padding: 0px 30px 20px 30px;" class="dark-black">
+                                <p class="dark-subtext">Regards,</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="paragraph-td" align="left" style="padding: 0px 30px 40px 30px;" class="dark-black">
+                                <p class="dark-subtext">{{event.brand | capitalize }}.com</p>
+                            </td>
+                        </tr>

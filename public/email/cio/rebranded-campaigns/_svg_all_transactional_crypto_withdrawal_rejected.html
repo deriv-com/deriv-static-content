@@ -1,0 +1,59 @@
+{% if event.reject_reason == 'highest_deposit_method_is_not_crypto'%} <tr>
+    <td class="paragraph-td" align="left" style="padding: 10px 30px 0px 30px;" class="dark-black"> {% if event.meta_data == 'Deriv P2P'%}
+      <p class="dark-subtext">Your withdrawal of <b>{{event.currency_code}} {{event.amount}}</b> from your account {{event.loginid}} was declined because it wasn’t made via Deriv P2P, your usual deposit method.</p>
+      <p class="dark-subtext">To make a withdrawal:</p>
+        </td>
+  </tr>
+  <tr>
+      <td align="left" class="list-ul dark-black">
+        {% if event.cashier_transfer_url %}
+          <ol>
+              <li class="dark-subtext">
+                  <a target="_blank" href="{{event.cashier_transfer_url}}" style="color: #ff444f !important">Transfer {{event.currency_code}}</a> to your {{event.fiat_account}} account.
+          {% else %}
+           Transfer {{event.currency_code}} to your {{event.fiat_account}} account.
+           {% endif %}
+        </li>
+                                      <li class="dark-subtext">{% if event.cashier_p2p_url %}
+                                          <a target="_blank" href="{{event.cashier_p2p_url}}" style="color: #ff444f !important">Make an exchange</a> on Deriv P2P for your local currency.
+          {% else %}
+           Make an exchange on Deriv P2P for your local currency.
+           {% endif %}
+        </li>
+     <ol>
+       {% endif%}
+       {% if event.meta_data == 'Payment Agent'%}
+       <p class="dark-subtext">Your withdrawal of <b>{{event.currency_code}} {{event.amount}}</b> from your account {{event.loginid}} was declined because it wasn’t made via a payment agent, your usual deposit method. We recommend using your usual payment agent for withdrawals. </p>
+      <p class="dark-subtext">Remember to check if your payment agent is able to process crypto withdrawals. If not, you may need to transfer {{event.currency_code}} to your {{event.fiat_account}} account first, and then withdraw through your payment agent. </p> {% endif%} {% if event.meta_data != 'Deriv P2P' and event.meta_data != 'Payment Agent' %}
+      <p class="dark-subtext">Withdrawal request for <b>{{event.currency_code}} {{event.amount}}</b> from your account {{event.loginid}} was declined because you have frequently deposited through {{event.meta_data}}, a different payment method.<br/>
+      To make a withdrawal:</p>
+      {% if event.cashier_transfer_url %}
+          <ol>
+              <li class="dark-subtext">
+                  <a target="_blank" href="{{event.cashier_transfer_url}}" style="color: #ff444f !important">Transfer {{event.currency_code}}</a> to your {{event.fiat_account}} account.
+            {% else %}
+              Transfer {{event.currency_code}} to your {{event.fiat_account}} account.
+            {% endif %}
+            </li>
+            <li class="dark-subtext">{% if event.cashier_withdrawal_url %}
+                <a target="_blank" href="{{event.cashier_withdrawal_url}}" style="color: #ff444f !important">Make a withdrawal</a> from your {{event.fiat_account}} account via <b>{{event.meta_data}}</b>.
+              {% else %}
+              Make a withdrawal from your {{event.fiat_account}} account via <b>{{event.meta_data}}</b>.
+              {% endif %}
+            </li>
+            <ol>
+            {% endif%}
+    </td>
+  </tr>
+  <tr>
+                              <td class="paragraph-td" align="left" style="padding: 0px 30px 40px 30px;" class="dark-black">
+                                  <p class="dark-subtext">If you need help, please <a target="_blank" href="{{event.live_chat_url}}" target="_blank">contact us</a> via live chat.</p>
+                              </td>
+                          </tr>
+                          {% else%}
+                          <tr>
+                              <td class="paragraph-td" align="left" style="padding: 0px 30px 40px 30px;" class="dark-black">
+                                  <p class="dark-subtext">Your crypto withdrawal request has been declined from our side. If you wish to proceed with the withdrawal again, please contact our <a href="{{event.live_chat_url}}" target="_blank">chat support</a> to get further assistance.</p>
+                              </td>
+                          </tr>
+                          {% endif%}

@@ -1,0 +1,56 @@
+<tr>
+    <td id="title-text-td" style="padding: 0px 30px;">
+        <h1 class="dark-subtext mb-no-padding">You're nearly there!</h1>
+    </td>
+</tr>
+<tr>
+    <td class="paragraph-td" align="left" style="padding: 0px 30px 30px 30px;" class="dark-black">
+        <p class="dark-subtext">Thank you for creating an account with us. To complete your signup, please verify your email.</p>
+    </td>
+</tr>
+{% if event.verification_url %} <!-- button1 -->
+<tr>
+    <td align="center" class="dark-black">
+        <!--[if (gte mso 9)|(IE)]>
+        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="[% verification_url %]" style="height:40px;v-text-anchor:middle;width:230px;" arcsize="30%" strokecolor="#ff444f" fillcolor="#ff444f">
+        <w:anchorlock/>
+        <center style="color:#fff;font-family:'IBM Plex Sans', sans-serif;font-size:14px;font-weight:bold;">[% l("Verify my email") %]</center>
+        </v:roundrect>
+        <![endif]-->
+        <!--[if !gte mso 9]><!-- -->
+        <a class="button" href="{{ event.verification_url }}" target="_blank">Verify my email</a>
+        <!--<![endif]-->
+    </td>
+</tr>
+<tr>
+    <td class="paragraph-td" align="left" style="padding: 30px;" class="dark-black">
+        <p class="dark-subtext">If the button doesn't work, copy and paste the link below into a new browser window.</p>
+    </td>
+</tr>
+<tr>
+    <td class="paragraph-td" align="center" style="padding: 0px 30px 30px 30px;">
+        <div class="link-div"><a href="{{ event.verification_url }}" style="overflow-wrap: break-word; word-break: break-all; color: #ff444f !important;">{{ event.verification_url }}</a></div>
+    </td>
+</tr>
+{% else %}
+<tr>
+    <td class="paragraph-td" align="left" style="padding: 0px 30px 20px 30px;" class="dark-black">
+        <p class="dark-subtext">Enter the following verification token into the form to create an account:</p>
+    </td>
+</tr>
+<tr>
+    <td class="paragraph-td" align="center" style="padding: 30px 30px 20px 30px;" class="dark-black">
+        <p class="dark-subtext" style="font-weight: 550;">{{ event.code }}</p>
+    </td>
+</tr>
+<tr>
+    <td class="paragraph-td" align="left" style="padding: 0px 30px 30px 30px;" class="dark-black">
+        <p class="dark-subtext">Thanks for signing up.</p>
+    </td>
+</tr>
+{% endif %}
+<tr>
+    <td class="paragraph-td" align="left" style="padding: 0px 30px 40px 30px;" class="dark-black">
+        <p class="dark-subtext">Need help? <a href="{{event.live_chat_url}}" target="_blank"> Contact us</a> via live chat.</p>
+    </td>
+</tr>
