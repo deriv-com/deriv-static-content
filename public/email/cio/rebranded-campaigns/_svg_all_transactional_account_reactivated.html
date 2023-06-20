@@ -1,0 +1,76 @@
+<tr>
+    <td class="paragraph-td" align="left" style="padding: 0px 30px 20px 30px;" class="dark-black">
+        <p class="dark-subtext">It's great to have you back. Your account {{event.loginid}} has been reactivated successfully.</p>
+    </td>
+</tr>
+<tr>
+    <td class="paragraph-td" align="left" style="padding: 0px 30px 0px 30px;" class="dark-black">
+        <h2 class="dark-subtext">Before you start trading, please go to your profile to:</h2>
+    </td>
+</tr>
+<tr>
+    <td class="paragraph-td" align="left" style="padding: 0px 30px 0px 30px;" class="dark-black">
+        <p class="dark-subtext"><strong>&#9679; Reset your password</strong></p>
+    </td>
+</tr>
+<tr>
+    <td class="paragraph-td" align="left" style="padding: 0px 30px 0px 40px;" class="dark-black">
+        <p class="dark-subtext">Remember to use a strong password to safeguard your account.</p>
+    </td>
+</tr>
+{% if event.needs_poi == '1' %}
+<tr>
+    <td class="paragraph-td" align="left" style="padding: 0px 30px 0px 30px;" class="dark-black">
+        <p class="dark-subtext"><strong>&#9679; Upload your documents</strong></p>
+    </td>
+</tr>
+<tr>
+    <td class="paragraph-td" align="left" style="padding: 0px 30px 30px 40px;" class="dark-black">
+        <p class="dark-subtext">You'll need to upload documents to prove your identity.</p>
+    </td>
+</tr>
+{% else %}
+<tr>
+    <td class="paragraph-td" align="left" style="padding: 0px 30px 0px 30px;" class="dark-black">
+        <p class="dark-subtext"><strong>&#9679; Check your personal details</strong></p>
+    </td>
+</tr>
+<tr>
+    <td class="paragraph-td" align="left" style="padding: 0px 30px 30px 40px;" class="dark-black">
+        <p class="dark-subtext">Ensure your information is up-to-date.</p>
+    </td>
+</tr>
+{% endif %}
+<tr>
+    <td align="center" class="dark-black">
+        <!--[if (gte mso 9)|(IE)]>
+        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="[% profile_url %]" style="height:40px;v-text-anchor:middle;width:230px;" arcsize="30%" strokecolor="#ff444f" fillcolor="#ff444f">
+        <w:anchorlock/>
+        <center style="color:#fff;font-family:sans-serif;font-size:14px;font-weight:bold;">[% l('Go to my profile') %]</center>
+        </v:roundrect>
+        <![endif]-->
+        <!--[if !gte mso 9]><!-- -->
+        <a class="button" href="{{event.profile_url}}" target="_blank">Go to my profile</a>
+        <!--<![endif]-->
+    </td>
+</tr>
+<tr>
+    <td class="paragraph-td" align="center" style="padding: 30px 30px 20px 30px;" class="dark-black">
+        <p class="dark-subtext">Or use this link:</p>
+    </td>
+</tr>
+<tr>
+    <td class="link-td" align="center" style="padding: 0px 30px 20px 30px;">
+        <div class="link-div"><a href="{{event.profile_url}}" style="overflow-wrap: break-word; word-break: break-all; color: #ff444f !important;">{{event.profile_url}}</a></div>
+    </td>
+</tr>
+<tr>
+    <td class="paragraph-td" align="left" style="padding: 0px 30px 20px 30px;" class="dark-black">
+        <p class="dark-subtext">For tips to protect yourself against gambling and security risks, <a href="{{event.resp_trading_url}}" target="_blank"> read our page</a> on secure and responsible trading.</p>
+    </td>
+</tr>
+<tr>
+    <td class="paragraph-td" align="left" style="padding: 0px 30px 40px 30px;" class="dark-black">
+        <p class="dark-subtext">If you didn't request to reactivate your account, <a href="{{ event.live_chat_url}}" target="_blank">let us know</a>.</p>
+    </td>
+</tr>

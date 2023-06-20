@@ -1,0 +1,15 @@
+                        <tr>
+                            <td class="greeting-td" align="left" style="padding: 20px 30px 20px 30px;" class="dark-black">
+                                <p class="dark-subtext">{% if customer.firstName != blank %}Hi {{customer.firstName}}, {% else %} Hi, {% endif %}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="paragraph-td" align="left" style="padding: 0px 30px 20px 30px;" class="dark-black">
+                                <p class="dark-subtext">Unfortunately, we couldn't create a new account for you because your email address is linked to a closed account.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="paragraph-td" align="left" style="padding: 0px 30px 40px 30px;" class="dark-black">
+                                <p class="dark-subtext">If you'd like to reactivate your account, <a href="{{ event.live_chat_url }}" target="_blank">contact us via live chat.</p>
+                            </td>
+                        </tr>

@@ -1,0 +1,55 @@
+                        <tr>
+                            <td class="paragraph-td" align="left" style="padding: 20px 30px 20px 30px;" class="dark-black">
+                                <p class="dark-subtext">{% if event.is_name_change %}
+                                    We noticed you have recently updated your account name. For security reasons, we would need to verify your account information.
+                                    {% else %}
+                                    As part of our regulatory requirements, we verify our clients' accounts.
+                                    {% endif %}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="paragraph-td" align="left" style="padding: 0px 30px 20px 30px;" class="dark-black">
+                                <p class="dark-subtext">What you need to do:</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="paragraph-td" align="left" style="padding: 0px 30px 20px 30px;" class="dark-black">
+                                <p class="dark-subtext">1. Go to your profile and ensure your personal details are accurate and complete.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="dark-black">
+                                <!--[if (gte mso 9)|(IE)]>
+                                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="[% profile_url %]" style="height:40px;v-text-anchor:middle;width:230px;" arcsize="30%" strokecolor="#ff444f" fillcolor="#ff444f">
+                                <w:anchorlock/>
+                                <center style="color:#fff;font-family:sans-serif;font-size:14px;font-weight:bold;">Check my profile</center>
+                                </v:roundrect>
+                                <![endif]-->
+                                <!--[if !gte mso 9]><!-- -->
+                                <a class="button" href="{{ event.profile_url }}" target="_blank">Check my profile</a>
+                                <!--<![endif]-->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="paragraph-td" align="left" style="padding: 30px 30px 30px 30px;" class="dark-black">
+                                <p class="dark-subtext">2. Upload your document(s) to prove your identity. We accept scanned copies of your passport, driving licence, or national identity card showing your name, date of birth, and document expiry date.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="dark-black">
+                                <!--[if (gte mso 9)|(IE)]>
+                                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="[% authentication_url %]" style="height:40px;v-text-anchor:middle;width:230px;" arcsize="30%" strokecolor="#ff444f" fillcolor="#ff444f">
+                                <w:anchorlock/>
+                                <center style="color:#fff;font-family:sans-serif;font-size:14px;font-weight:bold;">Upload my documents</center>
+                                </v:roundrect>
+                                <![endif]-->
+                                <!--[if !gte mso 9]><!-- -->
+                                <a class="button" href="{{ event.authentication_url }}" target="_blank">Upload my documents</a>
+                                <!--<![endif]-->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="paragraph-td" align="left" style="padding: 30px 30px 40px 30px;" class="dark-black">
+                                <p class="dark-subtext">Thank you.</p>
+                            </td>
+                        </tr>
