@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
     <head>
@@ -41,10 +40,10 @@
             <!-- Styles for Outlook: -->
                 <!--[if mso]>
                     <style type="text/css">
-                        *, h1, h2, h3, td, { font-family: 'Ubuntu', Arial, sans-serif; }
+                        *, h1, h2, h3, td, { font-family: 'Ubuntu', 'IBM Plex Sans', Arial, sans-serif; }
                         body{ background-color: #eee;}
                         p, a, .greeting-td p, .paragraph-td p{ font-family: 'IBM Plex Sans', Arial, sans-serif; }
-                        h1{ font-size: 27px; font-weight: 700; padding: 0 0 20px 20px; }
+                        h1{ font-size: 22px; font-weight: 700; padding: 0 0 20px 20px; }
                         table { border-collapse: collapse; }
                         a, a:visited { color: #ff444f !important; text-decoration: none; }
                         a.button{ padding: 10px 16px; color: #fff !important; border: 0; border-radius: 4px; font-size: 14px; text-decoration: none; text-align: center; }
@@ -92,7 +91,7 @@
                     }
                 /* END OF FONTS */
                 /* Applied to all tags */
-                *{ font-family: 'Ubuntu', Arial, sans-serif; color: #414652; }
+                *{ font-family: 'Ubuntu', 'IBM Plex Sans', Arial, sans-serif; color: #414652; }
                 p, a{ font-family: 'IBM Plex Sans', Arial, sans-serif; color: #414652; }
                 body{
                     width: 100%;
@@ -181,12 +180,13 @@
                     #slash-td{ margin: 0; padding: 0; }
                     #slash-td img{ width: 100%; margin: 0; padding: 0; }
                     #title-text-td{ vertical-align: top; }
-                    #title-text-td h1{ padding: 0px 60px; margin-top: -15px; font-size: 30px; font-weight: 700; text-align: center; line-height: 40px;}
+                    #title-text-td h1{ padding: 0px 40px; margin-top: -15px; font-size: 28px; font-weight: 700; text-align: center; line-height: 36px;}
                     .email-data-tb{ width: 90%; margin: 0 auto; background-color: rgba(65, 70, 82, 0.05); border-radius: 16px;}
-                    .data-property-td{ width: 35%; }
                     .data-property-td, .data-value-td{ padding: 20px 30px 5px; }
+                    .data-value-td-1{ padding: 20px 30px 20px; line-height: 1.5;}
                     .data-value-td{ font-weight: 500; }
-                    .link-div{ background-color: rgba(65, 70, 82, 0.05); width: 90%; margin: auto; color: #ff444f; font-size: 15px; font-weight: 400; padding: 10px 0;}
+                    .link-div{ background-color: rgba(65, 70, 82, 0.05); width: 90%; margin: auto; color: #ff444f; font-size: 15px; font-weight: 400; padding: 15px; border-radius: 16px; line-height: 1.5;}
+                    .property-box{ background-color: rgba(65, 70, 82, 0.05); width: 90%; margin: auto; font-size: 15px; font-weight: 400; padding: 15px; border-radius: 16px; line-height: 1.5;}
                     .greeting-td p, .paragraph-td p, .data-property-td, .data-value-td{
                         margin: 0;
                         font-size: 16px;
@@ -220,6 +220,7 @@
                         line-height: 24px;
                     }
                     .list-ul{ padding: 0px 30px 0px 40px; }
+                    .list-ol{ padding: 0px 30px 0px 40px; }
                 /* End of list styles */
                 /* Table inside table styles */
                     .columns-2-ext-td{ width: 100%; padding: 0 50px 5px; }
@@ -267,7 +268,7 @@
                         color: #999;
                         font-weight: 400;
                     }
-                    #f-logo{ padding: 30px; }
+                    #f-logo{ padding: 30px; background-color: #fff;}
                     .trustpilot-td{ padding: 40px 30px 30px; background-color: #ddd; }
                     .trustpilot-widget a{ text-decoration: none; }
                     .trustpilot-widget img{ border: 0; height: 18px; max-height: 18px; }
@@ -277,9 +278,10 @@
                         #header-td{ max-width: 600px; }
                         #header-td, #title-img-tb, #title-img-tb td, #logo-img-td{ margin: 0; padding: 0;}
                         #logo-img-td img{ height: 18px; padding: 20px 0 0 20px; }
-                        #title-text-td h1{ padding: 10px 10px 10px 20px; margin-top: 10px; font-size: 20px; font-weight: 600; }
+                        #title-text-td h1{ padding: 10px 20px !important; margin-top: 10px; font-size: 20px !important; font-weight: 600; line-height: 28px !important; }
                         #slash-td{ margin: 0; padding: 0; }
-                        .greeting-td p, .paragraph-td p, .data-property-td, .data-value-td, .link-div{ font-size: 14px; }
+                        .greeting-td p, .paragraph-td p, .data-property-td, .data-value-td, .link-div, .property-box{ font-size: 14px !important; }
+                        .link-div, .property-box{ padding: 10px 25px !important; }
                         .greeting-td, .paragraph-td{
                             /* Decrease padding on mobile */
                             padding-left: 15px !important;
@@ -287,17 +289,22 @@
                         }
                         .email-data-tb{ width: 94%; }
                         .data-property-td, .data-value-td{ padding: 15px 20px 5px; }
+                        .data-value-td-1{ padding: 20px 30px 20px; line-height: 1.5; text-align: center;}
                         .list-ul{ padding: 0px 10px 0px 15px; }
+                        .list-ol{ padding: 0px 10px 0px 15px; }
                         .columns-2-ext-td{ width: 100%; padding: 0 10px 5px; }
                         .columns-2-a{ width: 50px; }
                         .columns-2-a img{ width: 60px; margin: auto !important; }
                         .columns-2-b{ padding: 0px 10px 0px; vertical-align: middle; }
-                        .columns-2-b-title{ font-size: 14px; font-weight: 550; }
-                        .columns-2-b-text{ font-size: 13px; line-height: 1.5; }
+                        .columns-2-b-title{ font-size: 14px !important; font-weight: 550; }
+                        .columns-2-b-text{ font-size: 13px !important; line-height: 1.5; }
                         #footer-social-td img{ height: 20px; }
                         .mobile-hide{
                             /* Hide desktop content on mobile */
                             display: none !important;
+                        }
+                        .max-width {
+                            max-width: 100% !important;
                         }
                         .mb-no-padding{
                             /* Remove padding on external td from mobile */
@@ -310,13 +317,14 @@
                     }
                     @media screen and (max-width: 460px){
                         #logo-img-td img{ height: 16px; padding: 15px 0 0 15px; }
-                        #title-text-td h1{ padding: 10px 10px 10px 15px; margin-top: 5px; font-size: 18px; font-weight: 600; }
+                        #title-text-td h1{ padding: 10px 10px 10px 15px !important; margin-top: 5px; font-size: 18px !important; font-weight: 600; line-height: 26px !important; }
                         .email-data-tb{ width: 98%; }
-                        .data-property-td, .data-value-td{ padding: 15px 15px 5px; font-size: 12px; }
-                        .link-div{ font-size: 12px; }
+                        .data-property-td, .data-value-td{ padding: 15px 15px 5px; font-size: 12px !important; }
+                        .data-value-td-1{ padding: 10px; }
+                        .link-div, .property-box{ font-size: 12px !important; padding: 10px 15px !important; }
                     }
                     @media screen and (max-width: 380px){ 
-                        #title-text-td h1{ font-size: 16px; }
+                        #title-text-td h1{ font-size: 16px !important; line-height: 25px !important;  padding: 10px !important;}
                     }
                 /* End of mobile styles */
                 /* Dark mode styles */
@@ -333,6 +341,7 @@
                         .show-dark{ display: block !important; }
                         /* Applies dark background if dark mode is selected */
                         .dark-black{ background-color: #0e0e0e !important; }
+                        .darkmode-low-black { background-color: #1a1a1a !important; }
                         /* Custom dark mode font colors */
                         h1, h2, p, span, b, strong { color: #fff !important; }
                         .dark-gray{ color: #6e6e6e !important; }
@@ -350,13 +359,14 @@
                     [data-ogsc] #logo-img-td img{ height: 18px; padding: 20px 0 0 20px; }
                     /* Applies dark background if dark mode is selected */
                     [data-ogsc] .dark-black{ background-color: #0e0e0e !important; }
+                    [data-ogsc] .darkmode-low-black{ background-color: #1a1a1a!important; }
                     [data-ogsc] .dark-gray{ color: #6e6e6e !important; }
                     [data-ogsc] .dark-subtext{ color: #c2c2c2 !important; }
                     @media (prefers-color-scheme: dark ) and (max-width: 620px){
                         a, a:visited{ color: #ff444f !important; text-decoration: none; }
                         a.button{ color: #fff !important; }
                         li { color: #c2c2c2 !important; }
-                        .email-data-tb, .link-div{ background-color: #2e2e2e !important;}
+                        .email-data-tb, .link-div, .property-box{ background-color: #2e2e2e !important;}
                     }
                 /* End of dark mode styles */
             </style>
@@ -413,71 +423,28 @@
                             </td>
                         </tr>
                         <tr>
-                            <td id="title-text-td">
-                                <h1 class="dark-subtext">One more step to complete your Deriv P2P exchange</h1>
-                            </td>
-                        </tr>
-                        <tr>
                             <td class="greeting-td" align="left" style="padding: 0px 30px 20px 30px;" class="dark-black">
-                                <p class="dark-subtext">Dear [insert name],</p>
+                                <p class="dark-subtext">Dear Derivians,</p>
                             </td>
                         </tr>
                         <tr>
                             <td class="paragraph-td" align="left" style="padding: 0px 30px 20px 30px;" class="dark-black">
-                                <p class="dark-subtext">We just wanted to double-check that you confirmed this P2P exchange.</p>
+                                <p class="dark-subtext">Find out the <strong>Talent Development team’s May highlights in under 1 minute</strong>! Read about the rise in our learning platform consumption, dynamic leadership and soft skills development initiatives, and comprehensive onboarding and training programmes.<br>Deriv is making exciting strides in your professional and personal development!</p>
                             </td>
                         </tr>
                         <tr>
-                            <td align="left" style="padding: 0px 30px 40px 30px;" class="dark-black">
-                                <table class="email-data-tb">
-                                    <tr>
-                                        <td class="data-property-td dark-subtext">
-                                            Order ID:
-                                        </td>
-                                        <td class="data-value-td dark-subtext">
-                                            321
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="data-property-td dark-subtext">
-                                            Amount:
-                                        </td>
-                                        <td class="data-value-td dark-subtext">
-                                            10
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="data-property-td dark-subtext" style="padding-bottom: 20px;">
-                                            Buyer's name:
-                                        </td>
-                                        <td class="data-value-td dark-subtext" style="padding-bottom: 20px;">
-                                            bobby_buyer
-                                        </td>
-                                    </tr>
-                                </table>
+                            <td align="center" class="dark-black" style="padding: 20px 30px 20px 30px;">
+                                <input class="body-img max-width" type="image" src="https://static.deriv.com/email/images/design/logo.png" style="width: 90%;"/>
                             </td>
                         </tr>
                         <tr>
-                            <td align="center" class="dark-black">
-                                <!--[if (gte mso 9)|(IE)]>
-                                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://deriv.com/" style="height:40px;v-text-anchor:middle;width:230px;" arcsize="30%" strokecolor="#ff444f" fillcolor="#ff444f">
-                                <w:anchorlock/>
-                                <center style="color:#fff;font-family:sans-serif;font-size:14px;font-weight:bold;">Yes, all good</center>
-                                </v:roundrect>
-                                <![endif]-->
-                                <!--[if !gte mso 9]><!-- -->
-                                <a class="button" href="https://deriv.com/" target="_blank">Yes, all good</a>
-                                <!--<![endif]-->
+                            <td align="center" class="dark-black" style="padding: 20px 30px 20px 30px;">
+                                <input class="body-img max-width" type="image" src="https://static.deriv.com/email/images/design/chart3.png" style="width: 90%;"/>
                             </td>
                         </tr>
                         <tr>
-                            <td class="paragraph-td" align="left" style="padding: 30px 30px 20px 30px;" class="dark-black">
-                                <p class="dark-subtext">If the button doesn't work, copy and paste the link below into a new browser window.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="link-td" align="center" style="padding: 0px 30px 40px 30px;">
-                                <div class="link-div"><a href="#">http://www.verify.com?code=1234</a></div>
+                            <td class="paragraph-td" align="left" style="padding: 20px 30px 20px 30px;" class="dark-black">
+                                <p class="dark-subtext">Regards,<br>Team Talent Development</p>
                             </td>
                         </tr>
                     </table>
@@ -486,64 +453,6 @@
                 </td>
             </tr>
             <!-- End Email body-->
-            <!-- FOOTER -->
-            <tr>
-                <td align="center" class="mb-no-padding">
-                    <!--[if (gte mso 9)|(IE)]>
-                        <table id="ol-footer-table" align="center"><tr><td>
-                            <center>
-                                <a href="https://twitter.com/derivdotcom" target="_blank">
-                                    <img src="https://static.deriv.com/email/images/icons/twitter-gray.png" height="20" width="20" alt="Deriv.com on Twitter" title="Deriv.com on Twitter"/>
-                                </a>&nbsp;&nbsp;
-                                <a href="https://www.facebook.com/derivdotcom" target="_blank">
-                                    <img src="https://static.deriv.com/email/images/icons/facebook-gray.png" height="20" width="20" alt="Deriv.com on Facebook" title="Deriv.com on Facebook"/>
-                                </a>&nbsp;&nbsp;
-                                <a href="https://www.instagram.com/deriv_official/" target="_blank">
-                                    <img src="https://static.deriv.com/email/images/icons/instagram-gray.png" height="20" width="20" alt="Deriv.com on Instagram" title="Deriv.com on Instagram"/>
-                                </a>&nbsp;&nbsp;
-                                <a href="https://t.me/derivdotcomofficial" target="_blank">
-                                    <img src="https://static.deriv.com/email/images/icons/telegram-gray.png" height="20" width="20" alt="Deriv.com on Telegram" title="Deriv.com on Telegram"/>
-                                </a>&nbsp;&nbsp;
-                                <a href="https://www.linkedin.com/company/derivdotcom/" target="_blank">
-                                    <img src="https://static.deriv.com/email/images/icons/linkedin-gray.png" height="20" width="20" alt="Deriv.com on LinkedIn" title="Deriv.com on LinkedIn"/>&nbsp;&nbsp;
-                                </a>
-                                <a href="https://www.youtube.com/c/Derivdotcom" target="_blank">
-                                    <img src="https://static.deriv.com/email/images/icons/youtube-gray.png" height="20" width="20" alt="Deriv.com on Youtube" title="Deriv.com on Youtube"/>
-                                </a>
-                            </center>
-                    <![endif]-->
-                    <!--[if !gte mso 9]><!-- -->
-                    <table id="footer-table" class="dark-black">
-                        <!-- Insert Trustpilot widget here -->
-                        <!-- SOCIAL -->
-                        <tr>
-                            <td id="footer-social-td" align="center" class="dark-black">
-                                <a href="https://twitter.com/derivdotcom" target="_blank">
-                                    <img src="https://static.deriv.com/email/images/icons/twitter-gray.png" style="height: 20px;" alt="Deriv.com on Twitter" title="Deriv.com on Twitter"/>
-                                </a>&nbsp;&nbsp;
-                                <a href="https://www.facebook.com/derivdotcom" target="_blank">
-                                    <img src="https://static.deriv.com/email/images/icons/facebook-gray.png" style="height: 20px;" alt="Deriv.com on Facebook" title="Deriv.com on Facebook"/>
-                                </a>&nbsp;&nbsp;
-                                <a href="https://www.instagram.com/deriv_official/" target="_blank">
-                                    <img src="https://static.deriv.com/email/images/icons/instagram-gray.png" style="height: 20px;" alt="Deriv.com on Instagram" title="Deriv.com on Instagram"/>
-                                </a>&nbsp;&nbsp;
-                                <a href="https://t.me/derivdotcomofficial" target="_blank">
-                                    <img src="https://static.deriv.com/email/images/icons/telegram-gray.png" style="height: 20px;" alt="Deriv.com on Telegram" title="Deriv.com on Telegram"/>
-                                </a>&nbsp;&nbsp;
-                                <a href="https://www.linkedin.com/company/derivdotcom/" target="_blank">
-                                    <img src="https://static.deriv.com/email/images/icons/linkedin-gray.png" style="height: 20px;" alt="Deriv.com on LinkedIn" title="Deriv.com on LinkedIn"/>&nbsp;&nbsp;
-                                </a>
-                                <a href="https://www.youtube.com/c/Derivdotcom" target="_blank">
-                                    <img src="https://static.deriv.com/email/images/icons/youtube-gray.png" style="height: 20px;" alt="Deriv.com on Youtube" title="Deriv.com on Youtube"/>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="footer-links-td" align="center" class="dark-black">
-                                <p><a href="https://www.deriv.com/help-centre">Help Centre</a>&nbsp;&nbsp;&nbsp;<span class="dark-gray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/">Terms and conditions</a>&nbsp;&nbsp;&nbsp;<span class="dark-gray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://deriv.com/tnc/security-and-privacy.pdf">Security and privacy</a></p>
-                                <p id="unsubscribe-p" class="dark-gray dark-subtext">No longer want to receive these emails? {{snippets.custom_unsubscribe_link}}</a></p>
-                            </td>
-                        </tr>
                         <tr>
                             <td id="f-logo" align="center" class="dark-black">
                                 <a href="https://www.deriv.com">
