@@ -59,8 +59,8 @@ commands:
     steps:
       - slack/status:
           include_project_field: false
-          failure_message: "Release failed for deriv-static-content with version *$(cat public/version)*"
-          success_message: "Release succeeded for deriv-static-content with version *$(cat public/version)*"
+          failure_message: "Release failed for static.deriv.com with version *$(cat public/version)*"
+          success_message: "Release succeeded for static.deriv.com with version *$(cat public/version)*"
           webhook: ${SLACK_WEBHOOK}
 
   publish_to_pages_production:
