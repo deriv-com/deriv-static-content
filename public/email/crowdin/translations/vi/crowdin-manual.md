@@ -1,16 +1,16 @@
-# GitHub Integration
-To integrate a GitHub repository with Crowdin, follow these steps:
-### Step 1
- - Access the "Integrations" section.<br/>
- - Select GitHub from the available options. <img width="720" alt="Step 1" src="https://github.com/marlon-deriv/deriv-static-content/assets/114157944/f1d0fb67-4037-4248-bc7b-915d08ad16ff" />
+# Tích hợp GitHub
+Để tích hợp kho lưu trữ GitHub với Crowdin, hãy thực hiện theo các bước sau:
+### Bước 1
+ - Truy cập phần “Tích hợp”.<br/>
+ - Chọn GitHub từ các tùy chọn có sẵn. <img width="720" alt="Step 1" src="https://github.com/marlon-deriv/deriv-static-content/assets/114157944/f1d0fb67-4037-4248-bc7b-915d08ad16ff" />
 
-### Step 2
-Proceed with the integration by performing the following actions:<br/>
- - Click on "Add Repository."<br/>
- - Choose "Source and translation files mode." <img width="720" alt="Step 2" src="https://github.com/marlon-deriv/deriv-static-content/assets/114157944/6617b2d2-55dd-45d1-a254-0c55dddcd1d7" />
+### Bước 2
+Tiến hành tích hợp bằng cách thực hiện các thao tác sau:<br/>
+ - Nhấp vào “Thêm kho lưu trữ.”<br/>
+ - Chọn “Chế độ tệp nguồn và dịch.” <img width="720" alt="Step 2" src="https://github.com/marlon-deriv/deriv-static-content/assets/114157944/6617b2d2-55dd-45d1-a254-0c55dddcd1d7" />
 
-### Step 3
-Grant Crowdin access to your repository by verifying your credentials. Then, proceed as follows:<br/>
+### Bước 3
+Cấp cho Crowdin quyền truy cập vào kho lưu trữ của bạn bằng cách xác minh thông tin đăng nhập của bạn. Sau đó, tiến hành các bước sau:<br/>
  - Select "Repository + Branch."<br/>
  - Save your settings to establish the connection.<br/> <img width="720" alt="Step 3" src="https://github.com/marlon-deriv/deriv-static-content/assets/114157944/80d2d69b-9d05-40ab-bd82-564521eea02d" />
 
