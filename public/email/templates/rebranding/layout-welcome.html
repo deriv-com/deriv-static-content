@@ -43,17 +43,17 @@
                         *, h1, h2, h3, td, { font-family: 'Ubuntu', Arial, sans-serif; }
                         body{ background-color: #eee;}
                         p, a, .greeting-td p, .paragraph-td p{ font-family: 'IBM Plex Sans', Arial, sans-serif; }
-                        h1{ font-size: 25px; font-weight: 700; padding: 0 0 20px 20px; }
+                        h1{ font-size: 27px; font-weight: 700; padding: 0 0 20px 20px; }
                         table { border-collapse: collapse; }
                         a, a:visited { color: #ff444f !important; text-decoration: none; }
-                        a.button{ padding: 10px 16px; color: #fff !important; border: 0; border-radius: 4px; font-size: 12px; text-decoration: none; text-align: center; }
+                        a.button{ padding: 10px 16px; color: #fff !important; border: 0; border-radius: 4px; font-size: 14px; text-decoration: none; text-align: center; }
                         .button:hover{ background-color: #d43e47; }
                         #ol-int-table, #ol-footer-table { width: 600px; background-color: #fff; padding: 0; border: 0; }
                         #ol-int-td { width: 600px; background-color: #fff; margin: 0; vertical-align: top; }
                         #ol-title-img-tb{ width: 600px; }
                         #ol-logo-img-td{ background-color:#ff444f; width: 300px; height: 55px; }
                         .email-data-tb{ background-color: #efefef; padding-left: 30px; border-radius: 16px; }
-                        .greeting-td p, .paragraph-td p{ margin: 0; color: #414652; font-size: 12px; font-weight: 400; line-height: 1.5; }
+                        .greeting-td p, .paragraph-td p{ margin: 0; color: #414652; font-size: 14px; font-weight: 400; line-height: 1.5; }
                         .body-img{ width: 85%; max-width: 520px; display: block; outline: none; border-radius: 10px; }
                     </style>
                 <![endif]-->
@@ -93,7 +93,9 @@
                 /* Applied to all tags */
                 *{ font-family: 'Ubuntu', Arial, sans-serif; color: #414652; }
                 p, a{ font-family: 'IBM Plex Sans', Arial, sans-serif; color: #414652; }
-                h1{ padding: 0px 80px 0px; margin-top: 15px; color: #fff !important; font-size: 25px; font-weight: 700; text-align: center; line-height: 1.2; }
+                h1{ font-size: 30px; font-weight: 700; line-height: 40px; text-align: center; }
+                h2{ font-size: 24px; font-weight: 700; line-height: 30px; text-align: center; }
+                h3{ font-size: 18px; font-weight: 550; line-height: 20px; text-align: center; }
                 body{
                     width: 100%;
                     height: 100%;
@@ -139,11 +141,14 @@
                         text-decoration: none;
                     }
                     a:hover{ text-decoration: underline; }
-                    a.button, a.button-white{
-                        padding: 6px 20px;
+                    a.button{
+                        background-image: linear-gradient(#ff444f,#ff444f);
+                        background-color: #ff444f;
+                        padding: 8px 20px;
                         border: 0;
                         border-radius: 16px;
-                        font-size: 12px;
+                        font-size: 13px;
+                        color: #fff !important;
                         font-weight: 500 !important;
                         text-decoration: none;
                         text-align: center;
@@ -151,15 +156,7 @@
                         display: inline-block;
                         overflow: visible;
                     }
-                    a.button{
-                        background-image: linear-gradient(#ff444f,#ff444f);
-                        background-color: #ff444f;
-                        color: #fff !important;
-                    }
-                    a.button-white{
-                        background-color: #fff !important;
-                        color: #ff444f;
-                    }
+                    .button:hover{ background-color: #d43e47; }
                 /* End of Deriv styles */
                 /* Layout structure classes */
                     #ext-table{ margin: auto; }
@@ -174,25 +171,46 @@
                         overflow-wrap: anywhere;
                     }
                     #header-td{ width: 600px; margin: 0; padding: 0; }
+                    #header-td input{ width: 100%; max-width: 600px;}
                     #title-img-tb{ width: 100%; height: 100%; margin: 0; }
-                    #logo-img-td, #title-text-td, #title-img-td{ 
-                        background-image: linear-gradient(#ff444f,#ff444f);
-                        background-color: #ff444f;
+                    #logo-img-td{
+                        background-color: #fff;
                         width: 100%;
+                        height: 50px;
                         vertical-align: top;
                     }
-                    #logo-img-td img{ height: 21px; max-height: 21px; margin: auto; padding: 24px 0 0 25px; }
-                    #title-img-td img{ height: 200px;}
-                    #slash-td{ margin: 0; padding: 0; }
-                    #slash-td img{ width: 100%; margin: 0; padding: 0; }
+                    #logo-img-td img{ height: 21px; max-height: 21px; padding: 15px 0 10px 25px; }
+                    #title-text-td h1{ padding: 0px 60px; font-size: 30px; font-weight: 700; text-align: center; line-height: 40px; }
+                    #title-text-td h3{ padding: 0px 60px;}
+                    .columns-2-table{ width: 600px; max-width: 600px; }
+                    .columns-60-40{ max-width: 600px; }
+                    .col-60{ width: 60%; max-width: 360px;}
+                    .col-40{ width: 40%; max-width: 240px;}
+                    .col-40 img{ width: 200px; margin: auto; }
+
+                    
+                    .td-odd{ background-color: rgba(65, 70, 82, 0.03); }
+                    .td-even{ background-color: rgba(65, 70, 82, 0.06); }
+                    .products-table{ max-width: 590px; margin: auto; }
+
+                    .product-img{ width: 50%; max-width: 300px; }
+                    .product-img img{ width: 80%; max-width: 260px; margin: auto;  }
+                    
+                    .step-img{ padding: 5px 0px 0px 30px; height: 20px; }
+                    .step-number{ width: 55px; max-width: 55px; vertical-align: top; padding-top: 5px; margin-top: 0px;}
+                    .step-number img{ width: 25px; border: 0px; display: block; margin: 10px 0 0 25px; }
+                    .step-text{ padding: 0px 5px; vertical-align: top; }
+                    .step-text p{ margin-right: 5px; padding: 5px 0px 0px 0px; font-size: 13px; font-weight: 350; text-align: left; }
+
+                    /*  */
                     .email-data-tb{ width: 90%; margin: 0 auto; background-color: rgba(65, 70, 82, 0.05); border-radius: 16px;}
                     .data-property-td{ width: 35%; }
                     .data-property-td, .data-value-td{ padding: 20px 30px 5px; }
                     .data-value-td{ font-weight: 500; }
-                    .link-div{ background-color: rgba(65, 70, 82, 0.05); width: 90%; margin: auto; color: #ff444f; font-size: 12px; font-weight: 400; padding: 10px 0;}
-                    .greeting-td p, .paragraph-td p, .data-property-td, .data-value-td{
+                    .link-div{ background-color: rgba(65, 70, 82, 0.05); width: 90%; margin: auto; color: #ff444f; font-size: 14px; font-weight: 400; padding: 10px 0;}
+                    .greeting-td p, .paragraph-td p, .data-property-td, .data-value-td, .col-60 p{
                         margin: 0;
-                        font-size: 12px;
+                        font-size: 14px;
                         font-weight: 400;
                         line-height: 1.5;
                     }
@@ -200,7 +218,7 @@
                     .paragraph-td-discl p{
                         margin: 0;
                         color: #999;
-                        font-size: 11px;
+                        font-size: 12px;
                         font-weight: 400;
                         line-height: 1.5;
                     }
@@ -213,11 +231,11 @@
                 /* End of layout structure classes */
                 /* List styles */
                     ul { list-style-type: disc; }
-                    ul, ol{ padding-left: 25px; }
+                    ul, ol{ padding-left: 35px; padding-right: 20px; }
                     li{
                         padding: 2px 0 0 5px;
                         font-family: inherit;
-                        font-size: 12px;
+                        font-size: 14px;
                         font-weight: 400;
                         text-align: left;
                         line-height: 24px;
@@ -229,8 +247,8 @@
                     .columns-2-a{ width: 71px; }
                     .columns-2-a img{ margin: auto !important; border: 0; display: block; }
                     .columns-2-b{ padding: 0px 20px 0px; vertical-align: middle; }
-                    .columns-2-b-title{ font-size: 12px; font-weight: 550; line-height: 1; }
-                    .columns-2-b-text{ font-size: 12px; line-height: 1.8; font-weight: 400; }
+                    .columns-2-b-title{ font-size: 15px; font-weight: 550; line-height: 1; }
+                    .columns-2-b-text{ font-size: 13px; line-height: 1.8; font-weight: 400; }
                     .no-padding-td p{ margin: 7px; }
                 /* End of table inside table styles */
                 /* Footer styles */
@@ -245,7 +263,7 @@
                     #footer-social-td{
                         padding: 20px 20px 35px;
                         color: #fff;
-                        font-size: 11px;
+                        font-size: 12px;
                         font-weight: 400;
                         line-height: 18px;
                     }
@@ -280,8 +298,9 @@
                         #header-td{ max-width: 600px; }
                         #header-td, #title-img-tb, #title-img-tb td, #logo-img-td{ margin: 0; padding: 0;}
                         #logo-img-td img{ height: 18px; padding: 20px 0 0 20px; }
-                        h1{ padding: 0px 75px 0px 20px !important; margin-top: 10px; }
+                        #title-text-td h1{ padding: 10px 10px 10px 20px; margin-top: 10px; font-size: 20px; font-weight: 600; text-align: center;}
                         #slash-td{ margin: 0; padding: 0; }
+                        .greeting-td p, .paragraph-td p, .data-property-td, .data-value-td, .link-div{ font-size: 14px; }
                         .greeting-td, .paragraph-td{
                             /* Decrease padding on mobile */
                             padding-left: 15px !important;
@@ -294,8 +313,8 @@
                         .columns-2-a{ width: 50px; }
                         .columns-2-a img{ width: 60px; margin: auto !important; }
                         .columns-2-b{ padding: 0px 10px 0px; vertical-align: middle; }
-                        .columns-2-b-title{ font-weight: 550; }
-                        .columns-2-b-text{ line-height: 1.5; }
+                        .columns-2-b-title{ font-size: 14px; font-weight: 550; }
+                        .columns-2-b-text{ font-size: 13px; line-height: 1.5; }
                         #footer-social-td img{ height: 20px; }
                         .mobile-hide{
                             /* Hide desktop content on mobile */
@@ -314,8 +333,8 @@
                         #logo-img-td img{ height: 16px; padding: 15px 0 0 15px; }
                         #title-text-td h1{ padding: 10px 10px 10px 15px; margin-top: 5px; font-size: 18px; font-weight: 600; }
                         .email-data-tb{ width: 98%; }
-                        .data-property-td, .data-value-td{ padding: 15px 15px 5px; font-size: 11px; }
-                        .link-div{ font-size: 11px; }
+                        .data-property-td, .data-value-td{ padding: 15px 15px 5px; font-size: 12px; }
+                        .link-div{ font-size: 12px; }
                     }
                     @media screen and (max-width: 380px){ 
                         #title-text-td h1{ font-size: 16px; }
@@ -339,16 +358,12 @@
                         h1, h2, p, span, b, strong { color: #fff !important; }
                         .dark-gray{ color: #6e6e6e !important; }
                         .dark-subtext{ color: #c2c2c2 !important; }
-                        #logo-img-td{ 
-                            background-image: linear-gradient(#ff444f,#ff444f);
-                            background-color: #ff444f;
-                        }
                         .email-data-tb, .link-div{ background-color: #2e2e2e !important; }
                     }
                     [data-ogsc] a, a:visited{ color: #ff444f; text-decoration: none; }
                     [data-ogsc] li { color: #c2c2c2 !important; }
                     /* Custom dark mode font colors */
-                    [data-ogsc] h1, [data-ogsc] h2, [data-ogsc] p, [data-ogsc] span, [data-ogsc] b, [data-ogsc] strong{ color: #fff !important; }
+                    [data-ogsc] h1, [data-ogsc] h2, [data-ogsc] p, [data-ogsc] span, [data-ogsc] b{ color: #fff !important; }
                     [data-ogsc] #logo-img-td img{ height: 18px; padding: 20px 0 0 20px; }
                     /* Applies dark background if dark mode is selected */
                     [data-ogsc] .dark-black{ background-color: #0e0e0e !important; }
@@ -374,102 +389,194 @@
                     <![endif]-->
                     <table id="int-table" class="dark-black">
                         <!-- START HERO -->
+                        <tr class="mobile-hide">
+                            <td id="header-td" align="center">
+                                <input type="image" src="https://static-marlon.vercel.app/templates/rebranding/img/welcome-header.png"/>
+                            </td>
+                        </tr> 
+                        <tr style="display: none; mso-hide:all;" class="mb-visible-block">
+                            <td id="header-td" align="center">
+                                <input type="image" src="https://static-marlon.vercel.app/templates/rebranding/img/welcome-header-m.png"/>
+                            </td>
+                        </tr>
                         <tr>
-                            <td id="header-td">
-                                <!--[if (gte mso 9)|(IE)]>
-                                    <table id="ol-title-img-tb" align="center">
-                                <![endif]-->
-                                <table id="title-img-tb">
-                                    <!--[if (gte mso 9)|(IE)]>
-                                        <tr>
-                                            <td id="ol-logo-img-td" align="center">
-                                                <div style="margin-left: 30px;">
-                                                    <a href="https://www.deriv.com">
-                                                        <img src="https://static.deriv.com/logos/deriv-white-2023.png" height="21" title="Deriv.com"/>
-                                                    </a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td id="title-img-td" align="center" style="padding: 30px 0px 10px;">
-                                                <img src="https://static-marlon.vercel.app/templates/rebranding/img/layout-3-header.png" height="200" alt="">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td bgcolor="#ff444f" cellpadding="0" cellspacing="0">
-                                                <h1 style="padding: 0px 200px 0px 0px; margin-top: 15px; margin-left: 30px; color: #fff !important; font-family: 'Ubuntu', Arial, sans-serif;  font-size: 25px; font-weight: 700; text-align: center; line-height: 1.2;">Important trading notice for Christmas holiday</h1>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td id="slash-td">
-                                                <img src="https://static.deriv.com/email/images/general/red-slash.png" alt="">
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <![endif]-->
-                                    <!--[if !gte mso 9]><!-- -->
+                            <td id="title-text-td">
+                                <h3 class="dark-subtext" style="text-align: center;">Welcome to Deriv</h3>
+                                <h1 class="dark-subtext" style="text-align: center;">Ready. Set. Trade.</h1>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="columns-60-40">
+                                <table class="columns-2-table">
                                     <tr>
-                                        <td id="logo-img-td" align="center">
-                                            <a href="https://www.deriv.com">
-                                                <img src="https://static.deriv.com/logos/deriv-white-2023.png" title="Deriv.com">
-                                            </a>
+                                        <td class="col-60" style="padding: 20px 40px 0 30px;">
+                                            <p class="dark-subtext">Your risk-free demo account is loaded with $10K in virtual funds so you can explore any of Deriv platforms and sharpen your trading skills.</p>
+                                        </td>
+                                        <td class="col-40" style="padding: 20px 30px 0 0;">
+                                            <img src="https://static-marlon.vercel.app/templates/rebranding/img/welcome/10k.png"/>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td id="title-img-td" align="center" style="padding: 30px 0px 10px;">
-                                            <img src="https://static-marlon.vercel.app/templates/rebranding/img/layout-3-header.png" alt="">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td id="title-text-td" style="padding: 0px;">
-                                            <h1>Important trading notice for Christmas holiday</h1>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td id="slash-td">
-                                            <img src="https://static.deriv.com/email/images/general/red-slash.png" alt="">
-                                        </td>
-                                    </tr>
-                                    
                                 </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="paragraph-td" align="center" style="padding: 10px 40px 30px;">
+                                <h3 class="dark-subtext">Good things come in threes</h3>
+                                <p class="dark-subtext">Three great platforms that give you the tools to trade simply, felixibly, and reliably. Available on desktop, mobile, and tablet.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-odd">
+                                <table class="products-table">
+                                    <tr>
+                                        <td class="product-desc">
+                                            <table>
+                                                <tr>
+                                                    <td style="padding: 10px 20px 10px 30px;">
+                                                        <img src="https://static-marlon.vercel.app/templates/rebranding/img/welcome/deriv-trader.png" alt=""/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 10px 20px 10px 30px;">
+                                                        <ul>
+                                                            <li>Trade in the moment with powerful, inline charts and indicators of your choice</li>
+                                                            <li>Trade options on financial or synthetic markets</li>
+                                                            <li>New multipliers offer you the simplicity of options trading with the upside of margin trading</li>
+                                                        </ul>
+
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td class="product-img" style="padding: 20px;">
+                                            <img src="https://static-marlon.vercel.app/templates/rebranding/img/welcome/deriv-trader-screen.png" alt="">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-even">
+                                <table class="products-table">
+                                    <tr>
+                                        <td class="product-img" style="padding: 20px;">
+                                            <img src="https://static-marlon.vercel.app/templates/rebranding/img/welcome/dbot-screen.png" alt="">
+                                        </td>
+                                        <td class="product-desc">
+                                            <table>
+                                                <tr>
+                                                    <td style="padding: 10px 30px 10px 20px;">
+                                                        <img src="https://static-marlon.vercel.app/templates/rebranding/img/welcome/deriv-bot.png" alt=""/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 10px 30px 10px 20px;">
+                                                        <ul>
+                                                            <li>Automate your trading ideas without writing code</li>
+                                                            <li>Build a bot visually by moving and connecting blocks - a bit like playing with Lego</li>
+                                                            <li>Don't start from scratch, Load, customise, and test pre-builtt strategies like Martingale, D'Alembert, and Oscar's Grind</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td-odd">
+                                <table class="products-table">
+                                    <tr>
+                                        <td class="product-desc">
+                                            <table>
+                                                <tr>
+                                                    <td style="padding: 10px 20px 10px 30px;">
+                                                        <img src="https://static-marlon.vercel.app/templates/rebranding/img/welcome/metatrader.png" alt=""/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 10px 20px 10px 30px;">
+                                                        <ul>
+                                                            <li>All-in-one, FX, and CFD trading platform for professionals worldwide</li>
+                                                            <li>Choose a Financial or Derived account to trade the way you want</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td class="product-img" style="padding: 20px;">
+                                            <img src="https://static-marlon.vercel.app/templates/rebranding/img/welcome/metatrader-screen.png" alt="">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="paragraph-td" align="center" style="padding: 10px 30px 30px;">
+                                <h3 class="dark-subtext">Not sure where to start?</h2>
+                                <p class="dark-subtext">Start with DTrader and your demo account. Make your first trade in 3 easy steps.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="columns-60-40" style="padding-bottom: 40px;">
+                                <table class="columns-2-table">
+                                    <tr>
+                                        <td class="col-40" style="padding: 20px 10px 0 30px;">
+                                            <table>
+                                                <tr>
+                                                    <td class="step-number">
+                                                        <img class="light-img" src="https://static.deriv.com/email/images/marketing/real-acc/1.png" alt="1">
+                                                        <div style="display: none;" align="center">
+                                                            <img src="https://static.deriv.com/email/images/icons/1-gray.png" alt="1"/>
+                                                        </div>
+                                                    </td>
+                                                    <td class="step-text dark-black">
+                                                        <p class="dark-subtext">Select an asset.</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="step-number">
+                                                        <img class="light-img" src="https://static.deriv.com/email/images/marketing/real-acc/2.png" alt="2">
+                                                        <div style="display: none;" align="center">
+                                                            <img src="https://static.deriv.com/email/images/icons/2-gray.png" alt="2"/>
+                                                        </div>
+                                                    </td>
+                                                    <td class="step-text dark-black">
+                                                        <p class="dark-subtext">Follow the chart.</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="step-number">
+                                                        <img class="light-img" src="https://static.deriv.com/email/images/marketing/real-acc/3.png" alt="3">
+                                                        <div style="display: none;" align="center">
+                                                            <img src="https://static.deriv.com/email/images/icons/3-gray.png" alt="3"/>
+                                                        </div>
+                                                    </td>
+                                                    <td class="step-text dark-black">
+                                                        <p class="dark-subtext">Purchase a contract.</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td class="col-60" style="padding: 20px 40px 0 30px;">
+                                            <img src="https://static-marlon.vercel.app/templates/rebranding/img/welcome/monitor-chart.png" alt="">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="dark-black" style="padding-bottom: 50px;">
+                                <!--[if (gte mso 9)|(IE)]>
+                                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://deriv.com/" style="height:40px;v-text-anchor:middle;width:230px;" arcsize="10%" strokecolor="#ff444f" fillcolor="#ff444f">
+                                <w:anchorlock/>
+                                <center style="color:#fff;font-family:sans-serif;font-size:14px;font-weight:bold;">Trade now</center>
+                                </v:roundrect>
+                                <![endif]-->
+                                <!--[if !gte mso 9]><!-- -->
+                                <a class="button" href="https://deriv.com/" target="_blank">Trade now</a>
                                 <!--<![endif]-->
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="greeting-td" align="left" style="padding: 10px 30px 20px 30px;" class="dark-black">
-                                <p class="dark-subtext">Hi [client's name],</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="paragraph-td" align="left" style="padding: 0px 30px 20px 30px;" class="dark-black">
-                                <p class="dark-subtext">Please note that the upcoming Memorial Day holiday on 30 May 2022 may affect your trading experience.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="paragraph-td" align="left" style="padding: 0px 30px 20px 30px;" class="dark-black">
-                                <p class="dark-subtext">You might encounter the following during this holiday:</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left" class="list-ul dark-black">
-                                <ul>
-                                    <li class="dark-subtext">Restrictions on minimum contract duration and trading hours</li>
-                                    <li class="dark-subtext">Increase in commissions</li>
-                                    <li class="dark-subtext">Application of volume limits</li>
-                                    <li class="dark-subtext">Suspended trading of selected instruments</li>
-                                    <li class="dark-subtext">Closure of the US market</li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="paragraph-td" align="left" style="padding: 20px 30px 20px 30px;" class="dark-black">
-                                <p class="dark-subtext">We shall apply as few trading restrictions as possible and return to normal service as soon as we can after the holidays.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="paragraph-td" align="center" style="padding: 20px 30px 20px 30px;" class="dark-black">
-                                <p class="dark-subtext">If you have any questions, contact us via:<br/>
-                                    <a href="https://deriv.com/?is_livechat_open=true" target="_blank">Live chat</a> | <a href="https://api.whatsapp.com/send/?phone=35699578341&text&type=phone_number&app_absent=0" target="_blank">WhatsApp</a></p>
                             </td>
                         </tr>
                     </table>
@@ -533,6 +640,7 @@
                         <tr>
                             <td id="footer-links-td" align="center" class="dark-black">
                                 <p><a href="https://www.deriv.com/help-centre">Help Centre</a>&nbsp;&nbsp;&nbsp;<span class="dark-gray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/">Terms and conditions</a>&nbsp;&nbsp;&nbsp;<span class="dark-gray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://deriv.com/tnc/security-and-privacy.pdf">Security and privacy</a></p>
+                                <p id="unsubscribe-p" class="dark-gray dark-subtext">No longer want to receive these emails? {{snippets.custom_unsubscribe_link}}</a></p>
                             </td>
                         </tr>
                         <tr>

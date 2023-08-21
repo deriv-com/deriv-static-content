@@ -51,7 +51,7 @@
                         #ol-int-table, #ol-footer-table { width: 600px; background-color: #fff; padding: 0; border: 0; }
                         #ol-int-td { width: 600px; background-color: #fff; margin: 0; vertical-align: top; }
                         #ol-title-img-tb{ width: 600px; }
-                        #ol-logo-img-td{ background-color: #ff444f; width: 300px; height: 55px; }
+                        #ol-logo-img-td{ background-color:#ff444f; width: 300px; height: 55px; }
                         .email-data-tb{ background-color: #efefef; padding-left: 30px; border-radius: 16px; }
                         .greeting-td p, .paragraph-td p{ margin: 0; color: #414652; font-size: 12px; font-weight: 400; line-height: 1.5; }
                         .body-img{ width: 85%; max-width: 520px; display: block; outline: none; border-radius: 10px; }
@@ -93,7 +93,7 @@
                 /* Applied to all tags */
                 *{ font-family: 'Ubuntu', 'IBM Plex Sans', Arial, sans-serif; color: #414652; }
                 p, a{ font-family: 'IBM Plex Sans', 'Ubuntu', Arial, sans-serif; color: #414652; }
-                h2{ padding: 0px 50px 0px; margin-top: 15px; color: #414652; font-size: 20px; font-weight: 700; text-align: center; line-height: 1.2; }
+                h2{ padding: 0px 50px 0px; margin-top: 15px; color: #414652 !important; font-size: 18px; font-weight: 700; text-align: center; line-height: 1.2; }
                 body{
                     width: 100%;
                     height: 100%;
@@ -143,7 +143,7 @@
                         padding: 6px 20px;
                         border: 0;
                         border-radius: 16px;
-                        font-size: 12px;
+                        font-size: 14px;
                         font-weight: 500 !important;
                         text-decoration: none;
                         text-align: center;
@@ -175,16 +175,15 @@
                     }
                     #header-td{ width: 600px; margin: 0; padding: 0; }
                     #title-img-tb{ width: 100%; height: 100%; margin: 0; }
-                    #logo-img-td{ 
+                    #logo-img-td, #title-img-td{ 
                         background-image: linear-gradient(#ff444f,#ff444f);
                         background-color: #ff444f;
                         width: 100%;
                         vertical-align: top;
                     }
-                    #title-text-td, #title-img-td{ width: 100%; vertical-align: top;}
+                    #title-text-td{ width: 100%; vertical-align: top;}
                     #logo-img-td img{ height: 21px; max-height: 21px; margin: auto; padding: 24px 0 0 25px; }
-                    #title-img-td img{ width: 70%; vertical-align: top;}
-                    .link-div{ background-color: rgba(65, 70, 82, 0.05); width: 90%; margin: auto; color: #ff444f; font-size: 12px; font-weight: 400; padding: 10px 0;}
+                    #title-img-td img{ width: 420px; vertical-align: middle;}
                     .greeting-td p, .paragraph-td p{
                         margin: 0;
                         font-size: 16px;
@@ -195,7 +194,7 @@
                     .paragraph-td-discl p{
                         margin: 0;
                         color: #999;
-                        font-size: 12px;
+                        font-size: 13px;
                         font-weight: 400;
                         line-height: 1.5;
                     }
@@ -212,7 +211,7 @@
                     li{
                         padding: 2px 0 0 5px;
                         font-family: inherit;
-                        font-size: 12px;
+                        font-size: 14px;
                         font-weight: 400;
                         text-align: left;
                         line-height: 24px;
@@ -222,17 +221,25 @@
                 /* Layout specific classes */
                     .payments-td, .payments-session-td, .payments-td-nb{ max-width: 600px; margin: auto; background-color: #f7f7f7; padding-bottom: 20px; padding-top: 15px;}
                     .payments-td{ border-top: 1px solid #eee;}
-                    .payment-tb{ width: 100%; max-width: 540px; margin: auto; }                    
+                    .payment-tb{ width: 100%; max-width: 540px; margin: auto; }
+                    .payment-td-icon{ width: 20%; max-width: 110px; vertical-align: middle;}
                     .payment-td-icon img{ width: 80px; text-align: center; margin: auto;}
                     .payment-td-desc{ padding: 5px 0px 0px 5px; }
+                    .payment-td-link{ width: 20%; max-width: 80px; font-size: 14px; padding-left: 15px; vertical-align: middle;}
+                    .payment-name-td p{ margin: 0; font-family: 'IBM Plex Sans'; font-size: 16px; font-weight: 600; line-height: 24px; padding-bottom: 8px; }
+                    .payment-desc-td p{ margin: 0; font-family: 'IBM Plex Sans'; font-size: 14px; line-height: 21px; padding-bottom: 8px; text-align: center;}
+                    .payment-limits-td p{ margin: 0; font-family: 'IBM Plex Sans'; color: #999; font-size: 12px; line-height: 18px; padding-bottom: 8px; }
+                    #cols-3-tb-ext{ width: 100%; max-width: 540px; margin: 0; }
                     .col-3-td{ width: 33.3%; }
                     .col-3-td-mb{ width: 100%; }
+                    .col-3-td-mb table{ width: 100%; }
+                    .col-3-td table{ width: 100%; margin-top: 20px; }
                     .step-img-td{ height: 100px; vertical-align: middle;}
                     .step-img{ height: 80px; display: block; margin: 0px;}
-                    .step-number{ width: 35px; height: 100px; vertical-align: top; padding-top: 20px; margin-top: 0px; }
+                    .step-number{ width: 35px; height: 100px; vertical-align: top; padding-top: 20px; margin-top: 0px;}
                     .step-number-mb{ max-width: 50px; vertical-align: top; padding: 20px 10px; margin-top: 10px;}
                     .step-number img{ border: 0px; display: block; margin-top: 0px; }
-                    .step-text{ height: 160px; padding: 0px 5px; vertical-align: top; }
+                    .step-text{ height: 150px; padding: 0px 5px; vertical-align: top; }
                     .step-text p{ margin-right: 5px; font-size: 13px; font-weight: 350; line-height: 20px; text-align: left; }
                     .step-text-mb{ padding: 0px 10px; vertical-align: top; }
                     .step-text-mb p{ font-size: 14px; font-weight: 400; line-height: 21px; text-align: left; }
@@ -275,15 +282,13 @@
                         font-weight: 400;
                     }
                     #f-logo{ padding: 30px; }
-                    .trustpilot-td{ padding: 40px 30px 30px; background-color: #ddd; }
-                    .trustpilot-widget a{ text-decoration: none; }
-                    .trustpilot-widget img{ border: 0; height: 18px; max-height: 18px; }
                 /* End of footer styles */
                 /* Mobile styles */
                     @media screen and (max-width: 620px){
                         #header-td{ max-width: 600px; }
                         #header-td, #title-img-tb, #title-img-tb td, #logo-img-td{ margin: 0; padding: 0;}
                         #logo-img-td img{ height: 18px; padding: 20px 0 0 20px; }
+                        #title-img-td img{ width: 70% !important; }
                         h2{ padding: 0px 30px 0px !important; margin-top: 10px; }
                         #slash-td{ margin: 0; padding: 0; }
                         .greeting-td, .paragraph-td{
@@ -292,8 +297,9 @@
                             padding-right: 15px !important;
                         }
                         .greeting-td p, .paragraph-td p, .data-property-td, .data-value-td{
-                            font-size: 13px !important;
+                            font-size: 14px !important;
                         }
+                        .payment-desc-td{ font-size: 14px; line-height: 1.5; padding-bottom: 5px; text-align: left !important;}
                         .list-ul{ padding: 0px 10px 0px 15px; }
                         #footer-social-td img{ height: 20px; }
                         .mobile-hide{
@@ -312,10 +318,9 @@
                     @media screen and (max-width: 460px){
                         #logo-img-td img{ height: 16px; padding: 15px 0 0 15px; }
                         h2{ padding: 10px 10px 10px 15px; margin-top: 5px; font-size: 18px; font-weight: 600; }
-                        .link-div{ font-size: 11px; }
                     }
                     @media screen and (max-width: 380px){ 
-                        #title-text-td h1{ font-size: 16px; }
+                        h2{ font-size: 16px; }
                     }
                 /* End of mobile styles */
                 /* Dark mode styles */
@@ -327,35 +332,41 @@
                         }
                         a.button{ color: #fff !important; }
                         li { color: #c2c2c2 !important; }
-                        /* Hides light mode-only content */
-                        .hide-light{ display: none !important; }
-                        .show-dark{ display: block !important; }
                         /* Applies dark background if dark mode is selected */
                         .dark-black{ background-color: #0e0e0e !important; }
                         /* Custom dark mode font colors */
-                        h1, h2, p, span, b, strong { color: #fff !important; }
+                        h1, h2, p, span, b, strong, em { color: #fff !important; }
                         .dark-gray{ background-color: #2b2b2b !important; }
                         .dark-subtext{ color: #c2c2c2 !important; }
                         #logo-img-td{ 
                             background-image: linear-gradient(#ff444f,#ff444f);
                             background-color: #ff444f;
                         }
-                        .email-data-tb, .link-div{ background-color: #2e2e2e !important; }
+                        /* Hides light mode-only content */
+                        .hide-light{ display: none !important; }
+                        .show-dark{ display: block !important; }
+                        .hide-dark-h-logo{ display: none !important; }
+                        .logos-white-div{
+                            display: block !important;
+                            visibility: inherit !important;
+                            overflow: visible !important;
+                            float: none !important;
+                        }
                     }
                     [data-ogsc] a, a:visited{ color: #ff444f; text-decoration: none; }
                     [data-ogsc] li { color: #c2c2c2 !important; }
                     /* Custom dark mode font colors */
-                    [data-ogsc] h1, [data-ogsc] h2, [data-ogsc] p, [data-ogsc] span, [data-ogsc] b, [data-ogsc] strong{ color: #fff !important; }
+                    [data-ogsc] h1, [data-ogsc] h2, [data-ogsc] p, [data-ogsc] span, [data-ogsc] b, [data-ogsc] strong, [data-ogsc] em{ color: #fff !important; }
                     [data-ogsc] #logo-img-td img{ height: 18px; padding: 20px 0 0 20px; }
                     /* Applies dark background if dark mode is selected */
                     [data-ogsc] .dark-black{ background-color: #0e0e0e !important; }
-                    [data-ogsc] .dark-gray{ color: #6e6e6e !important; }
+                    [data-ogsc] .dark-gray{ background-color: #2b2b2b !important; }
                     [data-ogsc] .dark-subtext{ color: #c2c2c2 !important; }
+                    [data-ogsc] .logos-white-div{ display: block !important; visibility: inherit !important; overflow: visible !important; float: none !important; }
                     @media (prefers-color-scheme: dark ) and (max-width: 620px){
                         a, a:visited{ color: #ff444f !important; text-decoration: none; }
                         a.button{ color: #fff !important; }
                         li { color: #c2c2c2 !important; }
-                        .email-data-tb, .link-div{ background-color: #2e2e2e !important;}
                     }
                 /* End of dark mode styles */
             </style>
@@ -379,23 +390,42 @@
                                 <table id="title-img-tb">
                                     <!--[if (gte mso 9)|(IE)]>
                                         <tr>
-                                            <td id="ol-title-img-td" align="center" bgcolor="#fff">
-                                                <img src="https://static.deriv.com/email/images/header-2023/key-slash-whole.png" width="600" alt="">
+                                            <td id="ol-logo-img-td" align="center">
+                                                <div style="margin-left: 30px;">
+                                                    <a href="https://www.deriv.com">
+                                                        <img src="https://static.deriv.com/logos/deriv-white-2023.png" height="21" title="Deriv.com"/>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td id="title-img-td" align="center">
+                                                <img src="https://static.deriv.com/email/images/header-2023/gray-key.png" width="420" alt="">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td id="slash-td">
+                                                <img src="https://static.deriv.com/email/images/general/red-slash.png" alt="">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td bgcolor="#fff" cellpadding="0" cellspacing="0" class="dark-black">
+                                                <h1 style="padding: 0px 200px 0px 0px; margin-top: 15px; margin-left: 30px; color: #414652 !important; font-family: 'Ubuntu', Arial, sans-serif;  font-size: 25px; font-weight: 700; text-align: center; line-height: 1.2;">Broker Of The Year award with Ultimate Fintech</h1>
                                             </td>
                                         </tr>
                                     </table>
                                     <![endif]-->
                                     <!--[if !gte mso 9]><!-- -->
                                     <tr>
-                                        <td id="logo-img-td" align="center" style="background-image: linear-gradient(#ff444f,#ff444f); background-color: #ff444f;">
+                                        <td id="logo-img-td" align="center" style="background-color: #ff444f;">
                                             <a href="https://www.deriv.com">
                                                 <img src="https://static.deriv.com/logos/deriv-white-2023.png" title="Deriv.com">
                                             </a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td id="title-img-td" align="center" style="background-image: linear-gradient(#ff444f,#ff444f); background-color: #ff444f;">
-                                            <img src="https://static.deriv.com/email/images/header-2023/gray-key.png" alt="">
+                                        <td id="title-img-td" align="center" style="background-color: #ff444f;">
+                                            <img src="https://static.deriv.com/email/images/header-2023/gray-key.png" alt="" style="width: 70%">
                                         </td>
                                     </tr>
                                     <tr>
@@ -403,7 +433,6 @@
                                             <img src="https://static.deriv.com/email/images/general/red-slash.png" alt="" style="width: 100%;">
                                         </td>
                                     </tr>
-                                    <!--<![endif]-->
                                     <tr>
                                         <td class="paragraph-td" align="center" style="padding: 0px 50px 10px 50px;" class="dark-black">
                                             <p class="dark-subtext">Your Deriv USD account is ready.</p>
@@ -433,6 +462,7 @@
                                         </td>
                                     </tr>
                                 </table>
+                                <!--<![endif]-->
                             </td>
                         </tr>
                         <tr>
@@ -452,7 +482,7 @@
                                                                 <![endif]-->
                                             <table class="payment-tb" align="center">
                                                 <tr>
-                                                    <td align="center" class="dark-gray" style="width: 20%; max-width: 110px; vertical-align: middle;">
+                                                    <td align="center" class="payment-td-icon dark-gray">
                                                         <!--[if (gte mso 9)|(IE)]>
                                                             <center><img src="https://static.deriv.com/email/images/design-2023/perfect-money-m.png" width="70"/></center>
                                                         <![endif]-->
@@ -463,26 +493,26 @@
                                                             </div>
                                                         <!--<![endif]-->
                                                     </td>
-                                                    <td class="dark-gray" style="padding: 5px 0px 0px 5px;">
+                                                    <td class="payment-td-desc">
                                                         <table>
                                                             <tr>
-                                                                <td class="dark-gray">
-                                                                    <p class="dark-subtext" style="margin: 0;font-weight: 600;">Perfect Money</p>
+                                                                <td class="payment-name-td dark-subtext">
+                                                                    <p class="dark-subtext">Perfect Money</p>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td class="dark-gray">
-                                                                    <p class="dark-subtext" style="margin: 0; padding: 8px 0px;">Make instant deposits using your e-wallet.</p>
+                                                                <td class="payment-desc-td dark-subtext">
+                                                                    <p class="dark-subtext">Make instant deposits using your e-wallet.</p>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td class="dark-gray">
-                                                                    <p class="dark-subtext" style="margin: 0;color: #999; padding: 0px 0px 8px; font-size: 14px;">Deposit: Instant.</p>
+                                                                <td class="payment-limits-td dark-subtext">
+                                                                    <p class="dark-subtext">Deposit: Instant.</p>
                                                                 </td>
                                                             </tr>
                                                         </table>
                                                     </td>
-                                                    <td class="dark-gray">
+                                                    <td class="payment-td-link">
                                                         <a href="https://app.deriv.com/cashier/deposit">Fund now →</a>
                                                     </td>
                                                 </tr>
@@ -498,7 +528,100 @@
                                                                 <![endif]-->
                                             <table class="payment-tb" align="center">
                                                 <tr>
-                                                    <td align="center" class="dark-gray" style="width: 20%; max-width: 110px; vertical-align: middle;">
+                                                    <td align="center" class="payment-td-icon dark-gray">
+                                                        <!--[if (gte mso 9)|(IE)]>
+                                                            <center><img src="https://static.deriv.com/email/images/design-2023/astropay2023-m.png" width="70"/></center>
+                                                        <![endif]-->
+                                                        <!--[if !gte mso 9]><!-- -->
+                                                            <img class="hide-dark-h-logo" src="https://static.deriv.com/email/images/design-2023/astropay2023-m.png" style="width: 70px; margin: auto;"/>
+                                                            <div class="logos-white-div" style="display: none;" align="center">
+                                                                <img src="https://static.deriv.com/email/images/design-2023/astropay-dark.png" style="width: 70px; margin: auto;"/>
+                                                            </div>
+                                                        <!--<![endif]-->
+                                                    </td>
+                                                    <td class="payment-td-desc">
+                                                        <table>
+                                                            <tr>
+                                                                <td class="payment-name-td dark-subtext">
+                                                                    <p class="dark-subtext">AstroPay</p>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="payment-desc-td dark-subtext">
+                                                                    <p class="dark-subtext">Make instant deposits using your e-wallet.</p>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="payment-limits-td dark-subtext">
+                                                                    <p class="dark-subtext">Deposit: Instant.</p>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td class="payment-td-link">
+                                                        <a href="https://app.deriv.com/cashier/deposit">Fund now →</a>
+                                                    </td>
+                                                </tr>
+                                            </table><!--[if mso]></td></tr></table><![endif]-->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" class="payments-td dark-gray">
+                                            <!--[if (gte mso 9)|(IE)]>
+                                                        <table align="center">
+                                                            <tr>
+                                                            <td align="left" valign="top">
+                                                                <![endif]-->
+                                            <table class="payment-tb" align="center">
+                                                <tr>
+                                                    <td align="center" class="payment-td-icon dark-gray">
+                                                        <!--[if (gte mso 9)|(IE)]>
+                                                            <center><img src="https://static.deriv.com/email/images/design-2023/chipper-m.png" width="70"/></center>
+                                                        <![endif]-->
+                                                        <!--[if !gte mso 9]><!-- -->
+                                                            <img class="hide-dark-h-logo" src="https://static.deriv.com/email/images/design-2023/chipper-m.png" style="width: 70px; margin: auto;"/>
+                                                            <div class="logos-white-div" style="display: none;" align="center">
+                                                                <img src="https://static.deriv.com/email/images/design-2023/chipper-dark.png" style="width: 70px; margin: auto;"/>
+                                                            </div>
+                                                        <!--<![endif]-->
+                                                    </td>
+                                                    <td class="payment-td-desc">
+                                                        <table>
+                                                            <tr>
+                                                                <td class="payment-name-td dark-subtext">
+                                                                    <p class="dark-subtext">Chippercash</p>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="payment-desc-td dark-subtext">
+                                                                    <p class="dark-subtext">Make instant deposits using your e-wallet.</p>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="payment-limits-td dark-subtext">
+                                                                    <p class="dark-subtext">Deposit: Instant.</p> 
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td class="payment-td-link">
+                                                        <a href="https://app.deriv.com/cashier/deposit">Fund now →</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <!--[if mso]></td></tr></table><![endif]-->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" class="payments-td dark-gray">
+                                            <!--[if (gte mso 9)|(IE)]>
+                                                        <table align="center">
+                                                            <tr>
+                                                            <td align="left" valign="top">
+                                                                <![endif]-->
+                                            <table class="payment-tb" align="center">
+                                                <tr>
+                                                    <td align="center" class="payment-td-icon dark-gray">
                                                         <!--[if (gte mso 9)|(IE)]>
                                                             <center><img src="https://static.deriv.com/email/images/design-2023/mifinity-m.png" width="70"/></center>
                                                         <![endif]-->
@@ -506,29 +629,72 @@
                                                             <img src="https://static.deriv.com/email/images/design-2023/mifinity-m.png" style="width: 70px; margin: auto;"/>
                                                         <!--<![endif]-->
                                                     </td>
-                                                    <td class="dark-gray" style="padding: 5px 0px 0px 5px;">
+                                                    <td class="payment-td-desc">
                                                         <table>
                                                             <tr>
-                                                                <td class="dark-gray">
-                                                                    <p class="dark-subtext" style="margin: 0;font-weight: 600;">MiFinity</p>
+                                                                <td class="payment-name-td dark-subtext">
+                                                                    <p class="dark-subtext">MiFinity</p>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td class="dark-gray">
-                                                                    <p class="dark-subtext" style="margin: 0; padding: 8px 0px;">Make instant deposits using your e-wallet.</p>
+                                                                <td class="payment-desc-td dark-subtext">
+                                                                    <p class="dark-subtext">Make instant deposits using your e-wallet.</p>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td class="dark-gray">
-                                                                    <p class="dark-subtext" style="margin: 0;color: #999; padding: 0px 0px 8px; font-size: 14px;">Deposit: Instant.</p>
+                                                                <td class="payment-limits-td dark-subtext">
+                                                                    <p class="dark-subtext">Deposit: Instant.</p>
                                                                 </td>
                                                             </tr>
                                                         </table>
                                                     </td>
-                                                    <td class="dark-gray">
+                                                    <td class="payment-td-link">
                                                         <a href="https://app.deriv.com/cashier/deposit">Fund now →</a>
                                                     </td>
                                                 </tr>
+                                            </table><!--[if mso]></td></tr></table><![endif]-->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" class="payments-td dark-gray">
+                                            <!--[if (gte mso 9)|(IE)]>
+                                                        <table align="center">
+                                                            <tr>
+                                                            <td align="left" valign="top">
+                                                                <![endif]-->
+                                            <table class="payment-tb" align="center">
+                                                <tr>
+                                                    <td align="center" class="payment-td-icon dark-gray">
+                                                        <!--[if (gte mso 9)|(IE)]>
+                                                            <center><img src="https://static.deriv.com/email/images/design-2023/sticpay.png" width="70"/></center>
+                                                        <![endif]-->
+                                                        <!--[if !gte mso 9]><!-- -->
+                                                            <img src="https://static.deriv.com/email/images/design-2023/sticpay.png" style="width: 70px; margin: auto;"/>
+                                                        <!--<![endif]-->
+                                                    </td>
+                                                    <td class="payment-td-desc">
+                                                        <table>
+                                                            <tr>
+                                                                <td class="payment-name-td dark-subtext">
+                                                                    <p class="dark-subtext">STICPAY</p>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="payment-desc-td dark-subtext">
+                                                                    <p class="dark-subtext">Make instant deposits using your e-wallet.</p>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="payment-limits-td dark-subtext">
+                                                                    <p class="dark-subtext">Deposit: Instant.</p>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td class="payment-td-link">
+                                                        <a href="https://app.deriv.com/cashier/deposit">Fund now →</a>
+                                                    </td>
+                                                </tr> 
                                             </table><!--[if mso]></td></tr></table><![endif]-->
                                         </td>
                                     </tr>
@@ -544,12 +710,12 @@
                                             <table align="left">
                                                 <tr class="hide-light">
                                                     <td align="left" class="dark-gray" style="padding: 10px 25px 5px;">
-                                                        <img src="https://static.deriv.com/email/images/design-2023/perfect-money-m.png" style="width: 80px !important;"/>
+                                                        <img src="https://static.deriv.com/email/images/design-2023/perfect-money-m.png" style="width: 150px !important;"/>
                                                     </td>
                                                 </tr>
                                                 <tr style="display: none; mso-hide:all;" class="show-dark">
                                                     <td align="left" class="dark-gray" style="padding: 10px 25px 5px;">
-                                                        <img src="https://static.deriv.com/email/images/design-2023/perfect-money1-m.png" style="width: 80px !important;"/>
+                                                        <img src="https://static.deriv.com/email/images/design-2023/perfect-money1-m.png" style="width: 150px !important;"/>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -557,19 +723,93 @@
                                                         <table>
                                                             <tr>
                                                                 <td class="payment-desc-td">
-                                                                    <p class="dark-subtext" style="margin: 0; padding: 8px 0px; font-size: 14px;">Make instant deposits using your e-wallet.</p>
+                                                                    <p class="dark-subtext">Make instant deposits using your e-wallet.</p>
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <td class="payment-limits-td dark-subtext">
-                                                                    <p class="dark-subtext" style="margin: 0;color: #999; padding: 0px 0px 8px; font-size: 13px;">Deposit: Instant.</p>
+                                                                    <p class="dark-subtext">Deposit: Instant.</p>
                                                                 </td>
                                                             </tr>
-                                                        </table>
+                                                        </table><!--[if mso]></td></tr></table><![endif]-->
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td align="left" class="dark-gray" style="padding: 0px 25px 0px;">
+                                                    <td align="left" class="dark-gray" style="padding: 10px 25px 0px;">
+                                                        <a href="https://app.deriv.com/cashier/deposit">Fund now →</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="payments-td dark-gray" style="width: 100% !important;">
+                                            <table align="left">
+                                                <tr class="hide-light">
+                                                    <td align="left" class="dark-gray" style="padding: 10px 25px 5px;">
+                                                        <img src="https://static.deriv.com/email/images/design-2023/astropay2023-m.png" style="width: 150px !important;"/>
+                                                    </td>
+                                                </tr>
+                                                <tr style="display: none; mso-hide:all;" class="show-dark">
+                                                    <td align="left" class="dark-gray" style="padding: 10px 25px 5px;">
+                                                        <img src="https://static.deriv.com/email/images/design-2023/astropay-dark.png" style="width: 150px !important;"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="left" class="dark-gray" style="padding: 0px 25px;">
+                                                        <table>
+                                                            <tr>
+                                                                <td class="payment-desc-td">
+                                                                    <p class="dark-subtext">Make instant deposits using your e-wallet.</p>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="payment-limits-td dark-subtext">
+                                                                    <p class="dark-subtext">Deposit: Instant.</p>
+                                                                </td>
+                                                            </tr>
+                                                        </table><!--[if mso]></td></tr></table><![endif]-->
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="left" class="dark-gray" style="padding: 10px 25px 0px;">
+                                                        <a href="https://app.deriv.com/cashier/deposit">Fund now →</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="payments-td dark-gray" style="width: 100% !important;">
+                                            <table align="left">
+                                                <tr class="hide-light">
+                                                    <td align="left" class="dark-gray" style="padding: 10px 25px 5px;">
+                                                        <img src="https://static.deriv.com/email/images/design-2023/chipper-m.png" style="width: 150px !important;"/>
+                                                    </td>
+                                                </tr>
+                                                <tr style="display: none; mso-hide:all;" class="show-dark">
+                                                    <td align="left" class="dark-gray" style="padding: 10px 25px 5px;">
+                                                        <img src="https://static.deriv.com/email/images/design-2023/chipper-dark.png" style="width: 150px !important;"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="left" class="dark-gray" style="padding: 0px 25px;">
+                                                        <table>
+                                                            <tr>
+                                                                <td class="payment-desc-td">
+                                                                    <p class="dark-subtext">Make secure deposits with Perfect Money. Choose between various transfer options to make mobile money transfers.</p>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="payment-limits-td dark-subtext">
+                                                                    <p class="dark-subtext">Deposit limit: 5-10000 USD | Processing time: Instant</p>
+                                                                </td>
+                                                            </tr>
+                                                        </table><!--[if mso]></td></tr></table><![endif]-->
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="left" class="dark-gray" style="padding: 10px 25px 0px;">
                                                         <a href="https://app.deriv.com/cashier/deposit">Fund now →</a>
                                                     </td>
                                                 </tr>
@@ -581,26 +821,57 @@
                                             <table align="left">
                                                 <tr>
                                                     <td align="left" class="dark-gray" style="padding: 10px 25px 5px;">
-                                                        <img src="https://static.deriv.com/email/images/design-2023/mifinity-m.png" style="width: 80px !important;"/>
+                                                        <img src="https://static.deriv.com/email/images/design-2023/mifinity-m.png" style="width: 150px !important;"/>
                                                     </td>
                                                 </tr>                                                <tr>
                                                     <td align="left" class="dark-gray" style="padding: 0px 25px;">
                                                         <table>
                                                             <tr>
                                                                 <td class="payment-desc-td">
-                                                                    <p class="dark-subtext" style="margin: 0; padding: 8px 0px; font-size: 14px;">Make instant deposits using your e-wallet.</p>
+                                                                    <p class="dark-subtext">Make instant deposits using your e-wallet.</p>
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <td class="payment-limits-td dark-subtext">
-                                                                    <p class="dark-subtext" style="margin: 0;color: #999; padding: 0px 0px 8px; font-size: 13px;">Deposit: Instant.</p>
+                                                                    <p class="dark-subtext">Deposit: Instant.</p>
                                                                 </td>
                                                             </tr>
-                                                        </table>
+                                                        </table><!--[if mso]></td></tr></table><![endif]-->
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td align="left" class="dark-gray" style="padding: 0px 25px 0px;">
+                                                    <td align="left" class="dark-gray" style="padding: 10px 25px 0px;">
+                                                        <a href="https://app.deriv.com/cashier/deposit">Fund now →</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="payments-td dark-gray" style="width: 100% !important;">
+                                            <table align="left">
+                                                <tr>
+                                                    <td align="left" class="dark-gray" style="padding: 10px 25px 5px;">
+                                                        <img src="https://static.deriv.com/email/images/design-2023/sticpay.png" style="width: 150px !important;"/>
+                                                    </td>
+                                                </tr>                                                <tr>
+                                                    <td align="left" class="dark-gray" style="padding: 0px 25px;">
+                                                        <table>
+                                                            <tr>
+                                                                <td class="payment-desc-td">
+                                                                    <p class="dark-subtext">Make instant deposits using your e-wallet.</p>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="payment-limits-td dark-subtext">
+                                                                    <p class="dark-subtext">Deposit: Instant.</p>
+                                                                </td>
+                                                            </tr>
+                                                        </table><!--[if mso]></td></tr></table><![endif]-->
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="left" class="dark-gray" style="padding: 10px 25px 0px;">
                                                         <a href="https://app.deriv.com/cashier/deposit">Fund now →</a>
                                                     </td>
                                                 </tr>
@@ -631,26 +902,26 @@
                             </td>
                         </tr>
                         <tr class="mobile-hide">
-                            <td align="left" style="padding: 0 30px 0px; max-width: 600px;" class="dark-black">
+                            <td align="left" style="padding: 0 30px 20px; max-width: 600px;" class="dark-black">
                                 <!--[if (gte mso 9)|(IE)]>
                                 <table width="570" cellpadding="0" cellspacing="0" valign="top" align="center">
                                     <tr>
                                         <td>
                                 <![endif]-->
-                                <table align="center" class="dark-black" style="width: 100%; max-width: 540px; margin: 0;">
+                                <table id="cols-3-tb-ext" align="center" class="dark-black">
                                     <tr>
                                         <!--[if (gte mso 9)|(IE)]>
                                             <td align="left" cellpadding="0" cellspacing="0" valign="top" width="190">
                                         <![endif]-->
                                         <td align="center" class="col-3-td dark-black">
-                                            <table style="width: 100%; margin-top: 20px;">
+                                            <table>
                                                 <tr>
                                                     <td class="step-img-td">
                                                         <img src="https://static.deriv.com/email/images/marketing/real-acc/step-1.png" class="step-img" alt="Add a real money account">
                                                     </td>
                                                 </tr>
                                                 <tr style="height: 200px;">
-                                                    <td style="vertical-align: top;">
+                                                    <td>
                                                         <table align="left">
                                                             <tr>
                                                                 <td class="step-number dark-black">
@@ -669,14 +940,14 @@
                                             </table>
                                         </td>
                                         <td align="center" class="col-3-td dark-black">
-                                            <table style="width: 100%; margin-top: 20px;">
+                                            <table>
                                                 <tr>
                                                     <td class="step-img-td">
                                                         <img src="https://static.deriv.com/email/images/marketing/launch/step-visa.png" class="step-img" alt="Add a real money account">
                                                     </td>
                                                 </tr>
                                                 <tr style="height: 200px;">
-                                                    <td style="vertical-align: top;">
+                                                    <td>
                                                         <table align="left">
                                                             <tr>
                                                                 <td class="step-number dark-black">
@@ -695,7 +966,7 @@
                                             </table>
                                         </td>
                                         <td align="center" class="col-3-td dark-black">
-                                            <table style="width: 100%; margin-top: 20px;">
+                                            <table>
                                                 <tr>
                                                     <td class="step-img-td dark-black">
                                                         <img src="https://static.deriv.com/email/images/marketing/launch/step3.png" class="step-img hide-light" alt="Add a real money account"/>
@@ -705,7 +976,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr style="height: 200px;">
-                                                    <td style="vertical-align: top;">
+                                                    <td>
                                                         <table align="left">
                                                             <tr>
                                                                 <td class="step-number dark-black">
@@ -744,7 +1015,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td align="left" class="col-3-td-mb dark-black">
-                                                        <table style="width: 100%;">
+                                                        <table>
                                                             <tr>
                                                                 <td class="step-number-mb dark-black">
                                                                     <img class="hide-light" src="https://static.deriv.com/email/images/marketing/real-acc/1.png" alt="1">
@@ -772,7 +1043,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td align="left" class="col-3-td-mb dark-black">
-                                                        <table style="width: 100%;">
+                                                        <table>
                                                             <tr>
                                                                 <td class="step-number-mb dark-black">
                                                                     <img class="hide-light" src="https://static.deriv.com/email/images/marketing/real-acc/2.png" alt="2">
@@ -803,7 +1074,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td align="left" class="col-3-td-mb dark-black">
-                                                        <table style="width: 100%;">
+                                                        <table>
                                                             <tr>
                                                                 <td class="step-number-mb dark-black">
                                                                     <img class="hide-light" src="https://static.deriv.com/email/images/marketing/real-acc/3.png" alt="3">
@@ -827,14 +1098,14 @@
                         <!--<![endif]-->
                         <!-- End of How to fund your account: MOBILE VERSION -->
                         <tr>
-                            <td class="paragraph-td" align="left" style="padding: 0px 30px 20px 30px;" class="dark-black">
+                            <td class="paragraph-td" align="left" style="padding: 20px 30px 20px 30px;" class="dark-black">
                                 <p class="dark-subtext">Once approved, the deposit amount will appear in your Deriv USD balance and you can begin trading.</p>
                             </td>
                         </tr>
                         <tr>
-                            <td class="paragraph-td" align="center" style="padding: 20px 30px 20px 30px;" class="dark-black">
-                                <p class="dark-subtext">If you have any questions, contact us via:<br/>
-                                    <a href="https://deriv.com/?is_livechat_open=true" target="_blank">Live chat</a> | <a href="https://api.whatsapp.com/send/?phone=35699578341&text&type=phone_number&app_absent=0" target="_blank">WhatsApp</a></p>
+                            <td class="help-td" align="center" style="padding: 10px 30px 20px 30px;" class="dark-black">
+                                <p class="dark-subtext">Se você tiver alguma dúvida, fale conosco:<br/>
+                                    <a href="https://deriv.com/pt/?is_livechat_open=true" target="_blank">Live chat</a> | <a href="https://api.whatsapp.com/send/?phone=35699578341&text&type=phone_number&app_absent=0" target="_blank">WhatsApp</a></p>
                             </td>
                         </tr>
                     </table>
@@ -897,7 +1168,7 @@
                         </tr>
                         <tr>
                             <td id="footer-links-td" align="center" class="dark-black">
-                                <p><a href="https://www.deriv.com/help-centre">Help Centre</a>&nbsp;&nbsp;&nbsp;<span class="dark-black">|</span>&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/">Terms and conditions</a>&nbsp;&nbsp;&nbsp;<span class="dark-gray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://deriv.com/tnc/security-and-privacy.pdf">Security and privacy</a></p>
+                                <p><a href="https://www.deriv.com/help-centre">Help Centre</a>&nbsp;&nbsp;&nbsp;<span class="dark-gray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/">Terms and conditions</a>&nbsp;&nbsp;&nbsp;<span class="dark-gray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://deriv.com/tnc/security-and-privacy.pdf">Security and privacy</a></p>
                             </td>
                         </tr>
                         <tr>
