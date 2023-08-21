@@ -93,7 +93,9 @@
                 /* Applied to all tags */
                 *{ font-family: 'Ubuntu', Arial, sans-serif; color: #414652; }
                 p, a{ font-family: 'IBM Plex Sans', Arial, sans-serif; color: #414652; }
-                h1{ padding: 0px 80px 0px; margin-top: 15px; color: #fff !important; font-size: 25px; font-weight: 700; text-align: center; line-height: 1.2; }
+                h1, h3{ padding: 0px 80px 0px; color: #333; text-align: center; line-height: 1.2; }
+                h1{ font-size: 25px; font-weight: 700; }
+                h3{ font-size: 18px; font-weight: 400; }
                 body{
                     width: 100%;
                     height: 100%;
@@ -176,13 +178,12 @@
                     #header-td{ width: 600px; margin: 0; padding: 0; }
                     #title-img-tb{ width: 100%; height: 100%; margin: 0; }
                     #logo-img-td, #title-text-td, #title-img-td{ 
-                        background-image: linear-gradient(#ff444f,#ff444f);
-                        background-color: #ff444f;
+                        background-color: #fff;
                         width: 100%;
                         vertical-align: top;
                     }
                     #logo-img-td img{ height: 21px; max-height: 21px; margin: auto; padding: 24px 0 0 25px; }
-                    #title-img-td img{ height: 200px;}
+                    #title-img-td img{ width: 580px; margin: auto;}
                     #slash-td{ margin: 0; padding: 0; }
                     #slash-td img{ width: 100%; margin: 0; padding: 0; }
                     .email-data-tb{ width: 90%; margin: 0 auto; background-color: rgba(65, 70, 82, 0.05); border-radius: 16px;}
@@ -336,7 +337,7 @@
                         /* Applies dark background if dark mode is selected */
                         .dark-black{ background-color: #0e0e0e !important; }
                         /* Custom dark mode font colors */
-                        h1, h2, p, span, b, strong { color: #fff !important; }
+                        h1, h2, h3, p, span, b, strong { color: #fff !important; }
                         .dark-gray{ color: #6e6e6e !important; }
                         .dark-subtext{ color: #c2c2c2 !important; }
                         #logo-img-td{ 
@@ -348,7 +349,7 @@
                     [data-ogsc] a, a:visited{ color: #ff444f; text-decoration: none; }
                     [data-ogsc] li { color: #c2c2c2 !important; }
                     /* Custom dark mode font colors */
-                    [data-ogsc] h1, [data-ogsc] h2, [data-ogsc] p, [data-ogsc] span, [data-ogsc] b, [data-ogsc] strong{ color: #fff !important; }
+                    [data-ogsc] h1, [data-ogsc] h2, [data-ogsc] h3, [data-ogsc] p, [data-ogsc] span, [data-ogsc] b, [data-ogsc] strong{ color: #fff !important; }
                     [data-ogsc] #logo-img-td img{ height: 18px; padding: 20px 0 0 20px; }
                     /* Applies dark background if dark mode is selected */
                     [data-ogsc] .dark-black{ background-color: #0e0e0e !important; }
@@ -382,55 +383,33 @@
                                 <table id="title-img-tb">
                                     <!--[if (gte mso 9)|(IE)]>
                                         <tr>
-                                            <td id="ol-logo-img-td" align="center">
-                                                <div style="margin-left: 30px;">
-                                                    <a href="https://www.deriv.com">
-                                                        <img src="https://static.deriv.com/logos/deriv-white-2023.png" height="21" title="Deriv.com"/>
-                                                    </a>
-                                                </div>
+                                            <td id="title-img-td" align="center" style="padding: 0px;">
+                                                <img src="https://static-marlon.vercel.app/templates/rebranding/img/welcome-header.png" width="580" alt="">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td id="title-img-td" align="center" style="padding: 30px 0px 10px;">
-                                                <img src="https://static-marlon.vercel.app/templates/rebranding/img/layout-3-header.png" height="200" alt="">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td bgcolor="#ff444f" cellpadding="0" cellspacing="0">
-                                                <h1 style="padding: 0px 200px 0px 0px; margin-top: 15px; margin-left: 30px; color: #fff !important; font-family: 'Ubuntu', Arial, sans-serif;  font-size: 25px; font-weight: 700; text-align: center; line-height: 1.2;">Important trading notice for Christmas holiday</h1>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td id="slash-td">
-                                                <img src="https://static.deriv.com/email/images/general/red-slash.png" alt="">
+                                            <td bgcolor="#ff444f" cellpadding="0" cellspacing="0" class="dark-black">
+                                                <h1 style="padding: 20px 80px 20px 80px; margin-top: 15px; color: #fff !important; font-family: 'Ubuntu', Arial, sans-serif;  font-size: 25px; font-weight: 700; text-align: center; line-height: 1.2;">Important trading notice for Christmas holiday</h1>
                                             </td>
                                         </tr>
                                     </table>
                                     <![endif]-->
                                     <!--[if !gte mso 9]><!-- -->
                                     <tr>
-                                        <td id="logo-img-td" align="center">
-                                            <a href="https://www.deriv.com">
-                                                <img src="https://static.deriv.com/logos/deriv-white-2023.png" title="Deriv.com">
-                                            </a>
+                                        <td id="title-img-td" class="dark-black" align="center" style="padding: 0px;">
+                                            <img src="https://static-marlon.vercel.app/templates/rebranding/img/welcome-header.png" alt="">
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td id="title-img-td" align="center" style="padding: 30px 0px 10px;">
-                                            <img src="https://static-marlon.vercel.app/templates/rebranding/img/layout-3-header.png" alt="">
+                                        <td id="title-welcome-td" align="center" class="dark-black" style="padding: 20px 80px 0px;">
+                                            <h3>Welcome to Deriv</h3>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td id="title-text-td" style="padding: 0px;">
-                                            <h1>Important trading notice for Christmas holiday</h1>
+                                        <td id="title-text-td" class="dark-black" style="padding: 0px 80px;">
+                                            <h1>Ready. Set. Trade.</h1>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td id="slash-td">
-                                            <img src="https://static.deriv.com/email/images/general/red-slash.png" alt="">
-                                        </td>
-                                    </tr>
-                                    
                                 </table>
                                 <!--<![endif]-->
                             </td>
