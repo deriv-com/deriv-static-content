@@ -1,0 +1,115 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css"/>
+    </head>
+    <body>
+        <div style="height: 340px; width: 100%; background-color: #ff444f; padding: 30px 0px;">
+            <div style="width: 50%; height: 100%; float: left; vertical-align: top;">
+                <div id="s_n3" style="width: 420px; background-color: #fff; border: 0px; border-radius: 10px; padding: 5%; box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.08), 0 8px 16px 0 rgba(0, 0, 0, 0.08); margin: 0 0 5% 5%; float: left;">
+                    <h2 style="line-height: 1.2;">Join over 2.5 million traders worldwide</h2>
+                    <p style="margin: 0.7rem 0;">Sign up for your demo account now.</p>
+                    <div style="display: flex; margin-bottom: 5px;">
+                        <input id="email_input_n3" placeholder="Email" style="width: 250px; height: 2.5rem; float: left; margin-top: 5px;" type="text" name="fname">
+                        <button id="myBtn_n3" class="button-signup" style="width: 125px !important; margin-top: 5px !important; margin-left: 10px;" type="button">Sign up</button>
+                    </div>
+                    <p id="pEmail_n3" style="color: #ff444f !important; font-size: 12px; display: none; margin-top: -14px; margin-bottom: 15px !important;">Please enter a valid email</p>
+                    <input type="checkbox" id="ckbx_n3"/>
+                    <label for="ckbx_n3" style="margin-left: 5px;">
+                        I agree to the <a href="https://deriv.com/terms-and-conditions/#clients" style="color: #ff444f !important;">terms and conditions</a>.
+                    </label><br/>
+                    <p id="pAgree_n3" style="color: #ff444f !important; font-size: 12px; display: none; margin: 4px 0 0;">Please tick the check for signup.</p>
+                    <div style="width: 100%; text-align: left;">
+                        <p style="padding: 1rem 0 0 0; color: #999;">Or sign up with</p>
+                        <div class="social-media-buttons" style="width: 100%; heigth: 70px; float: left;">
+                            <a class="social-media-login" data-platform="google">
+                                <button class="button-google-33">
+                                    <img src="https://static.deriv.com/email/images/icons/social-google.png" style="width: 25px;"/>
+                                    <span>Google</span>
+                                </button>
+                            </a>
+                            <a class="social-media-login" data-platform="facebook">
+                                <button class="button-fb-33">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiPjxkZWZzPjxwYXRoIGlkPSJhIiBkPSJNLjAwMS4wMDFIMjJ2MjEuODY1SC4wMDF6Ii8+PC9kZWZzPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEgMSkiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PG1hc2sgaWQ9ImIiIGZpbGw9IiNmZmYiPjx1c2UgeGxpbms6aHJlZj0iI2EiLz48L21hc2s+PHBhdGggZmlsbD0iIzE4NzdmMiIgZD0iTTIxIDExLjA2MUMyMSA1LjUwNSAxNi41MjMgMSAxMSAxUzEgNS41MDUgMSAxMS4wNjFDMSAxNi4wODMgNC42NTcgMjAuMjQ1IDkuNDM4IDIxdi03LjAzaC0yLjU0di0yLjkxaDIuNTRWOC44NDVjMC0yLjUyMiAxLjQ5Mi0zLjkxNSAzLjc3Ny0zLjkxNSAxLjA5NCAwIDIuMjM4LjE5NyAyLjIzOC4xOTd2Mi40NzZoLTEuMjZjLTEuMjQzIDAtMS42My43NzUtMS42MyAxLjU3djEuODg4aDIuNzczbC0uNDQzIDIuOTA4aC0yLjMzVjIxYzQuNzgtLjc1NSA4LjQzNy00LjkxNyA4LjQzNy05LjkzOSIgbWFzaz0idXJsKCNiKSIvPjwvZz48L3N2Zz4=" style="width: 25px;"/>
+                                    <span>Facebook</span>
+                                </button>
+                            </a>
+                            <a class="social-media-login" data-platform="apple">
+                                <button class="button-apple-33">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZD0iTTE3LjI5NCAxMi40NzNjMC0yLjQ2IDIuMDYzLTMuNjUgMi4xNDItMy43My0xLjE5LTEuNjY1LTIuOTM1LTEuOTAzLTMuNTctMS45ODMtMS41MDgtLjE1OC0zLjAxNS44NzMtMy43My44NzMtLjc5MyAwLTEuOTgzLS44NzMtMy4yNTItLjg3My0xLjY2NiAwLTMuMTc0Ljk1Mi00LjA0NiAyLjQ2LTEuNzQ2IDMuMDE1LS40NzYgNy40NTggMS4xOSA5LjkxNy44NzMgMS4xOSAxLjgyNSAyLjUzOSAzLjA5NCAyLjQ2czEuNzQ1LS43OTQgMy4yNTMtLjc5NCAxLjkwNC43OTQgMy4yNTMuNzk0IDIuMjIxLTEuMTkgMy4wMTUtMi4zOGMuOTUyLTEuMzUgMS4zNDgtMi42OTggMS4zNDgtMi43NzctLjA3OS0uMDgtMi42OTctMS4wMzItMi42OTctMy45Njd6bS0yLjQ2LTcuMjk5QzE1LjQ3IDQuMyAxNS45NDUgMy4xOSAxNS44NjYgMmMtLjk1Mi4wOC0yLjIyMi42MzUtMi44NTYgMS41MDctLjYzNS43MTQtMS4xOSAxLjkwNS0xLjAzMiAzLjAxNSAxLjAzMi4wOCAyLjE0Mi0uNTU1IDIuODU2LTEuMzQ4eiIvPjwvc3ZnPg==" style="width: 25px;"/>
+                                    <span>Apple</span>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 50%; padding: 5% 0px; float: right;">
+                <h1 style="color: #fff; margin: 0 5% 5% 10%; padding: 0% 5% 0%;">Experience trading at Deriv today</h1>
+            </div>
+        </div>
+        <script>
+            const submit_btn_n3 = document.getElementById("myBtn_n3");
+            const ckbx_n3=document.getElementById("ckbx_n3");
+            const email_field_n3 =document.getElementById("email_input_n3");
+            ckbx_n3.addEventListener("click", fckbx_n3);
+            submit_btn_n3.addEventListener("click", f_submit_btn_n3);
+            email_field_n3.addEventListener("keyup", f_email_input_errmsg_n3);
+
+            function f_email_input_errmsg_n3() {
+                const email = email_field_n3.value;
+                if(is_emailValid(email))
+                    document.getElementById("pEmail_n3").style.display = "none";
+                else
+                    document.getElementById("pEmail_n3").style.display = "block";
+            }
+  
+            function fckbx_n3() {
+                if(ckbx_n3.checked==true){
+                    document.getElementById("pAgree_n3").style.display = "none";
+                }
+                else{
+                    document.getElementById("pAgree_n3").style.display = "block";
+                }
+            }
+          
+            function f_submit_btn_n3()  {
+                const email = email_field_n3.value;
+                if(is_emailValid(email)&&(ckbx_n3.checked==true)) {
+                    const verify_email_req = getVerifyEmailRequest(email);
+                    window.ws.send(JSON.stringify(verify_email_req));
+                } else {
+                    if(ckbx_n3.checked==false) {
+                        document.getElementById("pAgree_n3").style.display = "block";
+                        document.getElementById("pEmail_n3").style.display = "block";
+                        if(is_emailValid(email)) {
+                            document.getElementById("pEmail_n3").style.display = "none";
+                        } 
+                    } else if(email=='') {
+                        document.getElementById("pEmail_n3").innerHTML="Insira o seu correo eletrónico."
+                        document.getElementById("pEmail_n3").style.display = "block";
+                    } else {
+                        document.getElementById("pEmail_n3").innerHTML="Insira um correo eletrónico válido."
+                        document.getElementById("pEmail_n3").style.display = "block";
+                    }
+                }
+            }
+        
+            function is_emailValid(email) { 
+                if (/^\w+([!#$%&'*+-/=?^_`{|}~\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+                    return (true)
+                return (false)
+            }
+  
+            /// social login
+            window.onload = () => {
+                document.querySelectorAll(".social-media-login").forEach((e) => {
+                    e.addEventListener("click", () => {
+                        const platform = e.getAttribute("data-platform");
+                        window.location.href = loginUrl(platform);
+                    });
+                });
+            };
+            /// End social login
+        </script>
+    </body>
+</html>

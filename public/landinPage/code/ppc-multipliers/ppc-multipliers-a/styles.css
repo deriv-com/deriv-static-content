@@ -1,0 +1,67 @@
+@media screen{
+    /* latin */
+    @font-face {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('IBM Plex Sans'), local('IBMPlexSans'), url(https://fonts.gstatic.com/s/ibmplexsans/v7/zYXgKVElMYYaJe8bpLHnCwDKhdHeFaxOedc.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    /* latin */
+    @font-face {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: local('IBM Plex Sans Medium'), local('IBMPlexSans-Medium'), url(https://fonts.gstatic.com/s/ibmplexsans/v7/zYX9KVElMYYaJe8bpLHnCwDKjSL9AIFsdP3pBms.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    /* latin */
+    @font-face {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local('IBM Plex Sans Bold'), local('IBMPlexSans-Bold'), url(https://fonts.gstatic.com/s/ibmplexsans/v7/zYX9KVElMYYaJe8bpLHnCwDKjWr7AIFsdP3pBms.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+}
+
+*{ margin: 0; padding: 0; font-family: 'IBM Plex Sans', 'Ubuntu', Arial, sans-serif; color:#414652; }
+a{ text-decoration: none; }
+input[type=text] { height: 40px !important; border: 1px solid #d6dadb; border-radius: 16px; padding-left: 20px; }
+#pEmail_n1, #pAgree_n1, #pEmail_n2, #pAgree_n2{ color: #ff444f !important; font-size: 12px; display: none; margin: 0; }
+#pEmail_n1, #pEmail_n2{ margin: -19px 0 15px; }
+
+/* Buttons */
+.button, .button-signup, .button-google, .button-fb, .button-apple { display: flex; gap: 5px; padding: 10px 25px; justify-content: center; align-items: center; border-radius: 16px; font-size: 1rem; cursor: pointer; height: 2.6rem; width: 90% !important; margin: 1rem auto; font-weight: 700; }
+.button-signup { background-color: #ff444f; color: #fff; border: 1px solid #ff444f; }
+.button-signup:hover { background-color: #d43e47; }
+.button-google { background-color: #fff; border: 0.5px solid #414652; }
+.button-google span{ color: #414652; }
+.button-google:hover { background-color: #eee; }
+.button-fb{ background-color: #1877f2; color: #fff; border: 0.5px solid #1877f2; }
+.button-fb span{ color: #fff; }
+.button-fb:hover{ background-color: #1E88E5; }
+.button-apple { background-color: #000; border: 0.5px solid #414652; }
+.button-apple span{ color: #fff; }
+.button-apple:hover { background-color: #2e2e2e; }
+.button-signup:active, .button-google:active, .button-fb:active { transition: width 0.1s, height 0.1s; height: 37px; width: 113px; }
+.button-google img, .button-fb img, .button-apple img{ width: 24px; }
+
+
+.button-google-33, .button-google-33-mb, .button-fb-33, .button-fb-33-mb, .button-apple-33, .button-apple-33-mb { height: 2.6rem;  padding: 10px 25px; background-color: #fff; border: 0.5px solid #414652; border-radius: 16px; font-weight: 700; justify-content: center; align-items: center; display: flex; gap: 5px; cursor: pointer;float: left; }
+.button-google-33, .button-fb-33, .button-apple-33 { width: 105px !important; font-size: 0.8rem; margin: 1rem 0 0 10px; }
+.button-google-33-mb, .button-fb-33-mb, .button-apple-33-mb { width: 94px !important; font-size: 0.75rem; margin: 1rem 0 0 5px; }
+.button-google-33:hover, .button-fb-33:hover, .button-apple-33:hover, .button-google-33-mb:hover, .button-fb-33-mb:hover, .button-apple-33-mb:hover { background-color: #eee; }
+
+.footer-logo{ height: 40px; width: auto; vertical-align: top; }
+.footer-sm{ height: 32px; width: auto; margin-right: 8px; }
+.footer-sm-mb{ height: 24px; width: auto; margin-right: 15px; }
+
+@media screen and (max-width: 1160px){ 
+    h1{ font-size: 2.5rem; }
+    h2{ font-size: 2rem; }
+    #s_n1{ width: 380px; padding: 25px;}
+}
