@@ -12,48 +12,6 @@ commands:
       - run:
           name: Tag build
           command: echo "<< parameters.target_branch >> $(date -u +'%Y-%m-%dT%H:%M:%SZ')" > public/version
-  docker_build_push:
-    description: "Build and Push image to docker hub"
-    parameters:
-      docker_image_latest_tag:
-        type: string
-        default: "latest-staging"
-    steps:
-      - setup_remote_docker
-      - run:
-          name: Building docker image
-          command: |
-            TAG=${CIRCLE_TAG:-$CIRCLE_SHA1}
-            docker build -t ${DOCKHUB_ORGANISATION}/static-deriv-app:${TAG} -t ${DOCKHUB_ORGANISATION}/static-deriv-app:<< parameters.docker_image_latest_tag >> .
-      - run:
-          name: Pushing Image to docker hub
-          command: |
-            TAG=${CIRCLE_TAG:-$CIRCLE_SHA1}
-            echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
-            docker push ${DOCKHUB_ORGANISATION}/static-deriv-app:${TAG}
-            docker push ${DOCKHUB_ORGANISATION}/static-deriv-app:<< parameters.docker_image_latest_tag >>
-
-  k8s_deploy:
-    description: "Deploy to k8s cluster"
-    parameters:
-      k8s_version:
-        type: string
-        default: ${CIRCLE_SHA1}
-      k8s_namespace:
-        type: string
-        default: "static-deriv-app-production"
-    steps:
-      - k8s/install-kubectl
-      - run:
-          name: Deploying to k8s cluster for service static-deriv-app
-          command: |
-            TAG=${CIRCLE_TAG:-$CIRCLE_SHA1}
-            export NAMESPACE=<< parameters.k8s_namespace >>
-            git clone https://github.com/binary-com/devops-ci-scripts
-            cd devops-ci-scripts/k8s-build_tools
-            echo $CA_CRT | base64 --decode > ca.crt
-            ./release.sh static-deriv-app ${TAG}
-
   notify_slack:
     description: "Notify slack"
     steps:
