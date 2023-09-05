@@ -32,6 +32,8 @@ commands:
 
 jobs:
   release_production:
+    docker:
+      - image: cimg/node:18.4.0
     steps:
       - checkout
       - versioning:
