@@ -3,6 +3,7 @@ runs:
   using: composite
   steps:
   - name: Publish to cloudflare pages (production)
+    environment: Production
     run: |-
       cd public
       npx wrangler pages publish . --project-name=deriv-static-content-pages --branch=main

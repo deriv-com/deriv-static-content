@@ -16,4 +16,4 @@ jobs:
       with:
         target_branch: production
     - uses: "./.github/actions/publish_to_pages_production"
-    - uses: "./.github/actions/notify_slack"
+    - uses: "./.github/actions/send_slack_notifications"
