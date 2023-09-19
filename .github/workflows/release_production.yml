@@ -5,11 +5,9 @@ on:
     - master
 jobs:
   release_production:
-    if: # GitHub does not currently support regular expressions inside if conditions
-#         github.ref == 'refs/heads//^master$/'
     runs-on: ubuntu-latest
     container:
-      image: node:18.4.0
+      image: node:18.16.1
     steps:
     - uses: actions/checkout@v4.0.0
     - uses: "./.github/actions/versioning"
