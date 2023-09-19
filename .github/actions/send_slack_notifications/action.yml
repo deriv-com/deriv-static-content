@@ -9,7 +9,8 @@ inputs:
     required: true
   release_type:
     description: 'Release type'
-    required: true
+    required: false
+    default: 'Production'
   version:
     description: 'Version'
     required: true
@@ -36,4 +37,3 @@ runs:
           }' \
           $SLACK_WEBHOOK_URL
     shell: bash
-    
