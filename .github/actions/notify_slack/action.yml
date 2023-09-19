@@ -1,0 +1,6 @@
+name: notify_slack
+runs:
+  using: composite
+  steps:
+#   # This item has no matching transformer
+#   - circleci_slack_status:

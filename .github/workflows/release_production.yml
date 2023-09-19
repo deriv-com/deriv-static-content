@@ -1,0 +1,19 @@
+name: binary-com/deriv-static-content/release_production
+on:
+  push:
+    branches:
+    - master
+jobs:
+  release_production:
+    if: # GitHub does not currently support regular expressions inside if conditions
+#         github.ref == 'refs/heads//^master$/'
+    runs-on: ubuntu-latest
+    container:
+      image: node:18.4.0
+    steps:
+    - uses: actions/checkout@v4.0.0
+    - uses: "./.github/actions/versioning"
+      with:
+        target_branch: production
+    - uses: "./.github/actions/publish_to_pages_production"
+    - uses: "./.github/actions/notify_slack"
