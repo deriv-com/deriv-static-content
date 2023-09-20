@@ -31,17 +31,6 @@ A repository for digital marketing codes, email templates, images, company PDFs.
     ```sh
     npm install nodemailer
     ```
-5. **To run the available test using Cypress APP UI**
-
-    ```sh
-    npx cypress open
-    ```
-6. **To run the available test in terminal**
-
-    ```sh
-    npx cypress run
-    ```        
-    
 
 ## How to contribute
 We contribute by PR (Pull Request):
