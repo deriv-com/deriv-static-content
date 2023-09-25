@@ -1,6 +1,9 @@
 name: send_slack_notifications
 description: Send Slack notifications
 inputs:
+  CLOUDFLARE_ACCOUNT_ID:
+    description: 'Cloudflare Account ID'
+    required: true
   SLACK_WEBHOOK_URL:
     description: 'Slack webhook URL'
     required: true
