@@ -1,9 +1,6 @@
 name: send_slack_notifications
 description: Send Slack notifications
 inputs:
-  CLOUDFLARE_ACCOUNT_ID:
-    description: 'Cloudflare Account ID'
-    required: true
   SLACK_WEBHOOK_URL:
     description: 'Slack webhook URL'
     required: true
@@ -28,7 +25,7 @@ runs:
         --data '{
         "text": "'"${{ inputs.release_type }}"' Release succeeded for deriv-static-content with version *'"${{ inputs.version }}"'*"
         }' \
-          $SLACK_WEBHOOK_URL
+          ${{ inputs.SLACK_WEBHOOK_URL }}
     shell: bash
   
   - name: Send Slack Notification on Failure
@@ -38,5 +35,5 @@ runs:
           --data '{
             "text": "'"${{ inputs.release_type }}"' Release failed for deriv-static-content with version *'"${{ inputs.version }}"'*"
           }' \
-          $SLACK_WEBHOOK_URL
+          ${{ inputs.SLACK_WEBHOOK_URL }}
     shell: bash
