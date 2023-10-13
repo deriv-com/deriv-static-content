@@ -19,7 +19,7 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ inputs.CLOUDFLARE_ACCOUNT_ID }}
       - uses: technote-space/workflow-conclusion-action@v3
       - name: Extract version
-        run: echo "VERSION=${{ echo cat public/version }}"
+        run: echo "VERSION=$(echo cat public/version)"
       - uses: "./.github/actions/send_slack_notifications"
         with:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
