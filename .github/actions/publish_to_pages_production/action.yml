@@ -16,6 +16,7 @@ runs:
     environment: Production
     run: |-
       cd public
-      npx wrangler pages publish . --project-name=deriv-static-content-pages --branch=main
+      npm i wrangler@3.1.0
+      npx wrangler pages deploy . --project-name=deriv-static-content-pages --branch=main
       echo "New website - REDACTED-pages-deriv-static-content.deriv.com"
     shell: bash
