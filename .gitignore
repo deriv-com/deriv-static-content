@@ -5,6 +5,11 @@ dist
 upload
 deploy.log
 package-lock.json
+
+tmp/
+.env
+.env.*
+
 # Compiled source #
 ###################
 *.com
