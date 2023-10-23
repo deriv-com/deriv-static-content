@@ -1,0 +1,22 @@
+name: publish_to_pages_production
+inputs:
+  CLOUDFLARE_API_TOKEN:
+    description: 'Cloudflare Pages token'
+    required: true
+  CLOUDFLARE_ACCOUNT_ID:
+    description: 'Cloudflare Account ID'
+    required: true
+env:
+  CLOUDFLARE_API_TOKEN: ${{ inputs.CLOUDFLARE_API_TOKEN }}
+  CLOUDFLARE_ACCOUNT_ID: ${{ inputs.CLOUDFLARE_ACCOUNT_ID }}
+runs:
+  using: composite
+  steps:
+  - name: Publish to cloudflare pages (production)
+    environment: Production
+    run: |-
+      cd public
+      npm i wrangler@3.1.0
+      npx wrangler pages deploy . --project-name=deriv-static-content-pages --branch=main
+      echo "New website - REDACTED-pages-deriv-static-content.deriv.com"
+    shell: bash
