@@ -1,0 +1,123 @@
+
+<div style="background-color: #ff444f;width: 100%;">
+<div id="s_n2"  style="background-color: #fff;min-width: 320px;max-width:420px;margin: auto;"> 
+    <p style="font-size: large;font-weight: 700;margin-top: 20px;">Sign up</p>
+    <p style="margin: 0.7rem 0 0;">Enter your email address to begin</p>
+    <input id="email_input_n2" style="width: 90%;  margin: 5% 5% 0;" type="text" placeholder="Email" name="fname"/><br/><br/>
+    <p id="pEmail_n2" style="margin-top: -19px;">Please enter a valid email</p>
+    <input type="checkbox" id="ckbx_n2" style="margin: 0 0 0 5%;"/>
+    <label for="ckbx_n2">I agree to the <a href="https://deriv.com/terms-and-conditions/#clients" target="_blank" style="color: #ff444f !important;">terms and conditions</a>.
+    </label><br/>
+    <p id="pAgree_n2">Please tick the check for signup</p>
+    <button id="myBtn_n2" class="button-signup" type="button">Create demo account</button>
+    <p style="color: #999; padding: 0px 10px 20px; font-size: 0.8rem; line-height: 1.2;">By pressing "Create demo account", you confirm that you are 18 or older. You understand that we may use your email address to send you information about Deriv products and services as well as market news. You can always unsubscribe from these emails in your account settings. For more information, please take a look at Deriv's <a href="https://deriv.com/tnc/security-and-privacy.pdf" style="color: #ff444f !important;">Security and privacy</a>.</p>
+    <div style="display: flex; justify-content: space-around;">
+        <div style="display: flex; justify-content: space-around; align-items: center;">
+            <div style="width: 100px; border-bottom: 1px solid #999;"></div>
+        </div>
+        <span style="padding: 0 10px; color: #999;">Or sign up with</span>
+        <div style="display: flex; justify-content: space-around; align-items: center;">
+            <div style="width: 100px; border-bottom: 1px solid #999;"></div>
+        </div>
+    </div>
+    <div class="social-media-buttons">
+        <a class="social-media-login" data-platform="google">
+            <button class="button-google" style="width: 90%;">
+                <img
+                src="https://static.deriv.com/email/images/icons/social-google.png"
+                />
+                <span>Google</span>
+            </button>
+        </a>
+        <a class="social-media-login" data-platform="facebook">
+            <button class="button-fb" style="width: 90%;">
+                <img
+                src="https://static.deriv.com/email/images/icons/social-facebook-blue.png"
+                />
+                <span>Facebook</span>
+            </button>
+        </a>
+        <a class="social-media-login" data-platform="apple">
+            <button class="button-apple" style="width: 90%;">
+                <img
+                src="https://static.deriv.com/email/images/icons/social-apple-white.png"
+                />
+                <span>Apple</span>
+            </button>
+        </a>
+    </div>
+    <p style="margin: 1rem auto; text-align: center;">Already have an account? <a id="myLink2" href="#" style="color:#ff444f !important;">Log in</a></p>
+</div>
+</div>
+
+<script>
+    const submit_btn_n2 = document.getElementById("myBtn_n2");
+    const ckbx_n2=document.getElementById("ckbx_n2");
+    const email_field_n2 =document.getElementById("email_input_n2");
+    ckbx_n2.addEventListener("click", fckbx_n2);
+    submit_btn_n2.addEventListener("click", f_submit_btn_n2);
+    email_field_n2.addEventListener("keyup", f_email_input_errmsg_n2);
+
+    function f_email_input_errmsg_n2() {
+        const email = email_field_n2.value;
+        if(is_emailValid(email))
+            document.getElementById("pEmail_n2").style.display = "none";
+        else
+            document.getElementById("pEmail_n2").style.display = "block";
+    }
+
+    function fckbx_n2() {
+        if(ckbx_n2.checked==true){
+            document.getElementById("pAgree_n2").style.display = "none";
+        }
+        else{
+            document.getElementById("pAgree_n2").style.display = "block";
+        }
+    }
+
+    function f_submit_btn_n2()  {
+        const email = email_field_n2.value;
+        if(is_emailValid(email)&&(ckbx_n2.checked==true)) {
+            const verify_email_req = getVerifyEmailRequest(email);
+            window.ws.send(JSON.stringify(verify_email_req));
+        }
+        else {
+            if(ckbx_n2.checked==false) {
+                document.getElementById("pAgree_n2").style.display = "block";
+                document.getElementById("pEmail_n2").style.display = "block";
+                if(is_emailValid(email)) {
+                    document.getElementById("pEmail_n2").style.display = "none";
+                }
+            } else if(email=='') {
+                document.getElementById("pEmail_n2").innerHTML="Insira o seu correo eletrónico."
+                document.getElementById("pEmail_n2").style.display = "block";
+            } else {
+                document.getElementById("pEmail_n2").innerHTML="Insira um correo eletrónico válido."
+                document.getElementById("pEmail_n2").style.display = "block";
+            }
+        }
+    }
+
+    function is_emailValid(email) { 
+        if (/^\w+([!#$%&'*+-/=?^_`{|}~\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+            return (true)
+        return (false)
+    }
+
+    /// social login
+    window.onload = () => {
+        document.querySelectorAll(".social-media-login").forEach((e) => {
+            e.addEventListener("click", () => {
+                const platform = e.getAttribute("data-platform");
+                window.location.href = loginUrl(platform);
+            });
+        });
+    };
+
+    var link1 = document.getElementById("myLink2");
+    link1.addEventListener("click", function() {
+            // Navigate to the specified URL
+            event.preventDefault();
+            window.location.href = "https://oauth.deriv.com/oauth2/authorize?app_id=16929&l=en&brand=deriv";
+        });
+</script>
