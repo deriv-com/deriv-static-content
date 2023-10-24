@@ -2,7 +2,6 @@
     <style>
         .flex-container-main {
           display: flex;
-          background-color: #F8FAFB;
           justify-content: space-between;
         }
         .flex-container-socials {
@@ -17,7 +16,9 @@
         }
         
         .flex-container-socials > div {
-          margin: 5px;
+          margin: 15px;
+          height: 25px;
+          width: 25px;
         }
         
         @media (max-width: 600px) {
@@ -29,9 +30,8 @@
             align-items: flex-end;
             height: 80px;
           }
-          .img-logo{
-            height: 24px !important;
-            width: auto !important;
+          .m-center{
+            margin: 0 auto;
           }
         }
         
@@ -41,23 +41,17 @@
         <body>
         
         <div class="flex-container-main">
-        <div id="test" class="flex-container-derivlogo">
-          <div><a href="https://www.deriv.com"><img class="img-logo" style="width: 160px" src="https://static.deriv.com/logos/deriv-horizontal-web-dark.png" alt="Deriv.com" title="Deriv.com" /></a></div>
+        <div class="flex-container-derivlogo">
+          <div class="m-center"><a href="https://www.deriv.com"><img style="width: 90px" src="https://static.deriv.com/logos/deriv-gray-2023.png" alt="Deriv.com" title="Deriv.com" /></a></div>
         </div>
         
-        <div id="test" class="flex-container-socials">
-          <div><a href="https://www.linkedin.com/company/derivdotcom/" target=”_blank”><img src="https://static.deriv.com/logos/linkedin.png" height="40" width="40" alt="Deriv.com on linkedin" title="Deriv.com on linkedin" /></a></div>
-          <div><a href="https://www.instagram.com/deriv_official/" target=”_blank”><img src="https://static.deriv.com/logos/instagram.png" height="40" width="40" alt="Deriv.com on Instagram" title="Deriv.com on Instagram" /></a></div>
-          <div><a href="https://twitter.com/derivdotcom" target=”_blank”><img src="https://static.deriv.com/logos/twitter.png" height="40" width="40" alt="Deriv.com on Twitter" title="Deriv.com on Twitter" /></a></div>
-          <div><a href="https://www.facebook.com/derivdotcom" target=”_blank”><img src="https://static.deriv.com/logos/facebook.png" height="40" width="40" alt="Deriv.com on Facebook" title="Deriv.com on Facebook" /></a></div>
-          <div><a href="https://t.me/derivdotcomofficial" target=”_blank”><img src="https://static.deriv.com/logos/telegram.png" height="40" width="40" alt="Deriv.com on Telegram" title="Deriv.com on Telegram" /></a></div>
-          <div><a href="https://www.reddit.com/user/Deriv_official/" target=”_blank”><img src="https://static.deriv.com/logos/reddit.png" height="40" width="40" alt="Deriv.com on Reddit" title="Deriv.com on Reddit" /></a></div> 
+        <div class="flex-container-socials">
+          <div><a href="https://t.me/derivdotcomofficial" target=”_blank”><img src="https://static.deriv.com/email/images/icons/telegram-gray.png"  alt="Deriv.com on Telegram" title="Deriv.com on Telegram" /></a>&nbsp;&nbsp;&nbsp;</div>
+          <div><a href="https://www.linkedin.com/company/derivdotcom/" target=”_blank”><img src="https://static.deriv.com/email/images/icons/linkedin-gray.png"  alt="Deriv.com on linkedin" title="Deriv.com on linkedin" /></a>&nbsp;&nbsp;&nbsp;</div>
+          <div><a href="https://www.youtube.com/@deriv" target=”_blank”><img src="https://static.deriv.com/email/images/icons/youtube-gray.png" alt="Deriv.com on Youtube" title="Deriv.com on Youtube" /></a>&nbsp;&nbsp;&nbsp;</div>
+          <div><a href="https://twitter.com/derivdotcom" target=”_blank”><img src="https://static.deriv.com/email/images/icons/x-gray.png" alt="Deriv.com on Twitter" title="Deriv.com on Twitter" /></a>&nbsp;&nbsp;&nbsp;</div>
+          <div><a href="https://www.instagram.com/deriv_official/" target=”_blank”><img src="https://static.deriv.com/email/images/icons/instagram-gray.png"alt="Deriv.com on Instagram" title="Deriv.com on Instagram" /></a>&nbsp;&nbsp;&nbsp;</div>
+          <div><a href="https://www.facebook.com/derivdotcom" target=”_blank”><img src="https://static.deriv.com/email/images/icons/facebook-gray.png" alt="Deriv.com on Facebook" title="Deriv.com on Facebook" /></a>&nbsp;&nbsp;&nbsp;</div>
         </div>
         </div>
-        
-        <script>
-            const myElement = document.getElementById("footer");
-            myElement.style.padding = "0";
-        </script>
-
 </body>
