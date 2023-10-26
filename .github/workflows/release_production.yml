@@ -21,7 +21,7 @@ jobs:
       - uses: technote-space/workflow-conclusion-action@v3
       - name: Extract version
         run: echo "VERSION=$(echo cat public/version)"
-      - uses: "./.github/actions/send_slack_notifications"
+      - uses: "./.github/actions/send_slack_notification"
         with:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           status: ${{ env.WORKFLOW_CONCLUSION }}
