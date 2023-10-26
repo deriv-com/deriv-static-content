@@ -5,6 +5,7 @@ on:
       - master
 jobs:
   release_production:
+    environment: Production
     runs-on: ubuntu-latest
     container:
       image: node:18.16.1
