@@ -57,7 +57,8 @@ const toISOFormat = (date) => {
 
 const shouldOverwrite = (new_utm_data, current_utm_data) => {
   // If we don't have old utm data, the utm_source field is enough for new utm data
-  const valid_new_utm_source = new_utm_data.utm_source && new_utm_data.utm_source !== "null"
+  const valid_new_utm_source =
+    new_utm_data.utm_source && new_utm_data.utm_source !== "null";
   if (!current_utm_data && valid_new_utm_source) {
     return true;
   }
@@ -95,7 +96,9 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
   ];
 
   let utm_data = {};
-  const current_utm_data = JSON.parse(decodeURIComponent(getCookie("utm_data")));
+  const current_utm_data = JSON.parse(
+    decodeURIComponent(getCookie("utm_data"))
+  );
 
   // If the user comes to the site for the first time without any URL params
   // Only set the utm_source to referrer if the user does not have utm_data cookies stored
@@ -108,11 +111,15 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
   // If the user has any new UTM params, store them
   utm_fields.forEach((field) => {
     if (searchParams.has(field)) {
-      utm_data[field] = searchParams
-        .get(field)
-        .substring(0, 100); // Limit to 100 supported characters
+      utm_data[field] = searchParams.get(field).substring(0, 100); // Limit to 100 supported characters
     }
   });
+
+  // If msclkid if present then include it in the utm_data
+  if (searchParams.get("msclkid")) {
+    console.log("HAS msclkid!");
+    utm_data["utm_msclk_id"] = searchParams.get("msclkid");
+  }
 
   if (shouldOverwrite(utm_data, current_utm_data)) {
     eraseCookie("affiliate_tracking");
