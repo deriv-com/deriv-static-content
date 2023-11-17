@@ -116,8 +116,9 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
   });
 
   // If msclkid if present then include it in the utm_data
+  console.log(searchParams.get("msclkid"), "www");
   if (searchParams.get("msclkid")) {
-    console.log("HAS msclkid!");
+    console.log("HAS msclkid!", "www");
     utm_data["utm_msclk_id"] = searchParams.get("msclkid");
   }
 
