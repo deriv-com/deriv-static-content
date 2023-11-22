@@ -110,6 +110,7 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
 
   // If the user has any new UTM params, store them
   utm_fields.forEach((field) => {
+    console.log(searchParams, field, searchParams.has(field), "www");
     if (searchParams.has(field)) {
       utm_data[field] = searchParams.get(field).substring(0, 100); // Limit to 100 supported characters
     }
@@ -120,9 +121,11 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
   if (searchParams.get("msclkid")) {
     console.log("HAS msclkid!", "www");
     utm_data["utm_msclk_id"] = searchParams.get("msclkid");
+    console.log(utm_data["utm_msclk_id"], utm_data, "www");
   }
 
   if (shouldOverwrite(utm_data, current_utm_data)) {
+    console.log("erase,www");
     eraseCookie("affiliate_tracking");
     eraseCookie("utm_data");
 
