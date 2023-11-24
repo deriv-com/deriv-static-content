@@ -331,7 +331,7 @@
                         <tr>
                             <td align="left" style="padding: 10px 30px; background-color:  rgb(255, 255, 255); min-width: 5px; user-select: text; border: unset;" class="mobile-side darkmodeblack">
                                 <div align="left" bgcolor="#eeeeee" style='padding: 5px 10px 5px 20px;background-color: #f2f3f4;border-radius:20px;' class="darkmodelowblack">
-                                    <p style="padding: 10px;margin:0; font-family: 'IBM Plex Mono', Arial, sans-serif;font-size: 14px;color: #ff444f; line-height: 1.6 ;" class="darkmodelowblack">ticks<br>ticks_history<br>exchange_rates</p>
+                                    <p style="padding: 10px;margin:0; font-family: 'IBM Plex Mono', Arial, sans-serif;font-size: 14px;color: #ff444f !important; line-height: 1.6 ;" class="darkmodelowblack">ticks<br>ticks_history<br>exchange_rates</p>
                                 </div>
                             </td>
                         </tr>
@@ -348,7 +348,7 @@
                         <tr>
                             <td align="left" style="padding: 10px 30px; background-color:  rgb(255, 255, 255); min-width: 5px; user-select: text; border: unset;" class="mobile-side darkmodeblack">
                                 <div align="left" bgcolor="#eeeeee" style='padding: 5px 10px 5px 20px;background-color: #f2f3f4;border-radius:20px;' class="darkmodelowblack">
-                                    <p style="padding: 10px;margin:0; font-family: 'IBM Plex Mono', Arial, sans-serif;font-size: 14px;color: #ff444f; line-height: 1.6 ;" class="darkmodelowblack">{<br>  "ticks": "R_50",<br>   "subscribe": 1,<br>  "req_id": 1<br>}<br><br>{<br>  "ticks": "R_50",<br>  "subscribe": 1,<br>  "req_id": 2<br>}<br>will lead to two separate subscriptions:<br><br>{<br>  "echo_req": {<br>    "req_id": 1,<br>    "subscribe": 1,<br>    "ticks": "R_50"<br>  },<br>  "msg_type": "tick",<br>  "req_id": 1,<br>  "subscription": {<br>    "id": "f0499013-9edd-3b7b-88b2-27b21e2be755"
+                                    <p style="padding: 10px;margin:0; font-family: 'IBM Plex Mono', Arial, sans-serif;font-size: 14px;color: #ff444f !important; line-height: 1.6 ;" class="darkmodelowblack">{<br>  "ticks": "R_50",<br>   "subscribe": 1,<br>  "req_id": 1<br>}<br><br>{<br>  "ticks": "R_50",<br>  "subscribe": 1,<br>  "req_id": 2<br>}<br>will lead to two separate subscriptions:<br><br>{<br>  "echo_req": {<br>    "req_id": 1,<br>    "subscribe": 1,<br>    "ticks": "R_50"<br>  },<br>  "msg_type": "tick",<br>  "req_id": 1,<br>  "subscription": {<br>    "id": "f0499013-9edd-3b7b-88b2-27b21e2be755"
                                         <br>  },
                                         <br>  "tick": {
                                             <br>    "ask": 191.5129,
@@ -379,7 +379,7 @@
                         <tr>
                             <td align="left" style="padding: 10px 30px; background-color:  rgb(255, 255, 255); min-width: 5px; user-select: text; border: unset;" class="mobile-side darkmodeblack">
                                 <div align="left" bgcolor="#eeeeee" style='padding: 5px 10px 5px 20px;background-color: #f2f3f4;border-radius:20px;' class="darkmodelowblack">
-                                    <p style="padding: 10px;margin:0; font-family: 'IBM Plex Mono', Arial, sans-serif;font-size: 14px;color: #ff444f; line-height: 1.6 ;" class="darkmodelowblack">{<br>  "forget_all": "ticks"<br>}</p>
+                                    <p style="padding: 10px;margin:0; font-family: 'IBM Plex Mono', Arial, sans-serif;font-size: 14px;color: #ff444f !important; line-height: 1.6 ;" class="darkmodelowblack">{<br>  "forget_all": "ticks"<br>}</p>
                                 </div>
                             </td>
                         </tr>
@@ -391,7 +391,7 @@
                         <tr>
                             <td align="left" style="padding: 10px 30px; background-color:  rgb(255, 255, 255); min-width: 5px; user-select: text; border: unset;" class="mobile-side darkmodeblack">
                                 <div align="left" bgcolor="#eeeeee" style='padding: 5px 10px 5px 20px;background-color: #f2f3f4;border-radius:20px;' class="darkmodelowblack">
-                                    <p style="padding: 10px;margin:0; font-family: 'IBM Plex Mono', Arial, sans-serif;font-size: 14px;color: #ff444f; line-height: 1.6 ;" class="darkmodelowblack">{<br>  "echo_req": {<br>    "forget_all": "ticks"<br>  },<br>  "forget_all": [<br>    "34ccc31a-27d7-3c08-9158-6d0778f66ddd",<br>    "f0499013-9edd-3b7b-88b2-27b21e2be755"<br>  ],<br>  "msg_type": "forget_all"<br>}<br></p>
+                                    <p style="padding: 10px;margin:0; font-family: 'IBM Plex Mono', Arial, sans-serif;font-size: 14px;color: #ff444f !important; line-height: 1.6 ;" class="darkmodelowblack">{<br>  "echo_req": {<br>    "forget_all": "ticks"<br>  },<br>  "forget_all": [<br>    "34ccc31a-27d7-3c08-9158-6d0778f66ddd",<br>    "f0499013-9edd-3b7b-88b2-27b21e2be755"<br>  ],<br>  "msg_type": "forget_all"<br>}<br></p>
                                 </div>
                             </td>
                         </tr>
@@ -403,7 +403,7 @@
                         <tr>
                             <td align="left" style="padding: 10px 30px; background-color:  rgb(255, 255, 255); min-width: 5px; user-select: text; border: unset;" class="mobile-side darkmodeblack">
                                 <div align="left" bgcolor="#eeeeee" style='padding: 5px 10px 5px 20px;background-color: #f2f3f4;border-radius:20px;' class="darkmodelowblack">
-                                    <p style="padding: 10px;margin:0; font-family: 'IBM Plex Mono', Arial, sans-serif;font-size: 14px;color: #ff444f; line-height: 1.6 ;" class="darkmodelowblack">{<br>  "ticks": "R_50",<br>  "subscribe": 1,<br>  "req_id": 2<br>}</p>
+                                    <p style="padding: 10px;margin:0; font-family: 'IBM Plex Mono', Arial, sans-serif;font-size: 14px;color: #ff444f !important; line-height: 1.6 ;" class="darkmodelowblack">{<br>  "ticks": "R_50",<br>  "subscribe": 1,<br>  "req_id": 2<br>}</p>
                                 </div>
                             </td>
                         </tr>
@@ -415,7 +415,7 @@
                         <tr>
                             <td align="left" style="padding: 10px 30px; background-color:  rgb(255, 255, 255); min-width: 5px; user-select: text; border: unset;" class="mobile-side darkmodeblack">
                                 <div align="left" bgcolor="#eeeeee" style='padding: 5px 10px 5px 20px;background-color: #f2f3f4;border-radius:20px;' class="darkmodelowblack">
-                                    <p style="padding: 10px;margin:0; font-family: 'IBM Plex Mono', Arial, sans-serif;font-size: 14px;color: #ff444f; line-height: 1.6 ;" class="darkmodelowblack">{
+                                    <p style="padding: 10px;margin:0; font-family: 'IBM Plex Mono', Arial, sans-serif;font-size: 14px;color: #ff444f !important; line-height: 1.6 ;" class="darkmodelowblack">{
                                         <br>  "echo_req": {
                                         <br>    "req_id": 2,
                                         <br>    "subscribe": 1,
@@ -439,7 +439,7 @@
                         <tr>
                             <td align="left" style="padding: 10px 30px; background-color:  rgb(255, 255, 255); min-width: 5px; user-select: text; border: unset;" class="mobile-side darkmodeblack">
                                 <div align="left" bgcolor="#eeeeee" style='padding: 5px 10px 5px 20px;background-color: #f2f3f4;border-radius:20px;' class="darkmodelowblack">
-                                    <p style="padding: 10px;margin:0; font-family: 'IBM Plex Mono', Arial, sans-serif;font-size: 14px;color: #ff444f; line-height: 1.6 ;" class="darkmodelowblack">{<br>  "ticks": "R_100",<br>  "subscribe": 1,<br>  "req_id": 2<br>}</p>
+                                    <p style="padding: 10px;margin:0; font-family: 'IBM Plex Mono', Arial, sans-serif;font-size: 14px;color: #ff444f !important; line-height: 1.6 ;" class="darkmodelowblack">{<br>  "ticks": "R_100",<br>  "subscribe": 1,<br>  "req_id": 2<br>}</p>
                                 </div>
                             </td>
                         </tr>
@@ -451,7 +451,7 @@
                         <tr>
                             <td align="left" style="padding: 10px 30px; background-color:  rgb(255, 255, 255); min-width: 5px; user-select: text; border: unset;" class="mobile-side darkmodeblack">
                                 <div align="left" bgcolor="#eeeeee" style='padding: 5px 10px 5px 20px;background-color: #f2f3f4;border-radius:20px;' class="darkmodelowblack">
-                                    <p style="padding: 10px;margin:0; font-family: 'IBM Plex Mono', Arial, sans-serif;font-size: 14px;color: #ff444f; line-height: 1.6 ;" class="darkmodelowblack">{
+                                    <p style="padding: 10px;margin:0; font-family: 'IBM Plex Mono', Arial, sans-serif;font-size: 14px;color: #ff444f !important; line-height: 1.6 ;" class="darkmodelowblack">{
                                         <br>  "echo_req": {
                                         <br>    "req_id": 2,
                                         <br>    "subscribe": 1,
@@ -483,23 +483,23 @@
                         <tr>
                             <td align="left" style="padding: 10px 30px; background-color:  rgb(255, 255, 255); min-width: 5px; user-select: text; border: unset;" class="mobile-side darkmodeblack">
                                 <div align="left" bgcolor="#eeeeee" style='padding: 5px 10px 5px 20px;background-color: #f2f3f4;border-radius:20px;' class="darkmodelowblack">
-                                    <p style="padding: 10px;margin:0; font-family: 'IBM Plex Mono', Arial, sans-serif;font-size: 14px;color: #ff444f; line-height: 1.6 ;" class="darkmodelowblack">ticks<br>ticks_history<br>exchange_rates</p>
+                                    <p style="padding: 10px;margin:0; font-family: 'IBM Plex Mono', Arial, sans-serif;font-size: 14px;color: #ff444f !important; line-height: 1.6 ;" class="darkmodelowblack">ticks<br>ticks_history<br>exchange_rates</p>
                                 </div>
                             </td>
                         </tr>
                         <tr>
                             <td align="left" style="padding: 8px 30px 15px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">Please make the necessary changes to your app(s) starting <span style="font-weight: bold;" class="darkcolor-subtext">4 December 2023.</span></p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">Please make the necessary changes to your app(s) starting <span style="font-weight: bold;" class="darkcolor-subtext">4 December 2023</span>.</p>
                             </td>
                         </tr>
                         <tr>
                             <td align="left" style="padding: 8px 30px 15px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">For more details, visit our developers’ community: [link to the post in deriv.vanillacommunity.com]</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">For more details, visit our <a href="https://deriv.vanillacommunity.com/discussion/870/api-changes-subscription-call-bug-fix-for-req-id-argument" style="color: #ff444f !important">developers’ community</a>.</p>
                             </td>
                         </tr>
                         <tr>
                             <td align="left" style="padding: 8px 30px 30px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">If you have any questions, write to us at api-support@deriv.com.</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">If you have any questions, write to us at <a href="mailto:email@example.com">api-support@deriv.com</a>.</p>
                             </td>
                         </tr>
                     </table>
