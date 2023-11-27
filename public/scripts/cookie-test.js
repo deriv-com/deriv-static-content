@@ -75,6 +75,16 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
   // Otherwise we don't rewrite the old utm_data
   return false;
 };
+const createUTMCookie = (utm_data) => {
+  const utm_data_cookie = encodeURIComponent(JSON.stringify(utm_data))
+    .replaceAll("%2C", ",")
+    .replaceAll("%7B", "{")
+    .replaceAll("%7D", "}");
+
+  // Non-expiring cookie for utm_data
+  // Max 400 days
+  document.cookie = `utm_data=${utm_data_cookie}; expires=Tue, 19 Jan 9999 03:14:07 UTC; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+};
 /* end utility functions */
 
 (function initMarketingCookies() {
@@ -121,14 +131,7 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
     eraseCookie("affiliate_tracking");
     eraseCookie("utm_data");
 
-    const utm_data_cookie = encodeURIComponent(JSON.stringify(utm_data))
-      .replaceAll("%2C", ",")
-      .replaceAll("%7B", "{")
-      .replaceAll("%7D", "}");
-
-    // Non-expiring cookie for utm_data
-    // Max 400 days
-    document.cookie = `utm_data=${utm_data_cookie}; expires=Tue, 19 Jan 9999 03:14:07 UTC; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+    createUTMCookie(utm_data);
   }
   // If msclkid if present then include it in the utm_data
   console.log(searchParams.get("msclkid"), "www", utm_data);
@@ -138,15 +141,7 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
     console.log(utm_data["utm_msclk_id"], utm_data, "www");
 
     eraseCookie("utm_data");
-
-    const utm_data_cookie = encodeURIComponent(JSON.stringify(utm_data))
-      .replaceAll("%2C", ",")
-      .replaceAll("%7B", "{")
-      .replaceAll("%7D", "}");
-
-    // Non-expiring cookie for utm_data
-    // Max 400 days
-    document.cookie = `utm_data=${utm_data_cookie}; expires=Tue, 19 Jan 9999 03:14:07 UTC; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+    createUTMCookie(utm_data);
   }
 
   /* end handling UTMs */
