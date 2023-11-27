@@ -116,17 +116,27 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
     }
   });
 
+  if (shouldOverwrite(utm_data, current_utm_data)) {
+    console.log("erase,www");
+    eraseCookie("affiliate_tracking");
+    eraseCookie("utm_data");
+
+    const utm_data_cookie = encodeURIComponent(JSON.stringify(utm_data))
+      .replaceAll("%2C", ",")
+      .replaceAll("%7B", "{")
+      .replaceAll("%7D", "}");
+
+    // Non-expiring cookie for utm_data
+    // Max 400 days
+    document.cookie = `utm_data=${utm_data_cookie}; expires=Tue, 19 Jan 9999 03:14:07 UTC; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+  }
   // If msclkid if present then include it in the utm_data
   console.log(searchParams.get("msclkid"), "www", utm_data);
   if (searchParams.get("msclkid")) {
     console.log("HAS msclkid!", "www");
     utm_data["utm_msclk_id"] = searchParams.get("msclkid");
     console.log(utm_data["utm_msclk_id"], utm_data, "www");
-  }
 
-  if (shouldOverwrite(utm_data, current_utm_data)) {
-    console.log("erase,www");
-    eraseCookie("affiliate_tracking");
     eraseCookie("utm_data");
 
     const utm_data_cookie = encodeURIComponent(JSON.stringify(utm_data))
