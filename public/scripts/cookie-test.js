@@ -141,7 +141,7 @@ const createUTMCookie = (utm_data) => {
     console.log(utm_data["utm_msclk_id"], utm_data, "www");
 
     eraseCookie("utm_data");
-    createUTMCookie(utm_data);
+    createUTMCookie({ ...utm_data, ...current_utm_data });
   }
 
   /* end handling UTMs */
