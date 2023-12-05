@@ -75,16 +75,6 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
   // Otherwise we don't rewrite the old utm_data
   return false;
 };
-const createUTMCookie = (utm_data) => {
-  const utm_data_cookie = encodeURIComponent(JSON.stringify(utm_data))
-    .replaceAll("%2C", ",")
-    .replaceAll("%7B", "{")
-    .replaceAll("%7D", "}");
-
-  // Non-expiring cookie for utm_data
-  // Max 400 days
-  document.cookie = `utm_data=${utm_data_cookie}; expires=Tue, 19 Jan 9999 03:14:07 UTC; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
-};
 /* end utility functions */
 
 (function initMarketingCookies() {
@@ -103,6 +93,7 @@ const createUTMCookie = (utm_data) => {
     "utm_click_id",
     "utm_adgroup_id",
     "utm_campaign_id",
+    "msclkid",
   ];
 
   let utm_data = {};
@@ -120,28 +111,23 @@ const createUTMCookie = (utm_data) => {
 
   // If the user has any new UTM params, store them
   utm_fields.forEach((field) => {
-    console.log(searchParams, field, searchParams.has(field), "www");
     if (searchParams.has(field)) {
       utm_data[field] = searchParams.get(field).substring(0, 100); // Limit to 100 supported characters
     }
   });
 
   if (shouldOverwrite(utm_data, current_utm_data)) {
-    console.log("erase,www");
     eraseCookie("affiliate_tracking");
     eraseCookie("utm_data");
 
-    createUTMCookie(utm_data);
-  }
-  // If msclkid if present then include it in the utm_data
-  console.log(searchParams.get("msclkid"), "www", utm_data);
-  if (searchParams.get("msclkid")) {
-    console.log("HAS msclkid!", "www");
-    utm_data["utm_msclk_id"] = searchParams.get("msclkid");
-    console.log(utm_data["utm_msclk_id"], utm_data, "www");
+    const utm_data_cookie = encodeURIComponent(JSON.stringify(utm_data))
+      .replaceAll("%2C", ",")
+      .replaceAll("%7B", "{")
+      .replaceAll("%7D", "}");
 
-    eraseCookie("utm_data");
-    createUTMCookie({ ...current_utm_data, ...utm_data });
+    // Non-expiring cookie for utm_data
+    // Max 400 days
+    document.cookie = `utm_data=${utm_data_cookie}; expires=Tue, 19 Jan 9999 03:14:07 UTC; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
   }
 
   /* end handling UTMs */
