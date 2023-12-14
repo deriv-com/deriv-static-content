@@ -62,7 +62,6 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
   if (!current_utm_data && valid_new_utm_source) {
     return true;
   }
-
   // If we have old utm data, 3 fields are required for new utm data to rewrite the old one
   const required_fields = ["utm_source", "utm_medium", "utm_campaign"];
   const has_new_required_fields = required_fields.every(
@@ -93,7 +92,7 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
     "utm_click_id",
     "utm_adgroup_id",
     "utm_campaign_id",
-    "msclkid",
+    "utm_msclk_id",
   ];
 
   let utm_data = {};
