@@ -1,0 +1,34 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Check artifact for hard links, symlinks, and size limit
+        run: |
+          find ${{ github.workspace }}/artifact -type l -print -quit && echo "Artifact contains symlinks" && exit 1
+          find ${{ github.workspace }}/artifact -type f -links +1 -print -quit && echo "Artifact contains hard links" && exit 1
+          artifact_size=$(du -s ${{ github.workspace }}/artifact | awk '{print $1}')
+          if [[ $artifact_size -gt 10000000 ]]; then
+            echo "Artifact size exceeds the limit" && exit 1
+          fi
+
+      - name: Remove hard links and symlinks from artifact
+        run: |
+          find ${{ github.workspace }}/artifact -type l -delete
+          find ${{ github.workspace }}/artifact -type f -links +1 -delete
+
+      - name: Deploy artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifact
+          path: ${{ github.workspace }}/artifact
