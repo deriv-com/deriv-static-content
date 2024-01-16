@@ -14,6 +14,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Check artifact for hard links, symlinks, and size limit
+        id: check_artifact
         run: |
           find ${{ github.workspace }}/artifact -type l -print -quit && echo "Artifact contains symlinks" && exit 1
           find ${{ github.workspace }}/artifact -type f -links +1 -print -quit && echo "Artifact contains hard links" && exit 1
@@ -23,11 +24,13 @@ jobs:
           fi
 
       - name: Remove hard links and symlinks from artifact
+        if: steps.check_artifact.outcome == 'success'
         run: |
           find ${{ github.workspace }}/artifact -type l -delete
-          find ${{ github.workspace }}/artifact -type f -links +1 -delete
+          if: steps.check_artifact.outcome == 'success'
 
       - name: Deploy artifact
+        if: steps.check_artifact.outcome == 'success'
         uses: actions/upload-artifact@v2
         with:
           name: artifact
