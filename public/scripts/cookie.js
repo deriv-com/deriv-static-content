@@ -205,4 +205,13 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
     )};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
   }
   /* end handling gclid */
+
+    /* start handling fbclid */
+    if (searchParams.has("fbclid")) {
+      eraseCookie("utm_fbcl_id");
+      document.cookie = `utm_fbcl_id=${searchParams.get(
+        "fbclid"
+      )};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+    }
+    /* end handling fbclid */
 })();
