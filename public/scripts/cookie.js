@@ -206,12 +206,23 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
   }
   /* end handling gclid */
 
-    /* start handling fbclid */
-    if (searchParams.has("fbclid")) {
-      eraseCookie("utm_fbcl_id");
-      document.cookie = `utm_fbcl_id=${searchParams.get(
-        "fbclid"
-      )};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+  /* start handling fbclid */
+  if (searchParams.has("fbclid")) {
+    const fbclid_data = {};
+    const fbclid_value = searchParams.get("fbclid");
+
+    eraseCookie("fbclid");
+
+    if (fbclid_value) {
+      fbclid_data["fbclid"] = fbclid_value;
     }
-    /* end handling fbclid */
+
+    const fbclid_data_stringified = encodeURI(JSON.stringify(fbclid_data))
+      .replace(",", "%2C")
+      .replace("%7B", "{")
+      .replace("%7D", "}");
+
+    document.cookie = `fbclid=${fbclid_data_stringified};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+  }
+  /* end handling fbclid */
 })();
