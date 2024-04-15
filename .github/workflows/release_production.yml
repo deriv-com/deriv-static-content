@@ -1,4 +1,4 @@
-name: binary-com/deriv-static-content/release_production
+name: deriv-com/deriv-static-content/release_production
 on:
   push:
     branches:
