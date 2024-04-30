@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - master
+env:
+    RELEASE_TYPE: Production
+
 jobs:
   release_production:
     environment: Production
