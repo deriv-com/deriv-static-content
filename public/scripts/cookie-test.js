@@ -150,9 +150,9 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
       signup_device: isMobile() ? "mobile" : "desktop",
     };
     const signup_data_cookie = encodeURI(JSON.stringify(signup_data))
-      .replace(",", "%2C")
-      .replace("%7B", "{")
-      .replace("%7D", "}");
+      .replaceAll(",", "%2C")
+      .replaceAll("%7B", "{")
+      .replaceAll("%7D", "}");
 
     document.cookie = `signup_device=${signup_data_cookie};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
   }
@@ -186,9 +186,9 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
       const date_first_contact_data_cookie = encodeURI(
         JSON.stringify(date_first_contact_data)
       )
-        .replace(",", "%2C")
-        .replace("%7B", "{")
-        .replace("%7D", "}");
+        .replaceAll(",", "%2C")
+        .replaceAll("%7B", "{")
+        .replaceAll("%7D", "}");
 
       document.cookie = `date_first_contact=${date_first_contact_data_cookie};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
 
