@@ -244,7 +244,7 @@
             }
             .mb-font-size-header {
             font-family: 'IBM Plex Sans', Arial, sans-serif;
-            font-size: 22px !important;
+            font-size: 24px !important;
             line-height: 40px;
             font-weight: bold;
             margin: 0; 
@@ -324,14 +324,14 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td align="center" style="padding: 20px 20px 20px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                    <h1 class="mb-font-size-header" style="font-family: 'Ubuntu', 'IBM Plex Sans', Arial, sans-serif; font-size: 25px; line-height: 1.5 ; color: #414652; font-weight: 700;margin:0;">Congratulations {{ Profile.firstName }},</h1>
+                                <td align="center" style="padding: 30px 40px 20px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                    <h1 class="mb-font-size-header" style="font-family: 'Ubuntu', 'IBM Plex Sans', Arial, sans-serif; font-size: 30px; line-height: 1.5 ; color: #414652; font-weight: 700;margin:0;">A great place to <nobr>start learning</nobr></h1>
                                 </td>
                             </tr>
                             <tr align="center" class="mobile-hide">
                                 <td bgcolor="#fafbfc" align="center"  class="darkmodeblack">
                                     <a href="http://app.deriv.com/">
-                                        <input type="image" class="g-img" src="https://static.deriv.com/email/images/header-2024/deriv-certify.png"  width= "600" height="auto" style="display: block;outline:none;"/>
+                                        <input type="image" class="g-img" src="https://static.deriv.com/email/images/header-2024/forex-beginer.png"  width= "600" height="auto" style="display: block;outline:none;"/>
                                     </a>
                                 </td>
                             </tr> 
@@ -339,7 +339,7 @@
                                 <tr align="center" style="display: none; mso-hide:all;" class="mobile-visible-block">
                                     <td bgcolor="#fafbfc" align="center" class="darkmodeblack" >
                                         <a href="http://app.deriv.com/">   
-                                            <input type="image" class="g-img" src="https://static.deriv.com/email/images/header-2024/deriv-certify.png" width="100%" style="display: block;outline:none"/>
+                                            <input type="image" class="g-img" src="https://static.deriv.com/email/images/header-2024/forex-beginer.png" width="100%" style="display: block;outline:none"/>
                                         </a>
                                     </td>
                                 </tr>  
@@ -347,39 +347,65 @@
                             <!-- END HERO -->
                             <tr>
                                 <td align="left" style="padding: 30px 30px 10px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                    <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">You've successfully completed the MT5 Course - Beginner Level. We applaud you for taking this significant step in your trading education journey.</p>
+                                    <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">Hi {{ Profile.firstName | default:"trader" }}!</p>
                                 </td>
                             </tr>
                             <tr>
                                 <td align="left" style="padding: 8px 30px 10px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                    <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">It's time to apply your new trading skills on the <a href="https://app.deriv.com/appstore/traders-hub" style="color: #ff444f !important;" target="_blank">Deriv MT5 platform</a>. Go for it with confidence!</p>
+                                    <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">Congratulations on signing up to Deriv Academy’s educational course:</p>
                                 </td>
                             </tr>
                             <tr>
-                                <td align="left" style="padding: 8px 30px 30px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                    <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">When you feel ready for the next level, sign up for our <a href="https://academy.deriv.com/courses/mt5-intermediate" style="color: #ff444f !important;" target="_blank">MT5 intermediate course</a>, where we explore the Deriv MT5 platform and its features in greater depth.</p>
+                                <td align="center" style="padding: 10px 30px 10px;" class="mobile-side">
+                                    <table class="mobile-side dark-border-radius" style="width: 100%; margin: auto; background-color: #fbfbfc; border-radius: 15px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);">
+                                        <tr>
+                                            <td style="height: 40px; text-align: center; padding: 0px 20px;" class="dark-border-radius">
+                                                <div style="width: 100%; margin: auto; padding: 0;">
+                                                    <p align="left" style="padding: 15px 10px;margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 20px;color: #414652; text-align: center;line-height: 1.6;font-weight: 700;" class="darkmodelowblack darkcolor-subtext">Forex Course - Beginner Level</p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left" style="padding: 10px 30px 20px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                    <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">We are thrilled to have you on board and are excited to embark on this educational journey with you.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="padding: 10px 30px 10px;" class="mobile-side">
+                                    <table class="mobile-side dark-border-radius" style="width: 100%; margin: auto; background-color: #f2f3f4; border-radius: 15px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);">
+                                        <tr>
+                                            <td style="height: 40px; text-align: left; padding: 0px 20px;" class="dark-border-radius">
+                                                <div style="width: 100%; margin: auto; padding: 0;">
+                                                    <p align="left" style="padding: 30px 0px 20px 10px;margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 16px;color: #414652; text-align: left;line-height: 1.6;" class="darkmodelowblack darkcolor-subtext mb-font-size">Throughout this course, we will delve into the basic aspects of Forex trading, including:<br><br>1. The basics of Forex trading<br>2. Currency Pairs<br>3. Pips and Pip Value<br>4. The Concept of Spread<br>5. Lots, Leverage & Margin<br>6. Rollovers/Swaps and their impact on trading</p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left" style="padding: 20px 30px 30px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                    <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">Enjoy taking your first step into learning how to trade on Deriv MT5.</p>
                                 </td>
                             </tr>
                             <!-- BUTTON -->
                             <tr>
                                 <td align="center" class="darkmodeblack">
                                     <!--[if (gte mso 9)|(IE)]>
-                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://academy.deriv.com/" style="height:40px;v-text-anchor:middle;width:230px;" arcsize="30%" strokecolor="#ff444f" fillcolor="#ff444f">
+                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://academy.deriv.com/courses/mt5-beginner" style="height:40px;v-text-anchor:middle;width:230px;" arcsize="30%" strokecolor="#ff444f" fillcolor="#ff444f">
                                     <w:anchorlock/>
                                     <center style="color:#fff;font-family:sans-serif;font-size:14px;font-weight:bold;">Start MT5 Course - Beginner level</center>
                                     </v:roundrect>
                                     <![endif]-->
                                     <!--[if !gte mso 9]><!-- -->
-                                    <a class="button" href="https://academy.deriv.com/" target="_blank" style="text-decoration: none; text-align: center; line-height: 20px; padding: 10px 16px;display: inline-block; font-weight: bold; font-family: 'Ubuntu','IBM Plex Sans', Arial, sans-serif; font-size: 14px;border-radius: 16px; overflow: visible; border: 0;color: #ffffff; background: #ff444f;">Start MT5 Course - Beginner level</a>
+                                    <a class="button" href="https://academy.deriv.com/courses/mt5-beginner" target="_blank" style="text-decoration: none; text-align: center; line-height: 20px; padding: 10px 16px;display: inline-block; font-weight: bold; font-family: 'Ubuntu','IBM Plex Sans', Arial, sans-serif; font-size: 14px;border-radius: 16px; overflow: visible; border: 0;color: #ffffff; background: #ff444f;">Start MT5 Course - Beginner level</a>
                                     <!--<![endif]-->
                                 </td>
                             </tr>
                             <!-- BUTTON CLOSING -->
-                            <tr>
-                                <td align="left" style="padding: 35px 30px 0; background-color: #fff;" class="mobile-side darkmodeblack">
-                                    <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">As you reflect on your lessons, we'd love to hear your thoughts on the course material. Your feedback is invaluable to us for improving and better meeting your needs.</p>
-                                </td>
-                            </tr>
                             <tr>
                                 <td align="center " class="mobile-side darkmodeblack" style="padding: 30px 30px; background-color: #fff;">
                                     <p class="darkcolor-subtext" style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: clamp(14px, 3vw, 16px); line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;">If you have questions, contact us via:<br />
