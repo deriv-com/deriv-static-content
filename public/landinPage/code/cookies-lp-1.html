@@ -3,12 +3,13 @@
   /* utility functions */
   const getDomain = () => {
     const domain = location.hostname;
+    const allowed_domains = ["deriv.com" , "binary.sx"];
   
-    if (domain.includes("deriv.com")) {
+    if (allowed_domains.includes(domain) && domain.includes("deriv.com")) {
       return "deriv.com";
     }
   
-    return domain.includes("binary.sx") ? "binary.sx" : domain;
+    return (allowed_domains.includes(domain) && domain.includes("binary.sx")) ? "binary.sx" : domain;
   };
   
   const eraseCookie = (name) => {
