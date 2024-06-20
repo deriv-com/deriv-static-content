@@ -1,0 +1,123 @@
+<div style="max-height: 40px; width: 100vw; margin: 0; padding: 0;">
+    <div style="width: 100%; display: flex; justify-content:center; margin:2% 0%; padding: 0;">
+        <img src="https://static.deriv.com/logos/red-xl.png" alt="Deriv Logo" style="max-height: 32px; object-fit: scale-down; left: 0;"/>
+    </div>
+</div>
+<div style="height: 65vh; width: 100%; background-color: #ff444f; padding: 30px 0px;">
+    <div id="headercall2" style="width: 100%; ">
+        <img src="https://lh3.googleusercontent.com/YHSiXe6ZFNy307PeI0ZVtiNBj0tPWMp3aKoWVXIjqtc9sJU4KLEg3p3IS58dCKcVwHyl7QrkyDMLAW7GDkdxXs1pSWrmiBQyUQ=w1064" alt="" style="float: left !important; max-height: 340px; object-fit: scale-down; margin-left: -10%;" >
+    </div>
+</div>
+<div style="margin: 0; padding: 0 0.5rem;"> 
+    <h2 style="margin:1rem 1rem;">Learn how to trade Forex from an expert</h2>
+    <p style="margin: 0.5rem 1rem;">Create a Deriv demo account to get your free ebook!</p>
+    <input id="email_input_n2" style="width: 90%;  margin: 5% 5% 0 5%;" type="text" placeholder="Email" name="fname"/>
+    <p id="pEmail_n2" style="margin-top: -19px;">Please enter a valid email</p>
+    <input type="checkbox" id="ckbx_n2" style="margin: 0 0 0 1rem;"/>
+    <label for="ckbx_n2">I agree to the <a href="https://deriv.com/terms-and-conditions/#clients" target="_blank" style="color: #ff444f !important;">terms and conditions</a>.
+    </label><br/>
+    <p id="pAgree_n2">Please tick the check box for signup</p>
+    <button id="myBtn_n2" class="button-signup" type="button">Create demo account</button>
+    <p style="color: #999; padding: 0px 0px 20px; font-size: 0.8rem; line-height: 1.2;">By pressing "Create demo account", you confirm that you are 18 or older. You understand that we may use your email address to send you information about Deriv products and services as well as market news. You can always unsubscribe from these emails in your account settings. For more information, please take a look at Deriv's <a href="https://deriv.com/tnc/security-and-privacy.pdf" style="color: #ff444f !important;">Security and privacy</a></p>
+    <div style="display: flex; justify-content: space-around;">
+        <div style="display: flex; justify-content: space-around; align-items: center;">
+            <div style="width: 100px; border-bottom: 1px solid #999;"></div>
+        </div>
+        <span style="padding: 0 10px; color: #999;">Or sign up with</span>
+        <div style="display: flex; justify-content: space-around; align-items: center;">
+            <div style="width: 100px; border-bottom: 1px solid #999;"></div>
+        </div>
+    </div>
+    <div class="social-media-buttons">
+        <a class="social-media-login" data-platform="google">
+            <button class="button-google" style="width: 90%;">
+                <img
+                src="https://static.deriv.com/email/images/icons/social-google.png"
+                />
+                <span>Google</span>
+            </button>
+        </a>
+        <a class="social-media-login" data-platform="facebook">
+            <button class="button-fb" style="width: 90%;">
+                <img
+                src="https://static.deriv.com/email/images/icons/social-facebook-blue.png"
+                />
+                <span>Facebook</span>
+            </button>
+        </a>
+        <a class="social-media-login" data-platform="apple">
+            <button class="button-apple" style="width: 90%;">
+                <img
+                src="https://static.deriv.com/email/images/icons/social-apple-white.png"
+                />
+                <span>Apple</span>
+            </button>
+        </a>
+    </div>
+</div>
+</div>
+
+<script>
+    const submit_btn_n2 = document.getElementById("myBtn_n2");
+    const ckbx_n2=document.getElementById("ckbx_n2");
+    const email_field_n2 =document.getElementById("email_input_n2");
+    ckbx_n2.addEventListener("click", fckbx_n2);
+    submit_btn_n2.addEventListener("click", f_submit_btn_n2);
+    email_field_n2.addEventListener("keyup", f_email_input_errmsg_n2);
+
+    function f_email_input_errmsg_n2() {
+        const email = email_field_n2.value;
+        if(is_emailValid(email))
+            document.getElementById("pEmail_n2").style.display = "none";
+        else
+            document.getElementById("pEmail_n2").style.display = "block";
+    }
+
+    function fckbx_n2() {
+        if(ckbx_n2.checked==true){
+            document.getElementById("pAgree_n2").style.display = "none";
+        }
+        else{
+            document.getElementById("pAgree_n2").style.display = "block";
+        }
+    }
+
+    function f_submit_btn_n2()  {
+        const email = email_field_n2.value;
+        if(is_emailValid(email)&&(ckbx_n2.checked==true)) {
+            const verify_email_req = getVerifyEmailRequest(email);
+            window.ws.send(JSON.stringify(verify_email_req));
+        }
+        else {
+            if(ckbx_n2.checked==false) {
+                document.getElementById("pAgree_n2").style.display = "block";
+                document.getElementById("pEmail_n2").style.display = "block";
+                if(is_emailValid(email)) {
+                    document.getElementById("pEmail_n2").style.display = "none";
+                }
+            } else if(email=='') {
+                document.getElementById("pEmail_n2").innerHTML="Insert your email address"
+                document.getElementById("pEmail_n2").style.display = "block";
+            } else {
+                document.getElementById("pEmail_n2").innerHTML="Please enter a valid email"
+                document.getElementById("pEmail_n2").style.display = "block";
+            }
+        }
+    }
+
+    function is_emailValid(email) { 
+        if (/^\w+([!#$%&'*+-/=?^_`{|}~\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+            return (true)
+        return (false)
+    }
+
+    /// social login
+    window.onload = () => {
+        document.querySelectorAll(".social-media-login").forEach((e) => {
+            e.addEventListener("click", () => {
+                const platform = e.getAttribute("data-platform");
+                window.location.href = loginUrl(platform);
+            });
+        });
+    };
+</script>
