@@ -202,7 +202,7 @@
             }
 
             function is_emailValid(email) { 
-                if (/^\w+([!#$%&'*+-/=?^_`{|}~\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+                if (/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/.test(email))
                     return (true)
                 return (false)
             }
