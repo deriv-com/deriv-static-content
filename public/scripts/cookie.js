@@ -1,12 +1,13 @@
 /* utility functions */
 const getDomain = () => {
   const domain = location.hostname;
+  const allowed_domains = ["deriv.com" , "binary.sx"];
 
-  if (domain.includes("deriv.com")) {
+  if (allowed_domains.includes(domain) && domain.includes("deriv.com")) {
     return "deriv.com";
   }
 
-  return domain.includes("binary.sx") ? "binary.sx" : domain;
+  return ( allowed_domains.includes(domain) && domain.includes("binary.sx")) ? "binary.sx" : domain;
 };
 
 const eraseCookie = (name) => {
@@ -93,6 +94,8 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
     "utm_adgroup_id",
     "utm_campaign_id",
     "utm_msclk_id",
+    // For cases where we need to map the query param to some different name e.g [name_from_query_param, mapped_name]
+    ["fbclid", "utm_fbcl_id"],
   ];
 
   let utm_data = {};
@@ -110,8 +113,17 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
 
   // If the user has any new UTM params, store them
   utm_fields.forEach((field) => {
-    if (searchParams.has(field)) {
-      utm_data[field] = searchParams.get(field).substring(0, 100); // Limit to 100 supported characters
+    if (Array.isArray(field)) {
+      const [field_key, mapped_field_value] = field;
+      if (searchParams.has(field_key)) {
+        utm_data[mapped_field_value] = searchParams
+          .get(field_key)
+          .substring(0, 200); // Limit to 200 supported characters
+      }
+    } else {
+      if (searchParams.has(field)) {
+        utm_data[field] = searchParams.get(field).substring(0, 100); // Limit to 100 supported characters
+      }
     }
   });
 
@@ -150,9 +162,9 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
       signup_device: isMobile() ? "mobile" : "desktop",
     };
     const signup_data_cookie = encodeURI(JSON.stringify(signup_data))
-      .replace(",", "%2C")
-      .replace("%7B", "{")
-      .replace("%7D", "}");
+      .replaceAll(",", "%2C")
+      .replaceAll("%7B", "{")
+      .replaceAll("%7D", "}");
 
     document.cookie = `signup_device=${signup_data_cookie};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
   }
@@ -186,9 +198,9 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
       const date_first_contact_data_cookie = encodeURI(
         JSON.stringify(date_first_contact_data)
       )
-        .replace(",", "%2C")
-        .replace("%7B", "{")
-        .replace("%7D", "}");
+        .replaceAll(",", "%2C")
+        .replaceAll("%7B", "{")
+        .replaceAll("%7D", "}");
 
       document.cookie = `date_first_contact=${date_first_contact_data_cookie};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
 

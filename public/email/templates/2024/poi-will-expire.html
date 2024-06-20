@@ -1,0 +1,72 @@
+<tr>
+    <td id="title-text-td">
+        <h1 class="dark-subtext" style="padding: 20px 17px 10px 17px;">Your proof of identity is about to expire</h1>
+    </td>
+</tr>
+<tr>
+    <td class="greeting-td" align="left" style="padding: 0px 20px 20px 20px;" class="dark-black">
+        <p class="dark-subtext">{% if event.first_name != blank %}
+            Hi {{event.first_name | titlecase }},
+            {% else %}
+             Hello!
+            {% endif %}</p>
+    </td>
+</tr>
+<tr>
+    <td class="greeting-td" align="left" style="padding: 0px 20px 20px 20px;" class="dark-black">
+        <p class="dark-subtext">Your ID expires on DD/MM/YY. To keep your account active, upload a new document:</p>
+    </td>
+</tr>
+<tr>
+    <td class="greeting-td" align="left" style="padding: 0px 20px 20px 20px;" class="dark-black">
+        <p class="dark-subtext">1. Log in to your Deriv account.</p>
+    </td>
+</tr>
+<tr>
+    <td class="greeting-td" align="left" style="padding: 0px 20px 10px 20px;" class="dark-black">
+        <p class="dark-subtext">2. Upload a scanned copy of any of the following documents:</p>
+    </td>
+</tr>
+<tr>
+    <td class="greeting-td" align="left" style="padding: 0px 20px 8px 45px;" class="dark-black">
+        <p class="dark-subtext">&#8226; Driving licence (front and back),</p>
+    </td>
+</tr>
+<tr>
+    <td class="greeting-td" align="left" style="padding: 0px 20px 8px 45px;" class="dark-black">
+        <p class="dark-subtext">&#8226; National ID card (front and back), or</p>
+    </td>
+</tr>
+<tr>
+    <td class="greeting-td" align="left" style="padding: 0px 20px 20px 45px;" class="dark-black">
+        <p class="dark-subtext">&#8226; Passport</p>
+    </td>
+</tr>
+<tr>
+    <td align="center" class="dark-black">
+        <!--[if (gte mso 9)|(IE)]>
+        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://app.deriv.com/" style="height:40px;v-text-anchor:middle;width:230px;" arcsize="10%" strokecolor="#ff444f" fillcolor="#ff444f">
+        <w:anchorlock/>
+        <center style="color:#fff;font-family:sans-serif;font-size:16px;font-weight:bold;">Upload my document</center>
+        </v:roundrect>
+        <![endif]-->
+        <!--[if !gte mso 9]><!-- -->
+        <a class="button" href="https://app.deriv.com/" target="_blank">Upload my document</a>
+        <!--<![endif]-->
+    </td>
+</tr>
+<tr>
+    <td class="paragraph-td" align="left" style="padding: 30px 20px 20px 20px;" class="dark-black">
+        <p class="dark-subtext"><strong>Note</strong>: Update your ID by DD/MM/YY to continue making deposits and withdrawals without interruption.</p>
+    </td>
+</tr>
+<tr>
+    <td align="center" style="padding:3px 20px 0; background-color: #ffffff;" class="mobile-side dark-black">
+        <p style="margin:0;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #333333; font-weight: 400;" class="darkcolor-subtext">If you have any questions, contact us:</p>
+    </td>
+</tr>
+<tr>
+    <td align="center" style="padding:0 20px 20px; background-color: #ffffff;" class="mobile-side dark-black">
+        <p style="margin:0;font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #333333; font-weight: 400;" class="darkcolor-subtext"><a href="https://deriv.com/contact_us/?is_livechat_open=true" style="color: #ff444f !important;"> Live chat </a> | <a href="https://api.whatsapp.com/send/?phone=35699578341&text&type=phone_number&app_absent=0" style="color: #ff444f !important;">WhatsApp</a></p>
+    </td>
+</tr>

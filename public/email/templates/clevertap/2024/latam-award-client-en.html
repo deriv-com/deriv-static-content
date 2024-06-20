@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- Character encoding -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <!-- Set 100% scale, allow zoom -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Remove default blue colour from links so you can style your own -->
+    <meta name="format-detection" content="address=no">
+    <meta name="format-detection" content="date=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="x-apple-disable-message-reformatting">
+
+    <!-- Prevent iOS 11 from automatically scaling your email -->
+    <meta name="x-apple-disable-message-reformatting">
+
+    <!-- Enable CSS3 and media queries in Windows Phone 7.5 and higher -->
+    <!--[if !mso]><!-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--<![endif]-->
+    
+    <!--[if mso]>
+        <style type="text/css">
+            *, a, p, h1, h2, h3, td {font-family: Arial, sans-serif !important;}
+            table {border-collapse: collapse;}
+            a {color: #ff444f; font-family: Arial, sans-serif;}
+        </style>
+    <![endif]-->
+    <style type="text/css">
+        /* FONTS */
+        @media screen {
+            /* latin */
+            @font-face {
+            font-family: 'IBM Plex Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('IBM Plex Sans'), local('IBMPlexSans'), url(https://fonts.gstatic.com/s/ibmplexsans/v7/zYXgKVElMYYaJe8bpLHnCwDKhdHeFaxOedc.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            /* latin */
+            @font-face {
+            font-family: 'IBM Plex Sans';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: local('IBM Plex Sans Medium'), local('IBMPlexSans-Medium'), url(https://fonts.gstatic.com/s/ibmplexsans/v7/zYX9KVElMYYaJe8bpLHnCwDKjSL9AIFsdP3pBms.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            /* latin */
+            @font-face {
+            font-family: 'IBM Plex Sans';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: local('IBM Plex Sans Bold'), local('IBMPlexSans-Bold'), url(https://fonts.gstatic.com/s/ibmplexsans/v7/zYX9KVElMYYaJe8bpLHnCwDKjWr7AIFsdP3pBms.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+        }
+        /* CLIENT-SPECIFIC STYLES */
+        body, table, td, a {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        table, td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+        /* RESET STYLES */
+        img {
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+        }
+        table {
+            border-collapse: collapse !important;
+        }
+        body {
+            height: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            font-family: 'IBM Plex Sans', Arial, sans-serif;
+        }
+        /* iOS BLUE LINKS */
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+        /* ANDROID CENTER FIX */
+        div[style*="margin: 16px 0;"] {
+            margin: 0 !important;
+        }
+        /* Deriv */
+        a, a:visited {
+            color: #ff444f;
+            text-decoration: none;
+        }
+        a:hover {text-decoration: underline;}
+        a.button {
+            text-decoration: none;
+            text-align: center;
+            line-height: 20px;
+            padding: 10px 16px;
+            display: inline-block;
+            font-weight: bold;
+            font-family: 'Ubuntu','IBM Plex Sans', Arial, sans-serif; 
+            font-size: 14px;
+            border-radius: 16px;
+            overflow: visible;
+            border: 0;
+            color: #ffffff;
+            background: #ff444f;
+        }
+        .button:hover {
+            background-color: #d43e47;
+        }
+        a.button-secondary {
+            text-decoration: none;
+            text-align: center;
+            line-height: 20px;
+            padding: 8px 14px;
+            display: inline-block;
+            font-weight: bold;
+            font-family: 'Ubuntu', 'IBM Plex Sans', Arial, sans-serif; 
+            font-size: 14px;
+            border-radius: 16px;
+            overflow: visible;
+            border: 0;
+            color: #ff444f;
+            border: 2px solid #ff444f;
+            background: transparent;
+        }
+        h1 {
+            font-family: 'IBM Plex Sans', Arial, sans-serif;
+            font-size: 32px;
+            line-height: 40px;
+            font-weight: bold;
+            margin: 0;
+        }
+        h2 {
+            font-size: 28px;
+            line-height: 40px;
+            margin: 0;
+        }
+        .justify-word {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+                    
+        @media screen and (max-width: 590px)  {
+            .button, .button-secondary {
+                margin: 5px 0 !important;
+            }
+        }
+        /* MOBILE STYLES */
+        @media screen and (max-width: 620px) {
+            .img-max {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: auto !important;
+            }
+            .max-width {
+                max-width: 100% !important;
+            }
+            .mobile-wrapper {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .mb-lowwidth{
+                width: 70px !important; 
+            }
+            .mobile-visible {
+                display:inline-block !important;
+            }
+            .mobile-hide {
+                display:none !important;
+            }
+            .mobile-nopadding {
+                padding: 0 !important;
+            }
+            .mobile-side {
+                padding-right: 12px !important;
+                padding-left: 12px !important;
+            }
+            .mobile-side2 {
+                padding-right: 25px !important;
+                padding-left: 25px !important;
+            }
+            .mobile-negmargin {
+                margin-top: -15px !important;
+            }
+            .mobile-center {
+                text-align:center !important;
+            }
+            .mobile-unvisible {
+                display: none!important;
+            } 
+            .mobile-bgcolor-gray {
+                background-color: #eeeeee !important;
+            }
+            .mb-bg-lightgray{
+                background-color: #f5f7fa !important; 
+            }
+            .mb-padding-top{
+                padding-top: 15px !important;
+            }
+            .mobile-visible-block {
+                display: block !important;
+            }
+            .mobile-low-top-padding {
+                padding-top: 1px !important;
+            }
+            .mb-font-size{
+                font-size: 14px !important;
+            }
+            .mb-font-size-table-text{
+                font-size: 13px !important;
+            }
+            .mb-font-size-note{
+                font-size: 12px !important;
+            }
+            .mb-font-size-header {
+            font-family: 'IBM Plex Sans', Arial, sans-serif;
+            font-size: 24px !important;
+            line-height: 40px;
+            font-weight: bold;
+            margin: 0; 
+        }
+        }
+        @media (prefers-color-scheme: dark ) {
+            /* Shows Dark Mode-Only Content, Like Images */
+            
+            .dark-img { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+            .dark-imglow { display:block !important; width: 100px !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+    
+            /* Hides Light Mode-Only Content, Like Images */
+            .light-img { display:none; display:none !important; }
+
+            /* Custom Dark Mode Background Color */
+            .darkmodeblack { background-color:#0e0e0e !important; }
+            .darkmodelowblack { background-color: #202020 !important;}
+            .dark-border-radius { background-color: #202020 !important; border-radius: 16px !important;}
+            .darkblack-border-radius { background-color:#0e0e0e !important; border-radius: 16px !important;}
+
+            /* Custom Dark Mode Font Colors */
+            h1, h2, p, span, a, b { color: #ffffff !important; }
+            .darkmodegray { color: #6e6e6e !important; }
+            .darkcolor-subtext{ color: #c2c2c2 !important; }
+            .darkcolor-white, strong{ color: #ffffff !important; }
+            .darkborder{ border-color: #6e6e6e !important; }
+
+            /* Custom Dark Mode Text Link Color */
+            .link { color: #91ADD4 !important; }
+        } 
+        /* Shows Dark Mode-Only Content, Like Images */
+        [data-ogsc] .dark-img { display:block !important; width: auto !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+        [data-ogsc] .dark-imglow { display:block !important; width: 100px !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+        
+        /* Hides Light Mode-Only Content, Like Images */
+        [data-ogsc] .light-img { display:none; display:none !important; }
+
+        /* Custom Dark Mode Background Color */
+        [data-ogsc] .darkmodeblack { background-color: #0e0e0e !important;}
+        [data-ogsc] .darkmodelowblack { background-color: #202020 !important; }
+        [data-ogsc] .dark-border-radius { background-color: #202020 !important; border-radius: 16px !important;}
+        [data-ogsc] .darkblack-border-radius { background-color: #0e0e0e !important; border-radius: 16px !important;}
+
+        /* Custom Dark Mode Font Colors */
+        [data-ogsc] h1, [data-ogsc] h2, [data-ogsc] p, [data-ogsc] span, [data-ogsc] a, [data-ogsc] b { color: #ffffff !important; }
+        [data-ogsc] .darkmodegray { color: #6e6e6e !important; }
+        [data-ogsc] .darkcolor-subtext{ color: #c2c2c2 !important; }
+        [data-ogsc] .darkcolor-white{ color: #ffffff !important; }
+        [data-ogsc] .darkborder{ border-color: #6e6e6e !important; }
+
+        /* Custom Dark Mode Text Link Color */
+        [data-ogsc] .link { color: #91ADD4 !important; }
+
+        @media (prefers-color-scheme: dark ) and (max-width: 620px)  {
+            .dark-lowwidth-m{ display:block !important;width: 70px !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important;}
+            [data-ogsc].dark-lowwidth-m{ display:block !important;width: 70px !important; overflow: visible !important; float: none !important; max-height:inherit !important; max-width:inherit !important; line-height: auto !important; margin-top:0px !important; visibility:inherit !important; }
+        }
+
+    </style>
+</head>
+<body style="background-color: rgb(238, 238, 238); margin: 0px !important; padding: 0px !important; cursor: auto;">
+<table border="0" cellpadding="0" cellspacing="0" width="100%"><!-- Email body -->
+	<tbody>
+            <tr>
+                <td bgcolor="#eeeeee" align="center" style="padding: 10px 0 0;" class="mobile-nopadding">
+                    <!--[if (gte mso 9)|(IE)]>
+                    <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" ><tr><td align="center" valign="top" width="600" bgcolor="#ffffff">
+                    <![endif]-->
+                    <table  border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff; max-width: 600px;" class="darkmodeblack">
+                        <tbody>
+                            <!-- START HERO -->
+                            <tr>
+                                <td align="center" style="padding: 30px 30px 0; opacity: 100% !important;">
+                                    <a href="http://app.deriv.com/">
+                                        <img src="https://static.deriv.com/logos/deriv-red-2023.png" width="78" style="display: block;" alt="Deriv.com">                                  
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" style="padding: 30px 40px 20px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                    <h1 class="mb-font-size-header" style="font-family: 'Ubuntu', 'IBM Plex Sans', Arial, sans-serif; font-size: 28px; line-height: 1.5 ; color: #414652; font-weight: 700;margin:0;">We’re the Best Trading Experience in Latam – Thanks <nobr>to you!</nobr></h1>
+                                </td>
+                            </tr>
+                            <tr align="center" class="mobile-hide">
+                                <td bgcolor="#fff" align="center"  class="darkmodeblack">
+                                    <a href="http://app.deriv.com/">
+                                        <input type="image" class="g-img" src="https://static.deriv.com/email/images/header-2024/latam-award.png"  width= "600" height="auto" style="display: block;outline:none;"/>
+                                    </a>
+                                </td>
+                            </tr> 
+                            <div >
+                                <tr align="center" style="display: none; mso-hide:all;" class="mobile-visible-block">
+                                    <td bgcolor="#fff" align="center" class="darkmodeblack" >
+                                        <a href="http://app.deriv.com/">   
+                                            <input type="image" class="g-img" src="https://static.deriv.com/email/images/header-2024/latam-award-m.png" width="100%" style="display: block;outline:none"/>
+                                        </a>
+                                    </td>
+                                </tr>  
+                            </div> 
+                            <!-- END HERO -->
+                            <tr>
+                                <td align="left" style="padding: 25px 30px 10px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                    <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">Hi {{ Profile.firstName | default:"trader" }}!</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left" style="padding: 8px 30px 10px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                    <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">We’re honoured to have won the prestigious Ultimate Fintech Award for Best Trading Experience Latam 2024.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left" style="padding: 20px 30px 40px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                    <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">Because of traders like you, we’re dedicated to delivering the best for our Latin American audience. Thank you for being a part of this journey!</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center " class="mobile-side darkmodeblack" style="padding: 10px 80px 40px; background-color: #fff;">
+                                    <p class="darkcolor-subtext" style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: clamp(14px, 3vw, 16px); line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;">If you have questions, contact us via:<br />
+                                    <a href="https://deriv.com/?is_livechat_open=true" style="color: #ff444f !important;" target="_blank">Live chat</a> | <a href="https://api.whatsapp.com/send/?phone=35699578341&amp;text&amp;type=phone_number&amp;app_absent=0" style="color: #ff444f !important;" target="_blank">WhatsApp</a></p>
+                                </td>
+                            </tr>
+                            <tr class="mobile-hide">
+                                <td bgcolor="#fff" align="center"  class="mobile-side darkmodelowblack" style="padding: 50px 0px; background-color: #FBFBFC;">
+                                    <input type="image" class="g-img" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/awards-group-1.png"  width= "500" style="display: block;outline:none"/>
+                                </td>
+                            </tr>
+                            <tr style="display: none; mso-hide:all;" class="mobile-visible-block" >
+                                <td bgcolor="#fff" align="center" class="mobile-side darkmodelowblack" style="padding: 50px 0px; background-color: #FBFBFC;">
+                                    <input type="image" class="g-img" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/awards-group-1.png" width="90%" style="display: block;outline:none"/>
+                                </td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]></td></tr></table>
+                    <![endif]-->
+                </td>
+            </tr>   
+            <!-- End Email body-->                                                       
+            <!-- FOOTER -->
+            <tr>
+                <td align="center" bgcolor="#eeeeee" class="mobile-nopadding" style="padding: 0 0 10px;">
+                    <!--[if (gte mso 9)|(IE)]>
+                        <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600" bgcolor="#ffffff">
+                    <![endif]-->
+                    <table bgcolor="#fff" border="0" cellpadding="0" cellspacing="0" class="darkmodeblack" style="max-width: 600px;" width="100%">
+                        <tbody>
+                            <tr>
+                                <td align="center" class="darkmodeblack" style="padding: 30px 30px 0;"><a href="https://www.deriv.com"><img alt="Deriv.com" width="72.33" height="24" src="https://static.deriv.com/logos/deriv-gray-2023.png" style="display: block; opacity: 70%;"  /> </a></td>
+                            </tr>
+                            <tr>
+                                <td align="center" class="darkmodeblack" style="padding: 20px 0;">
+                                <pre><a href="https://www.facebook.com/derivdotcom" style="text-decoration: none;"><img alt="Deriv.com on Facebook" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/facebook-md.png" title="Deriv.com on Facebook" width="32" /> </a><a href="https://www.instagram.com/deriv_official/" style="text-decoration: none;"> <img alt="Deriv.com on Instagram" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/instagram-md.png" title="Deriv.com on Instagram" width="32" /> </a><a href="https://twitter.com/derivdotcom" target="_blank"> <img alt="Deriv.com on Twitter" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/x-twitter-md.png" title="Deriv.com on Twitter" width="32" /> </a><a href="https://www.youtube.com/@deriv" style="text-decoration: none;"> <img alt="Deriv.com on Youtube" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/youtube-md.png" title="Deriv.com on Youtube" width="32" /> </a><a href="https://www.linkedin.com/company/derivdotcom/" style="text-decoration: none;"> <img alt="Deriv.com on Linkedin" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/linkedin-md.png" title="Deriv.com on Linkedin" width="32" /> </a><a href="https://t.me/Derivchannelofficial" style="text-decoration: none;"> <img alt="Deriv.com on Telegram" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/telegram-md.png" title="Deriv.com on Telegram" width="32" /> </a></pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" bgcolor="#fff" class="darkmodeblack" style="color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+                                <p style="padding: 0px 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 400; line-height: 16px; margin: 5px 0px 5px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important">Help centre</a>   <span class="darkmodegray">|</span>   <a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Terms and conditions</a>   <span class="darkmodegray">|</span>   <a href="https://deriv.com/tnc/security-and-privacy.pdf" style="color: #ff444f !important">Security and privacy</a></p>
+        
+                                <p class="darkmodegray" style="padding: 0 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #999999; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0px 0px 5px 0px;">No longer want to receive these emails? <a class="darkcolor-subtext" href="https://app.deriv.com/account/personal-details" style="mso-hide:all; color: #ff444f !important;">Unsubscribe</a></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td bgcolor="#fff" align="center"  class="mobile-side darkmodeblack" style="padding: 20px 30px;">
+                                    <input type="image" class="g-img" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/invest-in-people-platinum.png"  width= "180" style="display: block;outline:none"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]>
+                        </td></tr></table>
+                    <![endif]-->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </body>
+    </html>

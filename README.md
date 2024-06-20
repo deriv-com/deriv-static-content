@@ -73,5 +73,4 @@ git push -u origin [_your_branch_name]
 By Vercel CLI can have a preview then add to cards to check by Requesters, stakeholders or PMs.
 
 ## Other documents:
-
--   [File paths for images, pdf, email templates,...](https://github.com/binary-com/deriv-static-content/blob/master/doc/file-structure.md)
+- [File paths for images, pdf, email templates,...](https://github.com/deriv-com/deriv-static-content/blob/master/doc/file-structure.md)
