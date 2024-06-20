@@ -13,7 +13,8 @@
 
       if (app === "deriv-go") {
         if (/iP(hone|od|ad)/.test(navigator.userAgent)) {
-          window.location.href = "https://apps.apple.com/rw/app/deriv-go/id1550561298";
+          window.location.href =
+            "https://apps.apple.com/rw/app/deriv-go/id1550561298";
         } else if (/Huawei/.test(navigator.userAgent)) {
           window.location.href = "https://appgallery.huawei.com/app/C103801913";
         } else {
@@ -21,15 +22,23 @@
         }
       } else if (app === "derivx") {
         if (/iP(hone|od|ad)/.test(navigator.userAgent)) {
-          window.location.href = "https://apps.apple.com/rw/app/deriv-x/id1563337503";
+          window.location.href =
+            "https://apps.apple.com/rw/app/deriv-x/id1563337503";
         } else {
           window.location.href = "market://details?id=com.deriv.dx";
         }
       } else if (app === "dp2p") {
         if (/iP(hone|od|ad)/.test(navigator.userAgent)) {
-          window.location.href = "https://apps.apple.com/mn/app/deriv-dp2p/id1506901451";
+          window.location.href =
+            "https://apps.apple.com/mn/app/deriv-dp2p/id1506901451";
         } else {
           window.location.href = "market://details?id=com.deriv.dp2p";
+        }
+      } else if (app === "ctrader") {
+        if (/iP(hone|od|ad)/.test(navigator.userAgent)) {
+          // window.location.href =""; No URL yet
+        } else {
+          window.location.href = "market://details?id=com.deriv.ct";
         }
       }
     </script>
