@@ -4,9 +4,7 @@
     <meta name="color-scheme" content="light dark">
     <meta name="supported-color-schemes" content="light dark">
     <meta charset="utf-8">
-
     <title></title>
-
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="x-apple-disable-message-reformatting">
@@ -155,13 +153,13 @@
         }
         h1 {
             font-family: 'IBM Plex Sans', Arial, sans-serif;
-            font-size: 32px;
-            line-height: 40px;
+            font-size: 48px;
+            line-height: 60px;
             font-weight: bold;
             margin: 0;
         }
         h2 {
-            font-size: 28px;
+            font-size: 32px;
             line-height: 40px;
             margin: 0;
         }
@@ -201,13 +199,9 @@
             .mobile-nopadding {
                 padding: 0 !important;
             }
-            .mobile-side5 {
-                padding-right: 5px !important;
-                padding-left: 5px !important;
-            }
             .mobile-side {
-                padding-right: 12px !important;
-                padding-left: 12px !important;
+                padding-right: 15px !important;
+                padding-left: 15px !important;
             }
             .mobile-side2 {
                 padding-right: 25px !important;
@@ -238,21 +232,8 @@
                 padding-top: 1px !important;
             }
             .mb-font-size{
-                font-size: 14px !important;
+                font-size: 24px !important;
             }
-            .mb-font-size-table-text{
-                font-size: 13px !important;
-            }
-            .mb-font-size-note{
-                font-size: 12px !important;
-            }
-            .mb-font-size-header {
-            font-family: 'IBM Plex Sans', Arial, sans-serif;
-            font-size: 24px !important;
-            line-height: 40px;
-            font-weight: bold;
-            margin: 0; 
-        }
         }
         @media (prefers-color-scheme: dark ) {
             /* Shows Dark Mode-Only Content, Like Images */
@@ -265,15 +246,13 @@
 
             /* Custom Dark Mode Background Color */
             .darkmodeblack { background-color:#0e0e0e !important; }
-            .darkmodelowblack { background-color: #202020 !important;}
-            .dark-border-radius { background-color: #202020 !important; border-radius: 16px !important;}
-            .darkblack-border-radius { background-color:#0e0e0e !important; border-radius: 16px !important;}
+            .darkmodelowblack { background-color: #202020 !important; }
 
             /* Custom Dark Mode Font Colors */
             h1, h2, p, span, a, b { color: #ffffff !important; }
             .darkmodegray { color: #6e6e6e !important; }
             .darkcolor-subtext{ color: #c2c2c2 !important; }
-            .darkcolor-white, strong{ color: #ffffff !important; }
+            .darkcolor-white{ color: #ffffff !important; }
             .darkborder{ border-color: #6e6e6e !important; }
 
             /* Custom Dark Mode Text Link Color */
@@ -289,8 +268,6 @@
         /* Custom Dark Mode Background Color */
         [data-ogsc] .darkmodeblack { background-color: #0e0e0e !important;}
         [data-ogsc] .darkmodelowblack { background-color: #202020 !important; }
-        [data-ogsc] .dark-border-radius { background-color: #202020 !important; border-radius: 16px !important;}
-        [data-ogsc] .darkblack-border-radius { background-color: #0e0e0e !important; border-radius: 16px !important;}
 
         /* Custom Dark Mode Font Colors */
         [data-ogsc] h1, [data-ogsc] h2, [data-ogsc] p, [data-ogsc] span, [data-ogsc] a, [data-ogsc] b { color: #ffffff !important; }
@@ -318,65 +295,74 @@
                     <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" ><tr><td align="center" valign="top" width="600" bgcolor="#ffffff">
                     <![endif]-->
                     <table  border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff; max-width: 600px;" class="darkmodeblack">
-                        <tbody>
-                            <!-- START HERO -->
-                            <tr align="center" class="mobile-hide">
-                                <td align="center">
-                                    <a href="http://deriv.com/">
-                                        <input type="image" src="https://static.deriv.com/email/images/header-2024/whatsapp.png"  width= "600" height="auto"/>
-                                    </a>
+                        <!-- START HERO -->
+                        <tr>
+                            <td align="center" style="padding: 30px 30px 0; background-color: #ff444f !important; background-image: linear-gradient(#ff444f,#ff444f);">
+                                <a href="https://eu.deriv.com/">
+                                    <img src="https://static.deriv.com/logos/deriv-white-2023.png" width="78" style="display: block;" alt="Deriv.com">                                  
+                                </a>
+                            </td>
+                        </tr>
+                        <tr class="mobile-hide">
+                            <td bgcolor="#fff" align="center"  class="darkmodeblack">
+                                <input type="image" class="g-img" src="https://static.deriv.com/email/images/header-2023/slash.png"  width= "600" style="display: block;outline:none"/><div></div>
+                            </td>
+                        </tr> 
+                        <div >
+                            <tr style="display: none; mso-hide:all;" class="mobile-visible-block">
+                                <td bgcolor="#fff" align="center" class="darkmodeblack" >
+                                    <input type="image" class="g-img" src="https://static.deriv.com/email/images/header-2023/slash.png" width="100%" style="display: block;outline:none"/><div></div>
                                 </td>
-                            </tr> 
-                            <div >
-                                <tr align="center" style="display: none; mso-hide:all;" class="mobile-visible-block">
-                                    <td align="center" >
-                                        <a href="http://deriv.com/">   
-                                            <input type="image" src="https://static.deriv.com/email/images/header-2024/whatsapp.png" width="100%" />
-                                        </a>
-                                    </td>
-                                </tr>  
-                            </div> 
-                            <!-- END HERO -->
-                            <tr>
-                                <td align="center" style="padding: 0 30px 25px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                    <p style="font-family: 'Ubuntu', 'IBM Plex Sans', Arial, sans-serif; font-size: 28px; line-height: 1.5 ; color: #414652; font-weight: 700;margin:0;" class="mb-font-size-header">New WhatsApp Numbers for Your <nobr>Country Managers</nobr></p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td align="left" style="padding: 8px 30px 1px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                    <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">Dear {{ Profile.name | default:"partner" }},</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td align="left" style="padding: 18px 30px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                    <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">We’ve upgraded to new WhatsApp numbers for smoother, quicker communication! Please note the new WhatsApp contact numbers for your country managers and update your records:</p>
-                                </td>
-                            </tr>
-                            <!-- Grey table 2 opening -->
-                            <tr>
-                                <td align="left" style="padding: 0px 30px 20px 30px;" class="mobile-side5 darkmodeblack">
-                                    <table class="mobile-side5 darkmodelowblack" style="width: 95%; margin: auto; background-color: #f2f3f4; border-radius: 15px;">
-                                        <tr>
-                                            <td align="center" style="padding: 20px 30px 20px 30px;" class="mobile-side5">
-                                                <p class="darkcolor-subtext" style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.6 ; color: #414652; font-weight: 500;margin:0;">[Country Manager Name, Country]: <a href="https://wa.me/436789070219293" style="color: #ff444f !important;" target="_blank">[New WhatsApp Number]</a></p>
-                                                <p class="darkcolor-subtext" style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.6 ; color: #414652; font-weight: 500;margin:0;">[Country Manager Name, Country]: <a href="https://wa.me/436789070219293" style="color: #ff444f !important;" target="_blank">[New WhatsApp Number]</a></p>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                            <!-- Grey table 2 closing -->
-                            <tr>
-                                <td align="left" style="padding: 20px 30px 10px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                    <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">Feel free to send a "Hi" to these numbers to stay in touch. If you have any questions, just reach out.</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td align="left" style="padding: 18px 30px 25px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                    <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">If you have any questions, feel free to reach out to us via <a href="https://deriv.com/?is_livechat_open=true" style="color: #ff444f !important;" target="_blank">Live chat</a>.</p>
-                                </td>
-                            </tr>
-                        </tbody>
+                            </tr>  
+                        </div>
+                        <!-- END HERO -->
+                        <tr>
+                            <td align="center" style="padding: 15px 30px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'Ubuntu', 'IBM Plex Sans', Arial, sans-serif; font-size: 24px; line-height: 1.5 ; color: #414652; font-weight: 700;margin:0;">Action needed: Close your <nobr>open trades</nobr></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" style="padding: 15px 30px 8px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">Hi {{ Profile.firstName | default:"trader" }},</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" style="padding: 8px 30px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">As mentioned in our previous email, we’re set to remove GBP from our list of supported currencies on Deriv from <strong>[DD Mmm YYYY]</strong>. This will also involve closing any MT5 accounts that operate in GBP.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" style="padding: 15px 30px 0; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 700;margin:0;" class="darkcolor-subtext">Immediate action</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 30px;margin: 0;" class="mobile-side2">
+                                <ul  class="darkcolor-subtext"  style="margin: 0 5px;padding:0 0 0 30px;">
+                                    <li class="darkcolor-subtext"><p style="font-size: 16px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #414652; line-height: 30px; padding: 0;margin: 0px;font-weight: 400;" class="darkcolor-subtext"><strong>Close trades</strong>: Close all your open trades. Any remaining open trades will be closed after this time.</p></li>
+                                    <li class="darkcolor-subtext"><p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #414652; font-size: 16px; line-height: 30px; padding: 0;margin: 0px;font-weight: 400;" class="darkcolor-subtext"><strong>Transfer funds</strong>: Transfer your GBP funds from your MT5 account to your Deriv account.</p></li>
+                                    <li class="darkcolor-subtext"><p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #414652; font-size: 16px; line-height: 30px; padding: 0;margin: 0px;font-weight: 400;" class="darkcolor-subtext"><strong>Withdraw funds</strong>: Withdraw your GBP balance by <strong>[DD Mmm YYYY]</strong>; or</p></li>
+                                    <li class="darkcolor-subtext"><p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #414652; font-size: 16px; line-height: 30px; padding: 0;margin: 0px;font-weight: 400;" class="darkcolor-subtext"><strong>Convert funds</strong>: Convert your GBP balance to a supported currency using our <a href="https://eu.deriv.com/help-centre/account/#change-account-currency" style="color: #ff444f !important">conversion guide</a>.</p></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#fff" align="center" style="padding: 25px 30px 5px; color: #414652; font-family: 'Ubuntu','IBM Plex Sans', Arial, sans-serif; font-size: 18px; font-weight: 600; line-height: 24px;" class="darkmodeblack">
+                                <!--[if (gte mso 9)|(IE)]>
+                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://deriv.com/partners/affiliate-ib/" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="8%" stroke="f" fillcolor="#ff444f">
+                                    <w:anchorlock/>
+                                    <center style="color:#ffffff;font-family:sans-serif;font-size:14px;font-weight:bold;">Go to my account</center>
+                                    </v:roundrect>
+                                <![endif]-->
+                                <a class="button" href="https://deriv.com/partners/affiliate-ib/" style="mso-hide:all;">Go to my account</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center " style="padding: 30px 80px 15px; background-color: #ffffff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 15px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">If you have any questions, contact us:<br/>
+                                    <a href="https://deriv.com/?is_livechat_open=true" style="color: #ff444f !important;" target="_blank">Live chat</a> | <a href="https://api.whatsapp.com/send/?phone=35699578341&text&type=phone_number&app_absent=0" style="color: #ff444f !important;" target="_blank">WhatsApp</a></p>
+                            </td>
+                        </tr>
                     </table>
                     <!--[if (gte mso 9)|(IE)]></td></tr></table>
                     <![endif]-->
@@ -392,30 +378,44 @@
                     <table bgcolor="#fff" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;" class="darkmodeblack">
                         <!-- SOCIAL -->
                         <tr>
-                            <td id="footer-social-td" align="center" class="dark-black">
-                                <pre><a href="https://www.facebook.com/derivdotcom" style="text-decoration: none;" target="_blank"><img alt="Deriv.com on Facebook" height="20" src="https://static.deriv.com/email/images/icons/facebook-gray.png" title="Deriv.com on Facebook" width="20" /> </a><a href="https://www.instagram.com/deriv_official/" style="text-decoration: none;" target="_blank"> <img alt="Deriv.com on Instagram" height="20" src="https://static.deriv.com/email/images/icons/instagram-gray.png" title="Deriv.com on Instagram" width="20" /> </a><a href="https://twitter.com/derivdotcom" target="_blank"> <img alt="Deriv.com on Twitter" height="20" src="https://static.deriv.com/email/images/icons/x-gray.png" width="20" title="Deriv.com on Twitter" /> </a><a href="https://www.youtube.com/@deriv" style="text-decoration: none;" target="_blank"> <img alt="Deriv.com on Youtube" height="20" src="https://static.deriv.com/email/images/icons/youtube-gray.png" title="Deriv.com on Youtube" width="20" /> </a><a href="https://www.linkedin.com/company/derivdotcom/" style="text-decoration: none;" target="_blank"> <img alt="Deriv.com on Linkedin" height="20" src="https://static.deriv.com/email/images/icons/linkedin-gray.png" title="Deriv.com on Linkedin" width="20" /> </a> <a href="https://t.me/Derivchannelofficial" target="_blank"><img alt="Deriv.com on Telegram" src="https://static.deriv.com/email/images/icons/telegram-gray.png" style="height: 20px;" title="Deriv.com on Telegram" /></a></pre>
+                            <td align="center" class="darkmodeblack" style="padding: 0 5px; color: #ffffff; font-family: 'IBM Plex Sans', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;">
+                            <pre><a href="https://www.facebook.com/DerivEU/" style="text-decoration: none;"><img alt="Deriv.com on Facebook" height="20" src="https://static.deriv.com/email/images/icons/facebook-gray.png" title="Deriv.com on Facebook" width="20" /> </a><a href="https://www.instagram.com/deriv_eu" style="text-decoration: none;"> <img alt="Deriv.com on Instagram" height="20" src="https://static.deriv.com/email/images/icons/instagram-gray.png" title="Deriv.com on Instagram" width="20" /> </a><a href="https://twitter.com/deriv_eu" target="_blank"> <img alt="Deriv.com on Twitter" src="https://static.deriv.com/email/images/icons/x-gray.png" style="height: 20px;" title="Deriv.com on Twitter" /> </a></pre></td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#fff" align="left" style="padding:4px 44px 10px;color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">This email is a notification email to inform clients about important updates and has been issued by Deriv Investments (Europe) Limited, a company incorporated in Malta, with registration number C 70156, and its registered address at W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#fff" align="left" style="padding:4px 44px 10px;color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">Deriv Investments (Europe) Limited is licensed in Malta and regulated by the Malta Financial Services Authority, under the Investment Services Act, to provide investment services.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#fff" align="left" style="padding:4px 44px 10px;color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">We will never share our email lists and other data with a third party. To learn more about how we protect your personal and financial information, please read our <a href="https://deriv.com/tnc/security-and-privacy.pdf" style="color: #ff444f !important">security and privacy policy</a>.</p>
                             </td>
                         </tr>
                         <tr>
                             <td bgcolor="#fff" align="center" style="color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="darkmodeblack">
-                                <p style="padding: 20px 10px 0px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 400; line-height: 16px; margin: 5px 0px 5px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important">Help centre</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Terms and conditions</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://deriv.com/tnc/security-and-privacy.pdf" style="color: #ff444f !important">Security and privacy</a></p>
+                                <p style="padding: 20px 10px 0px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 400; line-height: 16px; margin: 5px 0px 5px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important">Help centre</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Terms and conditions</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://eu.deriv.com/regulatory/" style="color: #ff444f !important">Key Information Documents</a></p>
                                 <p style="padding: 0 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #999999; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0px 0px 5px 0px;" class="darkmodegray">No longer want to receive these emails? <a href="https://app.deriv.com/account/personal-details" style="mso-hide:all; color: #ff444f !important;" class="darkcolor-subtext">Unsubscribe</a></p>
                             </td>
-                        </tr>                        
+                        </tr>
                         <tr>
-                            <td  align="center" style="padding: 30px;" class="darkmodeblack">
-                                <a href="https://www.deriv.com">
-                                    <img src="https://static.deriv.com/logos/deriv25-gray.png" width="25%"  style="display: block;" alt="Deriv.com">                                   
+                            <td  align="center" style="padding: 20px 30px 40px;" class="darkmodeblack">
+                                <a href="https://eu.deriv.com">
+                                    <img src="https://static.deriv.com/logos/deriv25-gray.png" width="130" style="display: block; opacity: 70%;" alt="Deriv.com">                                   
                                 </a>
                             </td>
-                        </tr>
+                        </tr>                        
                     </table>
                     <!--[if (gte mso 9)|(IE)]>
                         </td></tr></table>
                     <![endif]-->
                 </td>
             </tr>
-        </tbody>
-    </table>
+        </table>
     </body>
-    </html>
+    <!-- end message template -->
+</html>
