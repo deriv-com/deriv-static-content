@@ -4,7 +4,9 @@
     <meta name="color-scheme" content="light dark">
     <meta name="supported-color-schemes" content="light dark">
     <meta charset="utf-8">
-    <title>signup</title>
+
+    <title>footer row 2024 jul </title>
+
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="x-apple-disable-message-reformatting">
@@ -153,13 +155,13 @@
         }
         h1 {
             font-family: 'IBM Plex Sans', Arial, sans-serif;
-            font-size: 48px;
-            line-height: 60px;
+            font-size: 32px;
+            line-height: 40px;
             font-weight: bold;
             margin: 0;
         }
         h2 {
-            font-size: 32px;
+            font-size: 28px;
             line-height: 40px;
             margin: 0;
         }
@@ -232,8 +234,21 @@
                 padding-top: 1px !important;
             }
             .mb-font-size{
-                font-size: 24px !important;
+                font-size: 14px !important;
             }
+            .mb-font-size-table-text{
+                font-size: 13px !important;
+            }
+            .mb-font-size-note{
+                font-size: 12px !important;
+            }
+            .mb-font-size-header {
+            font-family: 'IBM Plex Sans', Arial, sans-serif;
+            font-size: 24px !important;
+            line-height: 40px;
+            font-weight: bold;
+            margin: 0; 
+        }
         }
         @media (prefers-color-scheme: dark ) {
             /* Shows Dark Mode-Only Content, Like Images */
@@ -246,13 +261,15 @@
 
             /* Custom Dark Mode Background Color */
             .darkmodeblack { background-color:#0e0e0e !important; }
-            .darkmodelowblack { background-color: #202020 !important; }
+            .darkmodelowblack { background-color: #202020 !important;}
+            .dark-border-radius { background-color: #202020 !important; border-radius: 16px !important;}
+            .darkblack-border-radius { background-color:#0e0e0e !important; border-radius: 16px !important;}
 
             /* Custom Dark Mode Font Colors */
             h1, h2, p, span, a, b { color: #ffffff !important; }
             .darkmodegray { color: #6e6e6e !important; }
             .darkcolor-subtext{ color: #c2c2c2 !important; }
-            .darkcolor-white{ color: #ffffff !important; }
+            .darkcolor-white, strong{ color: #ffffff !important; }
             .darkborder{ border-color: #6e6e6e !important; }
 
             /* Custom Dark Mode Text Link Color */
@@ -268,6 +285,8 @@
         /* Custom Dark Mode Background Color */
         [data-ogsc] .darkmodeblack { background-color: #0e0e0e !important;}
         [data-ogsc] .darkmodelowblack { background-color: #202020 !important; }
+        [data-ogsc] .dark-border-radius { background-color: #202020 !important; border-radius: 16px !important;}
+        [data-ogsc] .darkblack-border-radius { background-color: #0e0e0e !important; border-radius: 16px !important;}
 
         /* Custom Dark Mode Font Colors */
         [data-ogsc] h1, [data-ogsc] h2, [data-ogsc] p, [data-ogsc] span, [data-ogsc] a, [data-ogsc] b { color: #ffffff !important; }
@@ -288,88 +307,15 @@
 </head>
 <body style="background-color: rgb(238, 238, 238); margin: 0px !important; padding: 0px !important; cursor: auto;">
 <table border="0" cellpadding="0" cellspacing="0" width="100%"><!-- Email body -->
-	<tbody>
-            <tr>
-                <td bgcolor="#eeeeee" align="center" style="padding: 10px 0 0;" class="mobile-nopadding">
-                    <!--[if (gte mso 9)|(IE)]>
-                    <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" ><tr><td align="center" valign="top" width="600" bgcolor="#ffffff">
-                    <![endif]-->
-                    <table  border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff; max-width: 600px;" class="darkmodeblack">
-                        <!-- START HERO -->
-                        <tr>
-                            <td align="center" style="padding: 30px 30px 0; background-color: #ff444f !important; background-image: linear-gradient(#ff444f,#ff444f);">
-                                <a href="https://www.deriv.com/es">
-                                    <img src="https://static.deriv.com/logos/deriv-white-2023.png" width="78" style="display: block;" alt="Deriv.com">                                  
-                                </a>
-                            </td>
-                        </tr>
-                        <tr class="mobile-hide">
-                            <td bgcolor="#fff" align="center"  class="darkmodeblack">
-                                <input type="image" class="g-img" src="https://static.deriv.com/email/images/header-2023/slash.png"  width= "600" style="display: block;outline:none"/><div></div>
-                            </td>
-                        </tr> 
-                        <div >
-                            <tr style="display: none; mso-hide:all;" class="mobile-visible-block">
-                                <td bgcolor="#fff" align="center" class="darkmodeblack" >
-                                    <input type="image" class="g-img" src="https://static.deriv.com/email/images/header-2023/slash.png" width="100%" style="display: block;outline:none"/><div></div>
-                                </td>
-                            </tr>  
-                        </div>
-                        <!-- END HERO -->
-                        <tr>
-                            <td align="center" style="padding: 20px 30px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'Ubuntu', 'IBM Plex Sans', Arial, sans-serif; font-size: 28px; line-height: 1.5 ; color: #414652; font-weight: 700;margin:0;"> Your application to the Deriv Affiliate programme <nobr>was unsuccessful.</nobr></p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left" style="padding: 15px 30px 8px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">Hi {{ Profile.name | default:"partner" }}!</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left" style="padding: 8px 30px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">Thank you for your interest in the Deriv Affiliate Programme. Unfortunately, your application was unsuccessful for the [Plan Name].</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left" style="padding: 8px 30px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">Upon review, it seems that you have sent multiple requests for the same commission plan. Please ensure that you only maintain one affiliate account under each plan.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left" style="padding: 18px 30px 8px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">Please visit our <a href="https://deriv.com/partners/" style="color: #ff444f !important;" target="_blank">website</a> to explore other commission plans that might also fit your interests. Additionally, consider checking out other <a href="https://deriv.com/partners/affiliate-ib/" style="color: #ff444f !important;" target="_blank">partnership programmes</a> for further opportunities.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left " style="padding: 10px 30px 30px; background-color: #ffffff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 15px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">For more information on application requirements, feel free to reach out to us via <a href="https://deriv.com/?is_livechat_open=true" style="color: #ff444f !important;" target="_blank">Livechat</a>.</p>
-                            </td>
-                        </tr>
-                        <tr class="mobile-hide">
-                            <td bgcolor="#fff" align="center"  class="mobile-side darkmodelowblack" style="padding: 30px 0px 10px; background-color: #FBFBFC;">
-                                <input type="image" class="g-img" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/awards-group-1.png"  width= "500" style="display: block;outline:none"/>
-                            </td>
-                        </tr>
-                        <tr style="display: none; mso-hide:all;" class="mobile-visible-block" >
-                            <td bgcolor="#fff" align="center" class="mobile-side darkmodelowblack" style="padding: 10px 0px; background-color: #FBFBFC;">
-                                <input type="image" class="g-img" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/awards-group-1.png" width="90%" style="display: block;outline:none"/>
-                            </td>
-                        </tr> 
-                    </table>
-                    <!--[if (gte mso 9)|(IE)]></td></tr></table>
-                    <![endif]-->
-                </td>
-            </tr>   
-            <!-- End Email body-->                                                       
+	<tbody>                                                    
             <!-- FOOTER -->
-            <tr>
-                <td bgcolor="#eeeeee" align="center" style="padding: 0px 0px 20px;" class="mobile-nopadding">
-                    <!--[if (gte mso 9)|(IE)]>
-                        <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600" bgcolor="#ffffff">
-                    <![endif]-->
-                    <table bgcolor="#fff" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;" class="darkmodeblack">
-                        <!-- SOCIAL -->
+         <tr>
+            <td align="center" bgcolor="#eeeeee" class="mobile-nopadding" style="padding: 0 0 10px;">
+                <!--[if (gte mso 9)|(IE)]>
+                    <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600" bgcolor="#ffffff">
+                <![endif]-->
+                <table bgcolor="#fff" border="0" cellpadding="0" cellspacing="0" class="darkmodeblack" style="max-width: 600px;" width="100%">
+                    <tbody>
                         <tr>
                             <td align="center" class="darkmodeblack" style="padding: 30px 30px 0;"><a href="https://www.deriv.com"><img alt="Deriv.com" width="120" src="https://static.deriv.com/logos/deriv-gray-2023.png" style="display: block; opacity: 70%;"  /> </a></td>
                         </tr>
@@ -407,13 +353,14 @@
                                 <input type="image" class="g-img" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/invest-in-people-platinum.png"  width= "180" style="display: block;outline:none"/>
                             </td>
                         </tr>
-                    </table>
-                    <!--[if (gte mso 9)|(IE)]>
-                        </td></tr></table>
-                    <![endif]-->
-                </td>
-            </tr>
-        </table>
-    </body>
-    <!-- end message template -->
+                    </tbody>
+                </table>
+                <!--[if (gte mso 9)|(IE)]>
+                    </td></tr></table>
+                <![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table>
+</body>
 </html>
