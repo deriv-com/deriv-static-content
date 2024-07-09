@@ -40,6 +40,12 @@
         } else {
           window.location.href = "market://details?id=com.deriv.ct";
         }
+      } else if (app === 'partnershub') {
+        if (/iP(hone|od|ad)/.test(navigator.userAgent)) {
+          window.location.href = "https://apps.apple.com/us/app/deriv-partners-academy/id6478279499"
+        } else {
+          window.location.href = "market://details?id=com.deriv.partneracademy";
+        }
       }
     </script>
   </body>
