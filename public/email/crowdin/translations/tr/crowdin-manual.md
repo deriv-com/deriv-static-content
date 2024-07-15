@@ -1,19 +1,19 @@
-# GitHub Integration
+# GitHub Entegrasyonu
 
-To integrate a GitHub repository with Crowdin, follow these steps:
+Bir GitHub deposunu Crowdin ile bütünleştirmek için aşağıdaki adımları izleyin:
 
 ### Step 1
 
-- Access the "Integrations" section.<br/>
-- Select GitHub from the available options.
+- "Entegrasyonlar" bölümüne erişin.<br/>
+- Mevcut seçenekler arasından GitHub'ı seçin.
   <img width="720" alt="Step 1" src="https://github.com/marlon-deriv/deriv-static-content/assets/114157944/f1d0fb67-4037-4248-bc7b-915d08ad16ff">
 
 ### Step 2
 
-Proceed with the integration by performing the following actions:<br/>
+Aşağıdaki eylemleri gerçekleştirerek entegrasyona devam edin:<br/>
 
-- Click on "Add Repository."<br/>
-- Choose "Source and translation files mode."
+- "Depo Ekle" üzerine tıklayın.<br/>
+- "Kaynak ve çeviri dosyaları modu"nu seçin.
   <img width="720" alt="Step 2" src="https://github.com/marlon-deriv/deriv-static-content/assets/114157944/6617b2d2-55dd-45d1-a254-0c55dddcd1d7">
 
 ### Step 3
