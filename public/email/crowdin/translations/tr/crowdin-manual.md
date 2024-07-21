@@ -58,11 +58,11 @@ Entegre bir depodaki dosyaları çevirmek için lütfen aşağıdaki adımları 
 
 ### Step 4
 
-- Çevirmek istediğiniz dizeyi seçin. Crowdin will provide suggestions from the integrated translation tools. You can either click on a suggestion or manually insert/edit your translation in the input field.
-- Once you're satisfied, click on "Save" to store your translation.
+- Çevirmek istediğiniz dizeyi seçin. Crowdin, entegre çeviri araçlarından öneriler sağlayacaktır. Bir öneriye tıklayabilir ya da çevirinizi giriş alanına manuel olarak ekleyebilir/düzenleyebilirsiniz.
+- Memnun kaldığınızda, çevirinizi saklamak için "Kaydet "e tıklayın.
   <img width="720" alt="Step 4" src="https://github.com/marlon-deriv/deriv-static-content/assets/114157944/fb918ce8-bf89-421b-a7b9-5a647ee30ba6">
 
 ### Step 5
 
-- If you wish to download the translated version of the file, go to the "Source" area, locate the file, and click on the three dots next to it. Then, choose the option to download the translated version.
+- Dosyanın çevrilmiş versiyonunu indirmek isterseniz, "Kaynak" alanına gidin, dosyayı bulun ve yanındaki üç noktaya tıklayın. Ardından, çevrilmiş sürümü indirme seçeneğini seçin.
   <img width="720" alt="Step 5" src="https://github.com/marlon-deriv/deriv-static-content/assets/114157944/d19b2bd8-1caf-4ae8-8458-8673d9fa15fe">
