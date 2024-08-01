@@ -234,15 +234,6 @@
                 margin-bottom: 50px;
                 
             }
-            .box-flex2{
-                width: 284px;
-                height: 168px;
-                border-radius: 16px;
-                padding: 26px;
-                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
-                margin-bottom: 40px;
-                
-            }
             .box-flex>p {
                 font-size: 16px;
                 font-weight: 400;
@@ -257,6 +248,22 @@
                 height: 56px;
                 margin-top: 5px;
             }
+            /* white boxes (why trade with deriv) */
+            .boxes-flex2 {   
+                max-width: 1600px;
+                margin: 0 auto !important;
+                display: flex;
+                flex-wrap: wrap;
+                padding-top: 0 !important;
+            }
+            .box-flex2{
+                padding: 20px;
+                background-color: #F6F7F8;
+                flex: 1 1 25%; /* 4 items per row, considering gap */
+                text-align: center !important;
+                
+                
+            }
             .box-flex2>p {
                 font-size: 16px;
                 font-weight: 400;
@@ -264,68 +271,9 @@
                 padding-top: 10px !important;
                 color: #414652;
                 font-family: 'IBM Plex Sans';
-                text-align: left;
-            }
-            .box-flex2>img {
-                width: 56px;
-                height: 56px;
-                margin-top: 5px;
+                text-align: center;
             }
 
-            /* white boxes (why trade with deriv) */
-
-            /* MT5 account type */
-            .typemt5 {
-                background-color: #F6F7F8 !important;
-                max-width: 2000px !important;
-                margin: 0px auto;
-                padding: 0 20px;
-            }
-            .typemt5>div>.title48 {
-                padding-top: 60px;
-            }
-            .boxes-flexmt5 {
-                padding: 50px auto;
-                margin: 30px auto;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                align-items: center;
-                align-content: center;
-                gap: 80px;
-            }
-            .box-flexmt5{
-                width: 290px;
-                height: 254px;
-                border-radius: 16px;
-                padding: 20px;
-                background-color: #fff;
-                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
-                margin-bottom: 50px;
-                
-            }
-            .box-flexmt5>p {
-                font-size: 16px;
-                font-weight: 400;
-                line-height: 24px;
-                color: #414652;
-                font-family: 'IBM Plex Sans';
-                text-align: left;
-            }
-            .box-flexmt5>img {
-                width: 70px;
-                height: 70px;
-            }
-            .box-flexmt5>p>strong {
-                font-size: 20px;
-                font-weight: 700 ;
-                line-height: 30px ;
-                padding-top: 10px ;
-                color: #414652;
-                font-family: 'IBM Plex Sans';
-                text-align: left;
-            }
-            /* MT5 account type */
             /* Start trading buttton */
 
             .button-footer{ 
@@ -714,6 +662,11 @@
                     margin-left: 10% !important;
                 }
 
+                .box-flex2{
+                    flex: 1 1 50%;
+                
+                }
+
                 /* Buttons */
                     .button, .button-signup, .button-google, .button-fb, .button-apple {
                         width: 80%; 
@@ -793,11 +746,6 @@
                 background-color: #fff;
                 width: 328px;
                 height: auto;
-                margin-bottom: 5px !important;
-            }
-            .box-flex2{
-                width: 328px;
-                height: 168px;
                 margin-bottom: 5px !important;
             }
             .title48 {
@@ -918,7 +866,7 @@
 </head>
 <body>
     <div class="wrapper-main">
-        <div class="wrapper">
+        <div class="wrapper" style="padding-bottom: 0;">
             <header>
                 <div class="navlogo">
                     <a href="https://deriv.com/" target="_blank"><img src="https://static.deriv.com/logos/red-xl.png" alt="Deriv Logo" style="width: 96.44px; height: 32px;"></a>
@@ -951,6 +899,24 @@
                     <p class="size16 width406" style="text-align: center; margin-top: 4%;">Already have an account? <a href="https://deriv.com/" style="color: #ff444f !important;">Log in</a></p>
                 </div>
             </section>
+        </div>
+        <div class="boxes-flex2 wrapper" style="margin-top: 0;">
+            <div class="box-flex2">
+                <p style="font-weight: 700;margin: 0;font-size: 20px !important;">2.5M+</p>
+                <p style="margin-top:0 ;">Users worldwide</p>
+            </div>
+            <div class="box-flex2">
+                <p style="font-weight: 700;margin: 0;font-size: 20px !important;">$650B+</p>
+                <p style="margin-top:0 ;">Monthly volume</p>
+            </div>
+            <div class="box-flex2">
+                <p style="font-weight: 700;margin: 0;font-size: 20px !important;">1999</p>
+                <p style="margin-top:0 ;">Established since</p>
+            </div>
+            <div class="box-flex2">
+                <p style="font-weight: 700;margin: 0;font-size: 20px !important;">168M+</p>
+                <p style="margin-top:0 ;">Monthly deals</p>
+            </div>
         </div>
         <section >
             <div class="wrapper">
