@@ -260,9 +260,7 @@
                 padding: 20px;
                 background-color: #F6F7F8;
                 flex: 1 1 25%; /* 4 items per row, considering gap */
-                text-align: center !important;
-                
-                
+                text-align: center !important;                
             }
             .box-flex2>p {
                 font-size: 16px;
@@ -299,30 +297,28 @@
             /* AWARDS section */
             .award {
                 padding: 0 20px;
+                background: #F6F7F8;
             }
             .award>div>.title48 {
                 padding-top: 30px;
             }
             .boxes-flex-award {
                 max-width: 1200px;
-                padding: 20px 0px;
-                margin: 30px auto;
+                padding: 50px 10px;
+                margin:  auto;
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
                 align-items: center;
                 align-content: center;
-                gap: 40px 60px;
+                gap: 20px;
             }
             .box-flex-award{
-                width: 198px;
-                height: 102px;
-                margin-bottom: 50px;
+                flex: 1 1 calc(50% - 10px);
                 
             }
             .box-flex-award>img {
-                width: 198px;
-                height: 102px;
+                max-width: 100%;
             }
             /* AWARDS section */
 
@@ -360,49 +356,6 @@
             }
             /* TRUST PILOT */
 
-            /* DERIV EXPERIENCE (second sign up) */
-            .deriv-exp {
-                max-width: 2000px;
-                height: auto;
-                margin: 0 auto;
-                padding: 80px 20px 150px;
-                background-color: #FBFBFC;
-            }
-            .boxes-flex-exp {
-                max-width: 1450px;
-                height: 360px;
-                background-color: #ff444f;
-                border-radius: 16px;
-                margin: 0px auto;
-                display: flex;
-                flex-direction: row-reverse;
-                flex-wrap: wrap;
-                justify-content: space-evenly;
-                align-items: center;
-                align-content: center;
-                gap: 0 50px;
-            }
-            .box-flex-exp {
-                max-width: 486px;
-            }
-            .box-flex-exp > .title48 {
-                margin: 0px auto !important;
-                line-height: 60px;
-                color: #fff;
-                font-family: 'Ubuntu';
-            }
-            .box-flex-form {
-                display: flex;
-                flex-direction: column;
-                gap: 17px 0;
-                width: 414px;
-                height: 384px;
-                margin: 80px 0 0 0px;
-                background-color: #fff;
-                border-radius: 8px;
-                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
-                padding: 40px;
-            }
             .size32 {
                 margin: 0;
                 padding: 0;
@@ -753,18 +706,6 @@
                 font-weight: 700;
                 line-height: 32.17px;
             }
-            /* white boxes (why trade with deriv) */
-            /* MT5 account type */
-            .box-flexmt5{
-                width: 328px;
-                height: 254px;
-                margin-bottom: 0px;
-            }
-            .greymargin {
-                margin-bottom: 60px;
-            }
-            /* MT5 account type */
-
             /* AWARDS section */
             .award {
                 padding: 0 10px !important;
@@ -776,14 +717,12 @@
                 gap: 0px 8px;
             }
             .box-flex-award{
-                width: 140px;
-                height: 67.5px;
+                max-width: 400px;
                 margin-bottom: 50px;
                 
             }
             .box-flex-award>img{
-                width: 140px;
-                height: 67.5px;
+                width: auto;
                 
             }
             /* AWARDS section */
@@ -796,36 +735,6 @@
                 font-size: 22px;
             }
             /* TRUST PILOT */
-            /* DERIV EXPERIENCE (second sign up) */
-            .deriv-exp {
-                max-width: 2000px !important;
-                height: 1000px;
-            }
-            .boxes-flex-exp {
-                max-width: 800px;
-                height: 800px;
-                gap: 50px 0;
-            }
-            .box-flex-exp {
-                max-width: 170px;
-                margin-top: 100px;
-            }
-            .box-flex-exp > .title48 {
-                line-height: 40px;
-            }
-            .box-flex-form {
-                width: 800px;
-                height: 600px;
-                margin: 0 auto;
-            }
-            .size32 {
-                font-size: 24px;
-                line-height: 30px;
-            }
-            .psize16 {
-                font-size: 14px;
-            }
-            /* DERIV EXPERIENCE (second sign up) */
             /* FOOTER */
             .boxes-flex-log-sm {
                 gap: 20px 180px;
@@ -963,45 +872,30 @@
             </div>
             <p style="font-weight: 700;margin: 10px auto;font-size: 24px;text-align: center;line-height: 1.6;">Join over 2.5 million traders who have chosen Deriv as their trusted broker.</p>
             <div>
-                <button onclick="goToDestination2()" id="cta" class="button-footer" type="button">Try free demo</button>
+                <button  class="button-footer" type="button"><a style="color: #fff;" href="#" >Try free demo</a></button>
             </div>
         </section>
         <section class="award">
             <div class="boxes-flex-award">
                 <div class="box-flex-award">
-                    <img src="https://lh3.googleusercontent.com/So6_PlYd2vKozU3_QmV76-L5_Jd5oAsINQbehv95TOca-9406CAEGj_Z58dMi92M-SOYds4IC7hgpxiWE2TWZSoXmsBOdbtAFOU=s0" alt="mt5 derived">
+                    <img src="https://static.deriv.com/email/images/footer-sm-imgs-2024/award2x.png" alt="mt5 derived">
                 </div>
                 <div class="box-flex-award">
-                    <img src="https://lh3.googleusercontent.com/F9GnwFN71bWDBmYoUlqQHFNyrkxX2NpFPcQJbBupb-bWDHHTCHpv63TNNwtsI5u4nZb5HSIccu9vD82gEcAWiL9PJxlWD8tTsg=s0" alt="mt5 derived">
-                </div>
-                <div class="box-flex-award">
-                    <img src="https://lh3.googleusercontent.com/PPIG6zJFAkxBp9LES3sJmXP_WTPMEQ5bZho7g4vX60VjKqypKjtNp8xm9gWIR6JW9cUF3BPPsj7LyxyilSRh5ThS_or6t9xdlDkH=s0" alt="mt5 derived">
-                </div>
-                <div class="box-flex-award">
-                    <img src="https://lh3.googleusercontent.com/V7gxQDutnNkQqeTi2x1P_CcS2e9xmD4e15jCkuLh3aHjJfw5QtZvIrU5oayHKzwSXPn2soRkMEm-x6hlCC1qna5V9iVFPjjQK5g=s0" alt="mt5 derived">
-                </div>
-                <div class="box-flex-award">
-                    <img src="https://lh3.googleusercontent.com/VaydG88brML3OcuKRKYPgRYPE_GmPwmwTg610yO3p26o0LOeNuC2B53oGLwuCyXWc52gKIjXQYBgHaq2JQPbfHLxMzoMokR4dA=s0" alt="mt5 derived">
-                </div>
-                <div class="box-flex-award">
-                    <img src="https://lh3.googleusercontent.com/5vZ8X3YpVNj_P6A5zFHcz7Jwxw-L1FGRzsQYlz_jMKD39zQfWsOVMuH8GaxU2ziYFR4lrYUozZQ4nD61WduIXyxJX-2fmMDYoA=s0" alt="mt5 derived">
-                </div>
-            </div>
-        </section>
-        <section  class="trustpilot">
-            <div class="boxes-flex-trust">
-                <div class="box-flex-trust">
-                    <p><strong>Rated excellent on</strong></p>
-                </div>
-                <div class="box-flex-trust">
-                    <!-- TrustBox script -->
-                    <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
-                    <!-- End TrustBox script -->
-                    <!-- TrustBox widget - Mini -->
-                    <div class="trustpilot-widget" data-locale="en-US" data-template-id="53aa8807dec7e10d38f59f32" data-businessunit-id="5ed4c8a9f74f310001f51bf7" data-style-height="150px" data-style-width="auto" data-theme="light" data-tags="SelectedReview">
-                    <a href="https://www.trustpilot.com/review/deriv.com" target="_blank" rel="noopener">Trustpilot</a>
+                    <div class="boxes-flex-trust">
+                        <div class="box-flex-trust">
+                            <p><strong>Rated excellent on</strong></p>
+                        </div>
+                        <div class="box-flex-trust">
+                            <!-- TrustBox script -->
+                            <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+                            <!-- End TrustBox script -->
+                            <!-- TrustBox widget - Mini -->
+                            <div class="trustpilot-widget" data-locale="en-US" data-template-id="53aa8807dec7e10d38f59f32" data-businessunit-id="5ed4c8a9f74f310001f51bf7" data-style-height="150px" data-style-width="auto" data-theme="light" data-tags="SelectedReview">
+                            <a href="https://www.trustpilot.com/review/deriv.com" target="_blank" rel="noopener">Trustpilot</a>
+                            </div>
+                            <!-- End TrustBox widget -->
+                        </div>
                     </div>
-                    <!-- End TrustBox widget -->
                 </div>
             </div>
         </section>
@@ -1042,7 +936,6 @@
         </section>
             </main>
     </div>
-
 
     
     <script>
@@ -1197,3 +1090,193 @@
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+// CCCCCCCC //
+
+<script>{/* utility functions */}
+    const getDomain = () => {
+        const domain = location.hostname;
+        if (domain.includes("deriv.com")) {
+            return "deriv.com";
+        }
+        return domain.includes("binary.sx") ? "binary.sx" : domain;
+    };
+
+    const eraseCookie = (name) => {
+        document.cookie = `${name}=; Max-Age=-99999999; domain=${getDomain()}; path=/;`;
+    };
+
+    const getCookie = (name) => {
+        const dc = document.cookie;
+        const prefix = name + "=";
+        // check begin index
+        let begin = dc.indexOf("; " + prefix);
+        if (begin == -1) {
+            begin = dc.indexOf(prefix);
+            // cookie not available
+            if (begin != 0) return null;
+        } else {
+            begin += 2;
+        }
+        // check end index
+        let end = document.cookie.indexOf(";", begin);
+        if (end == -1) {
+            end = dc.length;
+        }
+        return decodeURI(dc.substring(begin + prefix.length, end));
+    };
+
+    const isMobile = () => {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+        );
+    };
+
+    const toISOFormat = (date) => {
+        if (date instanceof Date) {
+            const utc_year = date.getUTCFullYear();
+            const utc_month =
+            (date.getUTCMonth() + 1 < 10 ? "0" : "") + (date.getMonth() + 1);
+            const utc_date = (date.getUTCDate() < 10 ? "0" : "") + date.getUTCDate();
+            return `${utc_year}-${utc_month}-${utc_date}`;
+        }
+        return "";
+    };
+
+    const shouldOverwrite = (new_utm_data, current_utm_data) => {
+        if (!current_utm_data) {
+            return true;
+        } else if (!new_utm_data) {
+            return false;
+        }
+    }
+  
+    // Check if both new and old utm_data has all required fields
+    const required_fields = ['utm_source', 'utm_medium', 'utm_campaign'];
+    const has_new_required_fields = required_fields.every((field) => new_utm_data[field]);
+    const has_curr_required_fields = required_fields.every((field) => current_utm_data[field]);
+
+    // Overwrite based on the order of priority
+    if (has_new_required_fields && has_curr_required_fields) {
+        if (new_utm_data.utm_medium.includes('aff')) return true; // 1. Affiliate tags
+        else if (new_utm_data.utm_medium.includes('ppc') && !current_utm_data.utm_medium.includes('aff')) return true; // 2. PPC tags
+        else if (!current_utm_data.utm_medium.includes('ppc') && !current_utm_data.utm_medium.includes('aff')) return true; // 3. Complete set of required tags
+    } else if (has_new_required_fields) {
+        return true;
+    } else if (has_curr_required_fields) {
+        return false;
+    } else if (new_utm_data.utm_source !== undefined
+        && Object.values(new_utm_data).length >= Object.values(current_utm_data).length) return true; // 4. Everything else
+            return false;
+    /* end utility functions */
+
+    (function initMarketingCookies() {
+        const searchParams = new URLSearchParams(window.location.search);
+        const brand_name = "deriv";
+        const app_id = 11780;
+        /* start handling UTMs */
+        const utm_fields = [
+            "utm_source",
+            "utm_medium",
+            "utm_campaign",
+            "utm_term",
+            "utm_content",
+            "utm_ad_id",
+            "utm_click_id",
+            "utm_adgroup_id",
+            "utm_campaign_id",
+        ];
+        let utm_data = {};
+        const current_utm_data = JSON.parse(getCookie("utm_data"));
+        // If the user comes to the site for the first time without any URL params
+        // Only set the utm_source to referrer if the user does not have utm_data cookies stored
+        utm_data["utm_source"] = document.referrer? document.referrer: "null";
+        // If the user has any new UTM params, store them
+        utm_fields.forEach((field) => {
+            if (searchParams.has(field)) {
+                utm_data[field] = searchParams
+                .get(field)
+                .replace(/[^a-zA-Z0-9\s\-\.\_]/gi, "")
+                .substring(0, 100); // Limit to 100 supported characters
+            }
+        });
+        if (shouldOverwrite(utm_data, current_utm_data)) {
+            eraseCookie("utm_data");
+            const utm_data_cookie = encodeURI(JSON.stringify(utm_data))
+                .replaceAll("%2C", ",")
+                .replaceAll("%7B", "{")
+                .replaceAll("%7D", "}");
+            // Non-expiring cookie for utm_data
+            // Max 400 days
+            document.cookie = `utm_data=${utm_data_cookie}; expires=Tue, 19 Jan 9999 03:14:07 UTC; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+        }
+        /* end handling UTMs */
+        /* start handling affiliate tracking */
+        if (searchParams.has("t")) {
+            eraseCookie("affiliate_tracking");
+            document.cookie = `affiliate_tracking=${searchParams.get("t")};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+        }
+        /* end handling affiliate tracking */
+        /* start handling signup device */
+        const signup_device_cookie_unparsed = getCookie("signup_device") || "{}";
+        const signup_device_cookie = JSON.parse(
+            decodeURI(signup_device_cookie_unparsed).replaceAll("%2C", ",")
+        );
+        if (!signup_device_cookie.signup_device) {
+            const signup_data = {
+                signup_device: isMobile() ? "mobile" : "desktop",
+            };
+            const signup_data_cookie = encodeURI(JSON.stringify(signup_data))
+                .replace(",", "%2C")
+                .replace("%7B", "{")
+                .replace("%7D", "}");
+            document.cookie = `signup_device=${signup_data_cookie};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+        }
+        /* end handling signup device */
+        /* start handling date first contact */
+        const date_first_contact_cookie_unparsed =
+            getCookie("date_first_contact") || "{}";
+        const date_first_contact_cookie = JSON.parse(
+            decodeURI(date_first_contact_cookie_unparsed).replaceAll("%2C", ",")
+        );
+        if (!date_first_contact_cookie.date_first_contact) {
+            const ws = new WebSocket(
+                `wss://green.binaryws.com/websockets/v3?app_id=${app_id}&brand=${brand_name}`
+            );
+            ws.onopen = function (evt) {
+                ws.send(JSON.stringify({ time: 1 }));
+            };
+            ws.onmessage = function (msg) {
+                const date_first_contact_response = JSON.parse(msg.data);
+                const date_first_contact_data = {
+                    date_first_contact: toISOFormat(
+                        new Date(date_first_contact_response.time * 1000)
+                    ),
+                };
+                const date_first_contact_data_cookie = encodeURI(
+                    JSON.stringify(date_first_contact_data)
+                )
+                .replace(",", "%2C")
+                .replace("%7B", "{")
+                .replace("%7D", "}");
+                document.cookie = `date_first_contact=${date_first_contact_data_cookie};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+                ws.close();
+            };
+        }
+        /* end handling date first contact */
+        /* start handling gclid */
+        if (searchParams.has("gclid")) {
+            eraseCookie("gclid");
+            document.cookie = `gclid=${searchParams.get(
+                "gclid"
+                )};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+        }
+        /* end handling gclid */
+    })();
+    </script>
