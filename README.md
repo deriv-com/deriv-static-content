@@ -1,10 +1,3 @@
-<h1 align="center">Repository Relocation Notice</h1>
-
-This repository has been relocated to the [deriv-com](https://github.com/deriv-com) organization. Please access it at the following URL: [deriv-static-content](https://github.com/deriv-com/deriv-static-content)
-
-Thank you!
-
----
 
 <h1 align="center"> static.deriv.com </h1>
 
