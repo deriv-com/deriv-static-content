@@ -9,6 +9,7 @@ package-lock.json
 tmp/
 .env
 .env.*
+*.env
 
 # Compiled source #
 ###################
