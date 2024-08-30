@@ -327,12 +327,12 @@
                         </tr>
                         <tr>
                             <td align="left" style="padding: 10px 30px 10px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">হাই {{profile.firstName | ডিফল্ট: "ট্রেডার"}},</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">হাই {{ Profile.firstName | default:"trader" }},</p>
                             </td>
                         </tr>
                         <tr>
                             <td align="left" style="padding: 10px 30px 10px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">আমরা আশা করি আপনি আমাদের প্ল্যাটফর্মটি অন্বেষণ করতে এবং আপনার ডেমো অ্যাকাউন্টে আপনার ট্রেডগুলি অনুশীলন করতে</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">আমরা আশা করি আপনি আমাদের প্ল্যাটফর্ম অন্বেষণ উপভোগ করছেন এবং আপনার ডেমো অ্যাকাউন্টে ট্রেড অনুশীলন করছেন।</p>
                             </td>
                         </tr>
                         <!--Gray table 1 input desktop-->
@@ -344,7 +344,7 @@
                                             <table style="width: 100%; margin: auto;" class="dark-border-radius">
                                                 <tr>
                                                     <td style="padding: 0px 0 30px;" colspan="4">
-                                                        <p align="left" style="padding: 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 16px;color: #414652; text-align: left;" class="darkmodelowblack darkcolor-subtext mb-font-size">আপনি যখন লাইভ ট্রেডিংয়ে রূপান্তর করেন, ডেরিভে উপলব্ধ ফিয়াট মুদ্রাগুলি এখানে দ্রুত দেখুন:</p>
+                                                        <p align="left" style="padding: 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 16px;color: #414652; text-align: left;" class="darkmodelowblack darkcolor-subtext mb-font-size">আপনি লাইভ ট্রেডিং-এ রূপান্তর করার সময়, এখানে Deriv-এ উপলব্ধ ফিয়াট মুদ্রাগুলির একটি দ্রুত নজর দেওয়া হল:</p>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -359,9 +359,9 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="width: 25%; padding: 10px 0 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>আমেরিকান ডলার</strong></td>
-                                                    <td style="width: 25%; padding: 10px 0 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>জিবিপি</strong></td>
-                                                    <td style="width: 25%; padding: 10px 0 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>ইউরো</strong></td>
+                                                    <td style="width: 25%; padding: 10px 0 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>USD</strong></td>
+                                                    <td style="width: 25%; padding: 10px 0 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>GBP</strong></td>
+                                                    <td style="width: 25%; padding: 10px 0 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>EUR</strong></td>
                                                 </tr>
                                             </table>
                                         </td>
@@ -376,7 +376,7 @@
                                 <table class="mobile-side dark-border-radius" style="width: 100%; margin: auto; background-color: rgba(246, 247, 248, 1); border-radius: 15px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);">
                                     <tr>
                                         <td style="padding: 20px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="dark-border-radius darkcolor-subtext mb-font-size-table-text" align="center" colspan="3">
-                                            <p style="padding: 0px 20px; ">আপনি যখন লাইভ ট্রেডিংয়ে রূপান্তর করেন, ডেরিভে উপলব্ধ ফিয়াট মুদ্রাগুলি এখানে দ্রুত দেখুন:</p>
+                                            <p style="padding: 0px 20px; ">আপনি লাইভ ট্রেডিং-এ রূপান্তর করার সময়, এখানে Deriv-এ উপলব্ধ ফিয়াট মুদ্রাগুলির একটি দ্রুত নজর দেওয়া হল:</p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -392,13 +392,13 @@
                                     </tr>
                                     <tr>
                                         <td style="padding: 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="dark-border-radius darkcolor-subtext mb-font-size-table-text" align="center">
-                                            <p style="padding: 0px 20px 20px;"><strong>আমেরিকান ডলার</strong></p>
+                                            <p style="padding: 0px 20px 20px;"><strong>USD</strong></p>
                                         </td>
                                         <td style="padding: 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="dark-border-radius darkcolor-subtext mb-font-size-table-text" align="center">
-                                            <p style="padding: 0px 20px 20px;"><strong>জিবিপি</strong></p>
+                                            <p style="padding: 0px 20px 20px;"><strong>GBP</strong></p>
                                         </td>
                                         <td style="padding: 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="dark-border-radius darkcolor-subtext mb-font-size-table-text" align="center">
-                                            <p style="padding: 0px 20px 20px;"><strong>ইউরো</strong></p>
+                                            <p style="padding: 0px 20px 20px;"><strong>EUR</strong></p>
                                         </td>
                                     </tr>
                                 </table>
@@ -414,7 +414,7 @@
                                             <table style="width: 100%; margin: auto;" class="dark-border-radius">
                                                 <tr>
                                                     <td style="padding: 0px 0 30px;" colspan="4">
-                                                        <p align="left" style="padding: 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 16px;color: #414652; text-align: left;" class="darkmodelowblack darkcolor-subtext mb-font-size">ক্রিপ্টোকারেন্সিগুলি প এখানে আমাদের উপলব্ধ বিকল্পগুলির একটি ওভারভিউ রয়েছে:</p>
+                                                        <p align="left" style="padding: 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 16px;color: #414652; text-align: left;" class="darkmodelowblack darkcolor-subtext mb-font-size">ক্রিপ্টোকারেন্সি কি পছন্দনীয়? এখানে আমাদের উপলব্ধ বিকল্পগুলির একটি ওভারভিউ রয়েছে:</p>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -432,10 +432,10 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="width: 25%; padding: 10px 0 30px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>টিথার টিআরসি 20</strong></td>
+                                                    <td style="width: 25%; padding: 10px 0 30px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>Tether TRC 20</strong></td>
                                                     <td style="width: 25%; padding: 10px 0 30px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>বিটকয়েন</strong></td>
-                                                    <td style="width: 25%; padding: 10px 0 30px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>টিথার ইআরসি 20</strong></td>
-                                                    <td style="width: 25%; padding: 10px 0 30px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>ইউএসডি মুদ্রা</strong></td>
+                                                    <td style="width: 25%; padding: 10px 0 30px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>Tether ERC 20</strong></td>
+                                                    <td style="width: 25%; padding: 10px 0 30px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>USD Coin</strong></td>
                                                 </tr>
                                                 <tr>
                                                     <td style="width: 25%; max-width: 60px;" align="center">
@@ -451,8 +451,8 @@
                                                 </tr>
                                                 <tr>
                                                     <td style="width: 25%; padding: 10px 0 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"></td>
-                                                    <td style="width: 25%; padding: 10px 0 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>এথরিয়াম</strong></td>
-                                                    <td style="width: 25%; padding: 10px 0 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>লিটকয়েন</strong></td>
+                                                    <td style="width: 25%; padding: 10px 0 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>Ethereum</strong></td>
+                                                    <td style="width: 25%; padding: 10px 0 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>Litecoin</strong></td>
                                                     <td style="width: 25%; padding: 10px 0 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"></td>
                                                 </tr>
                                             </table>
@@ -468,7 +468,7 @@
                                 <table class="mobile-side dark-border-radius" style="width: 100%; margin: auto; background-color: rgba(246, 247, 248, 1); border-radius: 15px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);">
                                     <tr>
                                         <td style="padding: 20px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="dark-border-radius darkcolor-subtext mb-font-size-table-text" align="center" colspan="2">
-                                            <p style="padding: 0px 20px; ">ক্রিপ্টোকারেন্সিগুলি প এখানে আমাদের উপলব্ধ বিকল্পগুলির একটি ওভারভিউ রয়েছে:</p>
+                                            <p style="padding: 0px 20px; ">ক্রিপ্টোকারেন্সি কি পছন্দনীয়? এখানে আমাদের উপলব্ধ বিকল্পগুলির একটি ওভারভিউ রয়েছে:</p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -481,7 +481,7 @@
                                     </tr>
                                     <tr>
                                         <td style="padding: 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="dark-border-radius darkcolor-subtext mb-font-size-table-text" align="center">
-                                            <p style="padding: 0px 20px 0;"><strong>টিথার টিআরসি 20</strong></p>
+                                            <p style="padding: 0px 20px 0;"><strong>Tether TRC 20</strong></p>
                                         </td>
                                         <td style="padding: 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="dark-border-radius darkcolor-subtext mb-font-size-table-text" align="center">
                                             <p style="padding: 0px 20px 0;"><strong>বিটকয়েন</strong></p>
@@ -497,10 +497,10 @@
                                     </tr>
                                     <tr>
                                         <td style="padding: 0px 0px 20px 0px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="dark-border-radius darkcolor-subtext mb-font-size-table-text" align="center">
-                                            <p style="padding: 0px 20px 0;"><strong>টিথার ইআরসি 20</strong></p>
+                                            <p style="padding: 0px 20px 0;"><strong>Tether ERC 20</strong></p>
                                         </td>
                                         <td style="padding: 0px 0px 20px 0px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="dark-border-radius darkcolor-subtext mb-font-size-table-text" align="center">
-                                            <p style="padding: 0px 20px 0;"><strong>ইউএসডি মুদ্রা</strong></p>
+                                            <p style="padding: 0px 20px 0;"><strong>USD Coin</strong></p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -513,10 +513,10 @@
                                     </tr>
                                     <tr>
                                         <td style="padding: 0px 0px 20px 0px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="dark-border-radius darkcolor-subtext mb-font-size-table-text" align="center">
-                                            <p style="padding: 0px 20px 0;"><strong>এথরিয়াম</strong></p>
+                                            <p style="padding: 0px 20px 0;"><strong>Ethereum</strong></p>
                                         </td>
                                         <td style="padding: 0px 0px 20px 0px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="dark-border-radius darkcolor-subtext mb-font-size-table-text" align="center">
-                                            <p style="padding: 0px 20px 0;"><strong>লিটকয়েন</strong></p>
+                                            <p style="padding: 0px 20px 0;"><strong>Litecoin</strong></p>
                                         </td>
                                     </tr>
                                 </table>
@@ -525,7 +525,7 @@
                         <!--Gray table 2 closing mobile-->
                         <tr>
                             <td align="left" style="padding: 10px 30px 40px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">আপনি যখন কোনও ডেরিভ রিয়েল অ্যাকাউন্টে আপগ্রেড করতে চয়ন করেন, তখন আপনি আপনার পছন্দের অ্যাকাউন্টের মুদ্রা হিসাবে উপরের যে কোনও মুদ্রা নির্বাচন করতে পারেন।</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">যখন আপনি একটি Deriv বাস্তব অ্যাকাউন্টে আপগ্রেড করতে পছন্দ করেন, তখন আপনার পছন্দের অ্যাকাউন্ট কারেন্সি হিসাবে উপরের যে কোনো মুদ্রা নির্বাচন করতে পারেন।</p>
                             </td>
                         </tr>
                         <!-- BUTTON -->
@@ -545,7 +545,7 @@
                         <!-- BUTTON CLOSING -->
                         <tr>
                             <td align="left" style="padding: 40px 30px 40px 30px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 14px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size-note"><strong>সাহায্য দরকার?</strong><br/><br/>আমাদের ব্যাপক <a href="https://www.deriv.com/help-centre" style="color: #ff444f !important" target="_blank">প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী পৃষ্ঠা</a> সর্বদা একটি ভাল শুরু। আপনার যদি আরও সহায়তার প্রয়োজন হয় তবে আমাদের সহায়তা দলটি <a href="https://eu.deriv.com/?is_livechat_open=true" target="_blank" style="color: #ff444f !important">লাইভ চ্যাট</a> বা <a href="https://api.whatsapp.com/send/?phone=35699578341&text&type=phone_number&app_absent=0" target="_blank" style="color: #ff444f !important">হোয়াটসঅ্যাপ</a>এর মাধ্যমে সহায়তা করার জন্য 24/7 উপলব্ধ।</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 14px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size-note"><strong>সাহায্য কি দরকার?</strong><br/><br/>আমাদের ব্যাপক <a href="https://www.deriv.com/help-centre" style="color: #ff444f !important" target="_blank">FAQ পৃষ্ঠা</a> সর্বদা একটি উত্তম যাত্রা। আপনার যদি আরও সহায়তার প্রয়োজন হয় তবে আমাদের সহায়তা দলটি <a href="https://eu.deriv.com/?is_livechat_open=true" target="_blank" style="color: #ff444f !important">লাইভ চ্যাট</a> বা <a href="https://api.whatsapp.com/send/?phone=35699578341&text&type=phone_number&app_absent=0" target="_blank" style="color: #ff444f !important">হোয়াটসঅ্যাপ</a>এর মাধ্যমে সহায়তা করার জন্য 24/7 উপলব্ধ।</p>
                             </td>
                         </tr>
                         <tr class="mobile-hide">
@@ -590,12 +590,12 @@
                         </tr>
                         <tr>
                             <td bgcolor="#fff" align="left" style="padding:4px 45px 10px;color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">আমাদের ওয়েবসাইটে দেওয়া পণ্যগুলি জটিল ডেরিভেটিভ পণ্য যা সম্ভাব্য ক্ষতির উল্লেখযোগ্য ঝুঁকি বহন করে। সিএফডিগুলি জটিল যন্ত্র যার লিভারেজের কারণে দ্রুত অর্থ হারানোর উচ্চ ঝুঁকি রয়েছে। এই পণ্যগুলি কীভাবে কাজ করে তা আপনি বুঝতে পারেন কিনা এবং আপনি আপনার অর্থ হারানোর উচ্চ ঝুঁকি নিতে পারবেন কিনা তা আপনার বিবেচনা করা উচিত।</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">আমাদের ওয়েবসাইটে দেওয়া পণ্যগুলি জটিল ডেরিভেটিভ পণ্য যা সম্ভাব্য ক্ষতির উল্লেখযোগ্য ঝুঁকি বহন করে। CFD হল জটিল যন্ত্র যেখানে লিভারেজের কারণে দ্রুত অর্থ হারানোর উচ্চ ঝুঁকি রয়েছে। এই পণ্যগুলি কীভাবে কাজ করে তা আপনি বুঝতে পারেন কিনা এবং আপনি আপনার অর্থ হারানোর উচ্চ ঝুঁকি নিতে পারবেন কিনা তা বিবেচনা করা উচিত।</p>
                             </td>
                         </tr>
                         <tr>
                             <td bgcolor="#fff" align="left" style="padding:4px 45px 30px;color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">এই ইমেল প্রেরকদের সম্পর্কে কোম্পানির তথ্যের জন্য, দয়া করে <a href="https://deriv.com/regulatory/" style="color: #ff444f !important;" target="_blank">ক্লিক করুন এখানে</a>।</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">এই ইমেইল প্রেরকগণের সংস্থার তথ্যের জন্য দয়া করে <a href="https://deriv.com/regulatory/" style="color: #ff444f !important;" target="_blank">এখানে</a> ক্লিক করুন।</p>
                             </td>
                         </tr>
                         <tr>
