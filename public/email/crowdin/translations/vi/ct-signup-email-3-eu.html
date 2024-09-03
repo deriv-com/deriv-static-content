@@ -328,12 +328,12 @@
                         </tr>
                         <tr>
                             <td align="left" style="padding: 10px 30px 10px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">Xin chào {{profile.firstName | default: "Thương nhân”}},</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">Xin chào {{ Profile.firstName | default:"trader" }},</p>
                             </td>
                         </tr>
                         <tr>
                             <td align="left" style="padding: 10px 30px 10px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">Tại Deriv, bạn có thể chọn từ nhiều loại giao dịch và thị trường khác nhau để phù hợp với chiến lược giao dịch của mình.</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">Tại Deriv, bạn có thể lựa chọn giữa nhiều loại giao dịch và thị trường khác nhau sao cho phù hợp nhất với chiến lược giao dịch của bạn.</p>
                             </td>
                         </tr>
                         <!--Gray table 1 input desktop-->
@@ -358,11 +358,11 @@
                                                 </tr>
                                                 <tr>
                                                     <td style="width: 50%; padding: 10px 0 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>CFD</strong></td>
-                                                    <td style="width: 50%; padding: 10px 0 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>Số nhân</strong></td>
+                                                    <td style="width: 50%; padding: 10px 0 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>Multiplier</strong></td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="width: 50%; padding: 10px 10px 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652; vertical-align: top !important;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center">Giao dịch với đòn bẩy trên các thị trường phổ biến mà không cần sở hữu tài sản cơ bản</td>
-                                                    <td style="width: 50%; padding: 10px 10px 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652; vertical-align: top !important;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center">Giao dịch trên thị trường tài chính và thị trường phái sinh và nhân lợi nhuận tiềm năng mà không mất nhiều hơn cổ phần của bạn.</td>
+                                                    <td style="width: 50%; padding: 10px 10px 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652; vertical-align: top !important;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center">Giao dịch với đòn bẩy trên các thị trường phổ biến mà không cần sở hữu tài sản</td>
+                                                    <td style="width: 50%; padding: 10px 10px 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652; vertical-align: top !important;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center">Giao dịch với thị trường tài chính và thị trường derived, nhân lợi nhuận tiềm năng mà không mất nhiều hơn số vốn đầu tư ban đầu.</td>
                                                 </tr>
                                             </table>
                                         </td>
@@ -377,7 +377,7 @@
                                 <table class="mobile-side dark-border-radius" style="width: 100%; margin: auto; background-color: rgba(246, 247, 248, 1); border-radius: 15px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);">
                                     <tr>
                                         <td style="padding: 20px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="dark-border-radius darkcolor-subtext mb-font-size-table-text" align="center">
-                                            <p style="padding: 0px 20px; ">Chọn một loại giao dịch theo chiến lược của bạn:</p>
+                                            <p style="padding: 0px 20px; ">Chọn một loại giao dịch phù hợp với chiến lược của bạn:</p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -392,7 +392,7 @@
                                     </tr>
                                     <tr>
                                         <td style="padding: 0px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="dark-border-radius darkcolor-subtext mb-font-size-table-text" align="center">
-                                            <p style="padding: 0px 20px; ">Giao dịch với đòn bẩy trên các thị trường phổ biến mà không cần sở hữu tài sản cơ bản</p>
+                                            <p style="padding: 0px 20px; ">Giao dịch với đòn bẩy trên các thị trường phổ biến mà không cần sở hữu tài sản</p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -402,12 +402,12 @@
                                     </tr>
                                     <tr>
                                         <td style="padding: 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="dark-border-radius darkcolor-subtext mb-font-size-table-text" align="center">
-                                            <p style="padding: 0px 20px 0;"><strong>Số nhân</strong></p>
+                                            <p style="padding: 0px 20px 0;"><strong>Multiplier</strong></p>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td style="padding: 0 0 20px 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="dark-border-radius darkcolor-subtext mb-font-size-table-text" align="center">
-                                            <p style="padding: 0px 20px; ">Giao dịch trên thị trường tài chính và thị trường phái sinh và nhân lợi nhuận tiềm năng mà không mất nhiều hơn cổ phần của bạn.</p>
+                                            <p style="padding: 0px 20px; ">Giao dịch với thị trường tài chính và thị trường derived, nhân lợi nhuận tiềm năng mà không mất nhiều hơn số vốn đầu tư ban đầu.</p>
                                         </td>
                                     </tr> 
                                 </table>
@@ -423,7 +423,7 @@
                                             <table style="width: 100%; margin: auto;" class="dark-border-radius">
                                                 <tr>
                                                     <td style="padding: 0px 0 30px;" colspan="3">
-                                                        <p align="left" style="padding-left: 10px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 16px;color: #414652; text-align: left;" class="darkmodelowblack darkcolor-subtext mb-font-size">Khám phá thị trường yêu thích của bạn: </p>
+                                                        <p align="left" style="padding-left: 10px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 16px;color: #414652; text-align: left;" class="darkmodelowblack darkcolor-subtext mb-font-size">Khám phá thị trường giao dịch yêu thích của bạn: </p>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -439,13 +439,13 @@
                                                 </tr>
                                                 <tr>
                                                     <td style="width: 33.33%; padding: 10px 0 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>Forex</strong></td>
-                                                    <td style="width: 33.33%; padding: 10px 0 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>Chỉ số có nguồn gốc</strong></td>
-                                                    <td style="width: 33.33%; padding: 10px 0 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>Dừng lỗ và chỉ số</strong></td>
+                                                    <td style="width: 33.33%; padding: 10px 0 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>Chỉ số Derived</strong></td>
+                                                    <td style="width: 33.33%; padding: 10px 0 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>Cổ phiếu & chỉ số</strong></td>
                                                 </tr>
                                                 <tr>
                                                     <td style="width: 33.33%; padding: 10px 0 40px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652; vertical-align: top !important;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center">Các cặp tiền tệ chính và phụ.</td>
-                                                    <td style="width: 33.33%; padding: 10px 0 40px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652; vertical-align: top !important;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center">Các chỉ số tổng hợp<br/> bắt nguồn từ<br/> trong thế giới thực hoặc thị trường mô phỏng.</td>
-                                                    <td style="width: 33.33%; padding: 10px 0 40px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652; vertical-align: top !important;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center">Cổ phiếu tên quen thuộc và chỉ số thị trường chứng khoán toàn cầu.</td>
+                                                    <td style="width: 33.33%; padding: 10px 0 40px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652; vertical-align: top !important;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center">Các chỉ số tổng hợp<br/> mô phỏng<br/> thị trường trong thế giới thực hoặc thị trường mô phỏng.</td>
+                                                    <td style="width: 33.33%; padding: 10px 0 40px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652; vertical-align: top !important;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center">Cổ phiếu của các công ty hàng đầu thế giới và các chỉ số chính của thị trường chứng khoán quốc tế.</td>
                                                 </tr>
                                                 <tr>
                                                     <td style="width: 33.33%; max-width: 60px;" align="center">
@@ -464,9 +464,9 @@
                                                     <td style="width: 33.33%; padding: 10px 0 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>Hàng hóa</strong></td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="width: 33.33%; padding: 10px 0 10px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652; vertical-align: top !important;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center">Các quỹ giao dịch trao đổi theo dõi các thị trường đa dạng.</td>
-                                                    <td style="width: 33.33%; padding: 10px 0 10px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652; vertical-align: top !important;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><br/> đồng tiền kỹ thuật số phổ biến nhất thế giới.</td>
-                                                    <td style="width: 33.33%; padding: 10px 0 10px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652; vertical-align: top !important;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center">Tài nguyên thiên nhiên như<br/> như dầu, vàng, bạc, v.v.</td>
+                                                    <td style="width: 33.33%; padding: 10px 0 10px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652; vertical-align: top !important;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center">Các quỹ ETF theo dõi biến động của nhiều thị trường.</td>
+                                                    <td style="width: 33.33%; padding: 10px 0 10px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652; vertical-align: top !important;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><br/> Đồng tiền kỹ thuật số phổ biến nhất thế giới.</td>
+                                                    <td style="width: 33.33%; padding: 10px 0 10px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652; vertical-align: top !important;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center">Tài nguyên thiên nhiên như<br/> dầu, vàng, bạc, v.v.</td>
                                                 </tr>
                                             </table>
                                         </td>
@@ -497,7 +497,7 @@
                                             <p style="padding: 0px 20px 0;"><strong>Forex</strong></p>
                                         </td>
                                         <td style="padding: 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="dark-border-radius darkcolor-subtext mb-font-size-table-text" align="center">
-                                            <p style="padding: 0px 20px 0;"><strong>Chỉ số có nguồn gốc</strong></p>
+                                            <p style="padding: 0px 20px 0;"><strong>Chỉ số Derived</strong></p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -505,7 +505,7 @@
                                             <p style="padding: 0px 20px; ">Các cặp tiền tệ chính và phụ.</p>
                                         </td>
                                         <td style="padding: 0px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="dark-border-radius darkcolor-subtext mb-font-size-table-text" align="center">
-                                            <p style="padding: 0px 20px; ">Các chỉ số tổng hợp có nguồn gốc từ thị trường thế giới thực hoặc mô phỏng.</p>
+                                            <p style="padding: 0px 20px; ">Các chỉ số tổng hợp mô phỏng thị trường thế giới thực hoặc thị trường mô phỏng.</p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -518,7 +518,7 @@
                                     </tr>
                                     <tr>
                                         <td style="padding: 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="dark-border-radius darkcolor-subtext mb-font-size-table-text" align="center">
-                                            <p style="padding: 0px 30px 0;"><strong>Dừng lỗ và chỉ số</strong></p>
+                                            <p style="padding: 0px 30px 0;"><strong>Cổ phiếu & chỉ số</strong></p>
                                         </td>
                                         <td style="padding: 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="dark-border-radius darkcolor-subtext mb-font-size-table-text" align="center">
                                             <p style="padding: 0px 30px 0;"><strong>ETF</strong></p>
@@ -526,10 +526,10 @@
                                     </tr>
                                     <tr>
                                         <td style="padding: 0 0 20px 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="dark-border-radius darkcolor-subtext mb-font-size-table-text" align="center">
-                                            <p style="padding: 0px 20px; ">Cổ phiếu tên quen thuộc và chỉ số thị trường chứng khoán toàn cầu.</p>
+                                            <p style="padding: 0px 20px; ">Cổ phiếu của các công ty hàng đầu thế giới và các chỉ số chính của thị trường chứng khoán quốc tế.</p>
                                         </td>
                                         <td style="padding: 0 0 20px 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="dark-border-radius darkcolor-subtext mb-font-size-table-text" align="center">
-                                            <p style="padding: 0px 20px; ">Các quỹ giao dịch trao đổi theo dõi các thị trường đa dạng.</p>
+                                            <p style="padding: 0px 20px; ">Các quỹ ETF theo dõi biến động của nhiều thị trường.</p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -562,7 +562,7 @@
                         <!--Gray table 2 closing mobile-->
                         <tr>
                             <td align="left" style="padding: 10px 30px 40px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">Sẵn sàng khám phá vô số cơ hội để xây dựng các giao dịch lý tưởng của bạn? Đăng nhập vào tài khoản Deriv của bạn ngay bây giờ và tùy chỉnh trải nghiệm giao dịch của bạn!</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">Bạn đã sẵn sàng để khám phá vô số cơ hội tự mình thiết kế và thực hiện các giao dịch phù hợp với phong cách đầu tư của mình? Hãy đăng nhập vào tài khoản Deriv của bạn ngay bây giờ để tận hưởng trải nghiệm giao dịch được cá nhân hóa!</p>
                             </td>
                         </tr>
                         <!-- BUTTON -->
@@ -575,14 +575,14 @@
                                 </v:roundrect>
                                 <![endif]-->
                                 <!--[if !gte mso 9]><!-- -->
-                                <a class="button" href="https://app.deriv.com/appstore/traders-hub" target="_blank" style="text-decoration: none; text-align: center; line-height: 20px; padding: 10px 16px;display: inline-block; font-weight: bold; font-family: 'Ubuntu','IBM Plex Sans', Arial, sans-serif; font-size: 14px;border-radius: 16px; overflow: visible; border: 0;color: #ffffff; background: #ff444f;">Đưa tôi đến đó</a>
+                                <a class="button" href="https://app.deriv.com/appstore/traders-hub" target="_blank" style="text-decoration: none; text-align: center; line-height: 20px; padding: 10px 16px;display: inline-block; font-weight: bold; font-family: 'Ubuntu','IBM Plex Sans', Arial, sans-serif; font-size: 14px;border-radius: 16px; overflow: visible; border: 0;color: #ffffff; background: #ff444f;">Chuyển đến ngay</a>
                                 <!--<![endif]-->
                             </td>
                         </tr>
                         <!-- BUTTON CLOSING -->
                         <tr>
                             <td align="left" style="padding: 40px 30px 20px 30px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 14px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size-note"><strong>Cần giúp đỡ?</strong><br/><br/>Trang FAQ <a href="https://eu.deriv.com/help-centre" style="color: #ff444f !important" target="_blank">toàn diện</a> của chúng tôi luôn là một khởi đầu tốt. Nếu bạn cần hỗ trợ thêm, nhóm hỗ trợ của chúng tôi luôn sẵn sàng trợ giúp 24/7 qua trò chuyện trực tiếp <a href="https://eu.deriv.com/?is_livechat_open=true" target="_blank" style="color: #ff444f !important"></a> hoặc <a href="https://api.whatsapp.com/send/?phone=35699578341&text&type=phone_number&app_absent=0" target="_blank" style="color: #ff444f !important">WhatsApp</a>.</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 14px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size-note"><strong>Bạn cần trợ giúp?</strong><br/><br/>Trang <a href="https://eu.deriv.com/help-centre" style="color: #ff444f !important" target="_blank">Câu hỏi thường gặp (FAQ)</a> chi tiết của chúng tôi sẽ là khởi đầu tuyệt vời. Nếu bạn cần hỗ trợ thêm, nhóm hỗ trợ của chúng tôi luôn sẵn sàng trợ giúp 24/7 qua <a href="https://eu.deriv.com/?is_livechat_open=true" target="_blank" style="color: #ff444f !important">live chat</a> hoặc <a href="https://api.whatsapp.com/send/?phone=35699578341&text&type=phone_number&app_absent=0" target="_blank" style="color: #ff444f !important">WhatsApp</a>.</p>
                             </td>
                         </tr>
                     </tbody>
@@ -601,7 +601,7 @@
                 <table bgcolor="#fff" border="0" cellpadding="0" cellspacing="0" class="darkmodeblack" style="max-width: 600px;" width="100%">
                     <tbody>
                         <tr>
-                            <td align="center" class="darkmodeblack" style="padding: 20px 30px 0;"><a href="https://eu.deriv.com"><img alt="Dẫn vị.com" width="160" src="https://static.deriv.com/logos/deriv-gray-2023.png?v=2" style="display: block; opacity: 70%;"  /> </a></td>
+                            <td align="center" class="darkmodeblack" style="padding: 20px 30px 0;"><a href="https://eu.deriv.com"><img alt="Deriv.com" width="160" src="https://static.deriv.com/logos/deriv-gray-2023.png?v=2" style="display: block; opacity: 70%;"  /> </a></td>
                         </tr>
                         <tr>
                             <td align="center" class="darkmodeblack" style="padding: 20px 0;">
@@ -614,37 +614,37 @@
                         </tr>
                         <tr>
                             <td bgcolor="#fff" align="left" style="padding:4px 45px 10px 30px;color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">Email này là email tiếp thị dành cho khách hàng bán lẻ và chuyên nghiệp và đã được cấp bởi Deriv Investments (Europe) Limited, một công ty được thành lập tại Malta với số đăng ký C 70156 và địa chỉ đăng ký tại W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta.</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">Đây là email marketing dành cho các khách hàng cá nhân và trader chuyên nghiệp, được gửi từ Deriv Investments (Europe) Limited, công ty được thành lập tại Malta với số đăng ký C 70156 và địa chỉ đăng ký: W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta.</p>
                             </td>
                         </tr>
                         <tr>
                             <td bgcolor="#fff" align="left" style="padding:4px 30px 10px;color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">Deriv Investments (Europe) Limited được cấp phép tại Malta và được quản lý bởi Cơ quan Dịch vụ Tài chính Malta, theo Đạo luật Dịch vụ Đầu tư, để cung cấp dịch vụ đầu tư. Nó được ủy quyền giao dịch trên tài khoản riêng của mình và vừa là nhà sản xuất vừa là nhà phân phối sản phẩm của mình.</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">Deriv Investments (Europe) Limited được cấp phép tại Malta và được quản lý bởi Malta Financial Services Authority, theo Đạo luật Dịch vụ Đầu tư, để cung cấp dịch vụ đầu tư. Deriv Investments (Europe) Limited được ủy quyền để tự xử lý giao dịch và vừa là nhà sáng tạo, vừa là nhà phân phối các sản phẩm của mình.</p>
                             </td>
                         </tr>
                         <tr>
                             <td bgcolor="#fff" align="left" style="padding:4px 30px 10px;color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">Các sản phẩm được cung cấp bởi Deriv Investments (Europe) Limited, bao gồm CFD, được phân loại là 'sản phẩm phức tạo' và có thể không phù hợp với khách hàng bán lẻ.</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">Các sản phẩm được cung cấp bởi Deriv Investments (Europe) Limited, bao gồm CFD là các "sản phẩm phức tạp" và có thể không phù hợp với khách hàng cá nhân.</p>
                             </td>
                         </tr>
                         <tr>
                             <td bgcolor="#fff" align="left" style="padding:4px 30px 10px;color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">CFD là công cụ phức tạp với nguy cơ mất tiền nhanh chóng cao do đòn bẩy. 70.78% tài khoản nhà đầu tư bán lẻ bị mất tiền khi giao dịch CFD với nhà cung cấp này. Bạn nên cân nhắc xem bạn có hiểu CFD hoạt động như thế nào hay không và liệu bạn có đủ khả năng để chấp nhận rủi ro mất tiền cao hay không.</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">CFD là công cụ phức tạp có nguy cơ mất tiền nhanh chóng do đòn bẩy. 70,78% tài khoản nhà đầu tư cá nhân bị mất tiền khi giao dịch CFD với nhà cung cấp này. Bạn nên cân nhắc xem liệu bạn có hiểu cách CFD hoạt động và liệu bạn có đủ khả năng chấp nhận rủi ro mất tiền cao hay không.</p>
                             </td>
                         </tr>
                         <tr>
                             <td bgcolor="#fff" align="left" style="padding:4px 30px 10px;color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">Hãy nhớ đọc <a href="https://eu.deriv.com/terms-and-conditions/#clients" target="_blank" style="color: #ff444f !important;">Điều khoản và Điều kiện</a>, <a href="https://eu.deriv.com/tnc/eu/risk-disclosure.pdf" target="_blank" style="color: #ff444f !important;">Tiết lộ Rủi ro</a>và <a href="https://eu.deriv.com/responsible/" target="_blank" style="color: #ff444f !important;">Giao dịch An toàn và Có Trách nhiệm</a> để hiểu đầy đủ các rủi ro liên quan trước khi sử dụng dịch vụ của chúng tôi. Cũng xin lưu ý rằng thông tin chúng tôi cung cấp không cấu thành lời khuyên đầu tư. Giá trị của các khoản đầu tư có thể giảm cũng như tăng.</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">Vui lòng đọc <a href="https://eu.deriv.com/terms-and-conditions/#clients" target="_blank" style="color: #ff444f !important;">Điều khoản và điều kiện</a>, <a href="https://eu.deriv.com/tnc/eu/risk-disclosure.pdf" target="_blank" style="color: #ff444f !important;">Công bố rủi ro</a> và <a href="https://eu.deriv.com/responsible/" target="_blank" style="color: #ff444f !important;">Giao dịch an toàn và có trách nhiệm</a> của chúng tôi để hiểu đầy đủ các rủi ro liên quan trước khi sử dụng dịch vụ. Xin lưu ý rằng thông tin chúng tôi cung cấp không là lời khuyên hay tư vấn đầu tư. Giá trị của các khoản đầu tư có thể giảm cũng như có thể tăng.</p>
                             </td>
                         </tr>
                         <tr>
                             <td bgcolor="#fff" align="left" style="padding:4px 30px 10px;color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">Chúng tôi sẽ không bao giờ chia sẻ danh sách email và dữ liệu khác với bên thứ ba. Để tìm hiểu thêm về cách chúng tôi bảo vệ thông tin cá nhân và tài chính của bạn, vui lòng đọc Chính sách bảo mật và quyền riêng tư <a href="https://eu.deriv.com/tnc/eu/security-and-privacy.pdf" target="_blank" style="color: #ff444f !important;">của chúng tôi</a>.</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">Chúng tôi sẽ không bao giờ chia sẻ danh sách email và các dữ liệu khác với bên thứ ba. Để tìm hiểu thêm về cách chúng tôi bảo vệ thông tin cá nhân và thông tin tài chính của bạn, vui lòng đọc <a href="https://eu.deriv.com/tnc/eu/security-and-privacy.pdf" target="_blank" style="color: #ff444f !important;">Chính sách bảo mật và quyền riêng tư </a> của chúng tôi.</p>
                             </td>
                         </tr>
                         <tr>
                             <td bgcolor="#fff" align="center" style="color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="darkmodeblack">
-                                <p style="padding: 20px 10px 0px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 400; line-height: 16px; margin: 5px 0px 5px 0px;"><a href="https://eu.deriv.com/help-centre" style="color: #ff444f !important">Trung tâm trợ giúp</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://eu.deriv.com/terms-and-conditions/" style="color: #ff444f !important"></a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://eu.deriv.com/regulatory/" style="color: #ff444f !important">Tài liệu thông tin chính</a></p>
+                                <p style="padding: 20px 10px 0px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 400; line-height: 16px; margin: 5px 0px 5px 0px;"><a href="https://eu.deriv.com/help-centre" style="color: #ff444f !important">Trung tâm Trợ giúp</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://eu.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Điều khoản và điều kiện</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://eu.deriv.com/regulatory/" style="color: #ff444f !important">Tài liệu thông tin chính</a></p>
                                 <p style="padding: 0 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #999999; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0px 0px 30px 0px;" class="darkmodegray">Bạn không muốn nhận những email này nữa? <a href="https://app.deriv.com/account/personal-details" style="mso-hide:all; color: #ff444f !important;" class="darkcolor-subtext">Hủy đăng ký</a></p>
                             </td>
                         </tr>
