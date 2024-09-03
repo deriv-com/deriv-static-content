@@ -322,17 +322,17 @@
                         <!-- END HERO -->
                         <tr>
                             <td align="center" style="padding: 30px 30px 20px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <h1 style="font-family: 'Ubuntu', 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 1.5 ; color: #414652; font-weight: 700;margin:0;" class="mb-font-size-header">Tiền tệ của bạn, sự lựa chọn của bạn</h1>
+                                <h1 style="font-family: 'Ubuntu', 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 1.5 ; color: #414652; font-weight: 700;margin:0;" class="mb-font-size-header">Đa dạng các loại tiền tệ để bạn lựa chọn</h1>
                             </td>
                         </tr>
                         <tr>
                             <td align="left" style="padding: 10px 30px 10px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">Xin chào {{profile.firstName | default: "Thương nhân”}},</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">Xin chào {{ Profile.firstName | default:"trader" }},</p>
                             </td>
                         </tr>
                         <tr>
                             <td align="left" style="padding: 10px 30px 10px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">Chúng tôi hy vọng bạn thích khám phá nền tảng của chúng tôi và thực hành các giao dịch của mình trên tài khoản demo của bạn.</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">Chúng tôi hy vọng bạn có trải nghiệm thú vị khi khám phá nền tảng của chúng tôi và thử sức giao dịch với tài khoản demo.</p>
                             </td>
                         </tr>
                         <!--Gray table 1 input desktop-->
@@ -344,7 +344,7 @@
                                             <table style="width: 100%; margin: auto;" class="dark-border-radius">
                                                 <tr>
                                                     <td style="padding: 0px 0 30px;" colspan="4">
-                                                        <p align="left" style="padding: 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 16px;color: #414652; text-align: left;" class="darkmodelowblack darkcolor-subtext mb-font-size">Khi bạn chuyển sang giao dịch trực tiếp, đây là một cái nhìn nhanh về các loại tiền tệ fiat có sẵn trên Deriv:</p>
+                                                        <p align="left" style="padding: 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 16px;color: #414652; text-align: left;" class="darkmodelowblack darkcolor-subtext mb-font-size">Khi bạn đã sẵn sàng chuyển sang giao dịch thật, hãy tham khảo danh sách các loại tiền tệ pháp định mà Deriv hỗ trợ:</p>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -359,9 +359,9 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="width: 25%; padding: 10px 0 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>ĐÔ LA MỸ</strong></td>
+                                                    <td style="width: 25%; padding: 10px 0 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>USD</strong></td>
                                                     <td style="width: 25%; padding: 10px 0 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>GBP</strong></td>
-                                                    <td style="width: 25%; padding: 10px 0 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>EURO</strong></td>
+                                                    <td style="width: 25%; padding: 10px 0 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="darkmodelowblack darkcolor-subtext mb-font-size-table-text" align="center"><strong>EUR</strong></td>
                                                 </tr>
                                             </table>
                                         </td>
@@ -376,7 +376,7 @@
                                 <table class="mobile-side dark-border-radius" style="width: 100%; margin: auto; background-color: rgba(246, 247, 248, 1); border-radius: 15px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);">
                                     <tr>
                                         <td style="padding: 20px; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;color: #414652;" class="dark-border-radius darkcolor-subtext mb-font-size-table-text" align="center" colspan="3">
-                                            <p style="padding: 0px 20px; ">Khi bạn chuyển sang giao dịch trực tiếp, đây là một cái nhìn nhanh về các loại tiền tệ fiat có sẵn trên Deriv:</p>
+                                            <p style="padding: 0px 20px; ">Khi bạn đã sẵn sàng chuyển sang giao dịch thật, hãy tham khảo danh sách các loại tiền tệ pháp định mà Deriv hỗ trợ:</p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -414,7 +414,7 @@
                                             <table style="width: 100%; margin: auto;" class="dark-border-radius">
                                                 <tr>
                                                     <td style="padding: 0px 0 30px;" colspan="4">
-                                                        <p align="left" style="padding: 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 16px;color: #414652; text-align: left;" class="darkmodelowblack darkcolor-subtext mb-font-size">Thích tiền điện tử? Dưới đây là tổng quan về các tùy chọn có sẵn của chúng tôi:</p>
+                                                        <p align="left" style="padding: 0; margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 16px;color: #414652; text-align: left;" class="darkmodelowblack darkcolor-subtext mb-font-size">Bạn muốn giao dịch bằng tiền điện tử hơn? Dưới đây là tổng quan về các tùy chọn có sẵn của chúng tôi:</p>
                                                     </td>
                                                 </tr>
                                                 <tr>
