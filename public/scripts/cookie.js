@@ -144,8 +144,8 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
   /* end handling UTMs */
 
   /* start handling affiliate tracking */
-  const IsAffiliateTokenExist = searchParams.has("t") || searchParams.has("affiliate_token");
-  if (IsAffiliateTokenExist) {
+  const isAffiliateTokenExist = searchParams.has("t") || searchParams.has("affiliate_token");
+  if (isAffiliateTokenExist) {
     eraseCookie("affiliate_tracking");
     const affiliateToken = searchParams.get("t") || searchParams.get("affiliate_token")
     document.cookie = `affiliate_tracking=${affiliateToken}; expires=Tue, 19 Jan 9999 03:14:07 UTC;  domain=${getDomain()}; path=/; SameSite=None; Secure;`;
