@@ -144,11 +144,11 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
   /* end handling UTMs */
 
   /* start handling affiliate tracking */
-  if (searchParams.has("t")) {
+  const IsAffiliateTokenExist = searchParams.has("t") || searchParams.has("affiliate_token");
+  if (IsAffiliateTokenExist) {
     eraseCookie("affiliate_tracking");
-    document.cookie = `affiliate_tracking=${searchParams.get(
-      "t"
-    )}; expires=Tue, 19 Jan 9999 03:14:07 UTC;  domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+    const affiliateToken = searchParams.get("t") || searchParams.get("affiliate_token")
+    document.cookie = `affiliate_tracking=${affiliateToken}; expires=Tue, 19 Jan 9999 03:14:07 UTC;  domain=${getDomain()}; path=/; SameSite=None; Secure;`;
   }
   /* start handling affiliate tracking */
   if (searchParams.has("sidc")) {
