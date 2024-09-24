@@ -7,7 +7,7 @@ const getDomain = () => {
     host_domain.includes(allowed_domain)
   );
 
-  return matched_domain ?? domain;
+  return matched_domain ?? host_domain;
 };
 
 const eraseCookie = (name) => {
