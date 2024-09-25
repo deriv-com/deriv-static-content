@@ -120,8 +120,9 @@ class FreshChat {
   hostname = "qa179.deriv.dev";
   appId = 1;
 
-  constructor(token) {
+  constructor(token = null, locale = "en") {
     this.authToken = token;
+    this.locale = locale;
     this.init();
   }
 
@@ -137,6 +138,7 @@ class FreshChat {
     // Call Customer backend and get the signature for userReferenceId
     window.fcWidgetMessengerConfig = {
       jwtAuthToken: jwt,
+      locale: this.locale,
     };
 
     // Append the CRM Tracking Code Dynamically
@@ -279,8 +281,4 @@ window.fcSettings = {
       }
     });
   },
-};
-
-window.fcWidgetMessengerConfig = {
-  locale: "en",
 };
