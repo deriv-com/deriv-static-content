@@ -1,11 +1,11 @@
-const getJWT = async (hostname, token, uuid, getTokenForWS, callDerivWS) => {
+const getJWT = async (hostname, uuid, getTokenForWS, callDerivWS) => {
   let extra_fields = {};
   if (uuid) {
     console.log("Setting UUID in JWT request:", uuid);
     extra_fields.freshchat_uuid = uuid;
   }
 
-  token = await getTokenForWS();
+  const token = await getTokenForWS();
   console.log("Token:", token);
   let jwt;
   if (token) {
@@ -42,9 +42,9 @@ const getJWT = async (hostname, token, uuid, getTokenForWS, callDerivWS) => {
   return jwt;
 };
 
-const parseJwt = (token) => {
-  if (!token) return {};
-  var base64Url = token.split(".")[1];
+const parseJwt = (jwt) => {
+  if (!jwt) return {};
+  var base64Url = jwt.split(".")[1];
   var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
   var jsonPayload = decodeURIComponent(
     window
@@ -121,7 +121,7 @@ class FreshChat {
   appId = 1;
 
   constructor(token) {
-    this.token = token;
+    this.authToken = token;
     this.init();
   }
 
@@ -130,7 +130,6 @@ class FreshChat {
 
     let jwt = await getJWT(
       this.hostname,
-      this.token,
       null,
       this.getTokenForWS,
       this.callDerivWS
@@ -155,7 +154,7 @@ class FreshChat {
         return;
       }
 
-      const val = this.token ?? "NO_AUTH";
+      const val = this.authToken ?? "NO_AUTH";
 
       if (/^a1-.{29,29}$/.test(val)) {
         console.log("Valid token: ", val);
@@ -206,7 +205,6 @@ window.fcSettings = {
 
         let signedUUID = await getJWT(
           "qa179.deriv.dev",
-          null,
           uuid,
           () => null,
           callDerivWS
