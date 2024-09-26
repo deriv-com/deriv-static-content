@@ -84,8 +84,8 @@ const cacheTrackEvents = {
         storedCookies
       )}; path=/; Domain=.deriv.com`;
     },
-    track: (event) => {
-      if (cacheTrackEvents.isReady()) {
+    track: (event,cache) => {
+      if (cacheTrackEvents.isReady() && !cache) {
         Analytics.Analytics.trackEvent(event.name, event.properties);
       } else {
         cacheTrackEvents.set(event);
@@ -112,13 +112,14 @@ const cacheTrackEvents = {
         }
       }, 1000);
     },
-    listen: (element, { name, properties }) => {
+    listen: (element, { name, properties },cache) => {
       const addClickListener = (el) => {
         if (!el.dataset.clickEventTracking) {
           el.addEventListener("click", function () {
             cacheTrackEvents.track({
               name,
               properties,
+              cache
             });
           });
           el.dataset.clickEventTracking = "true";
@@ -135,7 +136,7 @@ const cacheTrackEvents = {
       cacheTrackEvents.interval = setInterval(() => {
         let allListenersApplied = true;
 
-        items.forEach(({ element, event }) => {
+        items.forEach(({ element, event, cache = false }) => {
           const elem = document.querySelectorAll(element);
           const elements = elem instanceof NodeList ? Array.from(elem) : [elem];
 
@@ -145,7 +146,7 @@ const cacheTrackEvents = {
 
           elements.forEach((el) => {
             if (!el.dataset.clickEventTracking) {
-              cacheTrackEvents.listen(el, event);
+              cacheTrackEvents.listen(el, event, cache);
               allListenersApplied = false;
             }
           });
@@ -170,4 +171,3 @@ const cacheTrackEvents = {
       return cacheTrackEvents;
     },
   };
-
