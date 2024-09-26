@@ -171,4 +171,15 @@ const cacheTrackEvents = {
 
     return cacheTrackEvents;
   },
+  pageLoadEvent: (items) => {
+    const pathname =  window.location.pathname.slice(1);
+
+    items.forEach(({ pages = [],event }) => {
+        if(pages.includes(pathname)){
+            console.log(`dispatching page load event for: ${event}`)
+
+            cacheTrackEvents.loadEvent([{event}])
+        }
+    });
+  },
 };
