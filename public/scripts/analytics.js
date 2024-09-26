@@ -181,5 +181,7 @@ const cacheTrackEvents = {
             cacheTrackEvents.loadEvent([{event}])
         }
     });
+
+    return cacheTrackEvents;
   },
 };
