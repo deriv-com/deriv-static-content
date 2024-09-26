@@ -4,37 +4,21 @@ const getJWT = async (hostname, uuid, getTokenForWS, callDerivWS) => {
     console.log("Setting UUID in JWT request:", uuid);
     extra_fields.freshchat_uuid = uuid;
   }
-
   const token = await getTokenForWS();
   console.log("Token:", token);
   let jwt;
-  if (token) {
-    console.log("Using authenticated chat");
-    const result = await callDerivWS(
-      hostname,
-      {
-        service_token: 1,
-        extra_fields: extra_fields,
-        service: "freshworks_auth_jwt",
-      },
-      token
-    );
-    console.log("JWTResponse:", result);
-    jwt = result.service_token.freshworks_auth_jwt.token;
-  } else {
-    console.log("Using unauthenticated chat");
-    const result = await callDerivWS(
-      hostname,
-      {
-        service_token_unauthenticated: 1,
-        extra_fields: extra_fields,
-        service: "freshworks_auth_jwt",
-      },
-      undefined
-    );
-    console.log("JWTResponse:", result);
-    jwt = result.service_token_unauthenticated.freshworks_auth_jwt.token;
-  }
+  console.log("Using authenticated chat");
+  const result = await callDerivWS(
+    hostname,
+    {
+      service_token: 1,
+      extra_fields: extra_fields,
+      service: "freshworks_user_jwt",
+    },
+    token
+  );
+  console.log("JWTResponse:", result);
+  jwt = result.service_token.freshworks_user_jwt.token;
 
   console.log("JWT:", jwt, "=>", parseJwt(jwt));
 
@@ -88,13 +72,10 @@ const callDerivWS = async (hostname, params, token) => {
     });
 
     ws.addEventListener("open", function open() {
-      console.log("connected to deriv" + hostname);
-      if (token) {
-        send({ authorize: token });
-      } else {
-        send(params);
-      }
+      console.log("connected to deriv " + hostname);
+      send({ authorize: token });
     });
+
     ws.addEventListener("message", function message(data) {
       if (typeof data === "object") {
         let jsonStr = data.data;
@@ -120,23 +101,36 @@ class FreshChat {
   hostname = "qa179.deriv.dev";
   appId = 1;
 
-  constructor(token) {
+  constructor({ token = null, locale = "en", hideButton = false } = {}) {
     this.authToken = token;
+    this.locale = locale;
+    this.hideButton = hideButton;
     this.init();
   }
 
   init = async () => {
     this.clearCookies();
 
-    let jwt = await getJWT(
-      this.hostname,
-      null,
-      this.getTokenForWS,
-      this.callDerivWS
-    );
+    let jwt = null;
+    if (this.authToken) {
+      jwt = await getJWT(
+        this.hostname,
+        null,
+        this.getTokenForWS,
+        this.callDerivWS
+      );
+    }
     // Call Customer backend and get the signature for userReferenceId
     window.fcWidgetMessengerConfig = {
-      jwtAuthToken: jwt,
+      locale: this.locale,
+      meta: {
+        cf_user_jwt: jwt,
+      },
+      config: {
+        headerProperty: {
+          hideChatButton: this.hideButton,
+        },
+      },
     };
 
     // Append the CRM Tracking Code Dynamically
@@ -153,18 +147,12 @@ class FreshChat {
         return;
       }
 
-      const val = this.authToken ?? "NO_AUTH";
-
-      if (/^a1-.{29,29}$/.test(val)) {
-        console.log("Valid token: ", val);
-        this.tokenForWS = { token: val };
-        resolve(val);
-      } else if (/^NO_AUTH$/.test(val)) {
-        console.log("Not using token: (unauthenticated chat)");
-        this.tokenForWS = { token: undefined };
-        resolve(undefined);
-      } else if (/./.test(val)) {
-        console.log("Invalid token: ", val);
+      if (/^a1-.{29,29}$/.test(this.authToken)) {
+        console.log("Valid token: ", this.authToken);
+        this.tokenForWS = { token: this.authToken };
+        resolve(this.authToken);
+      } else if (/./.test(this.authToken)) {
+        console.log("Invalid token: ", this.authToken);
       }
     });
   };
@@ -208,6 +196,7 @@ window.fcSettings = {
           () => null,
           callDerivWS
         );
+        console.log("signedUUID", signedUUID);
         window.fcWidget.authenticate(signedUUID);
       };
 
@@ -279,8 +268,4 @@ window.fcSettings = {
       }
     });
   },
-};
-
-window.fcWidgetMessengerConfig = {
-  locale: "en",
 };
