@@ -7,7 +7,6 @@ const getJWT = async (hostname, uuid, getTokenForWS, callDerivWS) => {
   const token = await getTokenForWS();
   console.log("Token:", token);
   let jwt;
-  console.log("Using authenticated chat");
   const result = await callDerivWS(
     hostname,
     {
