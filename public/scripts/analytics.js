@@ -101,10 +101,11 @@ const cacheTrackEvents = {
 
     pageViewInterval = setInterval(() => {
       if (
-        typeof Analytics.Analytics?.pageView === "function" &&
+        typeof window.Analytics !== "undefined" &&
+        typeof window.Analytics.Analytics?.pageView === "function" &&
         cacheTrackEvents.isReady()
       ) {
-        Analytics?.Analytics?.pageView(window.location.href);
+        window.Analytics.Analytics.pageView(window.location.href);
       }
 
       if (cacheTrackEvents.isPageViewSent()) {
