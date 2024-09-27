@@ -176,9 +176,20 @@ const cacheTrackEvents = {
     const pathname = window.location.pathname.slice(1);
 
     items.forEach(({ pages = [], excludedPages = [], event }) => {
-      if (pages.includes(pathname) || !excludedPages.includes(pathname)) {
-        console.log(`dispatching page load event for: ${event}`);
+      let dispatch = false;
+      if (pages.length) {
+        if (pages.includes(pathname)) {
+          dispatch = true;
+        }
+      } else if (excludedPages.length) {
+        if (!excludedPages.includes(pathname)) {
+          dispatch = true;
+        }
+      } else {
+        dispatch = true;
+      }
 
+      if(dispatch){
         cacheTrackEvents.loadEvent([{ event }]);
       }
     });
