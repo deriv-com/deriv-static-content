@@ -183,6 +183,8 @@ class FreshChat {
   };
 }
 
+window.FreshChat = FreshChat;
+
 window.fcSettings = {
   onInit: function () {
     function authenticateUser(userData) {
