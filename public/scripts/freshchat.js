@@ -107,6 +107,10 @@ class FreshChat {
     this.init();
   }
 
+  static async initialize(options) {
+    return new FreshChat(options);
+  }
+
   init = async () => {
     this.clearCookies();
 
@@ -134,7 +138,7 @@ class FreshChat {
 
     // Append the CRM Tracking Code Dynamically
     var script = document.createElement("script");
-    script.src = "https://fw-cdn.com/11706964/4344125.js";
+    script.src = "https://uae.fw-cdn.com/40116340/63296.js";
     script.setAttribute("chat", "true");
     document.body.appendChild(script);
   };
