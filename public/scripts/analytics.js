@@ -1,3 +1,4 @@
+// Version 1.0.0
 const cacheTrackEvents = {
   interval: null,
   responses: [],
@@ -101,10 +102,11 @@ const cacheTrackEvents = {
 
     pageViewInterval = setInterval(() => {
       if (
-        typeof Analytics.Analytics?.pageView === "function" &&
+        typeof window.Analytics !== "undefined" &&
+        typeof window.Analytics.Analytics?.pageView === "function" &&
         cacheTrackEvents.isReady()
       ) {
-        Analytics?.Analytics?.pageView(window.location.href);
+        window.Analytics.Analytics.pageView(window.location.href);
       }
 
       if (cacheTrackEvents.isPageViewSent()) {
@@ -166,6 +168,30 @@ const cacheTrackEvents = {
         name,
         properties,
       });
+    });
+
+    return cacheTrackEvents;
+  },
+  pageLoadEvent: (items) => {
+    const pathname = window.location.pathname.slice(1);
+
+    items.forEach(({ pages = [], excludedPages = [], event }) => {
+      let dispatch = false;
+      if (pages.length) {
+        if (pages.includes(pathname)) {
+          dispatch = true;
+        }
+      } else if (excludedPages.length) {
+        if (!excludedPages.includes(pathname)) {
+          dispatch = true;
+        }
+      } else {
+        dispatch = true;
+      }
+
+      if(dispatch){
+        cacheTrackEvents.loadEvent([{ event }]);
+      }
     });
 
     return cacheTrackEvents;
