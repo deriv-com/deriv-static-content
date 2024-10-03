@@ -1,3 +1,9 @@
+// Append the CRM Tracking Code Dynamically
+var script = document.createElement("script");
+script.src = "https://uae.fw-cdn.com/40116340/63296.js";
+script.setAttribute("chat", "true");
+document.body.appendChild(script);
+
 const getJWT = async (hostname, uuid, getTokenForWS, callDerivWS) => {
   let extra_fields = {};
   if (uuid) {
@@ -135,12 +141,6 @@ class FreshChat {
         },
       },
     };
-
-    // Append the CRM Tracking Code Dynamically
-    var script = document.createElement("script");
-    script.src = "https://uae.fw-cdn.com/40116340/63296.js";
-    script.setAttribute("chat", "true");
-    document.body.appendChild(script);
   };
 
   getTokenForWS = async () => {
