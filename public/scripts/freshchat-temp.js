@@ -1,9 +1,3 @@
-// Append the CRM Tracking Code Dynamically
-var script = document.createElement("script");
-script.src = "https://uae.fw-cdn.com/40116340/63296.js";
-script.setAttribute("chat", "true");
-document.body.appendChild(script);
-
 const getJWT = async (hostname, uuid, getTokenForWS, callDerivWS) => {
   let extra_fields = {};
   if (uuid) {
@@ -103,7 +97,7 @@ const callDerivWS = async (hostname, params, token) => {
 
 class FreshChat {
   tokenForWS = undefined;
-  hostname = "qa179.deriv.dev";
+  hostname = "green.derivws.com";
   appId = 1;
 
   constructor({ token = null, locale = "en", hideButton = false } = {}) {
@@ -141,6 +135,12 @@ class FreshChat {
         },
       },
     };
+
+    // Append the CRM Tracking Code Dynamically
+    var script = document.createElement("script");
+    script.src = "https://uae.fw-cdn.com/40116340/63296.js";
+    script.setAttribute("chat", "true");
+    document.body.appendChild(script);
   };
 
   getTokenForWS = async () => {
@@ -196,7 +196,7 @@ window.fcSettings = {
         // Signed UUID Hardcoded. Call Customer backend and generate the signed uuid from uuid
 
         let signedUUID = await getJWT(
-          "qa179.deriv.dev",
+          "green.derivws.com",
           uuid,
           () => null,
           callDerivWS
