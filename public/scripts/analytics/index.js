@@ -1,4 +1,4 @@
-// Version 1.0.0
+// Version 1.0.2
 const cacheTrackEvents = {
   interval: null,
   responses: [],
@@ -57,7 +57,7 @@ const cacheTrackEvents = {
     }
 
     const instances = Analytics.Analytics.getInstances();
-    return !!(instances?.tracking && instances?.ab);
+    return !!instances?.tracking;
   },
   parseCookies: (cookieName) => {
     const cookies = document.cookie.split("; ").reduce((acc, cookie) => {
@@ -114,15 +114,26 @@ const cacheTrackEvents = {
       }
     }, 1000);
   },
-  listen: (element, { name, properties }, cache) => {
+  listen: (
+    element,
+    { name = "", properties = {} },
+    cache = false,
+    callback = null
+  ) => {
     const addClickListener = (el) => {
       if (!el.dataset.clickEventTracking) {
-        el.addEventListener("click", function () {
-          cacheTrackEvents.track({
+        el.addEventListener("click", function (e) {
+          let event = {
             name,
             properties,
             cache,
-          });
+          };
+
+          if (typeof callback === "function") {
+            event = callback(e);
+          }
+
+          cacheTrackEvents.track(event);
         });
         el.dataset.clickEventTracking = "true";
       }
@@ -138,21 +149,26 @@ const cacheTrackEvents = {
     cacheTrackEvents.interval = setInterval(() => {
       let allListenersApplied = true;
 
-      items.forEach(({ element, event, cache = false }) => {
-        const elem = document.querySelectorAll(element);
-        const elements = elem instanceof NodeList ? Array.from(elem) : [elem];
+      items.forEach(
+        ({ element, event = {}, cache = false, callback = null }) => {
+          const elem =
+            element instanceof Element
+              ? element
+              : document.querySelectorAll(element);
+          const elements = elem instanceof NodeList ? Array.from(elem) : [elem];
 
-        if (!elements.length) {
-          allListenersApplied = false;
-        }
-
-        elements.forEach((el) => {
-          if (!el.dataset.clickEventTracking) {
-            cacheTrackEvents.listen(el, event, cache);
+          if (!elements.length) {
             allListenersApplied = false;
           }
-        });
-      });
+
+          elements.forEach((el) => {
+            if (!el.dataset.clickEventTracking) {
+              cacheTrackEvents.listen(el, event, cache, callback);
+              allListenersApplied = false;
+            }
+          });
+        }
+      );
 
       if (allListenersApplied) {
         clearInterval(cacheTrackEvents.interval);
@@ -189,7 +205,7 @@ const cacheTrackEvents = {
         dispatch = true;
       }
 
-      if(dispatch){
+      if (dispatch) {
         cacheTrackEvents.loadEvent([{ event }]);
       }
     });
