@@ -97,7 +97,7 @@ const callDerivWS = async (hostname, params, token) => {
 
 class FreshChat {
   tokenForWS = undefined;
-  hostname = "green.derivws.com";
+  hostname = "qa179.deriv.dev";
   appId = 1;
 
   constructor({ token = null, locale = "en", hideButton = false } = {}) {
@@ -136,11 +136,17 @@ class FreshChat {
       },
     };
 
-    // Append the CRM Tracking Code Dynamically
-    var script = document.createElement("script");
-    script.src = "https://uae.fw-cdn.com/40116340/63296.js";
-    script.setAttribute("chat", "true");
-    document.body.appendChild(script);
+    let fcScript = document.getElementById("fc-script");
+    if (fcScript) {
+      document.body.removeChild(fcScript);
+    } else {
+      // Append the CRM Tracking Code Dynamically
+      var script = document.createElement("script");
+      script.src = "https://uae.fw-cdn.com/40116340/63296.js";
+      script.setAttribute("chat", "true");
+      script.id = "fc-script";
+      document.body.appendChild(script);
+    }
   };
 
   getTokenForWS = async () => {
@@ -196,7 +202,7 @@ window.fcSettings = {
         // Signed UUID Hardcoded. Call Customer backend and generate the signed uuid from uuid
 
         let signedUUID = await getJWT(
-          "green.derivws.com",
+          "qa179.deriv.dev",
           uuid,
           () => null,
           callDerivWS
