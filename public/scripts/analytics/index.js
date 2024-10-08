@@ -1,8 +1,18 @@
-// Version 1.0.2
+// Version 1.0.3
 const cacheTrackEvents = {
   interval: null,
   responses: [],
   isTrackingResponses: false,
+  hash: async (string) => {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(string);
+    const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray
+      .map((b) => b.toString(16).padStart(2, "0"))
+      .join("");
+    return hashHex;
+  },
   trackPageUnload: () => {
     window.addEventListener("beforeunload", (event) => {
       if (!cacheTrackEvents.isPageViewSent()) {
@@ -85,7 +95,18 @@ const cacheTrackEvents = {
       storedCookies
     )}; path=/; Domain=.deriv.com`;
   },
-  track: (event, cache) => {
+  processEvent: (event) => {
+    if (event?.properties?.email) {
+      const email = event.properties.email;
+      delete event.properties.email;
+      event.properties.email_hash = cacheTrackEvents.hash(email);
+    }
+
+    return event;
+  },
+  track: (originalEvent, cache) => {
+    const event = cacheTrackEvents.processEvent(originalEvent);
+
     if (cacheTrackEvents.isReady() && !cache) {
       Analytics.Analytics.trackEvent(event.name, event.properties);
     } else {
