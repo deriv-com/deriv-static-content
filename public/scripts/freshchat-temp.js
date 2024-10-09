@@ -112,7 +112,7 @@ class FreshChat {
   }
 
   init = async () => {
-    // this.clearCookies();
+    this.clearCookies();
 
     let jwt = null;
     if (this.authToken) {
@@ -123,7 +123,7 @@ class FreshChat {
         this.callDerivWS
       );
     }
-    if (window.fcWidget?.isLoaded()) {
+    if (jwt) {
       window.fcWidget.user.setProperties({
         cf_user_jwt: jwt,
       });
