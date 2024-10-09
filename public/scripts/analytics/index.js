@@ -93,7 +93,7 @@ const cacheTrackEvents = {
 
     document.cookie = `${cookieName}=${JSON.stringify(
       storedCookies
-    )}; path=/; domain=.deriv.com; Secure; SameSite=Strict`;
+    )}; path=/; Domain=.deriv.com`;
   },
   processEvent: async (event) => {
     if (event?.properties?.email) {
