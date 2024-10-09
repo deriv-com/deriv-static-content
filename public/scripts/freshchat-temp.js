@@ -124,7 +124,7 @@ class FreshChat {
       );
     }
     if (jwt) {
-      window.fcWidget.user.setProperties({
+      window.fcWidget?.user?.setProperties({
         cf_user_jwt: jwt,
       });
     } else {
