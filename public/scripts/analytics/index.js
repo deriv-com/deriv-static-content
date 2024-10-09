@@ -1,4 +1,4 @@
-// Version 1.0.3
+// Version 1.0.4
 const cacheTrackEvents = {
   interval: null,
   responses: [],
@@ -95,11 +95,11 @@ const cacheTrackEvents = {
       storedCookies
     )}; path=/; Domain=.deriv.com`;
   },
-  processEvent: (event) => {
+  processEvent: async (event) => {
     if (event?.properties?.email) {
       const email = event.properties.email;
       delete event.properties.email;
-      event.properties.email_hash = cacheTrackEvents.hash(email);
+      event.properties.email_hash = await cacheTrackEvents.hash(email);
     }
 
     return event;
