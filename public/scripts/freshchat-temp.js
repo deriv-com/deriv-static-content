@@ -100,9 +100,9 @@ class FreshChat {
   hostname = "qa179.deriv.dev";
   appId = 1;
 
-  constructor({ token = null, locale = "en", hideButton = false } = {}) {
+  constructor({ token = null, hideButton = false } = {}) {
     this.authToken = token;
-    this.locale = locale;
+    // this.locale = locale;
     this.hideButton = hideButton;
     this.init();
   }
@@ -130,7 +130,7 @@ class FreshChat {
     } else {
       // Call Customer backend and get the signature for userReferenceId
       window.fcWidgetMessengerConfig = {
-        locale: this.locale,
+        // locale: this.locale,
         meta: {
           cf_user_jwt: jwt,
         },
