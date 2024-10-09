@@ -123,23 +123,24 @@ class FreshChat {
         this.callDerivWS
       );
     }
-    // Call Customer backend and get the signature for userReferenceId
-    window.fcWidgetMessengerConfig = {
-      locale: this.locale,
-      meta: {
+    if (window.fcWidget?.isLoaded()) {
+      window.fcWidget.user.setProperties({
         cf_user_jwt: jwt,
-      },
-      config: {
-        headerProperty: {
-          hideChatButton: this.hideButton,
-        },
-      },
-    };
-
-    let fcScript = document.getElementById("fc-script");
-    if (fcScript) {
-      document.body.removeChild(fcScript);
+      });
     } else {
+      // Call Customer backend and get the signature for userReferenceId
+      window.fcWidgetMessengerConfig = {
+        locale: this.locale,
+        meta: {
+          cf_user_jwt: jwt,
+        },
+        config: {
+          headerProperty: {
+            hideChatButton: this.hideButton,
+          },
+        },
+      };
+
       // Append the CRM Tracking Code Dynamically
       var script = document.createElement("script");
       script.src = "https://uae.fw-cdn.com/40116340/63296.js";
@@ -197,42 +198,42 @@ window.FreshChat = FreshChat;
 
 window.fcSettings = {
   onInit: function () {
-    function authenticateUser(userData) {
-      let authenticateCB = async (uuid) => {
-        // Signed UUID Hardcoded. Call Customer backend and generate the signed uuid from uuid
+    // function authenticateUser(userData) {
+    //   let authenticateCB = async (uuid) => {
+    //     // Signed UUID Hardcoded. Call Customer backend and generate the signed uuid from uuid
 
-        let signedUUID = await getJWT(
-          "qa179.deriv.dev",
-          uuid,
-          () => null,
-          callDerivWS
-        );
-        console.log("signedUUID", signedUUID);
-        window.fcWidget.authenticate(signedUUID);
-      };
+    //     let signedUUID = await getJWT(
+    //       "qa179.deriv.dev",
+    //       uuid,
+    //       () => null,
+    //       callDerivWS
+    //     );
+    //     console.log("signedUUID", signedUUID);
+    //     window.fcWidget.authenticate(signedUUID);
+    //   };
 
-      if (userData && userData.freshchat_uuid) {
-        authenticateCB(userData.freshchat_uuid);
-      } else {
-        // Generate UUID and create new user
-        window.fcWidget.user.getUUID().then((resp) => {
-          let uuid = resp && resp.data && resp.data.uuid;
+    //   if (userData && userData.freshchat_uuid) {
+    //     authenticateCB(userData.freshchat_uuid);
+    //   } else {
+    //     // Generate UUID and create new user
+    //     window.fcWidget.user.getUUID().then((resp) => {
+    //       let uuid = resp && resp.data && resp.data.uuid;
 
-          if (uuid) {
-            authenticateCB(uuid);
-          }
-        });
-      }
-    }
+    //       if (uuid) {
+    //         authenticateCB(uuid);
+    //       }
+    //     });
+    //   }
+    // }
 
-    window.fcWidget.on("frame:statechange", function (data) {
-      if (
-        data.success === false &&
-        data.data.frameState === "not_authenticated"
-      ) {
-        authenticateUser(data);
-      }
-    });
+    // window.fcWidget.on("frame:statechange", function (data) {
+    //   if (
+    //     data.success === false &&
+    //     data.data.frameState === "not_authenticated"
+    //   ) {
+    //     authenticateUser(data);
+    //   }
+    // });
 
     window.fcWidget.on("user:statechange", function (data) {
       if (data.success) {
@@ -273,7 +274,7 @@ window.fcSettings = {
             userData.userState === "not_created" ||
             userData.userState === "not_authenticated"
           ) {
-            authenticateUser(userData);
+            // authenticateUser(userData);
           }
         }
       }
