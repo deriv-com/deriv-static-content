@@ -1,17 +1,28 @@
-// Version 1.0.4
+// Version 1.0.5
 const cacheTrackEvents = {
   interval: null,
   responses: [],
   isTrackingResponses: false,
-  hash: async (string) => {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(string);
-    const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    const hashHex = hashArray
-      .map((b) => b.toString(16).padStart(2, "0"))
-      .join("");
-    return hashHex;
+  hash: (inputString, desiredLength = 32) => {
+    const fnv1aHash = (string) => {
+      let hash = 0x811c9dc5;
+      for (let i = 0; i < string.length; i++) {
+        hash ^= string.charCodeAt(i);
+        hash = (hash * 0x01000193) >>> 0;
+      }
+      return hash.toString(16);
+    };
+
+    const base64Encode = (string) => btoa(string);
+
+    let hash = fnv1aHash(inputString);
+    let combined = base64Encode(hash);
+
+    while (combined.length < desiredLength) {
+      combined += base64Encode(fnv1aHash(combined));
+    }
+
+    return combined.substring(0, desiredLength);
   },
   trackPageUnload: () => {
     window.addEventListener("beforeunload", (event) => {
@@ -95,11 +106,11 @@ const cacheTrackEvents = {
       storedCookies
     )}; path=/; Domain=.deriv.com`;
   },
-  processEvent: async (event) => {
+  processEvent: (event) => {
     if (event?.properties?.email) {
       const email = event.properties.email;
       delete event.properties.email;
-      event.properties.email_hash = await cacheTrackEvents.hash(email);
+      event.properties.email_hash = cacheTrackEvents.hash(email);
     }
 
     return event;
