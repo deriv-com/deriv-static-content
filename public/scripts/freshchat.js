@@ -136,7 +136,6 @@ class FreshChat {
       if (jwt) {
         window.fcWidget?.user?.setProperties({
           cf_user_jwt: jwt,
-          hideChatButton: this.hideButton,
         });
       } else {
         let fcScript = document.getElementById("fc-script");
