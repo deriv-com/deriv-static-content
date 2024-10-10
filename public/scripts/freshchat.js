@@ -128,6 +128,10 @@ class FreshChat {
         cf_user_jwt: jwt,
       });
     } else {
+      let fcScript = document.getElementById("fc-script");
+      if (fcScript) {
+        document.body.removeChild(fcScript);
+      }
       // Call Customer backend and get the signature for userReferenceId
       window.fcWidgetMessengerConfig = {
         // locale: this.locale,
@@ -145,6 +149,7 @@ class FreshChat {
       var script = document.createElement("script");
       script.src = "https://uae.fw-cdn.com/40116340/63296.js";
       script.setAttribute("chat", "true");
+      script.id = "fc-script";
       document.body.appendChild(script);
     }
   };
