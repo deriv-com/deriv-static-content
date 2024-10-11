@@ -97,7 +97,7 @@ const callDerivWS = async (hostname, params, token) => {
 
 class FreshChat {
   tokenForWS = undefined;
-  hostname = "qa179.deriv.dev";
+  hostname = "green.derivws.com";
   appId = 1;
 
   constructor({ token = null, hideButton = false } = {}) {
