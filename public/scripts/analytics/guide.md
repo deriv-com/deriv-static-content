@@ -58,6 +58,31 @@ cacheTrackEvents.pageLoadEvent([
   },
 ]);
 ```
+We also have a property as callback that are commonly used in asynchronous programming, such as when handling events (e.g., button clicks) or making network requests (e.g., fetching data from an API). They allow a function to execute after another function finishes, enabling smoother, non-blocking code execution.
+
+**Example usage:**
+
+cacheTrackEvents.pageLoadEvent([
+   {
+        pages: ["signup-success"],
+        callback: () => {
+          const url = new URL(window.location.href);
+          const email = url.searchParams.get("email");
+          const formattedEmail = decodeURIComponent(email).replace(/ /g, "+");
+
+          return {
+            name: "ce_virtual_signup_form",
+            properties: {
+              action: "email_confirmation_sent",
+              form_source: window.location.hostname,
+              form_name: "default_diel_deriv",
+              url: window.location.href,
+              email: formattedEmail,
+            },
+          };
+        },
+      }
+])
 
 ### 3. `cacheTrackEvents.addEventhandler(handlers)`
 
@@ -149,6 +174,31 @@ cacheTrackEvents.addEventhandler([
   },
 ]);
 ```
+We also have a property as callback that are commonly used in asynchronous programming, such as when handling events (e.g., button clicks) or making network requests (e.g., fetching data from an API). They allow a function to execute after another function finishes, enabling smoother, non-blocking code execution.
+
+**Example usage:**
+
+cacheTrackEvents.addEventhandler([
+     {
+        element: "#create",
+        callback: (e) => {
+          const emailElement = document.getElementById("Email");
+          const email = emailElement ? emailElement.value : "";
+
+          return {
+            name: "ce_virtual_signup_form",
+            properties: {
+              action: "started",
+              signup_provider: "email",
+              form_source: window.location.hostname,
+              form_name: "default_diel_deriv",
+              email,
+            },
+          };
+        },
+        cache: true,
+      },
+])
 
 ### 4. `cacheTrackEvents.pageView()`
 
@@ -157,31 +207,3 @@ This triggers the RudderStack page view event when analytics is loaded. If the u
 ```js
 cacheTrackEvents.pageView();
 ```
-### 5. `callback event listener`
-
-We also have a callback event listener functions that are commonly used in asynchronous programming, such as when handling events (e.g., button clicks) or making network requests (e.g., fetching data from an API). They allow a function to execute after another function finishes, enabling smoother, non-blocking code execution.
-
-**Example usage:**
-
-```js
-cacheTrackEvents.addEventhandler([
-    {
-     element: '#create',
-     callback: (e) => {
-     const emailElement = document.getElementById('Email')
-     const email = emailElement ? emailElement.value : ''
-  
-      return {
-      name: 'ce_virtual_signup_form',
-      properties: {
-      action: 'started',
-      signup_provider: 'email',
-      form_source: window.location.hostname,
-      form_name: 'default_diel_deriv',
-      email,
-      },
-    }
-  },
-      cache: true,
-},
-])
