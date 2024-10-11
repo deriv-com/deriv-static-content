@@ -123,35 +123,34 @@ class FreshChat {
         this.callDerivWS
       );
     }
-    if (jwt) {
-      window.fcWidget?.user?.setProperties({
-        cf_user_jwt: jwt,
-      });
-    } else {
-      let fcScript = document.getElementById("fc-script");
-      if (fcScript) {
-        document.body.removeChild(fcScript);
-      }
-      // Call Customer backend and get the signature for userReferenceId
-      window.fcWidgetMessengerConfig = {
-        // locale: this.locale,
-        meta: {
-          cf_user_jwt: jwt,
-        },
-        config: {
-          headerProperty: {
-            hideChatButton: this.hideButton,
-          },
-        },
-      };
 
-      // Append the CRM Tracking Code Dynamically
-      var script = document.createElement("script");
-      script.src = "https://uae.fw-cdn.com/40116340/63296.js";
-      script.setAttribute("chat", "true");
-      script.id = "fc-script";
-      document.body.appendChild(script);
+    let fcScript = document.getElementById("fc-script");
+    if (fcScript) {
+      document.body.removeChild(fcScript);
     }
+
+    // Append the CRM Tracking Code Dynamically
+    var script = document.createElement("script");
+    script.src = "https://uae.fw-cdn.com/40116340/63296.js";
+    script.setAttribute("chat", "true");
+    script.id = "fc-script";
+    document.body.appendChild(script);
+
+    window.fcWidgetMessengerConfig = {
+      config: {
+        headerProperty: {
+          hideChatButton: this.hideButton,
+        },
+      },
+    };
+
+    script.onload = function () {
+      if (jwt) {
+        window.fcWidget?.user?.setProperties({
+          cf_user_jwt: jwt,
+        });
+      }
+    };
   };
 
   getTokenForWS = async () => {
