@@ -59,6 +59,32 @@ cacheTrackEvents.pageLoadEvent([
 ]);
 ```
 
+We also have a Callback props for handling dynamic event values." (e.g., button clicks) or making network requests (e.g., fetching data from an API)
+
+**Example usage:**
+
+cacheTrackEvents.pageLoadEvent([
+   {
+        pages: ["signup-success"],
+        callback: () => {
+          const url = new URL(window.location.href);
+          const email = url.searchParams.get("email");
+          const formattedEmail = decodeURIComponent(email).replace(/ /g, "+");
+
+          return {
+            name: "ce_virtual_signup_form",
+            properties: {
+              action: "email_confirmation_sent",
+              form_source: window.location.hostname,
+              form_name: "default_diel_deriv",
+              url: window.location.href,
+              email: formattedEmail,
+            },
+          };
+        },
+      }
+])
+
 ### 3. `cacheTrackEvents.addEventhandler(handlers)`
 
 This function waits for the specified elements to be ready. It applies click listeners that store events in cookies if analytics is not ready, or fire them immediately if analytics is available.
@@ -149,6 +175,31 @@ cacheTrackEvents.addEventhandler([
   },
 ]);
 ```
+We also have a Callback props for handling dynamic event values." (e.g., button clicks) or making network requests (e.g., fetching data from an API)
+
+**Example usage:**
+
+cacheTrackEvents.addEventhandler([
+     {
+        element: "#create",
+        callback: (e) => {
+          const emailElement = document.getElementById("Email");
+          const email = emailElement ? emailElement.value : "";
+
+          return {
+            name: "ce_virtual_signup_form",
+            properties: {
+              action: "started",
+              signup_provider: "email",
+              form_source: window.location.hostname,
+              form_name: "default_diel_deriv",
+              email,
+            },
+          };
+        },
+        cache: true,
+      },
+])
 
 ### 4. `cacheTrackEvents.pageView()`
 
