@@ -58,7 +58,8 @@ cacheTrackEvents.pageLoadEvent([
   },
 ]);
 ```
-We also have a property as callback that are commonly used in asynchronous programming, such as when handling events (e.g., button clicks) or making network requests (e.g., fetching data from an API). They allow a function to execute after another function finishes, enabling smoother, non-blocking code execution.
+
+We also have a Callback props for handling dynamic event values." (e.g., button clicks) or making network requests (e.g., fetching data from an API)
 
 **Example usage:**
 
@@ -174,7 +175,7 @@ cacheTrackEvents.addEventhandler([
   },
 ]);
 ```
-We also have a property as callback that are commonly used in asynchronous programming, such as when handling events (e.g., button clicks) or making network requests (e.g., fetching data from an API). They allow a function to execute after another function finishes, enabling smoother, non-blocking code execution.
+We also have a Callback props for handling dynamic event values." (e.g., button clicks) or making network requests (e.g., fetching data from an API)
 
 **Example usage:**
 
