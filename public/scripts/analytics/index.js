@@ -1,4 +1,4 @@
-// Version 1.0.5
+// Version 1.0.6
 const cacheTrackEvents = {
   interval: null,
   responses: [],
@@ -23,6 +23,20 @@ const cacheTrackEvents = {
     }
 
     return combined.substring(0, desiredLength);
+  },
+  getCookies: (name) => {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) {
+      const cookieValue = decodeURIComponent(parts.pop().split(";").shift());
+
+      try {
+        return JSON.parse(cookieValue);
+      } catch (e) {
+        return cookieValue;
+      }
+    }
+    return null;
   },
   trackPageUnload: () => {
     window.addEventListener("beforeunload", (event) => {
@@ -107,10 +121,20 @@ const cacheTrackEvents = {
     )}; path=/; Domain=.deriv.com`;
   },
   processEvent: (event) => {
-    if (event?.properties?.email) {
-      const email = event.properties.email;
-      delete event.properties.email;
-      event.properties.email_hash = cacheTrackEvents.hash(email);
+    const clientInfo = cacheTrackEvents.getCookies("client_information");
+
+    if (clientInfo) {
+      const { email = null } = clientInfo;
+
+      if (email) {
+        event.properties.email_hash = cacheTrackEvents.hash(email);
+      }
+    } else {
+      if (event?.properties?.email) {
+        const email = event.properties.email;
+        delete event.properties.email;
+        event.properties.email_hash = cacheTrackEvents.hash(email);
+      }
     }
 
     return event;
