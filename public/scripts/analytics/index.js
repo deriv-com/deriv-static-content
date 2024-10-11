@@ -1,4 +1,4 @@
-// Version 1.0.6
+// Version 1.0.7
 const cacheTrackEvents = {
   interval: null,
   responses: [],
@@ -129,12 +129,11 @@ const cacheTrackEvents = {
       if (email) {
         event.properties.email_hash = cacheTrackEvents.hash(email);
       }
-    } else {
-      if (event?.properties?.email) {
-        const email = event.properties.email;
-        delete event.properties.email;
-        event.properties.email_hash = cacheTrackEvents.hash(email);
-      }
+    }
+    if (event?.properties?.email) {
+      const email = event.properties.email;
+      delete event.properties.email;
+      event.properties.email_hash = cacheTrackEvents.hash(email);
     }
 
     return event;
@@ -246,25 +245,27 @@ const cacheTrackEvents = {
   },
   pageLoadEvent: (items) => {
     const pathname = window.location.pathname.slice(1);
-
-    items.forEach(({ pages = [], excludedPages = [], event }) => {
-      let dispatch = false;
-      if (pages.length) {
-        if (pages.includes(pathname)) {
+    items.forEach(
+      ({ pages = [], excludedPages = [], event, callback = null }) => {
+        let dispatch = false;
+        if (pages.length) {
+          if (pages.includes(pathname)) {
+            dispatch = true;
+          }
+        } else if (excludedPages.length) {
+          if (!excludedPages.includes(pathname)) {
+            dispatch = true;
+          }
+        } else {
           dispatch = true;
         }
-      } else if (excludedPages.length) {
-        if (!excludedPages.includes(pathname)) {
-          dispatch = true;
-        }
-      } else {
-        dispatch = true;
-      }
 
-      if (dispatch) {
-        cacheTrackEvents.loadEvent([{ event }]);
+        if (dispatch) {
+          const eventData = callback ? callback() : event;
+          cacheTrackEvents.loadEvent([{ event: eventData }]);
+        }
       }
-    });
+    );
 
     return cacheTrackEvents;
   },
