@@ -24,7 +24,7 @@ const cacheTrackEvents = {
 
     return combined.substring(0, desiredLength);
   },
-  getCookie: (name) => {
+  getCookies: (name) => {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
     if (parts.length === 2) {
@@ -121,7 +121,7 @@ const cacheTrackEvents = {
     )}; path=/; Domain=.deriv.com`;
   },
   processEvent: (event) => {
-    const clientInfo = getCookies("client_information");
+    const clientInfo = cacheTrackEvents.getCookies("client_information");
 
     if (clientInfo) {
       const { email = null } = clientInfo;
@@ -129,12 +129,12 @@ const cacheTrackEvents = {
       if (email) {
         event.properties.email_hash = cacheTrackEvents.hash(email);
       }
-    }
-
-    if (event?.properties?.email) {
-      const email = event.properties.email;
-      delete event.properties.email;
-      event.properties.email_hash = cacheTrackEvents.hash(email);
+    } else {
+      if (event?.properties?.email) {
+        const email = event.properties.email;
+        delete event.properties.email;
+        event.properties.email_hash = cacheTrackEvents.hash(email);
+      }
     }
 
     return event;
