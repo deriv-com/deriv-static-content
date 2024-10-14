@@ -1,11 +1,9 @@
 const getJWT = async (hostname, uuid, getTokenForWS, callDerivWS) => {
   let extra_fields = {};
   if (uuid) {
-    console.log("Setting UUID in JWT request:", uuid);
     extra_fields.freshchat_uuid = uuid;
   }
   const token = await getTokenForWS();
-  console.log("Token:", token);
   let jwt;
   const result = await callDerivWS(
     hostname,
@@ -16,12 +14,8 @@ const getJWT = async (hostname, uuid, getTokenForWS, callDerivWS) => {
     },
     token
   );
-  console.log("JWTResponse:", result);
   jwt = result.service_token.freshworks_user_jwt.token;
 
-  console.log("JWT:", jwt, "=>", parseJwt(jwt));
-
-  console.log("Using deriv JWT");
   return jwt;
 };
 
@@ -45,13 +39,11 @@ const parseJwt = (jwt) => {
 const callDerivWS = async (hostname, params, token) => {
   return new Promise((resolve, reject) => {
     const wsUri = `wss://${hostname}/websockets/v3?app_id=1&l=EN&brand=deriv`;
-    console.log("Connecting to ", wsUri);
     const ws = new WebSocket(wsUri);
     let next_id = 1;
     let requests = {};
 
     ws.addEventListener("error", (e) => {
-      console.error("deriv error " + hostname, e);
       ws.close();
       reject("Error connecting to deriv WS " + hostname);
     });
@@ -61,17 +53,14 @@ const callDerivWS = async (hostname, params, token) => {
         msg.req_id = next_id++;
       }
       requests[msg.req_id] = { start: new Date().getTime(), msg: msg };
-      console.log("deriv sending: ", msg);
       ws.send(JSON.stringify(msg));
     };
 
     ws.addEventListener("close", function close() {
-      console.log("closed ws deriv" + hostname);
       reject("Deriv WS unexpected close" + hostname);
     });
 
     ws.addEventListener("open", function open() {
-      console.log("connected to deriv " + hostname);
       send({ authorize: token });
     });
 
@@ -89,7 +78,6 @@ const callDerivWS = async (hostname, params, token) => {
         }
       }
 
-      console.log("deriv got unexpected: ", data + "");
       reject("Unexpected message from deriv WS " + this.hostname);
     });
   });
@@ -102,7 +90,6 @@ class FreshChat {
 
   constructor({ token = null, hideButton = false } = {}) {
     this.authToken = token;
-    // this.locale = locale;
     this.hideButton = hideButton;
     this.init();
   }
@@ -161,7 +148,6 @@ class FreshChat {
       }
 
       if (/^a1-.{29,29}$/.test(this.authToken)) {
-        console.log("Valid token: ", this.authToken);
         this.tokenForWS = { token: this.authToken };
         resolve(this.authToken);
       } else if (/./.test(this.authToken)) {
@@ -189,7 +175,6 @@ class FreshChat {
         domainParts.shift();
       }
     }
-    console.log("All cookies for the current domain have been cleared.");
   };
 
   callDerivWS = async (hostname, params, token) => {
@@ -201,71 +186,25 @@ window.FreshChat = FreshChat;
 
 window.fcSettings = {
   onInit: function () {
-    // function authenticateUser(userData) {
-    //   let authenticateCB = async (uuid) => {
-    //     // Signed UUID Hardcoded. Call Customer backend and generate the signed uuid from uuid
-
-    //     let signedUUID = await getJWT(
-    //       "qa179.deriv.dev",
-    //       uuid,
-    //       () => null,
-    //       callDerivWS
-    //     );
-    //     console.log("signedUUID", signedUUID);
-    //     window.fcWidget.authenticate(signedUUID);
-    //   };
-
-    //   if (userData && userData.freshchat_uuid) {
-    //     authenticateCB(userData.freshchat_uuid);
-    //   } else {
-    //     // Generate UUID and create new user
-    //     window.fcWidget.user.getUUID().then((resp) => {
-    //       let uuid = resp && resp.data && resp.data.uuid;
-
-    //       if (uuid) {
-    //         authenticateCB(uuid);
-    //       }
-    //     });
-    //   }
-    // }
-
-    // window.fcWidget.on("frame:statechange", function (data) {
-    //   if (
-    //     data.success === false &&
-    //     data.data.frameState === "not_authenticated"
-    //   ) {
-    //     authenticateUser(data);
-    //   }
-    // });
-
     window.fcWidget.on("user:statechange", function (data) {
       if (data.success) {
         let userData = data.data;
 
-        console.log({
-          userData,
-        });
-
         // authenticate user success
         if (userData) {
           if (userData.userState === "authenticated") {
-            console.log("User Authenticated");
           }
 
           if (userData.userState === "created") {
-            console.log("User Created");
           }
 
           if (userData.userState === "loaded") {
-            console.log("User Loaded");
           }
 
           if (userData.userState === "identified") {
-            console.log("User Identified");
           }
 
           if (userData.userState === "restored") {
-            console.log("User Restored");
           }
         }
       } else {
@@ -277,7 +216,6 @@ window.fcSettings = {
             userData.userState === "not_created" ||
             userData.userState === "not_authenticated"
           ) {
-            // authenticateUser(userData);
           }
         }
       }
