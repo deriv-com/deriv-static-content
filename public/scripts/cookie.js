@@ -144,10 +144,12 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
   /* end handling UTMs */
 
   /* start handling affiliate tracking */
-  const isAffiliateTokenExist = searchParams.has("t") || searchParams.has("affiliate_token");
+  const isAffiliateTokenExist =
+    searchParams.has("t") || searchParams.has("affiliate_token");
   if (isAffiliateTokenExist) {
     eraseCookie("affiliate_tracking");
-    const affiliateToken = searchParams.get("t") || searchParams.get("affiliate_token")
+    const affiliateToken =
+      searchParams.get("t") || searchParams.get("affiliate_token");
     document.cookie = `affiliate_tracking=${affiliateToken}; expires=Tue, 19 Jan 9999 03:14:07 UTC;  domain=${getDomain()}; path=/; SameSite=None; Secure;`;
   }
   /* start handling affiliate tracking */
@@ -224,4 +226,28 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
     )};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
   }
   /* end handling gclid */
+
+  /* handling utm_sub_campaign to use as a reference for BE for returning clients */
+  const incomingUTMCampaign = searchParams.get("utm_campaign");
+
+  if (incomingUTMCampaign !== undefined) {
+    const decodedUTMData = decodeURIComponent(getCookie("utm_data"));
+    const parsedUTMData = JSON.parse(decodedUTMData);
+
+    console.log({
+      parsedUTMData,
+    });
+
+    parsedUTMData.utm_sub_campaign = incomingUTMCampaign;
+
+    const utm_data_cookie = encodeURIComponent(JSON.stringify(parsedUTMData))
+      .replaceAll("%2C", ",")
+      .replaceAll("%7B", "{")
+      .replaceAll("%7D", "}");
+
+    // Non-expiring cookie for utm_data
+    // Max 400 days
+    document.cookie = `utm_data=${utm_data_cookie}; expires=Tue, 19 Jan 9999 03:14:07 UTC; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+  }
+  /* end handling utm_sub_campaign */
 })();
