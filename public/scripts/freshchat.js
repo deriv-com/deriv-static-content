@@ -14,7 +14,7 @@ const getJWT = async (hostname, uuid, getTokenForWS, callDerivWS) => {
     },
     token
   );
-  jwt = result.service_token.freshworks_user_jwt.token;
+  jwt = result?.service_token?.freshworks_user_jwt?.token;
 
   return jwt;
 };
