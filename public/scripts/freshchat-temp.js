@@ -42,6 +42,7 @@ const callDerivWS = async (hostname, params, token) => {
     const ws = new WebSocket(wsUri);
     let next_id = 1;
     let requests = {};
+    let isAuthorized = false;
 
     ws.addEventListener("error", (e) => {
       ws.close();
@@ -68,17 +69,16 @@ const callDerivWS = async (hostname, params, token) => {
       if (typeof data === "object") {
         let jsonStr = data.data;
         let json = JSON.parse(jsonStr);
-        if (typeof json === "object" && "authorize" in json) {
-          send(params);
-          return;
+        if (typeof json === "object" && "authorize" in json && !isAuthorized) {
+          isAuthorized = true; // Prevents reauthorization
+          send(params); // Send params after first authorization
         } else {
           resolve(json);
           ws.close();
-          return;
         }
+      } else {
+        reject("Unexpected message from deriv WS " + hostname);
       }
-
-      reject("Unexpected message from deriv WS " + this.hostname);
     });
   });
 };
@@ -132,7 +132,7 @@ class FreshChat {
     };
 
     script.onload = function () {
-      if (jwt) {
+      if (jwt && jwt.trim() !== "") {
         window.fcWidget?.user?.setProperties({
           cf_user_jwt: jwt,
         });
