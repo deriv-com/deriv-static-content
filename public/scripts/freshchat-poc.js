@@ -169,6 +169,8 @@ class FreshChat {
             window.fcWidget.user.clear();
           });
         }
+      } else {
+        _this.clean();
       }
 
       // Track user interaction
@@ -196,7 +198,6 @@ class FreshChat {
         _this.dispatchAction();
       }, 50);
     } else {
-      console.log("fc loaded!");
       this.actions.map((action) => {
         action?.();
       });
