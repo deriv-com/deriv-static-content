@@ -85,8 +85,8 @@ const callDerivWS = async (hostname, params, token) => {
 
 class FreshChat {
   tokenForWS = undefined;
-  hostname = "green.derivws.com";
-  appId = 1;
+  hostname = localStorage.getItem("config.server_url");
+  appId = localStorage.getItem("config.app_id");
 
   constructor({ token = null, hideButton = false } = {}) {
     this.authToken = token;
@@ -132,7 +132,7 @@ class FreshChat {
     };
 
     script.onload = function () {
-      if (jwt && jwt.trim() !== "") {
+      if (jwt) {
         window.fcWidget?.user?.setProperties({
           cf_user_jwt: jwt,
         });
