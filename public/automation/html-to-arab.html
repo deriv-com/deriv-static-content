@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Word Replacement Tool</title>
+    <script>
+        function replaceWords() {
+            // Get the input HTML string
+            const inputString = document.getElementById("inputString").value;
+
+            // Set the default replacements
+            const replacements = [
+                {
+                    toReplace: '<html ',
+                    replacement: '<html dir="rtl "'
+                },
+                {
+                    toReplace: 'align="left"',
+                    replacement: 'align="right"'                    
+                },
+                {
+                    toReplace: 'text-align: left',
+                    replacement: 'text-align: left'
+                },
+                {
+                    toReplace: '<p ',
+                    replacement: '<p dir="rtl" '
+                },
+                {
+                    toReplace: '<li ',
+                    replacement: '<li dir="rtl" '
+                },
+                {
+                    toReplace: 'text-align: left',
+                    replacement: 'text-align: right'
+                },
+                {
+                    toReplace: 'https://www.facebook.com/derivdotcom',
+                    replacement: 'https://www.facebook.com/derivarabic'
+                },
+                {
+                    toReplace: 'https://www.instagram.com/deriv_official/',
+                    replacement: 'https://www.instagram.com/deriv_ar/'
+                },
+                {
+                    toReplace: 'https://twitter.com/derivdotcom',
+                    replacement: 'https://twitter.com/DerivArabic'
+                },
+                
+                // Add more replacements as needed
+            ];
+
+            // Replace each word in the input string
+            let resultString = inputString;
+            replacements.forEach(({ toReplace, replacement }) => {
+                resultString = resultString.replace(new RegExp(toReplace, 'g'), replacement);
+            });
+
+            // Display the result, preserving HTML format
+            const resultElement = document.getElementById("result");
+            resultElement.innerText = resultString;
+
+            // Copy the result to clipboard
+            navigator.clipboard.writeText(resultString).then(() => {
+                alert("Result copied to clipboard!");
+                clearInputs(); // Clear inputs after copying
+            }).catch(err => {
+                console.error("Could not copy text: ", err);
+            });
+        }
+
+        function clearInputs() {
+            // Clear the input HTML field
+            document.getElementById("inputString").value = '';
+        }
+    </script>
+</head>
+<body>
+    <h1>HTML Word Replacement Tool</h1>
+    <label for="inputString">Input HTML:</label><br>
+    <textarea id="inputString" rows="10" cols="50" placeholder="Enter your HTML here"></textarea><br><br>
+
+    <button onclick="replaceWords()">Replace Words</button>
+
+    <h2>Result:</h2>
+    <pre id="result"></pre>
+</body>
+</html>
