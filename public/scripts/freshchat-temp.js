@@ -1,5 +1,4 @@
 class FreshChat {
-  tokenForWS = undefined;
   hostname = localStorage.getItem("config.server_url");
   appId = localStorage.getItem("config.app_id");
 
@@ -18,8 +17,8 @@ class FreshChat {
     if (this.authToken) {
       jwt = await this.fetchJWTToken({
         token: this.authToken,
-        appId: this.appId,
-        server: this.hostname,
+        appId: this.appId || 1,
+        server: this.hostname || "green.derivws.com",
       });
     }
 
@@ -52,11 +51,7 @@ class FreshChat {
     };
   };
 
-  fetchJWTToken = async ({
-    token,
-    appId = 1,
-    server = "green.derivws.com",
-  }) => {
+  fetchJWTToken = async ({ token, appId, server }) => {
     try {
       const response = await fetch(
         `https://${server}/websockets/service_token?app_id=${appId}&l=EN&brand=deriv`,
