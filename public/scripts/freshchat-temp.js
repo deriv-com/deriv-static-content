@@ -14,8 +14,6 @@ class FreshChat {
   }
 
   init = async () => {
-    // this.clearCookies();
-
     let jwt = null;
     if (this.authToken) {
       jwt = await this.fetchJWTToken({
