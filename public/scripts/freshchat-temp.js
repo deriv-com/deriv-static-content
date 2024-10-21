@@ -1,90 +1,4 @@
-const getJWT = async (hostname, uuid, getTokenForWS, callDerivWS) => {
-  let extra_fields = {};
-  if (uuid) {
-    extra_fields.freshchat_uuid = uuid;
-  }
-  const token = await getTokenForWS();
-  let jwt;
-  const result = await callDerivWS(
-    hostname,
-    {
-      service_token: 1,
-      extra_fields: extra_fields,
-      service: "freshworks_user_jwt",
-    },
-    token
-  );
-  jwt = result?.service_token?.freshworks_user_jwt?.token;
-
-  return jwt;
-};
-
-const parseJwt = (jwt) => {
-  if (!jwt) return {};
-  var base64Url = jwt.split(".")[1];
-  var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
-  var jsonPayload = decodeURIComponent(
-    window
-      .atob(base64)
-      .split("")
-      .map(function (c) {
-        return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
-      })
-      .join("")
-  );
-
-  return JSON.parse(jsonPayload);
-};
-
-const callDerivWS = async (hostname, params, token) => {
-  return new Promise((resolve, reject) => {
-    const wsUri = `wss://${hostname}/websockets/v3?app_id=1&l=EN&brand=deriv`;
-    const ws = new WebSocket(wsUri);
-    let next_id = 1;
-    let requests = {};
-    let isAuthorized = false;
-
-    ws.addEventListener("error", (e) => {
-      ws.close();
-      reject("Error connecting to deriv WS " + hostname);
-    });
-
-    const send = (msg) => {
-      if (!msg.req_id) {
-        msg.req_id = next_id++;
-      }
-      requests[msg.req_id] = { start: new Date().getTime(), msg: msg };
-      ws.send(JSON.stringify(msg));
-    };
-
-    ws.addEventListener("close", function close() {
-      reject("Deriv WS unexpected close" + hostname);
-    });
-
-    ws.addEventListener("open", function open() {
-      send({ authorize: token });
-    });
-
-    ws.addEventListener("message", function message(data) {
-      if (typeof data === "object") {
-        let jsonStr = data.data;
-        let json = JSON.parse(jsonStr);
-        if (typeof json === "object" && "authorize" in json && !isAuthorized) {
-          isAuthorized = true; // Prevents reauthorization
-          send(params); // Send params after first authorization
-        } else {
-          resolve(json);
-          ws.close();
-        }
-      } else {
-        reject("Unexpected message from deriv WS " + hostname);
-      }
-    });
-  });
-};
-
 class FreshChat {
-  tokenForWS = undefined;
   hostname = localStorage.getItem("config.server_url");
   appId = localStorage.getItem("config.app_id");
 
@@ -99,16 +13,13 @@ class FreshChat {
   }
 
   init = async () => {
-    // this.clearCookies();
-
     let jwt = null;
     if (this.authToken) {
-      jwt = await getJWT(
-        this.hostname,
-        null,
-        this.getTokenForWS,
-        this.callDerivWS
-      );
+      jwt = await this.fetchJWTToken({
+        token: this.authToken,
+        appId: this.appId || 1,
+        server: this.hostname || "green.derivws.com",
+      });
     }
 
     let fcScript = document.getElementById("fc-script");
@@ -140,45 +51,31 @@ class FreshChat {
     };
   };
 
-  getTokenForWS = async () => {
-    return new Promise((resolve, reject) => {
-      if (this.tokenForWS) {
-        resolve(this.tokenForWS.token);
-        return;
+  fetchJWTToken = async ({ token, appId, server }) => {
+    try {
+      const response = await fetch(
+        `https://${server}/websockets/service_token?app_id=${appId}&l=EN&brand=deriv`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Token": token,
+          },
+          body: JSON.stringify({ service: "freshworks_user_jwt" }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
       }
 
-      if (/^a1-.{29,29}$/.test(this.authToken)) {
-        this.tokenForWS = { token: this.authToken };
-        resolve(this.authToken);
-      } else if (/./.test(this.authToken)) {
-        console.log("Invalid token: ", this.authToken);
-      }
-    });
-  };
-
-  clearCookies = () => {
-    const cookies = document.cookie.split(";");
-
-    for (let i = 0; i < cookies.length; i++) {
-      const cookie = cookies[i];
-      const eqPos = cookie.indexOf("=");
-      const name = eqPos > -1 ? cookie.substr(0, eqPos).trim() : cookie.trim();
-
-      // Delete cookies for the current path
-      document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/`;
-
-      // Delete cookies for all possible subdomain paths
-      const domainParts = window.location.hostname.split(".");
-      while (domainParts.length > 0) {
-        const domain = domainParts.join(".");
-        document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=.${domain}`;
-        domainParts.shift();
-      }
+      const data = await response.json();
+      console.log("Service Token Response:", data);
+      return data?.service_token?.freshworks_user_jwt?.token;
+    } catch (error) {
+      console.error("Fetch error:", error);
+      return null;
     }
-  };
-
-  callDerivWS = async (hostname, params, token) => {
-    return callDerivWS(hostname, params, token);
   };
 }
 
