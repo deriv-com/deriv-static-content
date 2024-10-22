@@ -1,5 +1,5 @@
 class FreshChat {
-  hostname = localStorage.getItem("config.server_url") || blue.derivws.com;
+  hostname = localStorage.getItem("config.server_url") || "blue.derivws.com";
   appId = localStorage.getItem("config.app_id") || 16929;
 
   constructor({ token = null, hideButton = false } = {}) {
