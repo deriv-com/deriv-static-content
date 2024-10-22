@@ -1,10 +1,9 @@
 class FreshChat {
-  hostname = localStorage.getItem("config.server_url");
-  appId = localStorage.getItem("config.app_id");
-
-  constructor({ token = null, hideButton = false } = {}) {
+  constructor({ token = null, hideButton = false, serverUrl, appId } = {}) {
     this.authToken = token;
     this.hideButton = hideButton;
+    this.hostname = serverUrl;
+    this.appId = appId;
     this.init();
   }
 
