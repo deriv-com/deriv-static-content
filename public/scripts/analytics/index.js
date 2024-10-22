@@ -104,7 +104,6 @@ const cacheTrackEvents = {
     try {
       return cookies[cookieName] ? JSON.parse(cookies[cookieName]) : null;
     } catch (error) {
-      console.error(`Error parsing JSON for cookie "${cookieName}":`, error);
       return null;
     }
   },
