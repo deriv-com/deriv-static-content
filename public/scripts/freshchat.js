@@ -17,8 +17,8 @@ class FreshChat {
     if (this.authToken) {
       jwt = await this.fetchJWTToken({
         token: this.authToken,
-        appId: this.appId || 1,
-        server: this.hostname || "green.derivws.com",
+        appId: this.appId,
+        server: this.hostname,
       });
     }
 
