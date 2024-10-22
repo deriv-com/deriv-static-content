@@ -1,4 +1,4 @@
-// Version 1.0.7
+// Version 1.0.8
 const cacheTrackEvents = {
   interval: null,
   responses: [],
@@ -101,7 +101,11 @@ const cacheTrackEvents = {
       return acc;
     }, {});
 
-    return JSON.parse(cookies[cookieName] || null);
+    try {
+      return cookies[cookieName] ? JSON.parse(cookies[cookieName]) : null;
+    } catch (error) {
+      return null;
+    }
   },
   isPageViewSent: () =>
     !!cacheTrackEvents.responses.find(
