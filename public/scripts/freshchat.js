@@ -70,7 +70,6 @@ class FreshChat {
       }
 
       const data = await response.json();
-      console.log("Service Token Response:", data);
       return data?.service_token?.freshworks_user_jwt?.token;
     } catch (error) {
       console.error("Fetch error:", error);
