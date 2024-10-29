@@ -165,7 +165,13 @@ const cacheTrackEvents = {
         typeof window.Analytics.Analytics?.pageView === "function" &&
         cacheTrackEvents.isReady()
       ) {
-        window.Analytics.Analytics.pageView(window.location.href);
+        window.Analytics.Analytics.pageView(window.location.href, {
+          loggedIn: !!window.parseCookies(
+            document.cookie,
+            "client_information"
+          ),
+          device_type: signupdevice,
+        });
       }
 
       if (cacheTrackEvents.isPageViewSent()) {
@@ -237,12 +243,15 @@ const cacheTrackEvents = {
     return cacheTrackEvents;
   },
   loadEvent: (items) => {
-    items.forEach(({ event }) => {
+    items.forEach(({ event, cache }) => {
       const { name, properties } = event;
-      cacheTrackEvents.track({
-        name,
-        properties,
-      });
+      cacheTrackEvents.track(
+        {
+          name,
+          properties,
+        },
+        cache
+      );
     });
 
     return cacheTrackEvents;
