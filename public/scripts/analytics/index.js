@@ -1,4 +1,4 @@
-// Version 1.0.8
+// Version 1.0.9
 const cacheTrackEvents = {
   interval: null,
   responses: [],
