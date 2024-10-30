@@ -1,4 +1,4 @@
-// Version 1.0.8
+// Version 1.0.9
 const cacheTrackEvents = {
   interval: null,
   responses: [],
@@ -160,12 +160,19 @@ const cacheTrackEvents = {
     let pageViewInterval = null;
 
     pageViewInterval = setInterval(() => {
+      const clientInfo = cacheTrackEvents.parseCookies("client_information");
+      const signupDevice =
+        cacheTrackEvents.parseCookies("signup_device")?.signup_device;
+
       if (
         typeof window.Analytics !== "undefined" &&
         typeof window.Analytics.Analytics?.pageView === "function" &&
         cacheTrackEvents.isReady()
       ) {
-        window.Analytics.Analytics.pageView(window.location.href);
+        window.Analytics.Analytics.pageView(window.location.href, {
+          loggedIn: !!clientInfo,
+          device_type: signupDevice,
+        });
       }
 
       if (cacheTrackEvents.isPageViewSent()) {
@@ -237,12 +244,15 @@ const cacheTrackEvents = {
     return cacheTrackEvents;
   },
   loadEvent: (items) => {
-    items.forEach(({ event }) => {
+    items.forEach(({ event, cache }) => {
       const { name, properties } = event;
-      cacheTrackEvents.track({
-        name,
-        properties,
-      });
+      cacheTrackEvents.track(
+        {
+          name,
+          properties,
+        },
+        cache
+      );
     });
 
     return cacheTrackEvents;
