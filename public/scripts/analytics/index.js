@@ -160,17 +160,18 @@ const cacheTrackEvents = {
     let pageViewInterval = null;
 
     pageViewInterval = setInterval(() => {
+      const clientInfo = cacheTrackEvents.parseCookies("client_information");
+      const signupDevice =
+        cacheTrackEvents.parseCookies("signup_device")?.signup_device;
+
       if (
         typeof window.Analytics !== "undefined" &&
         typeof window.Analytics.Analytics?.pageView === "function" &&
         cacheTrackEvents.isReady()
       ) {
         window.Analytics.Analytics.pageView(window.location.href, {
-          loggedIn: !!window.parseCookies(
-            document.cookie,
-            "client_information"
-          ),
-          device_type: signupdevice,
+          loggedIn: !!clientInfo,
+          device_type: signupDevice,
         });
       }
 
