@@ -1,5 +1,5 @@
 class FreshChat {
-  hostname = localStorage.getItem("config.server_url") || "blue.derivws.com";
+  hostname = localStorage.getItem("config.server_url") || "green.derivws.com";
   appId = localStorage.getItem("config.app_id") || 16929;
 
   constructor({ token = null, hideButton = false } = {}) {
@@ -72,7 +72,6 @@ class FreshChat {
       const data = await response.json();
       return data?.service_token?.freshworks_user_jwt?.token;
     } catch (error) {
-      console.error("Fetch error:", error);
       return null;
     }
   };
