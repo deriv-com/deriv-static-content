@@ -1,12 +1,27 @@
 class FreshChat {
-  hostname = localStorage.getItem("config.server_url") || "green.derivws.com";
-  appId = localStorage.getItem("config.app_id") || 16929;
 
   constructor({ token = null, hideButton = false } = {}) {
     this.authToken = token;
     this.hideButton = hideButton;
+    this.hostname = localStorage.getItem("config.server_url") || this.getServerUrl().url;
+    this.appId = localStorage.getItem("config.app_id") || this.getServerUrl().appId;
+    this.getServerUrl().appId;
     this.init();
   }
+
+  getServerUrl = () => {
+    const urlParts = window.location.hostname.split('.');
+    
+    if (urlParts.length <= 2) return { url: null, appId: null };
+
+    const subdomain = urlParts.slice(0, -2).join(".");
+    const mappings = {
+      app: { url: "green.derivws.com", appId: 16929 },
+      smarttrader: { url: "green.derivws.com", appId: 22168 }
+    };
+
+    return mappings[subdomain] || { url: null, appId: null };
+  };
 
   static async initialize(options) {
     return new FreshChat(options);
@@ -14,7 +29,7 @@ class FreshChat {
 
   init = async () => {
     let jwt = null;
-    if (this.authToken) {
+    if (this.authToken && this.appId && this.hostname) {
       jwt = await this.fetchJWTToken({
         token: this.authToken,
         appId: this.appId,
