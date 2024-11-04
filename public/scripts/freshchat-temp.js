@@ -1,9 +1,10 @@
 class FreshChat {
-  constructor({ token = null, hideButton = false, serverUrl, appId } = {}) {
+  hostname = localStorage.getItem("config.server_url") || "green.derivws.com";
+  appId = localStorage.getItem("config.app_id") || 16929;
+
+  constructor({ token = null, hideButton = false } = {}) {
     this.authToken = token;
     this.hideButton = hideButton;
-    this.hostname = serverUrl;
-    this.appId = appId;
     this.init();
   }
 
@@ -16,8 +17,8 @@ class FreshChat {
     if (this.authToken) {
       jwt = await this.fetchJWTToken({
         token: this.authToken,
-        appId: this.appId || 1,
-        server: this.hostname || "green.derivws.com",
+        appId: this.appId,
+        server: this.hostname,
       });
     }
 
@@ -69,10 +70,8 @@ class FreshChat {
       }
 
       const data = await response.json();
-      console.log("Service Token Response:", data);
       return data?.service_token?.freshworks_user_jwt?.token;
     } catch (error) {
-      console.error("Fetch error:", error);
       return null;
     }
   };
