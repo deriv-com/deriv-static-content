@@ -25,15 +25,17 @@ const DOMAIN_LIST_APP_ID = {
 
 const getAppID = () => {
   const host =  window.location.hostname;
-  return DOMAIN_LIST_APP_ID[host] || null;
+  return DOMAIN_LIST_APP_ID[host] || "16929";
 };
 
 class FreshChat {
   constructor({ token = null, hideButton = false } = {}) {
     this.authToken = token;
     this.hideButton = hideButton;
-    this.hostname = localStorage.getItem("config.server_url") || "green.derivws.com";
-    this.appId = localStorage.getItem("config.app_id") || getAppID();
+    const config_url = localStorage.getItem("config.server_url");
+    const config_appID = localStorage.getItem("config.app_id");
+    this.hostname = config_url && config_url.trim() !== "" ? config_url : "green.derivws.com";
+    this.appId = config_appID && config_appID.trim() !== "" ? config_appID : getAppID();
     this.init();
   }
 
@@ -43,7 +45,7 @@ class FreshChat {
 
   init = async () => {
     let jwt = null;
-    if (this.authToken && this.appId) {
+    if (this.authToken) {
       jwt = await this.fetchJWTToken({
         token: this.authToken,
         appId: this.appId,
