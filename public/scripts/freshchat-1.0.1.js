@@ -1,41 +1,10 @@
-const DERIV_APP = "app.deriv.com";
-const STAGING_DERIV_APP = "staging-app.deriv.com";
-const UAT_DERIV_APP = "uat-app.deriv.com";
-
-const SMART_TRADER = "smarttrader.deriv.com";
-const STAGING_SMART_TRADER = "staging-smarttrader.deriv.com";
-
-const DOMAIN_LIST_APP_ID = {
-  [DERIV_APP]: "16929",
-  "app.deriv.be": "16929",
-  "app.deriv.me": "16929",
-  [STAGING_DERIV_APP]: "16930",
-  "staging-app.deriv.me": "16930",
-  "staging-app.deriv.be": "16930",
-  [UAT_DERIV_APP]: "16929",
-  "test-app.deriv.com": "16929",
-
-  [SMART_TRADER]: "22168",
-  "smarttrader.deriv.me": "22168",
-  "smarttrader.deriv.be": "22168",
-  [STAGING_SMART_TRADER]: "22169",
-  "staging-smarttrader.deriv.be": "22169",
-  "staging-smarttrader.deriv.me": "22169",
-};
-
-const getAppID = () => {
-  const host =  window.location.hostname;
-  return DOMAIN_LIST_APP_ID[host] || "16929";
-};
-
 class FreshChat {
+  hostname = localStorage.getItem("config.server_url") || "green.derivws.com";
+  appId = localStorage.getItem("config.app_id") || 16929;
+
   constructor({ token = null, hideButton = false } = {}) {
     this.authToken = token;
     this.hideButton = hideButton;
-    const config_url = localStorage.getItem("config.server_url");
-    const config_appID = localStorage.getItem("config.app_id");
-    this.hostname = config_url && config_url.trim() !== "" ? config_url : "green.derivws.com";
-    this.appId = config_appID && config_appID.trim() !== "" ? config_appID : getAppID();
     this.init();
   }
 
