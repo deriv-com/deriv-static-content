@@ -5,6 +5,8 @@ const UAT_DERIV_APP = "uat-app.deriv.com";
 const SMART_TRADER = "smarttrader.deriv.com";
 const STAGING_SMART_TRADER = "staging-smarttrader.deriv.com";
 
+const P2P = "p2p.deriv.com";
+
 const DOMAIN_LIST_APP_ID = {
   [DERIV_APP]: "16929",
   "app.deriv.be": "16929",
@@ -21,6 +23,8 @@ const DOMAIN_LIST_APP_ID = {
   [STAGING_SMART_TRADER]: "22169",
   "staging-smarttrader.deriv.be": "22169",
   "staging-smarttrader.deriv.me": "22169",
+
+  [P2P]: "61859",
 };
 
 const getAppID = () => {
