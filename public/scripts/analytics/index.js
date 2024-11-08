@@ -285,7 +285,7 @@ const cacheTrackEvents = {
     return cacheTrackEvents;
   },
 
-  trackConsoleErrors: () => {
+  trackConsoleErrors: (callback) => {
     const originalConsoleError = console.error;
     console.error = function (...args) {
       // Log the error to the console as usual
@@ -306,7 +306,12 @@ const cacheTrackEvents = {
 
       // Store the error message
       cacheTrackEvents.latestErrorMessage = errorMessage;
-      return errorMessage;
+
+      // Trigger the 'signup_flow_error' event dynamically if there's an error message
+
+      if (typeof callback === "function") {
+        callback(errorMessage);
+      }
     };
   },
 };
