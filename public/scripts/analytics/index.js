@@ -1,6 +1,5 @@
 // Version 1.0.9
 const cacheTrackEvents = {
-  latestErrorMessage: null,
   interval: null,
   responses: [],
   isTrackingResponses: false,
@@ -305,7 +304,6 @@ const cacheTrackEvents = {
         .join(" ");
 
       // Store the error message
-      cacheTrackEvents.latestErrorMessage = errorMessage;
 
       // Trigger the 'signup_flow_error' event dynamically if there's an error message
 
