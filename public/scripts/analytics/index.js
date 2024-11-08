@@ -1,5 +1,6 @@
 // Version 1.0.9
 const cacheTrackEvents = {
+  latestErrorMessage: null,
   interval: null,
   responses: [],
   isTrackingResponses: false,
@@ -282,5 +283,30 @@ const cacheTrackEvents = {
     );
 
     return cacheTrackEvents;
+  },
+
+  trackConsoleErrors: () => {
+    const originalConsoleError = console.error;
+    console.error = function (...args) {
+      // Log the error to the console as usual
+      originalConsoleError.apply(console, args);
+
+      // Create a clean error message without __trackjs_state__
+      const errorMessage = args
+        .map((arg) =>
+          arg && typeof arg === "object" && arg.message
+            ? arg.message
+            : typeof arg === "object"
+            ? JSON.stringify(arg, (key, value) =>
+                key.startsWith("__trackjs") ? undefined : value
+              )
+            : String(arg)
+        )
+        .join(" ");
+
+      // Store the error message
+      cacheTrackEvents.latestErrorMessage = errorMessage;
+      return errorMessage;
+    };
   },
 };
