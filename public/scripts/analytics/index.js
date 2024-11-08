@@ -303,10 +303,6 @@ const cacheTrackEvents = {
         )
         .join(" ");
 
-      // Store the error message
-
-      // Trigger the 'signup_flow_error' event dynamically if there's an error message
-
       if (typeof callback === "function") {
         callback(errorMessage);
       }
