@@ -103,7 +103,8 @@ class FreshChat {
       );
 
       if (!response.ok) {
-        throw new Error(`Error: ${response.status}`);
+        console.warn(response.status);
+        return null;
       }
 
       const data = await response.json();
