@@ -1,4 +1,4 @@
-// Version 1.0.9
+// Version 1.0.10
 const cacheTrackEvents = {
   interval: null,
   responses: [],
@@ -283,7 +283,6 @@ const cacheTrackEvents = {
 
     return cacheTrackEvents;
   },
-
   trackConsoleErrors: (callback) => {
     const originalConsoleError = console.error;
     console.error = function (...args) {
