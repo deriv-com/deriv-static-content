@@ -151,7 +151,7 @@ const cacheTrackEvents = {
       cacheTrackEvents.set(event);
     }
   },
-  pageView: () => {
+  pageView: (Analytics) => {
     if (!cacheTrackEvents.isTrackingResponses) {
       cacheTrackEvents.trackResponses();
       cacheTrackEvents.trackPageUnload();
@@ -169,7 +169,7 @@ const cacheTrackEvents = {
         typeof window.Analytics.Analytics?.pageView === "function" &&
         cacheTrackEvents.isReady()
       ) {
-        window.Analytics.Analytics.pageView(window.location.href, {
+        Analytics.pageView(window.location.href, {
           loggedIn: !!clientInfo,
           device_type: signupDevice,
           network_type: window?.navigator?.connection?.effectiveType,
