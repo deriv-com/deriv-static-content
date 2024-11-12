@@ -172,6 +172,9 @@ const cacheTrackEvents = {
         window.Analytics.Analytics.pageView(window.location.href, {
           loggedIn: !!clientInfo,
           device_type: signupDevice,
+          network_type: navigator.connection?.effectiveType,
+          network_rtt: navigator.connection?.rtt,
+          network_downlink: navigator.connection?.downlink,
         });
       }
 
