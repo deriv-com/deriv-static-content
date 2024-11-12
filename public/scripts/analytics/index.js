@@ -1,4 +1,4 @@
-// Version 1.0.9
+// Version 1.0.10
 const cacheTrackEvents = {
   interval: null,
   responses: [],
@@ -282,5 +282,29 @@ const cacheTrackEvents = {
     );
 
     return cacheTrackEvents;
+  },
+  trackConsoleErrors: (callback) => {
+    const originalConsoleError = console.error;
+    console.error = function (...args) {
+      // Log the error to the console as usual
+      originalConsoleError.apply(console, args);
+
+      // Create a clean error message without __trackjs_state__
+      const errorMessage = args
+        .map((arg) =>
+          arg && typeof arg === "object" && arg.message
+            ? arg.message
+            : typeof arg === "object"
+            ? JSON.stringify(arg, (key, value) =>
+                key.startsWith("__trackjs") ? undefined : value
+              )
+            : String(arg)
+        )
+        .join(" ");
+
+      if (typeof callback === "function") {
+        callback(errorMessage);
+      }
+    };
   },
 };
