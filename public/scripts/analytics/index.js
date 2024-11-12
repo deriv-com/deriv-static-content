@@ -1,4 +1,4 @@
-// Version 1.0.10
+// Version 1.0.11
 const cacheTrackEvents = {
   interval: null,
   responses: [],
@@ -172,6 +172,9 @@ const cacheTrackEvents = {
         window.Analytics.Analytics.pageView(window.location.href, {
           loggedIn: !!clientInfo,
           device_type: signupDevice,
+          network_type: window?.navigator?.connection?.effectiveType,
+          network_rtt: window?.navigator?.connection?.rtt,
+          network_downlink: window?.navigator?.connection?.downlink,
         });
       }
 
