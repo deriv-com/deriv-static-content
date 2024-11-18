@@ -27,7 +27,7 @@ class DerivInterCom {
   init = () => {
     let existingScript = document.getElementById("ic-script");
     if (existingScript) {
-      document.body.removeChild(icScript);
+      document.body.removeChild(existingScript);
     }
 
     const script = document.createElement("script");
