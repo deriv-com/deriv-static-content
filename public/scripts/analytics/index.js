@@ -1,4 +1,4 @@
-// Version 1.0.11
+// Version 1.0.12
 const cacheTrackEvents = {
   interval: null,
   responses: [],
@@ -77,9 +77,15 @@ const cacheTrackEvents = {
           method: this._method,
           status: this.status,
           headers: this.getAllResponseHeaders(),
-          data: this.responseText,
           payload: parsedPayload,
         };
+
+        if (this.responseType === "" || this.responseType === "text") {
+          responseData.data = this.responseText;
+        } else {
+          responseData.data = null;
+        }
+
         cacheTrackEvents.responses.push(responseData);
       });
 
