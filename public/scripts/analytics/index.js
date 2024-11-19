@@ -77,14 +77,9 @@ const cacheTrackEvents = {
           method: this._method,
           status: this.status,
           headers: this.getAllResponseHeaders(),
+          data: (this.responseType === "" || this.responseType === "text") ? this.responseText : null,
           payload: parsedPayload,
         };
-
-        if (this.responseType === "" || this.responseType === "text") {
-          responseData.data = this.responseText;
-        } else {
-          responseData.data = null;
-        }
 
         cacheTrackEvents.responses.push(responseData);
       });
