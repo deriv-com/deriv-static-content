@@ -33,11 +33,17 @@ const getAppID = () => {
 };
 
 class FreshChat {
+  expiryInterval = null;
+
   constructor({ token = null, hideButton = false } = {}) {
     this.authToken = token;
     this.hideButton = hideButton;
-    const config_url = localStorage.getItem("config.server_url")?.replace(/^['"]+|['"]+$/g, "");
-    const config_appID = localStorage.getItem("config.app_id")?.replace(/^['"]+|['"]+$/g, "");
+    const config_url = localStorage
+      .getItem("config.server_url")
+      ?.replace(/^['"]+|['"]+$/g, "");
+    const config_appID = localStorage
+      .getItem("config.app_id")
+      ?.replace(/^['"]+|['"]+$/g, "");
     this.hostname =
       config_url && config_url.trim() !== "" ? config_url : "green.derivws.com";
     this.appId =
@@ -57,6 +63,8 @@ class FreshChat {
         appId: this.appId,
         server: this.hostname,
       });
+
+      this.manageJWTExpiry();
     }
 
     let fcScript = document.getElementById("fc-script");
@@ -86,6 +94,42 @@ class FreshChat {
         });
       }
     };
+  };
+
+  manageJWTExpiry = () => {
+    // Calculate the Unix timestamp for 2 hours from now
+    // const twoHoursFromNow = Math.floor(Date.now() / 1000) + 2 * 60 * 60;
+    const twoHoursFromNow = Math.floor(Date.now() / 1000) + 1 * 60;
+    const JwtExpiryKey = "freshchat_jwt_expiry";
+
+    localStorage.setItem(JwtExpiryKey, twoHoursFromNow.toString());
+
+    if (this.expiryInterval) {
+      clearInterval(this.expiryInterval);
+    }
+
+    const freshchat = this;
+    this.expiryInterval = setInterval(() => {
+      const expiry = localStorage.getItem(JwtExpiryKey);
+
+      if (expiry) {
+        const currentTime = Math.floor(Date.now() / 1000);
+        const remainingTime = parseInt(expiry, 10) - currentTime;
+
+        if (currentTime >= parseInt(expiry, 10)) {
+          clearInterval(this.expiryInterval);
+
+          // Do not reset iF user is interacting with CS
+          if (!window.fcWidget?.isOpen()) {
+            window.fcWidget?.destroy();
+            freshchat.init();
+          }
+        }
+      } else {
+        console.warn(`${JwtExpiryKey} is not set in localStorage.`);
+        clearInterval(this.expiryInterval);
+      }
+    }, 1000);
   };
 
   fetchJWTToken = async ({ token, appId, server }) => {
