@@ -98,10 +98,10 @@ class FreshChat {
 
   manageJWTExpiry = () => {
     // Calculate the Unix timestamp for 2 hours from now
-    const twoHoursFromNow = Math.floor(Date.now() / 1000) + 2 * 60 * 60;
+    const expiryTime = Math.floor(Date.now() / 1000) + 2 * 60 * 60;
     const JwtExpiryKey = "freshchat_jwt_expiry";
 
-    localStorage.setItem(JwtExpiryKey, twoHoursFromNow.toString());
+    localStorage.setItem(JwtExpiryKey, expiryTime.toString());
 
     if (this.expiryInterval) {
       clearInterval(this.expiryInterval);
@@ -113,7 +113,6 @@ class FreshChat {
 
       if (expiry) {
         const currentTime = Math.floor(Date.now() / 1000);
-        const remainingTime = parseInt(expiry, 10) - currentTime;
 
         if (currentTime >= parseInt(expiry, 10)) {
           clearInterval(this.expiryInterval);
