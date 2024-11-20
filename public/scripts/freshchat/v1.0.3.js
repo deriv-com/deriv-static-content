@@ -98,8 +98,7 @@ class FreshChat {
 
   manageJWTExpiry = () => {
     // Calculate the Unix timestamp for 2 hours from now
-    // const twoHoursFromNow = Math.floor(Date.now() / 1000) + 2 * 60 * 60;
-    const twoHoursFromNow = Math.floor(Date.now() / 1000) + 1 * 60;
+    const twoHoursFromNow = Math.floor(Date.now() / 1000) + 2 * 60 * 60;
     const JwtExpiryKey = "freshchat_jwt_expiry";
 
     localStorage.setItem(JwtExpiryKey, twoHoursFromNow.toString());
@@ -119,7 +118,7 @@ class FreshChat {
         if (currentTime >= parseInt(expiry, 10)) {
           clearInterval(this.expiryInterval);
 
-          // Do not reset iF user is interacting with CS
+          // Do not reset if user is interacting with CS
           if (!window.fcWidget?.isOpen()) {
             window.fcWidget?.destroy();
             freshchat.init();
