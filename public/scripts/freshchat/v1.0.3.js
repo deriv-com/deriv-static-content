@@ -1,30 +1,38 @@
 const DERIV_APP = "app.deriv.com";
-const STAGING_DERIV_APP = "staging-app.deriv.com";
-const UAT_DERIV_APP = "uat-app.deriv.com";
+const DERIV_APP_STAGING = "staging-app.deriv.com";
+const DERIV_APP_UAT = "uat-app.deriv.com";
 
 const SMART_TRADER = "smarttrader.deriv.com";
-const STAGING_SMART_TRADER = "staging-smarttrader.deriv.com";
+const SMART_TRADER_STAGING = "staging-smarttrader.deriv.com";
 
 const P2P = "p2p.deriv.com";
+
+const DBOT = "dbot.deriv.com";
+const DBOT_STAGING = "staging-dbot.deriv.com";
 
 const DOMAIN_LIST_APP_ID = {
   [DERIV_APP]: "16929",
   "app.deriv.be": "16929",
   "app.deriv.me": "16929",
-  [STAGING_DERIV_APP]: "16930",
+  [DERIV_APP_STAGING]: "16930",
   "staging-app.deriv.me": "16930",
   "staging-app.deriv.be": "16930",
-  [UAT_DERIV_APP]: "16929",
+  [DERIV_APP_UAT]: "16929",
   "test-app.deriv.com": "16929",
 
   [SMART_TRADER]: "22168",
   "smarttrader.deriv.me": "22168",
   "smarttrader.deriv.be": "22168",
-  [STAGING_SMART_TRADER]: "22169",
+  [SMART_TRADER_STAGING]: "22169",
   "staging-smarttrader.deriv.be": "22169",
   "staging-smarttrader.deriv.me": "22169",
 
   [P2P]: "61859",
+
+  [DBOT]: "65555",
+  "dbot.deriv.be": "65556",
+  "dbot.deriv.me": "65557",
+  [DBOT_STAGING]: "29934",
 };
 
 const getAppID = () => {
