@@ -44,9 +44,14 @@ class FreshChat {
 
     script.onload = function () {
       if (jwt) {
-        window.fcWidget?.user?.setProperties({
-          cf_user_jwt: jwt,
-        });
+        const checkWidget = setInterval(() => {
+          if (window.fcWidget?.user) {
+            window.fcWidget.user?.setProperties({
+              cf_user_jwt: jwt,
+            });
+            clearInterval(checkWidget);
+          }
+        }, 500);
       }
     };
   };
