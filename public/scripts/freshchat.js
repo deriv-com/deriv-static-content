@@ -9,7 +9,11 @@ class FreshChat {
   }
 
   static async initialize(options) {
-    return new FreshChat(options);
+    try {
+      return new FreshChat(options);
+    } catch (error) {
+      console.warn("Error initializing FreshChat:", error);
+    }
   }
 
   init = async () => {
