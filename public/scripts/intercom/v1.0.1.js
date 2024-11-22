@@ -2,8 +2,9 @@ const APP_ID = "1000005";
 const SERVER_URL = "qa83.deriv.dev";
 
 class DerivInterCom {
-  constructor({ token = null, hideLauncher = true } = {}) {
+  constructor({ token = null, hideLauncher = true, userData = null } = {}) {
     this.authToken = token;
+    this.userData = userData;
 
     this.intercomConfig = {
       app_id: "rfwdy059",
@@ -26,12 +27,16 @@ class DerivInterCom {
           server: SERVER_URL,
         });
 
+
         if (userHashData) {
           const { signature, user_id } = userHashData;
           this.intercomConfig = {
             ...this.intercomConfig,
+            api_base: "https://api-iam.intercom.io",
             user_id,
             user_hash: signature,
+            name: this.userData.name, //temp, to be removed
+            email: this.userData.email, //temp to be removed
           };
         } else {
           console.warn(
