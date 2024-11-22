@@ -73,8 +73,8 @@ class DerivInterCom {
             api_base: "https://api-iam.intercom.io",
             user_id,
             user_hash: signature,
-            name: this.userData.name, //temp, to be removed
-            email: this.userData.email, //temp to be removed
+            name: this.userData?.name, //temp, to be removed
+            email: this.userData?.email, //temp to be removed
           };
         } else {
           console.warn(
