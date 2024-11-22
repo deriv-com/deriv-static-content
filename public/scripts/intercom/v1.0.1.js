@@ -1,10 +1,51 @@
-const APP_ID = "1000005";
-const SERVER_URL = "qa83.deriv.dev";
+const DERIV_APP = "app.deriv.com";
+const STAGING_DERIV_APP = "staging-app.deriv.com";
+const UAT_DERIV_APP = "uat-app.deriv.com";
+
+const SMART_TRADER = "smarttrader.deriv.com";
+const STAGING_SMART_TRADER = "staging-smarttrader.deriv.com";
+
+const P2P = "p2p.deriv.com";
+
+const DOMAIN_LIST_APP_ID = {
+  [DERIV_APP]: "16929",
+  "app.deriv.be": "16929",
+  "app.deriv.me": "16929",
+  [STAGING_DERIV_APP]: "16930",
+  "staging-app.deriv.me": "16930",
+  "staging-app.deriv.be": "16930",
+  [UAT_DERIV_APP]: "16929",
+  "test-app.deriv.com": "16929",
+
+  [SMART_TRADER]: "22168",
+  "smarttrader.deriv.me": "22168",
+  "smarttrader.deriv.be": "22168",
+  [STAGING_SMART_TRADER]: "22169",
+  "staging-smarttrader.deriv.be": "22169",
+  "staging-smarttrader.deriv.me": "22169",
+
+  [P2P]: "61859",
+};
+
+const getAppID = () => {
+  const host = window.location.hostname;
+  return DOMAIN_LIST_APP_ID[host] || "16929";
+};
 
 class DerivInterCom {
   constructor({ token = null, hideLauncher = true, userData = null } = {}) {
     this.authToken = token;
     this.userData = userData;
+    const config_url = localStorage
+      .getItem("config.server_url")
+      ?.replace(/^['"]+|['"]+$/g, "");
+    const config_appID = localStorage
+      .getItem("config.app_id")
+      ?.replace(/^['"]+|['"]+$/g, "");
+    this.hostname =
+      config_url && config_url.trim() !== "" ? config_url : "green.derivws.com";
+    this.appId =
+      config_appID && config_appID.trim() !== "" ? config_appID : getAppID();
 
     this.intercomConfig = {
       app_id: "rfwdy059",
@@ -22,11 +63,8 @@ class DerivInterCom {
     try {
       if (this.authToken) {
         const userHashData = await this.fetchUserHash({
-          token: this.authToken,
-          appId: APP_ID,
-          server: SERVER_URL,
+          token: this.authToken
         });
-
 
         if (userHashData) {
           const { signature, user_id } = userHashData;
@@ -35,8 +73,8 @@ class DerivInterCom {
             api_base: "https://api-iam.intercom.io",
             user_id,
             user_hash: signature,
-            name: this.userData.name, //temp, to be removed
-            email: this.userData.email, //temp to be removed
+            name: this.userData?.name, //temp, to be removed
+            email: this.userData?.email, //temp to be removed
           };
         } else {
           console.warn(
@@ -69,10 +107,10 @@ class DerivInterCom {
     window.isInterComExists = true;
   };
 
-  fetchUserHash = async ({ token, appId, server }) => {
+  fetchUserHash = async ({ token }) => {
     try {
       const response = await fetch(
-        `https://${server}/websockets/service_token?app_id=${appId}&l=EN&brand=deriv`,
+        `https://${this.hostname}/websockets/service_token?app_id=${this.appId}&l=EN&brand=deriv`,
         {
           method: "POST",
           headers: {
