@@ -9,11 +9,7 @@ class FreshChat {
   }
 
   static async initialize(options) {
-    try {
-      return new FreshChat(options);
-    } catch (error) {
-      console.warn("Error initializing FreshChat:", error);
-    }
+    return new FreshChat(options);
   }
 
   init = async () => {
@@ -48,14 +44,9 @@ class FreshChat {
 
     script.onload = function () {
       if (jwt) {
-        const checkWidget = setInterval(() => {
-          if (window.fcWidget?.user) {
-            window.fcWidget.user?.setProperties({
-              cf_user_jwt: jwt,
-            });
-            clearInterval(checkWidget);
-          }
-        }, 500);
+        window.fcWidget?.user?.setProperties({
+          cf_user_jwt: jwt,
+        });
       }
     };
   };
