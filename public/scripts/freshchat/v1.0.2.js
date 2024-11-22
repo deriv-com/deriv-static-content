@@ -36,8 +36,12 @@ class FreshChat {
   constructor({ token = null, hideButton = false } = {}) {
     this.authToken = token;
     this.hideButton = hideButton;
-    const config_url = localStorage.getItem("config.server_url")?.replace(/^['"]+|['"]+$/g, "");
-    const config_appID = localStorage.getItem("config.app_id")?.replace(/^['"]+|['"]+$/g, "");
+    const config_url = localStorage
+      .getItem("config.server_url")
+      ?.replace(/^['"]+|['"]+$/g, "");
+    const config_appID = localStorage
+      .getItem("config.app_id")
+      ?.replace(/^['"]+|['"]+$/g, "");
     this.hostname =
       config_url && config_url.trim() !== "" ? config_url : "green.derivws.com";
     this.appId =
@@ -46,7 +50,11 @@ class FreshChat {
   }
 
   static async initialize(options) {
-    return new FreshChat(options);
+    try {
+      return new FreshChat(options);
+    } catch (error) {
+      console.warn("Error initializing FreshChat:", error);
+    }
   }
 
   init = async () => {
@@ -81,9 +89,14 @@ class FreshChat {
 
     script.onload = function () {
       if (jwt) {
-        window.fcWidget?.user?.setProperties({
-          cf_user_jwt: jwt,
-        });
+        const checkWidget = setInterval(() => {
+          if (window.fcWidget?.user) {
+            window.fcWidget.user?.setProperties({
+              cf_user_jwt: jwt,
+            });
+            clearInterval(checkWidget);
+          }
+        }, 500);
       }
     };
   };

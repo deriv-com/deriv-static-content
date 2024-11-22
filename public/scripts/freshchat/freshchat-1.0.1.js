@@ -36,8 +36,12 @@ class FreshChat {
   constructor({ token = null, hideButton = false } = {}) {
     this.authToken = token;
     this.hideButton = hideButton;
-    const config_url = localStorage.getItem("config.server_url")?.replace(/^['"]+|['"]+$/g, "");
-    const config_appID = localStorage.getItem("config.app_id")?.replace(/^['"]+|['"]+$/g, "");
+    const config_url = localStorage
+      .getItem("config.server_url")
+      ?.replace(/^['"]+|['"]+$/g, "");
+    const config_appID = localStorage
+      .getItem("config.app_id")
+      ?.replace(/^['"]+|['"]+$/g, "");
     this.hostname =
       config_url && config_url.trim() !== "" ? config_url : "green.derivws.com";
     this.appId =
