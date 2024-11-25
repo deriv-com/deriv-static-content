@@ -33,9 +33,8 @@ const getAppID = () => {
 };
 
 class DerivInterCom {
-  constructor({ token = null, hideLauncher = true, userData = null } = {}) {
+  constructor({ token = null, hideLauncher = true } = {}) {
     this.authToken = token;
-    this.userData = userData;
     const config_url = localStorage
       .getItem("config.server_url")
       ?.replace(/^['"]+|['"]+$/g, "");
@@ -67,14 +66,15 @@ class DerivInterCom {
         });
 
         if (userHashData) {
-          const { signature, user_id } = userHashData;
+          const { signature, name, email, phone, user_id } = userHashData;
           this.intercomConfig = {
             ...this.intercomConfig,
             api_base: "https://api-iam.intercom.io",
             user_id,
             user_hash: signature,
-            name: this.userData?.name, //temp, to be removed
-            email: this.userData?.email, //temp to be removed
+            name: name,
+            email: email,
+            phone: phone
           };
         } else {
           console.warn(
