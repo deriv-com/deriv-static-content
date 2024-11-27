@@ -217,11 +217,13 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
   /* end handling date first contact */
 
   /* start handling gclid */
-  if (searchParams.has("gclid")) {
+  const gclid = searchParams.has("gclid")
+  const gclid_url = searchParams.has("gclid_url")
+  const final_gclid = gclid || gclid_url
+  
+  if (final_gclid) {
     eraseCookie("gclid");
-    document.cookie = `gclid=${searchParams.get(
-      "gclid"
-    )};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+    document.cookie = `gclid=${final_gclid};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
   }
   /* end handling gclid */
 })();
