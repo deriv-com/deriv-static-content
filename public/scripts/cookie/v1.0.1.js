@@ -224,6 +224,10 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
   if (!!final_gclid) {
     eraseCookie("gclid");
     document.cookie = `gclid=${final_gclid};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+
+    // TEMP: remove this after testing
+    eraseCookie("temp_gid");
+    document.cookie = `temp_gid=${final_gclid};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
   }
   /* end handling gclid */
 })();
