@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import customTransform from "./release.utils.mjs"
 
-module.exports = {
+export default {
     branches: [
         "+([0-9])?(.{+([0-9]),x}).x",
         "master",
