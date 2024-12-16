@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-import transform from './release.utils'
+import customTransform from "../release.utils"
 
 module.exports = {
     branches: [
@@ -62,7 +62,7 @@ module.exports = {
                     mergePattern: /^Merge pull request #(\d+) from (.*)$/,
                     mergeCorrespondence: ["id", "source"],
                 },
-                writerOpts: { transform: transform },
+                writerOpts: { transform: customTransform },
             },
         ],
         "@semantic-release/changelog",

@@ -215,4 +215,4 @@ const customTransform = (commit, context) => {
     return commitObject;
 };
 
-module.exports = customTransform;
+export default customTransform;
