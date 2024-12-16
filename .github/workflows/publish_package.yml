@@ -1,4 +1,4 @@
-name: Release Packages
+name: Publish Packages
 
 on:
   push:
@@ -16,40 +16,46 @@ jobs:
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
 
       - name: Set up Node.js
-        uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8
+        uses: actions/setup-node@3e9b95f53d189266c2d3828f91d3a4477ab163d3
         with:
           node-version: '20'
-      - name: Install dependencies
-        run: npm install
+
 
       - name: Check changes in marketing-scripts
         id: marketing-changes
         run: |
           if git diff --quiet HEAD^ HEAD -- public/scripts/marketing-scripts/src/; then
-            echo "No changes in marketing-scripts"
             echo "changed=false" >> $GITHUB_ENV
           else
-            echo "Changes detected in marketing-scripts"
             echo "changed=true" >> $GITHUB_ENV
           fi
+        continue-on-error: true 
+
 
       - name: Check changes in cs-scripts
         id: cs-changes
         run: |
           if git diff --quiet HEAD^ HEAD -- public/scripts/cs-scripts/src/; then
-            echo "No changes in cs-scripts"
             echo "changed=false" >> $GITHUB_ENV
           else
-            echo "Changes detected in cs-scripts"
             echo "changed=true" >> $GITHUB_ENV
           fi
+        continue-on-error: true 
 
-      - name: Release marketing-scripts
+     
+      - name: Install dependencies and build marketing-scripts
         if: ${{ env.changed == 'true' && steps.marketing-changes.outputs.changed == 'true' }}
         working-directory: public/scripts/marketing-scripts
-        run: npx semantic-release
+        run: |
+          npm install
+          npm run build
+          npx semantic-release
 
-      - name: Release cs-scripts
+   
+      - name: Install dependencies and build cs-scripts
         if: ${{ env.changed == 'true' && steps.cs-changes.outputs.changed == 'true' }}
         working-directory: public/scripts/cs-scripts
-        run: npx semantic-release
+        run: |
+          npm install
+          npm run build
+          npx semantic-release
