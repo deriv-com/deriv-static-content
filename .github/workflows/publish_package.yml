@@ -23,41 +23,18 @@ jobs:
           node-version: '20'
 
 
-      - name: Check changes in marketing-scripts
-        id: marketing-changes
-        run: |
-          if git diff --quiet HEAD^ HEAD -- public/scripts/marketing-scripts/src/; then
-            echo "changed=false" >> $GITHUB_ENV
-          else
-            echo "changed=true" >> $GITHUB_ENV
-          fi
-        continue-on-error: true 
-
-
-      - name: Check changes in cs-scripts
-        id: cs-changes
-        run: |
-          if git diff --quiet HEAD^ HEAD -- public/scripts/cs-scripts/src/; then
-            echo "changed=false" >> $GITHUB_ENV
-          else
-            echo "changed=true" >> $GITHUB_ENV
-          fi
-        continue-on-error: true 
-
-     
-      - name: Install dependencies and build marketing-scripts
-        if: ${{ env.changed == 'true' && steps.marketing-changes.outputs.changed == 'true' }}
+      - name: Install dependencies, build and publish marketing-scripts
         working-directory: public/scripts/marketing-scripts
         run: |
           npm install
           npm run build
           npx semantic-release
 
-   
-      - name: Install dependencies and build cs-scripts
-        if: ${{ env.changed == 'true' && steps.cs-changes.outputs.changed == 'true' }}
+      - name: Install dependencies, build and publish cs-scripts
         working-directory: public/scripts/cs-scripts
         run: |
           npm install
           npm run build
           npx semantic-release
+
+
