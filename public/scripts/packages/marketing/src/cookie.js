@@ -224,10 +224,6 @@ const getDomain = () => {
     if (!!final_gclid) {
       eraseCookie("gclid");
       document.cookie = `gclid=${final_gclid}; expires=Tue, 19 Jan 9999 03:14:07 UTC; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
-  
-      // TEMP: remove this after testing
-      eraseCookie("temp_gid");
-      document.cookie = `temp_gid=${final_gclid}; expires=Tue, 19 Jan 9999 03:14:07 UTC; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
     }
     /* end handling gclid */
   })();
