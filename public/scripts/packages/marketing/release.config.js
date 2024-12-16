@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const transform = require("./release.utils");
+import transform from './release.utils'
 
 module.exports = {
     branches: [
