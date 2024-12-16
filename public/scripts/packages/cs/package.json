@@ -1,0 +1,12 @@
+{
+    "name": "@deriv-com/cs-scripts",
+    "type": "module",
+    "version": "0.1.0",
+    "scripts": {
+        "build": "node build.js"
+    },
+    "dependencies": {
+        "esbuild": "^0.24.0",
+        "glob": "^11.0.0"
+    }
+}
