@@ -62,7 +62,7 @@ module.exports = {
                     mergePattern: /^Merge pull request #(\d+) from (.*)$/,
                     mergeCorrespondence: ["id", "source"],
                 },
-                writerOpts: { transform: transform },
+                writerOpts: { transform: customTransform },
             },
         ],
         "@semantic-release/changelog",
