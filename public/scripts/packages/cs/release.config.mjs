@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-import customTransform from "../cs/release.utils.js"
+import customTransform from "./release.utils.mjs"
 
 module.exports = {
     branches: [
@@ -10,7 +10,7 @@ module.exports = {
         { name: "beta", prerelease: true },
         { name: "alpha", prerelease: true },
     ],
-    repositoryUrl: "git@github.com:deriv-com/marketing-scripts.git",
+    repositoryUrl: "git@github.com:deriv-com/cs-scripts.git",
     plugins: [
         [
             "@semantic-release/commit-analyzer",

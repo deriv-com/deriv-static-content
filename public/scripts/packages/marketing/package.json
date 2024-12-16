@@ -8,5 +8,8 @@
     "dependencies": {
         "esbuild": "^0.24.0",
         "glob": "^11.0.0"
+    },
+    "devDependencies": {
+        "@semantic-release/changelog": "^6.0.3"
     }
 }
