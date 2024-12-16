@@ -24,14 +24,14 @@ jobs:
 
 
       - name: Install dependencies, build and publish marketing-scripts
-        working-directory: public/scripts/marketing-scripts
+        working-directory: public/scripts/packages/marketing
         run: |
           npm install
           npm run build
           npx semantic-release
 
       - name: Install dependencies, build and publish cs-scripts
-        working-directory: public/scripts/cs-scripts
+        working-directory: public/scripts/packages/cs
         run: |
           npm install
           npm run build
