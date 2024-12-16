@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-import transform from './release.utils'
+import customTransform from "../release.utils"
 
 module.exports = {
     branches: [
