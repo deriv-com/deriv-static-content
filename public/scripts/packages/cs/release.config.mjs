@@ -10,7 +10,7 @@ module.exports = {
         { name: "beta", prerelease: true },
         { name: "alpha", prerelease: true },
     ],
-    repositoryUrl: "git@github.com:deriv-com/cs-scripts.git",
+    repositoryUrl: "git@github.com:deriv-com/deriv-static-content.git",
     plugins: [
         [
             "@semantic-release/commit-analyzer",
@@ -66,6 +66,13 @@ module.exports = {
             },
         ],
         "@semantic-release/changelog",
+        [
+            "@semantic-release/exec",
+            {
+              prepareCmd: "cd public/scripts/packages/cs && npm run build",
+              publishCmd: "cd public/scripts/packages/cs && npm run publish",
+            },
+          ],
         [
             "@semantic-release/npm",
             {

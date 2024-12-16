@@ -3,13 +3,15 @@
     "version": "0.1.0",
     "type": "module",
     "scripts": {
-        "build": "node build.js"
+        "build": "node build.js",
+        "publish": "npm publish --registry=https://registry.npmjs.org"
     },
     "dependencies": {
         "esbuild": "^0.24.0",
         "glob": "^11.0.0"
     },
     "devDependencies": {
-        "@semantic-release/changelog": "^6.0.3"
+        "@semantic-release/changelog": "^6.0.3",
+        "@semantic-release/exec": "^6.0.3"
     }
 }

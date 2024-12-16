@@ -1,77 +1,84 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-import customTransform from "../cs/release.utils.mjs"
+import customTransform from "../cs/release.utils.mjs";
 
-export default  {
-    branches: [
-        "+([0-9])?(.{+([0-9]),x}).x",
-        "master",
-        "next",
-        "next-major",
-        { name: "beta", prerelease: true },
-        { name: "alpha", prerelease: true },
+export default {
+  branches: [
+    "+([0-9])?(.{+([0-9]),x}).x",
+    "master",
+    "next",
+    "next-major",
+    { name: "beta", prerelease: true },
+    { name: "alpha", prerelease: true },
+  ],
+  repositoryUrl: "git@github.com:deriv-com/deriv-static-content.git",
+  plugins: [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        releaseRules: [
+          {
+            type: "feat",
+            release: "minor",
+          },
+          {
+            type: "build",
+            release: "patch",
+          },
+          {
+            type: "ci",
+            release: "patch",
+          },
+          {
+            type: "chore",
+            release: "patch",
+          },
+          {
+            type: "docs",
+            release: "patch",
+          },
+          {
+            type: "refactor",
+            release: "patch",
+          },
+          {
+            type: "style",
+            release: "patch",
+          },
+          {
+            type: "test",
+            release: "patch",
+          },
+          {
+            type: "fix",
+            release: "patch",
+          },
+        ],
+      },
     ],
-    repositoryUrl: "git@github.com:deriv-com/marketing-scripts.git",
-    plugins: [
-        [
-            "@semantic-release/commit-analyzer",
-            {
-                releaseRules: [
-                    {
-                        type: "feat",
-                        release: "minor",
-                    },
-                    {
-                        type: "build",
-                        release: "patch",
-                    },
-                    {
-                        type: "ci",
-                        release: "patch",
-                    },
-                    {
-                        type: "chore",
-                        release: "patch",
-                    },
-                    {
-                        type: "docs",
-                        release: "patch",
-                    },
-                    {
-                        type: "refactor",
-                        release: "patch",
-                    },
-                    {
-                        type: "style",
-                        release: "patch",
-                    },
-                    {
-                        type: "test",
-                        release: "patch",
-                    },
-                    {
-                        type: "fix",
-                        release: "patch",
-                    },
-                ],
-            },
-        ],
-        [
-            "@semantic-release/release-notes-generator",
-            {
-                parserOpts: {
-                    mergePattern: /^Merge pull request #(\d+) from (.*)$/,
-                    mergeCorrespondence: ["id", "source"],
-                },
-                writerOpts: { transform: customTransform },
-            },
-        ],
-        "@semantic-release/changelog",
-        [
-            "@semantic-release/npm",
-            {
-                npmPublish: true,
-            },
-        ],
-        "@semantic-release/github",
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        parserOpts: {
+          mergePattern: /^Merge pull request #(\d+) from (.*)$/,
+          mergeCorrespondence: ["id", "source"],
+        },
+        writerOpts: { transform: customTransform },
+      },
     ],
+    "@semantic-release/changelog",
+    [
+      "@semantic-release/exec",
+      {
+        prepareCmd: "cd public/scripts/packages/marketing && npm run build",
+        publishCmd: "cd public/scripts/packages/marketing && npm run publish",
+      },
+    ],
+    [
+      "@semantic-release/npm",
+      {
+        npmPublish: true,
+      },
+    ],
+    "@semantic-release/github",
+  ],
 };
