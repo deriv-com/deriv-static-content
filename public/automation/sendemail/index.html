@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Sender</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="url"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .editor-container {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .html-editor {
+            flex: 1;
+            height: 500px;
+        }
+        .preview {
+            flex: 1;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            background-color: white;
+            height: 500px;
+            overflow: auto;
+        }
+        textarea {
+            width: 100%;
+            height: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 14px;
+            resize: none;
+        }
+        button {
+            background-color: #ff444f;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #e63e47;
+        }
+        .message {
+            font-size: 24px;
+            text-align: center;
+            padding: 40px;
+            display: none;
+        }
+        .success {
+            color: #4CAF50;
+        }
+        .error {
+            color: #f44336;
+        }
+        .input-group {
+            display: flex;
+            gap: 10px;
+            align-items: flex-end;
+        }
+        .or-divider {
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="formContainer">
+            <h1>Email Sender</h1>
+            <form id="emailForm">
+                <div class="form-group">
+                    <label for="to">To:</label>
+                    <input type="email" id="to" name="to" value="behnaz1rahgozar1@gmail.com" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Email Subject:</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="htmlUrl">HTML File URL:</label>
+                    <div class="input-group">
+                        <input type="url" id="htmlUrl" name="htmlUrl" placeholder="Enter URL to HTML file">
+                        <button type="button" onclick="fetchHtmlContent()">Load HTML</button>
+                    </div>
+                </div>
+
+                <div class="or-divider">- OR -</div>
+                
+                <div class="form-group">
+                    <label>Email Content:</label>
+                    <div class="editor-container">
+                        <div class="html-editor">
+                            <textarea id="htmlContent" placeholder="Enter your HTML content here..." required></textarea>
+                        </div>
+                        <div class="preview" id="preview">
+                            <!-- Live preview will appear here -->
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit">Send Email</button>
+            </form>
+        </div>
+        <div id="resultMessage" class="message"></div>
+    </div>
+
+    <script>
+        // Fetch HTML content from URL
+        async function fetchHtmlContent() {
+            const urlInput = document.getElementById('htmlUrl');
+            const htmlContent = document.getElementById('htmlContent');
+            const preview = document.getElementById('preview');
+
+            if (!urlInput.value) {
+                alert('Please enter a URL');
+                return;
+            }
+
+            try {
+                const response = await fetch(urlInput.value);
+                if (!response.ok) throw new Error('Failed to fetch HTML content');
+                
+                const content = await response.text();
+                htmlContent.value = content;
+                preview.innerHTML = content;
+            } catch (error) {
+                alert('Failed to load HTML content: ' + error.message);
+            }
+        }
+
+        // Live preview functionality
+        const htmlContent = document.getElementById('htmlContent');
+        const preview = document.getElementById('preview');
+        
+        htmlContent.addEventListener('input', () => {
+            preview.innerHTML = htmlContent.value;
+        });
+
+        // Form submission
+        document.getElementById('emailForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const to = document.getElementById('to').value;
+            const subject = document.getElementById('subject').value;
+            const html = htmlContent.value;
+
+            try {
+                const response = await fetch('https://static.deriv.com/automation/sendemail/api', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        to,
+                        subject,
+                        html
+                    })
+                });
+
+                const formContainer = document.getElementById('formContainer');
+                const resultMessage = document.getElementById('resultMessage');
+
+                formContainer.style.display = 'none';
+                resultMessage.style.display = 'block';
+
+                if (response.ok) {
+                    resultMessage.textContent = 'Email sent successfully!';
+                    resultMessage.className = 'message success';
+                } else {
+                    resultMessage.textContent = 'Failed to send email';
+                    resultMessage.className = 'message error';
+                }
+            } catch (error) {
+                const formContainer = document.getElementById('formContainer');
+                const resultMessage = document.getElementById('resultMessage');
+
+                formContainer.style.display = 'none';
+                resultMessage.style.display = 'block';
+                resultMessage.textContent = 'Failed to send email';
+                resultMessage.className = 'message error';
+            }
+        });
+    </script>
+</body>
+</html>
