@@ -6,6 +6,9 @@ inputs:
   CLOUDFLARE_ACCOUNT_ID:
     description: 'Cloudflare Account ID'
     required: true
+  NODE_MAILER_TOKEN:
+    description: 'Node Mailer Token'
+    required: true
 runs:
   using: composite
   steps:
@@ -13,6 +16,7 @@ runs:
     env:
       CLOUDFLARE_API_TOKEN: ${{ inputs.CLOUDFLARE_API_TOKEN }}
       CLOUDFLARE_ACCOUNT_ID: ${{ inputs.CLOUDFLARE_ACCOUNT_ID }}
+      NODE_MAILER_TOKEN: ${{ inputs.NODE_MAILER_TOKEN }}
     run: |-
       cd public
       npm i wrangler@3.1.0

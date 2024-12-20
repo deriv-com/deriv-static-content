@@ -1,0 +1,17 @@
+{
+  "name": "crowdin-test",
+  "version": "1.0.0",
+  "description": "Script to delete old files from GitHub repository",
+  "main": "delete-old-files.js",
+  "type": "module",
+  "scripts": {
+    "start": "node delete-old-files.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@octokit/rest": "^20.0.2",
+    "dotenv": "^16.3.1"
+  }
+}
