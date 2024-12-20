@@ -3,7 +3,6 @@ import { resolve, join } from "path";
 import { rmSync, mkdirSync } from "fs";
 import { globSync } from "glob";
 
-const srcDir = resolve("src");
 const distDir = resolve("dist");
 
 rmSync(distDir, { recursive: true, force: true });
