@@ -33,15 +33,23 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Check if marketing directory exists
+        run: |
+            if [ -d "/home/runner/work/deriv-static-content/deriv-static-content/public/scripts/packages/marketing" ]; then
+              echo "Directory exists!"
+            else
+              echo "Directory does not exist!"
+              exit 1
+            fi
       - name: Install dependencies, build and publish marketing-scripts
-        working-directory: public/scripts/packages/marketing
+        working-directory: /home/runner/work/deriv-static-content/deriv-static-content/public/scripts/packages/marketing
         run: |
           npm install
           npm run build
           npx semantic-release
 
       - name: Install dependencies, build and publish cs-scripts
-        working-directory: public/scripts/packages/cs
+        working-directory: /home/runner/work/deriv-static-content/deriv-static-content/public/scripts/packages/cs
         run: |
           npm install
           npm run build
