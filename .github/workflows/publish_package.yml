@@ -31,20 +31,15 @@ jobs:
         with:
           node-version: '20'
 
-      - name: List directory structure
-        run: |
-            ls -R /home/runner/work/deriv-static-content/deriv-static-content/public/scripts
-
-
       - name: Install dependencies, build and publish marketing-scripts
-        working-directory: public/scripts/packages/marketing
+        working-directory: /home/runner/work/deriv-static-content/deriv-static-content/public/scripts/packages/marketing
         run: |
           npm install
           npm run build
           npx semantic-release
 
       - name: Install dependencies, build and publish cs-scripts
-        working-directory: public/scripts/packages/cs
+        working-directory: /home/runner/work/deriv-static-content/deriv-static-content/public/scripts/packages/cs
         run: |
           npm install
           npm run build
