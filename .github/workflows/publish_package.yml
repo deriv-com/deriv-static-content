@@ -1,10 +1,10 @@
 name: Publish Packages
 
 on:
-  push:
-    branches:
-      - master
-      - publish_workflow
+    release:
+        types: [published]
+    push:
+        branches: [master]
 
 jobs:
   release:
