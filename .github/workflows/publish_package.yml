@@ -1,10 +1,12 @@
 name: Publish Packages
 
 on:
-    release:
-        types: [published]
-    push:
-        branches: [master]
+  release:
+    types: [published]
+  push:
+    branches: [master]
+    paths:
+      - 'public/scripts/packages/**' 
 
 jobs:
   release:
@@ -17,9 +19,9 @@ jobs:
       pull-requests: write # to be able to comment on released pull requests
       id-token: write # to enable use of OIDC for npm provenance
     env:
-        CI: true
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN}}
+      CI: true
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
@@ -52,5 +54,3 @@ jobs:
           npm install
           npm run build
           npx semantic-release
-
-
