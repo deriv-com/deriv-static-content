@@ -10,10 +10,6 @@ jobs:
   release:
     name: Release Packages
     runs-on: ubuntu-latest
-    env:
-      CI: true
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN}}
     steps:
       - name: Checkout repository
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
@@ -35,6 +31,10 @@ jobs:
 
       - name: Install dependencies, build and publish cs-scripts
         working-directory: public/scripts/packages/cs
+        env:
+          CI: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN}}
         run: |
           npm install
           npm run build
