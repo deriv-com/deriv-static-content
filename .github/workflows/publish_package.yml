@@ -31,6 +31,11 @@ jobs:
         with:
           node-version: '20'
 
+      - name: List repository directory structure
+        run: |
+          echo "Listing repository structure:"
+          ls -R /home/runner/work/deriv-static-content/deriv-static-content/
+
 
       - name: Install dependencies, build and publish marketing-scripts
         working-directory: ../../public/scripts/packages/marketing
