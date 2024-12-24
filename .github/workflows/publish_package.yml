@@ -32,16 +32,25 @@ jobs:
         uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8
         with:
           node-version: '20'
-          
+
+      - name: Configure npm auth
+        run: |
+          npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}
+
+      - name: Debug npm auth
+        run: |
+          echo "Registry: $(npm config get registry)"
+          npm whoami || echo "Authentication failed!"
+
       - name: Install dependencies, build and publish marketing-scripts
-        working-directory: /home/runner/work/deriv-static-content/deriv-static-content/public/scripts/packages/marketing
+        working-directory: public/scripts/packages/marketing
         run: |
           npm install
           npm run build
           npx semantic-release
 
       - name: Install dependencies, build and publish cs-scripts
-        working-directory: /home/runner/work/deriv-static-content/deriv-static-content/public/scripts/packages/cs
+        working-directory: public/scripts/packages/cs
         run: |
           npm install
           npm run build
