@@ -2,6 +2,10 @@
     "name": "@deriv-com/cs-scripts",
     "type": "module",
     "version": "0.1.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/deriv-com/deriv-static-content.git"
+    },
     "scripts": {
         "build": "node build.js",
         "publish": "npm publish --registry=https://registry.npmjs.org"
