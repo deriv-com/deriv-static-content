@@ -66,12 +66,6 @@ export default {
       },
     ],
     "@semantic-release/changelog",
-    [
-      "@semantic-release/exec",
-      {
-        prepareCmd: "npm run build"
-      },
-    ],
     "@semantic-release/github",
   ],
 };
