@@ -1,7 +1,7 @@
 /* utility functions */
 const getDomain = () => {
   const host_domain = location.hostname;
-  const allowed_domains = ["deriv.com", "binary.sx"];
+  const allowed_domains = ["deriv.com", "binary.sx","webflow.io"];
 
   const matched_domain = allowed_domains.find((allowed_domain) =>
     host_domain.includes(allowed_domain)
