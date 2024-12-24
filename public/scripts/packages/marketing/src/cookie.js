@@ -217,4 +217,3 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
   }
   /* end handling gclid */
 })();
-// trigger publish
