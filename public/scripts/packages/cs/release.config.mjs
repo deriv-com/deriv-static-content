@@ -72,12 +72,6 @@ export default {
               prepareCmd: "npm run build"
             },
           ],
-        [
-            "@semantic-release/npm",
-            {
-                npmPublish: true,
-            },
-        ],
         "@semantic-release/github",
     ],
 };
