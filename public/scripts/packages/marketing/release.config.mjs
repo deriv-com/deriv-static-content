@@ -69,8 +69,7 @@ export default {
     [
       "@semantic-release/exec",
       {
-        prepareCmd: "npm run build",
-        publishCmd: "npm run publish",
+        prepareCmd: "npm run build"
       },
     ],
     [

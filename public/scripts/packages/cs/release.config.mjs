@@ -69,8 +69,7 @@ export default {
         [
             "@semantic-release/exec",
             {
-              prepareCmd: "cd public/scripts/packages/cs && npm run build",
-              publishCmd: "cd public/scripts/packages/cs && npm run publish",
+              prepareCmd: "npm run build"
             },
           ],
         [
