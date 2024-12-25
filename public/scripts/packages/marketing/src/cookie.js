@@ -216,4 +216,4 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
     document.cookie = `gclid=${final_gclid}; expires=Tue, 19 Jan 9999 03:14:07 UTC; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
   }
   /* end handling gclid */
-})(); //---
+})(); 
