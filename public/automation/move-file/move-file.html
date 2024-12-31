@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move File</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .help-text {
+            color: #666;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            height: 33px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #0066cc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0052a3;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <h1>Move File</h1>
+    <form id="moveFileForm" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+            <label for="language">Language:</label>
+            <select id="language" name="language" style="height: 33px; font-size: 16px; padding: 0 8px;">
+                <option value="">Original (no suffix)</option>
+                <option value="-pt">Portuguese (-pt)</option>
+                <option value="-es">Spanish (-es)</option>
+                <option value="-fr">French (-fr)</option>
+                <option value="-ru">Russian (-ru)</option>
+                <option value="-id">Indonesian (-id)</option>
+                <option value="-vi">Vietnamese (-vi)</option>
+                <option value="-ar">Arabic (-ar)</option>
+                <option value="-sw">Swahili (-sw)</option>
+                <option value="-th">Thai (-th)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="sourcePath">Source File Path: (Full absolute path required)</label>
+            <input type="text" id="sourcePath" name="sourcePath" required 
+                   value="/Users/behnazrahgozar/Downloads/open-cr3-row.html">
+            <div class="help-text">Example: /Users/username/Downloads/filename.html</div>
+        </div>
+        <div class="form-group">
+            <label for="destPath">Destination Path: (Full absolute path required)</label>
+            <textarea id="destPath" name="destPath" required
+                      style="width: 80%; height: 60px; padding: 8px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; font-size: 16px; resize: vertical;">/Users/behnazrahgozar/Documents/source/deriv-static-content/public/email/templates/open-cr3-row.html</textarea>
+            <div class="help-text">Example: /Users/username/Documents/source/deriv-static-content/public/email/templates/filename.html</div>
+        </div>
+        <button type="submit">Move File</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        function updateDestPath() {
+            const sourcePath = document.getElementById('sourcePath').value;
+            const language = document.getElementById('language').value;
+            const destPathInput = document.getElementById('destPath');
+            
+            // Get the filename from source path
+            const filename = sourcePath.split('/').pop();
+            
+            // Get base filename without extension
+            const baseFilename = filename.replace('.html', '');
+            
+            // Create new filename with language suffix
+            const newFilename = language ? `${baseFilename}${language}.html` : filename;
+            
+            // Replace filename in destination path
+            const destDir = destPathInput.value.split('/').slice(0, -1).join('/');
+            destPathInput.value = `${destDir}/${newFilename}`;
+        }
+
+        // Add event listeners
+        document.getElementById('language').addEventListener('change', updateDestPath);
+        document.getElementById('sourcePath').addEventListener('input', updateDestPath);
+        
+        // Update destination path when page loads
+        document.addEventListener('DOMContentLoaded', updateDestPath);
+
+        async function handleSubmit(event) {
+            event.preventDefault();
+            
+            const sourcePath = document.getElementById('sourcePath').value;
+            const destPath = document.getElementById('destPath').value;
+            const resultDiv = document.getElementById('result');
+
+            // Validate paths
+            if (!sourcePath.startsWith('/')) {
+                resultDiv.innerHTML = `
+                    <div class="error">
+                        <h3>Error</h3>
+                        <p>Source path must be an absolute path starting with /</p>
+                    </div>
+                `;
+                return;
+            }
+
+            if (!destPath.startsWith('/')) {
+                resultDiv.innerHTML = `
+                    <div class="error">
+                        <h3>Error</h3>
+                        <p>Destination path must be an absolute path starting with /</p>
+                    </div>
+                `;
+                return;
+            }
+
+            try {
+                const response = await fetch('http://localhost:3001/move-file', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        sourcePath,
+                        destPath
+                    })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    resultDiv.innerHTML = `
+                        <div class="success">
+                            <h3>Success!</h3>
+                            <p>${data.message}</p>
+                        </div>
+                    `;
+                } else {
+                    throw new Error(data.error || 'Failed to move file');
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="error">
+                        <h3>Error</h3>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
