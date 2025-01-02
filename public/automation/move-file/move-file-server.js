@@ -7,9 +7,172 @@ const util = require('util');
 const execPromise = util.promisify(exec);
 
 const app = express();
-
 app.use(cors());
 app.use(express.json());
+
+// Log all incoming requests
+app.use((req, res, next) => {
+    console.log(`${req.method} ${req.path}`);
+    next();
+});
+
+const portugueseSocialLinks = `
+                        <tr>
+                            <td align="center" class="darkmodeblack" style="padding: 20px 0; ">
+                                <p style="word-spacing: 13px !important;">
+                                    <a href="https://www.facebook.com/derivportugues" style="text-decoration: none;"><img alt="Deriv.com on Facebook" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/facebook-md.png" title="Deriv.com on Facebook" width="32" /> </a>
+                                    <a href="https://www.instagram.com/deriv_portugues/" style="text-decoration: none;"> <img alt="Deriv.com on Instagram" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/instagram-md.png" title="Deriv.com on Instagram" width="32" /> </a>
+                                    <a href="https://twitter.com/DerivPortugues" target="_blank"> <img alt="Deriv.com on Twitter" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/x-twitter-md.png" width="32" title="Deriv.com on Twitter" /> </a>
+                                    <a href="https://youtube.com/@deriv.partners" style="text-decoration: none;"> <img alt="Deriv.com on Youtube" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/youtube-md.png" title="Deriv.com on Youtube" width="32" /> </a>
+                                    <a href="https://www.linkedin.com/company/derivdotcom/" style="text-decoration: none;"> <img alt="Deriv.com on Linkedin" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/linkedin-md.png" title="Deriv.com on Linkedin" width="32" /> </a> 
+                                    <a href="https://t.me/Derivchannelofficial" target="_blank"><img alt="Deriv.com on Telegram" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/telegram-md.png" style="height: 32px;" title="Deriv.com on Telegram" width="32" /></a>
+                                    <a href="https://www.whatsapp.com/channel/0029VarCZIJElagmHfGETR1F" style="text-decoration: none;"> <img alt="Deriv.com on WhatsApp" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/whatsapp-md.png" title="Deriv.com on WhatsApp" width="32" /> </a>
+                                </p>
+                            </td>
+                        </tr>`;
+
+const frenchSocialLinks = `
+                        <tr>
+                            <td align="center" class="darkmodeblack" style="padding: 20px 0; ">
+                                <p style="word-spacing: 13px !important;">
+                                    <a href="https://www.facebook.com/FrenchDeriv/" style="text-decoration: none;"><img alt="Deriv.com on Facebook" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/facebook-md.png" title="Deriv.com on Facebook" width="32" /> </a>
+                                    <a href="https://www.instagram.com/deriv_french/" style="text-decoration: none;"> <img alt="Deriv.com on Instagram" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/instagram-md.png" title="Deriv.com on Instagram" width="32" /> </a>
+                                    <a href="https://x.com/DerivFrench" target="_blank"> <img alt="Deriv.com on Twitter" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/x-twitter-md.png" width="32" title="Deriv.com on Twitter" /> </a>
+                                    <a href="https://www.youtube.com/@deriv" style="text-decoration: none;"> <img alt="Deriv.com on Youtube" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/youtube-md.png" title="Deriv.com on Youtube" width="32" /> </a>
+                                    <a href="https://www.linkedin.com/company/derivdotcom/" style="text-decoration: none;"> <img alt="Deriv.com on Linkedin" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/linkedin-md.png" title="Deriv.com on Linkedin" width="32" /> </a> 
+                                    <a href="https://t.me/Derivchannelofficial" target="_blank"><img alt="Deriv.com on Telegram" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/telegram-md.png" style="height: 32px;" title="Deriv.com on Telegram" width="32" /></a>
+                                    <a href="https://www.whatsapp.com/channel/0029ValhAfw2v1J0pYqBlB3b" style="text-decoration: none;"> <img alt="Deriv.com en WhatsApp" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/whatsapp-md.png" title="Deriv.com en WhatsApp" width="32" /> </a>
+                                </p>
+                            </td>
+                        </tr>`;
+
+const spanishSocialLinks = `
+                        <tr>
+                            <td align="center" class="darkmodeblack" style="padding: 20px 0; ">
+                                <p style="word-spacing: 13px !important;">
+                                    <a href="https://www.facebook.com/derivespanol" style="text-decoration: none;"><img alt="Deriv.com on Facebook" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/facebook-md.png" title="Deriv.com on Facebook" width="32" /> </a>
+                                    <a href="https://www.instagram.com/deriv_espanol/" style="text-decoration: none;"> <img alt="Deriv.com on Instagram" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/instagram-md.png" title="Deriv.com on Instagram" width="32" /> </a>
+                                    <a href="https://twitter.com/DerivEspanol" target="_blank"> <img alt="Deriv.com on Twitter" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/x-twitter-md.png" width="32" title="Deriv.com on Twitter" /> </a>
+                                    <a href="https://www.youtube.com/@deriv" style="text-decoration: none;"> <img alt="Deriv.com on Youtube" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/youtube-md.png" title="Deriv.com on Youtube" width="32" /> </a>
+                                    <a href="https://www.linkedin.com/company/derivdotcom/" style="text-decoration: none;"> <img alt="Deriv.com on Linkedin" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/linkedin-md.png" title="Deriv.com on Linkedin" width="32" /> </a> 
+                                    <a href="https://t.me/Derivchannelofficial" target="_blank"><img alt="Deriv.com on Telegram" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/telegram-md.png" style="height: 32px;" title="Deriv.com on Telegram" width="32" /></a>
+                                    <a href="https://www.whatsapp.com/channel/0029Vanwury8aKvAOAeeA30s" style="text-decoration: none;"> <img alt="Deriv.com en WhatsApp" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/whatsapp-md.png" title="Deriv.com en WhatsApp" width="32" /> </a>
+                                </p>
+                            </td>
+                        </tr>`;
+const russianSocialLinks = `
+                        <tr>
+                            <td align="center" class="darkmodeblack" style="padding: 20px 0; ">
+                                <p style="word-spacing: 13px !important;">
+                                    <a href="https://www.facebook.com/derivportugues" style="text-decoration: none;"><img alt="Deriv.com on Facebook" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/facebook-md.png" title="Deriv.com on Facebook" width="32" /> </a>
+                                    <a href="https://www.instagram.com/deriv_portugues/" style="text-decoration: none;"> <img alt="Deriv.com on Instagram" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/instagram-md.png" title="Deriv.com on Instagram" width="32" /> </a>
+                                    <a href="https://twitter.com/DerivPortugues" target="_blank"> <img alt="Deriv.com on Twitter" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/x-twitter-md.png" width="32" title="Deriv.com on Twitter" /> </a>
+                                    <a href="https://youtube.com/@deriv.partners" style="text-decoration: none;"> <img alt="Deriv.com on Youtube" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/youtube-md.png" title="Deriv.com on Youtube" width="32" /> </a>
+                                    <a href="https://www.linkedin.com/company/derivdotcom/" style="text-decoration: none;"> <img alt="Deriv.com on Linkedin" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/linkedin-md.png" title="Deriv.com on Linkedin" width="32" /> </a> 
+                                    <a href="https://t.me/Derivchannelofficial" target="_blank"><img alt="Deriv.com on Telegram" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/telegram-md.png" style="height: 32px;" title="Deriv.com on Telegram" width="32" /></a>
+                                    <a href="https://www.whatsapp.com/channel/0029VarCZIJElagmHfGETR1F" style="text-decoration: none;"> <img alt="Deriv.com on WhatsApp" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/whatsapp-md.png" title="Deriv.com on WhatsApp" width="32" /> </a>
+                                </p>
+                            </td>
+                        </tr>`;                        
+
+async function updateSocialLinks(filePath, language) {
+    try {
+        console.log(`Updating social links for file: ${filePath} with language: ${language}`);
+        
+        // Check if file exists
+        try {
+            await fs.access(filePath);
+        } catch (error) {
+            throw new Error(`File not found: ${filePath}`);
+        }
+
+        // Read the HTML file
+        let content = await fs.readFile(filePath, 'utf8');
+        console.log('File read successfully');
+        
+        // Find the social media section by looking for the section after the Deriv logo in the footer
+        const footerLogoPattern = /<td[^>]*>\s*<a href="https:\/\/www\.deriv\.com"><img[^>]*src="[^"]*deriv25-gray\.png"[^>]*>\s*<\/a>\s*<\/td>/;
+        const footerLogoMatch = content.match(footerLogoPattern);
+        
+        if (!footerLogoMatch) {
+            console.log('Footer logo not found');
+            throw new Error('Could not find footer section');
+        }
+        
+        // Start searching for social media section after the footer logo
+        const searchStart = footerLogoMatch.index + footerLogoMatch[0].length;
+        const socialSection = content.substring(searchStart);
+        
+        // Find the social media section
+        const socialMediaPattern = /<tr>\s*<td[^>]*class="darkmodeblack"[^>]*>\s*<p[^>]*>\s*<a href="[^"]*facebook\.com[^>]*>[\s\S]*?<\/p>\s*<\/td>\s*<\/tr>/;
+        const match = socialSection.match(socialMediaPattern);
+        
+        if (!match) {
+            console.log('Social media section not found after footer logo');
+            throw new Error('Could not find social media section in the file');
+        }
+
+        // Calculate the actual position in the full content
+        const socialSectionStart = searchStart + match.index;
+        const socialSectionEnd = socialSectionStart + match[0].length;
+        
+        console.log('Found social section with links');
+        
+        let newContent;
+        if (language === 'es') {
+            newContent = spanishSocialLinks;
+        } else if (language === 'fr') {
+            newContent = frenchSocialLinks;
+        } else if (language === 'pt') {
+            newContent = portugueseSocialLinks;
+        } else if (language === 'ru') {
+            newContent = russianSocialLinks;        
+        } else {
+            console.log(`Unsupported language: ${language}`);
+            return false;
+        }
+        
+        // Replace the social media section
+        content = content.substring(0, socialSectionStart) + newContent + content.substring(socialSectionEnd);
+        console.log('Content replaced successfully');
+        
+        // Write back to file
+        await fs.writeFile(filePath, content, 'utf8');
+        console.log('File written successfully');
+        return true;
+    } catch (error) {
+        console.error('Error in updateSocialLinks:', error);
+        throw error;
+    }
+}
+
+app.post('/update-socials', async (req, res) => {
+    console.log('Received update-socials request:', req.body);
+    const { filePath, language } = req.body;
+    
+    if (!filePath) {
+        return res.status(400).json({ error: 'filePath is required' });
+    }
+    if (!language) {
+        return res.status(400).json({ error: 'language is required' });
+    }
+    
+    try {
+        const success = await updateSocialLinks(filePath, language);
+        if (success) {
+            console.log('Social links updated successfully');
+            res.json({ message: 'Social media links updated successfully' });
+        } else {
+            throw new Error(`Unsupported language: ${language}`);
+        }
+    } catch (error) {
+        console.error('Error in update-socials endpoint:', error);
+        res.status(500).json({ 
+            error: error.message,
+            details: error.stack
+        });
+    }
+});
 
 app.post('/move-file', async (req, res) => {
     const { sourcePath, destPath } = req.body;
