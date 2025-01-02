@@ -89,14 +89,97 @@
         <div class="form-group">
             <label for="destPath">Destination Path: (Full absolute path required)</label>
             <textarea id="destPath" name="destPath" required
-                      style="width: 80%; height: 60px; padding: 8px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; font-size: 16px; resize: vertical;">/Users/behnazrahgozar/Documents/source/deriv-static-content/public/email/templates/open-cr3-row.html</textarea>
-            <div class="help-text">Example: /Users/username/Documents/source/deriv-static-content/public/email/templates/filename.html</div>
+                      style="width: 80%; height: 60px; padding: 8px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; font-size: 16px; resize: vertical;">/Users/behnazrahgozar/Documents/source/deriv-static-content/public/email/templates/clevertap/partner/open-cr3-row.html</textarea>
+            <div class="help-text">Example: /Users/username/Documents/source/deriv-static-content/public/email/templates/clevertap/partner/filename.html</div>
         </div>
         <button type="submit">Move File</button>
+        <button type="button" style="margin-left: 10px; background-color: #28a745;" onclick="updateSocials()">Update Socials</button>
+
+        <script>
+            async function updateSocials() {
+                try {
+                    const destPath = document.getElementById('destPath').value;
+                    const language = document.getElementById('language').value;
+                    const resultDiv = document.getElementById('result');
+
+                    if (!destPath) {
+                        resultDiv.innerHTML = `
+                            <div class="error">
+                                <h3>Error</h3>
+                                <p>Please specify a destination file path</p>
+                            </div>
+                        `;
+                        return;
+                    }
+
+                    // Remove the leading dash from language code and handle empty selection
+                    const cleanLanguage = language ? language.replace('-', '') : '';
+                    
+                    console.log('Sending request with:', {
+                        filePath: destPath,
+                        language: cleanLanguage
+                    });
+
+                    const response = await fetch('http://localhost:3001/update-socials', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            filePath: destPath,
+                            language: cleanLanguage
+                        })
+                    });
+
+                    const data = await response.json();
+
+                    if (!response.ok) {
+                        throw new Error(data.error || `HTTP error! status: ${response.status}`);
+                    }
+
+                    resultDiv.innerHTML = `
+                        <div class="success">
+                            <h3>Success!</h3>
+                            <p>${data.message}</p>
+                        </div>
+                    `;
+                } catch (error) {
+                    console.error('Error:', error);
+                    const errorMessage = error.message || 'Unknown error occurred';
+                    document.getElementById('result').innerHTML = `
+                        <div class="error">
+                            <h3>Error</h3>
+                            <p>Failed to update social links: ${errorMessage}</p>
+                        </div>
+                    `;
+                }
+            }
+        </script>
     </form>
     <div id="result"></div>
 
     <script>
+        // Store form values in localStorage
+        function storeFormValues() {
+            const formValues = {
+                language: document.getElementById('language').value,
+                sourcePath: document.getElementById('sourcePath').value,
+                destPath: document.getElementById('destPath').value
+            };
+            localStorage.setItem('moveFileFormValues', JSON.stringify(formValues));
+        }
+
+        // Restore form values from localStorage
+        function restoreFormValues() {
+            const storedValues = localStorage.getItem('moveFileFormValues');
+            if (storedValues) {
+                const formValues = JSON.parse(storedValues);
+                document.getElementById('language').value = formValues.language;
+                document.getElementById('sourcePath').value = formValues.sourcePath;
+                document.getElementById('destPath').value = formValues.destPath;
+            }
+        }
+
         function updateDestPath() {
             const sourcePath = document.getElementById('sourcePath').value;
             const language = document.getElementById('language').value;
@@ -114,21 +197,35 @@
             // Replace filename in destination path
             const destDir = destPathInput.value.split('/').slice(0, -1).join('/');
             destPathInput.value = `${destDir}/${newFilename}`;
+            
+            // Store updated values
+            storeFormValues();
         }
 
         // Add event listeners
         document.getElementById('language').addEventListener('change', updateDestPath);
         document.getElementById('sourcePath').addEventListener('input', updateDestPath);
         
-        // Update destination path when page loads
-        document.addEventListener('DOMContentLoaded', updateDestPath);
+        // Update destination path and restore values when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            restoreFormValues();
+            updateDestPath();
+        });
 
         async function handleSubmit(event) {
             event.preventDefault();
             
+            const form = event.target;
             const sourcePath = document.getElementById('sourcePath').value;
             const destPath = document.getElementById('destPath').value;
             const resultDiv = document.getElementById('result');
+
+            // Store form values
+            const formValues = {
+                language: document.getElementById('language').value,
+                sourcePath: sourcePath,
+                destPath: destPath
+            };
 
             // Validate paths
             if (!sourcePath.startsWith('/')) {
@@ -172,6 +269,11 @@
                             <p>${data.message}</p>
                         </div>
                     `;
+                    
+                    // Restore form values
+                    document.getElementById('language').value = formValues.language;
+                    document.getElementById('sourcePath').value = formValues.sourcePath;
+                    document.getElementById('destPath').value = formValues.destPath;
                 } else {
                     throw new Error(data.error || 'Failed to move file');
                 }

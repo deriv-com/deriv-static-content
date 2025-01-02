@@ -1,11 +1,11 @@
-
 <!DOCTYPE html>
-<html lang="ru" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
     <meta name="color-scheme" content="light dark">
     <meta name="supported-color-schemes" content="light dark">
     <meta charset="utf-8">
-    <title>Мы получили вашу заявку!</title>
+    <title>⚠️[Avis important] Accès au tableau de bord Partenaire
+    </title>
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="x-apple-disable-message-reformatting">
@@ -208,6 +208,10 @@
                 padding-right: 25px !important;
                 padding-left: 25px !important;
             }
+            .mobile-side3 {
+                padding-right: 5px !important;
+                padding-left: 5px !important;
+            }
             .mobile-negmargin {
                 margin-top: -15px !important;
             }
@@ -253,6 +257,7 @@
             h1, h2, p, span, a, b { color: #ffffff !important; }
             .darkmodegray { color: #6e6e6e !important; }
             .darkcolor-subtext{ color: #c2c2c2 !important; }
+            .darkcolor-subtext1{ color: #737272 !important; }
             .darkcolor-white{ color: #ffffff !important; }
             .darkborder{ border-color: #6e6e6e !important; }
 
@@ -274,6 +279,7 @@
         [data-ogsc] h1, [data-ogsc] h2, [data-ogsc] p, [data-ogsc] span, [data-ogsc] a, [data-ogsc] b { color: #ffffff !important; }
         [data-ogsc] .darkmodegray { color: #6e6e6e !important; }
         [data-ogsc] .darkcolor-subtext{ color: #c2c2c2 !important; }
+        [data-ogsc] .darkcolor-subtext1{ color: #737272 !important; }
         [data-ogsc] .darkcolor-white{ color: #ffffff !important; }
         [data-ogsc] .darkborder{ border-color: #6e6e6e !important; }
 
@@ -299,7 +305,7 @@
                         <!-- START HERO -->
                         <tr>
                             <td align="center" style="padding: 30px 30px 0; background-color: #ff444f !important; background-image: linear-gradient(#ff444f,#ff444f);">
-                                <a href="https://www.deriv.com/ru">
+                                <a href="https://www.deriv.com/fr">
                                     <img src="https://static.deriv.com/logos/deriv-white-2023.png" width="78" style="display: block;" alt="Deriv.com">                                  
                                 </a>
                             </td>
@@ -318,54 +324,96 @@
                         </div>
                         <!-- END HERO -->
                         <tr>
-                            <td align="center" style="padding: 20px 30px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'Ubuntu', 'IBM Plex Sans', Arial, sans-serif; font-size: 28px; line-height: 1.5 ; color: #414652; font-weight: 700;margin:0;">Почти готово! Ваша заявка <nobr>на рассмотрении</nobr></p>
+                            <td align="center" style="padding: 10px 30px 20px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'Ubuntu', 'IBM Plex Sans', Arial, sans-serif; font-size: 30px; line-height: 1.5 ; color: #414652; font-weight: 700;margin:0;">Conservez l'accès à votre <nobr>tableau de bord Partenaire</nobr></p>
                             </td>
                         </tr>
                         <tr>
-                            <td align="left" style="padding: 15px 30px 8px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">Здравствуйте, {{ Profile.name | default: "партнер" }}!</p>
+                            <td align="left" style="padding: 18px 30px 5px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">Salut {{ Profile.name | default:"partenaire" }},</p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td align="left" style="padding: 10px 30px 5px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: clamp(14px, 3vw, 16px); line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">Si vous <strong>n'avez pas encore</strong> de compte réel Deriv, veuillez <strong>en créer un immédiatement</strong> pour éviter de perdre l'accès à votre tableau de bord Partenaire.</p>
                             </td>
                         </tr>
                         <tr>
-                            <td align="left" style="padding: 8px 30px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">Мы рады сообщить, что получили вашу заявку на участие в партнерской программе Deriv.</p>
+                            <td align="left" style="padding: 10px 30px 20px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: clamp(14px, 3vw, 16px); line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">Si vous avez déjà un compte réel Deriv, aucune action n'est requise.</p>
+                            </td>
+                        </tr>
+                        <!-- Grey table 1 opening -->
+                        <tr>
+                            <td align="center" style="padding: 20px 30px 10px;" class="mobile-side">
+                                <table class="mobile-side dark-border-radius" style="width: 100%; margin: auto; background-color: #f2f3f4; border-radius: 15px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);">
+                                    <tr>
+                                        <td style="text-align: center; padding: 20px 20px 5px;" class="darkmodelowblack">
+                                            <p align="center" style="padding: 8px 12px 12px 20px;margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 20px;color: #414652; text-align: center;line-height: 1.6;font-weight: 700;" class="darkmodelowblack darkcolor-subtext">Comment créer un compte réel Deriv</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style=" text-align: left; padding: 10px 20px 5px;">
+                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: clamp(14px, 3vw, 16px); line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkmodelowblack darkcolor-subtext">1. Rendez-vous sur notre site web.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style=" text-align: left; padding: 4px 20px 5px;">
+                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: clamp(14px, 3vw, 16px); line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkmodelowblack darkcolor-subtext">2. Cliquez sur <a href="https://hub.deriv.com/tradershub/signup" style="color: #ff444f !important">Essayez la démo gratuite</a>.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style=" text-align: left; padding: 4px 20px 5px;">
+                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: clamp(14px, 3vw, 16px); line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkmodelowblack darkcolor-subtext">3. Utilisez l'email lié à votre compte Partenaire Deriv pour vous inscrire.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style=" text-align: left; padding: 4px 20px 15px;">
+                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: clamp(14px, 3vw, 16px); line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkmodelowblack darkcolor-subtext">4. Suivez les étapes pour créer un compte réel Deriv.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" style="padding: 15px 35px 35px; color: #414652; font-family: 'Ubuntu','IBM Plex Sans', Arial, sans-serif; font-size: 18px; font-weight: 600; line-height: 24px;" class="darkmodeblack">
+                                            <!--[if (gte mso 9)|(IE)]>
+                                                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://hub.deriv.com/tradershub/signup" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="8%" stroke="f" fillcolor="#ff444f">
+                                                <w:anchorlock/>
+                                                <center style="color:#ffffff;font-family:sans-serif;font-size:14px;font-weight:bold;">Créer un compte Deriv réel</center>
+                                                </v:roundrect>
+                                            <![endif]-->
+                                            <a class="button" href="https://hub.deriv.com/tradershub/signup" style="mso-hide:all;">Créer un compte Deriv réel</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr> 
+                        <!-- Grey table 1 closing -->
+                        <tr>
+                            <td align="center" style="padding: 35px 30px 10px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: clamp(18px, 3vw, 20px); line-height: 1.5 ; color: #414652; font-weight: 700;margin:0;" class="darkcolor-subtext">Vous avez déjà un compte démo Deriv ?</p>
                             </td>
                         </tr>
                         <tr>
-                            <td align="left" style="padding: 8px 30px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">Наша команда изучит ее и свяжется с вами <strong>в течение 1–3 рабочих дней</strong>.</p>
+                            <td style="padding: 10px 30px 10px;margin: 0;" class="mobile-side2">
+                                <ol  class="darkcolor-subtext"  style="margin: 0 5px;padding:0 0 0 30px;">
+                                    <li class="darkcolor-subtext"><p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #414652; font-size: clamp(14px, 3vw, 16px); line-height: 30px; padding: 0;margin: 0px;font-weight: 400;" class="darkcolor-subtext">Assurez-vous que l'email de votre compte démo Deriv est le même que celui de votre compte Partenaire Deriv.</p></li>
+                                    <li class="darkcolor-subtext"><p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #414652; font-size: clamp(14px, 3vw, 16px); line-height: 30px; padding: 0;margin: 0px;font-weight: 400;" class="darkcolor-subtext">Connectez-vous et sélectionnez <a href="https://app.deriv.com/" style="color: #ff444f !important">Créer un compte réel</a>.</p></li>
+                                    <li class="darkcolor-subtext"><p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #414652; font-size: clamp(14px, 3vw, 16px); line-height: 30px; padding: 0;margin: 0px;font-weight: 400;" class="darkcolor-subtext">Suivez les étapes pour créer votre compte réel Deriv.</p></li>
+                                </ol>
                             </td>
                         </tr>
                         <tr>
-                            <td align="left" style="padding: 8px 30px 15px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">А пока предлагаем заглянуть на наш YouTube-канал для партнеров, чтобы узнать, что вас ждет впереди.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td  align="center" style="padding: 20px 35px; color: #414652; font-family: 'Ubuntu','IBM Plex Sans', Arial, sans-serif; font-size: 18px; font-weight: 600; line-height: 24px;" class="darkmodeblack">
-                                <!--[if (gte mso 9)|(IE)]>
-                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.youtube.com/channel/UCXdEikUD3EMsAr7-tb6aT_Q" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="8%" stroke="f" fillcolor="#ff444f">
-                                    <w:anchorlock/>
-                                    <center style="color:#ffffff;font-family:sans-serif;font-size:14px;font-weight:bold;">Перейти на YouTube</center>
-                                    </v:roundrect>
-                                <![endif]-->
-                                <a class="button" href="https://www.youtube.com/channel/UCXdEikUD3EMsAr7-tb6aT_Q" style="mso-hide:all;">Перейти на YouTube</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="center" style="padding: 10px 30px 25px 30px;" class="dark-black">
-                                <p class="darkcolor-subtext" style="padding: 5px;margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 16px;color: #414652; text-align: center;line-height: 1.6;font-weight: 400;">Напишите нам, если у вас есть вопросы:<br/>
-                                    <a href="https://deriv.com/contact_us/?is_livechat_open=true" target="_blank" style="color: #ff444f !important; ">Чат</a> <span class="darkmodegray">|</span> <a href="https://api.whatsapp.com/send/?phone=35699578341&text&type=phone_number&app_absent=0" style="color: #ff444f !important; " target="_blank">WhatsApp</a></p>
+                            <td align="left " class="mobile-side darkmodeblack" style="padding: 25px 30px 40px; background-color: #fff;">
+                                <p class="darkcolor-subtext" style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: clamp(14px, 3vw, 16px); line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;">Besoin d'aide ? Notre équipe d'assistance est disponible 24/7 par <a href="https://deriv.com/?is_livechat_open=true" style="color: #ff444f !important;" target="_blank">Chat en direct</a> et <a href="https://api.whatsapp.com/send/?phone=35699578341&amp;text&amp;type=phone_number&amp;app_absent=0" style="color: #ff444f !important;" target="_blank">WhatsApp</a>.</p>
                             </td>
                         </tr>
                         <tr class="mobile-hide">
-                            <td bgcolor="#fff" align="center"  class="mobile-side darkmodelowblack" style="padding: 30px 0px 10px; background-color: #FBFBFC;">
+                            <td bgcolor="#fff" align="center"  class="mobile-side darkmodelowblack" style="padding: 30px 0px; background-color: #FBFBFC;">
                                 <input type="image" class="g-img" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/award2024.png"  width= "500" style="display: block;outline:none"/>
                             </td>
                         </tr>
                         <tr style="display: none; mso-hide:all;" class="mobile-visible-block" >
-                            <td bgcolor="#fff" align="center" class="mobile-side darkmodelowblack" style="padding: 10px 0px; background-color: #FBFBFC;">
+                            <td bgcolor="#fff" align="center" class="mobile-side darkmodelowblack" style="padding: 30px 0px; background-color: #FBFBFC;">
                                 <input type="image" class="g-img" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/award2024.png" width="90%" style="display: block;outline:none"/>
                             </td>
                         </tr> 
@@ -387,28 +435,28 @@
                             <td align="center" class="darkmodeblack" style="padding: 30px 30px 0;"><a href="https://www.deriv.com"><img alt="Deriv.com" width="130" src="https://static.deriv.com/logos/deriv25-gray.png" style="display: block; opacity: 70%;"  /> </a></td>
                         </tr>
                         <tr>
-                            <td align="center" class="darkmodeblack" style="padding: 10px 0; ">
+                            <td align="center" class="darkmodeblack" style="padding: 20px 0; ">
                                 <p style="word-spacing: 13px !important;">
-                                    <a href="https://www.facebook.com/RussianDeriv" style="text-decoration: none;"><img alt="Deriv.com на Facebook" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/facebook-md.png" title="Deriv.com на Facebook" width="32" /> </a>
-                                    <a href="https://www.instagram.com/deriv_russian/" style="text-decoration: none;"> <img alt="Deriv.com в Instagram" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/instagram-md.png" title="Deriv.com в Instagram" width="32" /> </a>
-                                    <a href="https://x.com/derivrussian" target="_blank"> <img alt="Deriv.com в Twitter" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/x-twitter-md.png" title="Deriv.com в Twitter" width="32" /> </a>
-                                    <a href="https://www.youtube.com/@Deriv.partners" style="text-decoration: none;"> <img alt="Deriv.com на Youtube" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/youtube-md.png" title="Deriv.com на Youtube" width="32" /> </a>
-                                    <a href="https://www.linkedin.com/company/derivdotcom/" style="text-decoration: none;"> <img alt="Deriv.com в Linkedin" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/linkedin-md.png" title="Deriv.com в Linkedin" width="32" /> </a>
-                                    <a href="https://t.me/Derivchannelofficial" style="text-decoration: none;"> <img alt="Deriv.com в Telegram" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/telegram-md.png" title="Deriv.com в Telegram" width="32" /> </a>
-                                    <a href="https://www.whatsapp.com/channel/0029VajV7cY8fewr35BOkF06" style="text-decoration: none;"> <img alt="Deriv.com в WhatsApp" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/whatsapp-md.png" title="Deriv.com в WhatsApp" width="32" /> </a>
+                                    <a href="https://www.facebook.com/FrenchDeriv/" style="text-decoration: none;"><img alt="Deriv.com sur Facebook" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/facebook-md.png" title="Deriv.com sur Facebook" width="32" /> </a>
+                                    <a href="https://www.instagram.com/deriv_french/" style="text-decoration: none;"> <img alt="Deriv.com sur Instagram" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/instagram-md.png" title="Deriv.com sur Instagram" width="32" /> </a>
+                                    <a href="https://x.com/DerivFrench" target="_blank"> <img alt="Deriv.com sur Twitter" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/x-twitter-md.png" title="Deriv.com sur Twitter" width="32" /> </a>
+                                    <a href="https://youtube.com/@deriv.partners" style="text-decoration: none;"> <img alt="Deriv.com sur YouTube" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/youtube-md.png" title="Deriv.com sur YouTube" width="32" /> </a>
+                                    <a href="https://www.linkedin.com/company/derivdotcom/" style="text-decoration: none;"> <img alt="Deriv.com sur Linkedin" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/linkedin-md.png" title="Deriv.com sur LinkedIn" width="32" /> </a>
+                                    <a href="https://t.me/Derivchannelofficial" style="text-decoration: none;"> <img alt="Deriv.com sur Telegram" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/telegram-md.png" title="Deriv.com sur Telegram" width="32" /> </a>
+                                    <a href="https://www.whatsapp.com/channel/0029ValhAfw2v1J0pYqBlB3b" style="text-decoration: none;"> <img alt="Deriv.com sur WhatsApp" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/whatsapp-md.png" title="Deriv.com sur WhatsApp" width="32" /> </a>
                                 </p>
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#fff" align="center" style="padding:4px 45px 30px;color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">Для получения информации о компании, отправившей это письмо, нажмите <a href="https://deriv.com/regulatory/" style="color: #ff444f !important;" target="_blank">здесь</a>.</p>
+                            <td bgcolor="#fff" align="left" style="padding:4px 45px 30px;color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">Pour en savoir plus sur les expéditeurs de ce courriel, cliquez <a href="https://deriv.com/regulatory/" style="color: #ff444f !important;" target="_blank">ici</a>.</p>
                             </td>
                         </tr>
                         <tr>
                             <td align="center" bgcolor="#fff" class="darkmodeblack" style="color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
-                            <p style="padding: 0px 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 400; line-height: 16px; margin: 5px 0px 5px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important">Центр поддержки</a>   <span class="darkmodegray">|</span>   <a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Правила и условия</a>   <span class="darkmodegray">|</span>   <a href="https://deriv.com/tnc/security-and-privacy.pdf" style="color: #ff444f !important">Безопасность и конфиденциальность</a></p>
+                            <p style="padding: 0px 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 400; line-height: 16px; margin: 5px 0px 5px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important">Centre d'aide</a>   <span class="darkmodegray">|</span>   <a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Conditions générales d'utilisation</a>   <span class="darkmodegray">|</span>   <a href="https://deriv.com/tnc/security-and-privacy.pdf" style="color: #ff444f !important">Sécurité et confidentialité</a></p>
     
-                            <p class="darkmodegray" style="padding: 0 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #999999; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0px 0px 5px 0px;">Больше не хотите получать эти письма? <a class="darkcolor-subtext" href="https://app.deriv.com/account/personal-details" style="mso-hide:all; color: #ff444f !important;">Отписаться от рассылки</a></p>
+                            <p class="darkmodegray" style="padding: 0 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #999999; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0px 0px 5px 0px;">Vous ne souhaitez plus recevoir ces courriels ? <a class="darkcolor-subtext" href="https://app.deriv.com/account/personal-details" style="mso-hide:all; color: #ff444f !important;">Se désabonner</a></p>
                             </td>
                         </tr>
                         <tr>
