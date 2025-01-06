@@ -7,6 +7,9 @@ const STAGING_SMART_TRADER = "staging-smarttrader.deriv.com";
 
 const P2P = "p2p.deriv.com";
 
+const DBOT = "dbot.deriv.com";
+const DBOT_STAGING = "staging-dbot.deriv.com";
+
 const DOMAIN_LIST_APP_ID = {
   [DERIV_APP]: "16929",
   "app.deriv.be": "16929",
@@ -25,6 +28,11 @@ const DOMAIN_LIST_APP_ID = {
   "staging-smarttrader.deriv.me": "22169",
 
   [P2P]: "61859",
+
+  [DBOT]: "65555",
+  "dbot.deriv.be": "65556",
+  "dbot.deriv.me": "65557",
+  [DBOT_STAGING]: "29934",
 };
 
 const getAppID = () => {
