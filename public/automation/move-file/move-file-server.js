@@ -62,15 +62,15 @@ const spanishSocialLinks = `
                         </tr>`;
 const russianSocialLinks = `
                         <tr>
-                            <td align="center" class="darkmodeblack" style="padding: 20px 0; ">
-                                <p style="word-spacing: 13px !important;">
-                                    <a href="https://www.facebook.com/derivportugues" style="text-decoration: none;"><img alt="Deriv.com on Facebook" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/facebook-md.png" title="Deriv.com on Facebook" width="32" /> </a>
-                                    <a href="https://www.instagram.com/deriv_portugues/" style="text-decoration: none;"> <img alt="Deriv.com on Instagram" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/instagram-md.png" title="Deriv.com on Instagram" width="32" /> </a>
-                                    <a href="https://twitter.com/DerivPortugues" target="_blank"> <img alt="Deriv.com on Twitter" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/x-twitter-md.png" width="32" title="Deriv.com on Twitter" /> </a>
-                                    <a href="https://youtube.com/@deriv.partners" style="text-decoration: none;"> <img alt="Deriv.com on Youtube" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/youtube-md.png" title="Deriv.com on Youtube" width="32" /> </a>
-                                    <a href="https://www.linkedin.com/company/derivdotcom/" style="text-decoration: none;"> <img alt="Deriv.com on Linkedin" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/linkedin-md.png" title="Deriv.com on Linkedin" width="32" /> </a> 
-                                    <a href="https://t.me/Derivchannelofficial" target="_blank"><img alt="Deriv.com on Telegram" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/telegram-md.png" style="height: 32px;" title="Deriv.com on Telegram" width="32" /></a>
-                                    <a href="https://www.whatsapp.com/channel/0029VarCZIJElagmHfGETR1F" style="text-decoration: none;"> <img alt="Deriv.com on WhatsApp" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/whatsapp-md.png" title="Deriv.com on WhatsApp" width="32" /> </a>
+                            <td align="center" class="darkmodeblack" style="padding: 20px 0 10px; ">
+                                <p style="word-spacing: 10px !important;">
+                                    <a href="https://www.facebook.com/RussianDeriv" style="text-decoration: none;"><img alt="Deriv.com на Facebook" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/facebook-md.png" title="Deriv.com на Facebook" width="32" /> </a>
+                                    <a href="https://www.instagram.com/deriv_russian" style="text-decoration: none;"> <img alt="Deriv.com в Instagram" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/instagram-md.png" title="Deriv.com в Instagram" width="32" /> </a>
+                                    <a href="https://twitter.com/derivrussian" target="_blank"> <img alt="Deriv.com в Twitter" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/x-twitter-md.png" title="Deriv.com в Twitter" width="32" /> </a>
+                                    <a href="https://www.youtube.com/@Deriv.partners" style="text-decoration: none;"> <img alt="Deriv.com на Youtube" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/youtube-md.png" title="Deriv.com на Youtube" width="32" /> </a>
+                                    <a href="https://www.linkedin.com/company/derivdotcom/" style="text-decoration: none;"> <img alt="Deriv.com в Linkedin" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/linkedin-md.png" title="Deriv.com в Linkedin" width="32" /> </a>
+                                    <a href="https://t.me/Derivchannelofficial" style="text-decoration: none;"> <img alt="Deriv.com в Telegram" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/telegram-md.png" title="Deriv.com в Telegram" width="32" /> </a>
+                                    <a href="https://www.whatsapp.com/channel/0029VajV7cY8fewr35BOkF06" style="text-decoration: none;"> <img alt="Deriv.com в WhatsApp" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/whatsapp-md.png" title="Deriv.com в WhatsApp" width="32" /> </a>
                                 </p>
                             </td>
                         </tr>`;                        
