@@ -6,7 +6,7 @@ on:
   push:
     branches: [master]
     paths:
-      - 'public/scripts/packages/**' 
+      - "public/scripts/packages/**"
 
 jobs:
   release:
@@ -22,6 +22,9 @@ jobs:
       CI: true
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    strategy:
+      matrix:
+        script: [marketing, cs]
     steps:
       - name: Checkout repository
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
@@ -31,31 +34,14 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8
         with:
-          node-version: '20'
+          node-version: "20"
 
       - name: Configure npm auth
         run: |
           npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}
 
-  publish_marketing:
-    name: Publish Marketing Scripts
-    runs-on: ubuntu-latest
-    needs: release
-    steps:
-      - name: Install dependencies, build and publish marketing-scripts
-        working-directory: public/scripts/packages/marketing
-        run: |
-          npm install
-          npm run build
-          npx semantic-release
-
-  publish_cs:
-    name: Publish CS Scripts
-    runs-on: ubuntu-latest
-    needs: release
-    steps:
-      - name: Install dependencies, build and publish cs-scripts
-        working-directory: public/scripts/packages/cs
+      - name: Install dependencies, build and publish ${{ matrix.script }}-scripts
+        working-directory: public/scripts/packages/${{ matrix.script }}
         run: |
           npm install
           npm run build
