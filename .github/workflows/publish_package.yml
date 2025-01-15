@@ -37,6 +37,11 @@ jobs:
         run: |
           npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}
 
+  publish_marketing:
+    name: Publish Marketing Scripts
+    runs-on: ubuntu-latest
+    needs: release
+    steps:
       - name: Install dependencies, build and publish marketing-scripts
         working-directory: public/scripts/packages/marketing
         run: |
@@ -44,6 +49,11 @@ jobs:
           npm run build
           npx semantic-release
 
+  publish_cs:
+    name: Publish CS Scripts
+    runs-on: ubuntu-latest
+    needs: release
+    steps:
       - name: Install dependencies, build and publish cs-scripts
         working-directory: public/scripts/packages/cs
         run: |
