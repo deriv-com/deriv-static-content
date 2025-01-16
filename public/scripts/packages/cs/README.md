@@ -1,3 +1,3 @@
 # @deriv-com/cs-utils
 
-A brief description of the package goes here.
+A brief description of the cs-utils package goes here.
