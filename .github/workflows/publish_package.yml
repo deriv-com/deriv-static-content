@@ -40,9 +40,35 @@ jobs:
         run: |
           npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}
 
+      - name: Check for changes in marketing package
+        id: check_marketing
+        if: matrix.script == 'marketing'
+        run: |
+          git diff --exit-code HEAD^ HEAD -- public/scripts/packages/marketing
+          if [ $? -eq 0 ]; then
+            echo "changes_detected_marketing=false" >> $GITHUB_ENV
+          else
+            echo "changes_detected_marketing=true" >> $GITHUB_ENV
+          fi
+
+      - name: Check for changes in cs package
+        id: check_cs
+        if: matrix.script == 'cs'
+        run: |
+          git diff --exit-code HEAD^ HEAD -- public/scripts/packages/cs
+          if [ $? -eq 0 ]; then
+            echo "changes_detected_cs=false" >> $GITHUB_ENV
+          else
+            echo "changes_detected_cs=true" >> $GITHUB_ENV
+          fi
+
       - name: Install dependencies, build and publish ${{ matrix.script }}-scripts
+        if:
+          (matrix.script == 'marketing' && env.changes_detected_marketing == 'true') ||
+          (matrix.script == 'cs' && env.changes_detected_cs == 'true')
         working-directory: public/scripts/packages/${{ matrix.script }}
         run: |
+          set -e # Exit immediately if a command exits with a non-zero status
           npm install
           npm run build
-          npx semantic-release
+          npm publish
