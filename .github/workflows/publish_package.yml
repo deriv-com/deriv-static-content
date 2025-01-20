@@ -62,10 +62,16 @@ jobs:
 
       - name: Install dependencies, build and publish ${{ matrix.script }}-scripts
         if:
-          (matrix.script == 'marketing' && env.changes_detected_marketing == 'true') ||
-          (matrix.script == 'cs' && env.changes_detected_cs == 'true')
+          (matrix.script == 'marketing' && env.changes_detected_marketing == 'true' && env.publish_done_marketing != 'true') ||
+          (matrix.script == 'cs' && env.changes_detected_cs == 'true' && env.publish_done_cs != 'true')
         working-directory: public/scripts/packages/${{ matrix.script }}
         run: |
           set -e # Exit immediately if a command exits with a non-zero status
           npm install
           npm run build
+          npm publish
+          if [ "${{ matrix.script }}" == "marketing" ]; then
+            echo "publish_done_marketing=true" >> $GITHUB_ENV
+          else
+            echo "publish_done_cs=true" >> $GITHUB_ENV
+          fi
