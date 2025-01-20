@@ -1,4 +1,4 @@
-name: Publish Packages
+name: Publish CS Package
 
 on:
   release:
@@ -22,9 +22,6 @@ jobs:
       CI: true
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-    strategy:
-      matrix:
-        script: [marketing, cs]
     steps:
       - name: Checkout repository
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
@@ -40,19 +37,8 @@ jobs:
         run: |
           npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}
 
-      - name: Check for changes in marketing package
-        id: check_marketing
-        if: matrix.script == 'marketing'
-        run: |
-          if git diff --exit-code HEAD^ HEAD -- public/scripts/packages/marketing; then
-            echo "changes_detected_marketing=false" >> $GITHUB_ENV
-          else
-            echo "changes_detected_marketing=true" >> $GITHUB_ENV
-          fi
-
       - name: Check for changes in cs package
         id: check_cs
-        if: matrix.script == 'cs'
         run: |
           if git diff --exit-code HEAD^ HEAD -- public/scripts/packages/cs; then
             echo "changes_detected_cs=false" >> $GITHUB_ENV
@@ -60,18 +46,11 @@ jobs:
             echo "changes_detected_cs=true" >> $GITHUB_ENV
           fi
 
-      - name: Install dependencies, build and publish ${{ matrix.script }}-scripts
-        if:
-          (matrix.script == 'marketing' && env.changes_detected_marketing == 'true' && env.publish_done_marketing != 'true') ||
-          (matrix.script == 'cs' && env.changes_detected_cs == 'true' && env.publish_done_cs != 'true')
-        working-directory: public/scripts/packages/${{ matrix.script }}
+      - name: Install dependencies, build and publish cs-scripts
+        if: (env.changes_detected_cs == 'true')
+        working-directory: public/scripts/packages/cs
         run: |
           set -e # Exit immediately if a command exits with a non-zero status
           npm install
           npm run build
           npm publish
-          if [ "${{ matrix.script }}" == "marketing" ]; then
-            echo "publish_done_marketing=true" >> $GITHUB_ENV
-          else
-            echo "publish_done_cs=true" >> $GITHUB_ENV
-          fi
