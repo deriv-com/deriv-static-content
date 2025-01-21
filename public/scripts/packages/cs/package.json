@@ -8,7 +8,7 @@
     },
     "scripts": {
         "build": "node build.js",
-        "publish": "npm publish --registry=https://registry.npmjs.org"
+        "publish-release": "npm publish --registry=https://registry.npmjs.org"
     },
     "dependencies": {
         "esbuild": "^0.24.0",
