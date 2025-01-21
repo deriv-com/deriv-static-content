@@ -60,10 +60,11 @@ jobs:
             echo "changes_detected_cs=true" >> $GITHUB_ENV
           fi
 
-      - name: log
+      - name: changes log
         run: |
-          echo "changes changes_detected_marketing $changes_detected_marketing"
-          echo "changes changes_detected_cs $changes_detected_cs"
+          echo "changes_detected_marketing $changes_detected_marketing"
+          echo "changes_detected_cs $changes_detected_cs"
+
       - name: Install dependencies, build and publish ${{ matrix.script }}-scripts
         if:
           (matrix.script == 'marketing' && env.changes_detected_marketing == 'true') ||
@@ -72,4 +73,4 @@ jobs:
         run: |
           npm install
           npm run build
-          npm run publish-release
+          npm publish

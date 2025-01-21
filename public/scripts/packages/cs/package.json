@@ -7,8 +7,7 @@
         "url": "git+https://github.com/deriv-com/deriv-static-content.git"
     },
     "scripts": {
-        "build": "node build.js",
-        "publish-release": "npm publish --registry=https://registry.npmjs.org"
+        "build": "node build.js"
     },
     "dependencies": {
         "esbuild": "^0.24.0",
