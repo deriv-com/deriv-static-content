@@ -45,10 +45,8 @@ jobs:
         if: matrix.script == 'marketing'
         run: |
           if git diff --exit-code HEAD^ HEAD -- public/scripts/packages/marketing; then
-            echo "changes not detected in marketing"
             echo "changes_detected_marketing=false" >> $GITHUB_ENV
           else
-            echo "changes detected in marketing"
             echo "changes_detected_marketing=true" >> $GITHUB_ENV
           fi
 
@@ -57,13 +55,15 @@ jobs:
         if: matrix.script == 'cs'
         run: |
           if git diff --exit-code HEAD^ HEAD -- public/scripts/packages/cs; then
-            echo "changes not detected in cs"
             echo "changes_detected_cs=false" >> $GITHUB_ENV
           else
-            echo "changes detected in cs"
             echo "changes_detected_cs=true" >> $GITHUB_ENV
           fi
 
+      - name: log
+        run: |
+          echo "changes changes_detected_marketing $changes_detected_marketing"
+          echo "changes changes_detected_cs $changes_detected_cs"
       - name: Install dependencies, build and publish ${{ matrix.script }}-scripts
         if:
           (matrix.script == 'marketing' && env.changes_detected_marketing == 'true') ||
