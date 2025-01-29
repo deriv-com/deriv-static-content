@@ -376,7 +376,11 @@
 					</tr>
                     <tr>
                         <td align="left" style="padding: 10px 30px 10px;" class="paragraph-td">
-                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: clamp(14px, 3vw, 16px); line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="dark-subtext">Hello {{ Profile.name | default:"partner" }},</p>
+                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: clamp(14px, 3vw, 16px); line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="dark-subtext">{% if customer.first_Name != blank %}
+                                Hi {{customer.first_Name | titlecase }},
+                                {% else %}
+                                Hello partner,
+                                {% endif %}</p>
                         </td>
                     </tr>
 					<tr>
@@ -398,11 +402,13 @@
 									<td class="details-date-td light-subtext" style="padding: 40px 10px 20px 20px; font-weight: 700; color: #333; font-size: 16px;">Date:</td>
 									<td class="details-time-td light-subtext" style="padding: 40px 10px 20px 20px; font-weight: 700; color: #333; font-size: 16px;">Time:</td>
 								</tr>
+                                <!--[GP-ops] enter speaker name, date and time of events here-->
 								<tr>
 									<td class="details-speaker-td dark-subtext" style="padding: 0 10px 40px 20px; color: #333; font-size: 16px;">Elvis, Isabel, Ally, Jean Bertrand</td>
 									<td class="details-date-td dark-subtext" style="padding: 0 10px 40px 20px; color: #333; font-size: 16px;">26th June 2023 (Monday)</td>
 									<td class="details-time-td dark-subtext" style="padding: 0 10px 40px 20px; color: #333; font-size: 16px;">4:00PM CAT I 5:00PM EAT I 3:00PM WAT I 2:00PM GMT</td>
 								</tr>
+                                <!--[GP-ops] end-->
 							</tbody>
 						</table>
 						</td>
@@ -428,6 +434,7 @@
 						<p class="dark-subtext">Don’t miss out on this golden opportunity. Reserve your spot by registering today!</p>
 						</td>
 					</tr>
+                    <!--[GP-ops] enter link to register after each href="https...."-->
 					<tr>
 						<td align="center" class="dark-black"><!--[if (gte mso 9)|(IE)]>
                                 <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://deriv.zoom.us/webinar/register/WN_WiRnJoAtRIyRWPycrrFloQ" style="height:40px;v-text-anchor:middle;width:230px;" arcsize="10%" strokecolor="#ff444f" fillcolor="#ff444f">
@@ -436,6 +443,7 @@
                                 </v:roundrect>
                                 <![endif]--><!--[if !gte mso 9]><!-- --><a class="button" href="https://deriv.zoom.us/webinar/register/WN_WiRnJoAtRIyRWPycrrFloQ" target="_blank">Register now</a> <!--<![endif]--></td>
 					</tr>
+                    <!--[GP-ops] end-->
 					<tr>
 						<td align="left" class="paragraph-td" style="padding: 40px 30px 10px 30px;">
 						<p class="dark-subtext">If you have any questions or issues, contact us via <a href="https://deriv.com/?is_livechat_open=true">live chat</a>.</p>

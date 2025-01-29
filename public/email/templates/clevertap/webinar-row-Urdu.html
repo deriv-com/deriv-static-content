@@ -376,7 +376,13 @@
 					</tr>
                     <tr>
                         <td align="right" style="padding: 10px 30px 10px;" class="paragraph-td" dir="rtl">
-                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: clamp(14px, 3vw, 16px); line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="dark-subtext">ہیلو {{ Profile.name | default:"شریک" }},</p>
+                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: clamp(14px, 3vw, 16px); line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="dark-subtext">ہیلو {{ Profile.name | default:"شریک" }},
+                                {% if customer.first_Name != blank %}
+                                ہیلو {{customer.first_Name | titlecase }},
+                                {% else %}
+                                ہیلو شریک,
+                                {% endif %}
+                            </p>
                         </td>
                     </tr>
 					<tr>
@@ -398,11 +404,13 @@
 									<td class="details-date-td light-subtext" style="padding: 40px 10px 20px 20px; font-weight: 700; color: #333; font-size: 16px;">:تاریخ</td>
 									<td class="details-time-td light-subtext" style="padding: 40px 10px 20px 20px; font-weight: 700; color: #333; font-size: 16px;">:وقت</td>
 								</tr>
+                                <!--[GP-ops] enter speaker name, date and time of events here-->
 								<tr>
 									<td class="details-speaker-td dark-subtext" style="padding: 0 10px 40px 20px; color: #333; font-size: 16px;">Elvis, Isabel, Ally, Jean Bertrand</td>
 									<td class="details-date-td dark-subtext" style="padding: 0 10px 40px 20px; color: #333; font-size: 16px;">26th June 2023 (Monday)</td>
 									<td class="details-time-td dark-subtext" style="padding: 0 10px 40px 20px; color: #333; font-size: 16px;">4:00PM CAT I 5:00PM EAT I 3:00PM WAT I 2:00PM GMT</td>
 								</tr>
+                                <!--[GP-ops] end-->
 							</tbody>
 						</table>
 						</td>
@@ -426,6 +434,7 @@
                             <p class="dark-subtext">!اس سنہری موقع سے محروم نہ ہوں۔ آج ہی رجسٹر کرکے اپنی جگہ محفوظ کریں</p>
 						</td>
 					</tr>
+                    <!--[GP-ops] enter link to register after each href="https...."-->
 					<tr>
 						<td align="center" class="dark-black"><!--[if (gte mso 9)|(IE)]>
                                 <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://deriv.zoom.us/webinar/register/WN_WiRnJoAtRIyRWPycrrFloQ" style="height:40px;v-text-anchor:middle;width:230px;" arcsize="10%" strokecolor="#ff444f" fillcolor="#ff444f">
@@ -434,6 +443,7 @@
                                 </v:roundrect>
                                 <![endif]--><!--[if !gte mso 9]><!-- --><a class="button" href="https://deriv.zoom.us/webinar/register/WN_WiRnJoAtRIyRWPycrrFloQ" target="_blank">Register now</a> <!--<![endif]--></td>
 					</tr>
+                    <!--[GP-ops] end-->
 					<tr>
 						<td align="right" class="paragraph-td" style="padding: 30px 30px 40px 30px;">
                             <p class="dark-subtext">اگر آپ کے کوئی سوالات یا مسائل ہیں تو <a href="https://deriv.com/?is_livechat_open=true">لایو چیٹ</a> کے ذریعے ہم سے رابطہ کریں۔</p>

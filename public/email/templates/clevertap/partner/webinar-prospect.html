@@ -320,7 +320,7 @@
                         </tr>
                         <tr>
                             <td align="left" style="padding: 15px 30px 8px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">Hi {{ Profile.name }}!</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">Hi {{customer.first_Name | titlecase }}!</p>
                             </td>
                         </tr>
                         <tr>
@@ -346,7 +346,7 @@
                                         <td style="width: 60px;">
                                             <img src="https://static.deriv.com/email/images/icons/calendar2.png" style="width: 25px; text-align: center; margin: 10px 0 0 25px;"/>
                                         </td>
-                                        <td>
+                                        <td><!--[GP-ops] enter details of events starts from here-->
                                             <div style="height: 40px; text-align: left; margin: 20px 10px 5px; background-color: #fff; border-radius: 15px;" class="darkmodeblack">
                                                 <p class=" darkcolor-subtext" style="padding: 10px 15px; font-weight: 500; font-size: 13px; font-family: 'IBM Plex Sans', Arial, sans-serif;">[–day, DD Mmm YYYY] </p>
                                             </div>
@@ -359,7 +359,7 @@
                                         <td>
                                             <div style="text-align: left; margin: 20px 10px 35px; background-color: #fff; border-radius: 15px;" class="darkmodeblack">
                                                 <p class="darkcolor-subtext" style="padding: 10px 15px 10px; font-weight: 500; font-size: 13px !important; font-family: 'IBM Plex Sans', Arial, sans-serif;">[_ pm (GMT+8)]</p>
-                                            </div>
+                                            </div><!--[GP-ops] end-->
                                         </td>
                                     </tr>
                                 </table>
@@ -385,7 +385,7 @@
                                 <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 15px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">Secure your spot!</p>
                             </td>
                         </tr>
-                        <!-- BUTTON -->
+                        <!-- BUTTON --><!--[GP-ops] enter link to register after each href="https...."-->
                             <tr>
                                 <td align="center" style="padding:5px 30px 35px;" class="darkmodeblack">
                                     <!--[if (gte mso 9)|(IE)]>
@@ -397,7 +397,7 @@
                                     <!--[if !gte mso 9]><!-- -->
                                     <a class="button" href="https://deriv.com" target="_blank" style="text-decoration: none; text-align: center; line-height: 20px; padding: 10px 16px;display: inline-block; font-weight: bold; font-family: 'Ubuntu','IBM Plex Sans', Arial, sans-serif; font-size: 14px;border-radius: 16px; overflow: visible; border: 0;color: #ffffff; background: #ff444f;">Register now</a>
                                     <!--<![endif]-->
-                                </td>
+                                </td><!--[GP-ops] end-->
                             </tr>
                         <!-- BUTTON CLOSING -->
                         <tr>
