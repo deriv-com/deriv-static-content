@@ -1,4 +1,17 @@
 (function DerivMarketingCookies() {
+  // Initialize logging array in window
+  window.marketingCookieLogs = [];
+
+  const log = (action, details) => {
+    window.marketingCookieLogs.push({
+      timestamp: new Date().toISOString(),
+      action,
+      details,
+    });
+  };
+
+  log("DerivMarketingCookies", "Initialization started");
+
   /* utility functions */
   const getDomain = () => {
     const host_domain = location.hostname;
@@ -11,8 +24,18 @@
     return matched_domain ?? host_domain;
   };
 
+  const setCookie = (name, value) => {
+    document.cookie = `${name}=${value}; expires=Tue, 19 Jan 9999 03:14:07 UTC; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+    log("setCookie", {
+      name,
+      value,
+      domain: getDomain(),
+    });
+  };
+
   const eraseCookie = (name) => {
     document.cookie = `${name}=; Max-Age=-99999999; domain=${getDomain()}; path=/;`;
+    log("eraseCookie", { name });
   };
 
   const getCookie = (name) => {
@@ -62,18 +85,32 @@
     const valid_new_utm_source =
       new_utm_data.utm_source && new_utm_data.utm_source !== "null";
     if (!current_utm_data && valid_new_utm_source) {
+      log('shouldOverwrite', {
+        reason: 'No current UTM data and valid new UTM source',
+        new_utm_data
+      });
       return true;
     }
+
     // If we have old utm data, 3 fields are required for new utm data to rewrite the old one
     const required_fields = ["utm_source", "utm_medium", "utm_campaign"];
     const has_new_required_fields = required_fields.every(
       (field) => new_utm_data[field]
     );
     if (has_new_required_fields) {
+      log('shouldOverwrite', {
+        reason: 'All required fields present in new UTM data',
+        new_utm_data,
+        current_utm_data
+      });
       return true;
     }
 
-    // Otherwise we don't rewrite the old utm_data
+    log('shouldOverwrite', {
+      reason: 'Conditions not met for overwrite',
+      new_utm_data,
+      current_utm_data
+    });
     return false;
   };
 
@@ -135,9 +172,7 @@
       .replaceAll("%7B", "{")
       .replaceAll("%7D", "}");
 
-    // Non-expiring cookie for utm_data
-    // Max 400 days
-    document.cookie = `utm_data=${utm_data_cookie}; expires=Tue, 19 Jan 9999 03:14:07 UTC; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+    setCookie("utm_data", utm_data_cookie);
   }
 
   /* end handling UTMs */
@@ -149,14 +184,13 @@
     eraseCookie("affiliate_tracking");
     const affiliateToken =
       searchParams.get("t") || searchParams.get("affiliate_token");
-    document.cookie = `affiliate_tracking=${affiliateToken}; expires=Tue, 19 Jan 9999 03:14:07 UTC;  domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+    setCookie("affiliate_tracking", affiliateToken);
   }
-  /* start handling affiliate tracking */
+
   if (searchParams.has("sidc")) {
     eraseCookie("affiliate_tracking");
-    document.cookie = `affiliate_tracking=${searchParams.get(
-      "sidc"
-    )}; expires=Tue, 19 Jan 9999 03:14:07 UTC;  domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+    const sidcValue = searchParams.get("sidc");
+    setCookie("affiliate_tracking", sidcValue);
   }
   /* end handling affiliate tracking */
 
@@ -212,16 +246,18 @@
 
   if (!!final_gclid) {
     eraseCookie("gclid");
-    document.cookie = `gclid=${final_gclid}; expires=Tue, 19 Jan 9999 03:14:07 UTC; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+    setCookie("gclid", final_gclid);
   }
   /* end handling gclid */
 
   /* start handling campaign channel */
   const campaign_channel = searchParams.get("ca");
-  
+
   if (campaign_channel) {
     eraseCookie("campaign_channel");
-    document.cookie = `campaign_channel=${campaign_channel}; expires=Tue, 19 Jan 9999 03:14:07 UTC; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+    setCookie("campaign_channel", campaign_channel);
   }
   /* end handling campaign channel */
+
+  log("DerivMarketingCookies", "Initialization completed");
 })();
