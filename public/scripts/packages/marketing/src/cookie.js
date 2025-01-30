@@ -77,7 +77,6 @@
     return false;
   };
 
-  /* immediately execute marketing cookie logic */
   const searchParams = new URLSearchParams(window.location.search);
   const brand_name = "deriv";
   const app_id = 11780;
