@@ -1,83 +1,82 @@
-/* utility functions */
-const getDomain = () => {
-  const host_domain = location.hostname;
-  const allowed_domains = ["deriv.com", "binary.sx","webflow.io"];
+(function DerivMarketingCookies() {
+  /* utility functions */
+  const getDomain = () => {
+    const host_domain = location.hostname;
+    const allowed_domains = ["deriv.com", "binary.sx", "webflow.io"];
 
-  const matched_domain = allowed_domains.find((allowed_domain) =>
-    host_domain.includes(allowed_domain)
-  );
+    const matched_domain = allowed_domains.find((allowed_domain) =>
+      host_domain.includes(allowed_domain)
+    );
 
-  return matched_domain ?? host_domain;
-};
+    return matched_domain ?? host_domain;
+  };
 
-const eraseCookie = (name) => {
-  document.cookie = `${name}=; Max-Age=-99999999; domain=${getDomain()}; path=/;`;
-};
+  const eraseCookie = (name) => {
+    document.cookie = `${name}=; Max-Age=-99999999; domain=${getDomain()}; path=/;`;
+  };
 
-const getCookie = (name) => {
-  const dc = document.cookie;
-  const prefix = name + "=";
+  const getCookie = (name) => {
+    const dc = document.cookie;
+    const prefix = name + "=";
 
-  // check begin index
-  let begin = dc.indexOf("; " + prefix);
-  if (begin == -1) {
-    begin = dc.indexOf(prefix);
-    // cookie not available
-    if (begin != 0) return null;
-  } else {
-    begin += 2;
-  }
+    // check begin index
+    let begin = dc.indexOf("; " + prefix);
+    if (begin == -1) {
+      begin = dc.indexOf(prefix);
+      // cookie not available
+      if (begin != 0) return null;
+    } else {
+      begin += 2;
+    }
 
-  // check end index
-  let end = document.cookie.indexOf(";", begin);
-  if (end == -1) {
-    end = dc.length;
-  }
+    // check end index
+    let end = document.cookie.indexOf(";", begin);
+    if (end == -1) {
+      end = dc.length;
+    }
 
-  return decodeURI(dc.substring(begin + prefix.length, end));
-};
+    return decodeURI(dc.substring(begin + prefix.length, end));
+  };
 
-const isMobile = () => {
-  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
-  );
-};
+  const isMobile = () => {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
+  };
 
-const toISOFormat = (date) => {
-  if (date instanceof Date) {
-    const utc_year = date.getUTCFullYear();
-    const utc_month =
-      (date.getUTCMonth() + 1 < 10 ? "0" : "") + (date.getMonth() + 1);
-    const utc_date = (date.getUTCDate() < 10 ? "0" : "") + date.getUTCDate();
+  const toISOFormat = (date) => {
+    if (date instanceof Date) {
+      const utc_year = date.getUTCFullYear();
+      const utc_month =
+        (date.getUTCMonth() + 1 < 10 ? "0" : "") + (date.getMonth() + 1);
+      const utc_date = (date.getUTCDate() < 10 ? "0" : "") + date.getUTCDate();
 
-    return `${utc_year}-${utc_month}-${utc_date}`;
-  }
+      return `${utc_year}-${utc_month}-${utc_date}`;
+    }
 
-  return "";
-};
+    return "";
+  };
 
-const shouldOverwrite = (new_utm_data, current_utm_data) => {
-  // If we don't have old utm data, the utm_source field is enough for new utm data
-  const valid_new_utm_source =
-    new_utm_data.utm_source && new_utm_data.utm_source !== "null";
-  if (!current_utm_data && valid_new_utm_source) {
-    return true;
-  }
-  // If we have old utm data, 3 fields are required for new utm data to rewrite the old one
-  const required_fields = ["utm_source", "utm_medium", "utm_campaign"];
-  const has_new_required_fields = required_fields.every(
-    (field) => new_utm_data[field]
-  );
-  if (has_new_required_fields) {
-    return true;
-  }
+  const shouldOverwrite = (new_utm_data, current_utm_data) => {
+    // If we don't have old utm data, the utm_source field is enough for new utm data
+    const valid_new_utm_source =
+      new_utm_data.utm_source && new_utm_data.utm_source !== "null";
+    if (!current_utm_data && valid_new_utm_source) {
+      return true;
+    }
+    // If we have old utm data, 3 fields are required for new utm data to rewrite the old one
+    const required_fields = ["utm_source", "utm_medium", "utm_campaign"];
+    const has_new_required_fields = required_fields.every(
+      (field) => new_utm_data[field]
+    );
+    if (has_new_required_fields) {
+      return true;
+    }
 
-  // Otherwise we don't rewrite the old utm_data
-  return false;
-};
-/* end utility functions */
+    // Otherwise we don't rewrite the old utm_data
+    return false;
+  };
 
-(function initMarketingCookies() {
   const searchParams = new URLSearchParams(window.location.search);
   const brand_name = "deriv";
   const app_id = 11780;
@@ -216,4 +215,13 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
     document.cookie = `gclid=${final_gclid}; expires=Tue, 19 Jan 9999 03:14:07 UTC; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
   }
   /* end handling gclid */
-})(); // --
+
+  /* start handling campaign channel */
+  const campaign_channel = searchParams.get("ca");
+  
+  if (campaign_channel) {
+    eraseCookie("campaign_channel");
+    document.cookie = `campaign_channel=${campaign_channel}; expires=Tue, 19 Jan 9999 03:14:07 UTC; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+  }
+  /* end handling campaign channel */
+})();
