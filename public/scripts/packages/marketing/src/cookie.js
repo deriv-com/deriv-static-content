@@ -77,7 +77,8 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
 };
 /* end utility functions */
 
-(function initMarketingCookies() {
+(function DerivMarketingCookies() {
+  /* immediately execute marketing cookie logic */
   const searchParams = new URLSearchParams(window.location.search);
   const brand_name = "deriv";
   const app_id = 11780;
@@ -216,4 +217,13 @@ const shouldOverwrite = (new_utm_data, current_utm_data) => {
     document.cookie = `gclid=${final_gclid}; expires=Tue, 19 Jan 9999 03:14:07 UTC; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
   }
   /* end handling gclid */
-})(); // --
+
+  /* start handling campaign channel */
+  const campaign_channel = searchParams.get("ca");
+  
+  if (campaign_channel) {
+    eraseCookie("campaign_channel");
+    document.cookie = `campaign_channel=${campaign_channel}; expires=Tue, 19 Jan 9999 03:14:07 UTC; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+  }
+  /* end handling campaign channel */
+})();
