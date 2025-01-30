@@ -81,33 +81,35 @@
   };
 
   const shouldOverwrite = (new_utm_data, current_utm_data) => {
+    // If we don't have old utm data, the utm_source field is enough for new utm data
     const valid_new_utm_source =
       new_utm_data.utm_source && new_utm_data.utm_source !== "null";
     if (!current_utm_data && valid_new_utm_source) {
-      log("shouldOverwrite", {
-        reason: "No current UTM data and valid new UTM source",
-        new_utm_data,
+      log('shouldOverwrite', {
+        reason: 'No current UTM data and valid new UTM source',
+        new_utm_data
       });
       return true;
     }
 
+    // If we have old utm data, 3 fields are required for new utm data to rewrite the old one
     const required_fields = ["utm_source", "utm_medium", "utm_campaign"];
     const has_new_required_fields = required_fields.every(
       (field) => new_utm_data[field]
     );
     if (has_new_required_fields) {
-      log("shouldOverwrite", {
-        reason: "All required fields present in new UTM data",
+      log('shouldOverwrite', {
+        reason: 'All required fields present in new UTM data',
         new_utm_data,
-        current_utm_data,
+        current_utm_data
       });
       return true;
     }
 
-    log("shouldOverwrite", {
-      reason: "Conditions not met for overwrite",
+    log('shouldOverwrite', {
+      reason: 'Conditions not met for overwrite',
       new_utm_data,
-      current_utm_data,
+      current_utm_data
     });
     return false;
   };
