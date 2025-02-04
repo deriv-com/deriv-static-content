@@ -1,4 +1,4 @@
-// Version 1.0.12
+// Version 1.0.13
 const cacheTrackEvents = {
   interval: null,
   responses: [],
@@ -190,9 +190,23 @@ const cacheTrackEvents = {
     cache = false,
     callback = null
   ) => {
+    // Debounce utility function
+    const debounce = (func, wait) => {
+      let timeout;
+      return function executedFunction(...args) {
+        const later = () => {
+          clearTimeout(timeout);
+          func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+      };
+    };
+
     const addClickListener = (el) => {
       if (!el.dataset.clickEventTracking) {
-        el.addEventListener("click", function (e) {
+        // Debounced click handler with 300ms delay
+        const debouncedHandler = debounce((e) => {
           let event = {
             name,
             properties,
@@ -204,7 +218,9 @@ const cacheTrackEvents = {
           }
 
           cacheTrackEvents.track(event);
-        });
+        }, 300); // 300ms debounce delay
+
+        el.addEventListener("click", debouncedHandler);
         el.dataset.clickEventTracking = "true";
       }
     };
