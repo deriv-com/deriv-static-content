@@ -1,7 +1,7 @@
 {
     "name": "@deriv-com/cs-utils",
     "type": "module",
-    "version": "1.0.11",
+    "version": "1.0.12",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/deriv-com/deriv-static-content.git"
