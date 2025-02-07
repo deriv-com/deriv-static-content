@@ -33,6 +33,9 @@ const DOMAIN_LIST_APP_ID = {
   "dbot.deriv.be": "65556",
   "dbot.deriv.me": "65557",
   [DBOT_STAGING]: "29934",
+
+  "hub.deriv.com": "61554",
+  "staging-hub.deriv.com": "53503",
 };
 
 const getAppID = () => {
