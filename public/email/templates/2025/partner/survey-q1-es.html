@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
     <meta name="color-scheme" content="light dark">
     <meta name="supported-color-schemes" content="light dark">
     <meta charset="utf-8">
-    <title>Secure your commissions in 2 steps</title>
+    <title>¿Estás contento?</title>
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="x-apple-disable-message-reformatting">
@@ -127,7 +126,7 @@
             font-weight: bold;
             font-family: 'Ubuntu','IBM Plex Sans', Arial, sans-serif; 
             font-size: 14px;
-            border-radius: 30px;
+            border-radius: 16px;
             overflow: visible;
             border: 0;
             color: #ffffff;
@@ -145,7 +144,7 @@
             font-weight: bold;
             font-family: 'Ubuntu', 'IBM Plex Sans', Arial, sans-serif; 
             font-size: 14px;
-            border-radius: 30px;
+            border-radius: 16px;
             overflow: visible;
             border: 0;
             color: #ff444f;
@@ -233,7 +232,7 @@
                 padding-top: 1px !important;
             }
             .mb-font-size{
-                font-size: 24px !important;
+                font-size: 14px !important;
             }
         }
         @media (prefers-color-scheme: dark ) {
@@ -316,111 +315,46 @@
                                 </td>
                             </tr>  
                         </div>
+                        <tr>
+                            <td align="center" style="padding: 10px 40px 0; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <h1 class="mb-font-size-header" style="font-family: 'Ubuntu', 'IBM Plex Sans', Arial, sans-serif; font-size: 30px; line-height: 1.5 ; color: #414652; font-weight: 700;margin:0;">¡Cuéntanos cómo <nobr>lo hicimos!</nobr></h1>
+                            </td>
+                        </tr>
                         <!-- END HERO -->
                         <tr>
-                            <td align="center" style="padding: 15px 30px 15px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'Inter, sans-serif','Ubuntu', 'IBM Plex Sans', Arial, sans-serif; font-size: 30px; line-height: 1.5 ; color: #414652; font-weight: 700;margin:0;">Open your real <nobr>account today</nobr></p>
+                            <td align="left" style="padding: 25px 30px 5px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">{% if customer.name != blank %}
+                                    Hola {{customer.name | titlecase }},
+                                    {% else %}
+                                    Hola socio,
+                                    {% endif %}</p>
                             </td>
                         </tr>
                         <tr>
-                            <td align="left" style="padding: 18px 30px 10px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'Inter, sans-serif','IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">Hi {{ Profile.name | default:"partner" }},</p>
+                            <td align="left" style="padding: 8px 30px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">Siempre estamos buscando nuevas formas de mejorar tu experiencia con Deriv. Hoy, puedes opinar sobre cómo Deriv puede ayudarte a crecer.</p>
                             </td>
                         </tr>
                         <tr>
-                            <td align="left" style="padding: 4px 30px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'Inter, sans-serif','IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">To keep receiving your commissions, open and verify a Deriv real account within 21 days.</p>
+                            <td align="left" style="padding: 8px 30px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">Toma menos de un minuto para completar una breve encuesta y ayúdanos a saber cómo podemos mejorar.</p>
                             </td>
                         </tr>
                         <tr>
-                            <td align="left" style="padding: 14px 30px 14px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'Inter','IBM Plex Sans', Arial, sans-serif; font-size: 20px; line-height: 1.5 ; color: #414652; font-weight: 700;margin:0;" class="darkcolor-subtext">It only takes 2 steps</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left" style="padding: 1px 30px 1px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'Inter','IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 700;margin:0;" class="darkcolor-subtext">Step 1: Open a Deriv real account</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left" style="padding: 11px 30px 1px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'Inter','IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">• <a href="https://deriv.com/signup/" style="color: #ff444f !important;">Create a real account</a> using the email address tied to your affiliate account.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left" style="padding: 11px 30px 1px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'Inter','IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">• Fill in the required details and follow the steps to complete your real account setup.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left" style="padding: 11px 30px 10px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'Inter','IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;font-style: italic;" class="darkcolor-subtext"><strong>Note:</strong> Double-check your name and date of birth to make sure they match the details on your identity document.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left" style="padding: 1px 30px 13px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'Inter','IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">Watch our quick video for detailed instructions on <a href="https://www.youtube.com/watch?v=RZlZkM-hda8" target="_blank" style="color: #ff444f !important; ">creating a Deriv real account</a>.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left" style="padding: 14px 30px 1px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'Inter','IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 700;margin:0;" class="darkcolor-subtext">Step 2: Verify your account</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left" style="padding: 11px 30px 1px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'Inter','IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">• Proof of identity: <a href="https://app.deriv.com/account/proof-of-identity" target="_blank" style="color: #ff444f !important; ">Upload</a> an image of <strong>one</strong> of the following documents (front and back):</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left" style="padding: 1px 30px 1px 60px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'Inter','IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">• Passport</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left" style="padding: 1px 30px 1px 60px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'Inter','IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">• Driver’s licence</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left" style="padding: 1px 30px 1px 60px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'Inter','IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">• Identity card</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left" style="padding: 11px 30px 1px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'Inter','IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">You will also need to submit a clear selfie after uploading your proof of identity.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left" style="padding: 11px 30px 20px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'Inter','IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">• Proof of address: <a href="https://app.deriv.com/account/proof-of-address" target="_blank" style="color: #ff444f !important; ">Upload</a> an image of one your recent bank statement or utility bill (e.g. electricity, water, gas) issued within  12 months, showing your name and current address.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left" style="padding: 1px 30px 12px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'Inter','IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">To ensure a smooth verification process, submit accurate, up-to-date, and clearly legible documents. This will help us process your verification quickly and efficiently. Any discrepancies or inaccuracies can lead to delays or termination from our partnership programme.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left" style="padding: 1px 30px 12px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'Inter','IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext"><strong>Important</strong>: Failure to verify a real account within <strong>21 days</strong> will lead to a suspension of your commissions.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td  align="center" style="padding: 25px 35px; color: #414652; font-family: 'Inter','Ubuntu','IBM Plex Sans', Arial, sans-serif; font-size: 18px; font-weight: 600; line-height: 24px;" class="darkmodeblack">
+                            <td  align="center" style="padding: 15px 35px; color: #414652; font-family: 'Ubuntu','IBM Plex Sans', Arial, sans-serif; font-size: 18px; font-weight: 600; line-height: 24px;" class="darkmodeblack">
                                 <!--[if (gte mso 9)|(IE)]>
-                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://deriv.com/signup/" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="8%" stroke="f" fillcolor="#ff444f">
+                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://survey.survicate.com/de402ef4e7acb4dd/?_svbep=P3A9YW5vbnltb3Vz" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="8%" stroke="f" fillcolor="#ff444f">
                                     <w:anchorlock/>
-                                    <center style="color:#ffffff;font-family:sans-serif;font-size:14px;font-weight:bold;">Create real account</center>
+                                    <center style="color:#ffffff;font-family:sans-serif;font-size:14px;font-weight:bold;">Take the survey</center>
                                     </v:roundrect>
                                 <![endif]-->
-                                <a class="button" href="https://deriv.com/signup/" style="mso-hide:all;">Create real account</a>
+                                <a class="button" href="https://survey.survicate.com/de402ef4e7acb4dd/?_svbep=P3A9YW5vbnltb3Vz" style="mso-hide:all;">Tomar la encuesta</a>
                             </td>
                         </tr>
                         <tr>
-                            <td align="left" style="padding: 0 30px 25px 30px;" class="dark-black">
-                                <p class="darkcolor-subtext" style="padding: 5px;margin:0; font-family: 'Inter','IBM Plex Sans', Arial, sans-serif;font-size: 16px;color: #414652; text-align: left;line-height: 1.6;font-weight: 400;">If you have any questions, contact us via <a href="https://deriv.com/contact_us/?is_livechat_open=true" target="_blank" style="color: #ff444f !important; ">Live chat</a> or contact your account manager.</p>
+                            <td align="center" style="padding: 12px 30px 25px 30px;" class="dark-black">
+                                <p class="darkcolor-subtext" style="padding: 5px;margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 16px;color: #414652; text-align: center;line-height: 1.6;font-weight: 400;">¿Necesitas ayuda? Nuestro equipo de asistencia está disponible 24/7 <br/>via
+                                    <a href="https://deriv.com/contact_us/?is_livechat_open=true" target="_blank" style="color: #ff444f !important; ">Live chat</a> <span class="darkcolor-subtext" > y </span> <a href="https://api.whatsapp.com/send/?phone=35699578341&text&type=phone_number&app_absent=0" style="color: #ff444f !important; " target="_blank">WhatsApp</a>.</p>
                             </td>
                         </tr>
                         <tr class="mobile-hide">
@@ -450,29 +384,30 @@
                         <tr>
                             <td align="center" class="darkmodeblack" style="padding: 30px 30px 0;"><a href="https://www.deriv.com"><img alt="Deriv.com" width="130" src="https://static.deriv.com/logos/deriv25-gray.png" style="display: block; opacity: 70%;"  /> </a></td>
                         </tr>
+                        
                         <tr>
-                            <td align="center" class="darkmodeblack" style="padding: 20px 0 10px; ">
-                                <p style="word-spacing: 10px !important;">
-                                    <a href="https://www.facebook.com/derivdotcom" style="text-decoration: none;"><img alt="Deriv.com on Facebook" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/facebook-md.png" title="Deriv.com on Facebook" width="32" /> </a>
-                                    <a href="https://www.instagram.com/deriv_official/" style="text-decoration: none;"> <img alt="Deriv.com on Instagram" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/instagram-md.png" title="Deriv.com on Instagram" width="32" /> </a>
-                                    <a href="https://twitter.com/derivdotcom" target="_blank"> <img alt="Deriv.com on Twitter" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/x-twitter-md.png" title="Deriv.com on Twitter" width="32" /> </a>
-                                    <a href="https://www.youtube.com/@Deriv.partners" style="text-decoration: none;"> <img alt="Deriv.com on Youtube" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/youtube-md.png" title="Deriv.com on Youtube" width="32" /> </a>
-                                    <a href="https://www.linkedin.com/company/derivdotcom/" style="text-decoration: none;"> <img alt="Deriv.com on Linkedin" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/linkedin-md.png" title="Deriv.com on Linkedin" width="32" /> </a>
-                                    <a href="https://t.me/Derivchannelofficial" style="text-decoration: none;"> <img alt="Deriv.com on Telegram" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/telegram-md.png" title="Deriv.com on Telegram" width="32" /> </a>
-                                    <a href="https://www.whatsapp.com/channel/0029VajV7cY8fewr35BOkF06" style="text-decoration: none;"> <img alt="Deriv.com on WhatsApp" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/whatsapp-md.png" title="Deriv.com on WhatsApp" width="32" /> </a>
+                            <td align="center" class="darkmodeblack" style="padding: 20px 0; ">
+                                <p style="word-spacing: 13px !important;">
+                                    <a href="https://www.facebook.com/derivespanol" style="text-decoration: none;"><img alt="Deriv.com on Facebook" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/facebook-md.png" title="Deriv.com on Facebook" width="32" /> </a>
+                                    <a href="https://www.instagram.com/deriv_espanol/" style="text-decoration: none;"> <img alt="Deriv.com on Instagram" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/instagram-md.png" title="Deriv.com on Instagram" width="32" /> </a>
+                                    <a href="https://twitter.com/DerivEspanol" target="_blank"> <img alt="Deriv.com on Twitter" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/x-twitter-md.png" width="32" title="Deriv.com on Twitter" /> </a>
+                                    <a href="https://youtube.com/@deriv.partners" style="text-decoration: none;"> <img alt="Deriv.com on Youtube" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/youtube-md.png" title="Deriv.com on Youtube" width="32" /> </a>
+                                    <a href="https://www.linkedin.com/company/derivdotcom/" style="text-decoration: none;"> <img alt="Deriv.com on Linkedin" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/linkedin-md.png" title="Deriv.com on Linkedin" width="32" /> </a> 
+                                    <a href="https://t.me/Derivchannelofficial" target="_blank"><img alt="Deriv.com on Telegram" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/telegram-md.png" style="height: 32px;" title="Deriv.com on Telegram" width="32" /></a>
+                                    <a href="https://www.whatsapp.com/channel/0029Vanwury8aKvAOAeeA30s" style="text-decoration: none;"> <img alt="Deriv.com en WhatsApp" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/whatsapp-md.png" title="Deriv.com en WhatsApp" width="32" /> </a>
                                 </p>
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#fff" align="left" style="padding:4px 45px 30px;color: #646464;font-family: 'Inter','IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'Inter','IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">For company information on the senders of this email, please click <a href="https://deriv.com/regulatory/" style="color: #ff444f !important;" target="_blank">here</a>.</p>
+                            <td bgcolor="#fff" align="left" style="padding:4px 45px 30px;color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">Para obtener información empresarial sobre los emisores de este correo electrónico, haga clic <a href="https://deriv.com/regulatory/" style="color: #ff444f !important;" target="_blank">aquí</a>.</p>
                             </td>
                         </tr>
                         <tr>
-                            <td align="center" bgcolor="#fff" class="darkmodeblack" style="color: #646464;font-family: 'Inter','IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
-                            <p style="padding: 0px 10px;font-family: 'Inter','IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 400; line-height: 16px; margin: 5px 0px 5px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important">Help centre</a>   <span class="darkmodegray">|</span>   <a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Terms and conditions</a>   <span class="darkmodegray">|</span>   <a href="https://deriv.com/tnc/security-and-privacy.pdf" style="color: #ff444f !important">Security and privacy</a></p>
+                            <td align="center" bgcolor="#fff" class="darkmodeblack" style="color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+                            <p style="padding: 0px 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 400; line-height: 16px; margin: 5px 0px 5px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important">Centro de ayuda</a>   <span class="darkmodegray">|</span>   <a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Términos y condiciones</a>   <span class="darkmodegray">|</span>   <a href="https://deriv.com/tnc/security-and-privacy.pdf" style="color: #ff444f !important">Seguridad y privacidad</a></p>
     
-                            <p class="darkmodegray" style="padding: 0 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #999999; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0px 0px 5px 0px;">No longer want to receive these emails? <a class="darkcolor-subtext" href="https://app.deriv.com/account/personal-details" style="mso-hide:all; color: #ff444f !important;">Unsubscribe</a></p>
+                            <p class="darkmodegray" style="padding: 0 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #999999; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0px 0px 5px 0px;">¿No deseas seguir recibiendo estos mensajes? <a class="darkcolor-subtext" href="https://app.deriv.com/account/personal-details" style="mso-hide:all; color: #ff444f !important;">Cancelar suscripción</a></p>
                             </td>
                         </tr>
                         <tr>
