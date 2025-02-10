@@ -233,7 +233,7 @@
                 padding-top: 1px !important;
             }
             .mb-font-size{
-                font-size: 14px !important;
+                font-size: 24px !important;
             }
         }
         @media (prefers-color-scheme: dark ) {
@@ -306,7 +306,7 @@
                         </tr>
                         <tr>
                             <td align="center" style="padding: 30px 40px 20px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <h1 class="mb-font-size-header" style="font-family: 'Ubuntu', 'IBM Plex Sans', Arial, sans-serif; font-size: 30px; line-height: 1.5 ; color: #414652; font-weight: 700;margin:0;">Trung tâm Đối tác <nobr>đã hoạt động!</nobr></h1>
+                                <h1 class="mb-font-size-header" style="font-family: 'Ubuntu', 'IBM Plex Sans', Arial, sans-serif; font-size: 30px; line-height: 1.5 ; color: #414652; font-weight: 700;margin:0;">Trung tâm Partner’s Hub <nobr>đã hoạt động!</nobr></h1>
                             </td>
                         </tr>
                         <tr align="center" class="mobile-hide">
@@ -320,7 +320,7 @@
                             <tr  align="center" style="display: none; mso-hide:all;" class="mobile-visible-block">
                                 <td bgcolor="#fafbfc" align="center" class="darkmodeblack" >
                                     <a href="http://deriv.com/">   
-                                        <input type="image" class="g-img" src="https://static.deriv.com/email/images/header-2025/partnerhub.png" width="100%" style="display: block;outline:none"/>
+                                        <input type="image" class="g-img" src="https://static.deriv.com/email/images/header-2024/partnerhub.png" width="100%" style="display: block;outline:none"/>
                                     </a>
                                 </td>
                             </tr>  
@@ -328,11 +328,7 @@
                         <!-- END HERO -->
                         <tr>
                             <td align="left" style="padding: 25px 30px 5px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">{% if customer.name != blank %}
-                                    Chào {{customer.name | titlecase }},
-                                    {% else %}
-                                    Chào đối tác,
-                                    {% endif %}</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">Chào {{ Profile.name | default:"đối tác" }},</p>
                             </td>
                         </tr>
                         <tr>
@@ -348,12 +344,12 @@
                                     <center style="color:#ffffff;font-family:sans-serif;font-size:14px;font-weight:bold;">Partner’s Hub</center>
                                     </v:roundrect>
                                 <![endif]-->
-                                <a class="button" href="https://hub.deriv.com/PartnersHub/" style="mso-hide:all;">Trung tâm Đối tác</a>
+                                <a class="button" href="https://hub.deriv.com/PartnersHub/" style="mso-hide:all;">Partner’s Hub</a>
                             </td>
                         </tr>
                         <tr>
                             <td align="center" style="padding: 5px 30px 5px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 20px; line-height: 1.5 ; color: #414652; font-weight: 700;margin:0;" >Kinh nghiệm nhiều hơn, lợi ích nhiều hơn</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 20px; line-height: 1.5 ; color: #414652; font-weight: 700;margin:0;" class="mb-font-size">Kinh nghiệm nhiều hơn, lợi ích nhiều hơn</p>
                             </td>
                         </tr>
 
@@ -406,7 +402,7 @@
                         <tr>
                             <td style="padding: 4px 30px 10px;margin: 0;" class="mobile-side2">
                                 <ol  class="darkcolor-subtext"  style="margin: 0 5px;padding:0 0 0 30px;">
-                                    <li class="darkcolor-subtext"><p style="font-size: 16px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #414652; line-height: 30px; padding: 0;margin: 0px;font-weight: 400;" class="darkcolor-subtext">Đi đến trang <a href="https://deriv.com/vi/partners/affiliate-ib" style="color: #ff444f !important;">Deriv Partners</a></p></li>
+                                    <li class="darkcolor-subtext"><p style="font-size: 16px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #414652; line-height: 30px; padding: 0;margin: 0px;font-weight: 400;" class="darkcolor-subtext">Đi đến trang <a href="https://deriv.com/ar/partners/affiliate-ib" style="color: #ff444f !important;">Deriv Partners</a></p></li>
                                     <li class="darkcolor-subtext"><p style="font-size: 16px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #414652; line-height: 30px; padding: 0;margin: 0px;font-weight: 400;" class="darkcolor-subtext">Nhấn vào nút đăng nhập</p></li>
                                     <li class="darkcolor-subtext"><p style="font-size: 16px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #414652; line-height: 30px; padding: 0;margin: 0px;font-weight: 400;" class="darkcolor-subtext">Nhập email và mật khẩu của tài khoản giao dịch Deriv của bạn</p></li>
                                     <li class="darkcolor-subtext"><p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #414652; font-size: 16px; line-height: 30px; padding: 0;margin: 0px;font-weight: 400;" class="darkcolor-subtext">Tận hưởng trải nghiệm mới!</p></li>
@@ -501,6 +497,44 @@
             </tr>
         </tbody>
         </table>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </body>
     <!-- end message template -->
 </html>
