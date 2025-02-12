@@ -6,7 +6,7 @@
     <meta name="supported-color-schemes" content="light dark">
     <meta charset="utf-8">
 
-    <title>أسئلة عملائك حول الفوركس مع إجاباتها</title>
+    <title>شارك أسرار المتداول الناجح</title>
 
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -237,21 +237,19 @@
             .mb-font-size{
                 font-size: 14px !important;
             }
+            .mb-font-size-table-text{
+                font-size: 13px !important;
+            }
             .mb-font-size1{
-                font-size: 17px !important;
+                font-size: 16px !important;
             }
-            .mb-font-size2{
-                font-size: 12px !important;
-            }
-            .mb-font-size-note{
-                font-size: 12px !important;
-            }
-            h1 {
+            .mb-font-size-header {
             font-family: 'IBM Plex Sans', Arial, sans-serif;
             font-size: 24px !important;
+            line-height: 40px;
             font-weight: bold;
             margin: 0; 
-            }
+        }
         }
         @media (prefers-color-scheme: dark ) {
             /* Shows Dark Mode-Only Content, Like Images */
@@ -311,222 +309,143 @@
 <body style="background-color: rgb(238, 238, 238); margin: 0px !important; padding: 0px !important; cursor: auto;">
 <table border="0" cellpadding="0" cellspacing="0" width="100%"><!-- Email body -->
 	<tbody>
-        <tr>
-            <td bgcolor="#eeeeee" align="center" style="padding: 10px 0 0;" class="mobile-nopadding">
-                <!--[if (gte mso 9)|(IE)]>
-                <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" ><tr><td align="center" valign="top" width="600" bgcolor="#ffffff">
-                <![endif]-->
-                <table  border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff; max-width: 600px;" class="darkmodeblack">
-                    <tbody>
-                        <!-- START HERO -->
-                        <tr>
-                            <td align="center" style="padding: 30px 30px 20px; opacity: 100% !important;">
-                                <a href="https://deriv.com/">
-                                    <img src="https://static.deriv.com/logos/deriv-red-2023.png" width="78" style="display: block;" alt="Deriv.com">                                  
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="center" style="padding: 30px 20px 20px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <h1 class="mb-font-size-header" style="font-family: 'Ubuntu', 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 36.77px; color: #414652; font-weight: 700;margin:0;"> عرّف عملائك على <nobr>أكبر سوق في العالم</nobr></h1>
-                            </td>
-                        </tr>
-                        <tr align="center" class="mobile-hide">
-                            <td align="center">
-                                <a href="https://deriv.com/">
-                                    <input type="image" src="https://static.deriv.com/email/images/header-2025/how-to-trade-forex-market.png"  width= "600" height="auto"/>
-                                </a>
-                            </td>
-                        </tr> 
-                        <div >
-                            <tr align="center" style="display: none; mso-hide:all;" class="mobile-visible-block">
-                                <td align="center" >
-                                    <a href="https://deriv.com/">   
-                                        <input type="image" src="https://static.deriv.com/email/images/header-2025/how-to-trade-forex-market.png" width="100%" />
+            <tr>
+                <td bgcolor="#eeeeee" align="center" style="padding: 10px 0 0;" class="mobile-nopadding">
+                    <!--[if (gte mso 9)|(IE)]>
+                    <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" ><tr><td align="center" valign="top" width="600" bgcolor="#ffffff">
+                    <![endif]-->
+                    <table  border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff; max-width: 600px;" class="darkmodeblack">
+                        <tbody>
+                            <!-- START HERO -->
+                            <tr>
+                                <td align="center" style="padding: 30px 30px 0; opacity: 100% !important;">
+                                    <a href="http://app.deriv.com/">
+                                        <img src="https://static.deriv.com/logos/deriv-red-2023.png" width="78" style="display: block;" alt="Deriv.com">                                  
                                     </a>
                                 </td>
-                            </tr>  
-                        </div> 
-                        <!-- END HERO -->
-                        <tr>
-                            <td align="right" style="padding: 30px 30px 10px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p dir="rtl" style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">
-                                    {% if customer.first_Name != blank %}
-                                    مرحبا {{customer.first_Name | titlecase }},
-                                    {% else %}
-                                    مرحبا شريك,
-                                    {% endif %}
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="right" style="padding: 10px 30px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p dir="rtl" style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">في عام 2024، قامت Deriv بدفع عمولات تنافسية للشركاء التابعين الذين يروّجون للفوركس. شارك كتابنا الإلكتروني، <span style="font-weight: 700; color: #ff444f !important;">“كيف تتداول في سوق الفوركس”</span> مع عملائك لتشجيعهم على البدء في التداول.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="right" style="padding: 10px 30px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p dir="rtl" style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size"><strong>مع هذا الكتاب الإلكتروني، سيتعلم عملائك:</strong></p>
-                            </td>
-                        </tr>
-                        <!--Table 1 desktop opening-->
-                        <tr class="mobile-hide">
-                            <td class="mb-less-padding" align="center">
-                                <table class="darkmodelowblack" style="width: 90%; margin: 20px 8px 20px; background-color: rgba(246, 247, 248, 1); border-radius: 8px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);">
-                                    <tr>
-                                        <td align="center">
-                                            <table style="width: 100%; margin: auto;">
-                                                <tr align="center">
-                                                    <td align="right">
-                                                        <p dir="rtl" style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0; padding: 0 20px;" class="darkcolor-subtext mb-font-size">كيفية عمل أزواج العملات، بما في ذلك الأزواج الرئيسية والثانوية والنادرة</p>
-                                                    </td>
-                                                    <td style="width: 40%;" style="margin-bottom: 20px;">
-                                                        <img src="https://static.deriv.com/email/images/design-2025/currency-pairs.png" alt="" style="height: auto; width: 100%; margin: 0; vertical-align: top;">
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </table>                               
-                            </td>
-                        </tr>
-                        <!--Table 1 desktop closing-->
-                        <!--Table 1 mobile opening-->
-                        <tr style="display: none;" class="mobile-visible-block" align="center">
-                            <td align="center" style="padding: 20px 20px; width: 50%; vertical-align: top; ">
-                                <table style="max-width: 262; height: 300px; background-color: #F6F7F8; border-radius: 20px 20px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);" class="dark-gray darkmodelowblack">   
-                                    <tr style="vertical-align: top;">
-                                        <td align="center">
-                                            <img src="https://static.deriv.com/email/images/design-2025/currency-pairs.png" alt="" style="height: auto; width: 100%; border-radius: 20px; vertical-align: top;">
-                                            <p dir="rtl" style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;padding: 20px 35px 0;" class="darkcolor-subtext mb-font-size mb-nopadding">كيفية عمل أزواج العملات، بما في ذلك الأزواج الرئيسية والثانوية والنادرة</p>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <!--Table 1 mobile closing-->
-
-
-                        <!--Table 2 desktop opening-->
-                        <tr class="mobile-hide">
-                            <td class="mb-less-padding" align="center">
-                                <table class="darkmodelowblack" style="width: 90%; margin: 10px 8px 20px; background-color: rgba(246, 247, 248, 1); border-radius: 8px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);">
-                                    <tr>
-                                        <td align="center">
-                                            <table style="width: 100%; margin: auto;">
-                                                <tr align="center">
-                                                    <td align="right">
-                                                        <p dir="rtl" style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0; padding: 0 20px;" class="darkcolor-subtext mb-font-size">استراتيجيات لاكتشاف الفرص وإدارة المخاطر بفعالية</p>
-                                                    </td>
-                                                    <td style="width: 40%;" >
-                                                        <img src="https://static.deriv.com/email/images/design-2025/strategy-spotting.png" style="height: auto; width: 100%; margin: 0; vertical-align: top;">
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </table>                               
-                            </td>
-                        </tr>
-                        <!--Table 2 desktop closing-->   
-                        <!--Table 2 mobile opening-->
-                        <tr style="display: none;" class="mobile-visible-block" align="center">
-                            <td align="center" style="padding: 10px 20px 30px; width: 50%; vertical-align: top; ">
-                                <table style="max-width: 262; height: 300px; background-color: #F6F7F8; border-radius: 20px 20px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);" class="dark-gray darkmodelowblack">   
-                                    <tr style="vertical-align: top;">
-                                        <td align="center">
-                                            <img src="https://static.deriv.com/email/images/design-2025/strategy-spotting.png" alt="" style="height: auto; width: 100%; border-radius: 20px; vertical-align: top;">
-                                            <p dir="rtl" style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;padding: 20px 50px 0;" class="darkcolor-subtext mb-font-size mb-nopadding">استراتيجيات لاكتشاف الفرص وإدارة المخاطر بفعالية</p>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <!--Table 2 mobile closing-->
-
-                        <!--Table 3 desktop opening-->
-                        <tr class="mobile-hide">
-                            <td class="mb-less-padding" align="center">
-                                <table class="darkmodelowblack" style="width: 90%; margin: 10px 8px 20px; background-color: rgba(246, 247, 248, 1); border-radius: 8px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);">
-                                    <tr>
-                                        <td align="center">
-                                            <table style="width: 100%; margin: auto;">
-                                                <tr align="center">
-                                                    <td align="right">
-                                                        <p dir="rtl" style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0; padding: 0 20px;" class="darkcolor-subtext mb-font-size">كيفية تداول الفوركس على Deriv باستخدام أدوات مثل وقف الخسارة وجني الأرباح.</p>
-                                                    </td>
-                                                    <td style="width: 40%;" >
-                                                        <img src="https://static.deriv.com/email/images/design-2025/stop-loss-take-profit.png" style="height: auto; width: 100%; margin: 0; vertical-align: top;">
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </table>                               
-                            </td>
-                        </tr>
-                        <!--Table 3 desktop closing-->   
-                        <!--Table 3 mobile opening-->
-                        <tr style="display: none;" class="mobile-visible-block" align="center">
-                            <td align="center" style="padding: 10px 20px 30px; width: 50%; vertical-align: top; ">
-                                <table style="max-width: 262; height: 300px; background-color: #F6F7F8; border-radius: 20px 20px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);" class="dark-gray darkmodelowblack">   
-                                    <tr style="vertical-align: top;">
-                                        <td align="center">
-                                            <img src="https://static.deriv.com/email/images/design-2025/stop-loss-take-profit.png" alt="" style="height: auto; width: 100%; border-radius: 20px; vertical-align: top;">
-                                            <p dir="rtl" style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;padding: 20px 50px 0;" class="darkcolor-subtext mb-font-size mb-nopadding">كيفية تداول الفوركس على Deriv باستخدام أدوات مثل وقف الخسارة وجني الأرباح.</p>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <!--Table 3 mobile closing-->
-
-                        <tr>
-                            <td align="right" style="padding: 10px 25px 0 30px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p dir="rtl" style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">قم بتحميل الكتاب الإلكتروني ومشاركته الآن. ساعدهم على التداول بذكاء—وزد من أرباحك المحتملة.</p>
-                            </td>
-                        </tr>
-
-                        <!-- BUTTON -->
-                        <tr>
-                            <td align="center" class="darkmodeblack" style="padding-top: 30px;">
-                                <!--[if (gte mso 9)|(IE)]>
-                                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://static.deriv.com/marketing/ebook-forex-en-hq.pdf" style="height:40px;v-text-anchor:middle;width:230px;" arcsize="30%" strokecolor="#ff444f" fillcolor="#ff444f">
-                                <w:anchorlock/>
-                                <center style="color:#fff;font-family:sans-serif;font-size:14px;font-weight:bold;">Download ebook>
-                                </v:roundrect>
-                                <![endif]-->
-                                <!--[if !gte mso 9]><!-- -->
-                                <a class="button" href="https://static.deriv.com/marketing/ebook-forex-en-hq.pdf" target="_blank" style="text-decoration: none; text-align: center; line-height: 20px; padding: 10px 16px;display: inline-block; font-weight: bold; font-family: 'Ubuntu','IBM Plex Sans', Arial, sans-serif; font-size: 14px;border-radius: 16px; overflow: visible; border: 0;color: #ffffff; background: #ff444f;">تنزيل الكتاب الإلكتروني</a>
-                                <!--<![endif]-->
-                            </td>
-                        </tr>
-                        <!-- BUTTON CLOSING -->
-
-                        <tr>
-                            <td align="center " class="mobile-side darkmodeblack" style="padding: 50px 80px 20px; background-color: #fff;">
-                            <p dir="rtl" class="darkcolor-subtext" style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: clamp(14px, 3vw, 16px); line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;">إذا كانت لديك أي أسئلة، تواصل معنا:<br />
-                            <a href="https://deriv.com/?is_livechat_open=true" style="color: #ff444f !important;" target="_blank">الدردشة المباشرة</a> | <a href="https://api.whatsapp.com/send/?phone=35699578341&amp;text&amp;type=phone_number&amp;app_absent=0" style="color: #ff444f !important;" target="_blank">الواتساب</a></p>
-                            </td>
-                        </tr>
-                        <tr class="mobile-hide">
-                            <td align="center"  class="mobile-side darkmodelowblack" style="padding: 40px 0px; background-color: #FBFBFC;">
-                                <input type="image" class="g-img" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/award2024.png"  width= "520" style="display: block;outline:none"/>
-                            </td>
-                        </tr>
-                        <tr style="display: none; mso-hide:all;" class="mobile-visible-block" >
-                            <td align="center" class="mobile-side darkmodelowblack" style="padding: 40px 0px; background-color: #FBFBFC;">
-                                <input type="image" class="g-img darkmodelowblack" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/award2024.png" width="90%" style="display: block;outline:none;"/>
-                            </td>
-                        </tr> 
-                    </tbody>
-                </table>
-                <!--[if (gte mso 9)|(IE)]></td></tr></table>
-                <![endif]-->
-            </td>
-        </tr>   
-        <!-- End Email body-->                                                       
-        <!-- FOOTER -->
+                            </tr>
+                            <tr>
+                                <td align="center" style="padding: 30px 30px 20px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                    <h1 class="mb-font-size-header" style="font-family: 'Ubuntu', 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 36.77px; color: #414652; font-weight: 700;margin:0;">ما هو سر الحفاظ على العملاء النشطين؟ <nobr>التعليم والدعم</nobr></h1>
+                                </td>
+                            </tr>
+                            <tr align="center" class="mobile-hide">
+                                <td align="center">
+                                    <a href="http://app.deriv.com/">
+                                        <input type="image" src="https://static.deriv.com/email/images/header-2025/david-rodrigo-unsplash-1.png"  width= "600" height="auto"/>
+                                    </a>
+                                </td>
+                            </tr> 
+                            <div >
+                                <tr align="center" style="display: none; mso-hide:all;" class="mobile-visible-block">
+                                    <td align="center" >
+                                        <a href="http://app.deriv.com/">   
+                                            <input type="image" src="https://static.deriv.com/email/images/header-2025/david-rodrigo-unsplash-1.png" width="100%" />
+                                        </a>
+                                    </td>
+                                </tr>  
+                            </div> 
+                            <!-- END HERO -->
+                            <tr>
+                                <td align="right" style="padding: 20px 30px 10px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                    <p dir="rtl" style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">{% if customer.first_Name != blank %}
+                                        مرحبا {{customer.first_Name | titlecase }},
+                                        {% else %}
+                                        مرحبا شريك,
+                                        {% endif %}</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" style="padding: 8px 30px 20px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                    <p dir="rtl" style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">من المرجح أن يستمر المتداولون الناجحون في البقاء نشطين — وهذا يعني عمولات أعلى بالنسبة لك. قم بمشاركة كتابنا الإلكتروني المجاني، "7 صفات للمتداولين الناجحين"، لمساعدة عملائك على تعزيز استراتيجياتهم في التداول وزيادة ثقتهم.</p>
+                                </td>
+                            </tr>
+                            <!--Gray table input desktop-->
+                            <tr>
+                                <td align="center" style="padding: 10px 0 20px;" class="mobile-side ">
+                                    <table class="mobile-side dark-border-radius" style="width: 90%; margin: auto; background-color: rgba(246, 247, 248, 1); border-radius: 15px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);">
+                                        <div style="width: 100%; margin: auto; padding: 0;">
+                                            <tr>
+                                                <td align="right" style="padding: 20px 20px 10px 30px;" class="mobile-side" colspan="2">
+                                                    <p dir="rtl" style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 20px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size"><strong>ما يحتويه:</strong></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="right" style="padding: 0px 5px 10px 30px;" class="mobile-side">
+                                                    <p dir="rtl" style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 700;margin:0;" class="mb-font-size">عادات التداول</p>
+                                                    <p dir="rtl" style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">ساعد عملائك في تعلم كيفية تقليل الخسائر، والاستفادة من الاتجاهات، وجعل تداولهم أكثر كفاءة.</p>
+                                                </td>
+                                                <td align="center" style="padding: 3px 30px 3px 10px; vertical-align: top;" >
+                                                    <input type="image" src="https://static.deriv.com/email/images/icons-2024/red-checkmark-icon.png"  width= "15" style="display: block;outline:none"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="right" style="padding: 0px 5px 10px 30px;" class="mobile-side">
+                                                    <p dir="rtl" style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 700;margin:0;" class="mb-font-size">نصائح عملية</p>
+                                                    <p dir="rtl" style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">قدم لعملائك نصائح سهلة التطبيق يمكنهم استخدامها على الفور.</p>
+                                                </td>
+                                                <td align="center" style="padding: 3px 30px 3px 10px; vertical-align: top;" >
+                                                    <input type="image" src="https://static.deriv.com/email/images/icons-2024/red-checkmark-icon.png"  width= "15" style="display: block;outline:none"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="right" style="padding: 0px 5px 20px 30px;" class="mobile-side">
+                                                    <p dir="rtl" style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 700;margin:0;" class="mb-font-size">أمثلة من الواقع: </p>
+                                                    <p dir="rtl" style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">ساعد عملاءك على فهم المفاهيم الرئيسية من خلال أمثلة من حياتهم اليومية.</p>
+                                                </td>
+                                                <td align="center" style="padding: 3px 30px 3px 10px; vertical-align: top;" >
+                                                    <input type="image" src="https://static.deriv.com/email/images/icons-2024/red-checkmark-icon.png"  width= "15" style="display: block;outline:none"/>
+                                                </td>
+                                            </tr>
+                                        </div>
+                                    </table>                               
+                                </td>
+                            </tr>
+                            <!--Gray table closing desktop-->
+                            <tr>
+                                <td align="right" style="padding: 10px 25px 0px 30px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                    <p dir="rtl" style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">استفد من المواد التعليمية المجانية من Deriv لدعم عملائك. قم بتنزيل الكتاب الإلكتروني اليوم وشاركه لزيادة نشاطهم في التداول — وزيادة عمولاتك المحتملة!</p>
+                                </td>
+                            </tr>
+                            <!-- BUTTON -->
+                            <tr>
+                                <td align="center" class="dark-black" style="padding: 40px 0 0;">
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://static.deriv.com/marketing/ebook-7traits-en-hq.pdf" style="height:40px;v-text-anchor:middle;width:230px;" arcsize="30%" strokecolor="#ff444f" fillcolor="#ff444f">
+                                    <w:anchorlock/>
+                                    <center style="color:#fff;font-family:sans-serif;font-size:14px;font-weight:bold;">Download ebook</center>
+                                    </v:roundrect>
+                                    <![endif]-->
+                                    <!--[if !gte mso 9]><!-- -->
+                                    <a class="button" href="https://static.deriv.com/marketing/ebook-7traits-en-hq.pdf" target="_blank" style="text-decoration: none; text-align: center; line-height: 20px; padding: 12px 16px;display: inline-block; font-weight: bold; font-family: 'Ubuntu','IBM Plex Sans', Arial, sans-serif; font-size: 14px;border-radius: 16px; overflow: visible; border: 0;color: #ffffff; background: #ff444f;">تنزيل الكتاب الإلكتروني</a>
+                                    <!--<![endif]-->
+                                </td>
+                            </tr>
+                            <!-- BUTTON CLOSING -->
+                            <tr>
+                                <td align="center " class="mobile-side darkmodeblack" style="padding: 50px 80px 20px; background-color: #fff;">
+                                <p dir="rtl" class="darkcolor-subtext" style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: clamp(14px, 3vw, 16px); line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;">إذا كانت لديك أي أسئلة، تواصل معنا:<br />
+                                <a href="https://deriv.com/?is_livechat_open=true" style="color: #ff444f !important;" target="_blank">الدردشة المباشرة</a> | <a href="https://api.whatsapp.com/send/?phone=35699578341&amp;text&amp;type=phone_number&amp;app_absent=0" style="color: #ff444f !important;" target="_blank">الواتساب</a></p>
+                                </td>
+                            </tr>
+                            <tr class="mobile-hide">
+                                <td bgcolor="#fff" align="center"  class="mobile-side darkmodelowblack" style="padding: 50px 0px; background-color: #FBFBFC;">
+                                    <input type="image" class="g-img" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/award2024.png"  width= "520" style="display: block;outline:none"/>
+                                </td>
+                            </tr>
+                            <tr style="display: none; mso-hide:all;" class="mobile-visible-block" >
+                                <td bgcolor="#fff" align="center" class="mobile-side darkmodelowblack" style="padding: 50px 0px; background-color: #FBFBFC;">
+                                    <input type="image" class="g-img" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/award2024.png" width="90%" style="display: block;outline:none"/>
+                                </td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                    <!--[if (gte mso 9)|(IE)]></td></tr></table>
+                    <![endif]-->
+                </td>
+            </tr>   
+            <!-- End Email body-->                                                       
+            <!-- FOOTER -->
         <tr>
             <td align="center" bgcolor="#eeeeee" class="mobile-nopadding" style="padding: 0 0 10px;">
                 <!--[if (gte mso 9)|(IE)]>
@@ -552,7 +471,6 @@
                             </td>
                         </tr>
                         <!--social media container closing-->
-
                         <tr>
                             <td bgcolor="#fff" align="right" style="padding:4px 45px 10px;color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="mobile-side darkmodeblack">
                                 <p dir="rtl" style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">تحمل المنتجات المعروضة على موقعنا خطرًا كبيرًا للخسارة المحتملة نظرًا لطبيعتها المعقدة كمنتجات مشتقة. تعد عقود الفروقات (CFDs) أدوات معقدة تنطوي على مخاطر عالية لخسارة الأموال بسبب الرافعة المالية. ينبغي عليك فهم كيفية عمل هذه المنتجات والنظر فيما إذا كان بإمكانك تحمل المخاطر العالية بخسارة أموالك.</p>
@@ -560,12 +478,12 @@
                         </tr>
                         <tr>
                             <td bgcolor="#fff" align="right" style="padding:4px 45px 30px;color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="mobile-side darkmodeblack">
-                                <p dir="rtl" style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 18px; margin: 0;" class="darkmodegray">لمزيد من التفاصيل حول الشركة المرسلة لهذا البريد الإلكتروني، يرجى <a href="https://deriv.com/regulatory/" style="color: #ff444f !important;" target="_blank">النقر هنا.</a></p>
+                                <p dir="rtl" style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">لمزيد من التفاصيل حول الشركة المرسلة لهذا البريد الإلكتروني، يرجى النقر <a href="https://deriv.com/regulatory/" style="color: #ff444f !important;" target="_blank">هنا</a>.</p>
                             </td>
                         </tr>
                         <tr>
                             <td align="center" bgcolor="#fff" class="darkmodeblack" style="color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
-                            <p dir="rtl" style="padding: 0px 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 400; line-height: 16px; margin: 5px 0px 5px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important"> مركز المساعدة </a><span class="darkmodegray">|</span><a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important"> الشروط والأحكام </a><span class="darkmodegray">|</span><a href="https://docs.deriv.com/tnc/security-and-privacy.pdf" style="color: #ff444f !important"> الأمان والخصوصية </a></p>
+                            <p dir="rtl" style="padding: 0px 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 400; line-height: 16px; margin: 5px 0px 5px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important">مركز المساعدة</a>   <span class="darkmodegray">|</span>   <a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">الشروط والأحكام</a>   <span class="darkmodegray">|</span>   <a href="https://docs.deriv.com/tnc/security-and-privacy.pdf" style="color: #ff444f !important">الأمان والخصوصية</a></p>
     
                             <p dir="rtl" class="darkmodegray" style="padding: 0 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #999999; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0px 0px 5px 0px;">لم تعد ترغب في تلقي رسائل البريد الإلكتروني؟ <a class="darkcolor-subtext" href="https://app.deriv.com/account/personal-details" style="mso-hide:all; color: #ff444f !important;">قم بإلغاء الاشتراك</a></p>
                             </td>
