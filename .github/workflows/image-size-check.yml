@@ -85,12 +85,35 @@ jobs:
             }
           }
 
-          // Get all changed files from git
-          const execSync = require('child_process').execSync;
-          const changedFiles = execSync('git diff --name-only --cached HEAD || git diff --name-only HEAD~1 HEAD')
-            .toString()
-            .split('\n')
-            .filter(file => file.match(/\.(jpg|jpeg|png|gif|webp)$/i));
+          // Modified file detection for new and modified files
+          const { execSync } = require('child_process');
+          
+          let changedFiles = [];
+          try {
+            // Get both new and modified files
+            const baseCommand = 'git diff --name-only HEAD $(git merge-base HEAD origin/main)';
+            const newFilesCommand = 'git ls-files --others --exclude-standard';
+            
+            const modifiedFiles = execSync(baseCommand, { stdio: ['pipe', 'pipe', 'ignore'] })
+              .toString()
+              .split('\n');
+              
+            const newFiles = execSync(newFilesCommand, { stdio: ['pipe', 'pipe', 'ignore'] })
+              .toString()
+              .split('\n');
+              
+            changedFiles = [...modifiedFiles, ...newFiles]
+              .filter(file => file.match(/\.(jpg|jpeg|png|gif|webp)$/i));
+            
+            console.log('Modified files:', modifiedFiles);
+            console.log('New files:', newFiles);
+            console.log('All changed files:', changedFiles);
+            
+          } catch (error) {
+            console.error('Error detecting files:', error);
+            console.error(error.message);
+            process.exit(1);
+          }
 
           if (changedFiles.length === 0) {
             console.log('No image files were changed in this PR.');
