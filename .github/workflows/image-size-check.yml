@@ -17,6 +17,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -26,12 +29,30 @@ jobs:
       - name: Install dependencies
         run: npm install image-size
 
+      - name: Fetch base branch
+        run: |
+          git remote add upstream https://github.com/${{ github.repository }}.git
+          git fetch upstream ${{ github.base_ref }}
+          
+          echo "Debug information:"
+          echo "PR head ref: ${{ github.head_ref }}"
+          echo "PR base ref: ${{ github.base_ref }}"
+          echo "PR repo: ${{ github.event.pull_request.head.repo.full_name }}"
+          echo "Base repo: ${{ github.repository }}"
+          
+          echo "\nGit remotes:"
+          git remote -v
+          
+          echo "\nChanged files:"
+          git diff --name-only upstream/${{ github.base_ref }} HEAD
+
       - name: Check image sizes
         run: |
           cat << 'EOF' > check-images.js
           const sizeOf = require('image-size');
           const fs = require('fs');
           const path = require('path');
+          const { execSync } = require('child_process');
 
           const MAX_SIZES = {
             '.jpg': 200 * 1024,  // 200KB
@@ -85,57 +106,47 @@ jobs:
             }
           }
 
-          // Modified file detection for new and modified files
-          const { execSync } = require('child_process');
-          
-          let changedFiles = [];
           try {
-            // Get both new and modified files
-            const baseCommand = 'git diff --name-only HEAD $(git merge-base HEAD origin/main)';
-            const newFilesCommand = 'git ls-files --others --exclude-standard';
+            // Get files changed in PR by comparing with base branch
+            const command = `git diff --name-only upstream/${process.env.BASE_REF} HEAD`;
+            console.log('Running command:', command);
             
-            const modifiedFiles = execSync(baseCommand, { stdio: ['pipe', 'pipe', 'ignore'] })
+            const changedFiles = execSync(command)
               .toString()
-              .split('\n');
-              
-            const newFiles = execSync(newFilesCommand, { stdio: ['pipe', 'pipe', 'ignore'] })
-              .toString()
-              .split('\n');
-              
-            changedFiles = [...modifiedFiles, ...newFiles]
-              .filter(file => file.match(/\.(jpg|jpeg|png|gif|webp)$/i));
-            
-            console.log('Modified files:', modifiedFiles);
-            console.log('New files:', newFiles);
-            console.log('All changed files:', changedFiles);
-            
-          } catch (error) {
-            console.error('Error detecting files:', error);
-            console.error(error.message);
-            process.exit(1);
-          }
+              .split('\n')
+              .filter(file => file && file.match(/\.(jpg|jpeg|png|gif|webp)$/i));
 
-          if (changedFiles.length === 0) {
-            console.log('No image files were changed in this PR.');
-            process.exit(0);
-          }
+            console.log('\nChanged files detected:', changedFiles);
 
-          console.log('🔍 Checking image sizes and dimensions...\n');
-          changedFiles.forEach(file => {
-            if (fs.existsSync(file)) {
-              checkImage(file);
+            if (changedFiles.length === 0) {
+              console.log('No image files were changed in this PR.');
+              process.exit(0);
             }
-          });
 
-          if (hasError) {
-            console.error('\n❌ Image check failed! Please optimize the flagged images.');
+            console.log('🔍 Checking image sizes and dimensions...\n');
+            changedFiles.forEach(file => {
+              if (fs.existsSync(file)) {
+                checkImage(file);
+              }
+            });
+
+            if (hasError) {
+              console.error('\n❌ Image check failed! Please optimize the flagged images.');
+              process.exit(1);
+            } else {
+              console.log('\n✅ All images passed the size and dimension checks!');
+            }
+          } catch (error) {
+            console.error('Error:', error.message);
+            console.error('Stack:', error.stack);
             process.exit(1);
-          } else {
-            console.log('\n✅ All images passed the size and dimension checks!');
           }
           EOF
 
           node check-images.js
+        env:
+          BASE_REF: ${{ github.base_ref }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
 
 permissions:
   contents: read
