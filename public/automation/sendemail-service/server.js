@@ -1,13 +1,12 @@
 const http = require('http');
 const nodemailer = require('nodemailer');
-require('dotenv').config({ path: '../.env' }); // Load from the .env file in automation directory
 
-// Create mail transporter
+// Create mail transporter using NODE_MAILER_TOKEN from GitHub secrets
 const mail = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'behnaz1rahgozar1@gmail.com',
-        pass: process.env.NODE_MAILER_TOKEN // This will now load from your existing .env file
+        user: 'email address',
+        pass: process.env.NODE_MAILER_TOKEN // Using the secret from GitHub
     }
 });
 
@@ -48,7 +47,7 @@ const server = http.createServer((req, res) => {
                     if (error) {
                         console.error('Error sending email:', error);
                         res.writeHead(500);
-                        res.end(JSON.stringify({ error: 'Failed to send email' }));
+                        res.end(JSON.stringify({ error: 'Failed to send email: ' + error.message }));
                     } else {
                         console.log('Email sent:', info.response);
                         res.writeHead(200);
@@ -58,7 +57,7 @@ const server = http.createServer((req, res) => {
             } catch (error) {
                 console.error('Error parsing request:', error);
                 res.writeHead(400);
-                res.end(JSON.stringify({ error: 'Invalid request format' }));
+                res.end(JSON.stringify({ error: 'Invalid request format: ' + error.message }));
             }
         });
     } else {
@@ -71,5 +70,9 @@ const server = http.createServer((req, res) => {
 const port = process.env.PORT || 3000;
 server.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
-    console.log('Using NODE_MAILER_TOKEN from .env file');
+    if (process.env.NODE_MAILER_TOKEN) {
+        console.log('NODE_MAILER_TOKEN is configured');
+    } else {
+        console.log('Warning: NODE_MAILER_TOKEN is not set');
+    }
 });
