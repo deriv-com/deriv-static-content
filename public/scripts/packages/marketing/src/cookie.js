@@ -224,7 +224,7 @@
 
     const date_first_contact_data = {
       date_first_contact: toISOFormat(
-        new Date(date_first_contact_response.time * 1000)
+        new Date(date_first_contact_response * 1000)
       ),
     };
 
