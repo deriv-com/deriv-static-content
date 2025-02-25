@@ -350,7 +350,8 @@
                             <tr>
                                 <td align="left" style="padding: 25px 30px 10px; background-color: #fff;" class="mobile-side darkmodeblack">
                                     <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">​{% if customer.first_Name != blank %}
-                                        Hi {{customer.first_Name | titlecase }},
+                                        {% if customer.name != blank %}
+                                        Hi {{customer.name | titlecase }},
                                         {% else %}
                                         Hello partner,
                                         {% endif %}</p>
@@ -373,9 +374,9 @@
                                         <div style="width: 100%; margin: auto; padding: 0;">
                                             <tr>
                                                 <td align="center" style="padding: 16px 7px 15px 20px; vertical-align: top;" >
-                                                    <input type="image" src="https://static.deriv.com/email/images/icons-2025/lock.png"  width= "30" height="auto" style="display: block;outline:none"/>
+                                                    <input type="image" src="https://static.deriv.com/email/images/icons-2025/1.png"  width= "30" height="auto" style="display: block;outline:none"/>
                                                 </td>
-                                                <td align="left" style="padding: 18px 30px 15px 5px;" class="mobile-side2">
+                                                <td align="left" style="padding: 18px 15px 15px 5px;" class="mobile-side2">
                                                     <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size"><strong>Register, update, and delete</strong> OAuth applications</p>
                                                 </td>
                                             </tr>
@@ -391,9 +392,9 @@
                                         <div style="width: 100%; margin: auto; padding: 0;">
                                             <tr>
                                                 <td align="center" style="padding: 16px 7px 15px 20px; vertical-align: top;" >
-                                                    <input type="image" src="https://static.deriv.com/email/images/icons-2025/lock.png"  width= "30" height="auto" style="display: block;outline:none"/>
+                                                    <input type="image" src="https://static.deriv.com/email/images/icons-2025/2.png"  width= "30" height="auto" style="display: block;outline:none"/>
                                                 </td>
-                                                <td align="left" style="padding: 18px 30px 15px 5px;" class="mobile-side2">
+                                                <td align="left" style="padding: 18px 15px 15px 5px;" class="mobile-side2">
                                                     <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size"><strong>Retrieve usage statistics </strong>and detailed app info</p>
                                                 </td>
                                             </tr>
@@ -409,9 +410,9 @@
                                         <div style="width: 100%; margin: auto; padding: 0;">
                                             <tr>
                                                 <td align="center" style="padding: 16px 7px 15px 20px; vertical-align: top;" >
-                                                    <input type="image" src="https://static.deriv.com/email/images/icons-2025/lock.png"  width= "30" height="auto" style="display: block;outline:none"/>
+                                                    <input type="image" src="https://static.deriv.com/email/images/icons-2025/3.png"  width= "30" height="auto" style="display: block;outline:none"/>
                                                 </td>
-                                                <td align="left" style="padding: 18px 30px 15px 5px;" class="mobile-side2">
+                                                <td align="left" style="padding: 18px 15px 15px 5px;" class="mobile-side2">
                                                     <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size"><strong>Control access and permissions </strong> for secure third-party integrations</p>
                                                 </td>
                                             </tr>
