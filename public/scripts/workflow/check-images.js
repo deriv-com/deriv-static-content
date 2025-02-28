@@ -15,11 +15,30 @@ let hasError = false;
 
 function getChangedFiles() {
   try {
-    const output = execSync('git diff --name-only HEAD').toString();
-    return output.split('\n').filter(Boolean);
+    if (process.env.GITHUB_BASE_REF) {
+      // We're in a GitHub Action PR context
+      const baseSha = execSync(`git rev-parse origin/${process.env.GITHUB_BASE_REF}`).toString().trim();
+      const headSha = execSync('git rev-parse HEAD').toString().trim();
+      const output = execSync(`git diff --name-only ${baseSha} ${headSha}`).toString();
+      console.log('Running in GitHub Actions, checking PR changes');
+      return output.split('\n').filter(Boolean);
+    } else {
+      // We're in local development
+      console.log('Running locally, checking staged, unstaged, and new files');
+      const stagedFiles = execSync('git diff --staged --name-only').toString();
+      const unstagedFiles = execSync('git diff --name-only').toString();
+      const untrackedFiles = execSync('git ls-files --others --exclude-standard').toString();
+      const allChangedFiles = [...new Set([
+        ...stagedFiles.split('\n'), 
+        ...unstagedFiles.split('\n'),
+        ...untrackedFiles.split('\n')
+      ])];
+      return allChangedFiles.filter(Boolean);
+    }
   } catch (error) {
-    console.log('Not in a git repository or git command failed. Checking all files.');
-    return getAllFiles('.');
+    console.error('Git command failed:', error.message);
+    console.log('No git changes found.');
+    return [];
   }
 }
 
@@ -68,11 +87,9 @@ function checkImage(filePath) {
   }
 }
 
-const filesToCheck = [
-    'public/email/images/design-2025/rsi_index.png'
-];
+const changedFiles = getChangedFiles();
+console.log('\nFound changed files:', changedFiles);
 
-const changedFiles = filesToCheck
 changedFiles.forEach(file => {
   if (file.match(/\.(jpg|jpeg|png|gif|webp)$/i)) {
     checkImage(file);
