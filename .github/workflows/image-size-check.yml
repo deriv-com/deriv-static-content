@@ -49,7 +49,7 @@ jobs:
       - name: Check image sizes
         run: |
           cat << 'EOF' > check-images.js
-          const sizeOf = require('image-size');
+          const imageSize = require('image-size');
           const fs = require('fs');
           const path = require('path');
           const { execSync } = require('child_process');
@@ -89,7 +89,7 @@ jobs:
             }
 
             // Check dimensions
-            const dimensions = sizeOf(filePath);
+            const dimensions = imageSize(filePath);
             console.log(`📏 Dimensions: ${dimensions.width}x${dimensions.height}`);
 
             if (dimensions.width > MAX_DIMENSIONS.width || dimensions.height > MAX_DIMENSIONS.height) {
