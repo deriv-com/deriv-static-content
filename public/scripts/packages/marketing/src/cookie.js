@@ -24,11 +24,19 @@
     return matched_domain ?? host_domain;
   };
 
+  const sanitizeCookieValue = (value) => {
+    if (typeof value !== 'string') return value;
+    // Remove characters that could be used for cookie injection
+    // Only allow alphanumeric characters, dashes, underscores, periods, and commas
+    return value.replace(/[^a-zA-Z0-9-_.,{}]/g, '');
+  };
+
   const setCookie = (name, value) => {
-    document.cookie = `${name}=${value}; expires=Tue, 19 Jan 9999 03:14:07 UTC; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+    const sanitizedValue = sanitizeCookieValue(value);
+    document.cookie = `${name}=${sanitizedValue}; expires=Tue, 19 Jan 9999 03:14:07 UTC; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
     log("setCookie", {
       name,
-      value,
+      value: sanitizedValue,
       domain: getDomain(),
     });
   };
