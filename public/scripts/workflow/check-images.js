@@ -68,11 +68,7 @@ function checkImage(filePath) {
   }
 }
 
-const filesToCheck = [
-    'public/email/images/design-2025/rsi_index.png'
-];
-
-const changedFiles = filesToCheck
+const changedFiles = getChangedFiles();
 changedFiles.forEach(file => {
   if (file.match(/\.(jpg|jpeg|png|gif|webp)$/i)) {
     checkImage(file);
