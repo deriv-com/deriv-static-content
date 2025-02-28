@@ -1,118 +1,34 @@
-name: Image Size Check
+name: Check Image Sizes
 
 on:
   pull_request:
     types: [opened, synchronize]
     paths:
-      - '**/*.png'
       - '**/*.jpg'
       - '**/*.jpeg'
+      - '**/*.png'
       - '**/*.gif'
       - '**/*.webp'
 
 jobs:
   check-image-sizes:
     runs-on: ubuntu-latest
-    
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3
         with:
           node-version: '16'
 
       - name: Install dependencies
         run: npm install image-size
 
-      - name: Check image sizes
-        run: |
-          cat << 'EOF' > check-images.js
-          const sizeOf = require('image-size');
-          const fs = require('fs');
-          const path = require('path');
-
-          const MAX_SIZES = {
-            '.jpg': 200 * 1024,  // 200KB
-            '.jpeg': 200 * 1024, // 200KB
-            '.png': 150 * 1024,  // 150KB
-            '.gif': 300 * 1024,  // 300KB
-            '.webp': 100 * 1024  // 100KB
-          };
-
-          // Maximum dimensions
-          const MAX_DIMENSIONS = {
-            width: 1920,
-            height: 1080
-          };
-
-          let hasError = false;
-
-          function checkImage(filePath) {
-            const stats = fs.statSync(filePath);
-            const fileSize = stats.size;
-            const ext = path.extname(filePath).toLowerCase();
-            const maxSize = MAX_SIZES[ext];
-
-            if (!maxSize) return;
-
-            console.log(`\nChecking: ${filePath}`);
-
-            // Check file size
-            if (fileSize > maxSize) {
-              console.error(`❌ Size Error: File is ${(fileSize/1024).toFixed(2)}KB. Maximum allowed is ${(maxSize/1024).toFixed(2)}KB`);
-              hasError = true;
-            } else {
-              console.log(`✅ Size OK: ${(fileSize/1024).toFixed(2)}KB`);
-            }
-
-            // Check dimensions
-            const dimensions = sizeOf(filePath);
-            console.log(`📏 Dimensions: ${dimensions.width}x${dimensions.height}`);
-
-            if (dimensions.width > MAX_DIMENSIONS.width || dimensions.height > MAX_DIMENSIONS.height) {
-              console.error(`❌ Dimension Error: Maximum allowed dimensions are ${MAX_DIMENSIONS.width}x${MAX_DIMENSIONS.height}`);
-              hasError = true;
-            }
-
-            // Suggestions for optimization
-            if (ext === '.jpg' || ext === '.jpeg') {
-              console.log('💡 Tip: Consider using WebP format for better compression');
-            }
-            if (fileSize > maxSize) {
-              console.log('💡 Tip: Try using tools like squoosh.app or tinypng.com for optimization');
-            }
-          }
-
-          // Get all changed files from git
-          const execSync = require('child_process').execSync;
-          const changedFiles = execSync('git diff --name-only --cached HEAD || git diff --name-only HEAD~1 HEAD')
-            .toString()
-            .split('\n')
-            .filter(file => file.match(/\.(jpg|jpeg|png|gif|webp)$/i));
-
-          if (changedFiles.length === 0) {
-            console.log('No image files were changed in this PR.');
-            process.exit(0);
-          }
-
-          console.log('🔍 Checking image sizes and dimensions...\n');
-          changedFiles.forEach(file => {
-            if (fs.existsSync(file)) {
-              checkImage(file);
-            }
-          });
-
-          if (hasError) {
-            console.error('\n❌ Image check failed! Please optimize the flagged images.');
-            process.exit(1);
-          } else {
-            console.log('\n✅ All images passed the size and dimension checks!');
-          }
-          EOF
-
-          node check-images.js
+      - name: Run image check script
+        run: node public/scripts/workflow/check-images.js
 
 permissions:
   contents: read
