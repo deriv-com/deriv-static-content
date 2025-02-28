@@ -2,6 +2,7 @@ name: Check Image Sizes
 
 on:
   pull_request:
+    types: [opened, synchronize]
     paths:
       - '**/*.jpg'
       - '**/*.jpeg'
