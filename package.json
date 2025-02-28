@@ -5,6 +5,7 @@
   "dependencies": {
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "image-size": "^2.0.0",
     "nodemailer": "^6.9.16"
   }
 }
