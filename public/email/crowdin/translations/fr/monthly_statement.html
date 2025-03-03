@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>État mensuel</title>
+    <meta name="generator" content="MetaQuotes Software Corp.">
+    <link rel="help" href="http://www.metaquotes.net">
+    <style type="text/css">
+    <!--
+    @media screen {
+      td { font: 8pt Tahoma,Arial; }
+    }
+    @media print {
+      td { font: 7pt Tahoma,Arial; }
+    }
+    .msdate { mso-number-format:"General Date"; }
+    .mspt   { mso-number-format:\#\,\#\#0\.00;  }
+    body {margin:1px;}
+    //-->
+    </style>
+  </head>
+<body>
+
+<!--NO_TRANSACTIONS=<tr align=right><td colspan=13 nowrap align=center>No transactions</td></tr>-->
+<!--ODD_COLOR=#E0E0E0-->
+<!--EVEN_COLOR=#FFFFFF-->
+
+<div align="center">
+<div style="font: 20pt Times New Roman"><b>Deriv Investments (Europe) Limited</b></div><br>
+<table cellspacing="1" cellpadding="3" border="0">
+<tr align="left">
+    <td colspan="2">N° de compte : <b><!--ACCOUNT--></b></td>
+    <td colspan="6">Name: <b><!--NAME--></b></td>
+    <td colspan="3">Devise : <b><!--CURRENCY--></b></td>
+    <td colspan="2" align="right"><b><!--FULLTIME--></b></td>
+</tr>
+
+<tr align="left"><td colspan="13"><b>Ordres:</b></td></tr>
+<tr align="center" bgcolor="#C0C0C0">
+   <td nowrap align="left">&nbsp;&nbsp;&nbsp;Heure d'ouverture</td>
+   <td>Billet</td>
+   <td>Type</td>
+   <td>Taille</td>
+   <td>Elément</td>
+   <td>Prix</td>
+   <td>S / L</td>
+   <td>T / P</td>
+   <td>Périodicité</td>
+   <td>État</td>
+   <td colspan="3">Commentaire</td>
+</tr>
+
+<!--MQTABLE=Closed Orders-->
+<tr align=right bgcolor=<!--Color--> >
+<td class=msdate align=left nowrap><!--Open Time--></td>
+<td><!--Ticket--></td>
+<td><!--Type--></td>
+<td class=mspt><!--Size--></td>
+<td><!--Item--></td>
+<td style="mso-number-format:0\.00;"><!--Price--></td>
+<td style="mso-number-format:0\.00;"><!--SL--></td>
+<td style="mso-number-format:0\.00;"><!--TP--></td>
+<td class=msdate align=left nowrap><!--Close Time--></td>
+<td><!--State--></td>
+<td colspan=3><!--Comment--></td>
+</tr>
+<!--MQTABLE-->
+
+<tr><td colspan="13" style="font: 1pt arial">&nbsp;</td></tr>
+<tr align="left"><td colspan="13"><b>Transactions :</b></td></tr>
+<tr align="center" bgcolor="#C0C0C0">
+<td nowrap align="left">&nbsp;&nbsp;&nbsp;Heure d'ouverture</td>
+<td>Billet</td>
+<td>Type</td>
+<td>Taille</td>
+<td>Elément</td>
+<td>Prix</td>
+<td>Ordre</td>
+<td colspan="2">Commentaire</td>
+<td>Entrée</td>
+<td>Commissions</td>
+<td>Swap</td>
+<td>Profits</td>
+</tr>
+
+<!--MQTABLE=Closed Deals-->
+<tr align=right bgcolor=<!--Color--> >
+<td class=msdate align=left nowrap><!--Open Time--></td>
+<td><!--Ticket--></td>
+<td><!--Type--></td>
+<td class=mspt><!--Size--></td>
+<td><!--Item--></td>
+<td style="mso-number-format:0\.00;"><!--Price--></td>
+<td><!--Order--></td>
+<td colspan=2><!--Comment--></td>
+<td><!--Entry--></td>
+<td class=mspt><!--Commission--></td>
+<td class=mspt><!--Swap--></td>
+<td class=mspt><!--Profit--></td>
+</tr>
+<!--MQTABLE-->
+
+<tr align=right>
+<td colspan=10>&nbsp;</td>
+<td class="mspt"><!--CLOSED_COMMISSION_INSTANT--></td>
+<td class="mspt"><!--CLOSED_STORAGE--></td>
+<td class="mspt"><!--CLOSED_PROFIT--></td>
+</tr>
+
+<tr align=right>
+<td colspan=10>&nbsp;</td>
+<td colspan=2 align=right title="Commission + Swap + Profit"><b>P/L fermé :</b></td>
+<td colspan=1 align=right class="mspt"><b><!--CLOSED_PL--></b></td>
+</tr>
+
+<tr align=right>
+<td colspan=10>&nbsp;</td>
+<td colspan=2 align=right ><b>Dépôt/Retrait :</b></td>
+<td colspan=1 align=right class="mspt"><b><!--CLOSED_DEPOSIT--></b></td>
+</tr>
+
+<tr align=right>
+<td colspan=10>&nbsp;</td>
+<td colspan=2 align=right ><b>Facilité de crédit :</b></td>
+<td colspan=1 align=right class="mspt"><b><!--CLOSED_CREDIT--></b></td>
+</tr>
+
+<tr align=right>
+<td colspan=10>&nbsp;</td>
+<td colspan=2 align=right ><b>Commission arrondie :</b></td>
+<td colspan=1 align=right class="mspt"><b><!--CLOSED_COMMISSION_ROUND--></b></td>
+</tr>
+
+<tr align=right>
+<td colspan=10>&nbsp;</td>
+<td colspan=2 align=right ><b>Commission instantanée :</b></td>
+<td colspan=1 align=right class="mspt"><b><!--CLOSED_COMMISSION_INSTANT--></b></td>
+</tr>
+
+<tr align=right>
+<td colspan=10>&nbsp;</td>
+<td colspan=2 align=right ><b>Opérations supplémentaires :</b></td>
+<td colspan=1 align=right class="mspt"><b><!--CLOSED_ADDITIONAL--></b></td>
+</tr>
+
+<tr align=right>
+<td colspan=10>&nbsp;</td>
+<td colspan=2 align=right ><b>Total:</b></td>
+<td colspan=1 align=right class="mspt"><b><!--CLOSED_TOTAL--></b></td>
+</tr>
+
+
+<tr align="left"><td colspan="13">&nbsp;</td></tr>
+<tr align="left"><td colspan="13"><b>Postes:</b></td></tr>
+<tr align="center" bgcolor="#C0C0C0">
+<td nowrap align="left">&nbsp;&nbsp;&nbsp;Heure d'ouverture</td>
+<td>Billet</td>
+<td>Type</td>
+<td>Taille</td>
+<td>Elément</td>
+<td>Prix</td>
+<td>S / L</td>
+<td>T / P</td>
+<td colspan="2" nowrap>Prix du marché</td>
+<td>Swap</td>
+<td colspan="2" nowrap>Profits</td>
+</tr>
+
+<!--MQTABLE=Positions-->
+<tr align=right bgcolor=<!--Color--> >
+<td class=msdate align=left nowrap><!--Open Time--></td>
+<td><!--Ticket--></td>
+<td><!--Type--></td>
+<td class=mspt><!--Size--></td>
+<td><!--Item--></td>
+<td style="mso-number-format:0\.00000;"><!--Price--></td>
+<td style="mso-number-format:0\.00000;"><!--SL--></td>
+<td style="mso-number-format:0\.00000;"><!--TP--></td>
+<td colspan="2" style="mso-number-format:0\.00000;"><!--Market--></td>
+<td class=mspt><!--Swap--></td>
+<td class=mspt colspan="2"><!--Profit--></td>
+</tr>
+<!--MQTABLE-->
+
+
+<tr align="right">
+    <td colspan="10">&nbsp;</td>
+    <td class="mspt"><!--FLOATING_STORAGE--></td>
+    <td colspan="1">&nbsp;</td>
+    <td class="mspt"><!--FLOATING_PROFIT--></td>
+</tr>
+
+<tr>
+<td colspan="10">&nbsp;</td><td colspan="2" align="right"><b>P/L flottant :</b></td>
+<td colspan="2" align="right" title="Commission + Swap + Profit" class="mspt"><b><!--FLOATING_PL--></b></td>
+</tr>
+
+<tr align="left"><td colspan="13"><b>Ordres en cours :</b></td></tr>
+<tr align="center" bgcolor="#C0C0C0">
+<td nowrap align="left">&nbsp;&nbsp;&nbsp;Heure d'ouverture</td>
+<td>Billet</td>
+<td>Type</td>
+<td>Taille</td>
+<td>Elément</td>
+<td>Prix</td>
+<td>S / L</td>
+<td>T / P</td>
+<td colspan="2" nowrap>Prix du marché</td>
+<td colspan="3">Commentaire</td>
+</tr>
+
+<!--MQTABLE=Orders-->
+<tr align=right bgcolor=<!--Color--> >
+<td class=msdate align=left nowrap><!--Open Time--></td>
+<td><!--Ticket--></td>
+<td><!--Type--></td>
+<td class=mspt><!--Size--></td>
+<td><!--Item--></td>
+<td style="mso-number-format:0\.00000;"><!--Price--></td>
+<td style="mso-number-format:0\.00000;"><!--SL--></td>
+<td style="mso-number-format:0\.00000;"><!--TP--></td>
+<td colspan=2 style="mso-number-format:0\.00000;"><!--Market--></td>
+<td colspan=3><!--Comment--></td>
+</tr>
+<!--MQTABLE-->
+
+<tr><td colspan=13>&nbsp;</td></tr>
+<tr><td colspan=13 align=left><b>Résumé du compte :</b></td></tr>
+
+<tr>
+<td colspan=3 align=left>P/L des trades fermés :</td>
+<td colspan=2 align=right class=mspt><!--CLOSED_PL--></td>
+<td colspan=2>&nbsp;</td>
+<td colspan=3 align=right>Solde du grand livre précédent :</td>
+<td colspan=3 align=right class=mspt><!--PREV_BALANCE_MONTHLY--></td>
+</tr>
+
+<tr>
+<td colspan=3 align=left>Dépôt/Retrait :</td>
+<td colspan=2 align=right class=mspt><!--CLOSED_DEPOSIT--></td>
+<td colspan=2>&nbsp;</td>
+<td colspan=3 align=right>Équité précédente :</td>
+<td colspan=3 align=right class=mspt><!--PREV_EQUITY_MONTHLY--></td>
+</tr>
+
+<tr>
+<td colspan=3 align=left>Facilité de crédit totale :</td>
+<td colspan=2 align=right class=mspt><!--CREDIT--></td>
+<td colspan=2>&nbsp;</td>
+<td colspan=3 align=right>Solde :</td>
+<td colspan=3 align=right class=mspt><!--BALANCE--></td>
+</tr>
+
+<tr>
+<td colspan=3 align=left>Commission arrondie :</td>
+<td colspan=2 align=right class=mspt><!--CLOSED_COMMISSION_ROUND--></td>
+<td colspan=2>&nbsp;</td>
+<td colspan=3 align=right>Fonds propres:</td>
+<td colspan=3 align=right class=mspt><!--FLOATING_EQUITY--></td>
+</tr>
+
+<tr>
+<td colspan=3 align=left>Commission instantanée :</td>
+<td colspan=2 align=right class=mspt><!--CLOSED_COMMISSION_INSTANT--></td>
+<td colspan=2>&nbsp;</td>
+<td colspan=3 align=right>P/L flottant :</td>
+<td colspan=3 align=right class=mspt><!--FLOATING_PL--></td>
+</tr>
+
+<tr>
+<td colspan=3 align=left>Opérations supplémentaires :</td>
+<td colspan=2 align=right class=mspt><!--CLOSED_ADDITIONAL--></td>
+<td colspan=2>&nbsp;</td>
+<td colspan=3 align=right>Exigences de marge :</td>
+<td colspan=3 align=right class=mspt><!--MARGIN--></td>
+</tr>
+
+
+<tr>
+<td colspan=3 align=left>Total:</td>
+<td colspan=2 align=right class=mspt><!--CLOSED_TOTAL--></td>
+<td colspan=2>&nbsp;</td>
+<td colspan=3 align=right>Marge disponible :</td>
+<td colspan=3 align=right class=mspt><!--MARGIN_FREE--></td>
+</tr>
+
+
+<tr><td colspan=13>&nbsp;</td></tr>
+<tr><td colspan=13 align=left>Cordialement,<br>Département des comptes</td></tr>
+</table>
+
+<div style="font: 7pt tahoma,arial">
+Veuillez nous informer dans les 24 heures si cet état est incorrect.
+Sinon, cet état sera considéré comme confirmé par vous.</div>
+<div style="font: 7pt tahoma,arial;">&nbsp;</div>
+<div style="font: 7pt tahoma,arial;">&nbsp;</div>
+<div style="font: 7pt tahoma, arial; text-align: left;">Deriv Investments (Europe) Limited, avec numéro d'entreprise. C 70156, est basé à Malte dont le siège est situé au Level 3, W Business Centre, Triq Dun Karm, Birkirkara BKR9033, Malte, et est réglementé par la Malta Financial Services Authority en vertu de l'Investments Services Act qui l'autorise à fournir des services d'investissement.</div>
+<div style="font: 7pt tahoma,arial;">
+<p style="text-align: left;">Produits détenus : CFDs<br />L'absence d'un prix de marché indique probablement un manque de liquidité.<br />Vos fonds sont conservés dans des comptes clients séparés auprès d'institutions financières agréées.<br />Pour plus d'informations, veuillez consulter les Termes et Conditions pour les Produits Financiers proposés par Deriv Investments (Europe) Limited.<br />Les instruments financiers proposés aux clients de détail sont couverts par le Système de Compensation pour Investisseurs tel que défini dans les Termes et Conditions pour les Produits Financiers proposés par Deriv Investments (Europe) Limited.<br />Les instruments financiers proposés aux clients professionnels ne sont pas couverts par le Système de Compensation pour Investisseurs.</p>
+</div>
+
+</body></html>
