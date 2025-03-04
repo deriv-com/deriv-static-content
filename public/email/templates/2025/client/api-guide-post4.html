@@ -327,7 +327,7 @@
                             </tr>
                             <tr>
                                 <td align="center" style="padding: 30px 30px 20px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                    <h1 class="mb-font-size-header" style="font-family: 'Ubuntu', 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 36.77px; color: #414652; font-weight: 700;margin:0;">Manage accounts, settings, <nobr>and security</nobr></h1>
+                                    <h1 class="mb-font-size-header" style="font-family: 'Ubuntu', 'IBM Plex Sans', Arial, sans-serif; font-size: 32px; line-height: 36.77px; color: #414652; font-weight: 700;margin:0;">Manage contracts efficiently</h1>
                                 </td>
                             </tr>
                             <tr align="center" class="mobile-hide">
@@ -349,11 +349,8 @@
                             <!-- END HERO -->
                             <tr>
                                 <td align="left" style="padding: 25px 30px 10px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                    <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">​{% if customer.first_Name != blank %}
-                                        Hi {{customer.first_Name | titlecase }},
-                                        {% else %}
-                                        Hello,
-                                        {% endif %}</p>
+                                    <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">
+                                        {% if customer.firstName != blank %} Hi {{customer.firstName | titlecase }}, {% else %} Hi Trader, {% endif %}</p>
                                 </td>
                             </tr>
                             <tr>
@@ -372,26 +369,26 @@
                                     <table class="mobile-side dark-border-radius" style="width: 90%; margin: auto; background-color: rgba(246, 247, 248, 1); border-radius: 15px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);">
                                         <div style="width: 100%; margin: auto; padding: 0;">
                                             <tr>
-                                                <td align="center" style="padding: 30px 3px 3px 9px; vertical-align: top;" >
-                                                    <input type="image" src="https://static.deriv.com/email/images/icons-2025/check1.png"  width= "25" height="auto" style="display: block;outline:none"/>
+                                                <td align="center" style="padding: 28px 6px 3px 14px; vertical-align: top;" >
+                                                    <input type="image" src="https://static.deriv.com/email/images/icons-2025/check1.png"  width= "18" height="auto" style="display: block;outline:none"/>
                                                 </td>
-                                                <td align="left" style="padding: 30px 30px 10px 5px;" class="mobile-side2">
+                                                <td align="left" style="padding: 28px 30px 10px 5px;" class="mobile-side2">
                                                     <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: clamp(14px, 3vw, 16px); line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size"><span style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #ff444f !important;font-weight: 700;font-size: clamp(14px, 3vw, 16px);">Trade contracts</span><br>Buy, sell, and update trades easily.</p>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td align="center" style="padding: 10px 3px 3px 9px; vertical-align: top;" >
-                                                    <input type="image" src="https://static.deriv.com/email/images/icons-2025/check1.png"  width= "25" height="auto" style="display: block;outline:none"/>
+                                                <td align="center" style="padding: 10px 6px 3px 14px; vertical-align: top;" >
+                                                    <input type="image" src="https://static.deriv.com/email/images/icons-2025/check1.png"  width= "18" height="auto" style="display: block;outline:none"/>
                                                 </td>
                                                 <td align="left" style="padding: 10px 30px 10px 5px;" class="mobile-side2">
                                                     <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: clamp(14px, 3vw, 16px); line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size"><span style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #ff444f !important;font-weight: 700;font-size: clamp(14px, 3vw, 16px);">Trade performance</span><br>Retrieve profit tables, portfolio details, and contract durations.</p>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td align="center" style="padding: 10px 3px 25px 9px; vertical-align: top;" >
-                                                    <input type="image" src="https://static.deriv.com/email/images/icons-2025/check1.png"  width= "25" height="auto" style="display: block;outline:none"/>
+                                                <td align="center" style="padding: 10px 6px 22px 14px; vertical-align: top;" >
+                                                    <input type="image" src="https://static.deriv.com/email/images/icons-2025/check1.png"  width= "18" height="auto" style="display: block;outline:none"/>
                                                 </td>
-                                                <td align="left" style="padding: 10px 30px 30px 5px;" class="mobile-side2">
+                                                <td align="left" style="padding: 10px 30px 28px 5px;" class="mobile-side2">
                                                     <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: clamp(14px, 3vw, 16px); line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size"><span style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #ff444f !important;font-weight: 700;font-size: clamp(14px, 3vw, 16px);">Copy trading</span><br>Retrieve performance, trading, risk, and copier statistics.</p>
                                                 </td>
                                             </tr>
@@ -400,11 +397,6 @@
                                 </td>
                             </tr>
                             <!--Gray table closing desktop-->
-                            <tr>
-                                <td align="left" style="padding: 10px 25px 0px 30px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                    <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">Integrate these features to enhance your platform, attract more users, and monetise your application.</p>
-                                </td>
-                            </tr>
                             <!-- BUTTON -->
                             <tr>
                                 <td align="center" class="dark-black" style="padding: 30px 0 0;">
