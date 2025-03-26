@@ -143,9 +143,10 @@
   ];
 
   let utm_data = {};
-  const current_utm_data = JSON.parse(
-    decodeURIComponent(getCookie("utm_data"))
-  );
+  const utm_data_cookie = getCookie("utm_data");
+  const current_utm_data = utm_data_cookie
+    ? JSON.parse(decodeURIComponent(utm_data_cookie))
+    : {};
 
   // If the user comes to the site for the first time without any URL params
   // Only set the utm_source to referrer if the user does not have utm_data cookies stored
