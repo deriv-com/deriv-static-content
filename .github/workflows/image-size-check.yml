@@ -34,7 +34,7 @@ jobs:
         run: npm install image-size
 
       - name: Run image check script
-        run: node public/scripts/workflow/check-images.js
+        run: node $GITHUB_WORKSPACE/public/scripts/workflow/check-images.js
 
 permissions:
   contents: read
