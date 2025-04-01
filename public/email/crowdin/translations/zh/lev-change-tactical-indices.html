@@ -355,7 +355,7 @@
                         </tr>
                         <tr>
                             <td align="left" style="padding: 20px 30px 10px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">您好 {{ Profile.firstName | default:"trader" }}，</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">{{ Profile.firstName | default:"trader" }} 您好，</p>
                             </td>
                         </tr>
                         <tr>
@@ -398,7 +398,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <td class="table-border darkmodelowblack1" align="center" style="padding: 10px 20px; background-color: #FFF; width: 47%;">
-                                                                    <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext1 mb-font-size">白銀 RSI 反彈指數</p>
+                                                                    <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext1 mb-font-size">Silver RSI Rebound 指數</p>
                                                                 </td>
                                                                 <td class="table-border darkmodelowblack1" align="center" style="padding: 10px 10px; background-color: #FFF; width: 28%;">
                                                                     <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext1 mb-font-size">1:500</p>
@@ -409,7 +409,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <td class="table-border darkmodelowblack1" align="center" style="padding: 10px 20px; background-color: #FFF; width: 47%;">
-                                                                    <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext1 mb-font-size">白銀 RSI 回調指數</p>
+                                                                    <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext1 mb-font-size">Silver RSI Pullback 指數</p>
                                                                 </td>
                                                                 <td class="table-border darkmodelowblack1" align="center" style="padding: 10px 10px; background-color: #FFF; width: 28%;">
                                                                     <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext1 mb-font-size">1:500</p>
@@ -420,7 +420,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <td class="table-border darkmodelowblack1" align="center" style="padding: 10px 20px; background-color: #FFF; width: 47%;">
-                                                                    <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext1 mb-font-size">白銀 RSI Trend Up 指數</p>
+                                                                    <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext1 mb-font-size">Silver RSI Trend Up 指數</p>
                                                                 </td>
                                                                 <td class="table-border darkmodelowblack1" align="center" style="padding: 10px 10px; background-color: #FFF; width: 28%;">
                                                                     <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext1 mb-font-size">1:500</p>
@@ -431,7 +431,7 @@
                                                             </tr>
                                                             <tr>
                                                                 <td class="table-border darkmodelowblack1" align="center" style="padding: 10px 20px; background-color: #FFF; width: 47%;">
-                                                                    <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext1 mb-font-size">白銀 RSI Trend Down 指數</p>
+                                                                    <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext1 mb-font-size">Silver RSI Trend Down 指數</p>
                                                                 </td>
                                                                 <td class="table-border darkmodelowblack1" align="center" style="padding: 10px 10px; background-color: #FFF; width: 28%;">
                                                                     <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext1 mb-font-size">1:500</p>
@@ -449,12 +449,12 @@
                                     </tr>
                                     <tr>
                                         <td align="left" style="padding: 10px 30px 10px;" class="mobile-side darkmodelowblack">
-                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 20px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size2"><strong>您需要怎麼做</strong></p>
+                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 20px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size2"><strong>需要怎麼做</strong></p>
                                         </td>
                                     </tr> 
                                     <tr>
                                         <td align="left" style="padding: 08px 30px 10px; " class="mobile-side darkmodelowblack">
-                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">在 <strong>DD.MM.YYYY</strong>之前查看未平倉頭寸。 確保帳戶有足夠的資金滿足新保證金要求。 根據需要調整交易。</p>
+                                            <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">於 <strong>DD.MM.YYYY</strong> 之前查看未平倉頭寸。 確保帳戶有足夠的資金滿足新保證金要求。 根據需要調整交易。</p>
                                         </td>
                                     </tr>   
                                     <tr>
