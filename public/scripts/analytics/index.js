@@ -1,4 +1,4 @@
-// Version 1.0.9
+// Version 1.0.13
 const cacheTrackEvents = {
   interval: null,
   responses: [],
@@ -77,9 +77,10 @@ const cacheTrackEvents = {
           method: this._method,
           status: this.status,
           headers: this.getAllResponseHeaders(),
-          data: this.responseText,
+          data: (this.responseType === "" || this.responseType === "text") ? this.responseText : null,
           payload: parsedPayload,
         };
+
         cacheTrackEvents.responses.push(responseData);
       });
 
@@ -172,6 +173,9 @@ const cacheTrackEvents = {
         window.Analytics.Analytics.pageView(window.location.href, {
           loggedIn: !!clientInfo,
           device_type: signupDevice,
+          network_type: window?.navigator?.connection?.effectiveType,
+          network_rtt: window?.navigator?.connection?.rtt,
+          network_downlink: window?.navigator?.connection?.downlink,
         });
       }
 
@@ -186,9 +190,23 @@ const cacheTrackEvents = {
     cache = false,
     callback = null
   ) => {
+    // Debounce utility function
+    const debounce = (func, wait) => {
+      let timeout;
+      return function executedFunction(...args) {
+        const later = () => {
+          clearTimeout(timeout);
+          func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+      };
+    };
+
     const addClickListener = (el) => {
       if (!el.dataset.clickEventTracking) {
-        el.addEventListener("click", function (e) {
+        // Debounced click handler with 300ms delay
+        const debouncedHandler = debounce((e) => {
           let event = {
             name,
             properties,
@@ -200,7 +218,9 @@ const cacheTrackEvents = {
           }
 
           cacheTrackEvents.track(event);
-        });
+        }, 300); // 300ms debounce delay
+
+        el.addEventListener("click", debouncedHandler);
         el.dataset.clickEventTracking = "true";
       }
     };
@@ -282,5 +302,29 @@ const cacheTrackEvents = {
     );
 
     return cacheTrackEvents;
+  },
+  trackConsoleErrors: (callback) => {
+    const originalConsoleError = console.error;
+    console.error = function (...args) {
+      // Log the error to the console as usual
+      originalConsoleError.apply(console, args);
+
+      // Create a clean error message without __trackjs_state__
+      const errorMessage = args
+        .map((arg) =>
+          arg && typeof arg === "object" && arg.message
+            ? arg.message
+            : typeof arg === "object"
+            ? JSON.stringify(arg, (key, value) =>
+                key.startsWith("__trackjs") ? undefined : value
+              )
+            : String(arg)
+        )
+        .join(" ");
+
+      if (typeof callback === "function") {
+        callback(errorMessage);
+      }
+    };
   },
 };

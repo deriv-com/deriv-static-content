@@ -1,0 +1,76 @@
+name: Publish Packages
+
+on:
+  release:
+    types: [published]
+  push:
+    branches: [master]
+    paths:
+      - "public/scripts/packages/**"
+
+jobs:
+  release:
+    name: Release Packages
+    runs-on: ubuntu-latest
+    environment: Production
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for npm provenance
+    env:
+      CI: true
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    strategy:
+      matrix:
+        script: [marketing, cs]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8
+        with:
+          node-version: "20"
+
+      - name: Configure npm auth
+        run: |
+          npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}
+
+      - name: Check for changes in marketing package
+        id: check_marketing
+        if: matrix.script == 'marketing'
+        run: |
+          if git diff --exit-code HEAD^ HEAD -- public/scripts/packages/marketing; then
+            echo "changes_detected_marketing=false" >> $GITHUB_ENV
+          else
+            echo "changes_detected_marketing=true" >> $GITHUB_ENV
+          fi
+
+      - name: Check for changes in cs package
+        id: check_cs
+        if: matrix.script == 'cs'
+        run: |
+          if git diff --exit-code HEAD^ HEAD -- public/scripts/packages/cs; then
+            echo "changes_detected_cs=false" >> $GITHUB_ENV
+          else
+            echo "changes_detected_cs=true" >> $GITHUB_ENV
+          fi
+
+      - name: changes log
+        run: |
+          echo "changes_detected_marketing $changes_detected_marketing"
+          echo "changes_detected_cs $changes_detected_cs"
+
+      - name: Install dependencies, build and publish ${{ matrix.script }}-scripts
+        if:
+          (matrix.script == 'marketing' && env.changes_detected_marketing == 'true') ||
+          (matrix.script == 'cs' && env.changes_detected_cs == 'true')
+        working-directory: public/scripts/packages/${{ matrix.script }}
+        run: |
+          npm install
+          npm run build
+          npm publish

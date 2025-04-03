@@ -46,6 +46,16 @@
         } else {
           window.location.href = "https://play.google.com/store/apps/details?id=com.deriv.partneracademy";
         }
+      } else if (app === 'mt5') {
+        if (/iP(hone|od|ad)|mac(intosh|intel|ppc|68k|os)/i.test(navigator.userAgent)) {
+          window.location.href = "https://download.mql5.com/cdn/mobile/mt5/ios?server=DerivUAE-Demo,DerivUAE-Server,DerivUAE-Server-02,DerivUAE-Server-03";
+        } 
+        else if (/Huawei/.test(navigator.userAgent)) {
+          window.location.href = "https://download.mql5.com/cdn/mobile/mt5/android/app-gallery";
+        }
+        else {
+          window.location.href = "https://download.mql5.com/cdn/mobile/mt5/android?server=DerivUAE-Demo,DerivUAE-Server,DerivUAE-Server-02,DerivUAE-Server-03";
+        }
       }
     </script>
   </body>
