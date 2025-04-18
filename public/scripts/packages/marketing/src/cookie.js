@@ -140,6 +140,8 @@
     "utm_msclk_id",
     // For cases where we need to map the query param to some different name e.g [name_from_query_param, mapped_name]
     ["fbclid", "utm_fbcl_id"],
+    ["ttclid", "utm_ttcl_id"],
+    ["sccid", "utm_scc_id"],
   ];
 
   let utm_data = {};
