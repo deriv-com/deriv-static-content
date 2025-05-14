@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="vi" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
     <head>
@@ -312,7 +313,7 @@
                         <!-- HELLO CUSTOMER [NAME]-->
                         <tr>
                             <td align="left" style="padding: 15px 30px 10px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">Chào {{ Profile.name | default:"partner" }},</p>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">Xin chào {{ Profile.name | default:"partner" }},</p>
                             </td>
                         </tr>
                         <!-- HELLO CUSTOMER [NAME] CLOSING-->
@@ -329,7 +330,7 @@
                                 <div align="left" bgcolor="#eeeeee" style='padding: 20px;background-color: #f2f3f4;border-radius:20px;' class="darkmodelowblack">
                                     <p  style="padding: 10px;margin:0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 15px;background-color:#fff;border: radius 20px;" class="darkmodeblack darkcolor-subtext">Ngày/Thời gian: [DD Mmm YYYY]</p>
                                     <p  style="padding: 10px;margin:20px 0 0; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 15px;background-color:#fff;border: radius 20px;" class="darkmodeblack darkcolor-subtext">Địa điểm:  [Name of the country, city, event place]</p>
-                                    <p  style="padding: 2px 0 5px 5px;margin:0;color:#999999; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 13px;font-weight: 400; background-color:#f2f3f4;" class="darkmodelowblack darkcolor-subtext" >Giám đốc bộ phận khách hàng của bạn sẽ thông báo cho bạn về địa điểm chính xác trước ngày [DATE]</p>
+                                    <p  style="padding: 2px 0 5px 5px;margin:0;color:#999999; font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 13px;font-weight: 400; background-color:#f2f3f4;" class="darkmodelowblack darkcolor-subtext" >Giám đốc phụ trách quốc gia sẽ thông báo địa điểm chính xác đến bạn trước ngày [DATE]</p>
                                 </div>
                             </td>
                         </tr>
@@ -365,7 +366,7 @@
                         <!-- BUTTON CLOSING -->
                         <tr>
                             <td align="center" style="padding: 40px 30px 20px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">Nếu bạn có bất kỳ câu hỏi nào, vui lòng liên hệ với người quản lý tài khoản của bạn<br/>
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #414652; font-weight: 400;margin:0;" class="darkcolor-subtext">Nếu bạn có bất kỳ câu hỏi nào, vui lòng liên hệ với quản lý quốc gia của bạn<br/>
                                     <strong>[NAME]</strong><br> 
                                     <a href="/cdn-cgi/l/email-protection#41611a040c00080d61000505130412121c" style="color: #ff444f !important;" target="_blank">[EMAIL ADDRESS]</a>
                                     &nbsp;&nbsp;<span>|</span>&nbsp;&nbsp;
@@ -373,16 +374,6 @@
                                 </p>
                             </td>
                         </tr>   
-                        <tr class="mobile-hide">
-                            <td bgcolor="#fff" align="center"  class="mobile-side darkmodeblack" style="padding: 30px 0px 20px;">
-                                <input type="image" class="g-img" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/award2024.png"  width= "520" style="display: block;outline:none"/>
-                            </td>
-                        </tr>
-                        <tr style="display: none; mso-hide:all;" class="mobile-visible-block" >
-                            <td bgcolor="#fff" align="center" class="mobile-side darkmodeblack" style="padding: 30px 0px 20px;">
-                                <input type="image" class="g-img" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/award2024.png" width="100%" style="display: block;outline:none"/>
-                            </td>
-                        </tr>                               
                     </table>
                     <!--[if (gte mso 9)|(IE)]></td></tr></table>
                     <![endif]-->
@@ -396,9 +387,6 @@
                         <table align="center" border="0" cellspacing="0" cellpadding="0" width="600"><tr><td align="center" valign="top" width="600" bgcolor="#ffffff">
                     <![endif]-->
                     <table bgcolor="#fff" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;" class="darkmodeblack">
-                        <tr>
-                            <td align="center" class="darkmodeblack" style="padding: 30px 30px 0;"><a href="https://www.deriv.com"><img alt="Deriv.com" width="193" src="https://static.deriv.com/logos/deriv-gray-2023.png?v=2" style="display: block; opacity: 70%;"  class="mb-deriv25"/> </a></td>
-                        </tr>
                         <!-- SOCIAL -->
                         <tr>
                             <td align="center" class="darkmodeblack" style="padding: 10px 0 10px; ">
@@ -407,47 +395,25 @@
                                     <a href="https://www.instagram.com/deriv_official/" style="text-decoration: none;"> <img alt="Deriv.com trên Instagram" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/instagram-md.png" title="Deriv.com trên Instagram" width="32" /> </a>
                                     <a href="https://twitter.com/derivdotcom" target="_blank"> <img alt="Deriv.com trên Twitter" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/x-twitter-md.png" title="Deriv.com trên Twitter" width="32" /> </a>
                                     <a href="https://www.youtube.com/@deriv" style="text-decoration: none;"> <img alt="Deriv.com trên Youtube" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/youtube-md.png" title="Deriv.com trên Youtube" width="32" /> </a>
-                                    <a href="https://www.linkedin.com/showcase/deriv-partners/posts/?feedView=all" style="text-decoration: none;"> <img alt="Deriv.com trên Linkedin" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/linkedin-md.png" title="Deriv.com trên Linkedin" width="32" /> </a>
+                                    <a href="https://www.linkedin.com/company/derivdotcom/" style="text-decoration: none;"> <img alt="Deriv.com trên Linkedin" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/linkedin-md.png" title="Deriv.com trên Linkedin" width="32" /> </a>
                                     <a href="https://t.me/Derivchannelofficial" style="text-decoration: none;"> <img alt="Deriv.com trên Telegram" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/telegram-md.png" title="Deriv.com trên Telegram" width="32" /> </a>
                                     <a href="https://whatsapp.com/channel/0029VakuW241HspzJQBzUA2y" style="text-decoration: none;"> <img alt="Deriv.com trên WhatsApp" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/whatsapp-md.png" title="Deriv.com trên WhatsApp" width="32" /> </a>
                                 </p>
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#fff" align="left" style="padding:4px 45px 4px;color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">Deriv (BVI) Ltd được cấp phép và quản lý bởi British Virgin Islands Financial Services Commission.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td bgcolor="#fff" align="left" style="padding:4px 45px 4px;color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">Deriv (FX) Ltd được cấp phép và điều chỉnh bởi Labuan Financial Services Authority.</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td bgcolor="#fff" align="left" style="padding:4px 45px 4px;color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">Deriv (V) Ltd được cấp phép và quản lý bởi Vanuatu Financial Services Commission. </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td bgcolor="#fff" align="left" style="padding:4px 45px 4px;color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">Deriv (Mauritius) Ltd được quản lý bởi Financial Services Commission, Mauritius. </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td bgcolor="#fff" align="left" style="padding:4px 45px 30px;color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">Deriv (SVG) LLC là một công ty được đăng ký tại Saint Vincent và các Grenadines.</p>
+                            <td bgcolor="#fff" align="center" style="padding:4px 45px 30px;color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="mobile-side darkmodeblack">
+                                <p style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #b1b4bc; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0;" class="darkmodegray">Để biết thông tin về công ty gửi email này, vui lòng <a href="https://deriv.com/regulatory/" style="color: #ff444f !important;" target="_blank">nhấp vào đây</a>.</p>
                             </td>
                         </tr>
                         <tr>
                             <td bgcolor="#fff" align="center" style="color: #646464;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 12px;font-weight: 500;line-height: 16px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="darkmodeblack">
-                                <p style="padding: 0px 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 400; line-height: 16px; margin: 5px 0px 5px 0px;"><a href="https://deriv.com/partners-help-centre" style="color: #ff444f !important">Trung tâm trợ giúp</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://deriv.com/terms-and-conditions#business-partners" style="color: #ff444f !important">Điều khoản và điều kiện</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://deriv.com/terms-and-conditions/privacy-policy" style="color: #ff444f !important">Chính sách quyền riêng tư</a></p>
+                                <p style="padding: 0px 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #646464; font-size: 12px; font-weight: 400; line-height: 16px; margin: 5px 0px 5px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important">Trung tâm trợ giúp</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Điều khoản và điều kiện</a>&nbsp;&nbsp;&nbsp;<span class="darkmodegray">|</span>&nbsp;&nbsp;&nbsp;<a href="https://deriv.com/tnc/security-and-privacy.pdf" style="color: #ff444f !important">Bảo mật và quyền riêng tư</a></p>
                                 <p style="padding: 0 10px;font-family: 'IBM Plex Sans', Arial, sans-serif; color: #999999; font-size: 12px; font-weight: 400; line-height: 16px; margin: 0px 0px 5px 0px;" class="darkmodegray">Bạn không muốn nhận những email này nữa? <a href="https://app.deriv.com/account/personal-details" style="mso-hide:all; color: #ff444f !important;" class="darkcolor-subtext">Hủy đăng ký</a></p>
                             </td>
                         </tr>
                         <tr>
-                            <td bgcolor="#fff" align="center"  class="mobile-side darkmodeblack" style="padding: 20px 30px;">
-                                <input type="image" class="mb-investor" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/invest-in-people-platinum.png"  width= "160" style="display: block;outline:none"/>
-                            </td>
+                            <td align="center" class="darkmodeblack" style="padding: 30px;"><a href="https://www.deriv.com"><img alt="Deriv.com" width="160" src="https://static.deriv.com/logos/deriv-gray-2023.png?v=2" style="display: block; opacity: 70%;"  /> </a></td>
                         </tr>
                     </table>
                     <!--[if (gte mso 9)|(IE)]>
