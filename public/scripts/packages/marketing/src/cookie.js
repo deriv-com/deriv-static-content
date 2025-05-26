@@ -1,6 +1,7 @@
 (function DerivMarketingCookies() {
   // Initialize logging array in window
   window.marketingCookieLogs = [];
+  window.marketingCookies = {};
 
   const log = (action, details) => {
     window.marketingCookieLogs.push({
@@ -25,10 +26,10 @@
   };
 
   const sanitizeCookieValue = (value) => {
-    if (typeof value !== 'string') return value;
+    if (typeof value !== "string") return value;
     // Remove characters that could be used for cookie injection
     // Only allow alphanumeric characters, dashes, underscores, periods, and commas
-    return value.replace(/[^a-zA-Z0-9-_.,{}]/g, '');
+    return value.replace(/[^a-zA-Z0-9-_.,{}]/g, "");
   };
 
   const setCookie = (name, value) => {
@@ -39,11 +40,14 @@
       value: sanitizedValue,
       domain: getDomain(),
     });
+
+    window.marketingCookies[name] = sanitizedValue;
   };
 
   const eraseCookie = (name) => {
     document.cookie = `${name}=; Max-Age=-99999999; domain=${getDomain()}; path=/;`;
     log("eraseCookie", { name });
+    delete window.marketingCookies[name];
   };
 
   const getCookie = (name) => {
@@ -93,9 +97,9 @@
     const valid_new_utm_source =
       new_utm_data.utm_source && new_utm_data.utm_source !== "null";
     if (!current_utm_data && valid_new_utm_source) {
-      log('shouldOverwrite', {
-        reason: 'No current UTM data and valid new UTM source',
-        new_utm_data
+      log("shouldOverwrite", {
+        reason: "No current UTM data and valid new UTM source",
+        new_utm_data,
       });
       return true;
     }
@@ -106,18 +110,18 @@
       (field) => new_utm_data[field]
     );
     if (has_new_required_fields) {
-      log('shouldOverwrite', {
-        reason: 'All required fields present in new UTM data',
+      log("shouldOverwrite", {
+        reason: "All required fields present in new UTM data",
         new_utm_data,
-        current_utm_data
+        current_utm_data,
       });
       return true;
     }
 
-    log('shouldOverwrite', {
-      reason: 'Conditions not met for overwrite',
+    log("shouldOverwrite", {
+      reason: "Conditions not met for overwrite",
       new_utm_data,
-      current_utm_data
+      current_utm_data,
     });
     return false;
   };
@@ -147,7 +151,8 @@
   let utm_data = {};
   const utm_data_cookie = getCookie("utm_data");
   const current_utm_data = utm_data_cookie
-    ? JSON.parse(decodeURIComponent(utm_data_cookie)) : {};
+    ? JSON.parse(decodeURIComponent(utm_data_cookie))
+    : {};
 
   // If the user comes to the site for the first time without any URL params
   // Only set the utm_source to referrer if the user does not have utm_data cookies stored
@@ -270,4 +275,49 @@
   /* end handling campaign channel */
 
   log("DerivMarketingCookies", "Initialization completed");
+
+  const stringifyCookieValue = (value) => {
+    if (value === null || value === undefined) return "";
+    if (typeof value === "string") return value;
+    try {
+      return JSON.stringify(value);
+    } catch (e) {
+      console.warn("Failed to stringify cookie value:", e);
+      return String(value);
+    }
+  };
+
+  const getStringifiedCookies = () => {
+    const stringifiedCookies = {};
+    Object.entries(window.marketingCookies).forEach(([name, value]) => {
+      stringifiedCookies[name] = stringifyCookieValue(value);
+    });
+    return stringifiedCookies;
+  };
+
+  const waitForTrackEvent = (retries = 50, interval = 200) => {
+    const getTrackEventFn = () => {
+      return window.Analytics?.trackEvent instanceof Function
+        ? window.Analytics.trackEvent
+        : window.Analytics?.Analytics?.trackEvent instanceof Function
+        ? window.Analytics.Analytics.trackEvent
+        : null;
+    };
+
+    const trackEvent = getTrackEventFn();
+
+    if (trackEvent) {
+      setTimeout(() => {
+        trackEvent("debug_marketing_cookies", {
+          marketing_cookies: getStringifiedCookies(),
+        });
+      }, 1000);
+    } else if (retries > 0) {
+      setTimeout(() => waitForTrackEvent(retries - 1, interval), interval);
+    } else {
+      console.warn("trackEvent not available after waiting.");
+    }
+  };
+
+  waitForTrackEvent();
 })();
