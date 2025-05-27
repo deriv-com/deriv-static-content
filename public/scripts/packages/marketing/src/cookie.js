@@ -287,7 +287,7 @@
     return stringifiedCookies;
   };
 
-  const waitForTrackEvent = (retries = 50, interval = 200) => {
+  const waitForTrackEvent = (retries = 150, interval = 1000) => {
     const getTrackEventFn = () => {
       return window.Analytics?.trackEvent instanceof Function
         ? window.Analytics.trackEvent
