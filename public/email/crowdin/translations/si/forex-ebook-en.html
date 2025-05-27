@@ -536,7 +536,7 @@ cacheTrackEvents
           var deriv_cookie_domain = 'deriv.com' // Modify as per your actual usage
           var CookieStorage = function (cookie_name, cookie_domain = '') {
               var hostname = window.location.hostname
-              var is_deriv_com = hostname.includes('deriv.com')
+              var is_deriv_com = isAllowedDomain(hostname)
               this.initialized = false
               this.cookie_name = cookie_name
               this.domain = is_deriv_com ? deriv_cookie_domain : cookie_domain || hostname
@@ -640,6 +640,11 @@ cacheTrackEvents
           var exampleCookies = getCookiesObject(['utm_source', 'utm_campaign'])
           var dataObj = getDataObjFromCookies(exampleCookies, getCookiesFields())
           var dataLink = getDataLink(dataObj)
+      }
+      // Helper function to validate allowed domains
+      function isAllowedDomain(hostname) {
+          const allowedDomains = ['deriv.com'];
+          return allowedDomains.some(domain => hostname === domain || hostname.endsWith(`.${domain}`));
       }
       // Load js-cookie and setup cookies after it's loaded
       loadJSCookie(setupCookies)
