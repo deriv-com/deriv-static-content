@@ -10,6 +10,9 @@ on:
       - '**/*.gif'
       - '**/*.webp'
 
+      branches:
+        - test
+
 jobs:
   check-image-sizes:
     runs-on: ubuntu-latest
