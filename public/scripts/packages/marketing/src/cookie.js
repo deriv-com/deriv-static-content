@@ -25,23 +25,15 @@
     return matched_domain ?? host_domain;
   };
 
-  const sanitizeCookieValue = (value) => {
-    if (typeof value !== "string") return value;
-    // Remove characters that could be used for cookie injection
-    // Only allow alphanumeric characters, dashes, underscores, periods, and commas
-    return value.replace(/[^a-zA-Z0-9-_.,{}]/g, "");
-  };
-
   const setCookie = (name, value) => {
-    const sanitizedValue = sanitizeCookieValue(value);
-    document.cookie = `${name}=${sanitizedValue}; expires=Tue, 19 Jan 9999 03:14:07 UTC; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+    document.cookie = `${name}=${value}; expires=Tue, 19 Jan 9999 03:14:07 UTC; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
     log("setCookie", {
       name,
-      value: sanitizedValue,
+      value,
       domain: getDomain(),
     });
 
-    window.marketingCookies[name] = sanitizedValue;
+    window.marketingCookies[name] = value;
   };
 
   const eraseCookie = (name) => {
@@ -306,8 +298,13 @@
 
     const trackEvent = getTrackEventFn();
 
+    console.log({
+      trackEvent,
+    });
+
     if (trackEvent) {
       setTimeout(() => {
+        console.warn("Marketing cookies has been handled");
         trackEvent("debug_marketing_cookies", {
           marketing_cookies: getStringifiedCookies(),
         });
