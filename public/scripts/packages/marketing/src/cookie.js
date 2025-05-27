@@ -298,10 +298,6 @@
 
     const trackEvent = getTrackEventFn();
 
-    console.log({
-      trackEvent,
-    });
-
     if (trackEvent) {
       setTimeout(() => {
         console.warn("Marketing cookies has been handled");
