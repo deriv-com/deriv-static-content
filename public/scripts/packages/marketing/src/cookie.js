@@ -25,11 +25,59 @@
     return matched_domain ?? host_domain;
   };
 
+  const sanitizeCookieValue = (name, value) => {
+    if (value === null || value === undefined) {
+      return value;
+    }
+
+    try {
+      // First try to decode the URL encoded string
+      let decodedValue = typeof value === 'string' ? decodeURIComponent(value) : value;
+
+      // Check if it's still URL encoded (contains any %)
+      if (typeof decodedValue === 'string' && decodedValue.includes('%')) {
+        decodedValue = decodeURIComponent(decodedValue);
+      }
+
+      // Try to parse if it's a string that might be JSON
+      const parsedValue = typeof decodedValue === 'string' ? JSON.parse(decodedValue) : decodedValue;
+      
+      // If it's an object, sanitize each value
+      if (typeof parsedValue === 'object' && parsedValue !== null) {
+        const sanitizedObject = {};
+        Object.entries(parsedValue).forEach(([key, val]) => {
+          if (typeof val === 'string') {
+            const sanitized = val.replace(/[^a-zA-Z0-9-_.,{}]/g, '');
+            sanitizedObject[key] = sanitized;
+          } else {
+            sanitizedObject[key] = val;
+          }
+        });
+        return JSON.stringify(sanitizedObject);
+      }
+      
+      // If it's not an object, sanitize the string
+      if (typeof value === 'string') {
+        return value.replace(/[^a-zA-Z0-9-_.,{}]/g, '');
+      }
+
+      return value;
+    } catch (e) {
+      // If parsing fails, it's not JSON, so sanitize the string
+      if (typeof value === 'string') {
+        return value.replace(/[^a-zA-Z0-9-_.,{}]/g, '');
+      }
+      
+      return value;
+    }
+  };
+
   const setCookie = (name, value) => {
-    document.cookie = `${name}=${value}; expires=Tue, 19 Jan 9999 03:14:07 UTC; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+    const sanitizedValue = sanitizeCookieValue(name, value);
+    document.cookie = `${name}=${sanitizedValue}; expires=Tue, 19 Jan 9999 03:14:07 UTC; domain=${getDomain()}; path=/; SameSite=None; Secure;`;
     log("setCookie", {
       name,
-      value,
+      sanitizedValue,
       domain: getDomain(),
     });
 
