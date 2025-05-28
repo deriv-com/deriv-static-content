@@ -31,23 +31,26 @@
     }
 
     try {
-      // First try to decode the URL encoded string
-      let decodedValue = typeof value === 'string' ? decodeURIComponent(value) : value;
+      // First try to decode the URL encoded string &  Check if it's still URL encoded (contains any %)
+      let decodedValue =
+        typeof value === "string" ? decodeURIComponent(value) : value;
 
-      // Check if it's still URL encoded (contains any %)
-      if (typeof decodedValue === 'string' && decodedValue.includes('%')) {
+      if (typeof decodedValue === "string" && decodedValue.includes("%")) {
         decodedValue = decodeURIComponent(decodedValue);
       }
 
       // Try to parse if it's a string that might be JSON
-      const parsedValue = typeof decodedValue === 'string' ? JSON.parse(decodedValue) : decodedValue;
-      
+      const parsedValue =
+        typeof decodedValue === "string"
+          ? JSON.parse(decodedValue)
+          : decodedValue;
+
       // If it's an object, sanitize each value
-      if (typeof parsedValue === 'object' && parsedValue !== null) {
+      if (typeof parsedValue === "object" && parsedValue !== null) {
         const sanitizedObject = {};
         Object.entries(parsedValue).forEach(([key, val]) => {
-          if (typeof val === 'string') {
-            const sanitized = val.replace(/[^a-zA-Z0-9-_.,{}]/g, '');
+          if (typeof val === "string") {
+            const sanitized = val.replace(/[^a-zA-Z0-9-_.,{}]/g, "");
             sanitizedObject[key] = sanitized;
           } else {
             sanitizedObject[key] = val;
@@ -55,19 +58,19 @@
         });
         return JSON.stringify(sanitizedObject);
       }
-      
+
       // If it's not an object, sanitize the string
-      if (typeof value === 'string') {
-        return value.replace(/[^a-zA-Z0-9-_.,{}]/g, '');
+      if (typeof value === "string") {
+        return value.replace(/[^a-zA-Z0-9-_.,{}]/g, "");
       }
 
       return value;
     } catch (e) {
       // If parsing fails, it's not JSON, so sanitize the string
-      if (typeof value === 'string') {
-        return value.replace(/[^a-zA-Z0-9-_.,{}]/g, '');
+      if (typeof value === "string") {
+        return value.replace(/[^a-zA-Z0-9-_.,{}]/g, "");
       }
-      
+
       return value;
     }
   };
