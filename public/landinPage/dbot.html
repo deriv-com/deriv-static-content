@@ -645,7 +645,8 @@
         var deriv_cookie_domain = "deriv.com"; // Modify as per your actual usage
         var CookieStorage = function (cookie_name, cookie_domain = "") {
           var hostname = window.location.hostname;
-          var is_deriv_com = hostname.includes("deriv.com");
+          const allowedHostnames = ["deriv.com", "www.deriv.com"];
+          const is_deriv_com = allowedHostnames.includes(hostname);
           this.initialized = false;
           this.cookie_name = cookie_name;
           this.domain = is_deriv_com
