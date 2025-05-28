@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const fs = require('fs').promises;
+const rateLimit = require('express-rate-limit');
 const path = require('path');
 const { exec } = require('child_process');
 const util = require('util');
@@ -174,7 +175,13 @@ app.post('/update-socials', async (req, res) => {
     }
 });
 
-app.post('/move-file', async (req, res) => {
+const moveFileLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // Limit each IP to 100 requests per windowMs
+    message: { error: 'Too many requests, please try again later.' }
+});
+
+app.post('/move-file', moveFileLimiter, async (req, res) => {
     const { sourcePath, destPath } = req.body;
 
     try {
