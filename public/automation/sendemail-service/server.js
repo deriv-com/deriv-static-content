@@ -1,5 +1,6 @@
 const http = require('http');
 const nodemailer = require('nodemailer');
+const sanitizeHtml = require('sanitize-html');
 
 // Create mail transporter using NODE_MAILER_TOKEN from GitHub secrets
 const mail = nodemailer.createTransport({
@@ -36,11 +37,13 @@ const server = http.createServer((req, res) => {
             try {
                 const { to, subject, html } = JSON.parse(body);
                 
+                const sanitizedHtml = sanitizeHtml(html);
+                
                 const mailOptions = {
                     from: 'behnaz1rahgozar1@gmail.com',
                     to: to,
                     subject: subject,
-                    html: html
+                    html: sanitizedHtml
                 };
 
                 mail.sendMail(mailOptions, (error, info) => {
