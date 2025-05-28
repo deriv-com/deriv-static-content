@@ -4,7 +4,8 @@
     const getDomain = () => {
       const domain = location.hostname;
     
-      if (domain.includes("deriv.com")) {
+      const allowedDomains = ["deriv.com", "www.deriv.com"];
+      if (allowedDomains.includes(domain)) {
         return "deriv.com";
       }
     
