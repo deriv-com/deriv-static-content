@@ -75,13 +75,22 @@ const russianSocialLinks = `
                             </td>
                         </tr>`;                        
 
+const SAFE_ROOT = path.resolve('/var/www/'); // Define a safe root directory
+
 async function updateSocialLinks(filePath, language) {
     try {
         console.log(`Updating social links for file: ${filePath} with language: ${language}`);
         
+        // Validate and sanitize filePath
+        const resolvedPath = path.resolve(SAFE_ROOT, filePath);
+        const realPath = fs.realpathSync(resolvedPath);
+        if (!realPath.startsWith(SAFE_ROOT)) {
+            throw new Error('Invalid file path: Access outside the safe root directory is not allowed');
+        }
+        
         // Check if file exists
         try {
-            await fs.access(filePath);
+            await fs.access(realPath);
         } catch (error) {
             throw new Error(`File not found: ${filePath}`);
         }
@@ -137,7 +146,7 @@ async function updateSocialLinks(filePath, language) {
         console.log('Content replaced successfully');
         
         // Write back to file
-        await fs.writeFile(filePath, content, 'utf8');
+        await fs.writeFile(realPath, content, 'utf8');
         console.log('File written successfully');
         return true;
     } catch (error) {
@@ -149,6 +158,11 @@ async function updateSocialLinks(filePath, language) {
 app.post('/update-socials', async (req, res) => {
     console.log('Received update-socials request:', req.body);
     const { filePath, language } = req.body;
+    const resolvedPath = path.resolve(SAFE_ROOT, filePath);
+    const realPath = fs.realpathSync(resolvedPath);
+    if (!realPath.startsWith(SAFE_ROOT)) {
+        return res.status(400).json({ error: 'Invalid file path: Access outside the safe root directory is not allowed' });
+    }
     
     if (!filePath) {
         return res.status(400).json({ error: 'filePath is required' });
