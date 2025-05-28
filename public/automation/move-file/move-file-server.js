@@ -156,7 +156,13 @@ async function updateSocialLinks(filePath, language) {
     }
 }
 
-app.post('/update-socials', async (req, res) => {
+const updateSocialsLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // Limit each IP to 100 requests per windowMs
+    message: { error: 'Too many requests, please try again later.' }
+});
+
+app.post('/update-socials', updateSocialsLimiter, async (req, res) => {
     console.log('Received update-socials request:', req.body);
     const { filePath, language } = req.body;
     const resolvedPath = path.resolve(SAFE_ROOT, filePath);
