@@ -1082,7 +1082,12 @@
         document.querySelectorAll(".social-media-login").forEach((e) => {
             e.addEventListener("click", () => {
                 const platform = e.getAttribute("data-platform");
-                window.location.href = loginUrl(platform);
+                const allowedPlatforms = ["facebook", "google", "twitter"]; // Whitelist of allowed platforms
+                if (allowedPlatforms.includes(platform)) {
+                    window.location.href = loginUrl(platform);
+                } else {
+                    console.error("Invalid platform specified:", platform);
+                }
             });
         });
     };
