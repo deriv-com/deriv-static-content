@@ -8,6 +8,7 @@
     "image-size": "^2.0.0",
     "nodemailer": "^6.9.16",
     "express-rate-limit": "^7.5.0",
-    "sanitize-html": "^2.17.0"
+    "sanitize-html": "^2.17.0",
+    "lodash.escape": "^4.0.1"
   }
 }
