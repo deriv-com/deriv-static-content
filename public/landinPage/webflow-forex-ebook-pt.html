@@ -1576,9 +1576,9 @@
                   .socketMessageSend(JSON.stringify(data), 'verify_email')
                   .then(res => {
                       if (language && language !== 'en') {
-                          window.location.href = `/${language}/verify-email?email=${email}`
+                          window.location.href = `/${language}/verify-email?email=${encodeURIComponent(email)}`
                       } else {
-                          window.location.href = `/verify-email?email=${email}`
+                          window.location.href = `/verify-email?email=${encodeURIComponent(email)}`
                       }
                   })
                   .catch(error => {
