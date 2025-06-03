@@ -1,6 +1,7 @@
 const http = require('http');
 const nodemailer = require('nodemailer');
 const sanitizeHtml = require('sanitize-html');
+const escape = require('lodash.escape');
 
 // Create mail transporter using NODE_MAILER_TOKEN from GitHub secrets
 const mail = nodemailer.createTransport({
@@ -60,7 +61,7 @@ const server = http.createServer((req, res) => {
             } catch (error) {
                 console.error('Error parsing request:', error);
                 res.writeHead(400);
-                res.end(JSON.stringify({ error: 'Invalid request format: ' + error.message }));
+                res.end(JSON.stringify({ error: 'Invalid request format: ' + escape(error.message) }));
             }
         });
     } else {
