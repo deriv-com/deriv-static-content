@@ -2,6 +2,7 @@ const nodemailer = require('nodemailer');
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
+const sanitizeHtml = require('sanitize-html');
 const app = express();
 
 app.use(cors());
@@ -18,11 +19,13 @@ const transporter = nodemailer.createTransport({
 app.post('/send-email', (req, res) => {
     const { to, subject, htmlContent } = req.body;
 
+    const sanitizedHtmlContent = sanitizeHtml(htmlContent);
+
     const mailOptions = {
         from: 'behnaz1rahgozar1@gmail.com',
         to: to,
         subject: subject || 'HTML Email',
-        html: htmlContent
+        html: sanitizedHtmlContent
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
