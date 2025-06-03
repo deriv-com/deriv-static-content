@@ -74,7 +74,24 @@
 
     init = async () => {
       try {
-        if (this.authToken) {
+        const isIntercomAlreadyInitialized = window.isInterComExists;
+        // Check if user was previously logged in
+        const wasLoggedIn =
+          localStorage.getItem("intercom_user_logged_in") === "true";
+
+        // If no auth token, mark as not logged in
+        if (!this.authToken) {
+          localStorage.setItem("intercom_user_logged_in", "false");
+        } else {
+          if (isIntercomAlreadyInitialized && !wasLoggedIn) {
+            console.log(
+              "Shutting down existing Intercom instance for first-time login"
+            );
+            Intercom("shutdown");
+          }
+          // Mark that the user is now logged in
+          localStorage.setItem("intercom_user_logged_in", "true");
+
           const userHashData = await this.fetchUserHash({
             token: this.authToken,
           });
