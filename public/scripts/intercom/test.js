@@ -87,6 +87,7 @@
             console.log(
               "Shutting down existing Intercom instance for first-time login"
             );
+            Intercom("hide");
             Intercom("shutdown");
           }
           // Mark that the user is now logged in
@@ -116,7 +117,7 @@
 
         this.injectScript();
 
-        Intercom("boot", this.intercomConfig);
+        Intercom("update", this.intercomConfig);
       } catch (error) {
         console.warn("Initialization failed:", error);
       }
