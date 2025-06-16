@@ -338,6 +338,63 @@
     return stringifiedCookies;
   };
 
+  const testCookieFunctionality = () => {
+    try {
+      // Test basic cookie functionality
+      document.cookie = "deriv_test_cookie=1; SameSite=None; Secure";
+      const test_result = document.cookie.includes("deriv_test_cookie=");
+
+      // Gather browser and cookie configuration info
+      const cookieInfo = {
+        status: test_result ? "enabled" : "disabled",
+        browser: {
+          userAgent: navigator.userAgent,
+          platform: navigator.platform,
+          vendor: navigator.vendor,
+        },
+        cookieConfig: {
+          sameSite: "None",
+          secure: true,
+          domain: getDomain(),
+        },
+        cookieSettings: {
+          thirdPartyCookies: test_result ? "supported" : "blocked",
+          cookieEnabled: navigator.cookieEnabled,
+          doNotTrack: navigator.doNotTrack || window.doNotTrack,
+        },
+        storage: {
+          localStorage: (() => {
+            try {
+              localStorage.setItem("test", "test");
+              localStorage.removeItem("test");
+              return "supported";
+            } catch (e) {
+              return "blocked";
+            }
+          })(),
+          sessionStorage: (() => {
+            try {
+              sessionStorage.setItem("test", "test");
+              sessionStorage.removeItem("test");
+              return "supported";
+            } catch (e) {
+              return "blocked";
+            }
+          })(),
+        }
+      };
+
+      if (!test_result) {
+        console.warn("⚠️ Cookies not stored - possibly ITP or blocked.");
+      }
+
+      return JSON.stringify(cookieInfo);
+    } catch (e) {
+      console.warn("❌ Cookie setting failed:", e);
+      return `error: ${e.message || e.toString()}`;
+    }
+  };
+
   const waitForTrackEvent = (retries = 150, interval = 1000) => {
     const getTrackEventFn = () => {
       return window.Analytics?.trackEvent instanceof Function
@@ -354,6 +411,7 @@
         console.warn("Marketing cookies has been handled");
         trackEvent("debug_marketing_cookies", {
           marketing_cookies: getStringifiedCookies(),
+          cookie_status: testCookieFunctionality(),
         });
       }, 1000);
     } else if (retries > 0) {
