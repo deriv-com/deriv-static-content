@@ -1,4 +1,10 @@
-(function DerivMarketingCookies() {
+window.marketingTrackingSent = false;
+
+function DerivMarketingCookies() {
+  let cookieData = {
+    original: {},
+    sanitized: {},
+  };
   // Initialize logging array in window
   window.marketingCookieLogs = [];
   window.marketingCookies = {};
@@ -85,6 +91,8 @@
     });
 
     window.marketingCookies[name] = value;
+    cookieData.original[name] = value;
+    cookieData.sanitized[name] = sanitizedValue;
   };
 
   const eraseCookie = (name) => {
@@ -421,5 +429,21 @@
     }
   };
 
-  waitForTrackEvent();
-})();
+  if (!window.marketingTrackingSent) {
+    waitForTrackEvent();
+    window.marketingTrackingSent = true;
+  }
+
+  return cookieData;
+}
+
+
+DerivMarketingCookies();
+
+
+window.getMarketingCookies = () => {
+  return DerivMarketingCookies();
+}
+
+
+
