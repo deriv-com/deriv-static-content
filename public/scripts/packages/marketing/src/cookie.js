@@ -275,6 +275,9 @@ function DerivMarketingCookies() {
       .replaceAll("%7D", "}");
 
     document.cookie = `signup_device=${signup_data_cookie};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+  } else {
+    cookieData.original.signup_device = signup_device_cookie.signup_device;
+    cookieData.sanitized.signup_device = signup_device_cookie.signup_device;
   }
   /* end handling signup device */
 
@@ -302,7 +305,13 @@ function DerivMarketingCookies() {
       .replaceAll("%7D", "}");
 
     document.cookie = `date_first_contact=${date_first_contact_data_cookie};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+  } else {
+    cookieData.original.date_first_contact =
+      date_first_contact_cookie.date_first_contact;
+    cookieData.sanitized.date_first_contact =
+      date_first_contact_cookie.date_first_contact;
   }
+
   /* end handling date first contact */
 
   /* start handling gclid */
@@ -389,7 +398,7 @@ function DerivMarketingCookies() {
               return "blocked";
             }
           })(),
-        }
+        },
       };
 
       if (!test_result) {
@@ -437,13 +446,8 @@ function DerivMarketingCookies() {
   return cookieData;
 }
 
-
 DerivMarketingCookies();
-
 
 window.getMarketingCookies = () => {
   return DerivMarketingCookies();
-}
-
-
-
+};
