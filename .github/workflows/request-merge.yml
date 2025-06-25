@@ -16,9 +16,10 @@ jobs:
           PR_URL: ${{ github.event.issue.html_url }}
           COMMENTER: ${{ github.event.comment.user.login }}
         run: |
-          read -r -d '' payload <<EOF
+          payload=$(cat <<EOF
           {
-            "text": "<@UDJT9F43E> Amam\n\n<@U01TJKCS09K> Prince\n\n<@U01P4V6M2GK> habib\n\n<@U04LLQ3GBB5> nuzhy\n\n:bell: Merge Requested\nA merge has been requested by @${COMMENTER}.\nPR: ${PR_URL}"
+            "text": "<@UDJT9F43E> Amam\n\n<@U01TJKCS09K> Prince\n\n<@U01P4V6M2GK> habib\n\n<@U04LLQ3GBB5> nuzhy\n\nA merge has been requested by @${COMMENTER}.\nPR: ${PR_URL}"
           }
           EOF
+          )
           curl -X POST -H 'Content-type: application/json' --data "$payload" "$SLACK_WEBHOOK_URL"
