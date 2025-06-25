@@ -18,7 +18,7 @@ jobs:
         run: |
           payload=$(cat <<EOF
           {
-            "text": "<@UDJT9F43E><@U01TJKCS09K><@U01P4V6M2GK><@U04LLQ3GBB5>\nA merge has been requested by @${COMMENTER}.\nPR: ${PR_URL}"
+            "text": "<@UDJT9F43E><@U01TJKCS09K><@U01P4V6M2GK><@U04LLQ3GBB5>\n @${COMMENTER} is requesting for review and merge.\nPR: ${PR_URL}"
           }
           EOF
           )
