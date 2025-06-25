@@ -1,0 +1,22 @@
+name: Notify Slack on Merge Request
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  notify-slack:
+    if: |
+      github.event.issue.pull_request && contains(github.event.comment.body, '#REQUEST_MERGE')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Slack notification
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          PR_URL: ${{ github.event.issue.html_url }}
+          COMMENTER: ${{ github.event.comment.user.login }}
+        run: |
+          payload='{
+            "text": "<@UDJT9F43E> <@U01TJKCS09K> <@U01P4V6M2GK> <@U04LLQ3GBB5> :bell: *Merge Requested*\nA merge has been requested by @${COMMENTER}.\nPR: ${PR_URL}"
+          }'
+          curl -X POST -H 'Content-type: application/json' --data "$payload" "$SLACK_WEBHOOK_URL"
