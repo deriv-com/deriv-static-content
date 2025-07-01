@@ -1,0 +1,45 @@
+name: PR Auto-Merge Eligibility Check
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  check-changes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR
+        uses: actions/checkout@v4
+
+      - name: Get changed files
+        id: files
+        run: |
+          echo "files=$(gh pr view ${{ github.event.pull_request.number }} --json files --jq '.files[].path' | tr '\n' ' ')" >> $GITHUB_OUTPUT
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check for forbidden changes
+        id: check
+        run: |
+          forbidden_patterns="^public/scripts/|package.json|pnpm-lock.yaml|yarn.lock|.github/workflows/"
+          allowed="true"
+          for file in ${{ steps.files.outputs.files }}; do
+            if [[ $file =~ $forbidden_patterns ]]; then
+              allowed="false"
+              break
+            fi
+          done
+          echo "allowed=$allowed" >> $GITHUB_OUTPUT
+
+      - name: Comment on PR if auto-merge is allowed
+        if: steps.check.outputs.allowed == 'true'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: "Auto merging is allowed in this PR and you can do this by commenting @auto_merge"
+            }) 
