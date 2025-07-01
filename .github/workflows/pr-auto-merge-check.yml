@@ -5,34 +5,17 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  check-changes:
+  check-allowlist:
+    uses: ./.github/workflows/pr-allowlist-check.yml
+    with:
+      pr_number: ${{ github.event.pull_request.number }}
+
+  comment:
+    needs: check-allowlist
     runs-on: ubuntu-latest
+    if: needs.check-allowlist.outputs.allowed == 'true'
     steps:
-      - name: Checkout PR
-        uses: actions/checkout@v4
-
-      - name: Get changed files
-        id: files
-        run: |
-          echo "files=$(gh pr view ${{ github.event.pull_request.number }} --json files --jq '.files[].path' | tr '\n' ' ')" >> $GITHUB_OUTPUT
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Check for forbidden changes
-        id: check
-        run: |
-          forbidden_patterns="^public/scripts/|package.json|pnpm-lock.yaml|yarn.lock|.github/workflows/"
-          allowed="true"
-          for file in ${{ steps.files.outputs.files }}; do
-            if [[ $file =~ $forbidden_patterns ]]; then
-              allowed="false"
-              break
-            fi
-          done
-          echo "allowed=$allowed" >> $GITHUB_OUTPUT
-
       - name: Comment on PR if auto-merge is allowed
-        if: steps.check.outputs.allowed == 'true'
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.PAT_TOKEN }}
