@@ -63,15 +63,30 @@ jobs:
               pull_number: context.issue.number,
             });
             const sha = pr.data.head.sha;
+
+            // Get all check runs (GitHub Actions and other apps)
+            const checks = await github.rest.checks.listForRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: sha,
+            });
+            const allCheckRunsPassed = checks.data.check_runs.every(
+              check => check.conclusion === 'success'
+            );
+
+            // Get all status checks (old API)
             const status = await github.rest.repos.getCombinedStatusForRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
               ref: sha,
             });
-            const allChecksPassed = status.data.state === 'success';
+            const allStatusesPassed = status.data.statuses.every(
+              s => s.state === 'success'
+            );
+
             let reason = '';
-            if (!allChecksPassed) {
-              reason = 'Not all required status checks are successful.';
+            if (!allCheckRunsPassed || !allStatusesPassed) {
+              reason = 'Not all required status checks or workflow runs are successful.';
               core.setOutput('can_merge', 'false');
               core.setOutput('reason', reason);
             } else if (pr.data.mergeable_state === 'dirty') {
