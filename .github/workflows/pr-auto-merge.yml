@@ -1,5 +1,9 @@
 name: Auto Merge PR on Comment
 
+permissions:
+  contents: read
+  pull-requests: write
+
 on:
   issue_comment:
     types: [created]
