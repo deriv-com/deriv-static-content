@@ -62,17 +62,24 @@ jobs:
               repo: context.repo.repo,
               pull_number: context.issue.number,
             });
+            const sha = pr.data.head.sha;
+            const status = await github.rest.repos.getCombinedStatusForRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: sha,
+            });
+            const allChecksPassed = status.data.state === 'success';
             let reason = '';
-            if (pr.data.mergeable_state !== 'clean') {
-              if (pr.data.mergeable_state === 'dirty') {
-                reason = 'This PR has merge conflicts.';
-              } else if (pr.data.mergeable_state === 'blocked') {
-                reason = 'This PR is blocked by required status checks or other branch protection rules.';
-              } else if (pr.data.mergeable_state === 'unknown') {
-                reason = 'The mergeability of this PR could not be determined. Please try again later.';
-              } else {
-                reason = `This PR cannot be auto-merged. mergeable_state: ${pr.data.mergeable_state}`;
-              }
+            if (!allChecksPassed) {
+              reason = 'Not all required status checks are successful.';
+              core.setOutput('can_merge', 'false');
+              core.setOutput('reason', reason);
+            } else if (pr.data.mergeable_state === 'dirty') {
+              reason = 'This PR has merge conflicts.';
+              core.setOutput('can_merge', 'false');
+              core.setOutput('reason', reason);
+            } else if (pr.data.mergeable_state === 'unknown') {
+              reason = 'The mergeability of this PR could not be determined. Please try again later.';
               core.setOutput('can_merge', 'false');
               core.setOutput('reason', reason);
             } else {
