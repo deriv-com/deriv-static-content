@@ -27,7 +27,9 @@ jobs:
       - name: Get changed files
         id: files
         run: |
-          echo "files=$(gh pr view ${{ inputs.pr_number }} --json files --jq '.files[].path' | tr '\n' ' ')" >> $GITHUB_OUTPUT
+          echo "files<<EOF" >> $GITHUB_OUTPUT
+          gh pr view ${{ inputs.pr_number }} --json files --jq '.files[].path' >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -35,7 +37,7 @@ jobs:
         id: check
         run: |
           forbidden=false
-          for file in ${{ steps.files.outputs.files }}; do
+          while IFS= read -r file; do
             case "$file" in
               public/scripts/*|package.json|pnpm-lock.yaml|yarn.lock|.github/workflows/*)
                 forbidden=true
@@ -51,7 +53,7 @@ jobs:
                 break
                 ;;
             esac
-          done
+          done <<< "${{ steps.files.outputs.files }}"
           if [ "$forbidden" = true ]; then
             echo "allowed=false" >> $GITHUB_OUTPUT
           else
