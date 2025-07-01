@@ -1,17 +1,41 @@
 name: Auto Merge PR on Comment
 
+permissions:
+  contents: read
+  pull-requests: write
+
 on:
   issue_comment:
     types: [created]
 
 jobs:
+  check-allowlist:
+    uses: ./.github/workflows/pr-allowlist-check.yml
+    with:
+      pr_number: ${{ github.event.issue.number }}
+
   automerge:
+    needs: check-allowlist
     if: |
       github.event.issue.pull_request &&
       github.event.comment.body == '@auto_merge'
     runs-on: ubuntu-latest
     steps:
+      - name: Comment if disallowed files changed
+        if: needs.check-allowlist.outputs.allowed != 'true'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.PAT_TOKEN }}
+          script: |
+            github.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: ":x: Auto-merge not allowed: This PR contains files other than images, CSS, HTML, or JS. Only these file types are allowed for auto-merge."
+            })
+
       - name: Check required status checks and mergeability
+        if: needs.check-allowlist.outputs.allowed == 'true'
         id: checks
         uses: actions/github-script@v7
         with:
@@ -38,8 +62,9 @@ jobs:
             } else {
               core.setOutput('can_merge', 'true');
             }
+
       - name: Comment if cannot merge
-        if: steps.checks.outputs.can_merge == 'false'
+        if: steps.checks.outputs.can_merge == 'false' && needs.check-allowlist.outputs.allowed == 'true'
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.PAT_TOKEN }}
@@ -50,8 +75,9 @@ jobs:
               issue_number: context.issue.number,
               body: `:x: Auto-merge not possible: ${{ steps.checks.outputs.reason }}`
             })
+
       - name: Auto-merge PR
-        if: steps.checks.outputs.can_merge == 'true'
+        if: steps.checks.outputs.can_merge == 'true' && needs.check-allowlist.outputs.allowed == 'true'
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.PAT_TOKEN }}

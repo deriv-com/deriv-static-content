@@ -1,0 +1,59 @@
+name: PR Allowlist Filetype Check
+
+permissions:
+  contents: read
+  pull-requests: write
+
+on:
+  workflow_call:
+    inputs:
+      pr_number:
+        required: true
+        type: string
+    outputs:
+      allowed:
+        description: "Whether only allowed file types are changed"
+        value: ${{ jobs.check.outputs.allowed }}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      allowed: ${{ steps.check.outputs.allowed }}
+    steps:
+      - name: Checkout PR
+        uses: actions/checkout@v4
+
+      - name: Get changed files
+        id: files
+        run: |
+          echo "files=$(gh pr view ${{ inputs.pr_number }} --json files --jq '.files[].path' | tr '\n' ' ')" >> $GITHUB_OUTPUT
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check for only allowed file types and no forbidden files
+        id: check
+        run: |
+          forbidden=false
+          for file in ${{ steps.files.outputs.files }}; do
+            case "$file" in
+              public/scripts/*|package.json|pnpm-lock.yaml|yarn.lock|.github/workflows/*)
+                forbidden=true
+                break
+                ;;
+            esac
+            case "$file" in
+              *.png|*.jpg|*.jpeg|*.gif|*.svg|*.webp|*.css|*.scss|*.sass|*.less|*.html|*.htm|*.js|*.jsx|*.ts|*.tsx)
+                # allowed
+                ;;
+              *)
+                forbidden=true
+                break
+                ;;
+            esac
+          done
+          if [ "$forbidden" = true ]; then
+            echo "allowed=false" >> $GITHUB_OUTPUT
+          else
+            echo "allowed=true" >> $GITHUB_OUTPUT
+          fi
