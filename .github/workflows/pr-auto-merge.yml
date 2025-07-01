@@ -9,6 +9,22 @@ on:
     types: [created]
 
 jobs:
+  react:
+    runs-on: ubuntu-latest
+    if: github.event.issue.pull_request && github.event.comment.body == '@auto_merge'
+    steps:
+      - name: React with thumbs up to @auto_merge comment
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.PAT_TOKEN }}
+          script: |
+            await github.rest.reactions.createForIssueComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              comment_id: context.payload.comment.id,
+              content: '+1'
+            })
+
   check-allowlist:
     uses: ./.github/workflows/pr-allowlist-check.yml
     with:
@@ -21,19 +37,6 @@ jobs:
       github.event.comment.body == '@auto_merge'
     runs-on: ubuntu-latest
     steps:
-      - name: React with thumbs up to @auto_merge comment
-        if: github.event.comment.body == '@auto_merge'
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.PAT_TOKEN }}
-          script: |
-            await github.rest.reactions.createForIssueComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              comment_id: context.payload.comment.id,
-              content: '+1'
-            })
-
       - name: Comment if disallowed files changed
         if: needs.check-allowlist.outputs.allowed != 'true'
         uses: actions/github-script@v7
@@ -54,7 +57,7 @@ jobs:
         with:
           github-token: ${{ secrets.PAT_TOKEN }}
           script: |
-            const pr = await github.pulls.get({
+            const pr = await github.rest.pulls.get({
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number: context.issue.number,
