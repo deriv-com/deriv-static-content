@@ -126,3 +126,22 @@ jobs:
               pull_number: context.issue.number,
               merge_method: 'squash'
             })
+
+      - name: Notify Slack on auto-merge
+        if: steps.checks.outputs.can_merge == 'true' && needs.check-allowlist.outputs.allowed == 'true'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.PAT_TOKEN }}
+          script: |
+            const prLink = `https://github.com/${context.repo.owner}/${context.repo.repo}/pull/${context.issue.number}`;
+            const commenter = context.payload.comment.user.login;
+            const message = {
+              text: `:pr_merged: PR: <${prLink}|#${context.issue.number}> was auto merged by @${commenter}.`
+            };
+            await fetch(process.env.SLACK_WEBHOOK_URL, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(message)
+            });
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
