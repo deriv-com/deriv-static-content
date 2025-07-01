@@ -30,17 +30,26 @@ jobs:
       - name: Check for only allowed file types and no forbidden files
         id: check
         run: |
-          forbidden_patterns="^public/scripts/|package.json$|pnpm-lock.yaml$|yarn.lock$|^\.github/workflows/"
-          allowed_patterns="\\.(png|jpe?g|gif|svg|webp|css|scss|sass|less|html?|js|jsx|ts|tsx)$"
-          allowed="true"
+          forbidden=false
           for file in ${{ steps.files.outputs.files }}; do
-            if [[ $file =~ $forbidden_patterns ]]; then
-              allowed="false"
-              break
-            fi
-            if ! [[ $file =~ $allowed_patterns ]]; then
-              allowed="false"
-              break
-            fi
+            case "$file" in
+              public/scripts/*|package.json|pnpm-lock.yaml|yarn.lock|.github/workflows/*)
+                forbidden=true
+                break
+                ;;
+            esac
+            case "$file" in
+              *.png|*.jpg|*.jpeg|*.gif|*.svg|*.webp|*.css|*.scss|*.sass|*.less|*.html|*.htm|*.js|*.jsx|*.ts|*.tsx)
+                # allowed
+                ;;
+              *)
+                forbidden=true
+                break
+                ;;
+            esac
           done
-          echo "allowed=$allowed" >> $GITHUB_OUTPUT
+          if [ "$forbidden" = true ]; then
+            echo "allowed=false" >> $GITHUB_OUTPUT
+          else
+            echo "allowed=true" >> $GITHUB_OUTPUT
+          fi
