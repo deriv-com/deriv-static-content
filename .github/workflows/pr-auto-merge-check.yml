@@ -31,6 +31,15 @@ jobs:
           done
           echo "allowed=$allowed" >> $GITHUB_OUTPUT
 
+      - name: Check if PAT_TOKEN is set
+        run: |
+          if [ -z "${{ secrets.PAT_TOKEN }}" ]; then
+            echo "PAT_TOKEN is NOT set"
+            exit 1
+          else
+            echo "PAT_TOKEN is set"
+          fi
+
       - name: Comment on PR if auto-merge is allowed
         if: steps.check.outputs.allowed == 'true'
         uses: actions/github-script@v7
