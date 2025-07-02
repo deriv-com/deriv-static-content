@@ -1,4 +1,4 @@
-### Checklist
+## Checklist
 
 #### Development & Code Quality
 - [ ] Code compiles correctly
