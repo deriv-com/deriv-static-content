@@ -1,4 +1,5 @@
 ### Checklist
+#### Please review and confirm that all items are checked before merging
 
 #### Functionality
 - [ ] All links and CTAs work correctly
