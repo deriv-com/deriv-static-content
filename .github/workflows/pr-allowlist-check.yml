@@ -46,7 +46,7 @@ jobs:
                 ;;
             esac
             case "$file" in
-              *.png|*.jpg|*.jpeg|*.gif|*.svg|*.webp|*.css|*.scss|*.sass|*.less|*.html|*.htm|*.js|*.jsx|*.ts|*.tsx)
+              *.png|*.jpg|*.jpeg|*.gif|*.svg|*.webp|*.css|*.scss|*.sass|*.less|*.html|*.htm|*.js|*.jsx|*.ts|*.tsx|*.pdf)
                 # allowed
                 ;;
               *)
