@@ -29,6 +29,7 @@
     "staging-smarttrader.deriv.me": "22169",
 
     [P2P]: "61859",
+    "staging-p2p.deriv.com": "61859",
 
     [DBOT]: "65555",
     "dbot.deriv.be": "65556",
