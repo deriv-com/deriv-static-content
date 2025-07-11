@@ -229,6 +229,9 @@ function DerivMarketingCookies() {
     }
   });
 
+  let potential_mistagging = true;
+  let overwrite_happened = false;
+
   if (shouldOverwrite(utm_data, current_utm_data)) {
     eraseCookie("affiliate_tracking");
     eraseCookie("utm_data");
@@ -239,6 +242,9 @@ function DerivMarketingCookies() {
       .replaceAll("%7D", "}");
 
     setCookie("utm_data", utm_data_cookie);
+    overwrite_happened = true;
+  } else {
+    potential_mistagging = false;
   }
 
   /* end handling UTMs */
@@ -251,12 +257,20 @@ function DerivMarketingCookies() {
     const affiliateToken =
       searchParams.get("t") || searchParams.get("affiliate_token");
     setCookie("affiliate_tracking", affiliateToken);
+
+    if (overwrite_happened) {
+      potential_mistagging = false;
+    }
   }
 
   if (searchParams.has("sidc")) {
     eraseCookie("affiliate_tracking");
     const sidcValue = searchParams.get("sidc");
     setCookie("affiliate_tracking", sidcValue);
+
+    if (overwrite_happened) {
+      potential_mistagging = false;
+    }
   }
   /* end handling affiliate tracking */
 
@@ -429,6 +443,8 @@ function DerivMarketingCookies() {
         trackEvent("debug_marketing_cookies", {
           marketing_cookies: getStringifiedCookies(),
           cookie_status: testCookieFunctionality(),
+          potential_mistagging,
+          overwrite_happened,
         });
       }, 1000);
     } else if (retries > 0) {
