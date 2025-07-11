@@ -231,6 +231,7 @@ function DerivMarketingCookies() {
 
   let potential_mistagging = true;
   let overwrite_happened = false;
+  let dropped_affiliate_tracking = null;
 
   if (shouldOverwrite(utm_data, current_utm_data)) {
     eraseCookie("affiliate_tracking");
@@ -253,14 +254,15 @@ function DerivMarketingCookies() {
   const isAffiliateTokenExist =
     searchParams.has("t") || searchParams.has("affiliate_token");
   if (isAffiliateTokenExist) {
+    if (overwrite_happened) {
+      dropped_affiliate_tracking = getCookie("affiliate_token");
+      potential_mistagging = false;
+    }
+
     eraseCookie("affiliate_tracking");
     const affiliateToken =
       searchParams.get("t") || searchParams.get("affiliate_token");
     setCookie("affiliate_tracking", affiliateToken);
-
-    if (overwrite_happened) {
-      potential_mistagging = false;
-    }
   }
 
   if (searchParams.has("sidc")) {
@@ -269,6 +271,7 @@ function DerivMarketingCookies() {
     setCookie("affiliate_tracking", sidcValue);
 
     if (overwrite_happened) {
+      dropped_affiliate_tracking = getCookie("affiliate_token");
       potential_mistagging = false;
     }
   }
@@ -445,6 +448,7 @@ function DerivMarketingCookies() {
           cookie_status: testCookieFunctionality(),
           potential_mistagging,
           overwrite_happened,
+          dropped_affiliate_tracking,
         });
       }, 1000);
     } else if (retries > 0) {
