@@ -2,10 +2,19 @@
 
 This guide will help you install the ShiftAI extension for VSCode and Cursor.
 
-## Installation Steps
+## Supported Tools
 
+ShiftAI is compatible with the following development environments:
+
+- **Cursor default IDE** - Built-in AI assistant with ShiftAI extension
+- **Cursor + Cline** - Cursor IDE with Cline AI coding assistant
+- **Cursor + Roo** - Cursor IDE with Roo AI coding assistant  
+- **VS Code + Cline** - Visual Studio Code with Cline AI coding assistant
+- **VS Code + Roo** - Visual Studio Code with Roo AI coding assistant
+
+## Installation Steps
 1. **Download the VSIX file to your computer:**
-   - [shiftai-0.0.1.vsix](https://github.com/deriv-com/deriv-static-content/raw/refs/heads/master/public/scripts/shift-ai/shiftai-0.0.2.vsix)
+   - [shiftai-0.0.2.vsix](https://github.com/deriv-com/deriv-static-content/raw/refs/heads/master/public/scripts/shift-ai/shiftai-0.0.2.vsix)
 
 2. **Install in VSCode:**
    - Open VSCode
