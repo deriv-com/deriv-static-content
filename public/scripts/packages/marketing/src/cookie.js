@@ -200,6 +200,7 @@ function DerivMarketingCookies() {
   ];
 
   let utm_data = {};
+  let affiliate_tracking = null;
   const utm_data_cookie = getCookie("utm_data");
   const current_utm_data = utm_data_cookie
     ? JSON.parse(decodeURIComponent(utm_data_cookie))
@@ -263,12 +264,14 @@ function DerivMarketingCookies() {
     const affiliateToken =
       searchParams.get("t") || searchParams.get("affiliate_token");
     setCookie("affiliate_tracking", affiliateToken);
+    affiliate_tracking = affiliateToken;
   }
 
   if (searchParams.has("sidc")) {
     eraseCookie("affiliate_tracking");
     const sidcValue = searchParams.get("sidc");
     setCookie("affiliate_tracking", sidcValue);
+    affiliate_tracking = sidcValue;
 
     if (overwrite_happened) {
       dropped_affiliate_tracking = getCookie("affiliate_token");
@@ -450,6 +453,8 @@ function DerivMarketingCookies() {
           overwrite_happened,
           dropped_affiliate_tracking,
           cookie_logs: window.marketingCookieLogs,
+          utm_data,
+          affiliate_tracking,
         });
       }, 1000);
     } else if (retries > 0) {
