@@ -96,12 +96,15 @@ function DerivMarketingCookies() {
   };
 
   const eraseCookie = (name) => {
+    const existingValue = getCookie(name);
     document.cookie = `${name}=; Max-Age=-99999999; domain=${getDomain()}; path=/;`;
-    log("eraseCookie", { name });
+    log("eraseCookie", { name, existingValue });
     delete window.marketingCookies[name];
   };
 
   const getCookie = (name) => {
+    log("getCookie", { name, action: "started" });
+    
     const dc = document.cookie;
     const prefix = name + "=";
 
@@ -110,7 +113,6 @@ function DerivMarketingCookies() {
     if (begin == -1) {
       begin = dc.indexOf(prefix);
       // cookie not available
-      if (begin != 0) return null;
     } else {
       begin += 2;
     }
@@ -121,7 +123,9 @@ function DerivMarketingCookies() {
       end = dc.length;
     }
 
-    return decodeURI(dc.substring(begin + prefix.length, end));
+    const result = decodeURI(dc.substring(begin + prefix.length, end));
+    log("getCookie", { name, result, reason: "cookie_found" });
+    return result;
   };
 
   const isMobile = () => {
@@ -144,6 +148,8 @@ function DerivMarketingCookies() {
   };
 
   const shouldOverwrite = (new_utm_data, current_utm_data) => {
+    log("shouldOverwrite", { new_utm_data, current_utm_data, action: "started" });
+    
     // If we don't have old utm data, the utm_source field is enough for new utm data
     const valid_new_utm_source =
       new_utm_data.utm_source && new_utm_data.utm_source !== "null";
@@ -151,6 +157,7 @@ function DerivMarketingCookies() {
       log("shouldOverwrite", {
         reason: "No current UTM data and valid new UTM source",
         new_utm_data,
+        result: true
       });
       return true;
     }
@@ -165,6 +172,7 @@ function DerivMarketingCookies() {
         reason: "All required fields present in new UTM data",
         new_utm_data,
         current_utm_data,
+        result: true
       });
       return true;
     }
@@ -173,6 +181,7 @@ function DerivMarketingCookies() {
       reason: "Conditions not met for overwrite",
       new_utm_data,
       current_utm_data,
+      result: false
     });
     return false;
   };
@@ -182,6 +191,8 @@ function DerivMarketingCookies() {
   const app_id = 11780;
 
   /* start handling UTMs */
+  log("UTM_handling", "Started UTM parameter processing");
+  
   const utm_fields = [
     "utm_source",
     "utm_medium",
@@ -200,10 +211,13 @@ function DerivMarketingCookies() {
   ];
 
   let utm_data = {};
+  let affiliate_tracking = null;
   const utm_data_cookie = getCookie("utm_data");
   const current_utm_data = utm_data_cookie
     ? JSON.parse(decodeURIComponent(utm_data_cookie))
     : {};
+
+  log("UTM_handling", { utm_data_cookie, current_utm_data });
 
   // If the user comes to the site for the first time without any URL params
   // Only set the utm_source to referrer if the user does not have utm_data cookies stored
@@ -218,13 +232,15 @@ function DerivMarketingCookies() {
     if (Array.isArray(field)) {
       const [field_key, mapped_field_value] = field;
       if (searchParams.has(field_key)) {
-        utm_data[mapped_field_value] = searchParams
-          .get(field_key)
-          .substring(0, 200); // Limit to 200 supported characters
+        const value = searchParams.get(field_key).substring(0, 200);
+        utm_data[mapped_field_value] = value;
+        log("UTM_handling", { action: "mapped_field_added", field_key, mapped_field_value, value });
       }
     } else {
       if (searchParams.has(field)) {
-        utm_data[field] = searchParams.get(field).substring(0, 100); // Limit to 100 supported characters
+        const value = searchParams.get(field).substring(0, 100);
+        utm_data[field] = value;
+        log("UTM_handling", { action: "field_added", field, value });
       }
     }
   });
@@ -234,6 +250,7 @@ function DerivMarketingCookies() {
   let dropped_affiliate_tracking = null;
 
   if (shouldOverwrite(utm_data, current_utm_data)) {
+    log("UTM_handling", "Overwriting existing UTM data");
     eraseCookie("affiliate_tracking");
     eraseCookie("utm_data");
 
@@ -244,47 +261,68 @@ function DerivMarketingCookies() {
 
     setCookie("utm_data", utm_data_cookie);
     overwrite_happened = true;
+    log("UTM_handling", { action: "overwrite_completed", utm_data_cookie, overwrite_happened });
   } else {
     potential_mistagging = false;
+    log("UTM_handling", { action: "no_overwrite", potential_mistagging });
   }
 
+  log("UTM_handling", "Completed UTM parameter processing");
   /* end handling UTMs */
 
   /* start handling affiliate tracking */
+  log("affiliate_tracking", "Started affiliate tracking processing");
+  
   const isAffiliateTokenExist =
     searchParams.has("t") || searchParams.has("affiliate_token");
+  log("affiliate_tracking", { isAffiliateTokenExist, hasT: searchParams.has("t"), hasAffiliateToken: searchParams.has("affiliate_token") });
+  
   if (isAffiliateTokenExist) {
     if (overwrite_happened) {
       dropped_affiliate_tracking = getCookie("affiliate_token");
       potential_mistagging = false;
+      log("affiliate_tracking", { action: "dropped_existing", dropped_affiliate_tracking, potential_mistagging });
     }
 
     eraseCookie("affiliate_tracking");
     const affiliateToken =
       searchParams.get("t") || searchParams.get("affiliate_token");
     setCookie("affiliate_tracking", affiliateToken);
+    affiliate_tracking = affiliateToken;
+    log("affiliate_tracking", { action: "token_set", affiliateToken });
   }
 
   if (searchParams.has("sidc")) {
+    log("affiliate_tracking", { action: "sidc_processing", sidcValue: searchParams.get("sidc") });
+    
     eraseCookie("affiliate_tracking");
     const sidcValue = searchParams.get("sidc");
     setCookie("affiliate_tracking", sidcValue);
+    affiliate_tracking = sidcValue;
 
     if (overwrite_happened) {
       dropped_affiliate_tracking = getCookie("affiliate_token");
       potential_mistagging = false;
+      log("affiliate_tracking", { action: "sidc_dropped_existing", dropped_affiliate_tracking, potential_mistagging });
     }
   }
+  
+  log("affiliate_tracking", "Completed affiliate tracking processing");
   /* end handling affiliate tracking */
 
   /* start handling signup device */
+  log("signup_device", "Started signup device processing");
+  
   const signup_device_cookie_unparsed = getCookie("signup_device") || "{}";
   const signup_device_cookie = JSON.parse(
     decodeURI(signup_device_cookie_unparsed).replaceAll("%2C", ",")
   );
+  log("signup_device", { signup_device_cookie_unparsed, signup_device_cookie });
+  
   if (!signup_device_cookie.signup_device) {
+    const device = isMobile() ? "mobile" : "desktop";
     const signup_data = {
-      signup_device: isMobile() ? "mobile" : "desktop",
+      signup_device: device,
     };
     const signup_data_cookie = encodeURI(JSON.stringify(signup_data))
       .replaceAll(",", "%2C")
@@ -292,18 +330,25 @@ function DerivMarketingCookies() {
       .replaceAll("%7D", "}");
 
     document.cookie = `signup_device=${signup_data_cookie};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+    log("signup_device", { action: "device_set", device, signup_data_cookie });
   } else {
     cookieData.original.signup_device = signup_device_cookie.signup_device;
     cookieData.sanitized.signup_device = signup_device_cookie.signup_device;
+    log("signup_device", { action: "existing_device_used", device: signup_device_cookie.signup_device });
   }
+  
+  log("signup_device", "Completed signup device processing");
   /* end handling signup device */
 
   /* start handling date first contact */
+  log("date_first_contact", "Started date first contact processing");
+  
   const date_first_contact_cookie_unparsed =
     getCookie("date_first_contact") || "{}";
   const date_first_contact_cookie = JSON.parse(
     decodeURI(date_first_contact_cookie_unparsed).replaceAll("%2C", ",")
   );
+  log("date_first_contact", { date_first_contact_cookie_unparsed, date_first_contact_cookie });
 
   if (!date_first_contact_cookie.date_first_contact) {
     const date_first_contact_response = Math.floor(Date.now() / 1000);
@@ -322,33 +367,52 @@ function DerivMarketingCookies() {
       .replaceAll("%7D", "}");
 
     document.cookie = `date_first_contact=${date_first_contact_data_cookie};domain=${getDomain()}; path=/; SameSite=None; Secure;`;
+    log("date_first_contact", { action: "date_set", date_first_contact_response, date_first_contact_data, date_first_contact_data_cookie });
   } else {
     cookieData.original.date_first_contact =
       date_first_contact_cookie.date_first_contact;
     cookieData.sanitized.date_first_contact =
       date_first_contact_cookie.date_first_contact;
+    log("date_first_contact", { action: "existing_date_used", date: date_first_contact_cookie.date_first_contact });
   }
 
+  log("date_first_contact", "Completed date first contact processing");
   /* end handling date first contact */
 
   /* start handling gclid */
+  log("gclid", "Started gclid processing");
+  
   const gclid = searchParams.get("gclid");
   const gclid_url = searchParams.get("gclid_url");
   const final_gclid = gclid || gclid_url || "";
+  log("gclid", { gclid, gclid_url, final_gclid });
 
   if (!!final_gclid) {
     eraseCookie("gclid");
     setCookie("gclid", final_gclid);
+    log("gclid", { action: "gclid_set", final_gclid });
+  } else {
+    log("gclid", { action: "no_gclid_found" });
   }
+  
+  log("gclid", "Completed gclid processing");
   /* end handling gclid */
 
   /* start handling campaign channel */
+  log("campaign_channel", "Started campaign channel processing");
+  
   const campaign_channel = searchParams.get("ca");
+  log("campaign_channel", { campaign_channel });
 
   if (campaign_channel) {
     eraseCookie("campaign_channel");
     setCookie("campaign_channel", campaign_channel);
+    log("campaign_channel", { action: "channel_set", campaign_channel });
+  } else {
+    log("campaign_channel", { action: "no_channel_found" });
   }
+  
+  log("campaign_channel", "Completed campaign channel processing");
   /* end handling campaign channel */
 
   log("DerivMarketingCookies", "Initialization completed");
@@ -449,6 +513,9 @@ function DerivMarketingCookies() {
           potential_mistagging,
           overwrite_happened,
           dropped_affiliate_tracking,
+          cookie_logs: window.marketingCookieLogs,
+          utm_data,
+          affiliate_tracking,
         });
       }, 1000);
     } else if (retries > 0) {
