@@ -449,6 +449,7 @@ function DerivMarketingCookies() {
           potential_mistagging,
           overwrite_happened,
           dropped_affiliate_tracking,
+          cookie_logs: window.marketingCookieLogs,
         });
       }, 1000);
     } else if (retries > 0) {
