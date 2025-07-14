@@ -5,7 +5,7 @@ This guide will help you install the ShiftAI extension for VSCode and Cursor.
 ## Installation Steps
 
 1. **Download the VSIX file to your computer:**
-   - [shiftai-0.0.1.vsix](https://github.com/deriv-com/deriv-static-content/raw/refs/heads/master/public/scripts/shift-ai/shiftai-0.0.1.vsix)
+   - [shiftai-0.0.1.vsix](https://github.com/deriv-com/deriv-static-content/raw/refs/heads/master/public/scripts/shift-ai/shiftai-0.0.2.vsix)
 
 2. **Install in VSCode:**
    - Open VSCode
