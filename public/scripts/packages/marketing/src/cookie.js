@@ -113,10 +113,6 @@ function DerivMarketingCookies() {
     if (begin == -1) {
       begin = dc.indexOf(prefix);
       // cookie not available
-      if (begin != 0) {
-        log("getCookie", { name, result: null, reason: "cookie_not_found" });
-        return null;
-      }
     } else {
       begin += 2;
     }
