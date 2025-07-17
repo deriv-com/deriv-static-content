@@ -105,27 +105,21 @@ function DerivMarketingCookies() {
   const getCookie = (name) => {
     log("getCookie", { name, action: "started" });
     
-    const dc = document.cookie;
-    const prefix = name + "=";
-
-    // check begin index
-    let begin = dc.indexOf("; " + prefix);
-    if (begin == -1) {
-      begin = dc.indexOf(prefix);
-      // cookie not available
-    } else {
-      begin += 2;
+    // Split cookies into key-value pairs
+    const cookies = document.cookie.split(';').map(cookie => cookie.trim());
+    
+    // Find the cookie with matching name
+    for (const cookie of cookies) {
+      if (cookie.startsWith(name + '=')) {
+        const value = cookie.substring(name.length + 1);
+        const result = decodeURIComponent(value);
+        log("getCookie", { name, result, reason: "cookie_found" });
+        return result;
+      }
     }
-
-    // check end index
-    let end = document.cookie.indexOf(";", begin);
-    if (end == -1) {
-      end = dc.length;
-    }
-
-    const result = decodeURI(dc.substring(begin + prefix.length, end));
-    log("getCookie", { name, result, reason: "cookie_found" });
-    return result;
+    
+    log("getCookie", { name, reason: "cookie_not_found", result: null });
+    return null;
   };
 
   const isMobile = () => {
