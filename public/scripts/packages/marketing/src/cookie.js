@@ -39,8 +39,16 @@ function DerivMarketingCookies() {
   ];
 
   const log = (action, details) => {
+    let timestamp;
+    try {
+      timestamp = new Date().toISOString();
+    } catch (e) {
+      // Fallback for invalid dates
+      timestamp = new Date(Date.now()).toISOString();
+    }
+    
     window.marketingCookieLogs.push({
-      timestamp: new Date().toISOString(),
+      timestamp,
       action,
       details,
     });
@@ -495,7 +503,7 @@ function DerivMarketingCookies() {
   // Only set the utm_source to referrer if the user does not have utm_data cookies stored
   if (!current_utm_data?.utm_source && !searchParams.toString()) {
     new_utm_data = {
-      utm_source: document.referrer ? document.referrer : "null",
+      utm_source: document.referrer || "null",
     };
   }
 
