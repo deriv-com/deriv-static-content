@@ -1,13 +1,17 @@
 {
     "name": "@deriv-com/marketing-utils",
-    "version": "1.0.20",
+    "version": "2.0.0",
     "type": "module",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/deriv-com/deriv-static-content.git"
     },
     "scripts": {
-        "build": "node build.js"
+        "build": "node build.js",
+        "test": "vitest",
+        "test:watch": "vitest --watch",
+        "test:coverage": "vitest --coverage",
+        "test:ui": "vitest --ui"
     },
     "dependencies": {
         "esbuild": "^0.24.0",
@@ -15,7 +19,11 @@
     },
     "devDependencies": {
         "@semantic-release/changelog": "^6.0.3",
-        "@semantic-release/exec": "^6.0.3"
+        "@semantic-release/exec": "^6.0.3",
+        "@vitest/coverage-v8": "^2.1.8",
+        "@vitest/ui": "^2.1.8",
+        "happy-dom": "^15.11.6",
+        "vitest": "^2.1.8"
     },
     "publishConfig": {
         "access": "public",
