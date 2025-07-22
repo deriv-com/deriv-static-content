@@ -146,14 +146,25 @@ function DerivMarketingCookies() {
       cookieString += `; Secure`;
     }
     
+    let success = false;
     try {
       document.cookie = cookieString;
+      
+      // Verify the cookie was actually set (synchronous verification)
+      const verification = getCookie(name);
+      success = verification === sanitizedValue;
+      
+      if (!success) {
+        console.warn(`Cookie verification failed for ${name}. Expected: ${sanitizedValue}, Got: ${verification}`);
+      }
+      
       log("setCookie", {
         name,
         sanitizedValue,
         domain: config.domain,
         expires: expiresString,
-        success: true
+        success,
+        verification
       });
     } catch (error) {
       log("setCookie", {
@@ -165,9 +176,12 @@ function DerivMarketingCookies() {
       console.error('Failed to set cookie:', error);
     }
 
+    // Update in-memory tracking regardless of cookie success (for fallback)
     window.marketingCookies[name] = value;
     cookieData.original[name] = value;
     cookieData.sanitized[name] = sanitizedValue;
+    
+    return success;
   };
 
   const eraseCookie = (name) => {
