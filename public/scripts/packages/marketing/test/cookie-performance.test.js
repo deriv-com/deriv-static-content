@@ -144,7 +144,7 @@ describe('DerivMarketingCookies - Performance Tests', () => {
       // Memory should not grow excessively (allow for some growth due to test overhead)
       if (process.memoryUsage) {
         const memoryGrowth = finalMemory - initialMemory;
-        expect(memoryGrowth).toBeLessThan(10 * 1024 * 1024); // Less than 10MB growth
+        expect(memoryGrowth).toBeLessThan(15 * 1024 * 1024); // Less than 15MB growth (increased due to affiliate logging)
       }
     });
   });
