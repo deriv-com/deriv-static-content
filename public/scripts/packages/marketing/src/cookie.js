@@ -450,13 +450,9 @@ function DerivMarketingCookies() {
   const should_overwrite = shouldOverwrite(new_utm_data, current_utm_data);
   
   if (should_overwrite) {
-    // Preserve affiliate tracking if it exists and no new affiliate params
-    const existing_affiliate_tracking = getCookie("affiliate_tracking");
-    if (existing_affiliate_tracking && !hasAffiliateParams) {
-      dropped_affiliate_tracking = existing_affiliate_tracking;
-    } else {
-      eraseCookie("affiliate_tracking");
-    }
+    // Always erase affiliate_tracking and affiliate_data when overwriting
+    eraseCookie("affiliate_tracking");
+    eraseCookie("affiliate_data");
     
     eraseCookie("utm_data");
     setCookie("utm_data", JSON.stringify(new_utm_data));

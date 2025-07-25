@@ -369,6 +369,220 @@ describe('DerivMarketingCookies', () => {
       expect(parsedUtmData.utm_campaign).toBe('old_campaign');
       expect(parsedUtmData.utm_source).toBe('google'); // New value merged
     });
+
+    it('should always erase affiliate_tracking when overwriting occurs', async () => {
+      // Set existing cookies including affiliate data
+      setCookieDirectly('utm_data', JSON.stringify({
+        utm_source: 'facebook',
+        utm_medium: 'social',
+        utm_campaign: 'old_campaign'
+      }));
+      setCookieDirectly('affiliate_tracking', 'old_affiliate_token');
+      setCookieDirectly('affiliate_data', JSON.stringify({
+        affiliate_tracking: 'old_affiliate_token',
+        utm_data: { utm_source: 'facebook', utm_medium: 'social' }
+      }));
+      
+      // Trigger overwrite with new UTM data (no affiliate params)
+      setURLSearchParams({
+        utm_source: 'google',
+        utm_medium: 'cpc',
+        utm_campaign: 'new_campaign'
+      });
+      
+      const result = window.getMarketingCookies();
+      
+      // UTM data should be overwritten
+      const utmData = getCookieValue('utm_data');
+      const parsedUtmData = JSON.parse(utmData);
+      expect(parsedUtmData.utm_source).toBe('google');
+      expect(parsedUtmData.utm_medium).toBe('cpc');
+      expect(parsedUtmData.utm_campaign).toBe('new_campaign');
+      
+      // affiliate_tracking should be erased
+      expect(getCookieValue('affiliate_tracking')).toBeNull();
+      
+      // affiliate_data should be erased
+      expect(getCookieValue('affiliate_data')).toBeNull();
+    });
+
+    it('should always erase affiliate_data when overwriting occurs', async () => {
+      // Set existing cookies including affiliate data
+      setCookieDirectly('utm_data', JSON.stringify({
+        utm_source: 'facebook',
+        utm_medium: 'affiliate',
+        utm_campaign: 'old_campaign'
+      }));
+      setCookieDirectly('affiliate_tracking', 'old_affiliate_token');
+      setCookieDirectly('affiliate_data', JSON.stringify({
+        affiliate_tracking: 'old_affiliate_token',
+        utm_data: { utm_source: 'facebook', utm_medium: 'affiliate', utm_campaign: 'old_campaign' }
+      }));
+      
+      // Trigger overwrite with new UTM data and new affiliate params
+      setURLSearchParams({
+        utm_source: 'google',
+        utm_medium: 'affiliate',
+        utm_campaign: 'new_campaign',
+        t: 'new_affiliate_token'
+      });
+      
+      const result = window.getMarketingCookies();
+      
+      // UTM data should be overwritten
+      const utmData = getCookieValue('utm_data');
+      const parsedUtmData = JSON.parse(utmData);
+      expect(parsedUtmData.utm_source).toBe('google');
+      expect(parsedUtmData.utm_medium).toBe('affiliate');
+      expect(parsedUtmData.utm_campaign).toBe('new_campaign');
+      
+      // affiliate_tracking should be set to new value
+      expect(getCookieValue('affiliate_tracking')).toBe('new_affiliate_token');
+      
+      // affiliate_data should be recreated with new data
+      const affiliateData = getCookieValue('affiliate_data');
+      expect(affiliateData).toBeTruthy();
+      const parsedAffiliateData = JSON.parse(affiliateData);
+      expect(parsedAffiliateData.affiliate_tracking).toBe('new_affiliate_token');
+      expect(parsedAffiliateData.utm_data.utm_source).toBe('google');
+      expect(parsedAffiliateData.utm_data.utm_campaign).toBe('new_campaign');
+    });
+
+    it('should erase both affiliate cookies when overwriting with non-affiliate UTM', async () => {
+      // Set existing non-affiliate cookies (to avoid affiliate validation cleanup)
+      setCookieDirectly('utm_data', JSON.stringify({
+        utm_source: 'facebook',
+        utm_medium: 'social',
+        utm_campaign: 'old_campaign'
+      }));
+      setCookieDirectly('affiliate_tracking', 'existing_affiliate_token');
+      setCookieDirectly('affiliate_data', JSON.stringify({
+        affiliate_tracking: 'existing_affiliate_token',
+        utm_data: { utm_source: 'facebook', utm_medium: 'social' }
+      }));
+      
+      // Overwrite with non-affiliate UTM data
+      setURLSearchParams({
+        utm_source: 'google',
+        utm_medium: 'cpc',
+        utm_campaign: 'new_campaign'
+      });
+      
+      const result = window.getMarketingCookies();
+      
+      // UTM data should be overwritten with non-affiliate data
+      const utmData = getCookieValue('utm_data');
+      const parsedUtmData = JSON.parse(utmData);
+      expect(parsedUtmData.utm_source).toBe('google');
+      expect(parsedUtmData.utm_medium).toBe('cpc');
+      expect(parsedUtmData.utm_campaign).toBe('new_campaign');
+      
+      // Both affiliate cookies should be erased
+      expect(getCookieValue('affiliate_tracking')).toBeNull();
+      expect(getCookieValue('affiliate_data')).toBeNull();
+    });
+
+    it('should handle overwrite with complete UTM data (triggers overwrite)', async () => {
+      // Set existing UTM data
+      setCookieDirectly('utm_data', JSON.stringify({
+        utm_source: 'facebook',
+        utm_medium: 'social',
+        utm_campaign: 'old_campaign'
+      }));
+      setCookieDirectly('affiliate_tracking', 'existing_token');
+      setCookieDirectly('affiliate_data', JSON.stringify({
+        affiliate_tracking: 'existing_token',
+        utm_data: { utm_source: 'facebook', utm_medium: 'social', utm_campaign: 'old_campaign' }
+      }));
+      
+      // Visit with complete new UTM data (should trigger overwrite)
+      setURLSearchParams({
+        utm_source: 'google',
+        utm_medium: 'cpc',
+        utm_campaign: 'new_campaign'
+      });
+      
+      const result = window.getMarketingCookies();
+      
+      // UTM data should be overwritten
+      const utmData = getCookieValue('utm_data');
+      const parsedUtmData = JSON.parse(utmData);
+      expect(parsedUtmData.utm_source).toBe('google');
+      expect(parsedUtmData.utm_medium).toBe('cpc');
+      expect(parsedUtmData.utm_campaign).toBe('new_campaign');
+      
+      // Affiliate cookies should be erased during overwrite
+      expect(getCookieValue('affiliate_tracking')).toBeNull();
+      expect(getCookieValue('affiliate_data')).toBeNull();
+    });
+
+    it('should preserve affiliate cookies when no overwrite occurs', async () => {
+      // Set existing data with non-affiliate medium to avoid validation cleanup
+      setCookieDirectly('utm_data', JSON.stringify({
+        utm_source: 'facebook',
+        utm_medium: 'social',
+        utm_campaign: 'existing_campaign'
+      }));
+      setCookieDirectly('affiliate_tracking', 'existing_token');
+      setCookieDirectly('affiliate_data', JSON.stringify({
+        affiliate_tracking: 'existing_token',
+        utm_data: { utm_source: 'facebook', utm_medium: 'social' }
+      }));
+      
+      // Visit with insufficient data to trigger overwrite
+      setURLSearchParams({
+        utm_content: 'additional_content'
+      });
+      
+      const result = window.getMarketingCookies();
+      
+      // UTM data should be merged (not overwritten)
+      const utmData = getCookieValue('utm_data');
+      const parsedUtmData = JSON.parse(utmData);
+      expect(parsedUtmData.utm_source).toBe('facebook'); // Preserved
+      expect(parsedUtmData.utm_medium).toBe('social'); // Preserved
+      expect(parsedUtmData.utm_campaign).toBe('existing_campaign'); // Preserved
+      expect(parsedUtmData.utm_content).toBe('additional_content'); // Added
+      
+      // Affiliate cookies should be preserved
+      expect(getCookieValue('affiliate_tracking')).toBe('existing_token');
+      expect(getCookieValue('affiliate_data')).toBeTruthy();
+    });
+
+    it('should handle edge case: overwrite with mixed affiliate and non-affiliate params', async () => {
+      // Set existing non-affiliate data
+      setCookieDirectly('utm_data', JSON.stringify({
+        utm_source: 'facebook',
+        utm_medium: 'social',
+        utm_campaign: 'old_campaign'
+      }));
+      
+      // Overwrite with affiliate UTM + affiliate token
+      setURLSearchParams({
+        utm_source: 'google',
+        utm_medium: 'affiliate',
+        utm_campaign: 'new_campaign',
+        t: 'new_affiliate_token'
+      });
+      
+      const result = window.getMarketingCookies();
+      
+      // UTM data should be overwritten
+      const utmData = getCookieValue('utm_data');
+      const parsedUtmData = JSON.parse(utmData);
+      expect(parsedUtmData.utm_source).toBe('google');
+      expect(parsedUtmData.utm_medium).toBe('affiliate');
+      expect(parsedUtmData.utm_campaign).toBe('new_campaign');
+      
+      // New affiliate cookies should be created
+      expect(getCookieValue('affiliate_tracking')).toBe('new_affiliate_token');
+      
+      const affiliateData = getCookieValue('affiliate_data');
+      expect(affiliateData).toBeTruthy();
+      const parsedAffiliateData = JSON.parse(affiliateData);
+      expect(parsedAffiliateData.affiliate_tracking).toBe('new_affiliate_token');
+      expect(parsedAffiliateData.utm_data.utm_medium).toBe('affiliate');
+    });
   });
 
   describe('GCLID Handling', () => {
