@@ -16,7 +16,6 @@ function DerivMarketingCookies() {
   let affiliate_tracking = null;
   let potential_mistagging = true;
   let overwrite_happened = false;
-  let dropped_affiliate_tracking = null;
 
   // Consolidated affiliate parameter detection
   const hasAffiliateParams = searchParams.has("t") || searchParams.has("affiliate_token") || searchParams.has("sidc");
@@ -479,8 +478,7 @@ function DerivMarketingCookies() {
       affiliate_token: searchParams.get("affiliate_token"),
       sidc: searchParams.get("sidc")
     },
-    overwrite_happened,
-    dropped_affiliate_tracking
+    overwrite_happened
   });
 
   // Consolidated affiliate tracking - all parameters (t, affiliate_token, sidc) set the same cookie
@@ -496,16 +494,6 @@ function DerivMarketingCookies() {
       source: searchParams.has("t") ? "t" : 
               searchParams.has("affiliate_token") ? "affiliate_token" : "sidc"
     });
-    
-    // If overwrite happened but we didn't preserve affiliate tracking, capture it now
-    if (overwrite_happened && !dropped_affiliate_tracking) {
-      dropped_affiliate_tracking = getCookie("affiliate_tracking");
-      potential_mistagging = false;
-      log("affiliate_tracking", { 
-        action: "captured_existing_during_overwrite", 
-        dropped_affiliate_tracking 
-      });
-    }
 
     eraseCookie("affiliate_tracking");
     setCookie("affiliate_tracking", affiliateValue);
@@ -516,19 +504,9 @@ function DerivMarketingCookies() {
       affiliateValue,
       cookie_verification: getCookie("affiliate_tracking")
     });
-  } else if (dropped_affiliate_tracking) {
-    // Restore preserved affiliate tracking if no new affiliate params
-    setCookie("affiliate_tracking", dropped_affiliate_tracking);
-    affiliate_tracking = dropped_affiliate_tracking;
-    
-    log("affiliate_tracking", { 
-      action: "affiliate_restored", 
-      dropped_affiliate_tracking,
-      cookie_verification: getCookie("affiliate_tracking")
-    });
   } else {
     log("affiliate_tracking", { 
-      action: "no_affiliate_params_or_restoration",
+      action: "no_affiliate_params",
       existing_affiliate_cookie: getCookie("affiliate_tracking")
     });
   }
@@ -638,30 +616,15 @@ function DerivMarketingCookies() {
 
   // Only create affiliate_data cookie if affiliate parameters are present
   if (hasAffiliateParams) {
-    const current_utm_data_for_affiliate = getCookie("utm_data");
-    let utm_data_parsed = {};
-    
-    if (current_utm_data_for_affiliate) {
-      try {
-        utm_data_parsed = JSON.parse(current_utm_data_for_affiliate);
-      } catch (e) {
-        try {
-          utm_data_parsed = JSON.parse(decodeURIComponent(current_utm_data_for_affiliate));
-        } catch (e2) {
-          utm_data_parsed = {};
-        }
-      }
-    }
-    
     const combined_affiliate_data = {
-      affiliate_tracking: affiliate_tracking,
-      utm_data: utm_data_parsed
+      affiliate_token: affiliate_tracking,
+      ...utm_data
     };
     
     log("affiliate_data", { 
       action: "creating_combined_data", 
       combined_affiliate_data,
-      utm_data_parsed,
+      utm_data,
       affiliate_tracking
     });
     

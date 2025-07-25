@@ -175,9 +175,10 @@ describe('DerivMarketingCookies', () => {
       expect(affiliateData).toBeTruthy();
       
       const parsedAffiliateData = JSON.parse(affiliateData);
-      expect(parsedAffiliateData.affiliate_tracking).toBe('affiliate_123');
-      expect(parsedAffiliateData.utm_data).toBeDefined();
-      expect(parsedAffiliateData.utm_data.utm_source).toBe('google');
+      expect(parsedAffiliateData.affiliate_token).toBe('affiliate_123');
+      expect(parsedAffiliateData.utm_source).toBe('google');
+      expect(parsedAffiliateData.utm_medium).toBe('affiliate');
+      expect(parsedAffiliateData.utm_campaign).toBe('test');
     });
 
     it('should handle both UTM parameters and affiliate token correctly', async () => {
@@ -210,13 +211,12 @@ describe('DerivMarketingCookies', () => {
       const affiliateData = getCookieValue('affiliate_data');
       expect(affiliateData).toBeTruthy();
       const parsedAffiliateData = JSON.parse(affiliateData);
-      expect(parsedAffiliateData.affiliate_tracking).toBe('affiliate_token_xyz123');
-      expect(parsedAffiliateData.utm_data).toBeDefined();
-      expect(parsedAffiliateData.utm_data.utm_source).toBe('google');
-      expect(parsedAffiliateData.utm_data.utm_medium).toBe('affiliate');
-      expect(parsedAffiliateData.utm_data.utm_campaign).toBe('summer_sale');
-      expect(parsedAffiliateData.utm_data.utm_term).toBe('trading');
-      expect(parsedAffiliateData.utm_data.utm_content).toBe('banner_ad');
+      expect(parsedAffiliateData.affiliate_token).toBe('affiliate_token_xyz123');
+      expect(parsedAffiliateData.utm_source).toBe('google');
+      expect(parsedAffiliateData.utm_medium).toBe('affiliate');
+      expect(parsedAffiliateData.utm_campaign).toBe('summer_sale');
+      expect(parsedAffiliateData.utm_term).toBe('trading');
+      expect(parsedAffiliateData.utm_content).toBe('banner_ad');
       
       // Verify all three cookies are set correctly
       expect(utmData).toBeTruthy();
@@ -443,9 +443,9 @@ describe('DerivMarketingCookies', () => {
       const affiliateData = getCookieValue('affiliate_data');
       expect(affiliateData).toBeTruthy();
       const parsedAffiliateData = JSON.parse(affiliateData);
-      expect(parsedAffiliateData.affiliate_tracking).toBe('new_affiliate_token');
-      expect(parsedAffiliateData.utm_data.utm_source).toBe('google');
-      expect(parsedAffiliateData.utm_data.utm_campaign).toBe('new_campaign');
+      expect(parsedAffiliateData.affiliate_token).toBe('new_affiliate_token');
+      expect(parsedAffiliateData.utm_source).toBe('google');
+      expect(parsedAffiliateData.utm_campaign).toBe('new_campaign');
     });
 
     it('should erase both affiliate cookies when overwriting with non-affiliate UTM', async () => {
@@ -580,8 +580,8 @@ describe('DerivMarketingCookies', () => {
       const affiliateData = getCookieValue('affiliate_data');
       expect(affiliateData).toBeTruthy();
       const parsedAffiliateData = JSON.parse(affiliateData);
-      expect(parsedAffiliateData.affiliate_tracking).toBe('new_affiliate_token');
-      expect(parsedAffiliateData.utm_data.utm_medium).toBe('affiliate');
+      expect(parsedAffiliateData.affiliate_token).toBe('new_affiliate_token');
+      expect(parsedAffiliateData.utm_medium).toBe('affiliate');
     });
   });
 
