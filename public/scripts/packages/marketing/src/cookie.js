@@ -673,7 +673,23 @@ function DerivMarketingCookies() {
   }
   /* end handling final affiliate validation */
 
-
+  /* start populating cookieData with existing cookies */
+  // Ensure cookieData reflects all existing marketing cookies
+  const marketingCookieNames = [
+    "utm_data", "affiliate_tracking", "affiliate_data", 
+    "signup_device", "date_first_contact", "gclid", "campaign_channel"
+  ];
+  
+  marketingCookieNames.forEach(cookieName => {
+    const existingValue = getCookie(cookieName);
+    if (existingValue !== null && !cookieData.original[cookieName]) {
+      // Only populate if not already set by setCookie operations
+      cookieData.original[cookieName] = existingValue;
+      cookieData.sanitized[cookieName] = sanitizeCookieValue(cookieName, existingValue);
+      window.marketingCookies[cookieName] = existingValue;
+    }
+  });
+  /* end populating cookieData with existing cookies */
 
   if (!window.marketingTrackingSent) {
     waitForTrackEvent();

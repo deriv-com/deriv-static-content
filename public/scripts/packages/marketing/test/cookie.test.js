@@ -705,5 +705,31 @@ describe('DerivMarketingCookies', () => {
       expect(result.original).toBeDefined();
       expect(result.sanitized).toBeDefined();
     });
+
+    it('should return existing cookies in cookieData when no URL parameters present', async () => {
+      // Set some existing cookies directly
+      setCookieDirectly('utm_data', JSON.stringify({
+        utm_source: 'google',
+        utm_medium: 'cpc',
+        utm_campaign: 'existing_campaign'
+      }));
+      setCookieDirectly('affiliate_tracking', 'existing_affiliate_token');
+      setCookieDirectly('gclid', 'existing_gclid_123');
+      
+      // Call getMarketingCookies with no URL parameters
+      setURLSearchParams({});
+      const result = window.getMarketingCookies();
+      
+      // Should return existing cookie values in cookieData
+      expect(result.original.utm_data).toBeTruthy();
+      expect(result.original.affiliate_tracking).toBe('existing_affiliate_token');
+      expect(result.original.gclid).toBe('existing_gclid_123');
+      
+      // Verify the UTM data is properly parsed
+      const parsedUtmData = JSON.parse(result.original.utm_data);
+      expect(parsedUtmData.utm_source).toBe('google');
+      expect(parsedUtmData.utm_medium).toBe('cpc');
+      expect(parsedUtmData.utm_campaign).toBe('existing_campaign');
+    });
   });
 });
