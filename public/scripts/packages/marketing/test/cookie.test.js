@@ -260,8 +260,8 @@ describe('DerivMarketingCookies', () => {
       expect(getCookieValue('affiliate_data')).toBeNull();
     });
 
-    it('should clean existing cookies when existing utm_medium=affiliate but no affiliate params', async () => {
-      // Set existing utm_data cookie with affiliate medium
+    it('should preserve cookies when existing utm_medium=affiliate has valid affiliate_data token', async () => {
+      // Set existing utm_data cookie with affiliate medium and valid affiliate_data
       setCookieDirectly('utm_data', JSON.stringify({
         utm_source: 'google',
         utm_medium: 'affiliate',
@@ -269,8 +269,10 @@ describe('DerivMarketingCookies', () => {
       }));
       setCookieDirectly('affiliate_tracking', 'existing_token');
       setCookieDirectly('affiliate_data', JSON.stringify({
-        affiliate_tracking: 'existing_token',
-        utm_data: { utm_source: 'google', utm_medium: 'affiliate' }
+        affiliate_token: 'existing_token',
+        utm_source: 'google',
+        utm_medium: 'affiliate',
+        utm_campaign: 'test'
       }));
       
       // Visit page without affiliate params
@@ -279,7 +281,38 @@ describe('DerivMarketingCookies', () => {
       const result = window.getMarketingCookies();
       expect(result).toBeDefined();
       
-      // Should clean all marketing cookies due to incomplete affiliate link
+      // Should preserve cookies since affiliate_data has valid token
+      expect(getCookieValue('utm_data')).toBeTruthy();
+      expect(getCookieValue('affiliate_tracking')).toBe('existing_token');
+      expect(getCookieValue('affiliate_data')).toBeTruthy();
+      
+      // Verify affiliate_data structure
+      const affiliateData = JSON.parse(getCookieValue('affiliate_data'));
+      expect(affiliateData.affiliate_token).toBe('existing_token');
+    });
+
+    it('should clean cookies when existing utm_medium=affiliate has no valid affiliate_data token', async () => {
+      // Set existing utm_data cookie with affiliate medium but invalid affiliate_data
+      setCookieDirectly('utm_data', JSON.stringify({
+        utm_source: 'google',
+        utm_medium: 'affiliate',
+        utm_campaign: 'test'
+      }));
+      setCookieDirectly('affiliate_tracking', 'existing_token');
+      setCookieDirectly('affiliate_data', JSON.stringify({
+        // Missing affiliate_token field - invalid
+        utm_source: 'google',
+        utm_medium: 'affiliate',
+        utm_campaign: 'test'
+      }));
+      
+      // Visit page without affiliate params
+      setURLSearchParams({});
+      
+      const result = window.getMarketingCookies();
+      expect(result).toBeDefined();
+      
+      // Should clean cookies since affiliate_data has no valid token
       expect(getCookieValue('utm_data')).toBeNull();
       expect(getCookieValue('affiliate_tracking')).toBeNull();
       expect(getCookieValue('affiliate_data')).toBeNull();
@@ -704,6 +737,32 @@ describe('DerivMarketingCookies', () => {
       expect(result).toBeDefined();
       expect(result.original).toBeDefined();
       expect(result.sanitized).toBeDefined();
+    });
+
+    it('should return existing cookies in cookieData when no URL parameters present', async () => {
+      // Set some existing cookies directly
+      setCookieDirectly('utm_data', JSON.stringify({
+        utm_source: 'google',
+        utm_medium: 'cpc',
+        utm_campaign: 'existing_campaign'
+      }));
+      setCookieDirectly('affiliate_tracking', 'existing_affiliate_token');
+      setCookieDirectly('gclid', 'existing_gclid_123');
+      
+      // Call getMarketingCookies with no URL parameters
+      setURLSearchParams({});
+      const result = window.getMarketingCookies();
+      
+      // Should return existing cookie values in cookieData
+      expect(result.original.utm_data).toBeTruthy();
+      expect(result.original.affiliate_tracking).toBe('existing_affiliate_token');
+      expect(result.original.gclid).toBe('existing_gclid_123');
+      
+      // Verify the UTM data is properly parsed
+      const parsedUtmData = JSON.parse(result.original.utm_data);
+      expect(parsedUtmData.utm_source).toBe('google');
+      expect(parsedUtmData.utm_medium).toBe('cpc');
+      expect(parsedUtmData.utm_campaign).toBe('existing_campaign');
     });
   });
 });

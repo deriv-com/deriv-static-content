@@ -407,9 +407,25 @@ function DerivMarketingCookies() {
   }
 
   // Early validation: Check for existing utm_medium=affiliate in cookies
+  // Only clean if there's no existing affiliate_data with a valid token
   if (current_utm_data?.utm_medium === "affiliate" && !hasAffiliateParams) {
-    cleanAllMarketingCookies("Existing utm_medium=affiliate but missing affiliate parameters (t, affiliate_token, or sidc)");
-    return cookieData;
+    const existing_affiliate_data = getCookie("affiliate_data");
+    let has_valid_affiliate_token = false;
+    
+    if (existing_affiliate_data) {
+      try {
+        const parsed_affiliate_data = JSON.parse(existing_affiliate_data);
+        has_valid_affiliate_token = !!(parsed_affiliate_data.affiliate_token || parsed_affiliate_data.affiliate_tracking);
+      } catch (e) {
+        // If we can't parse affiliate_data, treat as invalid
+        has_valid_affiliate_token = false;
+      }
+    }
+    
+    if (!has_valid_affiliate_token) {
+      cleanAllMarketingCookies("Existing utm_medium=affiliate but missing affiliate parameters and no valid affiliate_data token");
+      return cookieData;
+    }
   }
 
   // Collect new UTM parameters from URL
@@ -657,13 +673,37 @@ function DerivMarketingCookies() {
   });
   
   if (current_utm_medium === "affiliate" && !hasAffiliateParams) {
-    log("affiliate_validation", { 
-      action: "validation_failed_cleaning_cookies", 
-      reason: "utm_medium=affiliate but missing affiliate parameters",
-      current_utm_medium,
-      hasAffiliateParams
-    });
-    cleanAllMarketingCookies("utm_medium=affiliate but missing affiliate parameters (t, affiliate_token, or sidc)");
+    // Check if there's existing affiliate_data with a valid token
+    const existing_affiliate_data = getCookie("affiliate_data");
+    let has_valid_affiliate_token = false;
+    
+    if (existing_affiliate_data) {
+      try {
+        const parsed_affiliate_data = JSON.parse(existing_affiliate_data);
+        has_valid_affiliate_token = !!(parsed_affiliate_data.affiliate_token || parsed_affiliate_data.affiliate_tracking);
+      } catch (e) {
+        // If we can't parse affiliate_data, treat as invalid
+        has_valid_affiliate_token = false;
+      }
+    }
+    
+    if (!has_valid_affiliate_token) {
+      log("affiliate_validation", { 
+        action: "validation_failed_cleaning_cookies", 
+        reason: "utm_medium=affiliate but missing affiliate parameters and no valid affiliate_data token",
+        current_utm_medium,
+        hasAffiliateParams,
+        has_valid_affiliate_token
+      });
+      cleanAllMarketingCookies("utm_medium=affiliate but missing affiliate parameters and no valid affiliate_data token");
+    } else {
+      log("affiliate_validation", { 
+        action: "validation_passed_with_existing_token", 
+        current_utm_medium,
+        hasAffiliateParams,
+        has_valid_affiliate_token
+      });
+    }
   } else {
     log("affiliate_validation", { 
       action: "validation_passed", 
@@ -673,7 +713,23 @@ function DerivMarketingCookies() {
   }
   /* end handling final affiliate validation */
 
-
+  /* start populating cookieData with existing cookies */
+  // Ensure cookieData reflects all existing marketing cookies
+  const marketingCookieNames = [
+    "utm_data", "affiliate_tracking", "affiliate_data", 
+    "signup_device", "date_first_contact", "gclid", "campaign_channel"
+  ];
+  
+  marketingCookieNames.forEach(cookieName => {
+    const existingValue = getCookie(cookieName);
+    if (existingValue !== null && !cookieData.original[cookieName]) {
+      // Only populate if not already set by setCookie operations
+      cookieData.original[cookieName] = existingValue;
+      cookieData.sanitized[cookieName] = sanitizeCookieValue(cookieName, existingValue);
+      window.marketingCookies[cookieName] = existingValue;
+    }
+  });
+  /* end populating cookieData with existing cookies */
 
   if (!window.marketingTrackingSent) {
     waitForTrackEvent();
