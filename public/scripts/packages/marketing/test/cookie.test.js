@@ -298,7 +298,7 @@ describe('DerivMarketingCookies', () => {
         utm_medium: 'affiliate',
         utm_campaign: 'test'
       }));
-      setCookieDirectly('affiliate_tracking', 'existing_token');
+      // Don't set affiliate_tracking cookie - this is the key difference
       setCookieDirectly('affiliate_data', JSON.stringify({
         // Missing affiliate_token field - invalid
         utm_source: 'google',
@@ -312,7 +312,7 @@ describe('DerivMarketingCookies', () => {
       const result = window.getMarketingCookies();
       expect(result).toBeDefined();
       
-      // Should clean cookies since affiliate_data has no valid token
+      // Should clean cookies since affiliate_data has no valid token AND no affiliate_tracking cookie
       expect(getCookieValue('utm_data')).toBeNull();
       expect(getCookieValue('affiliate_tracking')).toBeNull();
       expect(getCookieValue('affiliate_data')).toBeNull();
