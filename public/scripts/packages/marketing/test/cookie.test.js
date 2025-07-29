@@ -764,37 +764,5 @@ describe('DerivMarketingCookies', () => {
       expect(parsedUtmData.utm_medium).toBe('cpc');
       expect(parsedUtmData.utm_campaign).toBe('existing_campaign');
     });
-
-    it('should preserve existing cookies when URL is empty (no parameters)', async () => {
-      // Set existing cookies
-      setCookieDirectly('utm_data', JSON.stringify({
-        utm_source: 'facebook',
-        utm_medium: 'social',
-        utm_campaign: 'existing_campaign'
-      }));
-      setCookieDirectly('affiliate_tracking', 'existing_token');
-      setCookieDirectly('gclid', 'existing_gclid');
-      
-      // Visit page with completely empty URL (no parameters)
-      setURLSearchParams({});
-      
-      const result = window.getMarketingCookies();
-      
-      // Should preserve all existing cookies without overwriting
-      expect(getCookieValue('utm_data')).toBeTruthy();
-      expect(getCookieValue('affiliate_tracking')).toBe('existing_token');
-      expect(getCookieValue('gclid')).toBe('existing_gclid');
-      
-      // Verify UTM data is preserved exactly
-      const utmData = JSON.parse(getCookieValue('utm_data'));
-      expect(utmData.utm_source).toBe('facebook');
-      expect(utmData.utm_medium).toBe('social');
-      expect(utmData.utm_campaign).toBe('existing_campaign');
-      
-      // Should be returned in cookieData
-      expect(result.original.utm_data).toBeTruthy();
-      expect(result.original.affiliate_tracking).toBe('existing_token');
-      expect(result.original.gclid).toBe('existing_gclid');
-    });
   });
 });

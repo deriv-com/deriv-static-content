@@ -438,6 +438,14 @@ function DerivMarketingCookies() {
   // Collect new UTM parameters from URL
   let new_utm_data = {};
   
+  // If the user comes to the site for the first time without any URL params
+  // Only set the utm_source to referrer if the user does not have utm_data cookies stored
+  if (!current_utm_data?.utm_source && !searchParams.toString()) {
+    new_utm_data = {
+      utm_source: document.referrer || "null",
+    };
+  }
+
   // Collect UTM parameters from URL
   utm_fields.forEach((field) => {
     if (Array.isArray(field)) {
@@ -453,15 +461,6 @@ function DerivMarketingCookies() {
       }
     }
   });
-
-  // If the user comes to the site for the first time without any URL params
-  // Only set the utm_source to referrer if the user does not have utm_data cookies stored
-  // AND we don't have any new UTM data from URL
-  if (!current_utm_data?.utm_source && !searchParams.toString() && Object.keys(new_utm_data).length === 0) {
-    new_utm_data = {
-      utm_source: document.referrer || "null",
-    };
-  }
 
   // Early validation: Check for new utm_medium=affiliate without affiliate parameters
   if (new_utm_data.utm_medium === "affiliate" && !hasAffiliateParams) {
