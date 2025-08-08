@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="pt" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -6,9 +7,7 @@
     <meta name="supported-color-schemes" content="light dark">
     <meta charset="utf-8">
 
-    <title>
-        Restam 7 dias! Não perca a sua oportunidade de ganhar
-    </title>
+    <title>Ganhaste um prémio na competição [competition.name]!</title>
 
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -352,79 +351,193 @@
                     <table  border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff; max-width: 600px;" class="darkmodeblack">
                         <tbody>
                             <!-- START HERO -->
-                            <tr>
-                                <td align="center" style="padding: 30px 30px 20px; opacity: 100% !important;">
+                            <!-- DERIV LOGO DESKTOP & MOBILE -->
+                            <tr class="mobile-hide">
+                                <td align="center" style="padding: 30px; opacity: 100% !important;">
                                     <a href="https://www.deriv.com">
-                                        <img src="https://static.deriv.com/logos/deriv-red-2023.png" width="78" style="display: block;" alt="Deriv.com">                                  
+                                        <img src="https://static.deriv.com/logos/deriv-red-2023.png" width="96" style="display: block;" alt="Deriv.com">                                  
                                     </a>
                                 </td>
                             </tr>
+                            <tr style="display: none; mso-hide:all;" class="mobile-visible-block" align="center">
+                                <td align="center" style="padding: 30px; opacity: 100% !important;">
+                                    <a href="https://www.deriv.com">
+                                        <img src="https://static.deriv.com/logos/deriv-red-2023.png" width="75%" style="display: block;" alt="Deriv.com">                                  
+                                    </a>
+                                </td>
+                            </tr>
+                            <!-- DERIV LOGO DESKTOP & MOBILE -->
                             <tr>
-                                <td align="center" style="padding: 10px 30px 30px 30px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                    <h1 class="mb-font-size-header" style="font-family: 'Inter', Arial, sans-serif; font-size: 32px; line-height: 40px ; color: #181C25; font-weight: 800; margin:0;">Últimos 7 dias: negocie agora</h1>
+                                <td align="center" style="padding: 10px 48px 30px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                    <h1 class="mb-font-size-header" style="font-family: 'Inter', Arial, sans-serif; font-size: 32px; line-height: 40px ; color: #181C25; font-weight: 800; margin:0;">Parabéns por garantir o seu lugar na lista de vencedores</h1>
                                 </td>
                             </tr>
                             <tr align="center" class="mobile-hide">
                                 <td align="center">
-                                        <input type="image" src="https://static.deriv.com/email/images/header-2025/trading-tournament-hdr5.jpg"  width= "600" height="auto"/>
+                                        <input type="image" src="https://static.deriv.com/email/images/header-2025/trading-tournament-hdr7.jpg"  width= "600" height="auto"/>
                                 </td>
                             </tr> 
                             <div >
                                 <tr align="center" style="display: none; mso-hide:all;" class="mobile-visible-block">
                                     <td align="center" >
-                                            <input type="image" src="https://static.deriv.com/email/images/header-2025/trading-tournament-hdr5.jpg" width="100%" />
+                                            <input type="image" src="https://static.deriv.com/email/images/header-2025/trading-tournament-hdr1.jpg" width="100%" />
                                     </td>
                                 </tr>  
                             </div> 
                             <!-- END HERO -->
                             <tr>
                                 <td align="left" style="padding: 20px 48px 10px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                    <p style="font-family: 'Inter', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #181C25; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">{% if customer.firstName != blank %} Olá {{customer.firstName | titlecase }}, {% else %} Olá, Trader: {% endif %}</p>
+                                    <p style="font-family: 'Inter', Arial, sans-serif; font-size: 16px; line-height: 1.5 ; color: #181C25; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">Olá, [customer.name]</p>
                                 </td>
                             </tr>
                             <tr>
                                 <td align="left" style="padding: 8px 48px 10px 48px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                    <p style="font-family: 'Inter', Arial, sans-serif; font-size: 16px; line-height: 24px; color: #181C25; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">Faltam apenas 7 dias para o final da competição (name of the competition). </p>
+                                    <p style="font-family: 'Inter', Arial, sans-serif; font-size: 16px; line-height: 24px; color: #181C25; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">Ficaste entre os 3 primeiros da competição [competition.name]!</p>
                                 </td>
                             </tr>
                             <tr>
-                                <td align="left" style="padding: 8px 48px 10px 48px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                    <p style="font-family: 'Inter', Arial, sans-serif; font-size: 16px; line-height: 24px; color: #181C25; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">Realize pelo menos uma negociação para se manter na corrida pelos prémios!</p>
+                                <td align="center" style="padding: 20px 48px 20px 48px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                    <p style="font-family: 'Inter', Arial, sans-serif; font-size: 18px; line-height: 28px; color: #181C25; font-weight: 700;margin:0;" class="mb-font-size1">Eis o que ganhaste:</p>
+                                </td>
+                            </tr>
+                            <!--Gray table input desktop-->
+                            <tr>
+                                <td align="left" style="padding: 10px 0;" class="mobile-side">
+                                    <table class="mobile-side dark-border-radius" style="width:85%; margin: auto; background-color: rgba(246, 247, 248, 1); border-radius: 8px; border-collapse: separate;">
+                                        <tr>
+                                            <td align="left" style="padding: 16px 25px; border-radius: 8px;" class="mobile-side darkmodelowblack">
+                                                <table width="100%" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                        <td width="24" style="padding-right: 15px;">
+                                                            <img src="https://static.deriv.com/email/images/icons-2025/1stplace-icon.png" width="40" style="display: block;" alt="✓">
+                                                        </td>
+                                                        <td>
+                                                            <p style="font-family: 'Inter', Arial, sans-serif; font-size: 16px; line-height: 24px; color: #181C25; font-weight: 400; margin: 0;" class="mb-font-size"><strong>[competitionResult.firstPlaceUsername]</strong><br>[competitionResult.firstPlacePrize]</p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>                               
                                 </td>
                             </tr>
                             <tr>
-                                <td align="left" style="padding: 8px 48px 10px 48px; background-color: #fff;" class="mobile-side darkmodeblack">
-                                    <p style="font-family: 'Inter', Arial, sans-serif; font-size: 16px; line-height: 24px; color: #181C25; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">Consulte o seu painel de controlo para verificar a tabela de classificações e acompanhar o desempenho dos restantes participantes.</p>
+                                <td align="left" style="padding: 10px 0;" class="mobile-side">
+                                    <table class="mobile-side dark-border-radius" style="width:85%; margin: auto; background-color: rgba(246, 247, 248, 1); border-radius: 8px; border-collapse: separate;">
+                                        <tr>
+                                            <td align="left" style="padding: 16px 25px; border-radius: 8px;" class="mobile-side1 darkmodelowblack">
+                                                <table width="100%" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                        <td width="24" style="padding-right: 15px;">
+                                                            <img src="https://static.deriv.com/email/images/icons-2025/2ndplace-icon.png" width="40" style="display: block;" alt="✓">
+                                                        </td>
+                                                        <td>
+                                                            <p style="font-family: 'Inter', Arial, sans-serif; font-size: 16px; line-height: 24px; color: #181C25; font-weight: 700; margin: 0;" class="mb-font-size"><strong>[competitionResult.secondPlaceUsername]</strong><br>[competitionResult.secondPlacePrize]</p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>                               
                                 </td>
                             </tr>
-                             <!-- BUTTON -->
                             <tr>
-                                <td align="center" class="dark-black" style="padding: 30px 0px 30px;">
-                                    <!--[if (gte mso 9)|(IE)]>
-                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="[configuration.user_dashboard_url]/competitions" style="height:40px;v-text-anchor:middle;width:230px;" arcsize="30%" strokecolor="#ff444f" fillcolor="#ff444f">
-                                    <w:anchorlock/>
-                                    <center style="color:#fff;font-family:sans-serif;font-size:14px;font-weight:bold;">Dashboard</center>
-                                    </v:roundrect>
-                                    <![endif]-->
-                                    <!--[if !gte mso 9]><!-- -->
-                                    <a class="button" href="[configuration.user_dashboard_url]/competitions" target="_blank" style="text-decoration: none; text-align: center; line-height: 20px; padding: 12px 32px; display: inline-block; font-weight: bold; font-family: 'Inter', Arial, sans-serif; font-size: 14px; border-radius: 61px; overflow: visible; border: 0;color: #ffffff; background: #ff444f;">Painel de controlo</a>
-                                    <!--<![endif]-->
+                                <td align="left" style="padding: 10px 0;" class="mobile-side">
+                                    <table class="mobile-side dark-border-radius" style="width:85%; margin: auto; background-color: rgba(246, 247, 248, 1); border-radius: 8px; border-collapse: separate;">
+                                        <tr>
+                                            <td align="left" style="padding: 16px 25px; border-radius: 8px;" class="mobile-side darkmodelowblack">
+                                                <table width="100%" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                        <td width="24" style="padding-right: 15px;">
+                                                            <img src="https://static.deriv.com/email/images/icons-2025/3rdplace-icon.png" width="40" style="display: block;" alt="✓">
+                                                        </td>
+                                                        <td>
+                                                            <p style="font-family: 'Inter', Arial, sans-serif; font-size: 16px; line-height: 24px; color: #181C25; font-weight: 700; margin: 0;" class="mb-font-size"><strong>[competitionResult.thirdPlaceUsername]</strong><br>[competitionResult.thirdPlacePrize]</p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>                               
                                 </td>
                             </tr>
-                            <!-- BUTTON CLOSING -->
+                            <!--Gray table closing desktop-->
                             <tr>
-                                <td align="center " class="mobile-side darkmodeblack" style="padding: 20px 115px 40px; background-color: #fff;">
+                                <td align="left" style="padding: 30px 48px 0px 48px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                    <p style="font-family: 'Inter', Arial, sans-serif; font-size: 16px; line-height: 24px; color: #181C25; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">Para reclamar o teu prémio, precisas de ter uma conta Deriv totalmente verificada. Quando a tua conta estiver verificada, o teu prémio será creditado no prazo de 30 dias.</p>
+                                </td>
+                            </tr>
+                            tr>
+                                <td align="left" style="padding: 30px 48px 0px 48px; background-color: #fff;" class="mobile-side darkmodeblack">
+                                    <p style="font-family: 'Inter', Arial, sans-serif; font-size: 16px; line-height: 24px; color: #181C25; font-weight: 400;margin:0;" class="darkcolor-subtext mb-font-size">Eis o que deves fazer a seguir.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                    <!--Table gray input-->
+                                    <table class="darkmodelowblack" style="width:85%; height: auto; margin: 30px 0px 30px; background-color: #f6f7f8; border-radius: 16px;">
+                                        <tr>
+                                            <td align="left" style="padding: 40px 20px 10px;" class="mobile-side dark-border-radius">
+                                                <p style="font-family: 'Inter', Arial, sans-serif; font-size: 16px; line-height: 24px; color: #181C25; font-weight: 400; margin:0;" class="darkcolor-subtext mb-font-size"><strong>Já tens uma conta Deriv?</strong><br>Certifica-te de que tens uma conta Deriv real e verificada. Assim que a tua conta estiver verificada, contacta a nossa equipa de apoio através do chat ao vivo para confirmar a tua identidade e receber o teu prémio.</p>
+                                            </td>
+                                        </tr>
+                                        <!-- BUTTON -->
+                                        <tr>
+                                            <td align="center" class="dark-border-radius" style="padding: 20px 0px 40px;">
+                                                <!--[if (gte mso 9)|(IE)]>
+                                                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://deriv.com/help-centre" style="height:40px;v-text-anchor:middle;width:230px;" arcsize="30%" strokecolor="#ff444f" fillcolor="#ff444f">
+                                                <w:anchorlock/>
+                                                <center style="color:#fff;font-family:sans-serif;font-size:14px;font-weight:bold;">Contact customer support</center>
+                                                </v:roundrect>
+                                                <![endif]-->
+                                                <!--[if !gte mso 9]><!-- -->
+                                                <a class="button" href="https://deriv.com/help-centre" target="_blank" style="text-decoration: none; text-align: center; line-height: 20px; padding: 12px 32px; display: inline-block; font-weight: bold; font-family: 'Inter', Arial, sans-serif; font-size: 14px; border-radius: 61px; overflow: visible; border: 0;color: #ffffff; background: #ff444f;">Contactar o apoio ao cliente</a>
+                                                <!--<![endif]-->
+                                            </td>
+                                        </tr>
+                                        <!-- BUTTON CLOSING -->
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                    <!--Table gray input-->
+                                    <table class="darkmodelowblack" style="width:85%; height: auto; margin: 30px 0px 30px; background-color: #f6f7f8; border-radius: 16px;">
+                                        <tr>
+                                            <td align="left" style="padding: 40px 20px 10px;" class="mobile-side dark-border-radius">
+                                                <p style="font-family: 'Inter', Arial, sans-serif; font-size: 16px; line-height: 24px; color: #181C25; font-weight: 400; margin:0;" class="darkcolor-subtext mb-font-size"><strong>És novo na Deriv?</strong><br>Cria uma conta de demonstração Deriv para continuares a aperfeiçoar as tuas estratégias. Terás acesso ao Deriv MT5, às nossas outras plataformas de negociação e a todos os nossos instrumentos de negociação, incluindo os Índices Sintéticos proprietários que estão disponíveis 24/7.</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" class="dark-border-radius" style="padding: 30px 0px 30px;">
+                                                <!--[if (gte mso 9)|(IE)]>
+                                                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://hub.deriv.com/tradershub/signup" style="height:40px;v-text-anchor:middle;width:230px;" arcsize="30%" strokecolor="#ff444f" fillcolor="#ff444f">
+                                                <w:anchorlock/>
+                                                <center style="color:#fff;font-family:sans-serif;font-size:14px;font-weight:bold;">Create Deriv account</center>
+                                                </v:roundrect>
+                                                <![endif]-->
+                                                <!--[if !gte mso 9]><!-- -->
+                                                <a class="button" href="https://hub.deriv.com/tradershub/signup" target="_blank" style="text-decoration: none; text-align: center; line-height: 20px; padding: 12px 32px; display: inline-block; font-weight: bold; font-family: 'Inter', Arial, sans-serif; font-size: 14px; border-radius: 61px; overflow: visible; border: 0;color: #ffffff; background: #ff444f;">Criar conta Deriv</a>
+                                                <!--<![endif]-->
+                                            </td>
+                                        </tr>
+                                        <!-- BUTTON CLOSING -->
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center " class="mobile-side darkmodeblack" style="padding: 10px 115px 40px; background-color: #fff;">
                                 <p class="darkcolor-subtext mb-font-size" style="font-family: 'Inter', Arial, sans-serif; font-size: 16px; line-height: 24px; color: #181C25; font-weight: 400; margin:0;">Precisa de ajuda? A nossa equipa de apoio está disponível 24/7 através do 
                                 <a href="https://deriv.com/?is_livechat_open=true" style="color: #ff444f !important;" target="_blank">Live chat</a> e <a href="https://api.whatsapp.com/send/?phone=35699578341&amp;text&amp;type=phone_number&amp;app_absent=0" style="color: #ff444f !important;" target="_blank">WhatsApp</a></p>
                                 </td>
                             </tr>
                             <tr class="mobile-hide">
-                                <td bgcolor="#fff" align="center"  class="mobile-side darkmodeblack" style="padding: 10px 0px 20px;">
-                                    <input type="image" class="g-img" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/award2024v2x2.png"  width= "520" style="display: block;outline:none"/>
+                                <td bgcolor="#fff" align="center"  class="mobile-side darkmodeblack" style="padding: 20px 0px 20px;">
+                                    <input type="image" class="g-img" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/award2024v2x2.png"  width= "504" style="display: block;outline:none"/>
                                 </td>
                             </tr>
                             <tr style="display: none; mso-hide:all;" class="mobile-visible-block" >
-                                <td bgcolor="#fff" align="center" class="mobile-side darkmodeblack" style="padding: 10px 0px 20px;">
+                                <td bgcolor="#fff" align="center" class="mobile-side darkmodeblack" style="padding: 10px 48px 20px;">
                                     <input type="image" class="g-img" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/award2024v2x2.png" width="100%" style="display: block;outline:none"/>
                                 </td>
                             </tr> 
@@ -456,13 +569,13 @@
                                     <a href="https://www.youtube.com/@deriv" style="text-decoration: none;"> <img alt="Deriv.com no Youtube" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/youtube-md.png" title="Deriv.com no Youtube" width="32" /> </a>
                                     <a href="https://www.linkedin.com/company/derivdotcom/" style="text-decoration: none;"> <img alt="Deriv.com no LinkedIn" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/linkedin-md.png" title="Deriv.com no Linkedin" width="32" /> </a>
                                     <a href="https://t.me/Derivchannelofficial" style="text-decoration: none;"> <img alt="Deriv.com no Telegram" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/telegram-md.png" title="Deriv.com no Telegram" width="32" /> </a>
-                                    <a href="https://whatsapp.com/channel/0029VakuW241HspzJQBzUA2y" style="text-decoration: none;"> <img alt="Deriv.com no WhatsApp" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/whatsapp-md.png" title="Deriv.com no WhatsApp" width="32" /> </a>
+                                    <a href="https://www.whatsapp.com/channel/0029VbAyup5H5JLpOGXpaJ36" style="text-decoration: none;"> <img alt="Deriv.com no WhatsApp" height="32" src="https://static.deriv.com/email/images/footer-sm-imgs-2024/whatsapp-md.png" title="Deriv.com no WhatsApp" width="32" /> </a>
                                 </p>
                             </td>
                         </tr>
                         <!--social media container closing-->
                         <tr>
-                            <td bgcolor="#fff" align="left" style="padding: 4px 48px 10px; color: #9498A2; font-family: 'Inter', Arial, sans-serif; font-size: 12px; font-weight: 400; line-height: 18px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="mobile-side darkmodeblack">
+                            <td bgcolor="#fff" align="left" style="padding: 4px 48px; color: #9498A2; font-family: 'Inter', Arial, sans-serif; font-size: 12px; font-weight: 400; line-height: 18px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="mobile-side darkmodeblack">
                                 <p style="font-family: 'Inter', Arial, sans-serif; color: #9498A2; font-size: 12px; font-weight: 400; line-height: 18px; margin: 0;" class="darkmodegray">Os produtos disponíveis no nosso site, incluindo CFDs, são produtos derivados complexos que implicam um risco significativo de perda potencial. Deve ponderar se compreende como funcionam estes produtos e se pode correr o risco elevado de perder o seu dinheiro. Os termos de negociação, os produtos e as plataformas podem variar dependendo do país onde reside.</p>
                             </td>
                         </tr>
@@ -478,8 +591,7 @@
                         </tr>
                         <tr>
                             <td bgcolor="#fff" align="left" style="padding: 4px 48px; color: #9498A2; font-family: 'Inter', Arial, sans-serif; font-size: 12px; font-weight: 400; line-height: 18px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'Inter', Arial, sans-serif; color: #9498A2; font-size: 12px; font-weight: 400; line-height: 18px; margin: 0;" class="darkmodegray">
-                                A Deriv (V) Ltd é licenciada e regulamentada pela Vanuatu Financial Services Commission.</p>
+                                <p style="font-family: 'Inter', Arial, sans-serif; color: #9498A2; font-size: 12px; font-weight: 400; line-height: 18px; margin: 0;" class="darkmodegray">A Deriv (V) Ltd é licenciada e regulamentada pela Vanuatu Financial Services Commission.</p>
                             </td>
                         </tr>
                         <tr>
@@ -490,13 +602,12 @@
                         </tr>
                         <tr>
                             <td bgcolor="#fff" align="left" style="padding: 4px 48px 20px; color: #9498A2; font-family: 'Inter', Arial, sans-serif; font-size: 12px; font-weight: 400; line-height: 18px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" class="mobile-side darkmodeblack">
-                                <p style="font-family: 'Inter', Arial, sans-serif; color: #9498A2; font-size: 12px; font-weight: 400; line-height: 18px; margin: 0;" class="darkmodegray">
-                                A Deriv (SVG) LLC é uma empresa registada em São Vicente e Granadinas.</p>
+                                <p style="font-family: 'Inter', Arial, sans-serif; color: #9498A2; font-size: 12px; font-weight: 400; line-height: 18px; margin: 0;" class="darkmodegray">A Deriv (SVG) LLC é uma empresa registada em São Vicente e Granadinas.</p>
                             </td>
                         </tr>
                         <tr>
                             <td align="center" bgcolor="#fff" class="darkmodeblack" style="color: #9498A2; font-family: 'Inter', Arial, sans-serif; font-size: 12px; font-weight: 400;line-height: 18px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
-                            <p style="padding: 0px 10px;font-family: 'Inter', Arial, sans-serif; color: #9498A2; font-size: 12px; font-weight: 400; line-height: 18px; margin: 5px 0px 5px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important">Centro de ajuda</a>   <span class="darkmodegray">|</span>   <a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important">Termos e condições</a>   <span class="darkmodegray">|</span>   <a href="https://deriv.com/terms-and-conditions/privacy-policy" style="color: #ff444f !important">Política de confidencialidade</a></p>
+                            <p style="padding: 0px 10px;font-family: 'Inter', Arial, sans-serif; color: #9498A2; font-size: 12px; font-weight: 400; line-height: 18px; margin: 5px 0px 5px 0px;"><a href="https://www.deriv.com/help-centre" style="color: #ff444f !important; padding-right: 5px;">Centro de ajuda</a>   <span style="color: #ff444f !important">|</span>   <a href="https://www.deriv.com/terms-and-conditions/" style="color: #ff444f !important; padding: 0px 5px;">Termos e condições</a>   <span style="color: #ff444f !important">|</span>   <a href="https://deriv.com/terms-and-conditions/privacy-policy" style="color: #ff444f !important; padding-left: 5px;">Política de confidencialidade</a></p>
     
                             <p class="darkmodegray" style="padding: 0px 10px; font-family: 'Inter', Arial, sans-serif; color: #9498A2; font-size: 12px; font-weight: 400; line-height: 18px; margin: 0px 0px 5px 0px;">Deseja deixar de receber estes e-mails? <a class="darkcolor-subtext" href="https://app.deriv.com/account/personal-details" style="mso-hide:all; color: #ff444f !important;">Cancele a subscrição</a></p>
                             </td>
